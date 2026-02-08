@@ -54,3 +54,14 @@ img {
   display: block;
   margin: 0 auto;
 }
+
+.hero-image {
+  max-width: 800px;
+  border-radius: 8px;
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+}
+
