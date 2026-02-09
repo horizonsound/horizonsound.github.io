@@ -6,10 +6,22 @@ body {
 .homepage-section { 
   padding: 0 20px; 
 }
+.homepage-section:first-of-type { 
+  padding-top: 120px; 
+}
 
 /* HEADER */
 .site-header {
-  background: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+
+  /* Tinted overlay */
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+
   color: white;
   padding: 20px;
 }
@@ -63,7 +75,7 @@ body {
 
 .hero-banner img.hero-image {
   width: 100% !important;
-  height: 200px !important;
+  height: 320px !important;
   object-fit: cover !important;
   display: block !important;
   margin: 0 !important;
