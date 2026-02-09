@@ -20,7 +20,7 @@ body {
 
   /* Tinted overlay */
   background: rgba(0, 0, 0, 0.28);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(6px);
 
   color: white;
   padding: 20px;
@@ -71,6 +71,7 @@ body {
   overflow: hidden;
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 .hero-banner img.hero-image {
@@ -80,10 +81,6 @@ body {
   display: block !important;
   margin: 0 !important;
   border-radius: 0 !important;
-}
-
-.hero-banner {
-  position: relative;
 }
 
 .hero-banner::after {
