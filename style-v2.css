@@ -7,10 +7,10 @@ body {
   padding: 0 40px; 
 }
 .homepage-section:first-of-type { 
-  padding-top: 0px; 
+  padding-top: -20px; 
 }
 .homepage-section:first-of-type .section-header {
-  margin-top: -60px;
+  margin-top: 0px;
 }
 
 /* HEADER */
