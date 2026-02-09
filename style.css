@@ -61,6 +61,8 @@
   border-radius: 0 !important;
 }
 
+.hero-banner { background: red !important; }
+
 /* Tile grid */
 .tile-grid {
   max-width: 1000px;
