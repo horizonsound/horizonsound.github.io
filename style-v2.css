@@ -13,6 +13,7 @@ body {
 
 .homepage-section:first-of-type .section-header {
   margin-top: 0px;
+  margin: 5px 0 10px;
 }
 
 /* HEADER */
