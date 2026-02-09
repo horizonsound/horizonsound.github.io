@@ -70,7 +70,7 @@ body {
 footer {
   text-align: center;
   padding: 30px;
-  background: #eee;
+  background-color: transparent;
   margin-top: 40px;
   font-size: 0.9rem;
 }
