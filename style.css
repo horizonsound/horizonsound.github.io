@@ -60,13 +60,6 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-/* Hero image */
-.hero-image {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 20px;
-}
-
 /* Footer */
 footer {
   text-align: center;
