@@ -78,14 +78,14 @@ footer {
 
 /* Full-width hero banner */
 .hero-banner {
-  margin: 0;
-  padding: 0;
+  width: 100%;
+  overflow: hidden;
 }
 
 .hero-banner img {
   width: 100%;
-  height: auto;
+  height: 200px;      /* or 250 / 300 */
+  object-fit: cover;  /* this is the magic */
   display: block;
-  margin: 0;
-  border-radius: 0;
 }
+
