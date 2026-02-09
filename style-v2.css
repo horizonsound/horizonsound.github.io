@@ -115,8 +115,11 @@ footer {
 }
 
 .tile-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(6, 1fr);
   width: 100%;
-  max-width: 1400px; /* or 1600px if you want bigger tiles */
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 20px;
 }
