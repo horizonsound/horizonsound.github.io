@@ -127,19 +127,26 @@ footer {
   margin: 0 auto;
   padding: 0 20px;
 
-  /* Mobile first: 2 columns by default */
+  /* Mobile first */
   grid-template-columns: repeat(2, 1fr);
 }
 
-/* Tablets */
-@media (min-width: 900px) {
+/* Tablets (portrait + landscape) */
+@media (min-width: 768px) {
+  .tile-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Small desktops / large tablets */
+@media (min-width: 1024px) {
   .tile-grid {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
 /* Large desktop */
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
   .tile-grid {
     grid-template-columns: repeat(6, 1fr);
   }
