@@ -52,14 +52,13 @@
   padding: 0;
 }
 
-.hero-banner img,
-.hero-image {
-  width: 100%;
-  height: 200px;       /* adjust to 150 / 250 / 300 if you want */
-  object-fit: cover;   /* ensures proper cropping */
-  display: block;
-  margin: 0;
-  border-radius: 0;
+.hero-banner > img.hero-image {
+  width: 100% !important;
+  height: 200px !important;
+  object-fit: cover !important;
+  display: block !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
 }
 
 /* Tile grid */
