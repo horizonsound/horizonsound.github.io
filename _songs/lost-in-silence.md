@@ -20,7 +20,7 @@ tiles:
 ---
 
 <!-- ABOUT SECTION -->
- <section class="homepage-section">
+<section class="homepage-section">
   <div class="centered-column">
     <h2 class="section-header">About the Song</h2>
     <p class="song-description">
