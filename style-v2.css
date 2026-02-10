@@ -46,11 +46,19 @@ body {
   padding: 0 40px;
 }
 
-.next-track-header {
+.next-track-center {
   text-align: center;
+}
+
+.next-track-header {
   margin: 0 0 12px;
   font-size: 1.3rem;
   opacity: 0.9;
+}
+
+.next-track-button {
+  display: inline-block;   /* ensures button only fits its text */
+  width: auto;             /* prevents stretching */
 }
 
 .song-next-track {
