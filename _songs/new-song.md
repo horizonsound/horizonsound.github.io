@@ -30,10 +30,15 @@ lyrics: |
   Every line indented two spaces.
   Blank lines indented too.
 ---
+<!-- ABOUT SECTION -->
 {% include about.html %}
 
+<!-- LYRICS SECTION -->
 {% include lyrics.html %}
 
+<!-- PROJECT NAV -->
 {% include project-nav.html %}
 
+<!-- NEXT TRACK BUTTON -->
 {% include next-track.html %}
+
