@@ -6,7 +6,6 @@ project_title: "A Way Back – Trilogy"
 youtube_id: "59teEpeHah8"
 hero_image: "/assets/Temp.jpg"
 
-<!-- ABOUT SECTION -->
 about: |
   **Official audio for "Lost in Silence" by Horizon Sound.**
   
@@ -19,7 +18,6 @@ about: |
   **🎛️ Production:** bright acoustic guitar, light indie‑pop percussion, warm bass, clean modern polish  
   **⚡ Mood:** bittersweet, honest, gentle, quietly hopeful
 
-<!-- LYRICS SECTION -->
 lyrics: |
   [Intro]
   We try so hard, but sometimes love just fades,
@@ -103,10 +101,6 @@ lyrics: |
   No hard feelings, just a quiet release—
   And we’re both finding our own kind of peace.
 
-<!-- PROJECT SECTION -->
-
-
-<!-- NEXT TRACK SECTION -->
 next_track_title: "Press to hear the next track in the series"
 next_track_url: "/music/choosing-me-her-version/"
 next_track_label: "Choosing Me (Her Version)"
