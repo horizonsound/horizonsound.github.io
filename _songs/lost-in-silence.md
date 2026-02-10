@@ -110,9 +110,6 @@ tiles:
     url: "/music/choosing-me-his-version/"
     image: "/assets/choosing-me-his-version.jpg" 
 
-next_track_title: "Press to hear the next track in the series"
-next_track_url: "/music/choosing-me-her-version/"
-next_track_label: "Choosing Me (Her Version)"
 
 ---
 <!-- ABOUT SECTION -->
