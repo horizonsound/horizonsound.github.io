@@ -108,10 +108,18 @@ body {
   white-space: pre-wrap;
   font-family: inherit;
   margin-bottom: 0;
+  margin: 0; /* removes browser default spacing */
+  line-height: 1.55; /* optional: improves readability */
 }
 
 .lyrics-box pre {
   font-size: 0.95rem;
+}
+
+/* Tighten spacing when the header is inside the lyrics box */
+.lyrics-box .lyrics-header {
+  margin: 0 0 8px 0; /* small, clean spacing */
+  text-align: left;  /* optional: matches lyric alignment */
 }
 
 /* --------------------------------------------------
