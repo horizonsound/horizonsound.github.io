@@ -1,48 +1,8 @@
 ---
 layout: default
+title: Horizon Sound
 ---
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Horizon Sound</title>
 
-    <!-- Main stylesheet -->
-    <link rel="stylesheet" href="style-v2.css?v=21" />
-  </head>
-
-  <body>
-
-    <!-- --------------------------------------------------
-         GLOBAL HEADER (Branding + Navigation)
-    -------------------------------------------------- -->
-    <header class="site-header">
-      <div class="branding">
-        <img src="/assets/horizon-logo.svg" class="logo" alt="Horizon Sound Logo" />
-        <h1>Horizon Sound</h1>
-      </div>
-
-      <nav class="main-nav">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/music">Music</a></li>
-          <li><a href="/projects">Projects</a></li>
-          <li><a href="/about">About</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <!-- --------------------------------------------------
-         HERO BANNER
-    -------------------------------------------------- -->
-    <div class="hero-banner">
-      <img src="/assets/Temp.jpg" class="hero-image" alt="Horizon Sound" />
-    </div>
-
-    <!-- --------------------------------------------------
-         MAIN CONTENT
-    -------------------------------------------------- -->
-    <main>
 {% include homepage-tiles.html 
      title="New Releases..." 
      items=site.data.homepage.new_releases 
@@ -57,33 +17,3 @@ layout: default
      title="In‑Flight Projects" 
      items=site.data.homepage.projects 
 %}
-    </main>
-
-    <!-- --------------------------------------------------
-         FOOTER
-    -------------------------------------------------- -->
-    <footer>
-      <p>&copy; 2026 Horizon Sound</p>
-      <p>Contact: HorizonSoundCreative@gmail.com</p>
-      <p>All music, lyrics, and creative works on this site are original and owned by Horizon Sound.</p>
-
-      <!-- Device width debug (optional) -->
-      <p style="opacity:0.5; font-size:0.8rem;">
-        Screen width: <span id="device-width"></span>
-      </p>
-    </footer>
-
-    <!-- Device width script (optional) -->
-    <script>
-      function updateWidth() {
-        const w = window.innerWidth;
-        document.getElementById("device-width").textContent = w + "px";
-      }
-
-      window.addEventListener("resize", updateWidth);
-      window.addEventListener("load", updateWidth);
-    </script>
-
-  </body>
-</html>
-
