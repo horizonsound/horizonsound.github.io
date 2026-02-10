@@ -62,6 +62,15 @@ body {
   display: block;
 }
 
+/* Full-width YouTube embed */
+.video-section iframe {
+  width: 100%;
+  height: 420px;
+  max-width: 100%;
+  display: block;
+  border: none;
+}
+
 /* --------------------------------------------------
    SONG PAGE: ABOUT SECTION
 -------------------------------------------------- */
