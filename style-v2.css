@@ -416,3 +416,21 @@ footer {
 .playlist-item a:hover {
   text-decoration: underline;
 }
+
+/* --------------------------------------------------
+   ABOUT PAGE
+-------------------------------------------------- */
+
+.about-page {
+  padding: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-page h1 {
+  margin-bottom: 20px;
+}
+
+.about-page h2 {
+  margin-top: 40px;
+}
