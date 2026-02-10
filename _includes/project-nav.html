@@ -1,7 +1,10 @@
 {% if page.tiles %}
 <section class="song-project">
+
+  <!-- Project / Album Title -->
   <h2 class="section-header">{{ page.project_title }}</h2>
 
+  <!-- Responsive tile grid (shared with homepage) -->
   <div class="tile-grid">
     {% for tile in page.tiles %}
       <a class="tile" href="{{ tile.url }}">
@@ -10,5 +13,6 @@
       </a>
     {% endfor %}
   </div>
+
 </section>
 {% endif %}
