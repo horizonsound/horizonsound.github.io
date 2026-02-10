@@ -1,7 +1,11 @@
 {% if page.next_track_url %}
 <section class="song-next-track">
-  <a href="{{ page.next_track_url }}" class="btn-primary">
-    {{ page.next_track_label }}
-  </a>
+  <div class="centered-column">
+    <h2 class="next-track-header">Press to hear the next track in the series</h2>
+
+    <a href="{{ page.next_track_url }}" class="btn-primary">
+      {{ page.next_track_label }}
+    </a>
+  </div>
 </section>
 {% endif %}
