@@ -1,3 +1,6 @@
+/* --------------------------------------------------
+   GLOBAL BASE STYLES
+-------------------------------------------------- */
 body {
   background: linear-gradient(to bottom, #000 0%, #0a0a0a 100%);
   color: #fff;
@@ -5,45 +8,84 @@ body {
   line-height: 1.6;
 }
 
+/* --------------------------------------------------
+   HOMEPAGE SECTIONS (NOT USED ON SONG PAGES)
+-------------------------------------------------- */
 .homepage-section {
   margin: 60px 0;
-  padding: 0 40px; 
+  padding: 0 40px;
 }
 
-.homepage-section:first-of-type { 
-  padding: 0 40px;   /* removes top padding entirely */
-  margin-top: -40px; /* pulls the tiles upward */
+/* Special case: first homepage section pulls upward */
+.homepage-section:first-of-type {
+  padding: 0 40px;
+  margin-top: -40px;
 }
 
 .homepage-section:first-of-type .section-header {
-  margin-top: 0px;
   margin: 5px 0 10px;
   position: relative;
   z-index: 2;
 }
 
+/* --------------------------------------------------
+   SONG PAGE: HEADER + SUBTITLE
+-------------------------------------------------- */
 .song-header {
   margin: 20px 0 10px;
   padding: 0 40px;
 }
 
+.song-subtitle {
+  text-align: center;
+  opacity: 0.8;
+  margin-top: -10px;
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------
+   SONG PAGE: ABOUT SECTION
+-------------------------------------------------- */
 .song-about {
   margin: 20px 0 10px;
   padding: 0 40px;
 }
 
+/* Tighten header → description spacing */
+.song-about .section-header {
+  margin-bottom: 6px;
+}
+
+/* Tighten paragraph spacing inside About */
 .song-description {
-  margin-top: 0 !important;   /* ensure override */
+  margin-top: 0 !important;
   margin: 0 6px;
 }
 
-.song-about .section-header {
-  margin-bottom: 6px;   /* was default ~20px */
-}
-
+/* --------------------------------------------------
+   SONG PAGE: LYRICS SECTION
+-------------------------------------------------- */
 .song-lyrics {
   margin: 20px 0 10px;
   padding: 0 40px;
+}
+
+.lyrics-box {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.lyrics-box pre {
+  font-size: 0.95rem;
+}
+
+/* --------------------------------------------------
+   SONG PAGE: NEXT TRACK SECTION
+-------------------------------------------------- */
+.song-next-track {
+  margin: 40px 0 0; /* spacing above button */
+  padding: 0 40px;
+  text-align: center;
 }
 
 .next-track-center {
@@ -59,28 +101,20 @@ body {
 
 .next-track-button {
   display: inline-block;
-  width: auto;
+  width: auto; /* prevents stretching */
 }
 
-.song-next-track {
-  margin: 40px 0 0;   /* adds space above the button */
-  padding: 0 40px;
-  text-align: center;
-}
-
+/* --------------------------------------------------
+   SONG PAGE: PROJECT TILE SECTION
+-------------------------------------------------- */
 .song-project {
   margin: 20px 0 10px;
   padding: 0 40px;
 }
 
-.lyrics-box { 
-  max-width: 600px; margin: 0 auto; 
-}
-
-.lyrics-box pre {
-  font-size: 0.95rem;
-}
-
+/* --------------------------------------------------
+   BUTTONS
+-------------------------------------------------- */
 .btn-primary {
   display: inline-block;
   background: #1a73e8;
@@ -91,11 +125,14 @@ body {
   font-weight: bold;
   font-size: 1.1rem;
 }
+
 .btn-primary:hover {
   background: #2a82f0;
 }
 
-/* HEADER */
+/* --------------------------------------------------
+   HEADER (GLOBAL)
+-------------------------------------------------- */
 .site-header {
   position: absolute;
   top: 0;
@@ -103,7 +140,6 @@ body {
   width: 100%;
   z-index: 10;
 
-  /* Tinted overlay */
   background: rgba(0, 0, 0, 0.28);
   backdrop-filter: blur(6px);
 
@@ -111,30 +147,9 @@ body {
   padding: 20px;
 }
 
-.centered-column {
-  display: grid;
-  grid-template-columns: 1fr minmax(300px, 900px) 1fr;
-  column-gap: 20px;
-  row-gap: 0;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.song-subtitle {
-  text-align: center;
-  opacity: 0.8;
-  margin-top: -10px;
-  margin-bottom: 0;
-}
-
-.centered-column > * {
-  grid-column: 2; /* forces content into the center column */
-}
-
 .branding {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
   gap: 15px;
 }
 
@@ -149,7 +164,7 @@ body {
   font-weight: 700;
 }
 
-/* Navigation bar under branding */
+/* Navigation */
 .main-nav {
   margin-top: 20px;
   border-top: 1px solid #333;
@@ -170,7 +185,9 @@ body {
   font-weight: bold;
 }
 
-/* Full-width hero banner */
+/* --------------------------------------------------
+   HERO BANNER
+-------------------------------------------------- */
 .hero-banner {
   width: 100%;
   overflow: hidden;
@@ -188,6 +205,7 @@ body {
   border-radius: 0 !important;
 }
 
+/* Gradient fade at bottom of hero */
 .hero-banner::after {
   content: "";
   position: absolute;
@@ -195,16 +213,13 @@ body {
   left: 0;
   width: 100%;
   height: 120px;
-
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.85) 100%
-  );
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%);
   pointer-events: none;
 }
 
-/* Footer */
+/* --------------------------------------------------
+   FOOTER
+-------------------------------------------------- */
 footer {
   text-align: center;
   padding: 30px;
@@ -213,13 +228,17 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Section headers */
+/* --------------------------------------------------
+   SECTION HEADERS
+-------------------------------------------------- */
 .section-header {
   font-size: 1.6rem;
   color: #ffffff;
 }
 
-/* Tile container */
+/* --------------------------------------------------
+   TILE SYSTEM (SHARED WITH HOMEPAGE)
+-------------------------------------------------- */
 .tile {
   display: block;
   background: #111;
@@ -230,13 +249,11 @@ footer {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Hover animation */
 .tile:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 18px rgba(0,0,0,0.35);
 }
 
-/* Tile image */
 .tile img {
   width: 100%;
   height: 180px;
@@ -244,73 +261,28 @@ footer {
   display: block;
 }
 
-/* Tile title */
 .tile-title {
   padding: 10px;
   font-size: 1rem;
   text-align: center;
 }
 
-/* If you want to hide the title for YouTube thumbnails */
 .tile.no-title .tile-title {
   display: none;
 }
 
-.tile-grid {
+/* --------------------------------------------------
+   CENTERED COLUMN LAYOUT (SONG PAGES)
+-------------------------------------------------- */
+.centered-column {
   display: grid;
-  gap: 20px;
+  grid-template-columns: 1fr minmax(300px, 900px) 1fr;
+  column-gap: 20px;
+  row-gap: 0; /* no vertical spacing */
   width: 100%;
-  max-width: 1800px;
   margin: 0 auto;
-  position: relative;
-  z-index: 1;
-
-  /* Mobile first */
-  grid-template-columns: repeat(2, 1fr);
 }
 
-/* Tablets */
-@media (min-width: 1100px) {
-  .tile-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* Small desktops */
-@media (min-width: 1400px) {
-  .tile-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-/* Large desktops */
-@media (min-width: 1700px) {
-  .tile-grid {
-    grid-template-columns: repeat(6, 1fr);
-  }
-}
-
-
-/* Override homepage-section padding for the video */
-.video-section {
-  padding: 0 !important;
-  margin-top: 0;
-}
-
-/* Full-width cinematic video */
-.video-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: none;
-  margin: 0;
-  padding-bottom: 56.25%; /* 16:9 */
-  height: 0;
-}
-
-.video-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.centered-column > * {
+  grid-column: 2; /* force content into center column */
 }
