@@ -387,3 +387,32 @@ footer {
 .song-list-item a:hover {
   text-decoration: underline;
 }
+
+/* --------------------------------------------------
+   PLAYLIST PAGE
+-------------------------------------------------- */
+
+.playlist-list {
+  padding: 0 40px;
+  margin: 40px 0;
+}
+
+.playlist-items {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+}
+
+.playlist-item {
+  margin: 8px 0;
+}
+
+.playlist-item a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.playlist-item a:hover {
+  text-decoration: underline;
+}
