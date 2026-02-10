@@ -7,6 +7,7 @@ project_title: "PROJECT NAME"
 youtube_id: "YOUTUBE_ID"
 hero_image: "/assets/IMAGE.jpg"
 
+next_track_title: "Press to hear the next track in the series"
 next_track_url: "/music/NEXT-SONG/"
 next_track_label: "Next Song Title"
 
