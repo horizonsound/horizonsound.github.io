@@ -45,10 +45,20 @@ body {
   margin: 20px 0 10px;
   padding: 0 40px;
 }
-.song-next-track {
-  padding: 0 40px;
-  margin: 10px 0 0;
+
+.next-track-header {
+  text-align: center;
+  margin: 0 0 12px;
+  font-size: 1.3rem;
+  opacity: 0.9;
 }
+
+.song-next-track {
+  margin: 40px 0 0;   /* adds space above the button */
+  padding: 0 40px;
+  text-align: center;
+}
+
 .song-project {
   margin: 20px 0 10px;
   padding: 0 40px;
