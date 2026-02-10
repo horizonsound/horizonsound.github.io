@@ -101,10 +101,6 @@ lyrics: |
   No hard feelings, just a quiet release—
   And we’re both finding our own kind of peace.
 
-next_track_title: "Press to hear the next track in the series"
-next_track_url: "/music/choosing-me-her-version/"
-next_track_label: "Choosing Me (Her Version)"
-
 tiles:
   - title: "Choosing Me (Her Version)"
     url: "/music/choosing-me-her-version/"
@@ -113,6 +109,10 @@ tiles:
   - title: "Choosing Me (His Version)"
     url: "/music/choosing-me-his-version/"
     image: "/assets/choosing-me-his-version.jpg" 
+
+next_track_title: "Press to hear the next track in the series"
+next_track_url: "/music/choosing-me-her-version/"
+next_track_label: "Choosing Me (Her Version)"
 
 ---
 <!-- ABOUT SECTION -->
