@@ -1,0 +1,12 @@
+<section class="homepage-section">
+  <h2 class="section-header">{{ include.title }}</h2>
+
+  <div class="tile-grid">
+    {% for tile in include.items %}
+      <a class="tile" href="{{ tile.url }}">
+        <img src="{{ tile.image }}" alt="{{ tile.title }}">
+        <h3 class="tile-title">{{ tile.title }}</h3>
+      </a>
+    {% endfor %}
+  </div>
+</section>
