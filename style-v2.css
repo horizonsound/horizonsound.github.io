@@ -417,6 +417,10 @@ footer {
   text-decoration: underline;
 }
 
+.playlist-section {
+   padding: 40px;
+}
+
 /* --------------------------------------------------
    ABOUT PAGE
 -------------------------------------------------- */
