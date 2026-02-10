@@ -1,12 +1,17 @@
 {% if page.lyrics %}
 <section class="song-lyrics">
-  <div class="centered-column lyrics-center">
+  <div class="centered-column">
+
+    <!-- Lyrics Section Header -->
+    <h2 class="section-header">Lyrics</h2>
+
+    <!-- Preformatted lyrics block (preserves line breaks) -->
     <div class="lyrics-box">
-      <h2 class="section-header">Lyrics</h2>
       <pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">
 {{ page.lyrics }}
       </pre>
     </div>
+
   </div>
 </section>
 {% endif %}
