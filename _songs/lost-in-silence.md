@@ -114,39 +114,7 @@ tiles:
 
   - title: "Choosing Me (His Version)"
     url: "/music/choosing-me-his-version/"
-    image: "/assets/choosing-me-his-version.jpg"
-    
-  - title: "Choosing Me (Her Version)"
-    url: "/music/choosing-me-her-version/"
-    image: "/assets/choosing-me-her-version.jpg"
-
-  - title: "Choosing Me (His Version)"
-    url: "/music/choosing-me-his-version/"
-    image: "/assets/choosing-me-his-version.jpg"
-    
-  - title: "Choosing Me (Her Version)"
-    url: "/music/choosing-me-her-version/"
-    image: "/assets/choosing-me-her-version.jpg"
-
-  - title: "Choosing Me (His Version)"
-    url: "/music/choosing-me-his-version/"
-    image: "/assets/choosing-me-his-version.jpg"
-    
-  - title: "Choosing Me (Her Version)"
-    url: "/music/choosing-me-her-version/"
-    image: "/assets/choosing-me-her-version.jpg"
-
-  - title: "Choosing Me (His Version)"
-    url: "/music/choosing-me-his-version/"
-    image: "/assets/choosing-me-his-version.jpg"
-    
-  - title: "Choosing Me (Her Version)"
-    url: "/music/choosing-me-her-version/"
-    image: "/assets/choosing-me-her-version.jpg"
-
-  - title: "Choosing Me (His Version)"
-    url: "/music/choosing-me-his-version/"
-    image: "/assets/choosing-me-his-version.jpg"
+    image: "/assets/choosing-me-his-version.jpg" 
 ---
 <!-- ABOUT SECTION -->
 {% include about.html %}
