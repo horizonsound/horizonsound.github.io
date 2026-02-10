@@ -31,6 +31,9 @@ lyrics: |
   Blank lines indented too.
 ---
 {% include about.html %}
+
 {% include lyrics.html %}
+
 {% include project-nav.html %}
+
 {% include next-track.html %}
