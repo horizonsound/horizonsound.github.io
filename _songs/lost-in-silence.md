@@ -3,6 +3,8 @@ layout: song
 title: "Lost in Silence"
 subtitle: "A Way Back – Trilogy | Part I"
 
+project_title: "A Way Back – Trilogy"
+
 youtube_id: "59teEpeHah8"
 hero_image: "/assets/Temp.jpg"
 
@@ -139,27 +141,8 @@ And we’re both finding our own kind of peace.
   </div>
 </section>
 
-
-<!-- TRILOGY NAV -->
-<section class="homepage-section">
-  <h2 class="section-header">Part of the A Way Back Trilogy</h2>
-
-  <div style="display: flex; justify-content: center;">
-    <div style="display: grid; gap: 20px; grid-template-columns: repeat(2, 1fr); width: auto;">
-      
-      <a class="tile" href="/music/choosing-me-her-version/">
-        <img src="/assets/choosing-me-her-version.jpg" alt="Choosing Me (Her Version)">
-        <h3 class="tile-title">Choosing Me (Her Version)</h3>
-      </a>
-
-      <a class="tile" href="/music/choosing-me-his-version/">
-        <img src="/assets/choosing-me-his-version.jpg" alt="Choosing Me (His Version)">
-        <h3 class="tile-title">Choosing Me (His Version)</h3>
-      </a>
-
-    </div>
-  </div>
-</section>
+<!-- PROJECT NAV -->
+{% include project-nav.html %}
 
 <!-- NEXT TRACK BUTTON -->
 <section class="homepage-section" style="text-align:center; margin-top:40px;">
