@@ -2,7 +2,7 @@ songs:
   - title: "Lost in Silence"
     url: "/music/lost-in-silence/"
     image: "/assets/lost-in-silence.jpg"
-    videostatus: "Public"
+    videostatus: "x"
 
   - title: "Choosing Me (Her Version)"
     url: "/music/choosing-me-her-version/"
