@@ -42,7 +42,7 @@ songs:
   - title: "Nineteen Summers"
     url: "/music/nineteen-summers/"
     image: "/assets/Nineteen Summers New.jpeg"
-    videostatus: "Public"
+    videostatus: "Private"
 
   - title: "Rise Like Thunder"
     url: "/music/rise-like-thunder/"
@@ -102,7 +102,7 @@ songs:
   - title: "Nineteen Summers"
     url: "/music/nineteen-summers/"
     image: "/assets/Nineteen Summers.jpeg"
-    videostatus: "Private"
+    videostatus: "Public"
 
   - title: "Put You Down"
     url: "/music/put-you-down/"
