@@ -8,6 +8,14 @@ body {
   line-height: 1.6;
 }
 
+.page-title {
+  text-align: center;
+  margin: 40px 0 20px;
+  font-size: 2rem;
+  color: #fff;
+  opacity: 0.9;
+}
+
 /* --------------------------------------------------
    HOMEPAGE SECTIONS (NOT USED ON SONG PAGES)
 -------------------------------------------------- */
