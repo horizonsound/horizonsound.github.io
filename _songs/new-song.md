@@ -4,7 +4,7 @@ title: "SONG TITLE"
 subtitle: "PROJECT NAME | Part X"
 project_title: "PROJECT NAME"
 youtube_id: "YOUTUBE_ID"
-hero_image: "/assets/IMAGE.jpg"
+hero_image: "/assets/hero.jpg"
 
 about: |
   Your description goes here.
