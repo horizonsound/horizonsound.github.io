@@ -17,39 +17,39 @@ spotlight:
     image: "/assets/The Man Behind the Bar.jpeg"
 
   - title: "Until the NightMare Ends"
-    url: "/music/the-man-behind-the-bar/"
+    url: "/music/until-the-nightmare-ends/"
     image: "/assets/Until the Nightmare Ends.jpg"
 
   - title: "Total Eclipse (Years Later)"
-    url: "/music/the-man-behind-the-bar/"
+    url: "/music/total-eclipse-years-later/"
     image: "/assets/Total Eclipse.jpeg"
 
   - title: "Already out the door"
-    url: "/music/the-man-behind-the-bar/"
+    url: "/music/already-out-the-door/"
     image: "/assets/Already Out the Door.jpeg"
 
   - title: "Nineteen Summers"
-    url: "/music/the-man-behind-the-bar/"
+    url: "/music/nineteen-summers/"
     image: "/assets/Nineteen summers New.jpeg"
 
   - title: "Rise Like Thunder"
-    url: "/music/the-man-behind-the-bar/"
+    url: "/music/rise-like-thunder/"
     image: "/assets/Rise Like Thunder New.jpeg"
 
   - title: "One Hell of a Ride"
-    url: "/music/the-man-behind-the-bar/"
+    url: "/music/one-hell-of-a-ride/"
     image: "/assets/One Hell of s Ride.jpeg"
 
   - title: "Time Capsule"
-    url: "/music/the-man-behind-the-bar/"
+    url: "/music/time-capsule/"
     image: "/assets/Time Capsule.jpeg"
 
   - title: "Learning to Live Again"
-    url: "/music/the-man-behind-the-bar/"
+    url: "/music/learning-to-live-again/"
     image: "/assets/Learning to Live Again.jpeg"
 
   - title: "Kaleidoscope"
-    url: "/music/the-man-behind-the-bar/"
+    url: "/music/kaleidoscope/"
     image: "/assets/Kaleidoscope.jpeg"
 
 projects:
