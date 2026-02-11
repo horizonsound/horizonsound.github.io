@@ -1,8 +1,8 @@
 {% if page.next_track_url %}
 
-  {%- assign next = site.data.music.songs | where: "url", page.next_track_url | first -%}
+  {% assign next = site.data.music.songs | where: "url", page.next_track_url | first %}
 
-  {%- if next and next.videostatus == "Public" -%}
+  {% if next and (next.videostatus == "Public" or preview_mode) %}
   <section class="song-next-track">
     <div class="next-track-center">
 
@@ -16,6 +16,6 @@
 
     </div>
   </section>
-  {%- endif -%}
+  {% endif %}
 
 {% endif %}
