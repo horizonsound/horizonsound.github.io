@@ -12,8 +12,10 @@
 
   {% include hero.html %}
 
-  <h1 class="page-title">{{ page.title }}</h1>
-
+  {% unless page.url == "/" %}
+    <h1 class="page-title">{{ page.title }}</h1>
+  {% endunless %}
+  
   <main>
     {{ content }}
   </main>
