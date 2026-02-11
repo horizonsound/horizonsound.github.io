@@ -18,7 +18,7 @@ title: Horizon Sound
      title="Spotlight Music" 
      items=spotlight_public 
 %}
-
+<p>Preview mode: {{ preview_mode }}</p>
 {% assign projects_public = site.data.homepage.projects 
      | where_exp: "item", "item.videostatus == 'Public' or preview_mode" %}
 {% include homepage-tiles.html 
