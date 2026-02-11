@@ -1,7 +1,4 @@
 {% if page.tiles %}
-<section class="song-project">
-
-  <h2 class="section-header">{{ page.project_title }}</h2>
 
   {% assign project_tiles_public = "" | split: "" %}
 
@@ -12,14 +9,21 @@
     {% endif %}
   {% endfor %}
 
-  <div class="tile-grid">
-    {% for tile in project_tiles_public %}
-      <a class="tile" href="{{ tile.url }}">
-        <img src="{{ tile.image }}" alt="{{ tile.title }}">
-        <h3 class="tile-title">{{ tile.title }}</h3>
-      </a>
-    {% endfor %}
-  </div>
+  {% if project_tiles_public.size > 0 %}
+  <section class="song-project">
 
-</section>
+    <h2 class="section-header">{{ page.project_title }}</h2>
+
+    <div class="tile-grid">
+      {% for tile in project_tiles_public %}
+        <a class="tile" href="{{ tile.url }}">
+          <img src="{{ tile.image }}" alt="{{ tile.title }}">
+          <h3 class="tile-title">{{ tile.title }}</h3>
+        </a>
+      {% endfor %}
+    </div>
+
+  </section>
+  {% endif %}
+
 {% endif %}
