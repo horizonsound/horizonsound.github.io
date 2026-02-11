@@ -4,7 +4,7 @@ title: "Lost in Silence"
 subtitle: "A Way Back – Trilogy | Part I"
 project_title: "A Way Back – Trilogy"
 youtube_id: "59teEpeHah8"
-hero_image: "/assets/Temp.jpg"
+hero_image: "/assets/hero.jpg"
 
 about: |
   **Official audio for "Lost in Silence" by Horizon Sound.**
