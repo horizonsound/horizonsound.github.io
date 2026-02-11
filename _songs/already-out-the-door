@@ -5,9 +5,6 @@ subtitle: ""
 project_title: ""
 youtube_id: "EfXB-Yv_XSY"
 hero_image: "/assets/hero.jpg"
-
-
-
 ---
 <!-- ABOUT SECTION -->
 {% include about.html %}
