@@ -90,17 +90,17 @@ lyrics: |
   And we’re both finding our own kind of peace.
 
 tiles:
-  - title: "Song A"
-    url: "/music/song-a/"
-    image: "/assets/song-a.jpg"
+  - title: "Lost in Silence"
+    url: "/music/lost-in-silence/"
+    image: "/assets/lost-in-silence.jpg"
 
-  - title: "Song B"
-    url: "/music/song-b/"
-    image: "/assets/song-b.jpg"
-    
+  - title: "Choosing Me (Her Version)"
+    url: "/music/choosing-me-her-version/"
+    image: "/assets/choosing-me-her-version.jpg" 
+
+next_track_url: "/music/lost-in-silence/"
+next_track_label: "Lost in Silence"
 next_track_title: "Press to hear the next track in the series"
-next_track_url: "/music/NEXT-SONG/"
-next_track_label: "Next Song Title"
 
 ---
 <!-- ABOUT SECTION -->
