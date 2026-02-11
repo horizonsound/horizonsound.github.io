@@ -4,9 +4,11 @@
   <!-- Project / Album Title -->
   <h2 class="section-header">{{ page.project_title }}</h2>
 
+  {% assign project_tiles_public = page.tiles | where: "videostatus", "Public" %}
+
   <!-- Responsive tile grid (shared with homepage) -->
   <div class="tile-grid">
-    {% for tile in page.tiles %}
+    {% for tile in project_tiles_public %}
       <a class="tile" href="{{ tile.url }}">
         <img src="{{ tile.image }}" alt="{{ tile.title }}">
         <h3 class="tile-title">{{ tile.title }}</h3>
