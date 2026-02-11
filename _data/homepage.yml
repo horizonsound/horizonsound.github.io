@@ -19,7 +19,7 @@ new_releases:
   - title: "Choosing Me (His Version)"
     url: "/music/choosing-me-his-version/"
     image: "/assets/choosing-me-his-version.jpg"
-    videostatus: "Private"
+    videostatus: "Public"
 
 spotlight:
   - title: "The Man Behind the Bar"
