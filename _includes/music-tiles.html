@@ -1,6 +1,8 @@
 <section class="music-tiles-view">
+  {% assign public_songs = include.items | where: "videostatus", "Public" %}
+  {% assign sorted = public_songs | sort: "title" %}
+
   <div class="tile-grid">
-    {% assign sorted = include.items | sort: "title" %}
     {% for song in sorted %}
       <a class="tile" href="{{ song.url }}">
         <img src="{{ song.image }}" alt="{{ song.title }}">
