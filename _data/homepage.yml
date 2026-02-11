@@ -40,30 +40,37 @@ spotlight:
   - title: "Already out the door"
     url: "/music/already-out-the-door/"
     image: "/assets/Already Out the Door.jpeg"
+    videostatus: "Public"
 
   - title: "Nineteen Summers"
     url: "/music/nineteen-summers/"
     image: "/assets/Nineteen Summers New.jpeg"
+    videostatus: "Public"
 
   - title: "Rise Like Thunder"
     url: "/music/rise-like-thunder/"
     image: "/assets/Rise Like Thunder New.jpeg"
+    videostatus: "Public"
 
   - title: "One Hell of a Ride"
     url: "/music/one-hell-of-a-ride/"
     image: "/assets/One Hell of a Ride.jpeg"
+    videostatus: "Public"
 
   - title: "Time Capsule"
     url: "/music/time-capsule/"
     image: "/assets/Time Capsule.jpeg"
+    videostatus: "Public"
 
   - title: "Learning to Live Again"
     url: "/music/learning-to-live-again/"
     image: "/assets/Learning to Live Again.jpeg"
+    videostatus: "Public"
 
   - title: "Kaleidoscope"
     url: "/music/kaleidoscope/"
     image: "/assets/Kaleidoscope.jpeg"
+    videostatus: "Public"
 
 projects:
   - title: "Venice Trilogy"
