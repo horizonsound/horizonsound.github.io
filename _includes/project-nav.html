@@ -1,12 +1,17 @@
 {% if page.tiles %}
 <section class="song-project">
 
-  <!-- Project / Album Title -->
   <h2 class="section-header">{{ page.project_title }}</h2>
 
-  {% assign project_tiles_public = page.tiles | where: "videostatus", "Public" %}
+  {% assign project_tiles_public = "" | split: "" %}
 
-  <!-- Responsive tile grid (shared with homepage) -->
+  {% for tile in page.tiles %}
+    {% assign match = site.data.music.songs | where: "url", tile.url | first %}
+    {% if match and match.videostatus == "Public" %}
+      {% assign project_tiles_public = project_tiles_public | push: tile %}
+    {% endif %}
+  {% endfor %}
+
   <div class="tile-grid">
     {% for tile in project_tiles_public %}
       <a class="tile" href="{{ tile.url }}">
