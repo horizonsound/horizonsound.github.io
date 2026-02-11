@@ -14,12 +14,12 @@ new_releases:
   - title: "Choosing Me (Her Version)"
     url: "/music/choosing-me-her-version/"
     image: "/assets/choosing-me-her-version.jpg"
-    videostatus: "Private"
+    videostatus: "Public"
 
   - title: "Choosing Me (His Version)"
     url: "/music/choosing-me-his-version/"
     image: "/assets/choosing-me-his-version.jpg"
-    videostatus: "Private"
+    videostatus: "Public"
 
 spotlight:
   - title: "The Man Behind the Bar"
