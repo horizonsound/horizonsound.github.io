@@ -1,59 +1,79 @@
 songs:
   - title: "Held in the Moment" # Instrumental track
+    subtitle: "" 
+    youtube_id: "vjdOSn3ZuaI" 
     url: "/music/instrumental-held-in-the-moment/"
     image: "/assets/Held in the Moment.jpg"
     videostatus: "Private"
     primary_playlist: "Instrumentals"
 
   - title: "Nineteen Summers Revised"
+    subtitle: "" 
+    youtube_id: "r16qSkxEcI4" 
     url: "/music/nineteen-summers-revised/"
     image: "/assets/Nineteen Summers New.jpeg"
     videostatus: "Private"
     primary_playlist: "Emotional Ballads"
   
   - title: "Sheriff for a Night"
+    subtitle: "" 
+    youtube_id: "oMSIQ5Gv2ZI" 
     url: "/music/sheriff-for-a-night/"
     image: "/assets/Sheriff for the Night.jpeg"
     videostatus: "Private"
     primary_playlist: "Classic Country"
 
   - title: "The Way Water Moves" # Instrumental track
+    subtitle: "" 
+    youtube_id: "kIv8cx7JgRM" 
     url: "/music/instrumental-the-way-water-moves/"
     image: "/assets/The Way Water Moves.jpg"
     videostatus: "Private"
     primary_playlist: "Instrumentals"
 
   - title: "Lines of Light" # Instrumental track
+    subtitle: "" 
+    youtube_id: "hT_epxC2G5c" 
     url: "/music/instrumental-lines-of-light/"
     image: "/assets/Lines of Light.jpg"
     videostatus: "Private"
     primary_playlist: "Instrumentals"
 
   - title: "Wildfire"
+    subtitle: "" 
+    youtube_id: "Tc0wt00clNM" 
     url: "/music/wildfire/"
     image: "/assets/Wildfire.jpg"
     videostatus: "Private"
     primary_playlist: "Modern Country"
 
   - title: "Back to Amarillo"
+    subtitle: "" 
+    youtube_id: "H-_2aKmiFc0" 
     url: "/music/back-to-amarillo/"
     image: "/assets/Back to Amarillo.jpg"
     videostatus: "Private"
     primary_playlist: "Classic Country"
 
   - title: "Forever in a Moment" # Instrumental track
+    subtitle: "" 
+    youtube_id: "906ItpYuLuQ" 
     url: "/music/instrumental-forever-in-a-moment/"
     image: "/assets/Forever in a Moment.jpg"
     videostatus: "Private"
     primary_playlist: "Instrumentals"
 
   - title: "A Touch of Light" # Instrumental track
+    subtitle: "" 
+    youtube_id: "5bfNeRr2UHI" 
     url: "/music/instrumental-a-touch-of-light/"
     image: "/assets/A Touch of Light.jpg"
     videostatus: "Private"
     primary_playlist: "Instrumentals"
 
   - title: "Venice Waters" # Venice-Missing Stamp track
+    subtitle: "Venice | Part 3" 
+    youtube_id: "LzfM1PRxpVU" 
     url: "/music/venice-3-venice-waters/"
     image: "/assets/Venice Waters.jpeg"
     videostatus: "Private"
@@ -61,6 +81,8 @@ songs:
     sequence: 3
 
   - title: "Missing Stamp" # Venice-Missing Stamp track
+    subtitle: "Venice | Part 2" 
+    youtube_id: "fbBWIohiOwI" 
     url: "/music/venice-2-missing-stamp/"
     image: "/assets/Missing Stamp.jpeg"
     videostatus: "Private"
@@ -68,6 +90,8 @@ songs:
     sequence: 2
 
   - title: "Rise Again" # After the Silence Album track
+    subtitle: "After the Silence | Part 13" 
+    youtube_id: "QI30nFvACnI" 
     url: "/music/ats-13-rise-again/"
     image: "/assets/After the Silence.jpeg"
     videostatus: "Private"
@@ -75,6 +99,8 @@ songs:
     sequence: 13
     
   - title: "Someday" # Venice-Missing Stamp track
+    subtitle: "Venice | Part 1" 
+    youtube_id: "2cv-H5tTygs" 
     url: "/music/venice-1-someday/"
     image: "/assets/Someday.jpeg"
     videostatus: "Private"
@@ -82,6 +108,8 @@ songs:
     sequence: 1
   
   - title: "Unsent Letters" # After the Silence Album track
+    subtitle: "After the Silence | Part 12” 
+    youtube_id: "H4y2StKkPyw" 
     url: "/music/ats-12-unsent-letters/"
     image: "/assets/After the Silence.jpeg"
     videostatus: "Private"
@@ -89,6 +117,8 @@ songs:
     sequence: 12
   
   - title: "The Dress I Never Wore" # After the Silence Album track
+    subtitle: "After the Silence | Part 11” 
+    youtube_id: "S40NUKvFhAc" 
     url: "/music/ats-11-the-dress-i-never-wore/"
     image: "/assets/After the Silence.jpeg"
     videostatus: "Private"
@@ -96,6 +126,8 @@ songs:
     sequence: 11
 
   - title: "After Midnight" # Midnight Saga track
+    subtitle: "Midnight Saga | Part 4" 
+    youtube_id: "iGt2wtH6orc" 
     url: "/music/midnight-saga-after-midnight/"
     image: "/assets/After Midnight.jpeg"
     videostatus: "Private"
@@ -103,6 +135,8 @@ songs:
     sequence: 4
 
   - title: "Saltwater" # After the Silence Album track
+    subtitle: "After the Silence | Part 10” 
+    youtube_id: "-yaZGULOHA0" 
     url: "/music/ats-10-saltwater/"
     image: "/assets/After the Silence.jpeg"
     videostatus: "Private"
@@ -110,6 +144,8 @@ songs:
     sequence: 10
 
   - title: "After the Silence" # After the Silence Album track
+    subtitle: "After the Silence | Part 9” 
+    youtube_id: "kmQsqEg8ryA" 
     url: "/music/ats-9-after-the-silence/"
     image: "/assets/After the Silence.jpeg"
     videostatus: "Private"
@@ -117,6 +153,8 @@ songs:
     sequence: 9
 
   - title: "Midnight Madness" # Midnight Saga track
+    subtitle: "Midnight Saga | Part 3” 
+    youtube_id: "HeD2WbErCKg" 
     url: "/music/midnight-saga-midnight-madness/"
     image: "/assets/Midnight Madness.jpeg"
     videostatus: "Private"
@@ -124,6 +162,8 @@ songs:
     sequence: 3
 
   - title: "Ghostlight" # After the Silence Album track
+    subtitle: "After the Silence | Part 8” 
+    youtube_id: "8ArjDO_Lkz0" 
     url: "/music/ats-8-ghostlight/"
     image: "/assets/After the Silence.jpeg"
     videostatus: "Private"
@@ -131,6 +171,8 @@ songs:
     sequence: 8
 
   - title: "If You'd Asked" # After the Silence Album track
+    subtitle: "After the Silence | Part 7” 
+    youtube_id: "YgcaebCs-LY" 
     url: "/music/ats-7-if-youd-asked/"
     image: "/assets/After the Silence.jpeg"
     videostatus: "Private"
@@ -138,6 +180,8 @@ songs:
     sequence: 7
 
   - title: "Midnight Mayhem" # Midnight Saga track
+    subtitle: "Midnight Saga | Part 2” 
+    youtube_id: "Z6AGhE0K-Ro" 
     url: "/music/midnight-saga-midnight-mayhem/"
     image: "/assets/Midnight Mayhem.jpeg"
     videostatus: "Private"
@@ -145,6 +189,8 @@ songs:
     sequence: 2
 
   - title: "Half of Me" # After the Silence Album track
+    subtitle: "After the Silence | Part 6” 
+    youtube_id: "ZJgHgGT0-5g" 
     url: "/music/ats-6-half-of-me/"
     image: "/assets/After the Silence.jpeg"
     videostatus: "Private"
@@ -152,6 +198,8 @@ songs:
     sequence: 6
 
   - title: "Paper Walls" # After the Silence Album track
+    subtitle: "After the Silence | Part 5” 
+    youtube_id: "hYWaf4MIfM0" 
     url: "/music/ats-5-paper-walls/"
     image: "/assets/After the Silence.jpeg"
     videostatus: "Private"
@@ -159,6 +207,8 @@ songs:
     sequence: 5
 
   - title: "Before Midnight" # Midnight Saga track
+    subtitle: "Midnight Saga | Part 1” 
+    youtube_id: "VXQKpK56MCI" 
     url: "/music/midnight-saga-before-midnight/"
     image: "/assets/Before Midnight.jpeg"
     videostatus: "Private"
@@ -168,6 +218,8 @@ songs:
 # Everything below this point is live and public in YouTube - Everything above is scheduled but has not gone live yet.
 
   - title: "The Way We Lied" # After the Silence Album track
+    subtitle: "After the Silence | Part 4” 
+    youtube_id: "ZPqhUzybOIg" 
     url: "/music/ats-4-the-way-we-lied/"
     image: "/assets/After the Silence.jpeg"
     videostatus: "Public"
@@ -175,6 +227,8 @@ songs:
     sequence: 4
 
   - title: "Homesick For You" # After the Silence Album track
+    subtitle: "After the Silence | Part 3” 
+    youtube_id: "8QgA5YL9nIA" 
     url: "/music/ats-3-homesick-for-you/"
     image: "/assets/After the Silence.jpeg"
     videostatus: "Public"
@@ -182,12 +236,16 @@ songs:
     sequence: 3
 
   - title: "The Moment You Breathe" # Instrumental track
+    subtitle: "" 
+    youtube_id: "YNrpz2S--Yk" 
     url: "/music/instrumental-the-moment-you-breathe/"
     image: "/assets/The Moment You Breathe.jpg"
     videostatus: "Public"
     primary_playlist: "Instrumentals"
 
   - title: "Choosing Me (His Version)" # A Way Back Trilogy track
+    subtitle: "A Way Back | Part 3” 
+    youtube_id: "nudUc7DezM0" 
     url: "/music/choosing-me-his-version/"
     image: "/assets/choosing-me-his-version.jpg"
     videostatus: "Public"
@@ -195,6 +253,8 @@ songs:
     sequence: 3
 
   - title: "Borrowed Time" # After the Silence Album track
+    subtitle: "After the Silence | Part 2” 
+    youtube_id: "BrZ1VWJ2lso" 
     url: "/music/ats-2-borrowed-time/"
     image: "/assets/After the Silence.jpeg"
     videostatus: "Public"
@@ -202,6 +262,8 @@ songs:
     sequence: 2
 
   - title: "The Quiet After" # After the Silence Album track
+    subtitle: "After the Silence | Part 1" 
+    youtube_id: "-Yxig5Mq9u4" 
     url: "/music/ats-1-the-quiet-after/"
     image: "/assets/After the Silence.jpeg"
     videostatus: "Public"
@@ -209,6 +271,8 @@ songs:
     sequence: 1
 
   - title: "Choosing Me (Her Version)" # A Way Back Trilogy track
+    subtitle: "A Way Back | Part 2" 
+    youtube_id: "ddDkZl0GrWU" 
     url: "/music/choosing-me-her-version/"
     image: "/assets/choosing-me-her-version.jpg"
     videostatus: "Public"
@@ -216,18 +280,24 @@ songs:
     sequence: 2
 
   - title: "Keep the Light On"
+    subtitle: "" 
+    youtube_id: "f25XTQKjq7Q" 
     url: "/music/keep-the-light-on/"
     image: "/assets/Keep the Light On.jpeg"
     videostatus: "Public"
     primary_playlist: "Pop"
 
   - title: "Hold On Revised"
+    subtitle: "" 
+    youtube_id: "uFxPkq2B0D0" 
     url: "/music/hold-on-revised/"
     image: "/assets/Hold On New.jpeg"
     videostatus: "Public"
     primary_playlist: "Pop"
 
   - title: "Lost in Silence" # A Way Back Trilogy track
+    subtitle: "A Way Back | Part 1” 
+    youtube_id: "59teEpeHah8" 
     url: "/music/lost-in-silence/"
     image: "/assets/lost-in-silence.jpg"
     videostatus: "Public"
@@ -235,180 +305,240 @@ songs:
     sequence: 1
 
   - title: "Rusty"
+    subtitle: "" 
+    youtube_id: "Z8VipNxTybQ" 
     url: "/music/rusty/"
     image: "/assets/Rusty.jpeg"
     videostatus: "Public"
     primary_playlist: "Emotional Ballads"
 
   - title: "Kaleidoscope"
+    subtitle: "" 
+    youtube_id: "YpUFnf6Ke_A" 
     url: "/music/kaleidoscope/"
     image: "/assets/Kaleidoscope.jpeg"
     videostatus: "Public"
     primary_playlist: "Pop"
 
-  - title: "Barroom Brawl"
+  - title: “I Met Her at a Barroom Brawl"
+    subtitle: "" 
+    youtube_id: "2gZPJnFPQZs" 
     url: "/music/barroom-brawl/"
     image: "/assets/Barroom Brawl.jpeg"
     videostatus: "Public"
     primary_playlist: "Southern Rock"
 
   - title: "The Man Behind the Bar"
+    subtitle: "" 
+    youtube_id: "3EOLlL-P120" 
     url: "/music/the-man-behind-the-bar/"
     image: "/assets/The Man Behind the Bar.jpeg"
     videostatus: "Public"
     primary_playlist: "Modern Country"
 
   - title: "Not So Smart Home"
+    subtitle: "" 
+    youtube_id: "ii7gqcUMto4" 
     url: "/music/not-so-smart-home/"
     image: "/assets/Not So Smart Home.jpeg"
     videostatus: "Public"
     primary_playlist: "Comedy"
 
   - title: "Time Capsule"
+    subtitle: "" 
+    youtube_id: "-zbAWN1M_qo" 
     url: "/music/time-capsule/"
     image: "/assets/Time Capsule.jpeg"
     videostatus: "Public"
     primary_playlist: "Modern Country"
 
   - title: "Fixed it Mostly Right"
+    subtitle: "" 
+    youtube_id: "KaEMFaNR40M" 
     url: "/music/fixed-it-mostly-right/"
     image: "/assets/Fixed it Mostly Right.jpeg"
     videostatus: "Public"
     primary_playlist: "Comedy"
 
   - title: "Bottle on the Table"
+    subtitle: "" 
+    youtube_id: "lUa9SbvKg_4" 
     url: "/music/bottle-on-the-table/"
     image: "/assets/Bottle on the Table.jpeg"
     videostatus: "Public"
     primary_playlist: "Classic Country"
 
   - title: "Makin' our way to California"
+    subtitle: "" 
+    youtube_id: "cU4c2_3ITP8" 
     url: "/music/making-our-way-to-california/"
     image: "/assets/Making our way to California.jpeg"
     videostatus: "Public"
     primary_playlist: "Pop"
 
   - title: "Learning to Live Again"
+    subtitle: "" 
+    youtube_id: "NVG_qw_51RQ" 
     url: "/music/learning-to-live-again/"
     image: "/assets/Learning to Live Again.jpeg"
     videostatus: "Public"
     primary_playlist: "Emotional Ballads"
 
   - title: "Never Let Each Other Down"
+    subtitle: "" 
+    youtube_id: "2uKHo8dtINQ" 
     url: "/music/never-let-each-other-down/"
     image: "/assets/Never Let Each Other Down.jpeg"
     videostatus: "Public"
     primary_playlist: "Pop"
 
   - title: "New Again"
+    subtitle: "" 
+    youtube_id: "y4pym_HVGJA" 
     url: "/music/new-again/"
     image: "/assets/New Again.jpeg"
     videostatus: "Public"
     primary_playlist: "Pop"
 
   - title: "Oh, Amber"
+    subtitle: "" 
+    youtube_id: "J2AuQsiPz34" 
     url: "/music/oh-amber/"
     image: "/assets/Oh Amber.jpeg"
     videostatus: "Public"
     primary_playlist: "Emotional Ballads"
 
   - title: "Here's to Us!"
+    subtitle: "" 
+    youtube_id: "aY8-o0Scmjg" 
     url: "/music/heres-to-us/"
     image: "/assets/Heres to Us.jpeg"
     videostatus: "Public"
     primary_playlist: "Pop"
 
   - title: "Put You Down"
+    subtitle: "" 
+    youtube_id: "niNtLrtDcBs" 
     url: "/music/put-you-down/"
     image: "/assets/Put You Down.jpeg"
     videostatus: "Public"
     primary_playlist: "Pop"
 
   - title: "Gimme Three Steps, and I'm Gone"
+    subtitle: "" 
+    youtube_id: "YVOzEcUdS9E" 
     url: "/music/gimme-three-steps-and-im-gone/"
     image: "/assets/Gimme Three Steps and Im Gone.jpeg"
     videostatus: "Public"
     primary_playlist: "Southern Rock"
 
   - title: "All Around the World"
+    subtitle: "" 
+    youtube_id: "kIth3U12KeI" 
     url: "/music/all-around-the-world/"
     image: "/assets/All Around the World.jpeg"
     videostatus: "Public"
     primary_playlist: "Pop"
 
   - title: "Already out the door"
+    subtitle: "" 
+    youtube_id: "EfXB-Yv_XSY" 
     url: "/music/already-out-the-door/"
     image: "/assets/Already Out the Door.jpeg"
     videostatus: "Public"
     primary_playlist: "Modern Country"
 
   - title: "Midnight Mayhem Original"
+    subtitle: "" 
+    youtube_id: "1B1nGWaWgD0" 
     url: "/music/midnight-mayhem/"
     image: "/assets/Midnight Mayhem Orig.jpeg"
     videostatus: "Public"
     primary_playlist: "Pop"
 
   - title: "Don't Let the Summer End"
+    subtitle: "" 
+    youtube_id: "g61655Q2_mw" 
     url: "/music/dont-let-the-summer-end/"
     image: "/assets/Don't Let the Summer End.jpeg"
     videostatus: "Public"
     primary_playlist: "Pop"
 
   - title: "Rising Up"
+    subtitle: "" 
+    youtube_id: "miFZlNNAriw" 
     url: "/music/rising-up/"
     image: "/assets/Rising Up.jpeg"
     videostatus: "Public"
     primary_playlist: "Pop"
 
   - title: "Rise Like Thunder"
+    subtitle: "" 
+    youtube_id: "g_AZ5B9ssFQ" 
     url: "/music/rise-like-thunder/"
     image: "/assets/Rise Like Thunder New.jpeg"
     videostatus: "Public"
     primary_playlist: "Pop"
 
   - title: "I'm Holding On"
+    subtitle: "" 
+    youtube_id: "Y97CNIAaBIA" 
     url: "/music/im-holding-on/"
     image: "/assets/Im Holding On.jpeg"
     videostatus: "Public"
     primary_playlist: "Emotional Ballads"
 
   - title: "Hold On Original"
+    subtitle: "" 
+    youtube_id: "RpuAQzywuWM" 
     url: "/music/hold-on/"
     image: "/assets/Hold On.jpeg"
     videostatus: "Public"
     primary_playlist: "Pop"
 
   - title: "Total Eclipse (Years Later)"
+    subtitle: "" 
+    youtube_id: "vlB58WPvjns" 
     url: "/music/total-eclipse-years-later/"
     image: "/assets/Total Eclipse.jpeg"
     videostatus: "Public"
     primary_playlist: "Pop"
 
   - title: "One Hell of a Ride"
+    subtitle: "" 
+    youtube_id: "3iAmG5GLC7k" 
     url: "/music/one-hell-of-a-ride/"
     image: "/assets/One Hell of a Ride.jpeg"
     videostatus: "Public"
     primary_playlist: "Southern Rock"
 
   - title: "Nineteen Summers Original"
+    subtitle: "" 
+    youtube_id: "HuGf30ChZkI" 
     url: "/music/nineteen-summers/"
     image: "/assets/Nineteen Summers.jpeg"
     videostatus: "Public"
     primary_playlist: "Emotional Ballads"
 
   - title: "A Quiet Little Voice"
+    subtitle: "" 
+    youtube_id: "_YvJOMi6lP0" 
     url: "/music/a-quiet-little-voice/"
     image: "/assets/A Quiet Little Voice.jpeg"
     videostatus: "Public"
     primary_playlist: "Emotional Ballads"
 
   - title: "Becoming Me"
+    subtitle: "" 
+    youtube_id: "hIh_5AX4Gek" 
     url: "/music/becoming-me/"
     image: "/assets/Becoming Me.jpeg"
     videostatus: "Public"
     primary_playlist: "Pop"
 
   - title: "Until the Nightmare Ends"
+    subtitle: "" 
+    youtube_id: "gDkCGYOpWU0" 
     url: "/music/until-the-nightmare-ends/"
     image: "/assets/Until the Nightmare Ends.JPG"
     videostatus: "Public"
