@@ -1,0 +1,55 @@
+---
+layout: song
+title: "The Moment You Breathe"
+subtitle: ""
+project_title: ""
+youtube_id: "YNrpz2S--Yk"
+hero_image: "/assets/hero.jpg"
+
+about: |
+  Official audio for “The Moment You Breathe” by Horizon Sound.
+
+  “The Moment You Breathe” is a calm, cinematic instrumental built around soft ambient textures, gentle movement, and a quiet emotional lift. Warm pads, drifting light, and subtle rhythmic pulses create a sense of stillness — the kind of moment where the world slows down just long enough for you to feel present again. It’s reflective, peaceful, and deeply atmospheric, capturing the quiet inhale before life begins to move once more.
+  
+  🎧 Vibe: calm, reflective, cinematic
+  🎼 Style: ambient instrumental, atmospheric, modern score
+  🎛️ Production: soft pads, airy textures, subtle motion, warm tonal palette
+  ✨ Mood: peaceful, introspective, luminous, grounding
+    
+tiles:
+  - title: "A Touch of Light"
+    url: "/music/instrumental-a-touch-of-light/"
+    image: "/assets/A Touch of Light.jpg"
+
+  - title: "Forever in a Moment"
+    url: "/music/instrumental-forever-in-a-moment/"
+    image: "/assets/Forever in a Moment.jpg"
+
+  - title: "Lines of Light"
+    url: "/music/instrumental-lines-of-light/"
+    image: "/assets/Lines of Light.jpg"
+
+  - title: "The Way Water Moves"
+    url: "/music/instrumental-the-way-water-moves/"
+    image: "/assets/The Way Water Moves.jpg"
+
+  - title: "Held in the Moment"
+    url: "/music/instrumental-held-in-the-moment/"
+    image: "/assets/Held in the Moment.jpg"
+
+  - title: "The Moment You Breathe"
+    url: "/music/instrumental-the-moment-you-breathe/"
+    image: "/assets/The Moment You Breathe.jpg"
+
+---
+<!-- ABOUT SECTION -->
+{% include about.html %}
+
+<!-- LYRICS SECTION -->
+{% include lyrics.html %}
+
+<!-- PROJECT NAV -->
+{% include project-nav.html %}
+
+<!-- NEXT TRACK BUTTON -->
+{% include next-track.html %}
