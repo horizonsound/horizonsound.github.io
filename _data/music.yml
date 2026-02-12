@@ -3,56 +3,69 @@ songs:
     url: "/music/instrumental-held-in-the-moment/"
     image: "/assets/Held in the Moment.jpg"
     videostatus: "Private"
+    primary_playlist: ""
 
   - title: "Nineteen Summers Revised"
     url: "/music/nineteen-summers-revised/"
     image: "/assets/Nineteen Summers New.jpeg"
     videostatus: "Private"
+    primary_playlist: ""
   
   - title: "Sheriff for a Night"
     url: "/music/sheriff-for-a-night/"
     image: "/assets/Sheriff for the Night.jpeg"
     videostatus: "Private"
+    primary_playlist: ""
 
   - title: "The Way Water Moves" # Instrumental track
     url: "/music/instrumental-the-way-water-moves/"
     image: "/assets/The Way Water Moves.jpg"
     videostatus: "Private"
+    primary_playlist: ""
 
   - title: "Lines of Light" # Instrumental track
     url: "/music/instrumental-lines-of-light/"
     image: "/assets/Lines of Light.jpg"
     videostatus: "Private"
+    primary_playlist: ""
 
   - title: "Wildfire"
     url: "/music/wildfire/"
     image: "/assets/Wildfire.jpg"
     videostatus: "Private"
+    primary_playlist: ""
 
   - title: "Back to Amarillo"
     url: "/music/back-to-amarillo/"
     image: "/assets/Back to Amarillo.jpg"
     videostatus: "Private"
+    primary_playlist: ""
 
   - title: "Forever in a Moment" # Instrumental track
     url: "/music/instrumental-forever-in-a-moment/"
     image: "/assets/Forever in a Moment.jpg"
     videostatus: "Private"
+    primary_playlist: ""
 
   - title: "A Touch of Light" # Instrumental track
     url: "/music/instrumental-a-touch-of-light/"
     image: "/assets/A Touch of Light.jpg"
     videostatus: "Private"
+    primary_playlist: ""
 
   - title: "Venice Waters" # Venice-Missing Stamp track
     url: "/music/venice-3-venice-waters/"
     image: "/assets/Venice Waters.jpeg"
     videostatus: "Private"
+    primary_playlist: "Venice - Missing Stamp"
+    sequence: 3
 
   - title: "Missing Stamp" # Venice-Missing Stamp track
     url: "/music/venice-2-missing-stamp/"
     image: "/assets/Missing Stamp.jpeg"
     videostatus: "Private"
+    primary_playlist: "Venice - Missing Stamp"
+    sequence: 2
 
   - title: "Rise Again" # After the Silence Album track
     url: "/music/ats-13-rise-again/"
@@ -65,6 +78,8 @@ songs:
     url: "/music/venice-1-someday/"
     image: "/assets/Someday.jpeg"
     videostatus: "Private"
+    primary_playlist: "Venice - Missing Stamp"
+    sequence: 1
   
   - title: "Unsent Letters" # After the Silence Album track
     url: "/music/ats-12-unsent-letters/"
@@ -84,6 +99,8 @@ songs:
     url: "/music/midnight-saga-after-midnight/"
     image: "/assets/After Midnight.jpeg"
     videostatus: "Private"
+    primary_playlist: "Midnight Saga"
+    sequence: 4
 
   - title: "Saltwater" # After the Silence Album track
     url: "/music/ats-10-saltwater/"
@@ -103,6 +120,8 @@ songs:
     url: "/music/midnight-saga-midnight-madness/"
     image: "/assets/Midnight Madness.jpeg"
     videostatus: "Private"
+    primary_playlist: "Midnight Saga"
+    sequence: 3
 
   - title: "Ghostlight" # After the Silence Album track
     url: "/music/ats-8-ghostlight/"
@@ -122,6 +141,8 @@ songs:
     url: "/music/midnight-saga-midnight-mayhem/"
     image: "/assets/Midnight Mayhem.jpeg"
     videostatus: "Private"
+    primary_playlist: "Midnight Saga"
+    sequence: 2
 
   - title: "Half of Me" # After the Silence Album track
     url: "/music/ats-6-half-of-me/"
@@ -141,6 +162,8 @@ songs:
     url: "/music/midnight-saga-before-midnight/"
     image: "/assets/Before Midnight.jpeg"
     videostatus: "Private"
+    primary_playlist: "Midnight Saga"
+    sequence: 1
 
 # Everything below this point is live and public in YouTube - Everything above is scheduled but has not gone live yet.
 
@@ -162,11 +185,14 @@ songs:
     url: "/music/instrumental-the-moment-you-breathe/"
     image: "/assets/The Moment You Breathe.jpg"
     videostatus: "Public"
+    primary_playlist: ""
 
   - title: "Choosing Me (His Version)" # A Way Back Trilogy track
     url: "/music/choosing-me-his-version/"
     image: "/assets/choosing-me-his-version.jpg"
     videostatus: "Public"
+    primary_playlist: "A Way Back Trilogy"
+    sequence: 3
 
   - title: "Borrowed Time" # After the Silence Album track
     url: "/music/ats-2-borrowed-time/"
@@ -186,168 +212,204 @@ songs:
     url: "/music/choosing-me-her-version/"
     image: "/assets/choosing-me-her-version.jpg"
     videostatus: "Public"
+    primary_playlist: "A Way Back Trilogy"
+    sequence: 2
 
   - title: "Keep the Light On"
     url: "/music/keep-the-light-on/"
     image: "/assets/Keep the Light On.jpeg"
     videostatus: "Public"
+    primary_playlist: ""
 
   - title: "Hold On Revised"
     url: "/music/hold-on-revised/"
     image: "/assets/Hold On New.jpeg"
     videostatus: "Public"
+    primary_playlist: ""
 
   - title: "Lost in Silence" # A Way Back Trilogy track
     url: "/music/lost-in-silence/"
     image: "/assets/lost-in-silence.jpg"
     videostatus: "Public"
+    primary_playlist: "A Way Back Trilogy"
+    sequence: 1
 
   - title: "Rusty"
     url: "/music/rusty/"
     image: "/assets/Rusty.jpeg"
     videostatus: "Public"
+    primary_playlist: ""
 
   - title: "Kaleidoscope"
     url: "/music/kaleidoscope/"
     image: "/assets/Kaleidoscope.jpeg"
     videostatus: "Public"
+    primary_playlist: ""
 
   - title: "Barroom Brawl"
     url: "/music/barroom-brawl/"
     image: "/assets/Barroom Brawl.jpeg"
     videostatus: "Public"
+    primary_playlist: ""
 
   - title: "The Man Behind the Bar"
     url: "/music/the-man-behind-the-bar/"
     image: "/assets/The Man Behind the Bar.jpeg"
     videostatus: "Public"
+    primary_playlist: ""
 
   - title: "Not So Smart Home"
     url: "/music/not-so-smart-home/"
     image: "/assets/Not So Smart Home.jpeg"
     videostatus: "Public"
+    primary_playlist: ""
 
   - title: "Time Capsule"
     url: "/music/time-capsule/"
     image: "/assets/Time Capsule.jpeg"
     videostatus: "Public"
+    primary_playlist: ""
 
   - title: "Fixed it Mostly Right"
     url: "/music/fixed-it-mostly-right/"
     image: "/assets/Fixed it Mostly Right.jpeg"
     videostatus: "Public"
+    primary_playlist: ""
 
   - title: "Bottle on the Table"
     url: "/music/bottle-on-the-table/"
     image: "/assets/Bottle on the Table.jpeg"
     videostatus: "Public"
+    primary_playlist: ""
 
   - title: "Makin' our way to California"
     url: "/music/making-our-way-to-california/"
     image: "/assets/Making our way to California.jpeg"
     videostatus: "Public"
+    primary_playlist: ""
 
   - title: "Learning to Live Again"
     url: "/music/learning-to-live-again/"
     image: "/assets/Learning to Live Again.jpeg"
     videostatus: "Public"
+    primary_playlist: ""
 
   - title: "Never Let Each Other Down"
     url: "/music/never-let-each-other-down/"
     image: "/assets/Never Let Each Other Down.jpeg"
     videostatus: "Public"
+    primary_playlist: ""
 
   - title: "New Again"
     url: "/music/new-again/"
     image: "/assets/New Again.jpeg"
     videostatus: "Public"
+    primary_playlist: ""
 
   - title: "Oh, Amber"
     url: "/music/oh-amber/"
     image: "/assets/Oh Amber.jpeg"
     videostatus: "Public"
+    primary_playlist: ""
 
   - title: "Here's to Us!"
     url: "/music/heres-to-us/"
     image: "/assets/Heres to Us.jpeg"
     videostatus: "Public"
+    primary_playlist: ""
 
   - title: "Put You Down"
     url: "/music/put-you-down/"
     image: "/assets/Put You Down.jpeg"
     videostatus: "Public"
+    primary_playlist: ""
 
   - title: "Gimme Three Steps, and I'm Gone"
     url: "/music/gimme-three-steps-and-im-gone/"
     image: "/assets/Gimme Three Steps and Im Gone.jpeg"
     videostatus: "Public"
+    primary_playlist: ""
 
   - title: "All Around the World"
     url: "/music/all-around-the-world/"
     image: "/assets/All Around the World.jpeg"
     videostatus: "Public"
+    primary_playlist: ""
 
   - title: "Already out the door"
     url: "/music/already-out-the-door/"
     image: "/assets/Already Out the Door.jpeg"
     videostatus: "Public"
+    primary_playlist: ""
 
   - title: "Midnight Mayhem Original"
     url: "/music/midnight-mayhem/"
     image: "/assets/Midnight Mayhem Orig.jpeg"
     videostatus: "Public"
+    primary_playlist: ""
 
   - title: "Don't Let the Summer End"
     url: "/music/dont-let-the-summer-end/"
     image: "/assets/Don't Let the Summer End.jpeg"
     videostatus: "Public"
+    primary_playlist: ""
 
   - title: "Rising Up"
     url: "/music/rising-up/"
     image: "/assets/Rising Up.jpeg"
     videostatus: "Public"
+    primary_playlist: ""
 
   - title: "Rise Like Thunder"
     url: "/music/rise-like-thunder/"
     image: "/assets/Rise Like Thunder New.jpeg"
     videostatus: "Public"
+    primary_playlist: ""
 
   - title: "I'm Holding On"
     url: "/music/im-holding-on/"
     image: "/assets/Im Holding On.jpeg"
     videostatus: "Public"
+    primary_playlist: ""
 
   - title: "Hold On Original"
     url: "/music/hold-on/"
     image: "/assets/Hold On.jpeg"
     videostatus: "Public"
+    primary_playlist: ""
 
   - title: "Total Eclipse (Years Later)"
     url: "/music/total-eclipse-years-later/"
     image: "/assets/Total Eclipse.jpeg"
     videostatus: "Public"
+    primary_playlist: ""
 
   - title: "One Hell of a Ride"
     url: "/music/one-hell-of-a-ride/"
     image: "/assets/One Hell of a Ride.jpeg"
     videostatus: "Public"
+    primary_playlist: ""
 
   - title: "Nineteen Summers Original"
     url: "/music/nineteen-summers/"
     image: "/assets/Nineteen Summers.jpeg"
     videostatus: "Public"
+    primary_playlist: ""
 
   - title: "A Quiet Little Voice"
     url: "/music/a-quiet-little-voice/"
     image: "/assets/A Quiet Little Voice.jpeg"
     videostatus: "Public"
+    primary_playlist: ""
 
   - title: "Becoming Me"
     url: "/music/becoming-me/"
     image: "/assets/Becoming Me.jpeg"
     videostatus: "Public"
+    primary_playlist: ""
 
   - title: "Until the Nightmare Ends"
     url: "/music/until-the-nightmare-ends/"
     image: "/assets/Until the Nightmare Ends.JPG"
     videostatus: "Public"
+    primary_playlist: ""
