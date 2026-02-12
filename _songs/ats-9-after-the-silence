@@ -93,11 +93,11 @@ lyrics: |
 tiles:
   - title: "1. The Quiet After"
     url: "/music/ats-1-the-quiet-after/"
-    image: "/assets/After the Silence.jpg"
+    image: "/assets/Before Midnight.jpeg"
 
   - title: "2. Borrowed Time"
     url: "/music/ats-2-borrowed-time/"
-    image: "/assets/After the Silence.jpg"
+    image: "/assets/Before Midnight.jpeg"
 
   - title: "3. Homesick for You"
     url: "/music/ats-3-homesick-for-you/"
