@@ -197,22 +197,22 @@ songs:
   - title: "Before Midnight"
     url: "/music//"
     image: "/assets/Before Midnight.jpeg"
-    videostatus: "Private"
+    videostatus: "Public"
 
   - title: "Midnight Mayhem"
     url: "/music//"
     image: "/assets/Midnight Mayhem.jpeg"
-    videostatus: "Private"
+    videostatus: "Public"
 
   - title: "Midnight Madness"
     url: "/music//"
     image: "/assets/Midnight Madness.jpeg"
-    videostatus: "Private"
+    videostatus: "Public"
 
   - title: "After Midnight"
     url: "/music//"
     image: "/assets/After Midnight.jpeg"
-    videostatus: "Private"
+    videostatus: "Public"
 
   - title: "Paper Walls"
     url: "/music//"
