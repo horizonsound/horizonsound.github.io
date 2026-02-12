@@ -85,10 +85,6 @@ lyrics: |
   No hard feelings, just a quiet release—
   And we’re both finding our own kind of peace.
 
-next_track_url: "/music/lost-in-silence/"
-next_track_label: "Lost in Silence"
-next_track_title: "Press to hear the first track in the series"
-
 ---
 <!-- ABOUT SECTION -->
 {% include about.html %}
