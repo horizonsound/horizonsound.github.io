@@ -87,9 +87,6 @@ lyrics: |
 <!-- LYRICS SECTION -->
 {% include lyrics.html %}
 
-<!-- SONG PLAYLIST (now playlist-driven) -->
-{% include song-playlist.html current_song=current_song %}
-
 <!-- NEXT TRACK BUTTON -->
 {% include next-track.html %}
 
