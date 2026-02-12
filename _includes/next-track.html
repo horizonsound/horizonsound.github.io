@@ -1,17 +1,63 @@
-{% if page.next_track_url %}
+{% comment %}
+1. Identify the current song from the data file
+{% endcomment %}
+{% assign current_song = site.data.music.songs | where: "url", page.url | first %}
 
-  {% assign next = site.data.music.songs | where: "url", page.next_track_url | first %}
+{% if current_song and current_song.primary_playlist != "" %}
 
-  {% if next and (next.videostatus == "Public") %}
+  {% assign playlist_name = current_song.primary_playlist %}
+
+  {% comment %}
+  2. Pull all songs in the same playlist
+  {% endcomment %}
+  {% assign related = site.data.music.songs | where: "primary_playlist", playlist_name %}
+
+  {% comment %}
+  3. Filter to Public only
+  {% endcomment %}
+  {% assign related = related | where: "videostatus", "Public" %}
+
+  {% comment %}
+  4. Sort by sequence if present, otherwise by title
+  {% endcomment %}
+  {% assign sorted_by_sequence = related | sort: "sequence" %}
+  {% assign first_item = sorted_by_sequence | first %}
+
+  {% if first_item.sequence %}
+    {% assign playlist_sorted = sorted_by_sequence %}
+  {% else %}
+    {% assign playlist_sorted = related | sort: "title" %}
+  {% endif %}
+
+  {% comment %}
+  5. Find the current song's index in the sorted playlist
+  {% endcomment %}
+  {% assign current_index = nil %}
+  {% for s in playlist_sorted %}
+    {% if s.url == current_song.url %}
+      {% assign current_index = forloop.index0 %}
+    {% endif %}
+  {% endfor %}
+
+  {% comment %}
+  6. Determine the next song (if any)
+  {% endcomment %}
+  {% if current_index != nil %}
+    {% assign next_index = current_index | plus: 1 %}
+    {% assign next_song = playlist_sorted[next_index] %}
+  {% endif %}
+
+  {% comment %}
+  7. Render the Next Track button only if a next song exists
+  {% endcomment %}
+  {% if next_song %}
   <section class="song-next-track">
     <div class="next-track-center">
 
-      {% if page.next_track_title %}
-        <h2 class="next-track-header">{{ page.next_track_title }}</h2>
-      {% endif %}
+      <h2 class="next-track-header">Press to hear the next track in the series</h2>
 
-      <a href="{{ page.next_track_url }}" class="btn-primary next-track-button">
-        {{ page.next_track_label }}
+      <a href="{{ next_song.url }}" class="btn-primary next-track-button">
+        {{ next_song.title }}
       </a>
 
     </div>
