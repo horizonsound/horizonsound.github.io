@@ -92,10 +92,6 @@ lyrics: |
   The room no longer holds your memory,
   And I’m learning how to stand here on my own.
 
-next_track_title: "Press to hear the next track in the After the Silence Album"
-next_track_url: "/music/ats-2-borrowed-time/"
-next_track_label: "2. Borrowed Time"
-
 ---
 <!-- ABOUT SECTION -->
 {% include about.html %}
