@@ -92,10 +92,6 @@ lyrics: |
   I’m stronger now…
   Because I let them fall.
 
-next_track_title: "Press to hear the next track in the After the Silence Album"
-next_track_url: "/music/ats-6-half-of-me/"
-next_track_label: "6. Half of Me"
-
 ---
 <!-- ABOUT SECTION -->
 {% include about.html %}
