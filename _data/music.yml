@@ -1,12 +1,139 @@
 songs:
-  - title: "Lost in Silence"
-    url: "/music/lost-in-silence/"
-    image: "/assets/lost-in-silence.jpg"
+  - title: "Held in the Moment"
+    url: "/music/instrumental-held-in-the-moment/"
+    image: "/assets/Held in the Moment.jpg"
+    videostatus: "Private"
+
+*****
+  
+    - title: "Sheriff for a Night"
+    url: "/music/sheriff-for-a-night/"
+    image: "/assets/Sheriff for the Night.jpeg"
+    videostatus: "Private"
+
+  - title: "The Way Water Moves"
+    url: "/music/instrumental-the-way-water-moves/"
+    image: "/assets/The Way Water Moves.jpg"
+    videostatus: "Private"
+
+  - title: "Lines of Light"
+    url: "/music/instrumental-lines-of-light/"
+    image: "/assets/Lines of Light.jpg"
+    videostatus: "Private"
+
+  - title: "Wildfire"
+    url: "/music/wildfire/"
+    image: "/assets/Wildfire.jpg"
+    videostatus: "Private"
+
+  - title: "Back to Amarillo"
+    url: "/music/back-to-amarillo/"
+    image: "/assets/Back to Amarillo.jpg"
+    videostatus: "Private"
+
+  - title: "Forever in a Moment"
+    url: "/music/instrumental-forever-in-a-moment/"
+    image: "/assets/Forever in a Moment.jpg"
+    videostatus: "Private"
+
+  - title: "A Touch of Light"
+    url: "/music/instrumental-a-touch-of-light/"
+    image: "/assets/A Touch of Light.jpg"
+    videostatus: "Private"
+
+  - title: "Venice Waters"
+    url: "/music/venice-3-venice-waters/"
+    image: "/assets/Venice Waters.jpeg"
+    videostatus: "Private"
+
+  - title: "Missing Stamp"
+    url: "/music/venice-2-missing-stamp/"
+    image: "/assets/Missing Stamp.jpeg"
+    videostatus: "Private"
+
+  - title: "Rise Again"
+    url: "/music/ats-13-rise-again/"
+    image: "/assets/After the Silence.jpeg"
+    videostatus: "Private"
+
+  - title: "Someday"
+    url: "/music/venice-1-someday/"
+    image: "/assets/Someday.jpeg"
+    videostatus: "Private"
+  
+  - title: "Unsent Letters"
+    url: "/music/ats-12-unsent-letters/"
+    image: "/assets/After the Silence.jpeg"
+    videostatus: "Private"
+  
+  - title: "The Dress I Never Wore"
+    url: "/music/ats-11-the-dress-i-never-wore/"
+    image: "/assets/After the Silence.jpeg"
+    videostatus: "Private"
+
+  - title: "After Midnight"
+    url: "/music/midnight-saga-after-midnight/"
+    image: "/assets/After Midnight.jpeg"
+    videostatus: "Private"
+
+  - title: "Saltwater"
+    url: "/music/ats-10-saltwater/"
+    image: "/assets/After the Silence.jpeg"
+    videostatus: "Private"
+
+  - title: "After the Silence"
+    url: "/music/ats-9-after-the-silence/"
+    image: "/assets/After the Silence.jpeg"
+    videostatus: "Private"
+
+  - title: "Midnight Madness"
+    url: "/music/midnight-saga-midnight-madness/"
+    image: "/assets/Midnight Madness.jpeg"
+    videostatus: "Private"
+
+  - title: "Ghostlight"
+    url: "/music/ats-8-ghostlight/"
+    image: "/assets/After the Silence.jpeg"
+    videostatus: "Private"
+
+  - title: "If You'd Asked"
+    url: "/music/ats-7-if-youd-asked/"
+    image: "/assets/After the Silence.jpeg"
+    videostatus: "Private"
+
+  - title: "Midnight Mayhem"
+    url: "/music/midnight-saga-midnight-mayhem/"
+    image: "/assets/Midnight Mayhem.jpeg"
+    videostatus: "Private"
+
+  - title: "Half of Me"
+    url: "/music/ats-6-half-of-me/"
+    image: "/assets/After the Silence.jpeg"
+    videostatus: "Private"
+
+  - title: "Paper Walls"
+    url: "/music/ats-5-paper-walls/"
+    image: "/assets/After the Silence.jpeg"
+    videostatus: "Private"
+
+  - title: "Before Midnight"
+    url: "/music/midnight-saga-before-midnight/"
+    image: "/assets/Before Midnight.jpeg"
+    videostatus: "Private"
+
+  - title: "The Way We Lied"
+    url: "/music/ats-4-the-way-we-lied/"
+    image: "/assets/After the Silence.jpeg"
     videostatus: "Public"
 
-  - title: "Choosing Me (Her Version)"
-    url: "/music/choosing-me-her-version/"
-    image: "/assets/choosing-me-her-version.jpg"
+  - title: "Homesick For You"
+    url: "/music/ats-3-homesick-for-you/"
+    image: "/assets/After the Silence.jpeg"
+    videostatus: "Public"
+
+  - title: "The Moment You Breathe"
+    url: "/music/instrumental-the-moment-you-breathe/"
+    image: "/assets/The Moment You Breathe.jpg"
     videostatus: "Public"
 
   - title: "Choosing Me (His Version)"
@@ -14,49 +141,34 @@ songs:
     image: "/assets/choosing-me-his-version.jpg"
     videostatus: "Public"
 
-  - title: "A Quiet Little Voice"
-    url: "/music/a-quiet-little-voice/"
-    image: "/assets/A Quiet Little Voice.jpeg"
+  - title: "Borrowed Time"
+    url: "/music/ats-2-borrowed-time/"
+    image: "/assets/After the Silence.jpeg"
     videostatus: "Public"
 
-  - title: "The Man Behind the Bar"
-    url: "/music/the-man-behind-the-bar/"
-    image: "/assets/The Man Behind the Bar.jpeg"
+  - title: "The Quiet After"
+    url: "/music/ats-1-the-quiet-after/"
+    image: "/assets/After the Silence.jpeg"
     videostatus: "Public"
 
-  - title: "Until the Nightmare Ends"
-    url: "/music/until-the-nightmare-ends/"
-    image: "/assets/Until the Nightmare Ends.JPG"
+  - title: "Choosing Me (Her Version)"
+    url: "/music/choosing-me-her-version/"
+    image: "/assets/choosing-me-her-version.jpg"
     videostatus: "Public"
 
-  - title: "Total Eclipse (Years Later)"
-    url: "/music/total-eclipse-years-later/"
-    image: "/assets/Total Eclipse.jpeg"
+********
+
+
+********
+
+  - title: "Lost in Silence"
+    url: "/music/lost-in-silence/"
+    image: "/assets/lost-in-silence.jpg"
     videostatus: "Public"
 
-  - title: "Already out the door"
-    url: "/music/already-out-the-door/"
-    image: "/assets/Already Out the Door.jpeg"
-    videostatus: "Public"
-
-  - title: "Rise Like Thunder"
-    url: "/music/rise-like-thunder/"
-    image: "/assets/Rise Like Thunder New.jpeg"
-    videostatus: "Public"
-
-  - title: "One Hell of a Ride"
-    url: "/music/one-hell-of-a-ride/"
-    image: "/assets/One Hell of a Ride.jpeg"
-    videostatus: "Public"
-
-  - title: "Time Capsule"
-    url: "/music/time-capsule/"
-    image: "/assets/Time Capsule.jpeg"
-    videostatus: "Public"
-
-  - title: "Learning to Live Again"
-    url: "/music/learning-to-live-again/"
-    image: "/assets/Learning to Live Again.jpeg"
+  - title: "Rusty"
+    url: "/music/rusty/"
+    image: "/assets/Rusty.jpeg"
     videostatus: "Public"
 
   - title: "Kaleidoscope"
@@ -64,69 +176,24 @@ songs:
     image: "/assets/Kaleidoscope.jpeg"
     videostatus: "Public"
 
+  - title: "Barroom Brawl"
+    url: "/music/barroom-brawl/"
+    image: "/assets/Barroom Brawl.jpeg"
+    videostatus: "Public"
+
+  - title: "The Man Behind the Bar"
+    url: "/music/the-man-behind-the-bar/"
+    image: "/assets/The Man Behind the Bar.jpeg"
+    videostatus: "Public"
+
   - title: "Not So Smart Home"
     url: "/music/not-so-smart-home/"
     image: "/assets/Not So Smart Home.jpeg"
     videostatus: "Public"
 
-  - title: "New Again"
-    url: "/music/new-again/"
-    image: "/assets/New Again.jpeg"
-    videostatus: "Public"
-
-  - title: "All Around the World"
-    url: "/music/all-around-the-world/"
-    image: "/assets/All Around the World.jpeg"
-    videostatus: "Public"
-
-  - title: "Makin' our way to California"
-    url: "/music/making-our-way-to-california/"
-    image: "/assets/Making our way to California.jpeg"
-    videostatus: "Public"
-
-  - title: "Don't Let the Summer End"
-    url: "/music/dont-let-the-summer-end/"
-    image: "/assets/Don't Let the Summer End.jpeg"
-    videostatus: "Public"
-
-  - title: "Hold On"
-    url: "/music/hold-on/"
-    image: "/assets/Hold On.jpeg"
-    videostatus: "Public"
-
-  - title: "Nineteen Summers"
-    url: "/music/nineteen-summers/"
-    image: "/assets/Nineteen Summers.jpeg"
-    videostatus: "Public"
-
-  - title: "Put You Down"
-    url: "/music/put-you-down/"
-    image: "/assets/Put You Down.jpeg"
-    videostatus: "Public"
-
-  - title: "Never Let Each Other Down"
-    url: "/music/never-let-each-other-down/"
-    image: "/assets/Never Let Each Other Down.jpeg"
-    videostatus: "Public"
-
-  - title: "I'm Holding On"
-    url: "/music/im-holding-on/"
-    image: "/assets/Im Holding On.jpeg"
-    videostatus: "Public"
-
-  - title: "Bottle on the Table"
-    url: "/music/bottle-on-the-table/"
-    image: "/assets/Bottle on the Table.jpeg"
-    videostatus: "Public"
-
-  - title: "Rising Up"
-    url: "/music/rising-up/"
-    image: "/assets/Rising Up.jpeg"
-    videostatus: "Public"
-
-  - title: "Becoming Me"
-    url: "/music/becoming-me/"
-    image: "/assets/Becoming Me.jpeg"
+  - title: "Time Capsule"
+    url: "/music/time-capsule/"
+    image: "/assets/Time Capsule.jpeg"
     videostatus: "Public"
 
   - title: "Fixed it Mostly Right"
@@ -134,19 +201,29 @@ songs:
     image: "/assets/Fixed it Mostly Right.jpeg"
     videostatus: "Public"
 
-  - title: "Midnight Mayhem"
-    url: "/music/midnight-mayhem/"
-    image: "/assets/Midnight Mayhem Orig.jpeg"
+  - title: "Bottle on the Table"
+    url: "/music/bottle-on-the-table/"
+    image: "/assets/Bottle on the Table.jpeg"
     videostatus: "Public"
 
-  - title: "Gimme Three Steps, and I'm Gone"
-    url: "/music/gimme-three-steps-and-im-gone/"
-    image: "/assets/Gimme Three Steps and Im Gone.jpeg"
+  - title: "Makin' our way to California"
+    url: "/music/making-our-way-to-california/"
+    image: "/assets/Making our way to California.jpeg"
     videostatus: "Public"
 
-  - title: "Barroom Brawl"
-    url: "/music/barroom-brawl/"
-    image: "/assets/Barroom Brawl.jpeg"
+  - title: "Learning to Live Again"
+    url: "/music/learning-to-live-again/"
+    image: "/assets/Learning to Live Again.jpeg"
+    videostatus: "Public"
+
+  - title: "Never Let Each Other Down"
+    url: "/music/never-let-each-other-down/"
+    image: "/assets/Never Let Each Other Down.jpeg"
+    videostatus: "Public"
+
+  - title: "New Again"
+    url: "/music/new-again/"
+    image: "/assets/New Again.jpeg"
     videostatus: "Public"
 
   - title: "Oh, Amber"
@@ -159,157 +236,91 @@ songs:
     image: "/assets/Heres to Us.jpeg"
     videostatus: "Public"
 
-  - title: "Rusty"
-    url: "/music/rusty/"
-    image: "/assets/Rusty.jpeg"
+  - title: "Put You Down"
+    url: "/music/put-you-down/"
+    image: "/assets/Put You Down.jpeg"
     videostatus: "Public"
 
-  - title: "Before Midnight"
-    url: "/music/midnight-saga-before-midnight/"
-    image: "/assets/Before Midnight.jpeg"
-    videostatus: "Private"
+  - title: "Gimme Three Steps, and I'm Gone"
+    url: "/music/gimme-three-steps-and-im-gone/"
+    image: "/assets/Gimme Three Steps and Im Gone.jpeg"
+    videostatus: "Public"
+
+  - title: "All Around the World"
+    url: "/music/all-around-the-world/"
+    image: "/assets/All Around the World.jpeg"
+    videostatus: "Public"
+
+  - title: "Already out the door"
+    url: "/music/already-out-the-door/"
+    image: "/assets/Already Out the Door.jpeg"
+    videostatus: "Public"
 
   - title: "Midnight Mayhem"
-    url: "/music/midnight-saga-midnight-mayhem/"
-    image: "/assets/Midnight Mayhem.jpeg"
-    videostatus: "Private"
-
-  - title: "Midnight Madness"
-    url: "/music/midnight-saga-midnight-madness/"
-    image: "/assets/Midnight Madness.jpeg"
-    videostatus: "Private"
-
-  - title: "After Midnight"
-    url: "/music/midnight-saga-after-midnight/"
-    image: "/assets/After Midnight.jpeg"
-    videostatus: "Private"
-
-  - title: "The Quiet After"
-    url: "/music/ats-1-the-quiet-after/"
-    image: "/assets/After the Silence.jpeg"
+    url: "/music/midnight-mayhem/"
+    image: "/assets/Midnight Mayhem Orig.jpeg"
     videostatus: "Public"
 
-  - title: "Borrowed Time"
-    url: "/music/ats-2-borrowed-time/"
-    image: "/assets/After the Silence.jpeg"
+  - title: "Don't Let the Summer End"
+    url: "/music/dont-let-the-summer-end/"
+    image: "/assets/Don't Let the Summer End.jpeg"
     videostatus: "Public"
 
-  - title: "Homesick For You"
-    url: "/music/ats-3-homesick-for-you/"
-    image: "/assets/After the Silence.jpeg"
+  - title: "Rising Up"
+    url: "/music/rising-up/"
+    image: "/assets/Rising Up.jpeg"
     videostatus: "Public"
 
-  - title: "The Way We Lied"
-    url: "/music/ats-4-the-way-we-lied/"
-    image: "/assets/After the Silence.jpeg"
+  - title: "Rise Like Thunder"
+    url: "/music/rise-like-thunder/"
+    image: "/assets/Rise Like Thunder New.jpeg"
     videostatus: "Public"
 
-  - title: "Paper Walls"
-    url: "/music/ats-5-paper-walls/"
-    image: "/assets/After the Silence.jpeg"
-    videostatus: "Private"
-
-  - title: "Half of Me"
-    url: "/music/ats-6-half-of-me/"
-    image: "/assets/After the Silence.jpeg"
-    videostatus: "Private"
-
-  - title: "If You'd Asked"
-    url: "/music/ats-7-if-youd-asked/"
-    image: "/assets/After the Silence.jpeg"
-    videostatus: "Private"
-
-  - title: "Ghostlight"
-    url: "/music/ats-8-ghostlight/"
-    image: "/assets/After the Silence.jpeg"
-    videostatus: "Private"
-
-  - title: "After the Silence"
-    url: "/music/ats-9-after-the-silence/"
-    image: "/assets/After the Silence.jpeg"
-    videostatus: "Private"
-
-  - title: "Saltwater"
-    url: "/music/ats-10-saltwater/"
-    image: "/assets/After the Silence.jpeg"
-    videostatus: "Private"
-
-  - title: "The Dress I Never Wore"
-    url: "/music/ats-11-the-dress-i-never-wore/"
-    image: "/assets/After the Silence.jpeg"
-    videostatus: "Private"
-
-  - title: "Unsent Letters"
-    url: "/music/ats-12-unsent-letters/"
-    image: "/assets/After the Silence.jpeg"
-    videostatus: "Private"
-  
-  - title: "Rise Again"
-    url: "/music/ats-13-rise-again/"
-    image: "/assets/After the Silence.jpeg"
-    videostatus: "Private"
-
-  - title: "Someday"
-    url: "/music/venice-1-someday/"
-    image: "/assets/Someday.jpeg"
-    videostatus: "Private"
-
-  - title: "Missing Stamp"
-    url: "/music/venice-2-missing-stamp/"
-    image: "/assets/Missing Stamp.jpeg"
-    videostatus: "Private"
-
-  - title: "Venice Waters"
-    url: "/music/venice-3-venice-waters/"
-    image: "/assets/Venice Waters.jpeg"
-    videostatus: "Private"
-
-  - title: "A Touch of Light"
-    url: "/music/instrumental-a-touch-of-light/"
-    image: "/assets/A Touch of Light.jpg"
-    videostatus: "Private"
-
-  - title: "Forever in a Moment"
-    url: "/music/instrumental-forever-in-a-moment/"
-    image: "/assets/Forever in a Moment.jpg"
-    videostatus: "Private"
-
-  - title: "Lines of Light"
-    url: "/music/instrumental-lines-of-light/"
-    image: "/assets/Lines of Light.jpg"
-    videostatus: "Private"
-
-  - title: "The Way Water Moves"
-    url: "/music/instrumental-the-way-water-moves/"
-    image: "/assets/The Way Water Moves.jpg"
-    videostatus: "Private"
-
-  - title: "Held in the Moment"
-    url: "/music/instrumental-held-in-the-moment/"
-    image: "/assets/Held in the Moment.jpg"
-    videostatus: "Private"
-
-  - title: "The Moment You Breathe"
-    url: "/music/instrumental-the-moment-you-breathe/"
-    image: "/assets/The Moment You Breathe.jpg"
+  - title: "I'm Holding On"
+    url: "/music/im-holding-on/"
+    image: "/assets/Im Holding On.jpeg"
     videostatus: "Public"
 
-  - title: "Back to Amarillo"
-    url: "/music/back-to-amarillo/"
-    image: "/assets/Back to Amarillo.jpg"
-    videostatus: "Private"
+  - title: "Hold On"
+    url: "/music/hold-on/"
+    image: "/assets/Hold On.jpeg"
+    videostatus: "Public"
 
-  - title: "Sheriff for a Night"
-    url: "/music/sheriff-for-a-night/"
-    image: "/assets/Sheriff for the Night.jpeg"
-    videostatus: "Private"
+  - title: "Total Eclipse (Years Later)"
+    url: "/music/total-eclipse-years-later/"
+    image: "/assets/Total Eclipse.jpeg"
+    videostatus: "Public"
 
-  - title: "Wildfire"
-    url: "/music/wildfire/"
-    image: "/assets/Wildfire.jpg"
-    videostatus: "Private"
+  - title: "One Hell of a Ride"
+    url: "/music/one-hell-of-a-ride/"
+    image: "/assets/One Hell of a Ride.jpeg"
+    videostatus: "Public"
+
+**********
+
+  - title: "A Quiet Little Voice"
+    url: "/music/a-quiet-little-voice/"
+    image: "/assets/A Quiet Little Voice.jpeg"
+    videostatus: "Public"
+
+  - title: "Becoming Me"
+    url: "/music/becoming-me/"
+    image: "/assets/Becoming Me.jpeg"
+    videostatus: "Public"
+
+  - title: "Until the Nightmare Ends"
+    url: "/music/until-the-nightmare-ends/"
+    image: "/assets/Until the Nightmare Ends.JPG"
+    videostatus: "Public"
 
 
+
+
+
+  - title: "Nineteen Summers"
+    url: "/music/nineteen-summers/"
+    image: "/assets/Nineteen Summers.jpeg"
+    videostatus: "Public"
   
   - title: "Nineteen Summers"
     url: "/music//"
