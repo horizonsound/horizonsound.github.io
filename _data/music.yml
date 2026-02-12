@@ -9,7 +9,7 @@ songs:
     image: "/assets/Nineteen Summers New.jpeg*"
     videostatus: "Public"
   
-    - title: "Sheriff for a Night"
+  - title: "Sheriff for a Night"
     url: "/music/sheriff-for-a-night/"
     image: "/assets/Sheriff for the Night.jpeg"
     videostatus: "Private"
@@ -266,7 +266,7 @@ songs:
     image: "/assets/Already Out the Door.jpeg"
     videostatus: "Public"
 
-  - title: "Midnight Mayhem"
+  - title: "Midnight Mayhem Original"
     url: "/music/midnight-mayhem/"
     image: "/assets/Midnight Mayhem Orig.jpeg"
     videostatus: "Public"
