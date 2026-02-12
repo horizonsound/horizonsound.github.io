@@ -39,11 +39,6 @@ songs:
     image: "/assets/Already Out the Door.jpeg"
     videostatus: "Public"
 
-  - title: "Nineteen Summers"
-    url: "/music/nineteen-summers/"
-    image: "/assets/Nineteen Summers New.jpeg"
-    videostatus: "Private"
-
   - title: "Rise Like Thunder"
     url: "/music/rise-like-thunder/"
     image: "/assets/Rise Like Thunder New.jpeg"
@@ -169,31 +164,6 @@ songs:
     image: "/assets/Rusty.jpeg"
     videostatus: "Public"
 
-  - title: "The Quiet After"
-    url: "/music/ats-1-the-quiet-after/"
-    image: "/assets/After the Silence.jpeg"
-    videostatus: "Public"
-
-  - title: "Borrowed Time"
-    url: "/music/ats-2-borrowed-time/"
-    image: "/assets/After the Silence.jpeg"
-    videostatus: "Public"
-
-  - title: "The Moment You Breathe"
-    url: "/music//"
-    image: "/assets/The Moment You Breathe.jpg"
-    videostatus: "Private"
-
-  - title: "Homesick For You"
-    url: "/music/ats-3-homesick-for-you/"
-    image: "/assets/After the Silence.jpeg"
-    videostatus: "Public"
-
-  - title: "The Way We Lied"
-    url: "/music/ats-4-the-way-we-lied/"
-    image: "/assets/After the Silence.jpeg"
-    videostatus: "Public"
-
   - title: "Before Midnight"
     url: "/music/midnight-saga-before-midnight/"
     image: "/assets/Before Midnight.jpeg"
@@ -213,6 +183,26 @@ songs:
     url: "/music/midnight-saga-after-midnight/"
     image: "/assets/After Midnight.jpeg"
     videostatus: "Private"
+
+  - title: "The Quiet After"
+    url: "/music/ats-1-the-quiet-after/"
+    image: "/assets/After the Silence.jpeg"
+    videostatus: "Public"
+
+  - title: "Borrowed Time"
+    url: "/music/ats-2-borrowed-time/"
+    image: "/assets/After the Silence.jpeg"
+    videostatus: "Public"
+
+  - title: "Homesick For You"
+    url: "/music/ats-3-homesick-for-you/"
+    image: "/assets/After the Silence.jpeg"
+    videostatus: "Public"
+
+  - title: "The Way We Lied"
+    url: "/music/ats-4-the-way-we-lied/"
+    image: "/assets/After the Silence.jpeg"
+    videostatus: "Public"
 
   - title: "Paper Walls"
     url: "/music/ats-5-paper-walls/"
@@ -254,25 +244,26 @@ songs:
     image: "/assets/After the Silence.jpeg"
     videostatus: "Private"
 
+
+ 
+  
   - title: "Someday"
     url: "/music//"
     image: "/assets/Someday.jpeg"
-    videostatus: "Private"
+    videostatus: "Public"
 
   - title: "Missing Stamp"
     url: "/music//"
     image: "/assets/Missing Stamp.jpeg"
-    videostatus: "Private"
+    videostatus: "Public"
 
   - title: "Venice Waters"
     url: "/music//"
     image: "/assets/Venice Waters.jpeg"
-    videostatus: "Private"
+    videostatus: "Public"
 
-  - title: "Rise Again"
-    url: "/music/ats-13-rise-again/"
-    image: "/assets/After the Silence.jpeg"
-    videostatus: "Private"
+
+
 
   - title: "A Touch of Light"
     url: "/music//"
@@ -282,6 +273,34 @@ songs:
   - title: "Forever in a Moment"
     url: "/music//"
     image: "/assets/Forever in a Moment.jpg"
+    videostatus: "Private"
+
+  - title: "Lines of Light"
+    url: "/music//"
+    image: "/assets/Lines of Light.jpg"
+    videostatus: "Private"
+
+  - title: "The Way Water Moves"
+    url: "/music//"
+    image: "/assets/The Way Water Moves.jpg"
+    videostatus: "Private"
+
+  - title: "Held in the Moment"
+    url: "/music//"
+    image: "/assets/Held in the Moment.jpg"
+    videostatus: "Private"
+
+  - title: "The Moment You Breathe"
+    url: "/music//"
+    image: "/assets/The Moment You Breathe.jpg"
+    videostatus: "Private"
+
+
+
+
+  - title: "Rise Again"
+    url: "/music/ats-13-rise-again/"
+    image: "/assets/After the Silence.jpeg"
     videostatus: "Private"
 
   - title: "Back to Amarillo"
@@ -299,16 +318,6 @@ songs:
     image: "/assets/Wildfire.jpg"
     videostatus: "Private"
 
-  - title: "Lines of Light"
-    url: "/music//"
-    image: "/assets/Lines of Light.jpg"
-    videostatus: "Private"
-
-  - title: "The Way Water Moves"
-    url: "/music//"
-    image: "/assets/The Way Water Moves.jpg"
-    videostatus: "Private"
-
   - title: "Sheriff for a Night"
     url: "/music//"
     image: "/assets/Sheriff for the Night.jpeg"
@@ -319,8 +328,11 @@ songs:
     image: "/assets/Nineteen Summers New.jpeg"
     videostatus: "Private"
 
-  - title: "Held in the Moment"
-    url: "/music//"
-    image: "/assets/Held in the Moment.jpg"
+  - title: "Nineteen Summers"
+    url: "/music/nineteen-summers/"
+    image: "/assets/Nineteen Summers New.jpeg"
     videostatus: "Private"
+
+
+
 
