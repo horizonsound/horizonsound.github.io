@@ -302,17 +302,17 @@ songs:
   - title: "Back to Amarillo"
     url: "/music//"
     image: "/assets/Back to Amarillo.jpg"
-    videostatus: "Private"
+    videostatus: "Public"
 
   - title: "Sheriff for a Night"
     url: "/music//"
     image: "/assets/Sheriff for the Night.jpeg"
-    videostatus: "Private"
+    videostatus: "Public"
 
   - title: "Wildfire"
     url: "/music//"
     image: "/assets/Wildfire.jpg"
-    videostatus: "Private"
+    videostatus: "Public"
 
 
   
