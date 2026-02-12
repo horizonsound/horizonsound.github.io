@@ -1,29 +1,59 @@
-{% if page.tiles %}
+{% if page.primary_playlist %}
 
-  {% assign project_tiles_public = "" | split: "" %}
+  {%- comment -%}
+  1. Pull all songs from the same playlist
+  {%- endcomment -%}
+  {% assign playlist_name = page.primary_playlist %}
+  {% assign related = site.data.music.songs | where: "primary_playlist", playlist_name %}
 
-  {% for tile in page.tiles %}
-    {% assign match = site.data.music.songs | where: "url", tile.url | first %}
-    {% if match and match.videostatus == "Public" %}
-      {% assign project_tiles_public = project_tiles_public | push: tile %}
-    {% endif %}
-  {% endfor %}
+  {%- comment -%}
+  2. Filter to Public only
+  {%- endcomment -%}
+  {% assign related = related | where: "videostatus", "Public" %}
 
-  {% if project_tiles_public.size > 0 %}
+  {%- comment -%}
+  3. Sort by sequence if present, otherwise by title
+  {%- endcomment -%}
+  {% assign sorted_by_sequence = related | sort: "sequence" %}
+  {% assign first_item = sorted_by_sequence | first %}
+
+  {% if first_item.sequence %}
+    {% assign playlist_sorted = sorted_by_sequence %}
+  {% else %}
+    {% assign playlist_sorted = related | sort: "title" %}
+  {% endif %}
+
+  {%- comment -%}
+  4. Hide the entire section if no public songs exist
+  {%- endcomment -%}
+  {% if playlist_sorted.size > 0 %}
+
   <section class="song-project">
-
-    <h2 class="section-header">{{ page.project_title }}</h2>
+    <h2 class="section-header">{{ playlist_name }}</h2>
 
     <div class="tile-grid">
-      {% for tile in project_tiles_public %}
-        <a class="tile" href="{{ tile.url }}">
-          <img src="{{ tile.image }}" alt="{{ tile.title }}">
-          <h3 class="tile-title">{{ tile.title }}</h3>
+
+      {%- comment -%}
+      5. Limit visible tiles (e.g., first 6)
+      {%- endcomment -%}
+      {% assign max_tiles = 6 %}
+      {% for song in playlist_sorted %}
+        <a class="tile playlist-tile {% if forloop.index > max_tiles %}hidden-tile{% endif %}"
+           href="{{ song.url }}">
+          <img src="{{ song.image }}" alt="{{ song.title }}">
+          <h3 class="tile-title">{{ song.title }}</h3>
         </a>
       {% endfor %}
     </div>
 
-  </section>
-  {% endif %}
+    {%- comment -%}
+    6. Show More button if there are more than max_tiles
+    {%- endcomment -%}
+    {% if playlist_sorted.size > max_tiles %}
+      <button id="show-more-tiles" class="btn-secondary">Show More</button>
+    {% endif %}
 
+  </section>
+
+  {% endif %}
 {% endif %}
