@@ -95,10 +95,6 @@ lyrics: |
   but Venice isn’t mine to own.
   So I tuck my passport gently in the drawer.
 
-next_track_title: "Press to hear the next track in the Venice series"
-next_track_url: "/music/venice-3-venice-waters/"
-next_track_label: "Venice Waters"
-
 ---
 <!-- ABOUT SECTION -->
 {% include about.html %}
