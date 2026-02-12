@@ -97,6 +97,10 @@ tiles:
     url: "/music/midnight-saga-midnight-mayhem/"
     image: "/assets/Midnight Mayhem.jpeg"
 
+  - title: "Midnight Madness"
+    url: "/music/midnight-saga-midnight-madness/"
+    image: "/assets/Midnight Madness.jpeg"
+
   - title: "After Midnight"
     url: "/music/midnight-saga-after-midnight/"
     image: "/assets/After Midnight.jpeg"
