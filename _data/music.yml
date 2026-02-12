@@ -247,17 +247,17 @@ songs:
   - title: "Someday"
     url: "/music/venice-1-someday/"
     image: "/assets/Someday.jpeg"
-    videostatus: "Public"
+    videostatus: "Private"
 
   - title: "Missing Stamp"
     url: "/music/venice-2-missing-stamp/"
     image: "/assets/Missing Stamp.jpeg"
-    videostatus: "Public"
+    videostatus: "Private"
 
   - title: "Venice Waters"
     url: "/music/venice-3-venice-waters/"
     image: "/assets/Venice Waters.jpeg"
-    videostatus: "Public"
+    videostatus: "Private"
 
 
 
