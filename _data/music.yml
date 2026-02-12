@@ -163,7 +163,7 @@ songs:
 
   - title: "Keep the Light On"
     url: "/music/keep-the-light-on/"
-    image: "/assets/Keep the Light On.jpeg*"
+    image: "/assets/Keep the Light On.jpeg"
     videostatus: "Public"
 
   - title: "Hold On"
