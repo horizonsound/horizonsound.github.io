@@ -89,10 +89,6 @@ lyrics: |
   We said we were alright…
   But we never were.
 
-next_track_title: "Press to hear the next track in the After the Silence Album"
-next_track_url: "/music/ats-5-paper-walls/"
-next_track_label: "5. Paper Walls"
-
 ---
 <!-- ABOUT SECTION -->
 {% include about.html %}
