@@ -83,10 +83,6 @@ lyrics: |
   Feel the beat
   Feel alive
 
-next_track_title: "Press to hear the next track in the Midnight Saga"
-next_track_url: "/music/midnight-saga-after-midnight/"
-next_track_label: "After Midnight"
-
 ---
 <!-- ABOUT SECTION -->
 {% include about.html %}
