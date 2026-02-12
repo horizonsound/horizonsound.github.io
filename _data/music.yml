@@ -259,38 +259,37 @@ songs:
     image: "/assets/Venice Waters.jpeg"
     videostatus: "Private"
 
-
-
-
   - title: "A Touch of Light"
-    url: "/music//"
+    url: "/music/instrumental-a-touch-of-light/"
     image: "/assets/A Touch of Light.jpg"
-    videostatus: "Private"
+    videostatus: "Public"
 
   - title: "Forever in a Moment"
-    url: "/music//"
+    url: "/music/instrumental-forever-in-a-moment/"
     image: "/assets/Forever in a Moment.jpg"
-    videostatus: "Private"
+    videostatus: "Public"
 
   - title: "Lines of Light"
-    url: "/music//"
+    url: "/music/instrumental-lines-of-light/"
     image: "/assets/Lines of Light.jpg"
-    videostatus: "Private"
+    videostatus: "Public"
 
   - title: "The Way Water Moves"
-    url: "/music//"
+    url: "/music/instrumental-the-way-water-moves/"
     image: "/assets/The Way Water Moves.jpg"
-    videostatus: "Private"
+    videostatus: "Public"
 
   - title: "Held in the Moment"
-    url: "/music//"
+    url: "/music/instrumental-held-in-the-moment/"
     image: "/assets/Held in the Moment.jpg"
-    videostatus: "Private"
+    videostatus: "Public"
 
   - title: "The Moment You Breathe"
-    url: "/music//"
+    url: "/music/instrumental-the-moment-you-breathe/"
     image: "/assets/The Moment You Breathe.jpg"
-    videostatus: "Private"
+    videostatus: "Public"
+
+
 
 
 
