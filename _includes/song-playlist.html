@@ -2,7 +2,7 @@
 1. Identify the current song by matching page.url to the data file
 {% endcomment %}
 {% assign current_url = page.url %}
-{% assign current_song = site.data.music.songs | where: "url", current_url | first %}
+{% assign current_song = include.current_song %}
 
 {% if current_song and current_song.primary_playlist != "" %}
 
