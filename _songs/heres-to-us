@@ -1,9 +1,5 @@
 ---
 layout: song
-title: "Here's To Us"
-subtitle: ""
-project_title: ""
-youtube_id: "aY8-o0Scmjg"
 hero_image: "/assets/hero.jpg"
 
 about: |
@@ -105,8 +101,8 @@ lyrics: |
 <!-- LYRICS SECTION -->
 {% include lyrics.html %}
 
-<!-- PROJECT NAV -->
-{% include project-nav.html %}
+<!-- SONG PLAYLIST (now playlist-driven) -->
+{% include song-playlist.html %}
 
 <!-- NEXT TRACK BUTTON -->
 {% include next-track.html %}
