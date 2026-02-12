@@ -90,10 +90,6 @@ lyrics: |
   I miss her still…
   But I’m coming home.
 
-next_track_title: "Press to hear the next track in the After the Silence Album"
-next_track_url: "/music/ats-4-the-way-we-lied/"
-next_track_label: "4. The Way We Lied"
-
 ---
 <!-- ABOUT SECTION -->
 {% include about.html %}
