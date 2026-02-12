@@ -91,10 +91,6 @@ lyrics: |
   One light left on the stage…
   Waiting for the day I’m ready to let go.
 
-next_track_title: "Press to hear the next track in the After the Silence Album"
-next_track_url: "/music/ats-9-after-the-silence/"
-next_track_label: "9. After the Silence"
-
 ---
 <!-- ABOUT SECTION -->
 {% include about.html %}
