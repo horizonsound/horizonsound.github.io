@@ -91,10 +91,6 @@ lyrics: |
   And again…
   And again.
 
-next_track_title: "Press to hear the first track in the After the Silence Album"
-next_track_url: "/music/ats-1-the-quiet-after/"
-next_track_label: "1. The Quiet After"
-
 ---
 <!-- ABOUT SECTION -->
 {% include about.html %}
