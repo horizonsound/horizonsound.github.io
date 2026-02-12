@@ -87,6 +87,3 @@ lyrics: |
 <!-- LYRICS SECTION -->
 {% include lyrics.html %}
 
-<!-- NEXT TRACK BUTTON -->
-{% include next-track.html %}
-
