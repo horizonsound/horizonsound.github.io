@@ -82,10 +82,6 @@ lyrics: |
   Let the chaos flow, let the chaos flow—
   One spark, one night, and we’re ready to blow.
 
-next_track_title: "Press to hear the next track in the Midnight Saga"
-next_track_url: "/music/midnight-saga-midnight-madness/"
-next_track_label: "Midnight Madness"
-
 ---
 <!-- ABOUT SECTION -->
 {% include about.html %}
