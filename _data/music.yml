@@ -3,7 +3,7 @@ songs:
     url: "/music/instrumental-held-in-the-moment/"
     image: "/assets/Held in the Moment.jpg"
     videostatus: "Private"
-    primary_playlist: ""
+    primary_playlist: "Instrumentals"
 
   - title: "Nineteen Summers Revised"
     url: "/music/nineteen-summers-revised/"
@@ -15,43 +15,43 @@ songs:
     url: "/music/sheriff-for-a-night/"
     image: "/assets/Sheriff for the Night.jpeg"
     videostatus: "Private"
-    primary_playlist: ""
+    primary_playlist: "Classic Country"
 
   - title: "The Way Water Moves" # Instrumental track
     url: "/music/instrumental-the-way-water-moves/"
     image: "/assets/The Way Water Moves.jpg"
     videostatus: "Private"
-    primary_playlist: ""
+    primary_playlist: "Instrumentals"
 
   - title: "Lines of Light" # Instrumental track
     url: "/music/instrumental-lines-of-light/"
     image: "/assets/Lines of Light.jpg"
     videostatus: "Private"
-    primary_playlist: ""
+    primary_playlist: "Instrumentals"
 
   - title: "Wildfire"
     url: "/music/wildfire/"
     image: "/assets/Wildfire.jpg"
     videostatus: "Private"
-    primary_playlist: ""
+    primary_playlist: "Modern Country"
 
   - title: "Back to Amarillo"
     url: "/music/back-to-amarillo/"
     image: "/assets/Back to Amarillo.jpg"
     videostatus: "Private"
-    primary_playlist: ""
+    primary_playlist: "Classic Country"
 
   - title: "Forever in a Moment" # Instrumental track
     url: "/music/instrumental-forever-in-a-moment/"
     image: "/assets/Forever in a Moment.jpg"
     videostatus: "Private"
-    primary_playlist: ""
+    primary_playlist: "Instrumentals"
 
   - title: "A Touch of Light" # Instrumental track
     url: "/music/instrumental-a-touch-of-light/"
     image: "/assets/A Touch of Light.jpg"
     videostatus: "Private"
-    primary_playlist: ""
+    primary_playlist: "Instrumentals"
 
   - title: "Venice Waters" # Venice-Missing Stamp track
     url: "/music/venice-3-venice-waters/"
@@ -185,7 +185,7 @@ songs:
     url: "/music/instrumental-the-moment-you-breathe/"
     image: "/assets/The Moment You Breathe.jpg"
     videostatus: "Public"
-    primary_playlist: ""
+    primary_playlist: "Instrumentals"
 
   - title: "Choosing Me (His Version)" # A Way Back Trilogy track
     url: "/music/choosing-me-his-version/"
@@ -256,7 +256,7 @@ songs:
     url: "/music/the-man-behind-the-bar/"
     image: "/assets/The Man Behind the Bar.jpeg"
     videostatus: "Public"
-    primary_playlist: ""
+    primary_playlist: "Modern Country"
 
   - title: "Not So Smart Home"
     url: "/music/not-so-smart-home/"
@@ -268,7 +268,7 @@ songs:
     url: "/music/time-capsule/"
     image: "/assets/Time Capsule.jpeg"
     videostatus: "Public"
-    primary_playlist: ""
+    primary_playlist: "Modern Country"
 
   - title: "Fixed it Mostly Right"
     url: "/music/fixed-it-mostly-right/"
@@ -280,7 +280,7 @@ songs:
     url: "/music/bottle-on-the-table/"
     image: "/assets/Bottle on the Table.jpeg"
     videostatus: "Public"
-    primary_playlist: ""
+    primary_playlist: "Classic Country"
 
   - title: "Makin' our way to California"
     url: "/music/making-our-way-to-california/"
@@ -340,7 +340,7 @@ songs:
     url: "/music/already-out-the-door/"
     image: "/assets/Already Out the Door.jpeg"
     videostatus: "Public"
-    primary_playlist: ""
+    primary_playlist: "Modern Country"
 
   - title: "Midnight Mayhem Original"
     url: "/music/midnight-mayhem/"
