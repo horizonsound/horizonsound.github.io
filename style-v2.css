@@ -691,7 +691,7 @@ footer {
 
 
 /* --------------------------------------------------
-   TEMP PAGE — BUTTON + TITLE BASELINE
+   TEMP PAGE — TITLE + BUTTONS ABOVE PANEL
 -------------------------------------------------- */
 
 .temp-page {
@@ -701,6 +701,7 @@ footer {
   box-sizing: border-box;
 }
 
+/* Title above everything */
 .temp-page .page-title {
   text-align: center;
   margin-top: 10px;
@@ -709,6 +710,7 @@ footer {
   opacity: 0.9;
 }
 
+/* Buttons below title, above panel */
 .temp-page .view-toggle {
   display: flex;
   gap: 10px;
@@ -731,3 +733,20 @@ footer {
   background: #444;
 }
 
+/* First panel (matches homepage + music page style) */
+.temp-panel {
+  margin: 40px 0;
+  padding: 25px 40px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.temp-panel .section-header {
+  text-align: left;
+  margin-bottom: 18px;
+  font-size: 1.4rem;
+  opacity: 0.9;
+}
