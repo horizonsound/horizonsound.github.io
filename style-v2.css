@@ -22,13 +22,13 @@
   height: auto;
 }
 
-/* Phase 3: Carousel arrow layout */
 .playlist-carousel {
   display: flex;
-  align-items: center;
+  flex-direction: row;   /* force arrows + strip into one line */
+  align-items: center;   /* vertically center arrows with tiles */
   width: 100%;
   position: relative;
-  margin-top: 10px; /* matches Phase 2 spacing */
+  margin-top: 10px;
 }
 
 /* Arrow buttons */
