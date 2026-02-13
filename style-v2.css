@@ -564,13 +564,21 @@ footer {
   background: rgba(255, 255, 255, 0.03); /* subtle translucent panel */
   border-radius: 8px;
   border-top: 1px solid rgba(255,255,255,0.08);
+   /* This ensures the section width matches your tile grid max width */ 
+   max-width: 1800px;
 }
 
+/* Left-align the playlist titles */
 .playlist-section .section-header {
-  text-align: left;        /* left-align playlist titles */
-  margin-bottom: 15px;     /* spacing before tiles */
+  text-align: left;
+  margin: 0 0 18px 0;
   font-size: 1.4rem;
   opacity: 0.9;
+}
+
+/* Left-align the tile grid inside the section */
+.playlist-section .tile-grid {
+  justify-content: flex-start;   /* ensures tiles align left */
 }
 
 /* --------------------------------------------------
