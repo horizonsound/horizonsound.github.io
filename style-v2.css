@@ -20,6 +20,7 @@
 .playlist-tile {
   flex: 0 0 180px;        /* fixed tile width */
   height: auto;
+  transition: transform 0.2s ease;
 }
 
 .playlist-carousel {
@@ -73,10 +74,6 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Prevent layout shift when scaling */
-.playlist-tile {
-  transition: transform 0.2s ease;
-}
 
 
 
