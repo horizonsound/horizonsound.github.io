@@ -572,6 +572,9 @@ footer {
   border-top: 1px solid rgba(255,255,255,0.08);
    /* This ensures the section width matches your tile grid max width */ 
    max-width: 1800px;
+  /* NEW: horizontal gutters so the section doesn't touch the page edges */
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 /* Left-align the playlist titles */
