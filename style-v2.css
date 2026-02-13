@@ -781,14 +781,14 @@ footer {
 
 /* TEMP PAGE — override global tile grid sizing */
 .temp-panel .tile-grid {
-  /*display: grid !important;*/
-  /*grid-template-columns: repeat(auto-fill, 180px) !important;*/
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, 180px) !important;
   gap: 16px !important;
-  /*width: 100% !important;*/
-  /*max-width: none !important;*/
-  /*margin: 0 !important;*/
-  /*justify-content: start !important;*/
-  /*justify-items: start !important;*/
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  justify-content: start !important;
+  justify-items: start !important;
 }
 
 
