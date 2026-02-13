@@ -573,18 +573,16 @@ main {
 
 /* Playlist section container */
 .playlist-section {
-  margin: 40px auto;
+  margin: 40px 0;
   padding: 25px 40px;
   background: rgba(255, 255, 255, 0.03);
   border-radius: 10px;
   border-top: 1px solid rgba(255,255,255,0.08);
 
-  /* Match tile grid width */
-  max-width: 1800px;
-
-  /* Ensure padding is included in width */
+  width: 100%;
   box-sizing: border-box;
 }
+
 
 /* Responsive gutters */
 @media (max-width: 600px) {
