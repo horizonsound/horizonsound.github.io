@@ -760,9 +760,9 @@ footer {
 
 .temp-panel .tile {
   background: #111;
-  /*border-radius: 0;*/
-  /*overflow: hidden;*/
-  /*text-decoration: none;*/
+  border-radius: 0;
+  overflow: hidden;
+  text-decoration: none;
   color: #fff;
   /*transition: transform 0.2s ease, box-shadow 0.2s ease;*/
 }
