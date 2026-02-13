@@ -554,8 +554,22 @@ footer {
   text-decoration: underline;
 }
 
+/* --------------------------------------------------
+   MUSIC PAGE: PLAYLIST GROUP SECTIONS
+-------------------------------------------------- */
+
 .playlist-section {
-  padding: 40px;
+  margin: 40px 0;
+  padding: 20px 30px;
+  background: rgba(255, 255, 255, 0.03); /* subtle translucent panel */
+  border-radius: 8px;
+}
+
+.playlist-section .section-header {
+  text-align: left;        /* left-align playlist titles */
+  margin-bottom: 15px;     /* spacing before tiles */
+  font-size: 1.4rem;
+  opacity: 0.9;
 }
 
 /* --------------------------------------------------
