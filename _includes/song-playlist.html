@@ -20,24 +20,16 @@
   <section class="song-project">
     <div class="horizontal-strip">
 
-      {% assign max_tiles = 6 %}
-
       {% for song in playlist_sorted %}
         {% assign index = forloop.index %}
 
-        <a class="tile playlist-tile {% if index > max_tiles %}hidden-tile{% endif %}"
-           href="{{ song.url }}">
+          <a class="tile playlist-tile" href="{{ song.url }}">
           <img src="{{ song.image }}" alt="{{ song.title }}">
           <h3 class="tile-title">{{ song.title }}</h3>
         </a>
 
       {% endfor %}
     </div>
-
-    {% if playlist_sorted.size > max_tiles %}
-       <button id="show-more-tiles" class="btn-secondary" data-state="collapsed">Show More</button>
-    {% endif %}
-   
   </section>
   {% endif %}
 {% endif %}
