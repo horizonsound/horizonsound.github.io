@@ -64,6 +64,19 @@
   margin-left: 10px;
 }
 
+/* Phase 5: Active tile highlight */
+.playlist-tile.active-tile {
+  border: 3px solid #4da3ff;        /* premium blue highlight */
+  border-radius: 8px;
+  transform: scale(1.05);           /* subtle pop */
+  box-shadow: 0 0 12px rgba(77, 163, 255, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Prevent layout shift when scaling */
+.playlist-tile {
+  transition: transform 0.2s ease;
+}
 
 
 
