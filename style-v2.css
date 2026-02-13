@@ -660,9 +660,6 @@ footer {
 }
 
 
-
-
-
 /* MUSIC PAGE — override global tile-grid centering */
 .music-page .tile-grid {
   margin-left: 0 !important;
@@ -691,3 +688,13 @@ footer {
   margin-top: 20px !important;
   margin-bottom: 10px !important;
 }
+
+
+/* TEMP PAGE TEST */
+.temp-page {
+  padding: 40px;
+  background: rgba(255,255,255,0.05);
+  margin: 40px;
+  border-radius: 10px;
+}
+
