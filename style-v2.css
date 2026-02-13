@@ -768,9 +768,9 @@ footer {
 }
 
 .temp-panel .tile img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
+  /*width: 100%;*/
+  /*height: 180px;*/
+  /*object-fit: cover;*/
 }
 
 .temp-panel .tile-title {
