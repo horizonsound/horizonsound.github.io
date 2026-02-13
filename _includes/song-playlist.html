@@ -18,19 +18,23 @@
 
   {% if playlist_sorted.size > 0 %}
   <section class="song-project">
-    <div class="horizontal-strip">
-
-      {% for song in playlist_sorted %}
-        {% assign index = forloop.index %}
-
-          <a class="tile playlist-tile" href="{{ song.url }}">
-          <img src="{{ song.image }}" alt="{{ song.title }}">
-          <h3 class="tile-title">{{ song.title }}</h3>
-        </a>
-
-      {% endfor %}
+    <div class="playlist-carousel">
+      <button class="carousel-arrow left-arrow">◀</button>
+    
+      <div class="horizontal-strip">
+          {% for song in playlist_sorted %}
+            {% assign index = forloop.index %}
+    
+              <a class="tile playlist-tile" href="{{ song.url }}">
+              <img src="{{ song.image }}" alt="{{ song.title }}">
+              <h3 class="tile-title">{{ song.title }}</h3>
+            </a>
+    
+          {% endfor %}
+      </div>
+    
+      <button class="carousel-arrow right-arrow">▶</button>
     </div>
   </section>
   {% endif %}
 {% endif %}
-
