@@ -706,8 +706,8 @@ footer {
   text-align: center;
   /*margin-top: 10px;*/
   /*margin-bottom: 10px;*/
-  /*font-size: 2rem;*/
-  /*opacity: 0.9;*/
+  font-size: 2rem;
+  opacity: 0.9;
 }
 
 /* Buttons BELOW title, ABOVE panel */
@@ -721,7 +721,7 @@ footer {
 
 .temp-page .view-toggle-button {
   /*padding: 8px 16px;*/
-  /*background: #333;*/
+  background: #333;
   color: #fff;
   /*border: 1px solid #555;*/
   /*cursor: pointer;*/
@@ -746,7 +746,7 @@ footer {
 .temp-panel .section-header {
   /*text-align: left;*/
   /*margin-bottom: 18px;*/
-  /*font-size: 1.4rem;*/
+  font-size: 1.4rem;
   opacity: 0.9;
 }
 
@@ -775,8 +775,8 @@ footer {
 
 .temp-panel .tile-title {
   padding: 10px;
-  /*font-size: 1rem;*/
-  /*text-align: center;*/
+  font-size: 1rem;
+  text-align: center;
 }
 
 /* TEMP PAGE — override global tile grid sizing */
