@@ -11,6 +11,7 @@
   margin-top: 10px;       /* comfortable spacing under the player */
   box-sizing: border-box;
   flex: 1;
+  height: 140px;          /* adjust to match your tile height */
 }
 
 .horizontal-strip::-webkit-scrollbar {
