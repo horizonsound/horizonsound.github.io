@@ -580,71 +580,28 @@ footer {
 }
 
 /* --------------------------------------------------
-   MUSIC PAGE — FINAL, CONSOLIDATED, POLISHED LAYOUT
+   MUSIC PAGE — MATCH HOMEPAGE PANEL STYLE
 -------------------------------------------------- */
-/* Tighter spacing around the Music title */
-.page-title {
-  margin-top: 10px;   /* was 20–40px */
-  margin-bottom: 5px; /* was 10–20px */
-  text-align: center;
-  font-size: 2rem;
-  color: #fff;
-  opacity: 0.9;
-}
 
-/* Align buttons perfectly with tile grid + tighten spacing */
-.view-toggle {
-  display: flex;
-  gap: 10px;
-
-  /* Match playlist-section internal padding */
-  padding-left: 40px;
-  padding-right: 40px;
-
-  /* Pull buttons closer to the first playlist section */
-  margin-top: 5px;
-  margin-bottom: 5px;
-
-  box-sizing: border-box;
-}
-
-/* Reduce button padding so they feel tighter and more intentional */
-.view-toggle button {
-  padding: 6px 14px;
-}
-
-/* Page-level gutters so content never touches edges */
-main {
+/* Outer wrapper for the entire Music page */
+.music-page {
   padding-left: 40px;
   padding-right: 40px;
   box-sizing: border-box;
 }
 
-/* Playlist section container */
+/* Playlist sections now match homepage-section styling */
 .playlist-section {
   margin: 40px 0;
   padding: 25px 40px;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.03); /* same translucent panel */
   border-radius: 10px;
   border-top: 1px solid rgba(255,255,255,0.08);
-
   width: 100%;
   box-sizing: border-box;
 }
 
-/* Responsive gutters */
-@media (max-width: 600px) {
-  main {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  .playlist-section {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
-
-/* Playlist titles */
+/* Playlist titles match homepage section headers */
 .playlist-section .section-header {
   text-align: left;
   margin-bottom: 18px;
@@ -652,7 +609,7 @@ main {
   opacity: 0.9;
 }
 
-/* Override global tile-grid centering */
+/* Tile grid alignment identical to homepage + music page */
 .playlist-section .tile-grid {
   margin-left: 0 !important;
   margin-right: 0 !important;
