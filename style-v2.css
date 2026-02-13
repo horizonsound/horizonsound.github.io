@@ -213,11 +213,6 @@ body {
   padding: 0 40px;
 }
 
-.hidden-tile {
-  display: none !important;
-  border: 2px solid red;
-}
-
 #show-more-tiles {
   display: block;
   margin: 12px auto;
