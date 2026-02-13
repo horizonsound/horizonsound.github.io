@@ -580,16 +580,43 @@ footer {
 }
 
 /* --------------------------------------------------
-   MUSIC PAGE — FORCE HOMEPAGE PANEL STYLE
+   MUSIC PAGE — FINAL OVERRIDES (WINS EVERYTHING)
 -------------------------------------------------- */
 
+/* Restore centered Music title */
+.music-page .page-title {
+  text-align: center !important;
+  margin-top: 20px !important;
+  margin-bottom: 10px !important;
+  font-size: 2rem !important;
+  opacity: 0.9 !important;
+}
+
+/* Align buttons with left edge of section panel */
+.music-page .view-toggle {
+  display: flex !important;
+  gap: 10px !important;
+  padding-left: 40px !important;
+  padding-right: 40px !important;
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+  box-sizing: border-box !important;
+}
+
+/* Tighter button padding */
+.music-page .view-toggle button {
+  padding: 6px 14px !important;
+}
+
+/* Music page gutters */
 .music-page {
   padding-left: 40px !important;
   padding-right: 40px !important;
   box-sizing: border-box !important;
 }
 
-.playlist-section {
+/* Playlist sections — match homepage panels */
+.music-page .playlist-section {
   margin: 40px 0 !important;
   padding: 25px 40px !important;
   background: rgba(255, 255, 255, 0.03) !important;
@@ -599,14 +626,16 @@ footer {
   box-sizing: border-box !important;
 }
 
-.playlist-section .section-header {
+/* Playlist titles */
+.music-page .playlist-section .section-header {
   text-align: left !important;
   margin-bottom: 18px !important;
   font-size: 1.4rem !important;
   opacity: 0.9 !important;
 }
 
-.playlist-section .tile-grid {
+/* Tile grid alignment */
+.music-page .playlist-section .tile-grid {
   margin-left: 0 !important;
   margin-right: 0 !important;
   justify-items: start !important;
