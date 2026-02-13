@@ -563,6 +563,7 @@ footer {
   padding: 20px 30px;
   background: rgba(255, 255, 255, 0.03); /* subtle translucent panel */
   border-radius: 8px;
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
 
 .playlist-section .section-header {
