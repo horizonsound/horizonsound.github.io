@@ -779,3 +779,13 @@ footer {
   font-size: 1rem;
   text-align: center;
 }
+
+/* TEMP PAGE — force tile grid to anchor left */
+.temp-panel .tile-grid {
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: 100% !important;
+  justify-content: start !important;
+  justify-items: start !important;
+}
