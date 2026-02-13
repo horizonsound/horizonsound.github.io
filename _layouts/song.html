@@ -101,5 +101,32 @@ layout: none
       window.addEventListener("load", updateWidth);
     </script>
     
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const strip = document.querySelector(".horizontal-strip");
+      const leftArrow = document.querySelector(".left-arrow");
+      const rightArrow = document.querySelector(".right-arrow");
+    
+      const TILE_WIDTH = 180;     // your tile width
+      const TILE_GAP = 16;        // your CSS gap
+      const SCROLL_AMOUNT = TILE_WIDTH + TILE_GAP;
+    
+      leftArrow.addEventListener("click", () => {
+        strip.scrollBy({
+          left: -SCROLL_AMOUNT,
+          behavior: "smooth"
+        });
+      });
+    
+      rightArrow.addEventListener("click", () => {
+        strip.scrollBy({
+          left: SCROLL_AMOUNT,
+          behavior: "smooth"
+        });
+      });
+    });
+    </script>
+
+    
   </body>
 </html>
