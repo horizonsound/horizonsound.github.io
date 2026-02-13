@@ -8,6 +8,8 @@
   gap: 16px;              /* spacing between tiles */
   padding: 12px 0;        /* breathing room */
   width: 100%;            /* full width under player */
+  margin-top: 10px;       /* comfortable spacing under the player */
+  box-sizing: border-box;
 }
 
 .horizontal-strip::-webkit-scrollbar {
@@ -209,8 +211,8 @@ body {
    SONG PAGE: PROJECT TILE SECTION
 -------------------------------------------------- */
 .song-project {
-  margin: 20px 0 10px;
-  padding: 0 40px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 #show-more-tiles {
