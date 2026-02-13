@@ -594,10 +594,18 @@ footer {
   opacity: 0.9;
 }
 
-/* Left-align tiles inside the grid */
+/* Fix tile-grid centering inside playlist sections */
 .playlist-section .tile-grid {
   justify-items: start;
   justify-content: start;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+main {
+  padding-left: 40px;
+  padding-right: 40px;
+  box-sizing: border-box;
 }
 
 /* --------------------------------------------------
