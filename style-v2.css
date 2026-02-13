@@ -780,12 +780,13 @@ footer {
   text-align: center;
 }
 
-/* TEMP PAGE — force tile grid to anchor left */
 .temp-panel .tile-grid {
-  max-width: none !important;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 180px);
+  gap: 16px;
+  width: 100%;
   margin-left: 0 !important;
   margin-right: 0 !important;
-  width: 100% !important;
   justify-content: start !important;
   justify-items: start !important;
 }
