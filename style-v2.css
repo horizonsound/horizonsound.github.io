@@ -780,13 +780,14 @@ footer {
   text-align: center;
 }
 
+/* TEMP PAGE — override global tile grid sizing */
 .temp-panel .tile-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 180px);
-  gap: 16px;
-  width: 100%;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, 180px) !important;
+  gap: 16px !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
   justify-content: start !important;
   justify-items: start !important;
 }
