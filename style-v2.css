@@ -697,7 +697,7 @@ footer {
   padding-left: 40px;
   padding-right: 40px;
   padding-top: 40px;
-  box-sizing: border-box;
+  /*box-sizing: border-box;*/
   background: none !important; /* ensure no panel look 
 }
 
@@ -774,7 +774,7 @@ footer {
 }
 
 .temp-panel .tile-title {
-  padding: 10px;
+  /*padding: 10px;*/
   font-size: 1rem;
   text-align: center;
 }
