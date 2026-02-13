@@ -1,3 +1,27 @@
+/* Phase 1: Horizontal strip playlist */
+.horizontal-strip {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;       /* enables horizontal scroll */
+  overflow-y: hidden;
+  white-space: nowrap;    /* prevents wrapping */
+  gap: 16px;              /* spacing between tiles */
+  padding: 12px 0;        /* breathing room */
+  width: 100%;            /* full width under player */
+}
+
+.horizontal-strip::-webkit-scrollbar {
+  height: 10px;           /* visible scrollbar for debugging */
+}
+
+.playlist-tile {
+  flex: 0 0 180px;        /* fixed tile width */
+  height: auto;
+}
+
+
+
+
 /* --------------------------------------------------
    GLOBAL BASE STYLES
 -------------------------------------------------- */
