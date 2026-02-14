@@ -691,7 +691,7 @@ footer {
   box-shadow: 0 4px 14px rgba(0,0,0,0.35); /* homepage-style lift */
   /* Tile layout — match homepage proportions */
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)) !important;
-  gap: 20px !important;
+  gap: 5px !important; /* homepage uses 5px */
   /* Alignment */
   margin: 0 !important;
   justify-items: start !important;
