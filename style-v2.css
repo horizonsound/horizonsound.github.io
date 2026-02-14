@@ -490,8 +490,8 @@ footer {
 
 /* Page-level gutters */
 .homepage-wrapper {
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
   box-sizing: border-box;
 }
 
@@ -525,9 +525,10 @@ footer {
 /* Tighten homepage title spacing */
 .homepage-title {
   text-align: center;
-  margin: 20px 0 10px;
+  margin: 10px 0 10px;
   font-size: 2rem;
   opacity: 0.9;
+  margin-bottom: 2px !important;   /* was 10px */
 }
 
 /* Raise teaser over hero */
@@ -631,8 +632,8 @@ footer {
 
 /* Music page gutters (match homepage) */
 .music-page {
-  padding-left: 40px !important;
-  padding-right: 40px !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
   box-sizing: border-box !important;
 }
 
