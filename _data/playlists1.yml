@@ -1,0 +1,29 @@
+- id: a-way-back
+  title: "A Way Back Trilogy"
+  image: "/images/playlists/a-way-back.jpg"
+  description: "A three-part emotional arc exploring silence, self-worth, and choosing love from two perspectives."
+  songs:
+    - lost-in-silence
+    - choosing-me-her
+    - choosing-me-his
+  order: 1
+
+- id: midnight-saga
+  title: "Midnight Saga"
+  image: "/images/playlists/midnight-saga.jpg"
+  description: "A cinematic late-night journey through identity and transformation."
+  songs:
+    - before-midnight
+    - midnight-mayhem
+    - midnight-madness
+    - after-midnight
+  order: 2
+
+- id: after-the-silence
+  title: "After the Silence"
+  image: "/images/playlists/after-the-silence.jpg"
+  description: ""
+  songs:
+    - the-quiet-after
+    - borrowed-time
+  order: 1
