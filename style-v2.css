@@ -540,8 +540,10 @@ footer {
   margin-left: auto;
   margin-right: auto;
 
-  background: rgba(0, 0, 0, 0.45); /* subtle overlay for readability */
-  backdrop-filter: blur(6px);
+  background: transparent !important;
+  backdrop-filter: none !important;
+  /* background: rgba(0, 0, 0, 0.45); /* subtle overlay for readability
+  backdrop-filter: blur(6px); */
   border-radius: 10px;
 
   font-size: 1.35rem;
@@ -553,7 +555,19 @@ footer {
 
 .home-teaser p {
   margin: 0 0 1rem;
-  /* text-align: left; */
+  text-align: left;
+  position: relative;
+  padding-left: 24px;
+}
+
+.home-teaser p::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #fff;
+  font-size: 1.2em;
+  line-height: 1;
 }
 
 /* --------------------------------------------------
@@ -691,7 +705,5 @@ footer {
 
 .music-page .tile {
   aspect-ratio: auto !important; /* prevents square forcing */
+  height: auto !important;
 }
-
-
-
