@@ -580,68 +580,6 @@ footer {
 }
 
 /* --------------------------------------------------
-   MUSIC PAGE — CLEAN FINAL OVERRIDES + DEBUG BORDERS
--------------------------------------------------- */
-
-/* Title */
-.music-page .page-title {
-  text-align: center !important;
-  margin-top: 0px !important;
-  margin-bottom: 0px !important;
-  font-size: 2rem !important;
-  opacity: 0.9 !important;
-}
-
-/* View toggle */
-.music-page .view-toggle {
-  display: flex !important;
-  gap: 10px !important;
-  padding-left: 0px !important;
-  padding-right: 40px !important;
-  margin-top: 5px !important;
-  margin-bottom: 5px !important;
-  box-sizing: border-box !important;
-}
-
-.music-page .view-toggle button {
-  padding: 6px 14px !important;
-}
-
-/* Playlist panels (OUTER PANEL — RED BORDER) */
-.music-page .playlist-section {
-  margin: 40px 0 !important;
-  padding: 25px 40px !important;
-  background: rgba(255, 255, 255, 0.03) !important;
-  border-radius: 10px !important;
-  border-top: 1px solid rgba(255,255,255,0.08) !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
-
-  /* DEBUG */
-  border: 2px solid red !important;
-}
-
-/* Playlist section headers */
-.music-page .playlist-section .section-header {
-  text-align: left !important;
-  margin-bottom: 18px !important;
-  font-size: 1.4rem !important;
-  opacity: 0.9 !important;
-}
-
-/* Tile grid alignment (INNER PANEL — BLUE BORDER) */
-.music-page .playlist-section .tile-grid {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  justify-items: start !important;
-  justify-content: start !important;
-
-  /* DEBUG */
-  border: 2px solid blue !important;
-}
-
-
-/* --------------------------------------------------
    ABOUT PAGE
 -------------------------------------------------- */
 .about-page {
@@ -729,4 +667,62 @@ footer {
   justify-items: start !important;
   justify-content: start !important;
 }
+
+
+/* --------------------------------------------------
+   MUSIC PAGE — CLEAN FINAL OVERRIDES + DEBUG BORDERS
+-------------------------------------------------- */
+
+/* Title 
+.music-page .page-title {
+  text-align: center !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  font-size: 2rem !important;
+  opacity: 0.9 !important;
+}
+
+.music-page .view-toggle {
+  display: flex !important;
+  gap: 10px !important;
+  padding-left: 0px !important;
+  padding-right: 40px !important;
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+  box-sizing: border-box !important;
+}
+
+.music-page .view-toggle button {
+  padding: 6px 14px !important;
+}
+
+.music-page .playlist-section {
+  margin: 40px 0 !important;
+  padding: 25px 40px !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-radius: 10px !important;
+  border-top: 1px solid rgba(255,255,255,0.08) !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+
+  border: 2px solid red !important;
+}
+
+.music-page .playlist-section .section-header {
+  text-align: left !important;
+  margin-bottom: 18px !important;
+  font-size: 1.4rem !important;
+  opacity: 0.9 !important;
+}
+
+.music-page .playlist-section .tile-grid {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  justify-items: start !important;
+  justify-content: start !important;
+
+  border: 2px solid blue !important;
+} */
+
+
 
