@@ -561,12 +561,12 @@ footer {
 }
 
 .home-teaser p::before {
-  content: "★";
+  content: "★  ";
   position: absolute;
   left: 0;
   top: 0;
   color: #fff;
-  font-size: 1.2em;
+  font-size: 1em;
   line-height: 1;
 }
 
