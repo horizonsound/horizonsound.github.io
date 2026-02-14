@@ -710,12 +710,11 @@ footer {
 
 /* Tile grid alignment (INNER PANEL — BLUE BORDER) */
 .music-page .playlist-section .tile-grid {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  justify-items: start !important;
-  justify-content: start !important;
+  background: rgba(255, 255, 255, 0.02); /* subtle inner layer */
+  padding: 20px; /* creates breathing room */
+  border-radius: 8px;
 
-  /* DEBUG */
+  /* existing debug border */
   border: 2px solid blue !important;
 }
 
