@@ -681,14 +681,11 @@ footer {
 .music-page .view-toggle {
   display: flex !important;
   gap: 10px !important;
-
   padding-left: 0 !important;   /* remove inherited page padding */
   padding-right: 0 !important;
-
   margin-left: 40px !important; /* aligns with outer panel */
   margin-top: 5px !important;
   margin-bottom: 5px !important;
-
   box-sizing: border-box !important;
 }
 
@@ -705,8 +702,7 @@ footer {
   border-top: 1px solid rgba(255,255,255,0.08) !important;
   width: 100% !important;
   box-sizing: border-box !important;
-  /* DEBUG
-  border: 2px solid red !important; */
+  /* DEBUG - border: 2px solid red !important; */
 }
 
 /* Playlist section headers */
@@ -726,7 +722,7 @@ footer {
   padding: 20px 30px !important;
   border-radius: 8px;
 
-   /* Tile layout — match homepage proportions */
+  /* Tile layout — match homepage proportions */
   grid-template-columns: repeat(auto-fill, minmax(155px, 1fr)) !important;
   gap: 20px !important;
 
@@ -735,8 +731,6 @@ footer {
   margin-right: 0 !important;
   justify-items: start !important;
   justify-content: start !important;
-
-   /* DEBUG 
-  border: 2px solid green !important; */
+  /* DEBUG -   border: 2px solid green !important; */
 }
 
