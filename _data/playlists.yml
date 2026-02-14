@@ -1,6 +1,6 @@
 - id: a-way-back
   title: "A Way Back Trilogy"
-  image: "/images/playlists/a-way-back.jpg"
+  image: "/assets/Choosing Me (Her Version).jpeg"
   description: "A three-part emotional arc exploring silence, self-worth, and choosing love from two perspectives."
   songs:
     - lost-in-silence
@@ -21,7 +21,7 @@
 
 - id: after-the-silence
   title: "After the Silence"
-  image: "/images/playlists/after-the-silence.jpg"
+  image: "/assets/After the Silence.jpeg"
   description: ""
   songs:
     - the-quiet-after
