@@ -682,7 +682,7 @@ footer {
 .music-page .view-toggle {
   display: flex !important;
   gap: 10px !important;
-  padding-left: 40px !important;
+  /* padding-left: 40px !important; */
   padding-right: 40px !important;
   margin-top: 5px !important;
   margin-bottom: 5px !important;
@@ -731,5 +731,5 @@ footer {
   justify-content: start !important;
 
    /* DEBUG */
-  border: 2px solid blue !important;
+  border: 2px solid green !important;
 }
