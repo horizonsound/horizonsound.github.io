@@ -490,14 +490,14 @@ footer {
 
 /* Page-level gutters */
 .homepage-wrapper {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
   box-sizing: border-box;
 }
 
 /* Homepage sections match playlist-section */
 .homepage-section {
-  margin: 40px 0;
+  margin: 20px 0;
   padding: 25px 40px;
   background: rgba(255, 255, 255, 0.03);
   border-radius: 10px;
@@ -632,8 +632,8 @@ footer {
 
 /* Music page gutters (match homepage) */
 .music-page {
-  padding-left: 20px !important;
-  padding-right: 20px !important;
+  padding-left: 40px !important;
+  padding-right: 40px !important;
   box-sizing: border-box !important;
 }
 
@@ -668,7 +668,7 @@ footer {
 /* Playlist panels (OUTER PANEL — RED BORDER) */
 .music-page .playlist-section {
   margin-top: 0 !important;  /* was 40px */
-  margin: 40px 0 !important;
+  margin: 20px 0 !important;
   padding: 25px 40px !important;
   background: rgba(255, 255, 255, 0.03) !important;
   border-radius: 10px !important;
