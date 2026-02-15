@@ -17,6 +17,28 @@
 
 <body>
 
+  {% if site.debug %}
+  <div class="debug-block">
+  <pre style="background:#000; color:#f0f; padding:1rem; margin:1rem 0; white-space:pre-wrap;">
+
+LAYOUT DEBUG
+==============================
+page.url:
+{{ page.url }}
+
+page.layout:
+{{ page.layout }}
+
+page object:
+{{ page | jsonify }}
+
+site.debug:
+{{ site.debug }}
+
+  </pre>
+  </div>
+  {% endif %}
+
   {% include header.html %}
   {% include hero.html %}
 
