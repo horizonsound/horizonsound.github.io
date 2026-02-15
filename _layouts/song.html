@@ -4,10 +4,25 @@ layout: default
 
 {% assign current_song = page %}
 
-<!-- DEBUG BLOCK (keep as-is) -->
-<div style="background:#111; color:#0ff; padding:1rem; margin:1rem 0; font-family:monospace; white-space:pre-wrap;">
-  <!-- your existing debug content -->
+{% if site.debug %}
+<div class="debug-block">
+<pre style="background:#111; color:#0ff; padding:1rem; margin:1rem 0; white-space:pre-wrap;">
+
+SONG PAGE DEBUG
+====================
+
+current_song (page):
+{{ current_song | jsonify }}
+
+meta (from music.yml):
+{{ meta | jsonify }}
+
+playlist_sorted (final list passed to carousel):
+{{ playlist_sorted | jsonify }}
+
+</pre>
 </div>
+{% endif %}
 
 <main>
 
