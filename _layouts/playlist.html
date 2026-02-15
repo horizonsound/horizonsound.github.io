@@ -19,29 +19,53 @@ layout: default
        DEBUG BLOCK (TEMPORARY)
   ============================= -->
   <div style="background:#222; color:#0ff; padding:1rem; margin:1rem 0; font-family:monospace; white-space:pre-wrap;">
-    <strong>DEBUG:</strong>
+<!-- ============================
+     DEBUG BLOCK (TEMPORARY)
+============================= -->
+<div style="background:#111; color:#0ff; padding:1rem; margin:1rem 0; font-family:monospace; white-space:pre-wrap;">
+  <strong>DEBUG:</strong>
 
-    playlist.songs:
-    {{ playlist.songs | inspect }}
+  playlist.songs (raw):
+  {{ playlist.songs | inspect }}
 
-    site.songs (song_id only):
-    {% for s in site.songs %}
-      - {{ s.song_id }}
-    {% endfor %}
+  playlist.songs (quoted, one per line):
+  {% for sid in playlist.songs %}
+    - "[{{ sid }}]"
+  {% endfor %}
 
-    first_song_id:
-    {{ first_song_id }}
+  site.songs (song_id only, quoted):
+  {% for s in site.songs %}
+    - "[{{ s.song_id }}]"
+  {% endfor %}
 
-    first_song exists?
-    {% if first_song %}
-      YES → {{ first_song.song_id }}
-    {% else %}
-      NO (first_song is NIL)
-    {% endif %}
+  first_song_id (quoted):
+  "[{{ first_song_id }}]"
 
-    Raw site.songs object:
-    {{ site.songs | inspect }}
-  </div>
+  first_song exists?
+  {% if first_song %}
+    YES → "[{{ first_song.song_id }}]"
+  {% else %}
+    NO (first_song is NIL)
+  {% endif %}
+
+  first_song.youtube_id (quoted):
+  {% if first_song %}
+    "[{{ first_song.youtube_id }}]"
+  {% else %}
+    "[NO FIRST SONG]"
+  {% endif %}
+
+  iframe src (fully rendered):
+  "[https://www.youtube.com/embed/{{ first_song.youtube_id }}]"
+
+  carousel tracks (song_id + youtube_id):
+  {% for song_id in playlist.songs %}
+    {% assign song = all_songs | where: "song_id", song_id | first %}
+    - song_id: "[{{ song.song_id }}]"
+      youtube_id: "[{{ song.youtube_id }}]"
+  {% endfor %}
+</div>
+
 
   {% if playlist.description %}
     <p class="playlist-narrative">{{ playlist.description }}</p>
