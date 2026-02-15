@@ -71,8 +71,15 @@ PLAYLIST SORTED (final list for carousel)
   {% include embed.html youtube_id=resolved_youtube_id %}
   
   <!-- CAROUSEL (old structure, old CSS) -->
+  {% assign resolved_youtube_id = current_song.youtube_id | default: meta.youtube_id %}
+  {% include embed.html youtube_id=resolved_youtube_id %}
+  
+  <script>
+    window.allSongs = {{ playlist_sorted | jsonify }};
+  </script>
+  
   {% include carousel.html playlist=playlist_sorted %}
-
+  
   <!-- ABOUT SECTION (Pulled from about.html include) -->
   {% include about.html about=current_song.about %}
 
