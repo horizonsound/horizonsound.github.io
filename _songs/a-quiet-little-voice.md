@@ -1,5 +1,6 @@
 ---
 layout: song
+id: a-quiet-little-voice
 hero_image: "/assets/hero.jpg"
 
 about: |
