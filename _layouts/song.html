@@ -4,6 +4,22 @@ layout: default
 
 {% assign current_song = page %}
 
+<!-- LOOKUP META FROM music.yml -->
+{% assign url = current_song.url %}
+{% assign meta = site.data.music.songs | where: "url", url | first %}
+
+<!-- CAROUSEL SORTING LOGIC -->
+{% assign related = site.data.music.songs | where: "primary_playlist", meta.primary_playlist %}
+{% assign related_public = related | where: "videostatus", "Public" %}
+{% assign sorted_by_sequence = related_public | sort: "sequence" %}
+{% assign first_item = sorted_by_sequence | first %}
+
+{% if first_item.sequence %}
+  {% assign playlist_sorted = sorted_by_sequence %}
+{% else %}
+  {% assign playlist_sorted = related_public | sort: "title" %}
+{% endif %}
+
 {% if site.debug %}
 <div class="debug-block">
 <pre style="background:#111; color:#0ff; padding:1rem; margin:1rem 0; white-space:pre-wrap;">
