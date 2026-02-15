@@ -1,14 +1,8 @@
----
-layout: default
----
-
 {% assign current_song = page %}
 
-<!-- LOOKUP META FROM music.yml -->
 {% assign url = current_song.url %}
 {% assign meta = site.data.music.songs | where: "url", url | first %}
 
-<!-- CAROUSEL SORTING LOGIC -->
 {% assign related = site.data.music.songs | where: "primary_playlist", meta.primary_playlist %}
 {% assign related_public = related | where: "videostatus", "Public" %}
 {% assign sorted_by_sequence = related_public | sort: "sequence" %}
@@ -27,13 +21,13 @@ layout: default
 SONG PAGE DEBUG
 ====================
 
-current_song (page):
+current_song:
 {{ current_song | jsonify }}
 
-meta (from music.yml):
+meta:
 {{ meta | jsonify }}
 
-playlist_sorted (final list passed to carousel):
+playlist_sorted:
 {{ playlist_sorted | jsonify }}
 
 </pre>
