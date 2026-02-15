@@ -7,6 +7,8 @@ layout: default
 
 {% assign first_song_id = playlist.songs | first %}
 {% assign first_song = all_songs | where: "song_id", first_song_id | first %}
+{% assign first_url = "/music/" | append: first_song.song_id | append: "/" %}
+{% assign first_meta = site.data.music.songs | where: "url", first_url | first %}
 
 <div class="playlist-page">
 
@@ -14,54 +16,6 @@ layout: default
        PLAYLIST TITLE + NARRATIVE
   ============================= -->
   <h1 class="playlist-title">{{ playlist.title }}</h1>
-
-  <!-- ============================
-       DEBUG BLOCK (TEMPORARY)
-  ============================= -->
-  <div style="background:#222; color:#0ff; padding:1rem; margin:1rem 0; font-family:monospace; white-space:pre-wrap;">
-<!-- ============================
-     DEBUG BLOCK (TEMPORARY)
-============================= -->
-<div style="background:#111; color:#0ff; padding:1rem; margin:1rem 0; font-family:monospace; white-space:pre-wrap;">
-<!-- ============================
-     DEBUG BLOCK (TEMPORARY)
-============================= -->
-<div style="background:#111; color:#0ff; padding:1rem; margin:1rem 0; font-family:monospace; white-space:pre-wrap;">
-  <strong>DEBUG:</strong>
-
-  playlist.songs (quoted):
-  {% for sid in playlist.songs %}
-    - "[{{ sid }}]"
-  {% endfor %}
-
-  site.songs (song_id only):
-  {% for s in site.songs %}
-    - "[{{ s.song_id }}]"
-  {% endfor %}
-
-  first_song_id:
-  "[{{ first_song_id }}]"
-
-  {% assign first_url = "/music/" | append: first_song_id | append: "/" %}
-  {% assign first_meta = site.data.music.songs | where: "url", first_url | first %}
-
-  first_song youtube_id from music.yml:
-  {% if first_meta %}
-    "[{{ first_meta.youtube_id }}]"
-  {% else %}
-    "[NOT FOUND]"
-  {% endif %}
-
-carousel tracks (song_id + youtube_id + image from music.yml):
-{% for sid in playlist.songs %}
-  {% assign url = "/music/" | append: sid | append: "/" %}
-  {% assign meta = site.data.music.songs | where: "url", url | first %}
-  - song_id: "[{{ sid }}]"
-    url: "[{{ url }}]"
-    youtube_id: "[{% if meta %}{{ meta.youtube_id }}{% else %}NOT FOUND{% endif %}]"
-    image: "[{% if meta %}{{ meta.image }}{% else %}NOT FOUND{% endif %}]"
-{% endfor %}
-</div>
 
   {% if playlist.description %}
     <p class="playlist-narrative">{{ playlist.description }}</p>
@@ -75,8 +29,6 @@ carousel tracks (song_id + youtube_id + image from music.yml):
       id="playlist-iframe"
       width="100%"
       height="360"
-      {% assign first_url = "/music/" | append: first_song.song_id | append: "/" %}
-      {% assign first_meta = site.data.music.songs | where: "url", first_url | first %}
       src="https://www.youtube.com/embed/{{ first_meta.youtube_id }}"
       frameborder="0"
       allowfullscreen>
@@ -86,21 +38,32 @@ carousel tracks (song_id + youtube_id + image from music.yml):
   <!-- ============================
        PLAYLIST CAROUSEL
   ============================= -->
-<div class="playlist-carousel" id="playlist-carousel">
-  <div class="horizontal-strip">
-    {% for song_id in playlist.songs %}
-      {% assign song = all_songs | where: "song_id", song_id | first %}
-      {% assign url = "/music/" | append: song.song_id | append: "/" %}
-      {% assign meta = site.data.music.songs | where: "url", url | first %}
+  <div class="playlist-carousel">
 
-      <div class="playlist-tile {% if forloop.first %}active{% endif %}"
-           data-song="{{ song.song_id }}">
-        <img src="{{ meta.image }}" alt="{{ song.title }}">
-        <h3>{{ song.title }}</h3>
-      </div>
-    {% endfor %}
+    <!-- LEFT ARROW -->
+    <button class="carousel-arrow left-arrow" id="carousel-left">‹</button>
+
+    <!-- SCROLLING STRIP -->
+    <div class="horizontal-strip" id="carousel-strip">
+      {% for song_id in playlist.songs %}
+        {% assign song = all_songs | where: "song_id", song_id | first %}
+        {% assign url = "/music/" | append: song.song_id | append: "/" %}
+        {% assign meta = site.data.music.songs | where: "url", url | first %}
+
+        {% if meta.videostatus == "Public" %}
+        <div class="playlist-tile {% if forloop.first %}active{% endif %}"
+             data-song="{{ song.song_id }}">
+          <img src="{{ meta.image }}" alt="{{ song.title }}">
+          <h3>{{ song.title }}</h3>
+        </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <!-- RIGHT ARROW -->
+    <button class="carousel-arrow right-arrow" id="carousel-right">›</button>
+
   </div>
-</div>
 
   <!-- ============================
        DYNAMIC TRACK DETAILS
@@ -122,7 +85,7 @@ carousel tracks (song_id + youtube_id + image from music.yml):
 document.addEventListener("DOMContentLoaded", function () {
 
   /* -----------------------------------------
-     SAFE, ESCAPED SONG DATA (NO JSONIFY BUG)
+     SAFE, ESCAPED SONG DATA
   ----------------------------------------- */
   const allSongs = [
     {% for song in site.songs %}
@@ -132,9 +95,10 @@ document.addEventListener("DOMContentLoaded", function () {
         {% assign url = "/music/" | append: song.song_id | append: "/" %}
         {% assign meta = site.data.music.songs | where: "url", url | first %}
         youtube_id: "{{ meta.youtube_id }}",
-        image: {{ song.image | jsonify }},
+        image: "{{ meta.image }}",
         description: {{ song.about | jsonify }},
-        lyrics: {{ song.lyrics | jsonify }}
+        lyrics: {{ song.lyrics | jsonify }},
+        videostatus: "{{ meta.videostatus }}"
       }{% unless forloop.last %},{% endunless %}
     {% endfor %}
   ];
@@ -152,6 +116,9 @@ document.addEventListener("DOMContentLoaded", function () {
     return allSongs.find(s => s.song_id === id);
   }
 
+  /* -----------------------------------------
+     TILE CLICK HANDLER
+  ----------------------------------------- */
   tiles.forEach(tile => {
     tile.addEventListener("click", () => {
       const songId = tile.dataset.song;
@@ -159,19 +126,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (!song) return;
 
-      // Update active tile
       tiles.forEach(t => t.classList.remove("active"));
       tile.classList.add("active");
 
-      // Update YouTube embed
       iframe.src = "https://www.youtube.com/embed/" + song.youtube_id;
-
-      // Update details
       titleEl.textContent = song.title;
       descEl.textContent = song.description || "";
       lyricsEl.innerHTML = song.lyrics || "";
 
-      // Smooth scroll to details
       document.getElementById("song-details").scrollIntoView({
         behavior: "smooth",
         block: "start"
@@ -179,6 +141,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  /* -----------------------------------------
+     ARROW SCROLLING
+  ----------------------------------------- */
+  const strip = document.getElementById("carousel-strip");
+  const left = document.getElementById("carousel-left");
+  const right = document.getElementById("carousel-right");
+
+  left.addEventListener("click", () => {
+    strip.scrollBy({ left: -300, behavior: "smooth" });
+  });
+
+  right.addEventListener("click", () => {
+    strip.scrollBy({ left: 300, behavior: "smooth" });
+  });
+
 });
 </script>
-
