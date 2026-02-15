@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>{{ page.title }}</title>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JFDRHKE5CW"></script>
@@ -16,29 +17,6 @@
 </head>
 
 <body>
-
-  {% if site.debug %}
-  <div class="debug-block">
-  <pre style="background:#000; color:#f0f; padding:1rem; margin:1rem 0; white-space:pre-wrap;">
-
-LAYOUT DEBUG
-==============================
-page.url:
-{{ page.url }}
-
-page.layout:
-{{ page.layout }}
-
-page object:
-{{ page | jsonify }}
-
-site.debug:
-{{ site.debug }}
-
-  </pre>
-  </div>
-  {% endif %}
-
   {% include header.html %}
   {% include hero.html %}
 
@@ -47,94 +25,5 @@ site.debug:
   </main>
 
   {% include footer.html %}
-
-  <!-- Make allSongs available BEFORE the carousel JS -->
-  <script>
-    window.allSongs = {{ site.data.music.songs | jsonify }};
-  </script>
-
-  <!-- Unified carousel + viewer JS -->
-  <script>
-  document.addEventListener("DOMContentLoaded", function () {
-
-    const carousels = document.querySelectorAll(".playlist-carousel");
-
-    carousels.forEach(carousel => {
-      const strip = carousel.querySelector(".horizontal-strip");
-      const leftArrow = carousel.querySelector(".left-arrow");
-      const rightArrow = carousel.querySelector(".right-arrow");
-      const tiles = carousel.querySelectorAll(".playlist-tile");
-
-      if (!strip || !leftArrow || !rightArrow) return;
-
-      const TILE_WIDTH = 180;
-      const TILE_GAP = 16;
-      const SCROLL_AMOUNT = TILE_WIDTH + TILE_GAP;
-
-      function updateArrows() {
-        const maxScroll = strip.scrollWidth - strip.clientWidth;
-        const current = strip.scrollLeft;
-
-        leftArrow.classList.toggle("disabled", current <= 0);
-        rightArrow.classList.toggle("disabled", current >= maxScroll - 1);
-      }
-
-      leftArrow.addEventListener("click", () => {
-        strip.scrollBy({ left: -SCROLL_AMOUNT, behavior: "smooth" });
-      });
-
-      rightArrow.addEventListener("click", () => {
-        strip.scrollBy({ left: SCROLL_AMOUNT, behavior: "smooth" });
-      });
-
-      tiles.forEach(tile => {
-        tile.addEventListener("click", () => {
-          const songId = tile.dataset.song;
-
-          tiles.forEach(t => t.classList.remove("active-tile"));
-          tile.classList.add("active-tile");
-
-          const iframe = document.getElementById("playlist-iframe");
-          const titleEl = document.getElementById("song-title");
-          const descEl = document.getElementById("song-description");
-          const lyricsEl = document.getElementById("song-lyrics");
-
-          if (iframe && titleEl && descEl && lyricsEl) {
-            const songData = window.allSongs?.find(s => s.song_id === songId);
-            if (songData) {
-              iframe.src = "https://www.youtube.com/embed/" + songData.youtube_id;
-              titleEl.textContent = songData.title;
-              descEl.textContent = songData.description || "";
-              lyricsEl.innerHTML = songData.lyrics || "";
-            }
-          }
-        });
-      });
-
-      let isSnapping = false;
-
-      strip.addEventListener("scroll", () => {
-        if (isSnapping) return;
-
-        clearTimeout(strip.snapTimeout);
-        strip.snapTimeout = setTimeout(() => {
-          isSnapping = true;
-
-          const scrollLeft = strip.scrollLeft;
-          const tileWidth = TILE_WIDTH + TILE_GAP;
-          const nearest = Math.round(scrollLeft / tileWidth) * tileWidth;
-
-          strip.scrollTo({ left: nearest, behavior: "smooth" });
-
-          setTimeout(() => (isSnapping = false), 300);
-        }, 120);
-      });
-
-      strip.addEventListener("scroll", updateArrows);
-      updateArrows();
-    });
-  });
-  </script>
-
 </body>
 </html>
