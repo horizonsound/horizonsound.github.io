@@ -1,66 +1,58 @@
-{% comment %}
-UNIFIED CAROUSEL COMPONENT
-Supports:
-- playlist pages (mode="playlist")
-- song pages (mode="song")
-- public_only=true/false
-- current = currently active song object
-- songs = list of song_ids OR list of song objects
-{% endcomment %}
+{% for item in songs %}
 
-{% assign mode = include.mode | default: "playlist" %}
-{% assign public_only = include.public_only | default: false %}
-{% assign current = include.current %}
-{% assign songs = include.songs %}
+  {%- comment -%}
+  Normalize item → always get:
+  - song: the page from site.songs
+  - meta: the entry from site.data.music.songs
+  {%- endcomment -%}
 
-<div class="playlist-carousel">
+  {% assign song = nil %}
+  {% assign meta = nil %}
+  {% assign url = nil %}
 
-  <!-- LEFT ARROW -->
-  <button class="carousel-arrow left-arrow">‹</button>
-
-  <!-- SCROLLING STRIP -->
-  <div class="horizontal-strip">
-    {% for item in songs %}
-
-      {%- comment -%}
-      Normalize item → always get a full song object
-      {%- endcomment -%}
-
-      {% if item.song_id %}
-        {% assign song = item %}
-      {% else %}
-        {% assign song = site.songs | where: "song_id", item | first %}
-      {% endif %}
-
-      {% assign url = "/music/" | append: song.song_id | append: "/" %}
+  {% if item.song_id %}
+    {# item is a song object from site.songs #}
+    {% assign song = item %}
+    {% assign url = song.url %}
+    {% assign meta = site.data.music.songs | where: "url", url | first %}
+  {% elsif item.url %}
+    {# item is a meta object from music.yml #}
+    {% assign url = item.url %}
+    {% assign meta = item %}
+    {% assign song = site.songs | where: "url", url | first %}
+  {% else %}
+    {# item is a bare song_id string #}
+    {% assign song = site.songs | where: "song_id", item | first %}
+    {% if song %}
+      {% assign url = song.url %}
       {% assign meta = site.data.music.songs | where: "url", url | first %}
+    {% endif %}
+  {% endif %}
 
-      {%- comment -%}
-      Public-only filtering
-      {%- endcomment -%}
-      {% if public_only and meta.videostatus != "Public" %}
-        {% continue %}
-      {% endif %}
+  {% if not song or not meta %}
+    {% continue %}
+  {% endif %}
 
-      {%- comment -%}
-      Determine active tile
-      {%- endcomment -%}
-      {% assign is_active = false %}
-      {% if current and current.song_id == song.song_id %}
-        {% assign is_active = true %}
-      {% endif %}
+  {%- comment -%}
+  Public-only filtering
+  {%- endcomment -%}
+  {% if public_only and meta.videostatus != "Public" %}
+    {% continue %}
+  {% endif %}
 
-      <div class="playlist-tile {% if is_active %}active-tile{% endif %}"
-           data-song="{{ song.song_id }}"
-           data-url="{{ url }}">
-        <img src="{{ meta.image }}" alt="{{ song.title }}">
-        <h3 class="tile-title">{{ song.title }}</h3>
-      </div>
+  {%- comment -%}
+  Determine active tile
+  {%- endcomment -%}
+  {% assign is_active = false %}
+  {% if current and current.song_id == song.song_id %}
+    {% assign is_active = true %}
+  {% endif %}
 
-    {% endfor %}
+  <div class="playlist-tile {% if is_active %}active-tile{% endif %}"
+       data-song="{{ song.song_id }}"
+       data-url="{{ url }}">
+    <img src="{{ meta.image }}" alt="{{ song.title }}">
+    <h3 class="tile-title">{{ song.title }}</h3>
   </div>
 
-  <!-- RIGHT ARROW -->
-  <button class="carousel-arrow right-arrow">›</button>
-
-</div>
+{% endfor %}
