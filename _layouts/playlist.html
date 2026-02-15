@@ -38,32 +38,12 @@ layout: default
   <!-- ============================
        PLAYLIST CAROUSEL
   ============================= -->
-  <div class="playlist-carousel">
-
-    <!-- LEFT ARROW -->
-    <button class="carousel-arrow left-arrow" id="carousel-left">‹</button>
-
-    <!-- SCROLLING STRIP -->
-    <div class="horizontal-strip" id="carousel-strip">
-      {% for song_id in playlist.songs %}
-        {% assign song = all_songs | where: "song_id", song_id | first %}
-        {% assign url = "/music/" | append: song.song_id | append: "/" %}
-        {% assign meta = site.data.music.songs | where: "url", url | first %}
-
-        {% if meta.videostatus == "Public" %}
-        <div class="playlist-tile {% if forloop.first %}active{% endif %}"
-             data-song="{{ song.song_id }}">
-          <img src="{{ meta.image }}" alt="{{ song.title }}">
-          <h3>{{ song.title }}</h3>
-        </div>
-        {% endif %}
-      {% endfor %}
-    </div>
-
-    <!-- RIGHT ARROW -->
-    <button class="carousel-arrow right-arrow" id="carousel-right">›</button>
-
-  </div>
+  {% include carousel.html 
+       songs=playlist.songs 
+       current=first_song 
+       mode="playlist" 
+       public_only=true 
+  %}
 
   <!-- ============================
        DYNAMIC TRACK DETAILS
