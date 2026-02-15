@@ -3,6 +3,54 @@ layout: default
 ---
 
 {% assign current_song = page %}
+
+<!-- ============================
+     DEBUG BLOCK — SONG PAGE
+============================= -->
+<div style="background:#111; color:#0ff; padding:1rem; margin:1rem 0; font-family:monospace; white-space:pre-wrap;">
+
+<strong>SONG PAGE DEBUG</strong>
+
+current_song.song_id:
+[{{ current_song.song_id }}]
+
+current_song.url:
+[{{ current_song.url }}]
+
+current_song.primary_playlist:
+[{{ current_song.primary_playlist }}]
+
+--- related songs (raw from music.yml) ---
+{% assign related = site.data.music.songs | where: "primary_playlist", current_song.primary_playlist %}
+{% for s in related %}
+- title: "{{ s.title }}"
+  url: "{{ s.url }}"
+  sequence: "{{ s.sequence }}"
+  videostatus: "{{ s.videostatus }}"
+{% endfor %}
+
+--- related PUBLIC songs (after filtering) ---
+{% assign related_public = related | where: "videostatus", "Public" %}
+{% for s in related_public %}
+- "{{ s.title }}"
+{% endfor %}
+
+--- playlist_sorted (final order) ---
+{% assign sorted_by_sequence = related_public | sort: "sequence" %}
+{% assign first_item = sorted_by_sequence | first %}
+{% if first_item.sequence %}
+  {% assign playlist_sorted = sorted_by_sequence %}
+{% else %}
+  {% assign playlist_sorted = related_public | sort: "title" %}
+{% endif %}
+
+{% for s in playlist_sorted %}
+- "{{ s.title }}" ({{ s.url }})
+{% endfor %}
+
+</div>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
