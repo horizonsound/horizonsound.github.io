@@ -1,4 +1,4 @@
-- id: a-way-back
+- playlist_id: a-way-back
   title: "A Way Back Trilogy"
   image: "/assets/Choosing Me (Her Version).jpeg"
   description: >
@@ -13,7 +13,7 @@
     - choosing-me-his
   order: 1
 
-- id: midnight-saga
+- playlist_id: midnight-saga
   title: "Midnight Saga"
   image: "/assets/Midnight Saga.jpeg"
   description: >
@@ -28,7 +28,7 @@
     - after-midnight
   order: 2
 
-- id: after-the-silence
+- playlist_id: after-the-silence
   title: "After the Silence"
   image: "/assets/After the Silence Track List.jpeg"
   description: >
