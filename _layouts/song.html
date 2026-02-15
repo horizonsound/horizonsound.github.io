@@ -99,16 +99,11 @@ meta.image:
   </div>
 
   <!-- UNIFIED CAROUSEL -->
-  {% if meta.primary_playlist %}
-    <div class="carousel-wrapper">
-      {% include carousel.html 
-           songs=playlist_sorted 
-           current=current_song 
-           public_only=true 
-           mode="song" 
-      %}
-    </div>
-  {% endif %}
-
+  {% include carousel.html 
+     songs=playlist_sorted 
+     current=current_song 
+     public_only=true 
+     mode="song" 
+  %}
 </main>
 
