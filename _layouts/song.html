@@ -105,23 +105,16 @@ PLAYLIST SORTED (final list for carousel)
   {% endif %}
 
   <!-- ABOUT SECTION (old structure restored) -->
-<section class="song-about">
-  <h2 class="section-header">About</h2>
-  <p class="song-description">
-    {{ current_song.about }}
-  </p>
-</section>
+  <section class="song-about">
+    <h2 class="section-header">About</h2>
+    <p class="song-description">
+      {{ current_song.about }}
+    </p>
+  </section>
 
-<!-- LYRICS SECTION (old structure restored) -->
-<section class="song-lyrics">
-  <h2 class="section-header">Lyrics</h2>
-  <div class="lyrics-box">
-    <pre class="lyrics-pre">
-       {{ current_song.lyrics }}
-    </pre>
-  </div>
-</section>
-
+  <!-- LYRICS SECTION (old structure restored) -->
+  {% include lyrics.html lyrics=current_song.lyrics %}
+  
 </main>
 
 <!-- ORIGINAL SIMPLE CAROUSEL JS -->
