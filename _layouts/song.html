@@ -70,7 +70,12 @@ layout: default
       </section>
 
       <!-- PLAYLIST TILES -->
-      {% include song-playlist.html current_song=current_song %}
+      {% include carousel.html 
+           songs=playlist_sorted 
+           current=current_song 
+           mode="song" 
+           public_only=true 
+      %}
 
       <!-- ABOUT + LYRICS (from the song file) -->
       {{ content }}
