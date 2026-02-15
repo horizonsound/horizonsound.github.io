@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Update details
       titleEl.textContent = song.title;
       descEl.textContent = song.description || "";
-      lyricsEl.innerHTML = song.lyrics ? window.marked.parse(song.lyrics) : "";
+      lyricsEl.innerHTML = song.lyrics || "";
 
       // Smooth scroll to details
       document.getElementById("song-details").scrollIntoView({
