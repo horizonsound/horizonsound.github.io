@@ -128,6 +128,18 @@
     });
   });
   </script>
-  </body>
+
+  {% include footer.html %}
+
+  <script>
+    window.allSongs = {{ site.data.music.songs | jsonify }};
+  </script>
+  
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    …
+  });
+  </script>
+</body>
 </html>
 
