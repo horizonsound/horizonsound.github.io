@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+{% assign playlist = site.data.music.songs | where: "primary_playlist", page.playlist_id %}
+{% assign playlist_public = playlist | where: "videostatus", "Public" %}
+{% assign playlist_sorted = playlist_public | sort: "sequence" %}
+
+<main>
+
+  <!-- PLAYLIST TITLE -->
+  <section class="playlist-header">
+    <h2 class="section-header">{{ page.title }}</h2>
+    {% if page.subtitle %}
+      <p class="playlist-subtitle">{{ page.subtitle }}</p>
+    {% endif %}
+  </section>
+
+  <!-- EMBED -->
+  {% assign first_song = playlist_sorted | first %}
+  {% include embed.html youtube_id=first_song.youtube_id %}
+
+  <!-- CAROUSEL -->
+  <script>
+    window.allSongs = {{ playlist_sorted | jsonify }};
+  </script>
+
+  {% include carousel.html playlist=playlist_sorted %}
+
+</main>
