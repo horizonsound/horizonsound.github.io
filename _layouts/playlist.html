@@ -10,6 +10,35 @@ layout: default
 {% assign first_url = "/music/" | append: first_song.song_id | append: "/" %}
 {% assign first_meta = site.data.music.songs | where: "url", first_url | first %}
 
+{% if site.debug %}
+<div class="debug-block">
+<pre style="background:#111; color:#0ff; padding:1rem; margin:1rem 0; white-space:pre-wrap;">
+
+PLAYLIST PAGE DEBUG
+==============================
+
+playlist page object:
+{{ playlist | jsonify }}
+
+playlist.songs (raw list passed to carousel):
+{{ playlist.songs | jsonify }}
+
+first_song_id:
+{{ first_song_id }}
+
+first_song (from site.songs):
+{{ first_song | jsonify }}
+
+first_url:
+{{ first_url }}
+
+first_meta (from music.yml):
+{{ first_meta | jsonify }}
+
+</pre>
+</div>
+{% endif %}
+
 <div class="playlist-page">
 
   <!-- ============================
