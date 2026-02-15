@@ -9,6 +9,11 @@ layout: default
 ============================= -->
 <div style="background:#111; color:#0ff; padding:1rem; margin:1rem 0; font-family:monospace; white-space:pre-wrap;">
 
+<!-- ============================
+     DEBUG BLOCK — SONG PAGE
+============================= -->
+<div style="background:#111; color:#0ff; padding:1rem; margin:1rem 0; font-family:monospace; white-space:pre-wrap;">
+
 <strong>SONG PAGE DEBUG</strong>
 
 current_song.song_id:
@@ -17,11 +22,27 @@ current_song.song_id:
 current_song.url:
 [{{ current_song.url }}]
 
-current_song.primary_playlist:
-[{{ current_song.primary_playlist }}]
+--- metadata from music.yml ---
+{% assign url = current_song.url %}
+{% assign meta = site.data.music.songs | where: "url", url | first %}
+
+meta.primary_playlist:
+[{{ meta.primary_playlist }}]
+
+meta.sequence:
+[{{ meta.sequence }}]
+
+meta.videostatus:
+[{{ meta.videostatus }}]
+
+meta.youtube_id:
+[{{ meta.youtube_id }}]
+
+meta.image:
+[{{ meta.image }}]
 
 --- related songs (raw from music.yml) ---
-{% assign related = site.data.music.songs | where: "primary_playlist", current_song.primary_playlist %}
+{% assign related = site.data.music.songs | where: "primary_playlist", meta.primary_playlist %}
 {% for s in related %}
 - title: "{{ s.title }}"
   url: "{{ s.url }}"
@@ -29,7 +50,7 @@ current_song.primary_playlist:
   videostatus: "{{ s.videostatus }}"
 {% endfor %}
 
---- related PUBLIC songs (after filtering) ---
+--- related PUBLIC songs ---
 {% assign related_public = related | where: "videostatus", "Public" %}
 {% for s in related_public %}
 - "{{ s.title }}"
@@ -38,6 +59,7 @@ current_song.primary_playlist:
 --- playlist_sorted (final order) ---
 {% assign sorted_by_sequence = related_public | sort: "sequence" %}
 {% assign first_item = sorted_by_sequence | first %}
+
 {% if first_item.sequence %}
   {% assign playlist_sorted = sorted_by_sequence %}
 {% else %}
@@ -49,7 +71,6 @@ current_song.primary_playlist:
 {% endfor %}
 
 </div>
-
 
 <!DOCTYPE html>
 <html lang="en">
