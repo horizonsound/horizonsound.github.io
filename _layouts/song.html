@@ -66,36 +66,12 @@ PLAYLIST SORTED (final list for carousel)
     {% endif %}
   </section>
 
-<!-- EMBED SECTION (Pulled from embed.html include) -->
-{% assign resolved_youtube_id = current_song.youtube_id | default: meta.youtube_id %}
-{% include embed.html youtube_id=resolved_youtube_id %}
+  <!-- EMBED SECTION (Pulled from embed.html include) -->
+  {% assign resolved_youtube_id = current_song.youtube_id | default: meta.youtube_id %}
+  {% include embed.html youtube_id=resolved_youtube_id %}
   
   <!-- CAROUSEL (old structure, old CSS) -->
-  {% if meta.primary_playlist %}
-    <div class="playlist-carousel">
-
-      <!-- LEFT ARROW -->
-      <button class="carousel-arrow left-arrow">‹</button>
-
-      <!-- SCROLLING STRIP -->
-      <div class="horizontal-strip">
-        {% for item in playlist_sorted %}
-          {% assign song_id = item.url | split: "/" | last %}
-          {% assign song = site.songs | where: "song_id", song_id | first %}
-          {% if song %}
-            <div class="playlist-tile" data-song="{{ song.song_id }}">
-              <img src="{{ item.image }}" alt="{{ song.title }}">
-              <h3 class="tile-title">{{ song.title }}</h3>
-            </div>
-          {% endif %}
-        {% endfor %}
-      </div>
-
-      <!-- RIGHT ARROW -->
-      <button class="carousel-arrow right-arrow">›</button>
-
-    </div>
-  {% endif %}
+  {% include carousel.html playlist=playlist_sorted %}
 
   <!-- ABOUT SECTION (Pulled from about.html include) -->
   {% include about.html about=current_song.about %}
