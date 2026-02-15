@@ -9,11 +9,6 @@ layout: default
 ============================= -->
 <div style="background:#111; color:#0ff; padding:1rem; margin:1rem 0; font-family:monospace; white-space:pre-wrap;">
 
-<!-- ============================
-     DEBUG BLOCK — SONG PAGE
-============================= -->
-<div style="background:#111; color:#0ff; padding:1rem; margin:1rem 0; font-family:monospace; white-space:pre-wrap;">
-
 <strong>SONG PAGE DEBUG</strong>
 
 current_song.song_id:
@@ -72,201 +67,47 @@ meta.image:
 
 </div>
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<main>
 
-    <title>{{ current_song.title }} | Horizon Sound</title>
+  <!-- SONG TITLE + SUBTITLE -->
+  <section class="song-header">
+    <h2 class="section-header">{{ current_song.title }}</h2>
+    {% if current_song.subtitle %}
+      <p class="song-subtitle">{{ current_song.subtitle }}</p>
+    {% endif %}
+  </section>
 
-    <!-- Main stylesheet -->
-    <link rel="stylesheet" href="/style-v2.css?v=40" />
-  </head>
+  <!-- UNIFIED VIEWER -->
+  <div id="playlist-player" class="playlist-player">
+    <iframe
+      id="playlist-iframe"
+      width="100%"
+      height="360"
+      src="https://www.youtube.com/embed/{{ meta.youtube_id }}"
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
+  </div>
 
-  <body>
-
-    <!-- --------------------------------------------------
-         GLOBAL HEADER
-    -------------------------------------------------- -->
-    <header class="site-header">
-      <div class="branding">
-        <img src="/assets/horizon-logo.svg" class="logo" alt="Horizon Sound Logo" />
-        <h1>Horizon Sound</h1>
-      </div>
-
-      <nav class="main-nav">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/music">Music</a></li>
-          <li><a href="/playlists">Playlists</a></li>
-          <li><a href="/about">About</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <!-- --------------------------------------------------
-         HERO BANNER
-    -------------------------------------------------- -->
-    <div class="hero-banner">
-      <img src="{{ page.hero_image | default: current_song.image }}" 
-           class="hero-image" 
-           alt="{{ current_song.title }}" />
+  <div id="song-details" class="song-details">
+    <h2 id="song-title">{{ current_song.title }}</h2>
+    <p id="song-description">{{ current_song.about }}</p>
+    <div id="song-lyrics">
+      {{ current_song.lyrics | markdownify }}
     </div>
+  </div>
 
-    <!-- --------------------------------------------------
-         MAIN CONTENT
-    -------------------------------------------------- -->
-    <main>
+  <!-- UNIFIED CAROUSEL -->
+  {% if meta.primary_playlist %}
+    {% include carousel.html 
+         songs=playlist_sorted 
+         current=current_song 
+         public_only=true 
+         mode="song" 
+    %}
+  {% endif %}
 
-      <!-- SONG TITLE + SUBTITLE -->
-      <section class="song-header">
-        <h2 class="section-header">{{ current_song.title }}</h2>
-        {% if current_song.subtitle %}
-          <p class="song-subtitle">{{ current_song.subtitle }}</p>
-        {% endif %}
-      </section>
+  <!-- ABOUT + LYRICS (from the song file) -->
+  {{ content }}
 
-      <!-- VIDEO EMBED -->
-      <section class="homepage-section video-section">
-        <div class="video-wrapper">
-          <iframe
-            src="https://www.youtube.com/embed/{{ current_song.youtube_id }}"
-            title="{{ current_song.title }}"
-            frameborder="0"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </section>
-
-      <!-- PLAYLIST TILES -->
-     {% assign url = current_song.url %}
-     {% assign meta = site.data.music.songs | where: "url", url | first %}
-     {% assign playlist_name = meta.primary_playlist %}
-     
-     {% if playlist_name %}
-       {% assign related = site.data.music.songs | where: "primary_playlist", playlist_name %}
-       {% assign related = related | where: "videostatus", "Public" %}
-     
-       {% assign sorted_by_sequence = related | sort: "sequence" %}
-       {% assign first_item = sorted_by_sequence | first %}
-     
-       {% if first_item.sequence %}
-         {% assign playlist_sorted = sorted_by_sequence %}
-       {% else %}
-         {% assign playlist_sorted = related | sort: "title" %}
-       {% endif %}
-     
-       {% include carousel.html 
-            songs=playlist_sorted 
-            current=current_song 
-            public_only=true 
-            mode="song" 
-       %}
-     {% endif %}
-         
-      <!-- ABOUT + LYRICS (from the song file) -->
-      {{ content }}
-
-    </main>
-
-    <!-- --------------------------------------------------
-         FOOTER
-    -------------------------------------------------- -->
-    <footer>
-      <p>&copy; 2026 Horizon Sound</p>
-      <p>Contact: HorizonSoundCreative@gmail.com</p>
-      <p>All music, lyrics, and creative works on this site are original and owned by Horizon Sound.</p>
-
-      <p style="opacity:0.5; font-size:0.8rem;">
-        Screen width: <span id="device-width"></span>
-      </p>
-    </footer>
-    
-    <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const strip = document.querySelector(".horizontal-strip");
-      const leftArrow = document.querySelector(".left-arrow");
-      const rightArrow = document.querySelector(".right-arrow");
-    
-      if (!strip || !leftArrow || !rightArrow) return;
-    
-      const TILE_WIDTH = 180;
-      const TILE_GAP = 16;
-      const SCROLL_AMOUNT = TILE_WIDTH + TILE_GAP;
-    
-      /* -------------------------------
-         ARROW ENABLE / DISABLE LOGIC
-      --------------------------------*/
-      function updateArrows() {
-        const maxScroll = strip.scrollWidth - strip.clientWidth;
-        const current = strip.scrollLeft;
-    
-        if (current <= 0) {
-          leftArrow.classList.add("disabled");
-        } else {
-          leftArrow.classList.remove("disabled");
-        }
-    
-        if (current >= maxScroll - 1) {
-          rightArrow.classList.add("disabled");
-        } else {
-          rightArrow.classList.remove("disabled");
-        }
-      }
-    
-      /* -------------------------------
-         ARROW CLICK BEHAVIOR
-      --------------------------------*/
-      leftArrow.addEventListener("click", () => {
-        strip.scrollBy({ left: -SCROLL_AMOUNT, behavior: "smooth" });
-      });
-    
-      rightArrow.addEventListener("click", () => {
-        strip.scrollBy({ left: SCROLL_AMOUNT, behavior: "smooth" });
-      });
-    
-      /* -------------------------------
-         AUTO-SCROLL TO ACTIVE TILE
-      --------------------------------*/
-      const activeTile = document.querySelector(".playlist-tile.active-tile");
-      if (activeTile) {
-        const offset =
-          activeTile.offsetLeft -
-          strip.clientWidth / 2 +
-          activeTile.clientWidth / 2;
-    
-        strip.scrollTo({ left: offset, behavior: "smooth" });
-      }
-    
-      /* -------------------------------
-         SNAP-TO-TILE BEHAVIOR
-      --------------------------------*/
-      let isSnapping = false;
-    
-      strip.addEventListener("scroll", () => {
-        if (isSnapping) return;
-    
-        clearTimeout(strip.snapTimeout);
-        strip.snapTimeout = setTimeout(() => {
-          isSnapping = true;
-    
-          const scrollLeft = strip.scrollLeft;
-          const tileWidth = TILE_WIDTH + TILE_GAP;
-          const nearest = Math.round(scrollLeft / tileWidth) * tileWidth;
-    
-          strip.scrollTo({ left: nearest, behavior: "smooth" });
-    
-          setTimeout(() => (isSnapping = false), 300);
-        }, 120);
-      });
-    
-      /* -------------------------------
-         INITIAL ARROW STATE
-      --------------------------------*/
-      strip.addEventListener("scroll", updateArrows);
-      updateArrows();
-    });
-    </script>
-   
-  </body>
-</html>
+</main>
