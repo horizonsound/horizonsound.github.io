@@ -89,6 +89,15 @@ meta.image:
     </iframe>
   </div>
 
+  <!-- UNIFIED DETAILS (title, description, lyrics) -->
+  <div id="song-details" class="song-details">
+    <h2 id="song-title">{{ current_song.title }}</h2>
+    <p id="song-description">{{ current_song.about }}</p>
+    <div id="song-lyrics">
+      {{ current_song.lyrics | markdownify }}
+    </div>
+  </div>
+
   <!-- UNIFIED CAROUSEL -->
   {% if meta.primary_playlist %}
     {% include carousel.html 
@@ -98,14 +107,6 @@ meta.image:
          mode="song" 
     %}
   {% endif %}
-
-  <div id="song-details" class="song-details">
-    <h2 id="song-title">{{ current_song.title }}</h2>
-    <p id="song-description">{{ current_song.about }}</p>
-    <div id="song-lyrics">
-      {{ current_song.lyrics | markdownify }}
-    </div>
-  </div>
 
   <!-- OPTIONAL: extra content from the song file -->
   {% if page.extra_content %}
