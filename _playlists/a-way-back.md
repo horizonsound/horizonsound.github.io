@@ -11,6 +11,6 @@ description: >
 
 songs:
   - lost-in-silence
-  - choosing-me-her
-  - choosing-me-his
+  - choosing-me-her-version
+  - choosing-me-his-version
 ---
