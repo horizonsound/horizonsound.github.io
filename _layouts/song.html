@@ -66,10 +66,9 @@ PLAYLIST SORTED (final list for carousel)
     {% endif %}
   </section>
 
-  <!-- EMBED SECTION (Pulled from embed.html include) -->
-  {% assign resolved_youtube_id = current_song.youtube_id | default: meta.youtube_id %}
-  {% include embed.html youtube_id=current_song.youtube_id | default: meta.youtube_id %}
-  {% include embed.html youtube_id=resolved_youtube_id %}
+<!-- EMBED SECTION (Pulled from embed.html include) -->
+{% assign resolved_youtube_id = current_song.youtube_id | default: meta.youtube_id %}
+{% include embed.html youtube_id=resolved_youtube_id %}
   
   <!-- CAROUSEL (old structure, old CSS) -->
   {% if meta.primary_playlist %}
