@@ -87,17 +87,19 @@ carousel tracks (song_id + youtube_id + image from music.yml):
        PLAYLIST CAROUSEL
   ============================= -->
 <div class="playlist-carousel" id="playlist-carousel">
-  {% for song_id in playlist.songs %}
-    {% assign song = all_songs | where: "song_id", song_id | first %}
-    {% assign url = "/music/" | append: song.song_id | append: "/" %}
-    {% assign meta = site.data.music.songs | where: "url", url | first %}
+  <div class="horizontal-strip">
+    {% for song_id in playlist.songs %}
+      {% assign song = all_songs | where: "song_id", song_id | first %}
+      {% assign url = "/music/" | append: song.song_id | append: "/" %}
+      {% assign meta = site.data.music.songs | where: "url", url | first %}
 
-    <div class="playlist-tile {% if forloop.first %}active{% endif %}"
-         data-song="{{ song.song_id }}">
-      <img src="{{ meta.image }}" alt="{{ song.title }}">
-      <h3>{{ song.title }}</h3>
-    </div>
-  {% endfor %}
+      <div class="playlist-tile {% if forloop.first %}active{% endif %}"
+           data-song="{{ song.song_id }}">
+        <img src="{{ meta.image }}" alt="{{ song.title }}">
+        <h3>{{ song.title }}</h3>
+      </div>
+    {% endfor %}
+  </div>
 </div>
 
   <!-- ============================
