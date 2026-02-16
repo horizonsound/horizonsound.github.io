@@ -8,9 +8,9 @@
     the rediscovery of identity, and the moment two people decide whether to
     walk away or walk toward each other again.
   songs:
-  - lost-in-silence
-  - choosing-me-her-version
-  - choosing-me-his-version
+    - lost-in-silence
+    - choosing-me-her-version
+    - choosing-me-his-version
   order: 1
 
 - playlist_id: midnight-saga
@@ -22,10 +22,10 @@
     emotional turbulence — from the moment before midnight, into mayhem and
     madness, and finally into the clarity that comes after the storm breaks.
   songs:
-    - before-midnight
-    - midnight-mayhem
-    - midnight-madness
-    - after-midnight
+    - midnight-saga-before-midnight
+    - midnight-saga-midnight-mayhem
+    - midnight-saga-midnight-madness
+    - midnight-saga-after-midnight
   order: 2
 
 - playlist_id: after-the-silence
