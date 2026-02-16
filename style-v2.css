@@ -477,10 +477,11 @@ footer {
 
 .music-page .playlist-section {
   margin: 32px 0;
-  padding: 24px;
-  background: rgba(255, 255, 255, 0.03);
+  padding: 20px; /* was 24px */
+   /* background: rgba(255, 255, 255, 0.03); */
   border-radius: 10px;
   border-top: 1px solid rgba(255,255,255,0.08);
+  background: blue !important;
 }
 
 .music-page .playlist-section .tile-grid {
