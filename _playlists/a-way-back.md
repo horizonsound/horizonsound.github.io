@@ -8,9 +8,4 @@ description: >
   perspectives, this trilogy follows the quiet unraveling of a relationship,
   the rediscovery of identity, and the moment two people decide whether to
   walk away or walk toward each other again.
-
-songs:
-  - lost-in-silence
-  - choosing-me-her-version
-  - choosing-me-his-version
 ---
