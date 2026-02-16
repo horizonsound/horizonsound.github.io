@@ -494,6 +494,7 @@ footer {
   padding-top: 12px;
   gap: 6px;
   background: red !important;
+  padding: 20px;              /* the 20px border you requested */
 }
 
 /* ============================================
