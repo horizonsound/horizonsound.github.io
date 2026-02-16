@@ -480,14 +480,15 @@ footer {
 }
 
 .homepage-section {
-  margin: 32px 0;
   padding: 24px;
   background: rgba(255, 255, 255, 0.03);
   border-radius: 10px;
   border-top: 1px solid rgba(255,255,255,0.08);
+  margin: 0;
 }
 
 .homepage-section .section-header {
+  margin-top: 0;
   margin-bottom: 12px;
 }
 
