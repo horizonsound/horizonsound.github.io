@@ -1,25 +1,25 @@
 {% if include.playlist %}
-<div class="playlist-carousel">
+<div class="carousel" data-carousel>
 
   <!-- LEFT ARROW -->
-  <button class="carousel-arrow left-arrow">‹</button>
+  <button class="carousel-arrow left-arrow" data-arrow="left">‹</button>
 
   <!-- SCROLLING STRIP -->
-  <div class="horizontal-strip">
+  <div class="horizontal-strip" data-strip>
     {% for item in include.playlist %}
       {% assign song_id = item.url | split: "/" | last %}
       {% assign song = site.songs | where: "song_id", song_id | first %}
       {% if song %}
-        <div class="playlist-tile" data-url="{{ item.url }}">
+        <a class="carousel-tile" href="{{ item.url }}">
           <img src="{{ item.image }}" alt="{{ song.title }}">
           <h3 class="tile-title">{{ song.title }}</h3>
-        </div>
+        </a>
       {% endif %}
     {% endfor %}
   </div>
 
   <!-- RIGHT ARROW -->
-  <button class="carousel-arrow right-arrow">›</button>
+  <button class="carousel-arrow right-arrow" data-arrow="right">›</button>
 
 </div>
 {% endif %}
