@@ -397,13 +397,16 @@ footer {
   margin: 32px 0;
 }
 
-.music-view-toggle {
+.view-toggle {
   display: flex;
-  gap: 12px;
-  margin: 24px 0;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  margin-bottom: 20px;
 }
 
-.music-view-toggle button {
+
+.view-toggle button {
   padding: 8px 16px;
   background: #333;
   color: #fff;
@@ -411,7 +414,7 @@ footer {
   cursor: pointer;
 }
 
-.music-view-toggle button:hover {
+.view-toggle button:hover {
   background: #444;
 }
 
