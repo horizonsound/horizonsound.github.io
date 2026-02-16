@@ -176,6 +176,16 @@ footer {
   justify-content: start;
 }
 
+.tile .tile-title,
+.carousel-tile .tile-title {
+  background: rgba(0, 0, 0, 0.45); /* soft dark overlay */
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-top: 8px;
+  display: inline-block;
+  backdrop-filter: blur(4px); /* subtle glass effect */
+}
+
 /* ============================================
    COMPONENTS — CAROUSEL
 ============================================ */
