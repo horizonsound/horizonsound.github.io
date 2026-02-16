@@ -1,4 +1,5 @@
 ---
+playlist_id: a-way-back
 layout: playlist
 title: "A Way Back Trilogy"
 
