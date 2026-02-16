@@ -64,6 +64,7 @@ songs:
     primary_playlist: "Instrumentals"
 
   - title: "Venice Waters" # Venice-Missing Stamp track
+    song_id: "venice-venice-waters"
     subtitle: "Venice | Part 3" 
     youtube_id: "LzfM1PRxpVU" 
     url: "/music/venice-3-venice-waters/"
@@ -73,6 +74,7 @@ songs:
     sequence: 3
 
   - title: "Missing Stamp" # Venice-Missing Stamp track
+    song_id: "venice-missing-stamp"
     subtitle: "Venice | Part 2" 
     youtube_id: "fbBWIohiOwI" 
     url: "/music/venice-2-missing-stamp/"
@@ -92,6 +94,7 @@ songs:
     sequence: 13
     
   - title: "Someday" # Venice-Missing Stamp track
+    song_id: "venice-someday"
     subtitle: "Venice | Part 1" 
     youtube_id: "2cv-H5tTygs" 
     url: "/music/venice-1-someday/"
