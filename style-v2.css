@@ -406,6 +406,8 @@ footer {
 }
 
 .view-toggle-button {
+  display: flex;
+  gap: 12px;
   padding: 10px 20px;
   background: #222;
   border: 1px solid #444;
@@ -426,6 +428,13 @@ footer {
   background: #1a73e8;
   border-color: #1a73e8;
   color: #fff;
+}
+
+/* Center the title independently */
+.view-toggle .page-title {
+  flex: 1;
+  text-align: center;
+  margin: 0;
 }
 
 .music-page .section-header {
