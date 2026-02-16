@@ -70,7 +70,7 @@ title: Music – Horizon Sound
           <div class="tile-grid">
             {% for song in playlist_sorted %}
               <a class="carousel-tile" href="{{ item.url }}">
-                <img src="{{ item.image }}" alt="{{ song.title }}">
+                <img src="{{ song.image }}" alt="{{ song.title }}">
                 <h3 class="tile-title">{{ song.title }}</h3>
               </a>
             {% endfor %}
@@ -117,7 +117,7 @@ title: Music – Horizon Sound
         {% assign song = site.data.music.songs | where: "song_id", song_id | first %}
         {% if song %}
           <a class="carousel-tile" href="{{ item.url }}">
-            <img src="{{ item.image }}" alt="{{ song.title }}">
+            <img src="{{ song.image }}" alt="{{ song.title }}">
             <h3 class="tile-title">{{ song.title }}</h3>
           </a>
         {% endif %}
