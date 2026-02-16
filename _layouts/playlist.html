@@ -41,12 +41,12 @@ SONG IDS FROM PLAYLIST:
   {% assign playlist_songs = "" | split: "" %}
 
   {% for sid in playlist.songs %}
-    {% assign song = site.data.music.songs | where: "song_id", sid | first %}
-    {% if song %}
-      {% assign playlist_songs = playlist_songs | push: song %}
-    {% endif %}
+  {% assign expected_song = site.data.music.songs | where: "song_id", sid | first %}
+  {% if expected_song and expected_song.videostatus == "Public" %}
+    {% assign playlist_songs = playlist_songs | push: expected_song %}
+  {% endif %}
   {% endfor %}
-
+  
   {% comment %}
     3. Sort playlist songs by sequence if present
   {% endcomment %}
