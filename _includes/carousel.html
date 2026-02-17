@@ -1,5 +1,32 @@
 {% assign items = include.playlist | default: include.songs %}
 
+{% if site.debug %}
+<div class="debug-block">
+  <pre style="background:#111; color:#0ff; padding:1rem; white-space:pre-wrap;">
+
+CAROUSEL DEBUG
+==============================
+
+include.playlist: {{ include.playlist | jsonify }}
+include.songs:    {{ include.songs | jsonify }}
+
+MODE DETECTED:
+{% if include.playlist %}
+  PLAYLIST MODE (div tiles)
+{% else %}
+  SONG MODE (a tiles)
+{% endif %}
+
+ITEMS (titles + URLs):
+{% for item in items %}
+  - title: {{ item.title }}
+    url:   {{ item.url }}
+{% endfor %}
+
+  </pre>
+</div>
+{% endif %}
+
 <div class="carousel" data-carousel>
 
   <!-- LEFT ARROW -->
