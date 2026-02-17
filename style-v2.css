@@ -158,12 +158,6 @@ footer {
   display: block;
 }
 
-.tile-title {
-  padding: 12px;
-  font-size: 1rem;
-  text-align: center;
-}
-
 .tile.no-title .tile-title {
   display: none;
 }
