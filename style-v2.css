@@ -341,6 +341,12 @@ footer {
   margin-right: auto;
 }
 
+/* Reduce spacing between lyric paragraphs */
+.lyrics-block p {
+  margin-bottom: 10px; /* was default ~16px */
+  line-height: 1.45;   /* slightly tighter */
+}
+
 .lyrics-box {
   max-width: 600px;
   margin: 0 auto;
@@ -420,11 +426,22 @@ footer {
 .song-lyrics .section-header {
   font-size: 1.8rem;
   text-align: center;
+  margin-bottom: 12px; /* was 16px */
 }
+
 
 .song-description,
 .lyrics-block {
   color: #e8e8e8; /* slightly softer white */
+}
+
+/* Reduce space between About and Lyrics */
+.song-about {
+  margin-bottom: 20px; /* was 32px */
+}
+
+.song-lyrics .section-header {
+  margin-top: 20px; /* was 40px after earlier tuning */
 }
 
 /* ============================================
