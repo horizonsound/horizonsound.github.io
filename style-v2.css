@@ -391,6 +391,10 @@ footer {
   margin-top: -8px;
 }
 
+.song-description {
+  white-space: pre-line;
+}
+
 .song-project {
   text-align: center;
   margin-top: 32px;
