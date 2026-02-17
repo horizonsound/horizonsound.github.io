@@ -245,6 +245,12 @@ footer {
   transition: transform 0.2s ease;
 }
 
+/* Ensure tiles always have a baseline border so active state persists */
+.carousel-tile,
+.playlist-tile {
+  border: 3px solid transparent;
+}
+
 .carousel-tile img {
   width: 100%;
   height: 180px;
