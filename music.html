@@ -240,7 +240,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     strip.addEventListener("scroll", updateArrows);
-    setTimeout(updateArrows, 200);
+
+    // 🔹 NEW: wait for images to load, then initialize arrows
+    const images = strip.querySelectorAll("img");
+    let loaded = 0;
+
+    if (images.length === 0) {
+      // no images, just initialize immediately
+      updateArrows();
+    } else {
+      images.forEach(img => {
+        if (img.complete) {
+          loaded++;
+          if (loaded === images.length) updateArrows();
+        } else {
+          img.addEventListener("load", () => {
+            loaded++;
+            if (loaded === images.length) updateArrows();
+          });
+        }
+      });
+    }
   });
-});
+}); 
 </script>
