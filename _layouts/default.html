@@ -39,6 +39,22 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
+  
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const tiles = document.querySelectorAll(".carousel-tile");
+
+  tiles.forEach(tile => {
+    tile.addEventListener("click", () => {
+      // Remove active class from all tiles
+      tiles.forEach(t => t.classList.remove("active"));
+
+      // Add active class to the clicked tile
+      tile.classList.add("active");
+    });
+  });
+});
+</script>
 
 <body>
   {% include header.html %}
