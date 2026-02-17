@@ -18,13 +18,19 @@
       {% endif %}
       {% assign song = site.songs | where: "song_id", song_id | first %}
 
-
+      {% if include.playlist %}
+        <!-- PLAYLIST MODE -->
+        <div class="carousel-tile" data-song="{{ song.song_id }}">
+          <img src="{{ item.image }}" alt="{{ song.title }}">
+          <h3 class="tile-title">{{ song.title }}</h3>
+        </div>
+      {% else %}
         <!-- SONG PAGE MODE -->
         <a class="carousel-tile" data-song="{{ song.song_id }}" href="{{ item.url }}">
           <img src="{{ item.image }}" alt="{{ song.title }}">
           <h3 class="tile-title">{{ song.title }}</h3>
         </a>
-
+      {% endif %}
     {% endfor %}
   </div>
 
