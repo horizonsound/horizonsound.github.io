@@ -378,37 +378,52 @@ footer {
 }
 
 /* ============================================
-   PAGE: SONG PAGE
+   SONG PAGE — TYPOGRAPHY POLISH
 ============================================ */
-.song-header {
-  margin: 32px 0 16px;
+
+/* Increase readability for About + Lyrics */
+.song-description,
+.lyrics-block {
+  font-size: 1.05rem;      /* slightly larger, more premium */
+  line-height: 1.55;       /* consistent rhythm */
+  max-width: 700px;        /* keeps text in a readable column */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Improve paragraph spacing inside About */
+.song-description p {
+  margin-bottom: 14px;     /* clean breathing room */
+}
+
+/* Improve spacing between vibe lines */
+.song-description .vibe-line {
+  line-height: 1.35;
+  margin-bottom: 6px;
+}
+
+/* Improve spacing above section headers */
+.song-about .section-header,
+.song-lyrics .section-header {
+  margin-top: 40px;        /* gives each section presence */
+  margin-bottom: 16px;     /* clean separation from text */
+}
+
+/* Lyrics formatting */
+.lyrics-block {
+  white-space: pre-wrap;
   padding: 0 40px;
 }
 
-.song-subtitle {
-  text-align: center;
-  opacity: 0.8;
-  margin-top: -8px;
+/* Optional: slightly larger section headers on song pages */
+.song-about .section-header,
+.song-lyrics .section-header {
+  font-size: 1.8rem;
 }
 
-.song-description {
-  white-space: pre-line;
-  line-height: 1.4;
-}
-
-.song-description .vibe-line {
-  line-height: 1.3;   /* tighter, cleaner */
-  margin-bottom: 4px; /* optional: small spacing between lines */
-}
-
-.song-project {
-  text-align: center;
-  margin-top: 32px;
-}
-
-#show-more-tiles {
-  display: block;
-  margin: 16px auto;
+.song-description,
+.lyrics-block {
+  color: #e8e8e8; /* slightly softer white */
 }
 
 /* ============================================
