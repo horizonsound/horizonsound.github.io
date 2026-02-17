@@ -94,16 +94,19 @@ title: Music – Horizon Sound
     
       <div class="tile-grid">
         {% for pl in playlist_data %}
-          {% assign songs_in_list = all_songs | where: "primary_playlist", pl.title %}
+          {% assign songs_in_list = all_songs | where: "primary_playlist", pl.title | default: "" %}
+          {% if songs_in_list.size == 0 %}
+            {% assign songs_in_list = all_songs | where: "primary_playlist", pl.title | sort: "title" %}
+          {% endif %}
           {% assign sorted_by_sequence = songs_in_list | sort: "sequence" %}
           {% assign first_item = sorted_by_sequence | first %}
-    
+      
           {% if first_item.sequence %}
             {% assign playlist_sorted = sorted_by_sequence %}
           {% else %}
             {% assign playlist_sorted = songs_in_list | sort: "title" %}
           {% endif %}
-    
+      
           {% assign first_song = playlist_sorted | first %}
           {% if first_song %}
             <a class="tile" href="/playlists/{{ pl.playlist_id }}/"
