@@ -509,8 +509,8 @@ footer {
   padding-top: 12px;    /* adds breathing room */
   justify-content: center;
   padding-top: 12px;
-  gap: 6px;
-  padding: 20px;              /* the 20px border you requested */
+  gap: 12px;
+  padding: 12px 20px;
   box-sizing: border-box;
 }
 
