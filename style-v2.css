@@ -178,13 +178,15 @@ footer {
 
 .tile .tile-title,
 .carousel-tile .tile-title {
-  background: rgba(0, 0, 0, 0.45); /* soft dark overlay */
+  background: rgba(255, 255, 255, 0.18); /* soft light overlay */
+  color: #fff;
   padding: 6px 10px;
   border-radius: 6px;
   margin-top: 8px;
   display: inline-block;
-  backdrop-filter: blur(4px); /* subtle glass effect */
+  backdrop-filter: blur(4px);
 }
+
 
 /* ============================================
    COMPONENTS — CAROUSEL
