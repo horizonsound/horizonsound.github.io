@@ -172,25 +172,23 @@ footer {
 
 .tile .tile-title,
 .carousel-tile .tile-title {
-  display: flex;
   width: 100%;
-  text-align: center;
   background: rgba(255, 255, 255, 0.18);
   color: #fff;
-  padding: 10px 12px;
+  padding: 8px 10px;
   margin: 0;
   border-radius: 0 0 8px 8px;
   backdrop-filter: blur(4px);
   box-sizing: border-box;
   font-weight: 500;
+  text-align: center;
 
-  /* Consistent height + vertical centering */
-  min-height: 48px;
-  align-items: center;
-  justify-content: center;
-
-  /* ⭐ NEW: consistent text block height */
-  line-height: 1.3;
+  /* fixed visual height */
+  height: 52px;                 /* adjust to taste */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;        /* max 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* ============================================
