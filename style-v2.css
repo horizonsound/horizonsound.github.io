@@ -665,6 +665,13 @@ footer {
   box-shadow: 0 0 12px rgba(180, 120, 220, 0.45);
 }
 
+.playlist-about .section-header,
+.playlist-lyrics .section-header {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+}
+
 /* ============================================
    PAGE: ABOUT PAGE
 ============================================ */
