@@ -1,6 +1,8 @@
 <section class="song-about">
-  <h2 class="section-header">About</h2>
-  <p class="song-description">
-    {{ include.about }}
-  </p>
+  <div class="centered-column">
+    <h2 class="section-header">About the Song</h2>
+    <div class="song-description">
+      {{ page.about | markdownify }}
+    </div>
+  </div>
 </section>
