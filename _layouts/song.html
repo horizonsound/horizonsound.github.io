@@ -21,6 +21,9 @@ BUILD PLAYLIST FOR CAROUSEL (old system)
 {% endif %}
 
 <main>
+  <script>
+    window.allSongs = {{ site.data.music.songs | jsonify }};
+  </script>
 
   <!-- DEBUG BLOCK -->
 {% if site.debug %}
