@@ -16,8 +16,15 @@
       {% assign song_id = last %}
     {% endif %}
       {% assign song = site.songs | where: "song_id", song_id | first %}
-      {% if song %}
-        <a class="carousel-tile" data-song="{{ song.song_id }}" href="{{ item.url }}">
+      {% if include.playlist %}
+        <!-- PLAYLIST PAGE MODE — NO NAVIGATION -->
+        <div class="carousel-tile" data-song="{{ song.song_id }}">
+          <img src="{{ item.image }}" alt="{{ song.title }}">
+          <h3 class="tile-title">{{ song.title }}</h3>
+        </div>
+      {% else %}
+        <!-- SONG PAGE MODE — NAVIGATION -->
+        <a class="carousel-tile" href="{{ item.url }}">
           <img src="{{ item.image }}" alt="{{ song.title }}">
           <h3 class="tile-title">{{ song.title }}</h3>
         </a>
