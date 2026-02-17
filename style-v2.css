@@ -254,10 +254,8 @@ footer {
 }
 
 .carousel-tile.active {
-  border: 3px solid #4da3ff;
-  border-radius: 8px;
-  transform: scale(1.05);
-  box-shadow: 0 0 12px rgba(77, 163, 255, 0.4);
+  border: 3px solid rgba(180, 120, 220, 0.65);
+  box-shadow: 0 0 12px rgba(180, 120, 220, 0.45);
 }
 
 .carousel-arrow {
@@ -296,7 +294,7 @@ footer {
    COMPONENTS — EMBED / VIDEO
 ============================================ */
 .video-section {
-  margin: 32px 0;
+  margin: 0;
 }
 
 .video-wrapper {
@@ -338,6 +336,26 @@ footer {
 .player-frame--purple {
   background: rgba(47, 18, 61, 0.35);
 }
+
+.player-frame .carousel {
+  margin-top: 16px; /* tighter, intentional */
+}
+.player-frame .carousel-arrow {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  backdrop-filter: blur(4px);
+}
+
+.player-frame .carousel-arrow:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+.player-frame .tile-title {
+  background: rgba(180, 120, 220, 0.28);
+  backdrop-filter: blur(6px);
+  border-radius: 0 0 10px 10px;
+}
+
 
 /* ============================================
    COMPONENTS — ABOUT BLOCK
