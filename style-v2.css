@@ -176,17 +176,27 @@ footer {
   justify-content: start;
 }
 
+/* Applies to homepage tiles AND carousel tiles */
 .tile .tile-title,
 .carousel-tile .tile-title {
-  background: rgba(255, 255, 255, 0.18); /* soft light overlay */
+  display: block;                 /* full width */
+  width: 100%;                    /* fill the tile */
+  background: rgba(255, 255, 255, 0.18); /* lighter translucent overlay */
   color: #fff;
-  padding: 6px 10px;
-  border-radius: 6px;
-  margin-top: 8px;
-  display: inline-block;
-  backdrop-filter: blur(4px);
+  padding: 10px 12px;             /* comfortable spacing */
+  margin: 0;                      /* remove the gap */
+  border-radius: 0 0 8px 8px;     /* match tile rounding */
+  backdrop-filter: blur(4px);     /* premium frosted look */
+  box-sizing: border-box;
 }
 
+/* Remove the black separator */
+.tile img,
+.carousel-tile img {
+  display: block;                 /* removes inline gap */
+  margin: 0;
+  padding: 0;
+}
 
 /* ============================================
    COMPONENTS — CAROUSEL
