@@ -585,11 +585,7 @@ footer {
 }
 
 .homepage-collections {
-  background: linear-gradient(
-    to bottom,
-    rgba(255,255,255,0.06),
-    rgba(255,255,255,0.03)
-  );
+  background: rgba(42, 7, 58, 0.05);
 }
 
 /* ============================================
