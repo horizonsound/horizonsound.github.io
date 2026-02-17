@@ -87,28 +87,40 @@ SONG IDS FROM PLAYLIST:
 
   </div>
   <!-- ⭐ END PLAYER FRAME ⭐ -->
-
+  
   <script>
   document.addEventListener("DOMContentLoaded", function () {
     const aboutEl = document.getElementById("playlist-about");
     const lyricsEl = document.getElementById("playlist-lyrics");
   
-    // Load first song on page load
     const first = window.allSongs[0];
     if (first) {
       aboutEl.innerHTML = first.description || "";
       lyricsEl.innerHTML = first.lyrics || "";
     }
   
-    // Update on tile click
     document.querySelectorAll(".carousel-tile").forEach(tile => {
       tile.addEventListener("click", () => {
+  
+        console.log("=== PLAYLIST TILE CLICKED ===");
+        console.log("Tile element:", tile);
+        console.log("dataset.song:", tile.dataset.song);
+        console.log("window.allSongs:", window.allSongs);
+  
         const id = tile.dataset.song;
         const song = window.allSongs.find(s => s.song_id === id);
-        if (!song) return;
+  
+        console.log("Matched song:", song);
+  
+        if (!song) {
+          console.warn("NO SONG FOUND FOR ID:", id);
+          return;
+        }
   
         aboutEl.innerHTML = song.description || "";
         lyricsEl.innerHTML = song.lyrics || "";
+  
+        console.log("About/Lyrics updated.");
       });
     });
   });
