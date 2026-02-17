@@ -3,10 +3,10 @@
 
   <div class="tile-grid">
     {% for tile in include.items %}
-      {% if item.playlist_id %}
-        <a class="tile" href="/playlists/{{ item.playlist_id }}/">
+      {% if tile.playlist_id %}
+        <a class="tile" href="/playlists/{{ tile.playlist_id }}/">
       {% else %}
-        <a class="tile" href="{{ item.url }}">
+        <a class="tile" href="{{ tile.url }}">
       {% endif %}
         <img src="{{ tile.image }}" alt="{{ tile.title }}">
         <h3 class="tile-title">{{ tile.title }}</h3>
