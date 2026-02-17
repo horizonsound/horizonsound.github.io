@@ -8,6 +8,57 @@ title: Music – Horizon Sound
 
 <div class="music-page">
 
+  {% if site.debug %}
+  <div class="debug-block">
+  <pre style="background:#111; color:#0ff; padding:1rem; margin:1rem 0; white-space:pre-wrap;">
+  
+  MUSIC PAGE DEBUG
+  ==============================
+  
+  PLAYLISTS (from all_songs):
+  {{ playlists | jsonify }}
+  
+  ALL SONGS (public only):
+  {{ all_songs | jsonify }}
+  
+  --- PER-PLAYLIST SORT CHECK ---
+  {% for list in playlists %}
+    Playlist: {{ list }}
+    Songs in list:
+    {% assign songs_in_list = all_songs | where: "primary_playlist", list %}
+    {{ songs_in_list | jsonify }}
+  
+    Sorted by sequence:
+    {% assign sorted_by_sequence = songs_in_list | sort: "sequence" %}
+    {{ sorted_by_sequence | jsonify }}
+  
+    First item:
+    {% assign first_item = sorted_by_sequence | first %}
+    {{ first_item | jsonify }}
+  
+    Final playlist_sorted:
+    {% if first_item.sequence %}
+      {% assign playlist_sorted = sorted_by_sequence %}
+    {% else %}
+      {% assign playlist_sorted = songs_in_list | sort: "title" %}
+    {% endif %}
+    {{ playlist_sorted | jsonify }}
+  
+    --- URL → song_id resolution test ---
+    {% for item in playlist_sorted %}
+      URL: {{ item.url }}
+      Segments: {{ item.url | split: "/" | jsonify }}
+      song_id: {{ item.url | split: "/" | slice: -2, 1 }}
+    {% endfor %}
+  
+    -------------------------------
+  {% endfor %}
+  
+  </pre>
+  </div>
+  {% endif %}
+  
+  
   <!-- VIEW TOGGLE -->
   <div class="view-toggle">
     <div class="view-toggle-buttons">
