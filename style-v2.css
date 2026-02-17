@@ -318,6 +318,28 @@ footer {
 }
 
 /* ============================================
+   COMPONENT — PLAYER FRAME (Embed + Carousel)
+============================================ */
+.player-frame {
+  padding: 20px;
+  border-radius: 14px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 22px rgba(0,0,0,0.35);
+  margin: 32px 40px; /* matches song page spacing */
+  background: rgba(0,0,0,0.35); /* default fallback */
+}
+
+/* Dark theme (Song Page) */
+.player-frame--dark {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+/* Purple theme (Playlist Page, Collections aesthetic) */
+.player-frame--purple {
+  background: rgba(47, 18, 61, 0.35);
+}
+
+/* ============================================
    COMPONENTS — ABOUT BLOCK
 ============================================ */
 .about-block {
