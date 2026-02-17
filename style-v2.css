@@ -514,10 +514,10 @@ footer {
   box-sizing: border-box;
 }
 
-.music-collections {
-  background: rgba(47, 18, 61, 0.35);   /* softened purple wash */
-  backdrop-filter: blur(8px);           /* premium glassy feel */
-  border-radius: 12px;                  /* matches homepage */
+.music-page .playlist-section.music-collections {
+  background: rgba(47, 18, 61, 0.35);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
 }
 
 .music-section {
