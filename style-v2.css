@@ -176,26 +176,25 @@ footer {
   justify-content: start;
 }
 
-/* Applies to homepage tiles AND carousel tiles */
 .tile .tile-title,
 .carousel-tile .tile-title {
-  display: block;                 /* full width */
-  width: 100%;                    /* fill the tile */
-  background: rgba(255, 255, 255, 0.18); /* lighter translucent overlay */
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.18);
   color: #fff;
-  padding: 10px 12px;             /* comfortable spacing */
-  margin: 0;                      /* remove the gap */
-  border-radius: 0 0 8px 8px;     /* match tile rounding */
-  backdrop-filter: blur(4px);     /* premium frosted look */
-  box-sizing: border-box;
-}
-
-/* Remove the black separator */
-.tile img,
-.carousel-tile img {
-  display: block;                 /* removes inline gap */
+  padding: 10px 12px;
   margin: 0;
-  padding: 0;
+  border-radius: 0 0 8px 8px;
+  backdrop-filter: blur(4px);
+  box-sizing: border-box;
+  font-weight: 500;
+
+  /* ⭐ NEW: consistent height */
+  min-height: 48px;        /* adjust to taste */
+  display: flex;           /* vertically center text */
+  align-items: center;
+  justify-content: center;
 }
 
 /* ============================================
