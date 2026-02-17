@@ -224,11 +224,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const maxScroll = strip.scrollWidth - strip.clientWidth;
       const current = strip.scrollLeft;
 
-      if (current <= 0) leftArrow.classList.add("disabled");
-      else leftArrow.classList.remove("disabled");
-
-      if (current >= maxScroll - 1) rightArrow.classList.add("disabled");
-      else rightArrow.classList.remove("disabled");
+ 
     }
 
     leftArrow.addEventListener("click", () => {
