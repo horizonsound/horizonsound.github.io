@@ -193,13 +193,15 @@ songs:
     primary_playlist: "Midnight Saga"
     sequence: 2
 
+# Everything below this point is live and public in YouTube - Everything above is scheduled but has not gone live yet.
+
   - title: "Half of Me" # After the Silence Album track
     song_id: "ats-6-half-of-me"
     subtitle: "After the Silence | Part 6" 
     youtube_id: "ZJgHgGT0-5g" 
     url: "/music/ats-6-half-of-me/"
     image: "/assets/After the Silence.jpeg"
-    videostatus: "Private"
+    videostatus: "Public"
     primary_playlist: "After the Silence"
     sequence: 6
 
@@ -209,11 +211,9 @@ songs:
     youtube_id: "hYWaf4MIfM0" 
     url: "/music/ats-5-paper-walls/"
     image: "/assets/After the Silence.jpeg"
-    videostatus: "Private"
+    videostatus: "Public"
     primary_playlist: "After the Silence"
     sequence: 5
-
-# Everything below this point is live and public in YouTube - Everything above is scheduled but has not gone live yet.
 
   - title: "A Touch of Light" # Instrumental track
     subtitle: "" 
