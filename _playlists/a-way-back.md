@@ -2,6 +2,6 @@
 layout: playlist
 playlist_id: a-way-back
 title: "A Way Back Trilogy"
-permalink: /music/playlists/:playlist_id/
+permalink: /music/playlists/:playlist_id/a-way-back
 
 ---
