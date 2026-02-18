@@ -123,30 +123,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   console.log("Found tiles:", tiles);
 
+  // -----------------------------
+  // 1. CLICK HANDLERS
+  // -----------------------------
   tiles.forEach(tile => {
     tile.addEventListener("click", () => {
 
-        
-      // ⭐ INITIAL SELECTION LOGIC
-      let initialId = window.currentSongId;
-      
-      // If no specific song is passed, default to the first tile
-      if (!initialId && tiles.length > 0) {
-        initialId = tiles[0].dataset.song;
-      }
-      
-      const initialTile = [...tiles].find(t => t.dataset.song === initialId);
-      
-      if (initialTile) {
-        initialTile.classList.add("active");
-      
-        const song = window.allSongs?.find(s => s.song_id === initialId);
-        if (iframe && song?.youtube_id) {
-          iframe.src = "https://www.youtube.com/embed/" + song.youtube_id;
-        }
-      }
-  
-        
       console.log("=== SONG PAGE TILE CLICKED ===");
       console.log("Tile element:", tile);
       console.log("dataset.song:", tile.dataset.song);
@@ -169,5 +151,28 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log("Active tile applied.");
     });
   });
+
+  // -----------------------------
+  // 2. INITIAL SELECTION ON PAGE LOAD
+  // -----------------------------
+  console.log("Running initial selection logic…");
+
+  let initialId = window.currentSongId;
+
+  if (!initialId && tiles.length > 0) {
+    initialId = tiles[0].dataset.song;
+  }
+
+  const initialTile = [...tiles].find(t => t.dataset.song === initialId);
+
+  if (initialTile) {
+    initialTile.classList.add("active");
+
+    const song = window.allSongs?.find(s => s.song_id === initialId);
+    if (iframe && song?.youtube_id) {
+      iframe.src = "https://www.youtube.com/embed/" + song.youtube_id;
+    }
+  }
+
 });
 </script>
