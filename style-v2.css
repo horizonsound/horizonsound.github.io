@@ -870,23 +870,25 @@ footer {
 }
 
 /* ============================================
-   MOBILE — CAROUSEL TILE RESIZE
+   MOBILE — CAROUSEL TILE RESIZE (FINAL)
 ============================================ */
 @media (max-width: 600px) {
-  .carousel-tile {
+
+  /* Override the more specific selectors */
+  .player-frame .carousel-tile {
     flex: 0 0 40vw !important;
   }
 
-  .carousel-tile img {
+  .player-frame .carousel-tile img {
     height: 28vw !important;
   }
 
-  .carousel-tile .tile-title {
+  .player-frame .carousel-tile .tile-title {
     height: 48px !important;
     font-size: 0.85rem !important;
   }
 
-  .carousel-arrow {
+  .player-frame .carousel-arrow {
     height: 120px !important;
   }
 }
