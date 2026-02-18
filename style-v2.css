@@ -672,6 +672,11 @@ footer {
   margin-bottom: 12px;
 }
 
+.playlist-about,
+.playlist-lyrics {
+  margin-top: 1.5rem;
+}
+
 /* ============================================
    PAGE: ABOUT PAGE
 ============================================ */
