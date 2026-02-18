@@ -876,11 +876,11 @@ footer {
 
   /* Override the more specific selectors */
   .player-frame .carousel-tile {
-    flex: 0 0 34vw !important;
+    flex: 0 0 24vw !important;
   }
 
   .player-frame .carousel-tile img {
-    height: 24vw !important;
+    height: 14vw !important;
   }
 
   .player-frame .carousel-tile .tile-title {
