@@ -259,6 +259,16 @@ footer {
   display: block;
 }
 
+@media (max-width: 600px) {
+  .carousel-tile {
+    flex: 0 0 40vw; /* tiles are 40% of screen width */
+  }
+
+  .carousel-tile img {
+    height: 28vw; /* keeps the aspect ratio tight */
+  }
+}
+
 .carousel-tile.active {
   border: 3px solid rgba(180, 120, 220, 0.65);
   box-shadow: 0 0 12px rgba(180, 120, 220, 0.45);
