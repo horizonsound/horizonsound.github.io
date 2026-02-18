@@ -841,7 +841,11 @@ footer {
   margin-bottom: 14px !important;
 }
 
-
+/* SONG PAGE — align title with player left edge */
+.song-header .section-header {
+  text-align: left !important;
+  margin-left: 40px !important;
+}
 
 /* ============================================
    PLAYLIST PAGE — DESCRIPTION TYPOGRAPHY
