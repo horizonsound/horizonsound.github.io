@@ -944,7 +944,7 @@ footer {
 /* Tighten paragraph spacing inside About + Lyrics */
 .playlist-about-text p,
 .playlist-lyrics-text p {
-  margin: 0.25rem 0 !important;
+  margin: 6px 0 !important;
   line-height: 1.35 !important;
 }
 
