@@ -98,7 +98,7 @@ SONG IDS FROM PLAYLIST:
       aboutEl.innerHTML = first.description || "";
       lyricsEl.innerHTML = first.lyrics || "";
     }
-  
+      
     document.querySelectorAll(".carousel-tile").forEach(tile => {
       tile.addEventListener("click", () => {
   
@@ -117,6 +117,12 @@ SONG IDS FROM PLAYLIST:
           return;
         }
   
+        // ⭐ ADD THIS ⭐
+        const iframe = document.querySelector(".video-wrapper iframe");
+        if (iframe) {
+          iframe.src = `https://www.youtube.com/embed/${song.youtube_id}`;
+        }
+
         aboutEl.innerHTML = song.description || "";
         lyricsEl.innerHTML = song.lyrics || "";
   
