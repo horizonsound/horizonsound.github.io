@@ -261,11 +261,22 @@ footer {
 
 @media (max-width: 600px) {
   .carousel-tile {
-    flex: 0 0 40vw; /* tiles are 40% of screen width */
+    flex: 0 0 40vw;
   }
 
   .carousel-tile img {
-    height: 28vw; /* keeps the aspect ratio tight */
+    height: 28vw;
+  }
+
+  /* Reduce title height */
+  .carousel-tile .tile-title {
+    height: 48px;
+    font-size: 0.85rem;
+  }
+
+  /* Reduce arrow height */
+  .carousel-arrow {
+    height: 120px;
   }
 }
 
