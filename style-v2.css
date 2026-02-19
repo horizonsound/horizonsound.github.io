@@ -795,6 +795,16 @@ footer {
   background: rgba(0,0,0,0.35); /* default fallback */
 }
 
+.player-frame .horizontal-strip {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.player-frame [data-strip] {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
 /* Dark theme (Song Page) */
 .player-frame--dark {
   background: rgba(255, 255, 255, 0.06);
