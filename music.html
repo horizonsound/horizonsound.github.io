@@ -174,7 +174,6 @@ title: Music – Horizon Sound
       
       {% assign all_sorted = all_songs | sort: "title" %}
       <div class="tile-grid">
-        {# First: all public songs #}
         {% for song in all_sorted %}
           {% if song.videostatus == "Public" %}
             <a class="tile" href="{{ song.url }}">
@@ -183,7 +182,6 @@ title: Music – Horizon Sound
             </a>
           {% endif %}
         {% endfor %}
-        {# Second: all non-public (Coming Soon) songs #}
         {% for song in all_sorted %}
           {% unless song.videostatus == "Public" %}
             <div class="tile coming-soon">
