@@ -34,8 +34,6 @@ ITEMS (titles + URLs):
 
   <div class="horizontal-strip" data-strip>
     {% assign items = include.playlist | default: include.songs %}
-    
-    {# FIRST PASS: Public songs #}
     {% for song in items %}
       {% if song.videostatus == "Public" %}
         <a class="carousel-tile" data-song="{{ song.song_id }}" href="{{ song.url }}">
@@ -44,8 +42,6 @@ ITEMS (titles + URLs):
         </a>
       {% endif %}
     {% endfor %}
-    
-    {# SECOND PASS: Coming Soon songs #}
     {% for song in items %}
       {% unless song.videostatus == "Public" %}
         <div class="carousel-tile coming-soon" data-song="{{ song.song_id }}">
