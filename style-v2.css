@@ -1018,6 +1018,25 @@ footer {
   margin-left: 0 !important;
 }
 
+/* FINAL FIX — PLAYLIST PAGE CAROUSEL */
+.player-frame {
+  overflow: visible !important;
+}
+
+.player-frame .carousel {
+  overflow: visible !important;
+}
+
+.player-frame .horizontal-strip,
+.player-frame [data-strip] {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  scroll-behavior: smooth;
+}
+
 /* ============================================
    PLAYLIST PAGE — FINAL TIGHTENING
 ============================================ */
