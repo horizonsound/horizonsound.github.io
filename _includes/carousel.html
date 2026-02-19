@@ -46,17 +46,35 @@ ITEMS (titles + URLs):
       {% assign song = item %}
 
       {% if include.playlist %}
-        <!-- PLAYLIST MODE -->
-        <div class="carousel-tile" data-song="{{ song.song_id }}">
-          <img src="{{ item.image }}" alt="{{ song.title }}">
-          <h3 class="tile-title">{{ song.title }}</h3>
-        </div>
+        {% if song.videostatus == "Public" %}
+          <!-- PLAYLIST MODE: Public -->
+          <div class="carousel-tile" data-song="{{ song.song_id }}">
+            <img src="{{ item.image }}" alt="{{ song.title }}">
+            <h3 class="tile-title">{{ song.title }}</h3>
+          </div>
+        {% else %}
+          <!-- PLAYLIST MODE: Coming Soon -->
+          <div class="carousel-tile coming-soon" data-song="{{ song.song_id }}">
+            <img src="{{ item.image }}" alt="{{ song.title }}">
+            <div class="tile-overlay">Coming Soon</div>
+            <h3 class="tile-title">{{ song.title }}</h3>
+          </div>
+        {% endif %}
       {% else %}
-        <!-- SONG PAGE MODE -->
-        <a class="carousel-tile" data-song="{{ song_id }}" href="{{ item.url }}">
-          <img src="{{ item.image }}" alt="{{ song.title }}">
-          <h3 class="tile-title">{{ song.title }}</h3>
-        </a>
+        {% if song.videostatus == "Public" %}
+          <!-- SONG PAGE MODE: Public -->
+          <a class="carousel-tile" data-song="{{ song_id }}" href="{{ item.url }}">
+            <img src="{{ item.image }}" alt="{{ song.title }}">
+            <h3 class="tile-title">{{ song.title }}</h3>
+          </a>
+        {% else %}
+          <!-- SONG PAGE MODE: Coming Soon -->
+          <div class="carousel-tile coming-soon" data-song="{{ song_id }}">
+            <img src="{{ item.image }}" alt="{{ song.title }}">
+            <div class="tile-overlay">Coming Soon</div>
+            <h3 class="tile-title">{{ song.title }}</h3>
+          </div>
+        {% endif %}
       {% endif %}
     {% endfor %}
   </div>
