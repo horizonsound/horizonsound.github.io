@@ -202,21 +202,15 @@ title: Music – Horizon Sound
   ------------------------------------------------- -->
   <section id="music-view-carousel" style="display:none;">
     {% for list in playlists %}
-      {% assign songs_in_list = all_songs | where: "primary_playlist", list %}
-      {% assign public_songs = songs_in_list | where: "videostatus", "Public" %}
-      {% assign coming_soon_songs = songs_in_list | reject: "videostatus", "Public" %}
+      {% assign songs_in_list = all_songs | where: "primary_playlist", list | uniq %}
+      
+      {% assign public_songs = songs_in_list | where: "videostatus", "Public" | uniq %}
+      {% assign coming_soon_songs = songs_in_list | reject: "videostatus", "Public" | uniq %}
       
       {% assign public_sorted = public_songs | sort: "sequence" %}
       {% assign coming_sorted = coming_soon_songs | sort: "sequence" %}
       
       {% assign playlist_sorted = public_sorted | concat: coming_sorted %}
-      {% assign first_item = sorted_by_sequence | first %}
-
-      {% if first_item.sequence %}
-        {% assign playlist_sorted = sorted_by_sequence %}
-      {% else %}
-        {% assign playlist_sorted = songs_in_list | sort: "title" %}
-      {% endif %}
 
       {% if playlist_sorted.size > 0 %}
       <section class="playlist-section">
