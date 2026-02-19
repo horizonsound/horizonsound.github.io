@@ -33,52 +33,29 @@ ITEMS (titles + URLs):
   <button class="carousel-arrow left-arrow" data-arrow="left">‹</button>
 
   <div class="horizontal-strip" data-strip>
-
-    {% for item in items %}
-      {% assign clean_url = item.url | replace: '//', '/' %}
-      {% assign segments = clean_url | split: "/" %}
-      {% assign last = segments | last %}
-      {% if last == "" %}
-        {% assign song_id = segments[segments.size - 2] %}
-      {% else %}
-        {% assign song_id = last %}
-      {% endif %}
-      {% assign song = item %}
-
-      {% if include.playlist %}
-        {% if song.videostatus == "Public" %}
-          <!-- PLAYLIST MODE: Public -->
-          <div class="carousel-tile" data-song="{{ song.song_id }}">
-            <img src="{{ item.image }}" alt="{{ song.title }}">
-            <h3 class="tile-title">{{ song.title }}</h3>
-          </div>
-        {% else %}
-          <!-- PLAYLIST MODE: Coming Soon -->
-          <div class="carousel-tile coming-soon" data-song="{{ song.song_id }}">
-            <img src="{{ item.image }}" alt="{{ song.title }}">
-            <div class="tile-overlay">Coming Soon</div>
-            <h3 class="tile-title">{{ song.title }}</h3>
-          </div>
-        {% endif %}
-      {% else %}
-        {% if song.videostatus == "Public" %}
-          <!-- SONG PAGE MODE: Public -->
-          <a class="carousel-tile" data-song="{{ song_id }}" href="{{ item.url }}">
-            <img src="{{ item.image }}" alt="{{ song.title }}">
-            <h3 class="tile-title">{{ song.title }}</h3>
-          </a>
-        {% else %}
-          <!-- SONG PAGE MODE: Coming Soon -->
-          <div class="carousel-tile coming-soon" data-song="{{ song_id }}">
-            <img src="{{ item.image }}" alt="{{ song.title }}">
-            <div class="tile-overlay">Coming Soon</div>
-            <h3 class="tile-title">{{ song.title }}</h3>
-          </div>
-        {% endif %}
+    {% assign items = include.playlist | default: include.songs %}
+    
+    {# FIRST PASS: Public songs #}
+    {% for song in items %}
+      {% if song.videostatus == "Public" %}
+        <a class="carousel-tile" data-song="{{ song.song_id }}" href="{{ song.url }}">
+          <img src="{{ song.image }}" alt="{{ song.title }}">
+          <h3 class="tile-title">{{ song.title }}</h3>
+        </a>
       {% endif %}
     {% endfor %}
+    
+    {# SECOND PASS: Coming Soon songs #}
+    {% for song in items %}
+      {% unless song.videostatus == "Public" %}
+        <div class="carousel-tile coming-soon" data-song="{{ song.song_id }}">
+          <img src="{{ song.image }}" alt="{{ song.title }}">
+          <div class="tile-overlay">Coming Soon</div>
+          <h3 class="tile-title">{{ song.title }}</h3>
+        </div>
+      {% endunless %}
+    {% endfor %}
   </div>
-
   <!-- RIGHT ARROW -->
   <button class="carousel-arrow right-arrow" data-arrow="right">›</button>
 
