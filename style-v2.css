@@ -1075,3 +1075,32 @@ footer {
 .playlist-lyrics {
   margin-top: 0.75rem !important;
 }
+
+/* ============================================
+   PLAYLIST PAGE — CAROUSEL FIX (180px tiles)
+============================================ */
+
+/* 1. Fix tile width mismatch */
+.carousel-tile {
+  flex: 0 0 180px !important;
+  width: 180px !important;
+}
+
+/* 2. Remove padding that breaks scroll math */
+.player-frame .horizontal-strip {
+  padding: 0 !important;
+}
+
+/* 3. Ensure the strip scrolls properly */
+.player-frame .horizontal-strip,
+.player-frame [data-strip] {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scroll-behavior: smooth;
+}
+
+/* 4. Prevent clipping by the player frame */
+.player-frame,
+.player-frame .carousel {
+  overflow: visible !important;
+}
