@@ -38,24 +38,23 @@ SONG IDS FROM PLAYLIST:
     {% endif %}
   </section>
 
-  {% comment %}
-    2. Build the list of songs for this playlist
-  {% endcomment %}
   {% assign playlist_songs = "" | split: "" %}
-
+  
   {% for sid in playlist.songs %}
     {% assign expected_song = site.data.music.songs | where: "song_id", sid | first %}
-    {% if expected_song and expected_song.videostatus == "Public" %}
+    {% if expected_song %}
       {% assign playlist_songs = playlist_songs | push: expected_song %}
     {% endif %}
   {% endfor %}
-  
-  {% comment %}
-    3. Sort playlist songs by sequence if present
-  {% endcomment %}
+    
   {% assign sorted = playlist_songs | sort: "sequence" %}
-
-  {% assign first_song = sorted | first %}
+  
+  {% assign first_public = sorted | where: "videostatus", "Public" | first %}
+  {% assign first_song = first_public %}
+  
+  {% if first_song == nil %}
+    {% assign first_song = sorted | first %}
+  {% endif %}
 
   <!-- ⭐ PLAYER FRAME WRAPPER (PURPLE THEME) ⭐ -->
   <div class="player-frame player-frame--purple">
