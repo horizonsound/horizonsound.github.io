@@ -124,36 +124,6 @@ title: Music – Horizon Sound
          Excluding playlists already in playlist_data
     =========================================== -->
     {% assign playlist_names = playlist_data | map: "title" %}
-   
-{% if site.debug %}
-<div class="debug-block">
-<pre style="background:#111; color:#0ff; padding:1rem; white-space:pre-wrap;">
-
-GROUPED VIEW DEBUG
-==============================
-
-PLAYLISTS (raw):
-{{ playlists | jsonify }}
-
-{% for list in playlists %}
-----------------------------------------
-PLAYLIST NAME: "{{ list }}"
-
-{% assign songs_in_list = all_songs | where: "primary_playlist", list %}
-
-songs_in_list.size: {{ songs_in_list.size }}
-
-SONGS MATCHED:
-{% for s in songs_in_list %}
-  - {{ s.title }} (status: {{ s.videostatus }})
-{% endfor %}
-
-{% endfor %}
-
-</pre>
-</div>
-{% endif %}
-
     {% for list in playlists %}
       {% unless playlist_names contains list %}
         {% assign songs_in_list = all_songs | where: "primary_playlist", list %}
@@ -193,7 +163,6 @@ SONGS MATCHED:
         {% endif %}
       {% endunless %}
     {% endfor %}
-  
   </section>
 
   <!-- ------------------------------------------------
