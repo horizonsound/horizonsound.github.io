@@ -166,10 +166,6 @@ SONGS MATCHED:
           {% assign playlist_sorted = songs_in_list | sort: "title" %}
         {% endif %}
   
-        {% assign public_sorted = playlist_sorted | where: "videostatus", "Public" %}
-        {% assign coming_sorted = playlist_sorted | reject: "videostatus", "Public" %}
-        {% assign playlist_sorted = public_sorted | concat: coming_sorted %}
-
         {% if playlist_sorted.size > 0 %}
         <section class="playlist-section">
           <h2 class="section-header">{{ list }}</h2>
