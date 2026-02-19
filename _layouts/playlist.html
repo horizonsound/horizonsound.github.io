@@ -58,19 +58,22 @@ SONG IDS FROM PLAYLIST:
 
   <!-- ⭐ PLAYER FRAME WRAPPER (PURPLE THEME) ⭐ -->
   <div class="player-frame player-frame--purple">
-
+  
     <!-- EMBED -->
     {% include embed.html youtube_id=first_song.youtube_id %}
-
+  
     <!-- JS DATA -->
     <script>
       window.allSongs = {{ sorted | jsonify }};
     </script>
-
-    <!-- CAROUSEL -->
+  
+  </div>
+  
+  <!-- ⭐ TEMPORARY: Move carousel OUTSIDE the frame -->
+  <div class="playlist-carousel-test">
     {% include carousel.html playlist=sorted %}
   </div>
-
+  
   <section class="playlist-about">
     <div class="centered-column">
       <h2 class="section-header">About the Song</h2>
