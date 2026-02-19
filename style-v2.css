@@ -1104,3 +1104,7 @@ footer {
 .player-frame .carousel {
   overflow: visible !important;
 }
+
+.playlist-carousel-test {
+  margin: 20px 40px;
+}
