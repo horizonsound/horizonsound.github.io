@@ -1,6 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    window.__REPO_NAME__ = "{{ site.github.repository_name }}";
+  </script>
+  
+  <!-- ENV DEBUG: [{{ site.github.repository_name }}] -->
+  {% if site.github.repository_name == "horizonsound-dev" %}
+    <!-- dev-only -->
+    <meta name="robots" content="noindex, nofollow">
+  {% endif %}
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const robotsMeta = document.querySelector('meta[name="robots"]');
+      const repo = window.__REPO_NAME__;
+
+      if (robotsMeta) {
+        const content = robotsMeta.getAttribute('content');
+        if (content.includes('noindex') && repo !== "horizonsound-dev") {
+          document.documentElement.style.background = "blue";
+          document.body.style.background = "blue";
+        }
+      }
+    });
+  </script>
+  
   <meta charset="UTF-8" />
   <title>{{ page.title }}</title>
 
