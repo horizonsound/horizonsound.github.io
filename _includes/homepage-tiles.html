@@ -1,41 +1,48 @@
-{% if include.section == "new_releases" %}
-  {% assign resolved = "" | split: "" %}
+<section class="homepage-section">
 
-  {% for item in include.items %}
-    {% assign s = site.data.music.songs | where: "song_id", item.id | first %}
-    {% if s and s.videostatus == "Public" %}
-      {% assign resolved = resolved | push:
-        item | merge:
-          title: s.title,
-          image: s.image,
-          url: s.url,
-          published_at: s.published_at
-      %}
-    {% endif %}
-  {% endfor %}
+  {% assign first_item = include.items[0] %}
 
-  {% assign sorted = resolved | sort: "published_at" | reverse %}
+  {%- comment -%}
+    MODE 1 — NEW RELEASES (songs, date only)
+  {%- endcomment -%}
+  {% if include.section == "new_releases" %}
 
-  <div class="tile-grid">
-    {% for item in sorted %}
-      <div class="tile debug-tile">
-        <a href="{{ site.baseurl }}{{ item.url }}">
-          <img src="{{ site.baseurl }}{{ item.image }}" alt="{{ item.title }}">
-          <h3 class="tile-title">{{ item.title }}</h3>
-        </a>
+    {% assign resolved = "" | split: "" %}
 
-        <!-- DEBUG -->
-        <div style="background:#ffdddd; padding:6px; margin-top:6px; font-size:12px; border:1px solid #cc0000;">
-          <strong>DEBUG</strong><br>
-          section: new_releases<br>
-          title: {{ item.title }}<br>
-          published_at: {{ item.published_at }}<br>
-          index: {{ forloop.index }}<br>
-        </div>
-      </div>
+    {% for item in include.items %}
+      {% assign s = site.data.music.songs | where: "song_id", item.id | first %}
+      {% if s and s.videostatus == "Public" %}
+        {% assign resolved = resolved | push:
+          item | merge:
+            title: s.title,
+            image: s.image,
+            url: s.url,
+            published_at: s.published_at
+        %}
+      {% endif %}
     {% endfor %}
-  </div>
-{% elsif include.section == "spotlight" %}
+
+    {% assign sorted = resolved | sort: "published_at" | reverse %}
+
+    <div class="tile-grid">
+      {% for item in sorted %}
+        <div class="tile debug-tile">
+          <a href="{{ site.baseurl }}{{ item.url }}">
+            <img src="{{ site.baseurl }}{{ item.image }}" alt="{{ item.title }}">
+            <h3 class="tile-title">{{ item.title }}</h3>
+          </a>
+
+          <!-- DEBUG -->
+          <div style="background:#ffdddd; padding:6px; margin-top:6px; font-size:12px; border:1px solid #cc0000;">
+            <strong>DEBUG</strong><br>
+            section: new_releases<br>
+            title: {{ item.title }}<br>
+            published_at: {{ item.published_at }}<br>
+            index: {{ forloop.index }}<br>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
 
   {%- comment -%}
     MODE 2 — SPOTLIGHT (songs, view count only)
@@ -61,10 +68,21 @@
 
     <div class="tile-grid">
       {% for item in sorted %}
-        <a class="tile" href="{{ site.baseurl }}{{ item.url }}">
-          <img src="{{ site.baseurl }}{{ item.image }}" alt="{{ item.title }}">
-          <h3 class="tile-title">{{ item.title }}</h3>
-        </a>
+        <div class="tile debug-tile">
+          <a class="tile" href="{{ site.baseurl }}{{ item.url }}">
+            <img src="{{ site.baseurl }}{{ item.image }}" alt="{{ item.title }}">
+            <h3 class="tile-title">{{ item.title }}</h3>
+          </a>
+
+          <!-- DEBUG -->
+          <div style="background:#ddeeff; padding:6px; margin-top:6px; font-size:12px; border:1px solid #0044aa;">
+            <strong>DEBUG</strong><br>
+            section: spotlight<br>
+            title: {{ item.title }}<br>
+            view_count: {{ item.view_count }}<br>
+            index: {{ forloop.index }}<br>
+          </div>
+        </div>
       {% endfor %}
     </div>
 
@@ -124,61 +142,48 @@
     <div class="tile-grid">
 
       {% for pl in active_playlists %}
-        <a class="tile" href="{{ site.baseurl }}/music/playlists/{{ pl.playlist_id }}/">
-          <img src="{{ pl.image }}" alt="{{ pl.title }}">
-          <h3 class="tile-title">{{ pl.title }}</h3>
-        </a>
+        <div class="tile debug-tile">
+          <a class="tile" href="{{ site.baseurl }}/music/playlists/{{ pl.playlist_id }}/">
+            <img src="{{ pl.image }}" alt="{{ pl.title }}">
+            <h3 class="tile-title">{{ pl.title }}</h3>
+          </a>
+
+          <!-- DEBUG -->
+          <div style="background:#ddffdd; padding:6px; margin-top:6px; font-size:12px; border:1px solid #009900;">
+            <strong>DEBUG</strong><br>
+            section: collections<br>
+            title: {{ pl.title }}<br>
+            newest_public_date: {{ pl.newest_public_date }}<br>
+            index: {{ forloop.index }}<br>
+          </div>
+        </div>
       {% endfor %}
 
       {% for pl in inactive_playlists %}
-        <div class="tile coming-soon">
+        <div class="tile coming-soon debug-tile">
           <img src="{{ pl.image }}" alt="{{ pl.title }}">
           <div class="tile-overlay">Coming Soon</div>
           <h3 class="tile-title">{{ pl.title }}</h3>
+
+          <!-- DEBUG -->
+          <div style="background:#ffeecc; padding:6px; margin-top:6px; font-size:12px; border:1px solid #cc8800;">
+            <strong>DEBUG</strong><br>
+            section: collections<br>
+            title: {{ pl.title }}<br>
+            soonest_scheduled_date: {{ pl.soonest_scheduled_date }}<br>
+            index: {{ forloop.index }}<br>
+          </div>
         </div>
       {% endfor %}
 
     </div>
 
-  {%- comment -%}
-    MODE 4 — UNIFIED FALLBACK (future sections)
-  {%- endcomment -%}
   {% else %}
 
-    {% assign resolved = "" | split: "" %}
-
-    {% for item in include.items %}
-      {% if item.type == "song" %}
-        {% assign s = site.data.music.songs | where: "song_id", item.id | first %}
-        {% if s %}
-          {% assign resolved = resolved | push:
-            item | merge:
-              title: s.title,
-              image: s.image,
-              url: s.url,
-              sort_date: s.published_at
-          %}
-        {% endif %}
-      {% elsif item.type == "playlist" %}
-        {% assign pl = site.data.playlists | where: "playlist_id", item.id | first %}
-        {% if pl %}
-          {% assign resolved = resolved | push:
-            item | merge:
-              title: pl.title,
-              playlist_id: pl.playlist_id
-          %}
-        {% endif %}
-      {% endif %}
-    {% endfor %}
-
-    {% assign sorted = resolved | sort: "sort_date" | reverse %}
-
     <div class="tile-grid">
-      {% for item in sorted %}
-        <div class="tile">
-          <h3 class="tile-title">{{ item.title }}</h3>
-        </div>
-      {% endfor %}
+      <div class="tile">
+        <h3 class="tile-title">Fallback mode active</h3>
+      </div>
     </div>
 
   {% endif %}
