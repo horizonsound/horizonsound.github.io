@@ -1,37 +1,41 @@
-<section class="homepage-section">
+{% if include.section == "new_releases" %}
+  {% assign resolved = "" | split: "" %}
 
-  {% assign first_item = include.items[0] %}
+  {% for item in include.items %}
+    {% assign s = site.data.music.songs | where: "song_id", item.id | first %}
+    {% if s and s.videostatus == "Public" %}
+      {% assign resolved = resolved | push:
+        item | merge:
+          title: s.title,
+          image: s.image,
+          url: s.url,
+          published_at: s.published_at
+      %}
+    {% endif %}
+  {% endfor %}
 
-  {%- comment -%}
-    MODE 1 — NEW RELEASES (songs, date only)
-  {%- endcomment -%}
-  {% if include.section == "new_releases" %}
+  {% assign sorted = resolved | sort: "published_at" | reverse %}
 
-    {% assign resolved = "" | split: "" %}
-
-    {% for item in include.items %}
-      {% assign s = site.data.music.songs | where: "song_id", item.id | first %}
-      {% if s and s.videostatus == "Public" %}
-        {% assign resolved = resolved | push:
-          item | merge:
-            title: s.title,
-            image: s.image,
-            url: s.url,
-            published_at: s.published_at
-        %}
-      {% endif %}
-    {% endfor %}
-
-    {% assign sorted = resolved | sort: "published_at" | reverse %}
-
-    <div class="tile-grid">
-      {% for item in sorted %}
-        <a class="tile" href="{{ site.baseurl }}{{ item.url }}">
+  <div class="tile-grid">
+    {% for item in sorted %}
+      <div class="tile debug-tile">
+        <a href="{{ site.baseurl }}{{ item.url }}">
           <img src="{{ site.baseurl }}{{ item.image }}" alt="{{ item.title }}">
           <h3 class="tile-title">{{ item.title }}</h3>
         </a>
-      {% endfor %}
-    </div>
+
+        <!-- DEBUG -->
+        <div style="background:#ffdddd; padding:6px; margin-top:6px; font-size:12px; border:1px solid #cc0000;">
+          <strong>DEBUG</strong><br>
+          section: new_releases<br>
+          title: {{ item.title }}<br>
+          published_at: {{ item.published_at }}<br>
+          index: {{ forloop.index }}<br>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% elsif include.section == "spotlight" %}
 
   {%- comment -%}
     MODE 2 — SPOTLIGHT (songs, view count only)
