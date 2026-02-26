@@ -34,8 +34,6 @@
     </div>
   {% endif %}
 
-
-
   {%- comment -%}
     MODE 2 — SPOTLIGHT (songs, view count only)
     Triggered when section is "spotlight"
@@ -68,14 +66,10 @@
     </div>
   {% endif %}
 
-
-
   {%- comment -%}
-    MODE 3 — COLLECTIONS (playlists, always show all)
-    Active: newest_public_date → oldest
-    Inactive: soonest_scheduled_date → latest
+    MODE 3 — COLLECTIONS (playlists)
   {%- endcomment -%}
-  {% if first_item.type == "playlist" %}
+  {% if include.section == "collections" %}
     {% assign active_playlists = "" | split: "" %}
     {% assign inactive_playlists = "" | split: "" %}
 
@@ -142,6 +136,48 @@
       {% endfor %}
 
     </div>
+
+    {% return %}
   {% endif %}
 
-</section>
+  {%- comment -%}
+    MODE 4 — UNIFIED FALLBACK (future sections)
+  {%- endcomment -%}
+
+  {% assign resolved = "" | split: "" %}
+
+  {% for item in include.items %}
+    {% if item.type == "song" %}
+      {% assign s = site.data.music.songs | where: "song_id", item.id | first %}
+      {% if s %}
+        {% assign resolved = resolved | push:
+          item | merge:
+            title: s.title,
+            image: s.image,
+            url: s.url,
+            videostatus: s.videostatus,
+            sort_date: s.published_at
+        %}
+      {% endif %}
+    {% elsif item.type == "playlist" %}
+      {% assign pl = site.data.playlists | where: "playlist_id", item.id | first %}
+      {% if pl %}
+        {% assign resolved = resolved | push:
+          item | merge:
+            title: pl.title,
+            playlist_id: pl.playlist_id
+        %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
+  {% assign sorted = resolved | sort: "sort_date" | reverse %}
+
+  <div class="tile-grid">
+      {% return %}
+  {% endif %}
+  
+
+
+
+
