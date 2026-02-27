@@ -31,7 +31,7 @@
     {% elsif include.section == "spotlight" %}
 
       {%- comment -%}
-        SPOTLIGHT — sort by view_count (highest first)
+        SPOTLIGHT — sort by numeric view count (highest first)
       {%- endcomment -%}
 
       {% assign items_sorted = "" | split: "" %}
@@ -39,11 +39,16 @@
       {% for item in include.items %}
         {% assign s = site.data.music.songs | where: "song_id", item.id | first %}
         {% if s %}
-          {% assign items_sorted = items_sorted | push: s %}
+          {%- comment -%}
+            Convert view_count string → number and flatten to "view" field
+          {%- endcomment -%}
+          {% assign view = s.metadata.statistics.view_count | plus: 0 %}
+          {% assign merged = s | merge: {"view": view} %}
+          {% assign items_sorted = items_sorted | push: merged %}
         {% endif %}
       {% endfor %}
 
-      {% assign items_sorted = items_sorted | sort: "metadata.statistics.view_count" | reverse %}
+      {% assign items_sorted = items_sorted | sort: "view" | reverse %}
 
       {% for s in items_sorted %}
         <a class="tile" href="{{ site.baseurl }}{{ s.url }}">
