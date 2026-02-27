@@ -25,15 +25,19 @@
     console.log("TILES: matched song =", {{ s | jsonify }});
   </script>
 
-  
-      {% if s and s.videostatus == "Public" %}
-        {% assign resolved = resolved | push:
-          item | merge:
-            title: s.title,
-            image: s.image,
-            url: s.url,
-            published_at: s.published_at
-        %}
+
+{% assign merged = "" | split: "" %}
+{% assign merged = merged | push: 
+  {
+    "type": item.type,
+    "id": item.id,
+    "title": s.title,
+    "image": s.image,
+    "url": s.url,
+    "published_at": s.published_at
+  }
+%}
+{% assign resolved = resolved | push: merged[0] %}
 
   <script>
     console.log("TILES: item AFTER merge =", {{ resolved | last | jsonify }});
