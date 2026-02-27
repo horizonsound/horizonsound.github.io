@@ -1,56 +1,43 @@
-name: YouTube Sync (development)
+name: YouTube Sync
 
 on:
   workflow_dispatch:
   schedule:
-    # 8:00 AM, 12:00 PM, 4:00 PM, 8:00 PM CST
-    # CST → UTC: 08:00→14:00, 12:00→18:00, 16:00→22:00, 20:00→02:00 (next day)
-    - cron: "0 14,18,22,2 * * *"
+    - cron: "0 * * * *"   # every hour
+
+permissions:
+  contents: write
 
 jobs:
-  youtube-sync:
+  sync:
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: write
-
     steps:
-      - name: Checkout development repo
+      - name: Checkout repo
         uses: actions/checkout@v4
-        with:
-          ref: main
 
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: "18"
+          node-version: 20
 
       - name: Install dependencies
-        run: |
-          cd youtube-sync
-          npm install
+        run: npm install
 
       - name: Run YouTube sync generator
         env:
           GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
           GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
-          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          REDIRECT_URI: ${{ secrets.REDIRECT_URI }}
+        run: node generate-youtube-feed.js
+
+      - name: Commit and push changes
         run: |
-          cd youtube-sync
-          node generate-preview-yaml.js
-
-      - name: Commit and push changes (if any)
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          git status
-
-          if [ -n "$(git status --porcelain)" ]; then
-            git add -A
-            git commit -m "YouTube sync: $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
-            git push origin main
-          else
-            echo "No changes to commit."
-          fi
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add _data/youtube_feed.yml
+          git add _songs/
+          git add assets/thumbnails/
+          git commit -m "Automated YouTube sync" || echo "No changes to commit"
+          git push
