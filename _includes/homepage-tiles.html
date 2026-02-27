@@ -4,6 +4,7 @@
     MODE 1 — NEW RELEASES (date only)
   {%- endcomment -%}
   {% if include.section == "new_releases" %}
+
     {% assign resolved = "" | split: "" %}
 
     {% for item in include.items %}
@@ -30,16 +31,12 @@
       {% endfor %}
     </div>
 
-    {% comment %} STOP HERE — do not run unified logic {% endcomment %}
-    {% return %}
-  {% endif %}
-
-
+  {% elsif include.section == "spotlight" %}
 
   {%- comment -%}
     MODE 2 — SPOTLIGHT (view count only)
   {%- endcomment -%}
-  {% if include.section == "spotlight" %}
+
     {% assign resolved = "" | split: "" %}
 
     {% for item in include.items %}
@@ -66,15 +63,12 @@
       {% endfor %}
     </div>
 
-    {% return %}
-  {% endif %}
-
-
+  {% elsif include.section == "collections" %}
 
   {%- comment -%}
     MODE 3 — COLLECTIONS (playlists)
   {%- endcomment -%}
-  {% if include.section == "collections" %}
+
     {% assign active_playlists = "" | split: "" %}
     {% assign inactive_playlists = "" | split: "" %}
 
@@ -142,50 +136,6 @@
 
     </div>
 
-    {% return %}
   {% endif %}
-
-
-
-  {%- comment -%}
-    MODE 4 — UNIFIED FALLBACK (future sections)
-  {%- endcomment -%}
-
-  {% assign resolved = "" | split: "" %}
-
-  {% for item in include.items %}
-    {% if item.type == "song" %}
-      {% assign s = site.data.music.songs | where: "song_id", item.id | first %}
-      {% if s %}
-        {% assign resolved = resolved | push:
-          item | merge:
-            title: s.title,
-            image: s.image,
-            url: s.url,
-            videostatus: s.videostatus,
-            sort_date: s.published_at
-        %}
-      {% endif %}
-    {% elsif item.type == "playlist" %}
-      {% assign pl = site.data.playlists | where: "playlist_id", item.id | first %}
-      {% if pl %}
-        {% assign resolved = resolved | push:
-          item | merge:
-            title: pl.title,
-            playlist_id: pl.playlist_id
-        %}
-      {% endif %}
-    {% endif %}
-  {% endfor %}
-
-  {% assign sorted = resolved | sort: "sort_date" | reverse %}
-
-  <div class="tile-grid">
-    {% for item in sorted %}
-      <div class="tile">
-        <h3 class="tile-title">{{ item.title }}</h3>
-      </div>
-    {% endfor %}
-  </div>
 
 </section>
