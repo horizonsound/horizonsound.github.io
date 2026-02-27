@@ -26,41 +26,30 @@
         </a>
       {% endfor %}
 
-      {% elsif include.section == "spotlight" %}
+    {% elsif include.section == "spotlight" %}
       
-        {% assign items_sorted = "" | split: "" %}
-      
-        {% for item in include.items %}
-          {% assign s = site.data.music.songs | where: "song_id", item.id | first %}
-          {% if s %}
-            {% assign view = s.metadata.statistics.view_count | plus: 0 %}
-            {% assign merged = s | merge: {"view": view} %}
-            {% assign items_sorted = items_sorted | push: merged %}
-          {% endif %}
-        {% endfor %}
-      
-        {# Sort highest → lowest WITHOUT reverse #}
-        {% assign items_sorted = items_sorted | sort: "view" %}
-      
-        {% for s in items_sorted %}
-          <a class="tile" href="{{ site.baseurl }}{{ s.url }}">
-            <img src="{{ site.baseurl }}{{ s.image }}" alt="{{ s.title }}">
-            <h3 class="tile-title">{{ s.title }}</h3>
-          </a>
-        {% endfor %}
-      
-      {% endif %}
-
-      {% assign items_sorted = items_sorted | sort: "view" | reverse %}
-
+      {% assign items_sorted = "" | split: "" %}
+    
+      {% for item in include.items %}
+        {% assign s = site.data.music.songs | where: "song_id", item.id | first %}
+        {% if s %}
+          {% assign view = s.metadata.statistics.view_count | plus: 0 %}
+          {% assign merged = s | merge: {"view": view} %}
+          {% assign items_sorted = items_sorted | push: merged %}
+        {% endif %}
+      {% endfor %}
+    
+      {# Sort highest → lowest WITHOUT reverse #}
+      {% assign items_sorted = items_sorted | sort: "view" %}
+    
       {% for s in items_sorted %}
         <a class="tile" href="{{ site.baseurl }}{{ s.url }}">
           <img src="{{ site.baseurl }}{{ s.image }}" alt="{{ s.title }}">
           <h3 class="tile-title">{{ s.title }}</h3>
         </a>
       {% endfor %}
-
-
+    
+    {% endif %}
 
     {% elsif include.section == "collections" %}
 
