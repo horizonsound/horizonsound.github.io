@@ -76,32 +76,37 @@
             {% endif %}
           {% endfor %}
 
-          {% assign playlist_image = site.baseurl | append: "/assets/thumbnails/playlist-" | append: pl.playlist_id | append: ".jpeg" %}
-
           {% if has_public %}
-            {% assign merged = pl | merge: {"image": playlist_image, "sort_date": newest_public_date} %}
+            {% assign merged = pl | merge: {"sort_date": newest_public_date} %}
             {% assign active = active | push: merged %}
           {% elsif soonest_scheduled_date %}
-            {% assign merged = pl | merge: {"image": playlist_image, "sort_date": soonest_scheduled_date} %}
+            {% assign merged = pl | merge: {"sort_date": soonest_scheduled_date} %}
             {% assign coming_soon = coming_soon | push: merged %}
           {% endif %}
 
         {% endif %}
       {% endfor %}
 
-      {% assign active = active | sort: "sort_date" | reverse %}
+      {%- comment -%}
+        ACTIVE: oldest → newest (reverse of what you’re seeing now)
+      {%- endcomment -%}
+      {% assign active = active | sort: "sort_date" %}
+
+      {%- comment -%}
+        COMING SOON: soonest → latest
+      {%- endcomment -%}
       {% assign coming_soon = coming_soon | sort: "sort_date" %}
 
       {% for pl in active %}
         <a class="tile" href="{{ site.baseurl }}/music/playlists/{{ pl.playlist_id }}/">
-          <img src="{{ pl.image }}" alt="{{ pl.title }}">
+          <img src="{{ site.baseurl }}/assets/thumbnails/playlist-{{ pl.playlist_id }}.jpeg" alt="{{ pl.title }}">
           <h3 class="tile-title">{{ pl.title }}</h3>
         </a>
       {% endfor %}
 
       {% for pl in coming_soon %}
         <div class="tile coming-soon">
-          <img src="{{ pl.image }}" alt="{{ pl.title }}">
+          <img src="{{ site.baseurl }}/assets/thumbnails/playlist-{{ pl.playlist_id }}.jpeg" alt="{{ pl.title }}">
           <div class="tile-overlay">Coming Soon</div>
           <h3 class="tile-title">{{ pl.title }}</h3>
         </div>
