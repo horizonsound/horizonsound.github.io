@@ -5,7 +5,7 @@
     {% if include.section == "new_releases" %}
 
       {%- comment -%}
-        Build a simple array of song objects with published_at for sorting
+        NEW RELEASES — sort by published_at (newest first)
       {%- endcomment -%}
 
       {% assign items_sorted = "" | split: "" %}
@@ -17,14 +17,8 @@
         {% endif %}
       {% endfor %}
 
-      {%- comment -%}
-        Sort by published_at (newest first)
-      {%- endcomment -%}
       {% assign items_sorted = items_sorted | sort: "metadata.published_at" | reverse %}
 
-      {%- comment -%}
-        Render tiles
-      {%- endcomment -%}
       {% for s in items_sorted %}
         <a class="tile" href="{{ site.baseurl }}{{ s.url }}">
           <img src="{{ site.baseurl }}{{ s.image }}" alt="{{ s.title }}">
@@ -32,26 +26,38 @@
         </a>
       {% endfor %}
 
+
+
     {% elsif include.section == "spotlight" %}
 
       {%- comment -%}
-        No sorting — simple direct rendering
+        SPOTLIGHT — sort by view_count (highest first)
       {%- endcomment -%}
+
+      {% assign items_sorted = "" | split: "" %}
 
       {% for item in include.items %}
         {% assign s = site.data.music.songs | where: "song_id", item.id | first %}
         {% if s %}
-          <a class="tile" href="{{ site.baseurl }}{{ s.url }}">
-            <img src="{{ site.baseurl }}{{ s.image }}" alt="{{ s.title }}">
-            <h3 class="tile-title">{{ s.title }}</h3>
-          </a>
+          {% assign items_sorted = items_sorted | push: s %}
         {% endif %}
       {% endfor %}
+
+      {% assign items_sorted = items_sorted | sort: "metadata.statistics.view_count" | reverse %}
+
+      {% for s in items_sorted %}
+        <a class="tile" href="{{ site.baseurl }}{{ s.url }}">
+          <img src="{{ site.baseurl }}{{ s.image }}" alt="{{ s.title }}">
+          <h3 class="tile-title">{{ s.title }}</h3>
+        </a>
+      {% endfor %}
+
+
 
     {% elsif include.section == "collections" %}
 
       {%- comment -%}
-        No sorting — simple direct rendering
+        COLLECTIONS — simple playlist tiles, no sorting
       {%- endcomment -%}
 
       {% for item in include.items %}
