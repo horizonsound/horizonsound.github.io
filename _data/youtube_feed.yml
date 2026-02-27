@@ -243,7 +243,7 @@ songs:
       region_blocked: []
       content_rating: ""
       statistics:
-        view_count: "63"
+        view_count: "65"
         like_count: "1"
         favorite_count: "0"
         comment_count: "0"
@@ -355,7 +355,7 @@ songs:
       region_blocked: []
       content_rating: ""
       statistics:
-        view_count: "175"
+        view_count: "176"
         like_count: "4"
         favorite_count: "0"
         comment_count: "3"
