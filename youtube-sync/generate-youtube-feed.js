@@ -47,6 +47,9 @@ async function generateYouTubeFeed() {
       fs.mkdirSync(thumbnailFolder, { recursive: true });
     }
 
+    // -------------------------------------------------------
+    // DOWNLOAD THUMBNAILS
+    // -------------------------------------------------------
     for (let i = 0; i < videos.length; i++) {
       const video = videos[i];
       console.log(`Downloading thumbnail ${i + 1} of ${videos.length}: ${video.slug}`);
@@ -57,6 +60,25 @@ async function generateYouTubeFeed() {
       }
     }
 
+    // -------------------------------------------------------
+    // CREATE SONG FILES 
+    // -------------------------------------------------------
+    const songsFolder = "_songs";
+    if (!fs.existsSync(songsFolder)) {
+      fs.mkdirSync(songsFolder, { recursive: true });
+    }
+
+    for (let i = 0; i < videos.length; i++) {
+      const video = videos[i];
+      const songFilePath = path.join(songsFolder, `${video.slug}.md`);
+      const content = `---\nlayout: song\nsong_id: ${video.slug}\n---\n`;
+      fs.writeFileSync(songFilePath, content, "utf8");
+      console.log(`Created song file: ${songFilePath}`);
+    }
+
+    // -------------------------------------------------------
+    // BUILD YAML FEED
+    // -------------------------------------------------------
     let yamlOutput = "songs:\n";
 
     videos.forEach(video => {
