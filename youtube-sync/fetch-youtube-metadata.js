@@ -269,13 +269,7 @@ export function writePlaylistYaml(playlists, outputPath) {
   }));
 
   fs.writeFileSync(outputPath, yaml.dump(data), "utf8");
-}  );
-
-  oauth2Client.setCredentials({
-    refresh_token: process.env.GOOGLE_REFRESH_TOKEN
-  });
-
-  const youtube = google.youtube({ version: "v3", auth: oauth2Client });
+  }
 
   let allVideos = [];
   let nextPageToken = null;
