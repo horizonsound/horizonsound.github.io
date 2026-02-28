@@ -9,7 +9,7 @@ overrides:
     lyrics_html: |
 
   - title: Nineteen Summers - Short
-    song_id: nineteen-summers-emotional-acoustic-pop-short-horizon-sound
+    song_id: nineteen-summers-emotional-acoustic-pop-short-horizon-sound-xxx
     subtitle: ''
     collection: null
     order: null
@@ -2954,7 +2954,7 @@ overrides:
       “Playing Highway to Hell.”—
       At this point, I should have expected that.</p>
   - title: Nineteen Summers Revised
-    song_id: nineteen-summers-emotional-ballad-horizon-sound
+    song_id: nineteen-summers-emotional-ballad-horizon-sound-xxx
     subtitle: ''
     collection: null
     order: null
