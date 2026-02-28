@@ -76,7 +76,7 @@ songs:
       region_blocked: []
       content_rating: ""
       statistics:
-        view_count: "38"
+        view_count: "41"
         like_count: "1"
         favorite_count: "0"
         comment_count: "0"
@@ -185,7 +185,7 @@ songs:
       region_blocked: []
       content_rating: ""
       statistics:
-        view_count: "155"
+        view_count: "156"
         like_count: "5"
         favorite_count: "0"
         comment_count: "0"
@@ -214,7 +214,7 @@ songs:
       region_blocked: []
       content_rating: ""
       statistics:
-        view_count: "28"
+        view_count: "30"
         like_count: "1"
         favorite_count: "0"
         comment_count: "0"
@@ -243,7 +243,7 @@ songs:
       region_blocked: []
       content_rating: ""
       statistics:
-        view_count: "65"
+        view_count: "66"
         like_count: "1"
         favorite_count: "0"
         comment_count: "0"
@@ -298,7 +298,7 @@ songs:
       region_blocked: []
       content_rating: ""
       statistics:
-        view_count: "61"
+        view_count: "62"
         like_count: "2"
         favorite_count: "0"
         comment_count: "0"
@@ -743,7 +743,7 @@ songs:
         - "https://en.wikipedia.org/wiki/Pop_music"
         - "https://en.wikipedia.org/wiki/Soul_music"
   - song_id: "nineteen-summers-emotional-ballad-horizon-sound"
-    title: "Nineteen Summers Revised (Emotional Ballad) - Horizon Sound"
+    title: "Nineteen Summers (Emotional Ballad) - Horizon Sound"
     youtube_id: "r16qSkxEcI4"
     url: "/music/nineteen-summers-emotional-ballad-horizon-sound/"
     thumbnail: "/assets/thumbnails/nineteen-summers-emotional-ballad-horizon-sound.jpeg"
@@ -1686,7 +1686,7 @@ songs:
       region_blocked: []
       content_rating: ""
       statistics:
-        view_count: "151"
+        view_count: "152"
         like_count: "2"
         favorite_count: "0"
         comment_count: "1"
@@ -1830,7 +1830,7 @@ songs:
       region_blocked: []
       content_rating: ""
       statistics:
-        view_count: "42"
+        view_count: "43"
         like_count: "2"
         favorite_count: "0"
         comment_count: "1"
