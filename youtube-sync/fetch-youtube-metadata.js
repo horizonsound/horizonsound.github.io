@@ -13,7 +13,7 @@ dotenv.config();
 function slugify(title) {
   return title
     .toLowerCase()
-    .replace(/['â€™]/g, "")
+    .replace(/['’]/g, "")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/-+/g, "-")
     .replace(/^-+|-+$/g, "");
@@ -232,9 +232,8 @@ export async function processPlaylistThumbnails(playlists, thumbnailDir) {
   }
 
   for (const pl of playlists) {
-    // If YouTube provides no thumbnail, skip downloading
     if (!pl.thumbnailUrl || pl.thumbnailUrl.includes("no_thumbnail")) {
-      console.warn(`Skipping thumbnail for playlist "${pl.title}" â€” no thumbnail available.`);
+      console.warn(`Skipping thumbnail for playlist "${pl.title}" — no thumbnail available.`);
       pl.thumbnail = null;
       continue;
     }
@@ -269,87 +268,4 @@ export function writePlaylistYaml(playlists, outputPath) {
   }));
 
   fs.writeFileSync(outputPath, yaml.dump(data), "utf8");
-  }
-
-  let allVideos = [];
-  let nextPageToken = null;
-
-  do {
-    const searchRes = await youtube.search.list({
-      part: ["id", "snippet"],
-      forMine: true,
-      maxResults: 50,
-      pageToken: nextPageToken,
-      type: "video"
-    });
-
-    const ids = searchRes.data.items.map(item => item.id.videoId).join(",");
-
-    const details = await youtube.videos.list({
-      part: [
-        "snippet",
-        "status",
-        "contentDetails",
-        "statistics",
-        "topicDetails"
-      ],
-      id: ids
-    });
-
-    const normalized = details.data.items.map(item => {
-      const snippet = item.snippet || {};
-      const status = item.status || {};
-      const content = item.contentDetails || {};
-      const stats = item.statistics || {};
-      const topics = item.topicDetails || {};
-
-      const thumbs = snippet.thumbnails || {};
-
-      const thumbnail =
-        thumbs.maxres?.url ||
-        thumbs.standard?.url ||
-        thumbs.high?.url ||
-        thumbs.medium?.url ||
-        thumbs.default?.url ||
-        "";
-
-      return {
-        id: item.id,
-        title: snippet.title || "",
-        description: snippet.description || "",
-        publishedAt: snippet.publishedAt || "",
-        slug: slugify(snippet.title || ""),
-        status: normalizeStatus(snippet, status),
-        scheduledAt: status.publishAt || "",
-        thumbnail,
-
-        metadata: {
-          published_at: snippet.publishedAt || "",
-          channel_id: snippet.channelId || "",
-          channel_title: snippet.channelTitle || "",
-          category_id: snippet.categoryId || "",
-          tags: snippet.tags || [],
-          duration: content.duration || "",
-          definition: content.definition || "",
-          region_allowed: content.regionRestriction?.allowed || [],
-          region_blocked: content.regionRestriction?.blocked || [],
-          content_rating: content.contentRating?.ytRating || "",
-          statistics: {
-            view_count: stats.viewCount || "",
-            like_count: stats.likeCount || "",
-            favorite_count: stats.favoriteCount || "",
-            comment_count: stats.commentCount || ""
-          },
-          made_for_kids: status.madeForKids ?? false,
-          self_declared_made_for_kids: status.selfDeclaredMadeForKids ?? false,
-          topic_categories: topics.topicCategories || []
-        }
-      };
-    });
-
-    allVideos.push(...normalized);
-    nextPageToken = searchRes.data.nextPageToken;
-  } while (nextPageToken);
-
-  return allVideos;
 }
