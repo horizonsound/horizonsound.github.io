@@ -3,41 +3,35 @@ layout: default
 title: Horizon Sound
 ---
 
+{% assign songs = site.data.youtube_feed.songs %}
+{% assign playlists = site.data.youtube_playlists %}
+
 <div class="homepage-wrapper">
   {% include homepage-teaser.html %}
 
   <!-- New Releases -->
-  {% assign new_releases_public = site.data.homepage.new_releases %}
+  {% assign new_releases = songs | sort: "metadata.published_at" | reverse %}
   <section class="homepage-section">
     <h2 class="section-header">New Releases...</h2>
     {% include homepage-tiles.html 
-         title="" 
-         items=new_releases_public 
+         items=new_releases 
          section="new_releases" %}
   </section>
-<script>
-  console.log("INDEX: spotlight_public =", {{ spotlight_public | jsonify }});
-</script>
 
-  <!-- Spotlight  -->
-  {% assign spotlight_public = site.data.homepage.spotlight %}
+  <!-- Spotlight -->
+  {% assign spotlight = songs | sort: "metadata.statistics.view_count" | reverse %}
   <section class="homepage-section">
     <h2 class="section-header">Spotlight Music</h2>
     {% include homepage-tiles.html 
-         title="" 
-         items=spotlight_public 
+         items=spotlight 
          section="spotlight" %}
   </section>
-<script>
-  console.log("INDEX: collections =", {{ site.data.homepage.collections | jsonify }});
-</script>
 
   <!-- Collections -->
   <section class="homepage-section homepage-collections">
     <h2 class="section-header">Collections</h2>
     {% include homepage-tiles.html 
-         title="" 
-         items=site.data.homepage.collections 
+         items=playlists 
          section="collections" %}
   </section>
 
