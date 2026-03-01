@@ -44,7 +44,7 @@ function normalizeVideo(video) {
     song_id,
     title: video.title,
     slug: video.slug,
-    url: `/music/songs/${song_id}/`,
+    url: `/music/${song_id}/`,
 
     // Local thumbnail path uses slug
     thumbnail: `/assets/thumbnails/${song_id}.jpeg`,
