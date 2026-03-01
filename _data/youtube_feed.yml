@@ -1,10 +1,10 @@
 songs:
-  - song_id: shes-so-into-me-modern-country-love-song-horizon-sound
+  - song_id: she-s-so-into-me-modern-country-love-song-horizon-sound
     youtube_id: 81IXyVEd7PQ
     title: She’s So Into Me (Modern Country Love Song) – Horizon Sound
-    url: /music/shes-so-into-me-modern-country-love-song-horizon-sound/
+    url: /music/she-s-so-into-me-modern-country-love-song-horizon-sound/
     thumbnail: >-
-      /assets/thumbnails/shes-so-into-me-modern-country-love-song-horizon-sound.jpeg
+      /assets/thumbnails/she-s-so-into-me-modern-country-love-song-horizon-sound.jpeg
     videostatus: scheduled
     playlists:
       - PLcKs1ONZE1Pw9sRUaBV_izyIqwOcwAKMz
@@ -359,7 +359,7 @@ songs:
       region_blocked: []
       content_rating: ''
       statistics:
-        view_count: '38'
+        view_count: '39'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -881,15 +881,15 @@ songs:
       upload_status: null
       publish_at: null
   - song_id: >-
-      7-if-youd-asked-performed-by-lydia-ellington-after-the-silence-horizon-sound
+      7-if-you-d-asked-performed-by-lydia-ellington-after-the-silence-horizon-sound
     youtube_id: YgcaebCs-LY
     title: >-
       7. If You’d Asked – Performed by Lydia Ellington (After the Silence) |
       Horizon Sound
     url: >-
-      /music/7-if-youd-asked-performed-by-lydia-ellington-after-the-silence-horizon-sound/
+      /music/7-if-you-d-asked-performed-by-lydia-ellington-after-the-silence-horizon-sound/
     thumbnail: >-
-      /assets/thumbnails/7-if-youd-asked-performed-by-lydia-ellington-after-the-silence-horizon-sound.jpeg
+      /assets/thumbnails/7-if-you-d-asked-performed-by-lydia-ellington-after-the-silence-horizon-sound.jpeg
     videostatus: public
     playlists:
       - PLcKs1ONZE1Pz6NzlQFL-96c_9VIgXwuVh
@@ -906,7 +906,7 @@ songs:
       region_blocked: []
       content_rating: ''
       statistics:
-        view_count: '49'
+        view_count: '48'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
