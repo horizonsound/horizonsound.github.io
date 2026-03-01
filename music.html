@@ -29,7 +29,7 @@ title: Music – Horizon Sound
   {% assign coming_soon_playlists = "" | split: "" %}
 
   {%- comment -%}
-    Build ordered arrays based on playlist.yml
+    Build ordered arrays based on youtube_playlist.yml
   {%- endcomment -%}
   {% for pl in site.data.youtube_playlists %}
     {% assign tile = site.data.homepage.collections | where: "playlist_id", pl.playlist_id | first %}
@@ -154,7 +154,7 @@ title: Music – Horizon Sound
   </section>
 
   <section id="music-view-carousel" style="display:none;">
-    {% for list in playlists %}
+    {% for pl in site.data.youtube_playlists %}
       {% assign songs_in_list = all_songs | where_exp: "s", "pl.song_ids contains s.song_id" %}
       {% assign sorted_by_sequence = songs_in_list | sort: "sequence" %}
       {% assign first_item = sorted_by_sequence | first %}
