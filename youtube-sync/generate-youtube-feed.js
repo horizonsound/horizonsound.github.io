@@ -141,6 +141,17 @@ async function generate() {
       song_ids: pl.videoIds
     }))
   });
+/* -------------------------------------------------------
+   SUMMARY
+------------------------------------------------------- */
+  console.log("\nSUMMARY:");
+  console.log(`  Videos fetched: ${videos.length}`);
+  console.log(`  Playlists fetched: ${playlists.length}`);
+  console.log(`  Song thumbnails downloaded: ${videos.length}`);
+  console.log(`  Playlist thumbnails downloaded: ${playlists.filter(pl => pl.thumbnail).length}/${playlists.length}`);
+  console.log("  Feed written: _data/youtube_feed.yml");
+  console.log("  Playlists written: _data/youtube_playlists.yml");
+  console.log("");
 
   console.log("Done.");
 }
