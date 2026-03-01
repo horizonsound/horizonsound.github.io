@@ -61,6 +61,7 @@ title: Music – Horizon Sound
     {% for tile in active_playlists %}
       <a class="tile" href="{{ site.baseurl }}/music/playlists/{{ tile.playlist_id }}/">
         <img src="{{ site.baseurl }}{{ tile.thumbnail }}" alt="{{ tile.title }}">
+        {% assign display_title = override.title | default: s.title %}
         <h3 class="tile-title">{{ tile.title }}</h3>
       </a>
     {% endfor %}
@@ -72,6 +73,7 @@ title: Music – Horizon Sound
       <div class="tile coming-soon">
         <img src="{{ site.baseurl }}{{ tile.thumbnail }}" alt="{{ tile.title }}">
         <div class="tile-overlay">Coming Soon</div>
+        {% assign display_title = override.title | default: s.title %}
         <h3 class="tile-title">{{ tile.title }}</h3>
       </div>
     {% endfor %}
@@ -101,6 +103,7 @@ title: Music – Horizon Sound
               {% if song.videostatus == "Public" %}
                 <a class="tile" href="{{ site.baseurl }}/music/{{ song.url }}">
                   <img src="{{ site.baseurl }}{{ song.thumbnail }}" alt="{{ song.title }}">
+                  {% assign display_title = override.title | default: s.title %}
                   <h3 class="tile-title">{{ song.title }}</h3>
                 </a>
               {% endif %}
@@ -111,6 +114,7 @@ title: Music – Horizon Sound
                 <div class="tile coming-soon">
                   <img src="{{ site.baseurl }}{{ song.thumbnail }}" alt="{{ song.title }}">
                   <div class="tile-overlay">Coming Soon</div>
+                  {% assign display_title = override.title | default: s.title %}
                   <h3 class="tile-title">{{ song.title }}</h3>
                 </div>
               {% endunless %}
@@ -131,6 +135,7 @@ title: Music – Horizon Sound
           {% if song.videostatus == "Public" %}
             <a class="tile" href="{{ site.baseurl }}/music/{{ song.url }}">
               <img src="{{ site.baseurl }}{{ song.thumbnail }}" alt="{{ song.title }}">
+              {% assign display_title = override.title | default: s.title %}
               <h3 class="tile-title">{{ song.title }}</h3>
             </a>
           {% endif %}
@@ -140,6 +145,7 @@ title: Music – Horizon Sound
             <div class="tile coming-soon">
               <img src="{{ site.baseurl }}{{ song.thumbnail }}" alt="{{ song.title }}">
               <div class="tile-overlay">Coming Soon</div>
+              {% assign display_title = override.title | default: s.title %}
               <h3 class="tile-title">{{ song.title }}</h3>
             </div>
           {% endunless %}
