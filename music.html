@@ -81,8 +81,7 @@ title: Music – Horizon Sound
   {% endif %}
     
     {% assign playlist_names = playlist_data | map: "title" %}
-    {% for list in playlists %}
-      {% unless playlist_names contains list %}
+      {% for pl in site.data.youtube_playlists %}
         {% assign songs_in_list = all_songs | where_exp: "s", "pl.song_ids contains s.song_id" %}
         {% assign sorted_by_sequence = songs_in_list | sort: "sequence" %}
         {% assign first_item = sorted_by_sequence | first %}
