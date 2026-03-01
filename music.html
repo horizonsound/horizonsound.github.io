@@ -130,20 +130,19 @@ title: Music – Horizon Sound
       {% assign all_sorted = all_songs | sort: "title" %}
       <div class="tile-grid">
 
-
-
-        
         {% for song in all_sorted %}
           {% assign override = site.data.music_overrides | where: "song_id", song.song_id | first %}
           {% assign display_title = override.title | default: song.title %}
-          {% unless song.videostatus == "Public" %}
-            <div class="tile coming-soon">
+          {% if song.videostatus == "Public" %}
+            <a class="tile" href="{{ site.baseurl }}{{ song.url }}">
               <img src="{{ site.baseurl }}{{ song.thumbnail }}" alt="{{ display_title }}">
-              <div class="tile-overlay">Coming Soon</div>
               <h3 class="tile-title">{{ display_title }}</h3>
-            </div>
-          {% endunless %}
+            </a>
+          {% endif %}
         {% endfor %}
+
+
+        
       </div>
     </section>
   </section>
