@@ -5,6 +5,8 @@ dotenv.config();
 
 /* -------------------------------------------------------
    LOG HELPERS
+   Small wrappers around console logging to keep output
+   consistent and easy to scan during GitHub Actions runs.
 ------------------------------------------------------- */
 function log(msg) {
   console.log(msg);
@@ -20,7 +22,14 @@ function error(msg) {
 
 /* -------------------------------------------------------
    HELPERS
+   Utility functions used across video + playlist fetchers.
 ------------------------------------------------------- */
+
+/**
+ * Convert a YouTube title into a clean, URL‑safe slug.
+ * This slug becomes the canonical identity for songs
+ * and playlists across the entire Horizon Sound site.
+ */
 function slugify(title) {
   return title
     .toLowerCase()
@@ -30,6 +39,17 @@ function slugify(title) {
     .replace(/^-+|-+$/g, "");
 }
 
+/**
+ * Normalize YouTube's status fields into a single,
+ * lowercase canonical value used by the site.
+ *
+ * Possible outputs:
+ *   - "scheduled"
+ *   - "public"
+ *   - "unlisted"
+ *   - "private"
+ *   - raw uploadStatus fallback
+ */
 function normalizeVideoStatus(snippet, status) {
   const publishAt = status.publishAt || null;
   const privacy = status.privacyStatus || "";
@@ -46,10 +66,14 @@ function normalizeVideoStatus(snippet, status) {
 
 /* -------------------------------------------------------
    FETCH ALL VIDEOS (FULL METADATA)
+   Retrieves every video on the channel, then fetches
+   full metadata for each one. This is the backbone of
+   the song feed and the source of all song thumbnails.
 ------------------------------------------------------- */
 export async function fetchAllVideos() {
   log("Initializing YouTube client...");
 
+  // OAuth client for YouTube Data API
   const oauth2Client = new google.auth.OAuth2(
     process.env.GOOGLE_CLIENT_ID,
     process.env.GOOGLE_CLIENT_SECRET,
@@ -68,6 +92,7 @@ export async function fetchAllVideos() {
 
   log("Fetching videos from YouTube...");
 
+  // Paginated fetch of all videos on the channel
   do {
     log(`VIDEO PAGE ${page}...`);
 
@@ -84,10 +109,12 @@ export async function fetchAllVideos() {
       break;
     }
 
+    // Log each discovered video
     searchRes.data.items.forEach(item => {
       log(`  VIDEO FOUND: ${item.id.videoId} — ${item.snippet?.title || "(no title)"}`);
     });
 
+    // Fetch full metadata for all videos in this page
     const ids = searchRes.data.items.map(item => item.id.videoId).join(",");
 
     const details = await youtube.videos.list({
@@ -106,6 +133,7 @@ export async function fetchAllVideos() {
       break;
     }
 
+    // Normalize each video into the final data model
     const normalized = details.data.items.map(item => {
       const snippet = item.snippet || {};
       const status = item.status || {};
@@ -114,6 +142,7 @@ export async function fetchAllVideos() {
       const topics = item.topicDetails || {};
       const thumbs = snippet.thumbnails || {};
 
+      // Thumbnail selection priority
       const thumbnail =
         thumbs.maxres?.url ||
         thumbs.standard?.url ||
@@ -133,16 +162,16 @@ export async function fetchAllVideos() {
         title: snippet.title || "",
         slug: slugify(snippet.title || ""),
 
-        // NEW MODEL FIELDS
+        // Canonical status fields for the site
         videostatus_raw: normalizeVideoStatus(snippet, status),
         publishedAt: snippet.publishedAt || "",
         scheduledAt: status.publishAt || "",
         thumbnail,
 
-        // playlist membership added later in generator
+        // Filled later by playlist membership
         playlists: [],
 
-        // NEW MODEL: youtube_metadata (renamed from metadata)
+        // Full raw metadata block used by the site
         youtube_metadata: {
           published_at: snippet.publishedAt || "",
           channel_id: snippet.channelId || "",
@@ -164,7 +193,7 @@ export async function fetchAllVideos() {
           self_declared_made_for_kids: status.selfDeclaredMadeForKids ?? false,
           topic_categories: topics.topicCategories || [],
 
-          // raw YouTube status fields
+          // Raw YouTube status fields
           privacy_status: status.privacyStatus || "",
           upload_status: status.uploadStatus || "",
           publish_at: status.publishAt || ""
@@ -188,10 +217,14 @@ export async function fetchAllVideos() {
 
 /* -------------------------------------------------------
    FETCH ALL PLAYLISTS (FULL METADATA)
+   Retrieves every playlist on the channel, including
+   title, description, slug, published date, and the
+   best available thumbnail URL.
 ------------------------------------------------------- */
 export async function fetchAllPlaylists() {
   console.log("Fetching playlists...");
 
+  // OAuth client for YouTube Data API
   const oauth2Client = new google.auth.OAuth2(
     process.env.GOOGLE_CLIENT_ID,
     process.env.GOOGLE_CLIENT_SECRET,
@@ -208,6 +241,7 @@ export async function fetchAllPlaylists() {
   let nextPageToken = null;
   let page = 1;
 
+  // Paginated playlist fetch
   do {
     console.log(`PLAYLIST PAGE ${page}...`);
 
@@ -223,14 +257,17 @@ export async function fetchAllPlaylists() {
       break;
     }
 
+    // Log each playlist
     res.data.items.forEach(item => {
       console.log(`  PLAYLIST FOUND: ${item.id} — ${item.snippet?.title || "(no title)"}`);
     });
 
+    // Normalize playlist metadata
     res.data.items.forEach(item => {
       const snippet = item.snippet || {};
       const thumbs = snippet.thumbnails || {};
 
+      // Thumbnail selection priority
       const thumbnailUrl =
         thumbs.maxres?.url ||
         thumbs.standard?.url ||
@@ -252,7 +289,7 @@ export async function fetchAllPlaylists() {
         description: snippet.description || "",
         publishedAt: snippet.publishedAt || "",
         thumbnailUrl,
-        videoIds: []
+        videoIds: [] // Filled in by membership fetcher
       });
     });
 
@@ -266,12 +303,15 @@ export async function fetchAllPlaylists() {
 
 /* -------------------------------------------------------
    FETCH PLAYLIST MEMBERSHIP
+   For each playlist, fetch all video IDs it contains.
+   This is what powers playlist → song relationships.
 ------------------------------------------------------- */
 export async function fetchPlaylistsWithMembership() {
   const playlists = await fetchAllPlaylists();
 
   console.log("Fetching playlist membership...");
 
+  // OAuth client for YouTube Data API
   const oauth2Client = new google.auth.OAuth2(
     process.env.GOOGLE_CLIENT_ID,
     process.env.GOOGLE_CLIENT_SECRET,
@@ -284,6 +324,7 @@ export async function fetchPlaylistsWithMembership() {
 
   const youtube = google.youtube({ version: "v3", auth: oauth2Client });
 
+  // For each playlist, fetch all video IDs
   for (const pl of playlists) {
     console.log(`  MEMBERSHIP: ${pl.title}`);
 
@@ -322,16 +363,20 @@ export async function fetchPlaylistsWithMembership() {
 
 /* -------------------------------------------------------
    DOWNLOAD PLAYLIST THUMBNAILS
+   Saves playlist thumbnails locally and attaches the
+   final site path to each playlist object.
 ------------------------------------------------------- */
 export async function processPlaylistThumbnails(playlists, thumbnailDir) {
   const fs = await import("fs");
   const path = await import("path");
   const axios = await import("axios");
 
+  // Ensure thumbnail directory exists
   if (!fs.existsSync(thumbnailDir)) {
     fs.mkdirSync(thumbnailDir, { recursive: true });
   }
 
+  // Download each playlist thumbnail
   for (const pl of playlists) {
     if (!pl.thumbnailUrl) {
       console.warn(`Skipping thumbnail for playlist "${pl.title}" — no thumbnail URL.`);
@@ -355,4 +400,3 @@ export async function processPlaylistThumbnails(playlists, thumbnailDir) {
 
   return playlists;
 }
-
