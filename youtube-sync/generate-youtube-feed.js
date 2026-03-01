@@ -36,6 +36,7 @@ function buildSongObject(video) {
     thumbnail: `/assets/thumbnails/${song_id}.jpeg`,
     videostatus: video.videostatus_raw,
     playlists: video.playlists || [],
+    view_count_num: parseInt(stats.viewCount || "0", 10),
     youtube_metadata: {
       published_at: video.publishedAt || null,
       scheduled_at: video.scheduledAt || null,
@@ -124,10 +125,10 @@ async function generate() {
   });
 
   console.log("Building song objects...");
-  const normalizedVideos = videos.map(buildSongObject);
+  const Videos = videos.map(buildSongObject);
 
   console.log("Writing youtube_feed.yml...");
-  writeYaml(VIDEO_FEED_PATH, { songs: normalizedVideos });
+  writeYaml(VIDEO_FEED_PATH, { songs: Videos });
 
   console.log("Writing youtube_playlists.yml...");
   writeYaml(PLAYLIST_FEED_PATH, {
