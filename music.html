@@ -98,7 +98,7 @@ title: Music – Horizon Sound
           <h2 class="section-header">{{ list }}</h2>
           <div class="tile-grid">
             {% for song in playlist_sorted %}
-              {% assign override = site.data.playlist_overrides.overrides | where: "song_id", song.song_id | first %}
+              {% assign override = site.data.overrides | where: "song_id", song.song_id | first %}
               {% assign display_title = override.title | default: song.title %}
               {% if song.videostatus == "Public" %}
                 <a class="tile" href="{{ site.baseurl }}{{ song.url }}">
