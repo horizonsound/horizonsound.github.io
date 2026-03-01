@@ -21,7 +21,7 @@ title: Music – Horizon Sound
 
 <section id="music-view-grouped">
   
-  {% assign playlist_data = site.data.playlists | sort: "order" %}
+  {% assign playlist_data = site.data.youtube_playlists | sort: "order" %}
   {% if playlist_data.size > 0 %}
 <section class="playlist-section music-collections">
   <h2 class="section-header">Collections</h2>
@@ -32,13 +32,13 @@ title: Music – Horizon Sound
   {%- comment -%}
     Build ordered arrays based on playlist.yml
   {%- endcomment -%}
-  {% for pl in site.data.playlists %}
+  {% for pl in site.data.youtube_playlists %}
     {% assign tile = site.data.homepage.collections | where: "playlist_id", pl.playlist_id | first %}
 
     {% if tile %}
       {% assign has_public = false %}
 
-      {% for sid in pl.songs %}
+      {% for sid in pl.song_ids %}
         {% assign song = site.data.youtube_feed.songs | where: "song_id", sid | first %}
         {% if song and song.videostatus == "Public" %}
           {% assign has_public = true %}
@@ -94,7 +94,7 @@ title: Music – Horizon Sound
   
         {% if playlist_sorted.size > 0 %}
         <section class="playlist-section">
-          <h2 class="section-header">{{ list }}</h2>
+          <h2 class="section-header">{{ pl.title }}</h2>
           <div class="tile-grid">
             {% for song in playlist_sorted %}
               {% assign override = site.data.music_overrides | where: "song_id", song.song_id | first %}
@@ -121,8 +121,7 @@ title: Music – Horizon Sound
           </div>
         </section>
         {% endif %}
-      {% endunless %}
-    {% endfor %}
+      {% endfor %}
   </section>
   <section id="music-view-all" style="display:none;">
     <section class="playlist-section">
