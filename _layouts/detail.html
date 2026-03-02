@@ -3,6 +3,11 @@ layout: default
 title: Horizon Sound
 ---
 
+{% comment %}
+============================================================
+PLAYLIST RESOLUTION
+============================================================
+{% endcomment %}
 {% assign playlist = site.data.collections.collections | where: "playlist_id", page.playlist_id | first %}
 
 {% if playlist %}
@@ -10,6 +15,11 @@ title: Horizon Sound
   <p class="playlist-description">{{ playlist.description }}</p>
 {% endif %}
 
+{% comment %}
+============================================================
+SONG RESOLUTION (INDUSTRY STANDARD)
+============================================================
+{% endcomment %}
 {% assign playlist_songs = "" | split: "" %}
 
 {% for sid in playlist.songs %}
@@ -17,49 +27,38 @@ title: Horizon Sound
   {% assign override = site.data.music_overrides.overrides | where: "song_id", sid | first %}
 
   {%- comment -%}
-  Convert Drop → real Liquid object
+  Convert Drop → real Liquid object safely
   {%- endcomment -%}
-  {% assign final = base | jsonify | replace: '\"', '"' | replace: '\\', '' | from_json %}
+  {% assign final = base | jsonify | from_json %}
 
   {% if override %}
-    {% for pair in override %}
-      {% assign key = pair[0] %}
-      {% assign value = pair[1] %}
-      {% assign final = final | merge: key: value %}
-    {% endfor %}
+    {% assign final = final | merge: override %}
   {% endif %}
 
   {% assign playlist_songs = playlist_songs | push: final %}
 {% endfor %}
 
-<div style="background:#111; color:#0ff; padding:1rem; margin:1rem 0; white-space:pre-wrap;">
-  <strong>YOUTUBE FEED — ALL SONGS</strong><br><br>
-
-  {% for s in site.data.youtube_feed.songs %}
-    TITLE: {{ s.title }}<br>
-    SONG ID: {{ s.song_id }}<br>
-    YOUTUBE ID: {{ s.youtube_id }}<br>
-    ------------------------------<br>
-  {% endfor %}
-</div>
-
-
-
-
-
-
+{% comment %}
+============================================================
+EXPOSE SONGS TO JAVASCRIPT
+============================================================
+{% endcomment %}
 <script>
   window.allSongs = {{ playlist_songs | jsonify }};
 </script>
 
-<!-- ============================================================
-     VIEWER CONTAINER
-============================================================ -->
+{% comment %}
+============================================================
+VIEWER CONTAINER
+============================================================
+{% endcomment %}
 <div id="viewer"></div>
 
-<!-- ============================================================
-     JS: EMBED FUNCTION
-============================================================ -->
+{% comment %}
+============================================================
+YOUTUBE EMBED FUNCTION
+============================================================
+{% endcomment %}
 <script>
 function loadViewer(song) {
   const viewer = document.getElementById('viewer');
@@ -78,36 +77,29 @@ function loadViewer(song) {
 }
 </script>
 
-<!-- ============================================================
-     JS: INITIALIZE VIEWER (SAFE, GUARANTEED TIMING)
-============================================================ -->
+{% comment %}
+============================================================
+INITIALIZE VIEWER (SAFE TIMING)
+============================================================
+{% endcomment %}
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  let songs = window.allSongs;
+  const songs = window.allSongs;
 
-  // Safety: convert JSON strings → objects
-  songs = songs.map(item => {
-    if (typeof item === "string") {
-      try { return JSON.parse(item); }
-      catch(e) { return {}; }
-    }
-    return item;
-  });
-
-  // Safety: ensure we have at least one song
   if (!songs || songs.length === 0) {
     console.error("No songs found for playlist.");
     return;
   }
 
-  // Load first song
   loadViewer(songs[0]);
 });
 </script>
 
-<!-- ============================================================
-     CSS FOR EMBED
-============================================================ -->
+{% comment %}
+============================================================
+EMBED CSS
+============================================================
+{% endcomment %}
 <style>
 .video-embed {
   border-radius: 12px;
