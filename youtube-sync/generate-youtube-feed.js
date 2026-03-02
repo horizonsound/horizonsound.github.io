@@ -106,7 +106,7 @@ function formatDescriptionToHtml(desc) {
       const collapsed = p.replace(/\n+/g, " ").trim();
       return `<p>${collapsed}</p>`;
     })
-    .join("\n");                    // no blank lines between paragraphs
+    .join("");                    // no blank lines between paragraphs
 }
 
 /* -------------------------------------------------------------
