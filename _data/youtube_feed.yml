@@ -216,7 +216,7 @@ songs:
     videostatus: public
     playlists:
       - PLcKs1ONZE1Pz6NzlQFL-96c_9VIgXwuVh
-    view_count_num: 40
+    view_count_num: 41
     youtube_metadata:
       published_at: '2026-02-18T17:00:21Z'
       scheduled_at: null
@@ -233,7 +233,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '40'
+        view_count: '41'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -4406,7 +4406,7 @@ songs:
     videostatus: public
     playlists:
       - PLcKs1ONZE1Pwdl4fpEbkxORvona6pl8hA
-    view_count_num: 77
+    view_count_num: 76
     youtube_metadata:
       published_at: '2026-01-12T13:57:24Z'
       scheduled_at: null
@@ -4423,7 +4423,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '77'
+        view_count: '76'
         like_count: '1'
         favorite_count: '0'
         comment_count: '1'
