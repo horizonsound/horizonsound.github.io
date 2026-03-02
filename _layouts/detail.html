@@ -24,6 +24,11 @@ layout: default
   {% endif %}
 {% endif %}
 
+<div style="background:#111; color:#0ff; padding:1rem; margin:1rem 0; white-space:pre-wrap;">
+  <strong>OVERRIDES DEBUG</strong>
+  {{ site.data.music_overrides.overrides | jsonify }}
+</div>
+
 <main class="playlist-page">
 
 <!-- ============================================================
