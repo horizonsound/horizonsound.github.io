@@ -1,0 +1,59 @@
+- playlist_id: a-way-back
+  title: "A Way Back Trilogy"
+  description: >
+    A three-part emotional arc exploring silence, self-worth, and the courage
+    to choose yourself — or choose your way back home. Told from two
+    perspectives, this trilogy follows the quiet unraveling of a relationship,
+    the rediscovery of identity, and the moment two people decide whether to
+    walk away or walk toward each other again.
+  songs:
+    - lost-in-silence-from-a-way-back-horizon-sound
+    - choosing-me-her-version-acoustic-pop-horizon-sound
+    - choosing-me-his-version-pop-horizon-sound
+  order: 1
+
+- playlist_id: midnight-saga
+  title: "Midnight Saga"
+  description: >
+    A cinematic late-night journey through identity, chaos, temptation, and
+    transformation. The Midnight Saga follows a character through escalating
+    emotional turbulence — from the moment before midnight, into mayhem and
+    madness, and finally into the clarity that comes after the storm breaks.
+  songs:
+    - before-midnight-the-midnight-saga-chapter-1-horizon-sound
+    - midnight-mayhem-the-midnight-saga-chapter-2-horizon-sound
+    - midnight-madness-the-midnight-saga-chapter-3-horizon-sound
+    - after-midnight-the-midnight-saga-chapter-4-horizon-sound
+  order: 2
+
+- playlist_id: after-the-silence
+  title: "After the Silence"
+  description: >
+    A reflective, emotional collection exploring the quiet moments after a
+    heartbreak — the healing, the reckoning, and the rediscovery of hope.
+    These songs live in the space between what was lost and what comes next.
+  songs:
+    - 1-the-quiet-after-performed-by-lydia-ellington-after-the-silence-horizon-sound
+    - 2-borrowed-time-performed-by-lydia-ellington-after-the-silence-horizon-sound
+    - 3-homesick-for-you-performed-by-lydia-ellington-after-the-silence-horizon-sound
+    - 4-the-way-we-lied-performed-by-lydia-ellington-after-the-silence-horizon-sound
+    - 5-paper-walls-performed-by-lydia-ellington-after-the-silence-horizon-sound
+    - 6-half-of-me-performed-by-lydia-ellington-after-the-silence-horizon-sound
+    - 7-if-youd-asked-performed-by-lydia-ellington-after-the-silence-horizon-sound
+    - 8-ghostlight-performed-by-lydia-ellington-after-the-silence-horizon-sound
+    - 9-after-the-silence-performed-by-lydia-ellington-after-the-silence-horizon-sound
+    - 10-saltwater-performed-by-lydia-ellington-after-the-silence-horizon-sound
+    - 11-the-dress-i-never-wore-performed-by-lydia-ellington-after-the-silence-horizon-sound
+    - 12-unsent-letters-performed-by-lydia-ellington-after-the-silence-horizon-sound
+    - 13-rise-again-performed-by-lydia-ellington-after-the-silence-horizon-sound
+  order: 3
+
+- playlist_id: venice-trilogy
+  title: "Venice - Missing Stamp"
+  description: >
+    A three-part 
+  songs:
+    - someday-acoustic-pop-storytelling-horizon-sound
+    - missing-stamp-emotional-acoustic-pop-horizon-sound
+    - venice-waters-upbeat-acoustic-pop-adventure-horizon-sound
+  order: 4
