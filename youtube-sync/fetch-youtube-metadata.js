@@ -306,6 +306,8 @@ export async function fetchAllPlaylists() {
         slug: slugify(snippet.title || ""),
         description: snippet.description || "",
         publishedAt: snippet.publishedAt || "",
+        channel_id: snippet.channelId || "",        // ⭐ NEW
+        channel_title: snippet.channelTitle || "",  // ⭐ NEW
         thumbnailUrl,
         videoIds: [] // Filled in by membership fetcher
       });
