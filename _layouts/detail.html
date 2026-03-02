@@ -78,6 +78,15 @@ title: Horizon Sound
 <script>
   window.allSongs = {{ playlist_songs | jsonify }};
 </script>
+<script>
+  window.allSongs = window.allSongs.map(item => {
+    if (typeof item === "string") {
+      try { return JSON.parse(item); }
+      catch(e) { return {}; }
+    }
+    return item;
+  });
+</script>
 
 <!-- ============================================================
      VIEWER
