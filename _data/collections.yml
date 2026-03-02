@@ -1,6 +1,7 @@
 collections:
   - playlist_id: a-way-back
     title: "A Way Back Trilogy"
+    thumbnail: /assets/thumbnails/playlist-a-way-back-trilogy.jpeg
     description: >
       A three-part emotional arc exploring silence, self-worth, and the courage
       to choose yourself — or choose your way back home. Told from two
@@ -15,6 +16,7 @@ collections:
   
   - playlist_id: midnight-saga
     title: "Midnight Saga"
+    thumbnail: /assets/thumbnails/playlist-midnight-saga.jpeg
     description: >
       A cinematic late-night journey through identity, chaos, temptation, and
       transformation. The Midnight Saga follows a character through escalating
@@ -29,6 +31,7 @@ collections:
   
   - playlist_id: after-the-silence
     title: "After the Silence"
+    thumbnail: /assets/thumbnails/playlist-after-the-silence-performed-by-lydia-ellington.jpeg
     description: >
       A reflective, emotional collection exploring the quiet moments after a
       heartbreak — the healing, the reckoning, and the rediscovery of hope.
@@ -51,6 +54,7 @@ collections:
   
   - playlist_id: venice-trilogy
     title: "Venice - Missing Stamp"
+    thumbnail: /assets/thumbnails/playlist-classic-country.jpeg
     description: >
       A three-part 
     songs:
