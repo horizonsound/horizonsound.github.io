@@ -75,18 +75,30 @@ title: Horizon Sound
 <!-- ============================================================
      DATA: Liquid outputs only the playlist songs array
 ============================================================ -->
-<script>
-  window.allSongs = {{ playlist_songs | jsonify }};
-</script>
-<script>
-  window.allSongs = window.allSongs.map(item => {
-    if (typeof item === "string") {
-      try { return JSON.parse(item); }
-      catch(e) { return {}; }
-    }
-    return item;
+  <script>
+    window.allSongs = {{ playlist_songs | jsonify }};
+  </script>
+  
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    window.allSongs = window.allSongs.map(item => {
+      if (typeof item === "string") {
+        try { return JSON.parse(item); }
+        catch(e) { return {}; }
+      }
+      return item;
+    });
+  
+    const songs = window.allSongs;
+    if (!songs || songs.length === 0) return;
+  
+    const first = songs[0];
+  
+    loadViewer(first);
+    loadText(first);
+    buildCarousel(songs);
   });
-</script>
+  </script>
 
 <!-- ============================================================
      VIEWER
