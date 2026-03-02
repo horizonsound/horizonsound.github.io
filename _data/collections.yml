@@ -53,10 +53,15 @@ collections:
     order: 3
   
   - playlist_id: venice-trilogy
-    title: "Venice - Missing Stamp"
-    thumbnail: /assets/thumbnails/playlist-classic-country.jpeg
+    title: "Venice Trilogy - Missing Stamp"
+    thumbnail: /assets/thumbnails/playlist-venice-trillogy-missing-stamp.jpeg
     description: >
-      A three-part 
+      A three‑chapter journey through memory, longing, and the magic of a city that 
+      changes everything. The Venice Trilogy follows two lifelong friends as a single 
+      trip blurs the line between nostalgia and possibility. From the quiet hope of 
+      “Someday,” to the heartbreak and distance of “Missing Stamp,” and finally to 
+      the sun‑drenched release of “Venice Waters,” this collection traces the moment 
+      a friendship becomes a story worth remembering—and maybe worth returning to.
     songs:
       - someday-acoustic-pop-storytelling-horizon-sound
       - missing-stamp-emotional-acoustic-pop-horizon-sound
