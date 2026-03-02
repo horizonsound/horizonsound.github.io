@@ -3,13 +3,9 @@ layout: default
 ---
 
 {% comment %}
-  Determine if page.playlist_id is a COLLECTION or a SONG-IN-PLAYLIST.
-
-  - If page.playlist_id matches a playlist_id in _data/collections.yml
-    → COLLECTION MODE (curated collection)
-
-  - Otherwise, treat page.playlist_id as a song_id
-    → PLAYLIST MODE (load that song's playlist into the carousel)
+===============================================================
+  PLAYLIST PAGE DEBUG VERSION
+===============================================================
 {% endcomment %}
 
 {% assign collection = site.data.collections.collections | where: "playlist_id", page.playlist_id | first %}
@@ -22,225 +18,171 @@ layout: default
   {% assign current_song = site.data.youtube_feed.songs | where: "song_id", page.playlist_id | first %}
 
   {% if current_song %}
-    {# SONG PAGE MODE: find playlist containing this song #}
     {% assign playlist = site.data.youtube_playlists.playlists | where_exp: "pl", "pl.songs contains page.playlist_id" | first %}
   {% else %}
-    {# PLAYLIST PAGE MODE: match playlist by slug #}
     {% assign playlist = site.data.youtube_playlists.playlists | where: "slug", page.playlist_id | first %}
   {% endif %}
 {% endif %}
 
 <main class="playlist-page">
-  <script>
-    window.isPlaylistPage = true;
-  </script>
 
-  {% if site.debug %}
-  <div class="debug-block">
-    <pre style="background:#111; color:#0ff; padding:1rem; white-space:pre-wrap;">
-      PLAYLIST PAGE DEBUG
-      ==============================
+<!-- ============================================================
+     TOP‑LEVEL DEBUG
+============================================================ -->
+<div style="background:#111; color:#0ff; padding:1rem; margin:1rem 0; white-space:pre-wrap;">
+  <strong>DETAILS PAGE DEBUG</strong>
 
-      mode: {{ mode }}
-      page.playlist_id: {{ page.playlist_id }}
+  page.playlist_id:
+  {{ page.playlist_id }}
 
-      COLLECTION (if any):
-      {{ collection | jsonify }}
+  mode:
+  {{ mode }}
 
-      PLAYLIST (resolved):
-      {{ playlist | jsonify }}
+  collection:
+  {{ collection | jsonify }}
 
-      CURRENT SONG (playlist mode only):
-      {{ current_song | jsonify }}
-    </pre>
-  </div>
+  playlist (resolved):
+  {{ playlist | jsonify }}
+
+  playlist.songs:
+  {{ playlist.songs | jsonify }}
+
+  playlist.song_ids:
+  {{ playlist.song_ids | jsonify }}
+</div>
+
+<!-- ============================================================
+     BUILD PLAYLIST SONGS
+============================================================ -->
+{% assign playlist_songs = "" | split: "" %}
+
+{% for sid in playlist.songs %}
+  {% assign s = site.data.youtube_feed.songs | where: "song_id", sid | first %}
+  {% assign override = site.data.music_overrides.overrides | where: "song_id", sid | first %}
+
+  {% if override %}
+    {% assign s = s | merge: override %}
   {% endif %}
 
-  <!-- PLAYLIST / COLLECTION HEADER -->
-  <section class="playlist-header">
-    <h2 class="section-header">{{ playlist.title }}</h2>
-    {% if playlist.description %}
-      <p class="playlist-description">{{ playlist.description }}</p>
-    {% endif %}
-  </section>
+  {% if s %}
+    {% assign playlist_songs = playlist_songs | push: s %}
+  {% endif %}
+{% endfor %}
 
-  {% comment %}
-    Build the list of songs for this playlist/collection.
-    - playlist.songs is an array of song_ids
-    - Songs come from site.data.youtube_feed.songs
-    - Apply overrides from site.data.music_overrides.overrides when present
-  {% endcomment %}
-  {% assign playlist_songs = "" | split: "" %}
+<!-- ============================================================
+     SONG RESOLUTION DEBUG
+============================================================ -->
+<div style="background:#111; color:#0ff; padding:1rem; margin:1rem 0; white-space:pre-wrap;">
+  <strong>SONG RESOLUTION DEBUG</strong>
 
-  {% for sid in playlist.songs %}
-    {% assign s = site.data.youtube_feed.songs | where: "song_id", sid | first %}
-    {% assign override = site.data.music_overrides.overrides | where: "song_id", sid | first %}
+  playlist_songs (raw):
+  {{ playlist_songs | jsonify }}
+</div>
 
-    {% if override %}
-      {% assign s = s | merge: override %}
-    {% endif %}
+{% assign sorted = playlist_songs %}
 
-    {% if s %}
-      {% assign playlist_songs = playlist_songs | push: s %}
-    {% endif %}
-  {% endfor %}
-
-  {% comment %}
-    Determine the first song:
-    - COLLECTION MODE: first song in the collection
-    - PLAYLIST MODE: the song the user clicked (page.playlist_id),
-      falling back to the first song if not found for any reason
-  {% endcomment %}
-
-  {% assign sorted = playlist_songs %}
-
-  {% if mode == "collection" %}
+{% if mode == "collection" %}
+  {% assign first_song = sorted | first %}
+{% else %}
+  {% assign first_song = sorted | where: "song_id", page.playlist_id | first %}
+  {% if first_song == nil %}
     {% assign first_song = sorted | first %}
-  {% else %}
-    {% assign first_song = sorted | where: "song_id", page.playlist_id | first %}
-    {% if first_song == nil %}
-      {% assign first_song = sorted | first %}
-    {% endif %}
+  {% endif %}
+{% endif %}
+
+<!-- ============================================================
+     FIRST SONG DEBUG
+============================================================ -->
+<div style="background:#111; color:#0ff; padding:1rem; margin:1rem 0; white-space:pre-wrap;">
+  <strong>FIRST SONG DEBUG</strong>
+
+  first_song:
+  {{ first_song | jsonify }}
+</div>
+
+<!-- ============================================================
+     PLAYER FRAME
+============================================================ -->
+<div class="player-frame player-frame--purple">
+
+  {% if first_song %}
+    {% include embed.html youtube_id=first_song.youtube_id %}
   {% endif %}
 
-  <!-- ⭐ PLAYER FRAME WRAPPER (PURPLE THEME) ⭐ -->
-  <div class="player-frame player-frame--purple">
+  <script>
+    window.allSongs = {{ sorted | jsonify }};
+  </script>
 
-    <!-- EMBED -->
-    {% if first_song %}
-      {% include embed.html youtube_id=first_song.youtube_id %}
-    {% endif %}
-
-    <!-- JS DATA -->
-    <script>
-      window.allSongs = {{ sorted | jsonify }};
-    </script>
-
-    {% include carousel.html playlist=sorted %}
+  <div style="background:#111; color:#0ff; padding:1rem; margin:1rem 0; white-space:pre-wrap;">
+    <strong>window.allSongs DEBUG</strong>
+    {{ sorted | jsonify }}
   </div>
 
-  <!-- ABOUT + LYRICS stay inside frame -->
-  <section class="playlist-about">
-    <div class="centered-column">
-      <h2 class="section-header">About the Song</h2>
-      <div id="playlist-about" class="playlist-about-text"></div>
-    </div>
-  </section>
+  {% include carousel.html playlist=sorted %}
+</div>
 
-  <section class="playlist-lyrics">
-    <div class="lyrics-block">
-      <h2 class="section-header">Lyrics</h2>
-      <div id="playlist-lyrics" class="playlist-lyrics-text"></div>
-    </div>
-  </section>
-  <!-- ⭐ END PLAYER FRAME ⭐ -->
+<!-- ============================================================
+     ABOUT + LYRICS
+============================================================ -->
+<section class="playlist-about">
+  <div class="centered-column">
+    <h2 class="section-header">About the Song</h2>
+    <div id="playlist-about" class="playlist-about-text"></div>
+  </div>
+</section>
 
-  <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const aboutEl = document.getElementById("playlist-about");
-    const lyricsEl = document.getElementById("playlist-lyrics");
-  
-    function loadInitialSong() {
-      if (!window.allSongs || !window.allSongs.length) {
-        return requestAnimationFrame(loadInitialSong);
-      }
-  
-      const first = window.allSongs[0];
-      aboutEl.innerHTML = first.description_html || "";
-      lyricsEl.innerHTML = first.lyrics || "";
+<section class="playlist-lyrics">
+  <div class="lyrics-block">
+    <h2 class="section-header">Lyrics</h2>
+    <div id="playlist-lyrics" class="playlist-lyrics-text"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     JS DEBUG BLOCK
+============================================================ -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const aboutEl = document.getElementById("playlist-about");
+  const lyricsEl = document.getElementById("playlist-lyrics");
+
+  console.log("DEBUG: window.allSongs =", window.allSongs);
+
+  function loadInitialSong() {
+    if (!window.allSongs || !window.allSongs.length) {
+      console.log("DEBUG: waiting for allSongs...");
+      return requestAnimationFrame(loadInitialSong);
     }
-  
-    loadInitialSong();
+
+    const first = window.allSongs[0];
+    console.log("DEBUG: first song =", first);
+
+    aboutEl.innerHTML = first.description_html || "(no description_html)";
+    lyricsEl.innerHTML = first.lyrics || "(no lyrics)";
+  }
+
+  loadInitialSong();
+
+  // TILE CLICK DEBUG
+  document.querySelectorAll(".carousel-tile").forEach(tile => {
+    tile.addEventListener("click", () => {
+      console.log("DEBUG: tile clicked", tile.dataset.song);
+
+      const id = tile.dataset.song;
+      const song = window.allSongs.find(s => s.song_id === id);
+
+      console.log("DEBUG: resolved song =", song);
+
+      if (!song) {
+        console.warn("DEBUG: NO SONG FOUND FOR ID:", id);
+        return;
+      }
+
+      aboutEl.innerHTML = song.description_html || "(no description_html)";
+      lyricsEl.innerHTML = song.lyrics || "(no lyrics)";
+    });
   });
-  </script>
-  
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      function initTileSelection() {
-        const tiles = document.querySelectorAll(".carousel-tile, .playlist-tile");
-
-        if (!tiles.length) {
-          return requestAnimationFrame(initTileSelection);
-        }
-
-        const alreadyActive = Array.from(tiles).some(t => t.classList.contains("active"));
-        if (!alreadyActive) {
-          tiles[0].classList.add("active");
-        }
-
-        tiles[0].scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
-      }
-
-      initTileSelection();
-    });
-  </script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const carousels = document.querySelectorAll("[data-carousel]");
-
-      carousels.forEach(carousel => {
-        const strip = carousel.querySelector("[data-strip]");
-        if (!strip) return;
-
-        function updateDebug() {
-          const sw = strip.scrollWidth;
-          const cw = strip.clientWidth;
-          const sl = strip.scrollLeft;
-          const canScroll = sw > cw;
-
-          const swEl = carousel.querySelector("[data-debug-scrollwidth]");
-          const cwEl = carousel.querySelector("[data-debug-clientwidth]");
-          const slEl = carousel.querySelector("[data-debug-scrollleft]");
-          const csEl = carousel.querySelector("[data-debug-canscroll]");
-
-          if (swEl) swEl.textContent = sw;
-          if (cwEl) cwEl.textContent = cw;
-          if (slEl) slEl.textContent = sl;
-          if (csEl) csEl.textContent = canScroll ? "YES" : "NO";
-        }
-
-        updateDebug();
-        strip.addEventListener("scroll", updateDebug);
-        carousel.addEventListener("carousel:refresh", updateDebug);
-
-        const left = carousel.querySelector("[data-arrow='left']");
-        const right = carousel.querySelector("[data-arrow='right']");
-
-        if (left) {
-          left.addEventListener("click", () => {
-            strip.scrollBy({ left: -300, behavior: "smooth" });
-            setTimeout(updateDebug, 300);
-          });
-        }
-
-        if (right) {
-          right.addEventListener("click", () => {
-            strip.scrollBy({ left: 300, behavior: "smooth" });
-            setTimeout(updateDebug, 300);
-          });
-        }
-      });
-    });
-  </script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const aboutEl = document.getElementById("playlist-about");
-      const lyricsEl = document.getElementById("playlist-lyrics");
-    
-      function initAboutLyrics() {
-        if (!window.allSongs || !window.allSongs.length) {
-          return requestAnimationFrame(initAboutLyrics);
-        }
-    
-        const first = window.allSongs[0];
-        aboutEl.innerHTML = first.description || "";
-        lyricsEl.innerHTML = first.lyrics || "";
-      }
-    
-      initAboutLyrics();
-    });
 });
-  </script>
+</script>
+
 </main>
