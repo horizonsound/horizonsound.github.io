@@ -2,3 +2,33 @@
 layout: default
 title: Horizon Sound
 ---
+
+{% assign playlist = site.data.collections.collections | where: "playlist_id", page.playlist_id | first %}
+
+{% if playlist %}
+  <h1 class="playlist-title">{{ playlist.title }}</h1>
+  <p class="playlist-description">{{ playlist.description }}</p>
+{% endif %}
+
+{% assign playlist_songs = "" | split: "" %}
+
+{% for sid in playlist.songs %}
+  {% assign base = site.data.youtube_feed.songs | where: "song_id", sid | first %}
+  {% assign override = site.data.music_overrides.overrides | where: "song_id", sid | first %}
+
+  {% assign final = base | jsonify | replace: '\"', '"' | replace: '\\', '' | from_json %}
+
+  {% if override %}
+    {% for pair in override %}
+      {% assign key = pair[0] %}
+      {% assign value = pair[1] %}
+      {% assign final = final | merge: key: value %}
+    {% endfor %}
+  {% endif %}
+
+  {% assign playlist_songs = playlist_songs | push: final %}
+{% endfor %}
+
+<script>
+  window.allSongs = {{ playlist_songs | jsonify }};
+</script>
