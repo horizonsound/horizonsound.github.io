@@ -11,8 +11,6 @@ Test
   const playlistId = params.get("playlist_id");
 
   // Load all playlists into JS
-  window.playlists = {{ site.data.collections.collections | jsonify }};
-  window.playlist = window.playlists.find(p => p.playlist_id === playlistId);
 </script>
 
 <!-- ============================================================
