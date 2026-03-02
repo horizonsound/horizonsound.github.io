@@ -65,7 +65,8 @@ layout: default
 {% assign playlist_songs = "" | split: "" %}
 
 {% for sid in playlist.songs %}
-  {% assign s = site.data.youtube_feed.songs | where: "song_id", sid | first %}
+  {% assign base = site.data.youtube_feed.songs | where: "song_id", sid | first %}
+  {% assign s = base | jsonify | from_json %}
   {% assign override = site.data.music_overrides.overrides | where: "song_id", sid | first %}
 
   <!-- DEBUG: show every field in the override -->
@@ -83,7 +84,7 @@ layout: default
   {% endif %}
 
   {% if override %}
-    {% assign s = s | deep_merge: override %}
+    {% assign s = s | merge: override %}
   {% endif %}
 
   {% if s %}
