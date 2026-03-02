@@ -21,11 +21,13 @@ layout: default
   {% assign mode = "playlist" %}
   {% assign current_song = site.data.youtube_feed.songs | where: "song_id", page.playlist_id | first %}
 
-  {%- comment -%}
-    Find the playlist this song belongs to in youtube_playlists.yml
-    (playlist.songs is an array of song_ids)
-  {%- endcomment -%}
-  {% assign playlist = site.data.youtube_playlists.playlists | where_exp: "pl", "pl.song_ids contains page.playlist_id" | first %}
+  {% if current_song %}
+    {# SONG PAGE MODE: find playlist containing this song #}
+    {% assign playlist = site.data.youtube_playlists.playlists | where_exp: "pl", "pl.song_ids contains page.playlist_id" | first %}
+  {% else %}
+    {# PLAYLIST PAGE MODE: match playlist by slug #}
+    {% assign playlist = site.data.youtube_playlists.playlists | where: "slug", page.playlist_id | first %}
+  {% endif %}
 {% endif %}
 
 <main class="playlist-page">
