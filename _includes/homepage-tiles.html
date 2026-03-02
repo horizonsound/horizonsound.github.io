@@ -11,7 +11,7 @@
     {% if include.section == "new_releases" %}
 
       {% for s in include.items %}
-        {% assign override = site.data.youtube_feed_overrides.overrides | where: "song_id", s.song_id | first %}
+        {% assign override = site.data.music_overrides.overrides | where: "song_id", s.song_id | first %}
         {% assign display_title = override.title | default: s.title %}
 
         <a class="tile" href="{{ site.baseurl }}{{ s.url }}">
@@ -31,7 +31,7 @@
     {% elsif include.section == "spotlight" %}
 
       {% for s in include.items limit:12 %}
-        {% assign override = site.data.youtube_feed_overrides.overrides | where: "song_id", s.song_id | first %}
+        {% assign override = site.data.music_overrides.overrides | where: "song_id", s.song_id | first %}
         {% assign display_title = override.title | default: s.title %}
 
         <a class="tile" href="{{ site.baseurl }}{{ s.url }}">
