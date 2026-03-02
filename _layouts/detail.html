@@ -104,29 +104,21 @@ layout: default
 
 <!-- ============================================================
      FIRST SONG DEBUG
-============================================================ -->
 <div style="background:#111; color:#0ff; padding:1rem; margin:1rem 0; white-space:pre-wrap;">
   <strong>FIRST SONG DEBUG</strong>
 
   first_song:
   {{ first_song | jsonify }}
 </div>
+============================================================ -->
 
 <!-- ============================================================
      PLAYER FRAME
-============================================================ -->
-<div style="background:#111; color:#0ff; padding:1rem; margin:1rem 0; white-space:pre-wrap;">
-  <strong>Embed FIRST SONG — KEY FIELDS</strong>
-
-  youtube_id: {{ base.youtube_id }}
-  videostatus: {{ base.videostatus }}
-  thumbnail: {{ base.thumbnail }}
-</div>
-  
+============================================================ -->  
   <div class="player-frame player-frame--purple">
 
   {% if first_song %}
-    {% include embed.html youtube_id=first_song.youtube_id %}
+    {% include embed.html youtube_id=base.youtube_id %}
   {% endif %}
 
   <script>
@@ -141,15 +133,8 @@ layout: default
 ============================================================ -->
 
   <div style="background:#111; color:#0ff; padding:1rem; margin:1rem 0; white-space:pre-wrap;">
-    <strong>Carousel FIRST SONG — KEY FIELDS</strong>
-
-    youtube_id: {{ assign[1] }}
-    thumbnail: {{ assign[4] }}
-    videostatus: {{ assign[6] }}
+    {% include carousel.html playlist=sorted %}
   </div>
-    
-  {% include carousel.html playlist=sorted %}
-</div>
 
 <!-- ============================================================
      ABOUT + LYRICS
