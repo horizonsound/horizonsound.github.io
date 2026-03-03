@@ -1,0 +1,66 @@
+---
+layout: default
+---
+
+{% comment %}
+Use the playlist_id from the page front matter
+to find the matching playlist in collections data.
+{% endcomment %}
+{% assign playlist = site.data.collections.collections
+  | where: "playlist_id", page.playlist_id
+  | first %}
+
+{% if playlist %}
+
+  <h1>
+    {{ playlist.title }}
+    (<span id="song-name">Loading…</span>)
+  </h1>
+
+  {% if playlist.description %}
+    <p>{{ playlist.description }}</p>
+  {% endif %}
+
+  {% comment %}
+  Build a list of this playlist's songs so JS can map song_id -> title.
+  {% endcomment %}
+  {% assign all_songs = site.data.youtube_feed.songs %}
+  {% assign playlist_songs = "" | split: "" %}
+
+  {% for sid in playlist.songs %}
+    {% assign s = all_songs | where: "song_id", sid | first %}
+    {% if s %}
+      {% assign playlist_songs = playlist_songs | push: s %}
+    {% endif %}
+  {% endfor %}
+
+  <script>
+    window.playlistSongs = [
+      {% for s in playlist_songs %}
+        { id: "{{ s.song_id }}", title: "{{ s.title | escape }}" }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ];
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const params = new URLSearchParams(window.location.search);
+      const songId = params.get("song_id");
+      const span = document.getElementById("song-name");
+
+      if (!span || !window.playlistSongs.length) return;
+
+      let current = window.playlistSongs[0]; // default: first song
+
+      if (songId) {
+        const match = window.playlistSongs.find(s => s.id === songId);
+        if (match) current = match;
+      }
+
+      span.textContent = current.title;
+    });
+  </script>
+
+{% else %}
+
+  <h1>Playlist not found</h1>
+
+{% endif %}
