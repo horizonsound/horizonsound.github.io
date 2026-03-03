@@ -1,8 +1,6 @@
 ---
 layout: default
-is_playlist_page: true
 ---
-<p style="color:red">DEBUG: This is the REAL playlist page</p>
 
 {% comment %}
 Load base playlist from YouTube feed
@@ -111,7 +109,12 @@ DISPLAY VARIABLES — always defined, override wins, YouTube fills gaps
   <script>
     window.playlistSongs = [
       {% for s in playlist_songs %}
-        { id: "{{ s.song_id }}", title: "{{ s.title | escape }}" }{% unless forloop.last %},{% endunless %}
+        {
+          id: "{{ s.song_id }}",
+          title: "{{ s.title | escape }}",
+          subtitle: "{{ s.subtitle | escape }}"
+        }
+        {% unless forloop.last %},{% endunless %}
       {% endfor %}
     ];
 
