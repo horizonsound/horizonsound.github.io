@@ -197,15 +197,15 @@ async function generate() {
   console.log("Fetching playlists + membership...");
   const playlists = await fetchPlaylistsWithMembership();
 
+  if (!playlists) {
+    console.error("ERROR: fetchPlaylistsWithMembership() returned undefined.");
+    process.exit(1);
+  }
+
   // Build a lookup: { youtubePlaylistId: slug }
   const playlistSlugMap = {};
   for (const pl of youtubePlaylists) {
     playlistSlugMap[pl.youtube_id] = pl.playlist_id; // slug
-  }
-
-  if (!playlists) {
-    console.error("ERROR: fetchPlaylistsWithMembership() returned undefined.");
-    process.exit(1);
   }
 
   console.log(`PLAYLIST COUNT: ${playlists.length}`);
