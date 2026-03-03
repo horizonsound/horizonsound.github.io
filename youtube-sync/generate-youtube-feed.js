@@ -294,7 +294,7 @@ for (const pl of playlists) {
       channel_id: pl.channel_id,        // ⭐ NEW
       channel_title: pl.channel_title,  // ⭐ NEW
       thumbnail: pl.thumbnail,
-      song_ids: pl.videoIds.map(id => slugLookup[id] || id)
+      song_ids: pl.videoIds.map(id => slugLookup[id])
     }))
     
   });
