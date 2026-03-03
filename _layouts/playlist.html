@@ -79,15 +79,17 @@ DISPLAY VARIABLES — always defined, override wins, YouTube fills gaps
     </div>
   {% endif %}
 
-  <h1 class="playlist-title">{{ display_title }}</h1>
+  <div class="playlist-header">
+    <h1 class="playlist-title">{{ display_title }}</h1>
   
-  {% if display_subtitle %}
-    <h2 class="playlist-subtitle">{{ display_subtitle }}</h2>
-  {% endif %}
+    {% if display_subtitle %}
+      <h2 class="playlist-subtitle">{{ display_subtitle }}</h2>
+    {% endif %}
   
-  {% if display_description %}
-    <p class="playlist-description">{{ display_description }}</p>
-  {% endif %}
+    {% if display_description %}
+      <p class="playlist-description">{{ display_description }}</p>
+    {% endif %}
+  </div>
   
   {% comment %}
   Build a list of this playlist's songs so JS can map song_id -> title.
