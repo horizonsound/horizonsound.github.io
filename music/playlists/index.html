@@ -3,27 +3,3 @@ layout: default
 title: Horizon Sound
 ---
 Test
-{% comment %}
-Extract the playlist slug from the URL.
-Example: /music/playlists/midnight-saga/
-The last non-empty segment is "midnight-saga".
-{% endcomment %}
-
-{% assign segments = page.url | split: "/" %}
-{% assign slug = segments | last %}
-{% if slug == "" %}
-  {% assign slug = segments[segments.size - 2] %}
-{% endif %}
-
-{% comment %}
-Find the playlist in _data/collections.yml
-{% endcomment %}
-{% assign playlist = site.data.collections.collections | where: "playlist_id", slug | first %}
-
-{% if playlist %}
-  <h1 class="playlist-title">{{ playlist.title }}</h1>
-  <p class="playlist-description">{{ playlist.description }}</p>
-{% else %}
-  <h1>Playlist not found</h1>
-  <p>No playlist matches ID: {{ slug }}</p>
-{% endif %}
