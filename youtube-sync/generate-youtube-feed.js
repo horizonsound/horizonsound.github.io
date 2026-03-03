@@ -41,6 +41,7 @@
  *
  * -------------------------------------------------------------
  */
+let playlistSlugMap = {};
 
 import fs from "fs";
 import path from "path";
@@ -203,7 +204,7 @@ async function generate() {
   }
 
 // Build a lookup: { YouTube playlist ID → slug }
-const playlistSlugMap = {};
+playlistSlugMap = {};
 for (const pl of playlists) {
   playlistSlugMap[pl.id] = pl.slug;   // pl.id = YouTube playlist ID, pl.slug = your slug
 }
