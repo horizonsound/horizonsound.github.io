@@ -73,11 +73,12 @@ DISPLAY VARIABLES — always defined, override wins, YouTube fills gaps
 {% assign display_hero = override.hero %}
 
 {% if playlist %}
-  
   {% if display_hero %}
     <div class="hero-banner">
       <img class="hero-image" src="{{ site.baseurl }}{{ display_hero }}" alt="{{ display_title }}">
     </div>
+  {% else %}
+    {% include hero.html %}
   {% endif %}
 
   <div class="playlist-header">
