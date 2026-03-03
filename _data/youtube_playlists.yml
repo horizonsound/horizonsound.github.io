@@ -183,10 +183,6 @@ playlists:
     song_ids:
       - put-you-down-electro-pop-dance-pop-horizon-sound
       - midnight-mayhem-electro-pop-horizon-sound
-      - null
-      - null
-      - null
-      - null
   - playlist_id: 90s-pop-pop-rock
     title: 90s Pop & Pop-Rock
     description: >-
@@ -199,12 +195,6 @@ playlists:
     song_ids:
       - new-again-90s-pop-revival-horizon-sound
       - heres-to-us-90s-rock-anthem-horizon-sound
-      - null
-      - null
-      - null
-      - null
-      - null
-      - null
   - playlist_id: southern-rock
     title: Southern Rock
     description: >-
