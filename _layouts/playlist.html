@@ -1,5 +1,6 @@
 ---
 layout: default
+is_playlist_page: true
 ---
 
 {% comment %}
@@ -73,8 +74,8 @@ DISPLAY VARIABLES — always defined, override wins, YouTube fills gaps
 {% if playlist %}
   
   {% if display_hero %}
-    <div class="playlist-hero">
-      <img src="{{ site.baseurl }}{{ display_hero }}" alt="{{ display_title }}">
+    <div class="hero-banner">
+      <img class="hero-image" src="..." alt="">
     </div>
   {% endif %}
   
