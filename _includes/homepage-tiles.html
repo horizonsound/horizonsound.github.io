@@ -14,7 +14,7 @@
         {% assign override = site.data.music_overrides.overrides | where: "song_id", s.song_id | first %}
         {% assign display_title = override.title | default: s.title %}
 
-        <a class="tile" href="{{ site.baseurl }}{{ s.url }}">
+        <a class="tile" href="/music/playlists/{{ s.playlists[0] }}/?song_id={{ s.song_id }}">
           <img src="{{ site.baseurl }}{{ s.thumbnail }}" alt="{{ display_title }}">
           <h3 class="tile-title">{{ display_title }}</h3>
         </a>
@@ -32,7 +32,7 @@
         {% assign override = site.data.music_overrides.overrides | where: "song_id", s.song_id | first %}
         {% assign display_title = override.title | default: s.title %}
 
-        <a class="tile" href="{{ site.baseurl }}{{ s.url }}">
+        <a class="tile" href="/music/playlists/{{ s.playlists[0] }}/?song_id={{ s.song_id }}">
           <img src="{{ site.baseurl }}{{ s.thumbnail }}" alt="{{ display_title }}">
           <h3 class="tile-title">{{ display_title }}</h3>
         </a>
@@ -64,7 +64,7 @@
           Render ACTIVE collection (has at least one public song)
         {%- endcomment -%}
         {% if has_public %}
-          <a class="tile" href="{{ site.baseurl }}/music/playlists/{{ pl.playlist_id }}/">
+          <a class="tile" href="/music/playlists/{{ pl.playlist_id }}/?song_id={{ pl.songs[0] }}">
             <img src="{{ site.baseurl }}{{ pl.thumbnail }}" alt="{{ pl.title }}">
             <h3 class="tile-title">{{ pl.title }}</h3>
           </a>            
