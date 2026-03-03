@@ -229,6 +229,7 @@ playlists:
     channel_title: Horizon Sound
     thumbnail: /assets/thumbnails/playlist-pop.jpeg
     song_ids:
+      - hold-on-revised-horizon-sound
       - hIh_5AX4Gek
       - miFZlNNAriw
       - RpuAQzywuWM
