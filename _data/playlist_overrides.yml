@@ -4,6 +4,7 @@ overrides:
     title: 
     description: 
     thumbnail:
+    hero:
     songs:
     order: 1
   
@@ -12,6 +13,7 @@ overrides:
     title: 
     description: 
     thumbnail:
+    hero:
     songs:
     order: 2
   
@@ -26,6 +28,7 @@ overrides:
       the sun‑drenched release of “Venice Waters,” this collection traces the moment 
       a friendship becomes a story worth remembering—and maybe worth returning to.
     thumbnail: /assets/thumbnails/playlist-venice-trilogy-missing-stamp.jpeg
+    hero:
     songs:
       - someday-acoustic-pop-storytelling-horizon-sound
       - missing-stamp-emotional-acoustic-pop-horizon-sound
@@ -37,6 +40,7 @@ overrides:
     title: 
     description: 
     thumbnail:
+    hero:
     songs:
     order: 4
   
@@ -49,6 +53,7 @@ overrides:
       emotional turbulence — from the moment before midnight, into mayhem and
       madness, and finally into the clarity that comes after the storm breaks.
     thumbnail: /assets/thumbnails/playlist-midnight-saga.jpeg
+    hero:
     songs:
       - before-midnight-the-midnight-saga-chapter-1-horizon-sound
       - midnight-mayhem-the-midnight-saga-chapter-2-horizon-sound
@@ -64,6 +69,7 @@ overrides:
       heartbreak — the healing, the reckoning, and the rediscovery of hope.
       These songs live in the space between what was lost and what comes next.
     thumbnail: /assets/thumbnails/playlist-after-the-silence-performed-by-lydia-ellington.jpeg
+    hero:
     songs:
       - 1-the-quiet-after-performed-by-lydia-ellington-after-the-silence-horizon-sound
       - 2-borrowed-time-performed-by-lydia-ellington-after-the-silence-horizon-sound
@@ -90,6 +96,7 @@ overrides:
       the rediscovery of identity, and the moment two people decide whether to
       walk away or walk toward each other again.
     thumbnail: /assets/thumbnails/playlist-a-way-back-trilogy.jpeg
+    hero:
     songs:
       - lost-in-silence-from-a-way-back-horizon-sound
       - choosing-me-her-version-acoustic-pop-horizon-sound
@@ -101,6 +108,7 @@ overrides:
     title: 
     description: 
     thumbnail:
+    hero:
     songs:
     order: 8
   
@@ -109,6 +117,7 @@ overrides:
     title: 
     description: 
     thumbnail:
+    hero:
     songs:
     order: 9
   
@@ -117,6 +126,7 @@ overrides:
     title: 
     description: 
     thumbnail:
+    hero:
     songs:
     order: 10
   
@@ -125,6 +135,7 @@ overrides:
     title: 
     description: 
     thumbnail:
+    hero:
     songs:
     order: 11
   
@@ -133,6 +144,7 @@ overrides:
     title: 
     description: 
     thumbnail:
+    hero:
     songs:
     order: 12
   
@@ -141,6 +153,7 @@ overrides:
     title: 
     description: 
     thumbnail:
+    hero:
     songs:
     order: 13
   
@@ -149,6 +162,7 @@ overrides:
     title: 
     description: 
     thumbnail:
+    hero:
     songs:
     order: 14
   
@@ -157,6 +171,7 @@ overrides:
     title: 
     description: 
     thumbnail:
+    hero:
     songs:
     order: 15
   
