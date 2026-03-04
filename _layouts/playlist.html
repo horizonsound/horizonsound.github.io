@@ -2,3 +2,29 @@
 layout: default
 ---
 
+{% comment %}
+Load base playlist from YouTube feed
+{% endcomment %}
+{% assign playlist = site.data.youtube_playlists.playlists
+  | where: "playlist_id", page.playlist_id
+  | first %}
+
+{% comment %}
+Load playlist-level override (not applied yet)
+{% endcomment %}
+{% assign playlist_override = site.data.playlist_overrides.overrides
+  | where: "playlist_id", page.playlist_id
+  | first %}
+
+{% comment %}
+Expose raw data to JS — no merging, no conditionals
+{% endcomment %}
+<script>
+  window.PLAYLIST = {{ playlist | jsonify }};
+  window.PLAYLIST_OVERRIDE = {{ playlist_override | jsonify }};
+</script>
+
+<div style="padding:40px; color:white;">
+  <h1>Playlist Page Loaded</h1>
+  <p>Data objects are available in JS as <code>window.PLAYLIST</code> and <code>window.PLAYLIST_OVERRIDE</code>.</p>
+</div>
