@@ -19,6 +19,36 @@ title: Music – Horizon Sound
   </div>
 
 <!-- ============================================================
+     PLAYLIST VIEW (NEW DEFAULT MODE)
+     Premium 3:1 playlist tiles
+============================================================ -->
+<section id="music-view-playlists">
+
+  <h2 class="section-header">Playlists</h2>
+
+  <div class="playlist-premium-grid">
+    {% for pl in site.data.youtube_playlists %}
+      {% assign first_song_id = pl.song_ids | first %}
+      <a 
+        class="playlist-premium-tile" 
+        href="{{ site.baseurl }}/music/playlists/{{ pl.playlist_id }}/?song_id={{ first_song_id }}"
+      >
+        <div class="playlist-premium-image-wrapper">
+          <img 
+            src="{{ site.baseurl }}{{ pl.thumbnail }}" 
+            alt="{{ pl.title }}" 
+            class="playlist-premium-image"
+          >
+          <div class="playlist-premium-gradient"></div>
+          <div class="playlist-premium-title">{{ pl.title }}</div>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+
+</section>
+
+  <!-- ============================================================
      GROUPED VIEW
 ============================================================ -->
 <section id="music-view-grouped">
