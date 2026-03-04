@@ -46,7 +46,7 @@ Raw youtube_playlists object:
 
   <div class="playlist-premium-grid">
 
-    {% for pl in site.data.youtube_playlists %}
+    {% for pl in site.data.youtube_playlists.playlists %}
 
       {% assign first_song_id = pl.song_ids | first %}
 
