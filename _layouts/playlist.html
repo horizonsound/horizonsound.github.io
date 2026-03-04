@@ -63,6 +63,28 @@ Playlist Description — override only, hide if blank
 {% endif %}
 
 {% comment %}
+Resolve the selected song (passed via ?song_id=)
+{% endcomment %}
+
+{% assign selected_song_id = page.song_id %}
+
+{% if selected_song_id %}
+  {% include song-resolve.html song_id=selected_song_id %}
+
+  <div class="selected-song-header" style="padding: 20px 20px; color: white;">
+    {% if resolved_title %}
+      <h2 class="selected-song-title">{{ resolved_title }}</h2>
+    {% endif %}
+
+    {% if resolved_subtitle %}
+      <h3 class="selected-song-subtitle">{{ resolved_subtitle }}</h3>
+    {% endif %}
+  </div>
+{% endif %}
+
+
+
+{% comment %}
 Song Loop — resolves title + subtitle for each song_id
 No UI yet, just resolving values safely.
 {% endcomment %}
