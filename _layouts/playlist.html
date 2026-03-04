@@ -21,6 +21,15 @@ Playlist Hero — override wins, fallback to global hero include.
 No merging, no mutation.
 {% endcomment %}
 
+<script>
+  window.YOUTUBE_SONGS = {{ site.data.youtube_feed.songs | jsonify }};
+</script>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  window.SELECTED_SONG_ID = params.get("song_id") || null;
+</script>
+
 {% assign hero_image = playlist_override.hero | default: playlist.hero %}
 
 {% if hero_image %}
@@ -70,30 +79,6 @@ Playlist Description — override only, hide if blank
 Resolve the selected song (passed via ?song_id=)
 {% endcomment %}
 
-{% assign selected_song_id = page.song_id %}
-
-{% if selected_song_id %}
-  {% include song-resolve.html song_id=selected_song_id %}
-  <div style="color:lightgreen; padding:10px;">
-    DEBUG: resolved_title = "{{ resolved_title }}"
-    <br>
-    DEBUG: resolved_subtitle = "{{ resolved_subtitle }}"
-  </div>
-
-  <div class="selected-song-header" style="padding: 20px 20px; color: white;">
-    {% if resolved_title %}
-      <h2 class="selected-song-title">{{ resolved_title }}</h2>
-    {% endif %}
-
-    {% if resolved_subtitle %}
-      <h3 class="selected-song-subtitle">{{ resolved_subtitle }}</h3>
-    {% endif %}
-  </div>
-  <div style="color:orange; padding:10px;">
-    DEBUG: selected_song_id = "{{ selected_song_id }}"
-  </div>
-{% endif %}
-
 
 
 {% comment %}
@@ -130,3 +115,30 @@ Expose raw data to JS — no merging, no conditionals
   <h1>Playlist Page Loaded</h1>
   <p>Data objects are available in JS as <code>window.PLAYLIST</code> and <code>window.PLAYLIST_OVERRIDE</code>.</p>
 </div>
+
+<div id="selected-song-header" style="padding: 20px 20px; color: white;"></div>
+
+<script>
+  if (window.SELECTED_SONG_ID && window.PLAYLIST && window.PLAYLIST_OVERRIDE) {
+    const songId = window.SELECTED_SONG_ID;
+
+    // Find song in feed
+    const song = window.YOUTUBE_SONGS.find(s => s.song_id === songId);
+
+    // Find override
+    const override = (window.PLAYLIST_OVERRIDE.songs || []).find(s => s.song_id === songId);
+
+    // Resolve title
+    const title = override?.title || song?.title || "";
+
+    // Resolve subtitle
+    const subtitle = override?.subtitle || "";
+
+    // Render
+    const container = document.getElementById("selected-song-header");
+    container.innerHTML = `
+      ${title ? `<h2 class="selected-song-title">${title}</h2>` : ""}
+      ${subtitle ? `<h3 class="selected-song-subtitle">${subtitle}</h3>` : ""}
+    `;
+  }
+</script>
