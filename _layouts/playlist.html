@@ -62,6 +62,10 @@ Playlist Description — override only, hide if blank
   </div>
 {% endif %}
 
+<div style="color:yellow; padding:10px;">
+  DEBUG: page.song_id = "{{ page.song_id }}"
+</div>
+
 {% comment %}
 Resolve the selected song (passed via ?song_id=)
 {% endcomment %}
@@ -70,6 +74,11 @@ Resolve the selected song (passed via ?song_id=)
 
 {% if selected_song_id %}
   {% include song-resolve.html song_id=selected_song_id %}
+  <div style="color:lightgreen; padding:10px;">
+    DEBUG: resolved_title = "{{ resolved_title }}"
+    <br>
+    DEBUG: resolved_subtitle = "{{ resolved_subtitle }}"
+  </div>
 
   <div class="selected-song-header" style="padding: 20px 20px; color: white;">
     {% if resolved_title %}
@@ -79,6 +88,9 @@ Resolve the selected song (passed via ?song_id=)
     {% if resolved_subtitle %}
       <h3 class="selected-song-subtitle">{{ resolved_subtitle }}</h3>
     {% endif %}
+  </div>
+  <div style="color:orange; padding:10px;">
+    DEBUG: selected_song_id = "{{ selected_song_id }}"
   </div>
 {% endif %}
 
