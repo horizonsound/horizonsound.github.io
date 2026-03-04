@@ -27,69 +27,31 @@ title: Music – Horizon Sound
        PLAYLIST VIEW (NEW DEFAULT MODE)
        Premium 3:1 playlist tiles
   ============================================================ -->
-<section id="music-view-playlists">
+  <section id="music-view-playlists">
   
-  <h2 class="section-header">Playlists</h2>
-
-  {% if site.debug %}
-  <div class="debug-block">
-    <pre style="background:#111; color:#0ff; padding:1rem; white-space:pre-wrap;">
-PLAYLIST VIEW DEBUG
-==============================
-
-Raw youtube_playlists object:
-{{ site.data.youtube_playlists | jsonify }}
-
-    </pre>
-  </div>
-  {% endif %}
-
-  <div class="playlist-premium-grid">
-
-    {% for pl in site.data.youtube_playlists.playlists %}
-
-      {% assign first_song_id = pl.song_ids | first %}
-
-      {% if site.debug %}
-      <div class="debug-block">
-        <pre style="background:#111; color:#0ff; padding:1rem; white-space:pre-wrap;">
-PLAYLIST LOOP ITEM
-------------------------------
-pl object:
-{{ pl | jsonify }}
-
-playlist_id: {{ pl.playlist_id }}
-title: {{ pl.title }}
-thumbnail: {{ pl.thumbnail }}
-song_ids: {{ pl.song_ids | jsonify }}
-first_song_id: {{ first_song_id }}
-
-Computed href:
-{{ site.baseurl }}/music/playlists/{{ pl.playlist_id }}/?song_id={{ first_song_id }}
-
-        </pre>
-      </div>
-      {% endif %}
-
-      <a 
-        class="playlist-premium-tile" 
-        href="{{ site.baseurl }}/music/playlists/{{ pl.playlist_id }}/?song_id={{ first_song_id }}"
-      >
-        <div class="playlist-premium-image-wrapper">
-          <img 
-            src="{{ site.baseurl }}{{ pl.thumbnail }}" 
-            alt="{{ pl.title }}" 
-            class="playlist-premium-image"
-          >
-          <div class="playlist-premium-gradient"></div>
-          <div class="playlist-premium-title">{{ pl.title }}</div>
-        </div>
-      </a>
-
-    {% endfor %}
-  </div>
-
-</section>
+    <h2 class="section-header">Playlists</h2>
+  
+    <div class="playlist-premium-grid">
+      {% for pl in site.data.youtube_playlists.playlists %}
+        {% assign first_song_id = pl.song_ids | first %}
+        <a 
+          class="playlist-premium-tile" 
+          href="{{ site.baseurl }}/music/playlists/{{ pl.playlist_id }}/?song_id={{ first_song_id }}"
+        >
+          <div class="playlist-premium-image-wrapper">
+            <img 
+              src="{{ site.baseurl }}{{ pl.thumbnail }}" 
+              alt="{{ pl.title }}" 
+              class="playlist-premium-image"
+            >
+            <div class="playlist-premium-gradient"></div>
+            <div class="playlist-premium-title">{{ pl.title }}</div>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  
+  </section>
   
   <section id="music-view-catalog" style="display:none;">
     <!-- ============================================================
