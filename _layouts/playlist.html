@@ -5,107 +5,43 @@ layout: default
 {% comment %}
 Load base playlist from YouTube feed
 {% endcomment %}
-{% assign base = site.data.youtube_playlists.playlists
+{% assign playlist = site.data.youtube_playlists.playlists
   | where: "playlist_id", page.playlist_id
   | first %}
 
 {% comment %}
-Load override from playlist_overrides.yml
+Load override from playlist_overrides.yml (not applied yet)
 {% endcomment %}
-{% assign override = site.data.playlist_overrides
+{% assign playlist_override = site.data.playlist_overrides
   | where: "slug", page.playlist_id
   | first %}
 
-{% assign playlist = base %}
-
-{% if override %}
-
-  {% if override.title and override.title != "" %}
-    {% assign playlist = playlist | merge: { "title": override.title } %}
-  {% endif %}
-
-  {% if override.subtitle and override.subtitle != "" %}
-    {% assign playlist = playlist | merge: { "subtitle": override.subtitle } %}
-  {% endif %}
-
-  {% if override.description and override.description != "" %}
-    {% assign playlist = playlist | merge: { "description": override.description } %}
-  {% endif %}
-
-  {% if override.thumbnail and override.thumbnail != "" %}
-    {% assign playlist = playlist | merge: { "thumbnail": override.thumbnail } %}
-  {% endif %}
-
-  {% if override.hero and override.hero != "" %}
-    {% assign playlist = playlist | merge: { "hero": override.hero } %}
-  {% endif %}
-
-  {% if override.songs and override.songs.size > 0 %}
-    {% assign playlist = playlist | merge: { "song_ids": override.songs } %}
-  {% endif %}
-
-  {% if override.order %}
-    {% assign playlist = playlist | merge: { "order": override.order } %}
-  {% endif %}
-
-  {% if override.is_collection != nil %}
-    {% assign playlist = playlist | merge: { "is_collection": override.is_collection } %}
-  {% endif %}
-
-{% endif %}
-
-{% comment %}
-===========================
-DEBUG BLOCK — HIGH SIGNAL
-===========================
-{% endcomment %}
-<div style="background:#111; color:#0f0; padding:20px; margin:20px 0; font-family:monospace; font-size:14px;">
-  <h3 style="color:#0f0; margin-top:0;">DEBUG</h3>
+<div class="playlist-debug" style="background:#111; color:#0f0; padding:20px; margin:20px 0; font-family:monospace; font-size:14px;">
+  <h3 style="color:#0f0; margin-top:0;">DEBUG — SAFE MODE</h3>
 
   <p><strong>page.playlist_id:</strong> {{ page.playlist_id }}</p>
 
-  <p><strong>override found?</strong> {% if override %}YES{% else %}NO{% endif %}</p>
+  <p><strong>playlist found?</strong> {% if playlist %}YES{% else %}NO{% endif %}</p>
 
-  {% if override %}
-    <p><strong>override.slug:</strong> {{ override.slug }}</p>
-    <p><strong>override.hero:</strong> {{ override.hero }}</p>
-    <p><strong>override.title:</strong> {{ override.title }}</p>
-    <p><strong>override.subtitle:</strong> {{ override.subtitle }}</p>
-    <p><strong>override.is_collection:</strong> {{ override.is_collection }}</p>
-  {% endif %}
+  <p><strong>override found?</strong> {% if playlist_override %}YES{% else %}NO{% endif %}</p>
 
   <hr style="border-color:#333;">
 
-  <p><strong>playlist.hero (after merge):</strong> {{ playlist.hero }}</p>
-  <p><strong>playlist.title (after merge):</strong> {{ playlist.title }}</p>
-  <p><strong>playlist.subtitle (after merge):</strong> {{ playlist.subtitle }}</p>
-  <p><strong>playlist.is_collection (after merge):</strong> {{ playlist.is_collection }}</p>
+  <p><strong>playlist.title:</strong> {{ playlist.title }}</p>
+  <p><strong>playlist.description:</strong> {{ playlist.description }}</p>
+  <p><strong>playlist.thumbnail:</strong> {{ playlist.thumbnail }}</p>
+  <p><strong>playlist.song_ids count:</strong> {{ playlist.song_ids | size }}</p>
 </div>
 
 {% comment %}
-HERO — override wins, fallback to global hero
+Expose raw data to JS — NO MERGING, NO LOGIC
 {% endcomment %}
-{% assign display_hero = override.hero %}
+<script>
+  window.PLAYLIST = {{ playlist | jsonify }};
+  window.PLAYLIST_OVERRIDE = {{ playlist_override | jsonify }};
+</script>
 
-{% if display_hero %}
-  <div class="hero-banner">
-    <img class="hero-image" src="{{ site.baseurl }}{{ display_hero }}" alt="{{ playlist.title }}">
-  </div>
-{% else %}
-  {% include hero.html %}
-{% endif %}
-
-{% comment %}
-PLAYLIST TITLE + SUBTITLE — collections only
-{% endcomment %}
-{% if playlist.is_collection %}
-  <div class="playlist-header">
-    {% if playlist.title %}
-      <h1 class="playlist-title">{{ playlist.title }}</h1>
-    {% endif %}
-
-    {% if playlist.subtitle %}
-      <h2 class="playlist-subtitle">{{ playlist.subtitle }}</h2>
-    {% endif %}
-  </div>
-{% endif %}
+<div id="playlist-root" style="padding:40px; color:white;">
+  <h1>Playlist Page Loaded</h1>
+  <p>This is the stripped-down safe version. No merges, no hero, no JS logic.</p>
+</div>
