@@ -1,0 +1,21 @@
+{% comment %}
+Inputs:
+  song_id (string)
+
+Outputs:
+  resolved_title
+  resolved_subtitle
+{% endcomment %}
+
+{% assign song = site.data.youtube_feed.songs | where: "song_id", song_id | first %}
+{% assign override = site.data.music_overrides.overrides | where: "song_id", song_id | first %}
+
+{% comment %}
+Title: override first, fallback to YouTube feed
+{% endcomment %}
+{% assign resolved_title = override.title | default: song.title %}
+
+{% comment %}
+Subtitle: override only, hide if blank
+{% endcomment %}
+{% assign resolved_subtitle = override.subtitle %}
