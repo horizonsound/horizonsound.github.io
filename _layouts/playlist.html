@@ -51,6 +51,18 @@ Playlist Title + Subtitle
 </div>
 
 {% comment %}
+Playlist Description — override only, hide if blank
+{% endcomment %}
+
+{% assign playlist_description = playlist_override.description %}
+
+{% if playlist_description %}
+  <div class="playlist-description" style="padding: 20px 20px 40px; color: white;">
+    {{ playlist_description }}
+  </div>
+{% endif %}
+
+{% comment %}
 Expose raw data to JS — no merging, no conditionals
 {% endcomment %}
 <script>
