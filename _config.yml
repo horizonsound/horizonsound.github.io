@@ -1,4 +1,4 @@
-debug: false
+debug: true
 detailed-debug: false
 
 # Prevent Jekyll (and GitHub Pages) from processing the sync folder
