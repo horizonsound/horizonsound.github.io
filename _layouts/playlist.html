@@ -12,7 +12,7 @@ Load base playlist from YouTube feed
 {% comment %}
 Load override from playlist_overrides.yml
 {% endcomment %}
-{% assign override = site.data.playlist_overrides.overrides
+{% assign override = site.data.playlist_overrides
   | where: "slug", page.playlist_id
   | first %}
 
@@ -54,6 +54,37 @@ Load override from playlist_overrides.yml
 
 {% endif %}
 
+{% comment %}
+===========================
+DEBUG BLOCK — HIGH SIGNAL
+===========================
+{% endcomment %}
+<div style="background:#111; color:#0f0; padding:20px; margin:20px 0; font-family:monospace; font-size:14px;">
+  <h3 style="color:#0f0; margin-top:0;">DEBUG</h3>
+
+  <p><strong>page.playlist_id:</strong> {{ page.playlist_id }}</p>
+
+  <p><strong>override found?</strong> {% if override %}YES{% else %}NO{% endif %}</p>
+
+  {% if override %}
+    <p><strong>override.slug:</strong> {{ override.slug }}</p>
+    <p><strong>override.hero:</strong> {{ override.hero }}</p>
+    <p><strong>override.title:</strong> {{ override.title }}</p>
+    <p><strong>override.subtitle:</strong> {{ override.subtitle }}</p>
+    <p><strong>override.is_collection:</strong> {{ override.is_collection }}</p>
+  {% endif %}
+
+  <hr style="border-color:#333;">
+
+  <p><strong>playlist.hero (after merge):</strong> {{ playlist.hero }}</p>
+  <p><strong>playlist.title (after merge):</strong> {{ playlist.title }}</p>
+  <p><strong>playlist.subtitle (after merge):</strong> {{ playlist.subtitle }}</p>
+  <p><strong>playlist.is_collection (after merge):</strong> {{ playlist.is_collection }}</p>
+</div>
+
+{% comment %}
+HERO — override wins, fallback to global hero
+{% endcomment %}
 {% assign display_hero = override.hero %}
 
 {% if display_hero %}
@@ -78,8 +109,3 @@ PLAYLIST TITLE + SUBTITLE — collections only
     {% endif %}
   </div>
 {% endif %}
-
-{% comment %}
-STOP — page intentionally empty except hero + playlist title/subtitle.
-We will add fields back one at a time.
-{% endcomment %}
