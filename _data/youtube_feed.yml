@@ -292,7 +292,7 @@ songs:
     videostatus: public
     playlists:
       - after-the-silence-performed-by-lydia-ellington
-    view_count_num: 41
+    view_count_num: 42
     youtube_metadata:
       published_at: '2026-02-25T17:01:07Z'
       scheduled_at: null
@@ -309,7 +309,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '41'
+        view_count: '42'
         like_count: '2'
         favorite_count: '0'
         comment_count: '0'
@@ -878,7 +878,7 @@ songs:
     videostatus: public
     playlists:
       - calm-cinematic-horizon-sound-instrumentals
-    view_count_num: 44
+    view_count_num: 45
     youtube_metadata:
       published_at: '2026-02-21T13:00:14Z'
       scheduled_at: null
@@ -895,7 +895,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '44'
+        view_count: '45'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -2003,7 +2003,7 @@ songs:
     videostatus: public
     playlists:
       - after-the-silence-performed-by-lydia-ellington
-    view_count_num: 4
+    view_count_num: 5
     youtube_metadata:
       published_at: '2026-03-03T17:01:12Z'
       scheduled_at: null
@@ -2020,7 +2020,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '4'
+        view_count: '5'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -2079,7 +2079,7 @@ songs:
     videostatus: public
     playlists:
       - after-the-silence-performed-by-lydia-ellington
-    view_count_num: 69
+    view_count_num: 78
     youtube_metadata:
       published_at: '2026-02-24T17:00:59Z'
       scheduled_at: null
@@ -2096,7 +2096,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '69'
+        view_count: '78'
         like_count: '2'
         favorite_count: '0'
         comment_count: '0'
@@ -2156,7 +2156,7 @@ songs:
     videostatus: public
     playlists:
       - after-the-silence-performed-by-lydia-ellington
-    view_count_num: 79
+    view_count_num: 80
     youtube_metadata:
       published_at: '2026-02-17T17:01:06Z'
       scheduled_at: null
@@ -2173,7 +2173,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '79'
+        view_count: '80'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -2309,7 +2309,7 @@ songs:
     videostatus: public
     playlists:
       - after-the-silence-performed-by-lydia-ellington
-    view_count_num: 84
+    view_count_num: 86
     youtube_metadata:
       published_at: '2026-02-04T17:00:18Z'
       scheduled_at: null
@@ -2326,7 +2326,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '84'
+        view_count: '86'
         like_count: '2'
         favorite_count: '0'
         comment_count: '1'
@@ -2647,7 +2647,7 @@ songs:
     videostatus: public
     playlists:
       - midnight-saga
-    view_count_num: 170
+    view_count_num: 171
     youtube_metadata:
       published_at: '2026-02-13T17:00:50Z'
       scheduled_at: null
@@ -2664,7 +2664,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '170'
+        view_count: '171'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -2727,7 +2727,7 @@ songs:
     videostatus: public
     playlists:
       - a-way-back-trilogy
-    view_count_num: 38
+    view_count_num: 40
     youtube_metadata:
       published_at: '2026-02-06T17:01:30Z'
       scheduled_at: null
@@ -2744,7 +2744,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '38'
+        view_count: '40'
         like_count: '2'
         favorite_count: '0'
         comment_count: '1'
@@ -2976,7 +2976,7 @@ songs:
     videostatus: public
     playlists:
       - a-way-back-trilogy
-    view_count_num: 306
+    view_count_num: 308
     youtube_metadata:
       published_at: '2026-01-30T17:01:11Z'
       scheduled_at: null
@@ -2993,7 +2993,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '306'
+        view_count: '308'
         like_count: '5'
         favorite_count: '0'
         comment_count: '1'
@@ -3058,7 +3058,7 @@ songs:
     videostatus: public
     playlists:
       - a-way-back-trilogy
-    view_count_num: 136
+    view_count_num: 138
     youtube_metadata:
       published_at: '2026-01-23T18:17:49Z'
       scheduled_at: null
@@ -3075,7 +3075,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '136'
+        view_count: '138'
         like_count: '2'
         favorite_count: '0'
         comment_count: '1'
