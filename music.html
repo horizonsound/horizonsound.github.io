@@ -59,7 +59,7 @@ title: Music – Horizon Sound
     ============================================================ -->
     <section id="music-view-grouped">
     
-      {% assign playlist_data = site.data.youtube_playlists %}
+      {% assign playlist_data = site.data.youtube_playlists.playlists %}
       {% if playlist_data.size > 0 %}
     
       <section class="playlist-section music-collections">
@@ -72,7 +72,7 @@ title: Music – Horizon Sound
           Determine which playlists have at least one PUBLIC video
           New model uses videostatus: "public"
         {%- endcomment -%}
-        {% for pl in site.data.youtube_playlists %}
+        {% for pl in site.data.youtube_playlists.playlists %}
           {% assign has_public = false %}
     
           {% for vid in pl.song_ids %}
@@ -121,7 +121,7 @@ title: Music – Horizon Sound
         Fix: use youtube_id instead of song_id
         Fix: remove sequence logic (no longer exists)
       {%- endcomment -%}
-      {% for pl in site.data.youtube_playlists %}
+      {% for pl in site.data.youtube_playlists.playlists %}
         {% assign songs_in_list = all_songs | where_exp: "s", "pl.song_ids contains s.youtube_id" %}
         {% assign playlist_sorted = songs_in_list | sort: "title" %}
     
@@ -186,7 +186,7 @@ title: Music – Horizon Sound
          CAROUSEL VIEW
     ============================================================ -->
     <section id="music-view-carousel" style="display:none;">
-      {% for pl in site.data.youtube_playlists %}
+      {% for pl in site.data.youtube_playlists.playlists %}
         {% assign songs_in_list = all_songs | where_exp: "s", "pl.song_ids contains s.youtube_id" %}
         {% assign playlist_sorted = songs_in_list | sort: "title" %}
     
