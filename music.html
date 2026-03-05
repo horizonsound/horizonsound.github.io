@@ -119,6 +119,16 @@ title: Music – Horizon Sound
         {% assign songs_in_list = all_songs | where_exp: "s", "pl.song_ids contains s.youtube_id" %}
         {% assign playlist_sorted = songs_in_list | sort: "title" %}
     
+   <pre style="color:#0ff; background:#111; padding:0.5rem; white-space:pre-wrap;">
+DEBUG PLAYLIST
+playlist_id: {{ pl.playlist_id }}
+song_ids: {{ pl.song_ids | jsonify }}
+songs_in_list size: {{ songs_in_list | size }}
+first song youtube_id: {% if songs_in_list.first %}{{ songs_in_list.first.youtube_id }}{% else %}(none){% endif %}
+  </pre>
+
+      
+      
         {% if playlist_sorted.size > 0 %}
         <section class="playlist-section">
           <h2 class="section-header">{{ pl.title }}</h2>
