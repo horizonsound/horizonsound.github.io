@@ -1146,3 +1146,70 @@ body::before {
   margin-left: 8px;
   backdrop-filter: blur(4px);
 }
+
+/* Playlist Premium Grid */
+.playlist-premium-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  padding: 16px 0;
+}
+
+/* 2 across on medium screens */
+@media (min-width: 600px) {
+  .playlist-premium-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 3 across on desktop */
+@media (min-width: 900px) {
+  .playlist-premium-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tile wrapper */
+.playlist-premium-tile {
+  display: block;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 1; /* forces consistent cinematic shape */
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* Image */
+.playlist-premium-image-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.playlist-premium-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Gradient */
+.playlist-premium-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+}
+
+/* Title */
+.playlist-premium-title {
+  position: absolute;
+  bottom: 12px;
+  left: 16px;
+  right: 16px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
