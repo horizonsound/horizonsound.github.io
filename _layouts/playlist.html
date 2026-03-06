@@ -178,15 +178,14 @@ layout: default
     // Render player + carousel
     playerContainer.innerHTML = playerHTML;
     
-    // --- TILE SELECTION LOGIC (new unified version) ---
+    // --- TILE SELECTION LOGIC (final unified version) ---    
+    const allTiles = document.querySelectorAll('.carousel-tile');
     
     // 1. Highlight the active tile on load
-    const allTiles = document.querySelectorAll('.carousel-tile');
     allTiles.forEach(tile => {
       const id = tile.getAttribute('data-song-id');
       if (id === songId) {
         tile.classList.add('active');
-        // Scroll it into view
         tile.scrollIntoView({ behavior: 'smooth', inline: 'center' });
       }
     });
@@ -196,7 +195,7 @@ layout: default
       tile.addEventListener('click', () => {
         const id = tile.getAttribute('data-song-id');
     
-        // Ignore coming soon tiles
+        // Ignore coming soon tiles completely
         if (tile.classList.contains('coming-soon')) return;
     
         // Remove active from all
@@ -211,7 +210,7 @@ layout: default
         window.location.href = url.toString();
       });
     });
-
+    
     // Extra fields
     const extra = document.getElementById("selected-song-extra");
     extra.innerHTML = `
