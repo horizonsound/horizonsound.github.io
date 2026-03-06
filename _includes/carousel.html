@@ -18,8 +18,8 @@
     song_id: {{ song.song_id }}<br>
     title: {{ song.title }}<br>
     videostatus: {{ song.videostatus | inspect }}<br>
-    is_public: {{ song.videostatus == public }}<br>
-    is_coming: {{ song.videostatus != public }}<br>
+    is_public: {{ song.videostatus == "public" }}<br>
+    is_coming: {{ song.videostatus != "public" }}<br>
     ---<br>
   {% endfor %}
 </div>
@@ -31,8 +31,8 @@
     {% for song in items %}
       {% assign override = site.data.music_overrides.overrides | where: "song_id", song.song_id | first %}
       {% assign display_title = override.title | default: song.title %}
-      {% assign is_public = song.videostatus == public %}
-      {% assign is_coming = song.videostatus != public %}
+      {% assign is_public = song.videostatus == "public" %}
+      {% assign is_coming = song.videostatus != "public" %}
 
       {% if is_public %}
         <a class="carousel-tile"
