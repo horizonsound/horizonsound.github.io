@@ -102,19 +102,19 @@ layout: default
     // const playerContainer = document.getElementById("selected-song-player");
     
     // Build the YouTube embed
-    // const youtubeId = song?.youtube_id || "";
-    // const playerHTML = youtubeId
-    //   ? `
-    //       <div class="video-wrapper">
-    //         <iframe 
-    //           src="https://www.youtube.com/embed/${youtubeId}" 
-    //           frameborder="0" 
-    //           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    //           allowfullscreen>
-    //         </iframe>
-    //       </div>
-    //     `
-    //   : "";
+    const youtubeId = song?.youtube_id || "";
+    const playerHTML = youtubeId
+      ? `
+        <div class="video-wrapper">
+          <iframe 
+            src="https://www.youtube.com/embed/${youtubeId}" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+        </div>
+        `
+      : "";
       
     // Build the carousel tiles
     // const carouselTiles = window.PLAYLIST.song_ids
