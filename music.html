@@ -128,10 +128,23 @@ title: Music – Horizon Sound
               PUBLIC songs
             {%- endcomment -%}
             {% for song in playlist_sorted %}
+
+          
+          
+          {% assign override = site.data.music_overrides.overrides | where: "song_id", song.song_id | first %}
+            {% if override and override.title %}
+              {% assign display_title = override.title %}
+            {% else %}
+              {% assign display_title = song.title %}
+            {% endif %}
+
+
+
+          
               {% if song.videostatus == "public" %}
                 <a class="tile" href="{{ site.baseurl }}{{ song.url }}">
-                  <img src="{{ site.baseurl }}{{ song.thumbnail }}" alt="{{ song.title }}">
-                  <h3 class="tile-title">{{ song.title }}</h3>
+                  <img src="{{ site.baseurl }}{{ song.thumbnail }}" alt="{{ display_title }}">
+                  <h3 class="tile-title">{{ display_title }}</h3>
                 </a>
               {% endif %}
             {% endfor %}
