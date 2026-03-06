@@ -220,7 +220,7 @@ title: Music – Horizon Sound
         <section class="playlist-section">
           <h2 class="section-header">{{ pl.title }}</h2>
     
-          {% include carousel.html songs=playlist_sorted %}
+          {% include carousel.html songs=playlist_sorted playlist_id=pl.playlist_id %}
     
         </section>
         {% endif %}
