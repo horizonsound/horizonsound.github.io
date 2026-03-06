@@ -89,10 +89,10 @@ title: Music – Horizon Sound
         {% endfor %}
       
         <div class="tile-grid">
-      
           {% for ov in active_playlists %}
             {% assign pl = site.data.youtube_playlists.playlists | where: "playlist_id", ov.playlist_id | first %}
-            <a class="tile" href="{{ site.baseurl }}/music/playlists/{{ pl.playlist_id }}/">
+            {% assign first_song_id = pl.song_ids | first %}
+            <a class="tile" href="{{ site.baseurl }}/music/playlists/{{ pl.playlist_id }}/?song_id={{ first_song_id }}">
               <img src="{{ site.baseurl }}{{ pl.thumbnail }}" alt="{{ pl.title }}">
               <h3 class="tile-title">{{ pl.title }}</h3>
             </a>
