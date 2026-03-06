@@ -58,13 +58,12 @@ layout: default
   <!-- Fill out all the rest of the sections in the playlist page -->
   <div id="selected-song-header" class="centered-column"></div>
   <div id="selected-song-player" class="player-frame player-frame--purple"></div>
-
+  
   {% assign ids = playlist_override.songs | default: playlist.song_ids %}
+  {% assign is_collection = playlist_override.is_collection | default: false %}
   
   {% capture ordered_json %}
-    {% include order-songs.html 
-         ids=ids 
-         is_collection=playlist_override.is_collection | default: false %}
+    {% include order-songs.html ids=ids is_collection=is_collection %}
   {% endcapture %}
   
   {% assign ordered_songs = ordered_json | from_json %}
