@@ -182,6 +182,18 @@ layout: default
     // --- TILE SELECTION LOGIC (final unified version) ---    
     const allTiles = document.querySelectorAll('.carousel-tile');
     
+
+
+console.log("CAROUSEL TILES DEBUG");
+document.querySelectorAll('.carousel-tile').forEach(tile => {
+  console.log({
+    songId: tile.getAttribute('data-song-id'),
+    classes: tile.className
+  });
+});
+
+
+    
     // 1. Highlight the active tile on load
     allTiles.forEach(tile => {
       const id = tile.getAttribute('data-song-id');
