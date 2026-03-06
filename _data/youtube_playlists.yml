@@ -120,9 +120,9 @@ playlists:
     channel_title: Horizon Sound
     thumbnail: /assets/thumbnails/playlist-a-way-back-trilogy.jpeg
     song_ids:
-      - choosing-me-his-version-pop-horizon-sound
-      - choosing-me-her-version-acoustic-pop-horizon-sound
       - lost-in-silence-from-a-way-back-horizon-sound
+      - choosing-me-her-version-acoustic-pop-horizon-sound
+      - choosing-me-his-version-pop-horizon-sound
   - playlist_id: acoustic-singer-songwriter
     title: Acoustic / Singer‑Songwriter
     description: >-
