@@ -116,19 +116,22 @@ layout: default
     
     // Build the YouTube embed
     const youtubeId = song?.youtube_id || "";
-    const playerHTML = youtubeId
-      ? `
-        <div class="video-wrapper">
-          <iframe 
-            src="https://www.youtube.com/embed/${youtubeId}" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-          </iframe>
-        </div>
-        `
-      : "";
-      
+    
+    const autoplayParam = window.autoplay?.enabled ? "1" : "0";
+    const muteParam = window.autoplay?.enabled ? "0" : "1";
+    
+    const playerHTML = `
+      <div class="video-wrapper">
+        <iframe
+          id="yt-player"
+          src="https://www.youtube.com/embed/${youtubeId}?autoplay=${autoplayParam}&mute=${muteParam}"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    `;
+        
     // Build the carousel tiles
     // const carouselTiles = window.PLAYLIST.song_ids
     // .map(id => {
