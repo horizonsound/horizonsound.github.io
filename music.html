@@ -260,29 +260,23 @@ title: Music – Horizon Sound
   
         main.replaceWith(newMain);
         history.pushState({}, "", url);
-
-        // Execute all scripts inside the newly loaded <main>
-        newMain.querySelectorAll("script").forEach(oldScript => {
-          const newScript = document.createElement("script");
-        
-          if (oldScript.src) {
-            // External script (like carousel.js)
-            newScript.src = oldScript.src;
-          } else {
-            // Inline script (like loadSong, autoplay logic, etc.)
-            newScript.textContent = oldScript.textContent;
-          }
-        
-          document.body.appendChild(newScript);
-          document.body.removeChild(newScript);
-        });
-  
-        // Re-run the playlist JS
-        const script = newMain.querySelector("script");
-        if (script) {
-          eval(script.innerText);
-        }
-      });
+    
+    // Execute all scripts inside the newly loaded <main>
+    newMain.querySelectorAll("script").forEach(oldScript => {
+      const newScript = document.createElement("script");
+    
+      // Copy inline script
+      if (oldScript.textContent) {
+        newScript.textContent = oldScript.textContent;
+      }
+    
+      // Copy external script
+      if (oldScript.src) {
+        newScript.src = oldScript.src;
+      }
+    
+      document.body.appendChild(newScript);
+      document.body.removeChild(newScript);
     });
   
     // Handle back/forward navigation
