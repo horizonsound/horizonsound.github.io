@@ -128,7 +128,7 @@ function loadSong(songId) {
     <div class="video-wrapper">
       <iframe
         id="yt-player"
-        src="https://www.youtube.com/embed/${youtubeId}?autoplay=${autoplayParam}&mute=${muteParam}"
+        src="https://www.youtube.com/embed/${youtubeId}?autoplay=${autoplayParam}&mute=${muteParam}&enablejsapi=1"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
@@ -142,6 +142,22 @@ function loadSong(songId) {
 
   playerContainer.innerHTML = playerHTML;
 
+  // Auto-advance logic using YouTube postMessage events
+  window.addEventListener("message", (event) => {
+    if (!event.data || typeof event.data !== "string") return;
+  
+    try {
+      const data = JSON.parse(event.data);
+  
+      // YouTube sends {"event":"onStateChange","info":0} when video ends
+      if (data.event === "onStateChange" && data.info === 0) {
+        advanceToNextSong(songId);
+      }
+    } catch (e) {
+      // Ignore non-JSON messages
+    }
+  });
+  
   // Update extra section
   const extra = document.getElementById("selected-song-extra");
   extra.innerHTML = `
@@ -197,6 +213,26 @@ window.addEventListener("popstate", () => {
   const id = params.get("song_id");
   if (id) loadSong(id);
 });
+  function advanceToNextSong(currentId) {
+  const tiles = Array.from(document.querySelectorAll('.carousel-tile:not(.coming-soon)'));
+  const index = tiles.findIndex(t => t.getAttribute('data-song-id') === currentId);
+
+  if (index === -1) return;
+
+  const nextTile = tiles[index + 1];
+  if (!nextTile) return; // no next song
+
+  const nextId = nextTile.getAttribute('data-song-id');
+
+  // Update URL
+  const url = new URL(window.location.href);
+  url.searchParams.set("song_id", nextId);
+  history.pushState({}, "", url.toString());
+
+  // Load next song
+  loadSong(nextId);
+}
+
 </script>
 
 <script src="{{ site.baseurl }}/assets/js/carousel.js"></script>
