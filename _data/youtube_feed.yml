@@ -639,7 +639,7 @@ songs:
     videostatus: public
     playlists:
       - calm-cinematic-horizon-sound-instrumentals
-    view_count_num: 57
+    view_count_num: 61
     youtube_metadata:
       published_at: '2026-02-28T13:01:20Z'
       scheduled_at: null
@@ -656,7 +656,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '57'
+        view_count: '61'
         like_count: '0'
         favorite_count: '0'
         comment_count: '0'
@@ -880,7 +880,7 @@ songs:
     videostatus: public
     playlists:
       - calm-cinematic-horizon-sound-instrumentals
-    view_count_num: 53
+    view_count_num: 54
     youtube_metadata:
       published_at: '2026-02-21T13:00:14Z'
       scheduled_at: null
@@ -897,7 +897,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '53'
+        view_count: '54'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -1462,7 +1462,7 @@ songs:
     videostatus: public
     playlists:
       - after-the-silence-performed-by-lydia-ellington
-    view_count_num: 182
+    view_count_num: 183
     youtube_metadata:
       published_at: '2026-02-11T17:00:56Z'
       scheduled_at: null
@@ -1479,7 +1479,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '182'
+        view_count: '183'
         like_count: '4'
         favorite_count: '0'
         comment_count: '3'
@@ -2158,7 +2158,7 @@ songs:
     videostatus: public
     playlists:
       - after-the-silence-performed-by-lydia-ellington
-    view_count_num: 87
+    view_count_num: 88
     youtube_metadata:
       published_at: '2026-02-17T17:01:06Z'
       scheduled_at: null
@@ -2175,7 +2175,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '87'
+        view_count: '88'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -2481,7 +2481,7 @@ songs:
     videostatus: public
     playlists:
       - midnight-saga
-    view_count_num: 24
+    view_count_num: 23
     youtube_metadata:
       published_at: '2026-02-27T17:00:26Z'
       scheduled_at: null
@@ -2498,7 +2498,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '24'
+        view_count: '23'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -2566,7 +2566,7 @@ songs:
     videostatus: public
     playlists:
       - midnight-saga
-    view_count_num: 207
+    view_count_num: 206
     youtube_metadata:
       published_at: '2026-02-20T17:00:56Z'
       scheduled_at: null
@@ -2583,7 +2583,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '207'
+        view_count: '206'
         like_count: '4'
         favorite_count: '0'
         comment_count: '0'
