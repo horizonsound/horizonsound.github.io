@@ -2,239 +2,240 @@
 layout: default
 ---
 
-  <!-- Load the playlist and override data -->
-  {% assign playlist = site.data.youtube_playlists.playlists
-    | where: "playlist_id", page.playlist_id
-    | first %}
-  {% assign playlist_override = site.data.playlist_overrides.overrides
-    | where: "playlist_id", page.playlist_id
-    | first %}
-  
-  <!-- Make the data visible to JavaScript -->
-  <script>
-    window.YOUTUBE_SONGS = {{ site.data.youtube_feed.songs | jsonify }};
-  </script>
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    window.SELECTED_SONG_ID = params.get("song_id") || null;
-  </script>
-  <script>
-    window.MUSIC_OVERRIDES = {{ site.data.music_overrides.overrides | jsonify }};
-  </script>
-  <script>
-    window.BASEURL = "{{ site.baseurl }}";
-  </script>
-
-  <!-- Set up the hero image - Default is the Horizon Sound banner, but show override image if available -->
-  {% assign hero_image = playlist_override.hero | default: playlist.hero %}
-  {% if hero_image %}
-    <div class="hero-banner">
-      <img class="hero-image" src="{{ site.baseurl }}{{ hero_image }}" alt="{{ playlist.title }}">
-    </div>
-  {% else %}
-    {% include hero.html %}
-  {% endif %}
-  
-  <!-- Populate the playlist title and subtitle if they exist -->
-  {% assign header_title = playlist_override.title | default: playlist.title %}
-  {% assign header_subtitle = playlist_override.subtitle %}
-  <div class="playlist-header">
-    {% if header_title %}
-      <h1 class="playlist-title">{{ header_title }}</h1>
-    {% endif %}
-    {% if header_subtitle %}
-      <h2 class="playlist-title">{{ header_subtitle }}</h2>
-    {% endif %}
-  </div>
-  
-  <!-- Playlist Description — override only, hide if blank -->
-  {% assign playlist_description = playlist_override.description %}
-  {% if playlist_description %}
-    <div class="playlist-description">
-      {{ playlist_description }}
-    </div>
-  {% endif %}
-  
-  <!-- Fill out all the rest of the sections in the playlist page -->
-  <div id="selected-song-header" class="centered-column"></div>
-  <div id="selected-song-player" class="player-frame player-frame--purple"></div>
+<main>
+    <!-- Load the playlist and override data -->
+    {% assign playlist = site.data.youtube_playlists.playlists
+      | where: "playlist_id", page.playlist_id
+      | first %}
+    {% assign playlist_override = site.data.playlist_overrides.overrides
+      | where: "playlist_id", page.playlist_id
+      | first %}
     
-  {% assign ids = playlist_override.songs | default: playlist.song_ids %}
+    <!-- Make the data visible to JavaScript -->
+    <script>
+      window.YOUTUBE_SONGS = {{ site.data.youtube_feed.songs | jsonify }};
+    </script>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      window.SELECTED_SONG_ID = params.get("song_id") || null;
+    </script>
+    <script>
+      window.MUSIC_OVERRIDES = {{ site.data.music_overrides.overrides | jsonify }};
+    </script>
+    <script>
+      window.BASEURL = "{{ site.baseurl }}";
+    </script>
   
-  {% assign ordered_songs = "" | split: "" %}
-  {% for id in ids %}
-    {% assign s = site.data.youtube_feed.songs | where: "song_id", id | first %}
-    {% if s %}
-      {% assign ordered_songs = ordered_songs | push: s %}
+    <!-- Set up the hero image - Default is the Horizon Sound banner, but show override image if available -->
+    {% assign hero_image = playlist_override.hero | default: playlist.hero %}
+    {% if hero_image %}
+      <div class="hero-banner">
+        <img class="hero-image" src="{{ site.baseurl }}{{ hero_image }}" alt="{{ playlist.title }}">
+      </div>
+    {% else %}
+      {% include hero.html %}
     {% endif %}
-  {% endfor %}
-  
-  {% if playlist_override.is_collection != true %}
-    {% assign ordered_songs = ordered_songs | sort: "title" %}
-  {% endif %}
-  
-  {% include carousel.html songs=ordered_songs playlist_id=playlist.playlist_id %}
-
-  <div id="selected-song-extra" class="about-block"></div>
-  <div class="centered-column">
-    <div id="selected-song-about" class="about-block"></div>
-  </div>
-  <div id="selected-song-lyrics" class="lyrics-block"></div>
-  
-  {% assign song_ids = playlist_override.songs | default: playlist.song_ids %}
-
-<script>
-  window.PLAYLIST = {{ playlist | jsonify }};
-  window.PLAYLIST_OVERRIDE = {{ playlist_override | jsonify }};
-</script>
-
-<script>
-function loadSong(songId) {
-  const song = window.YOUTUBE_SONGS.find(s => s.song_id === songId);
-  const override = window.MUSIC_OVERRIDES.find(s => s.song_id === songId);
-
-  const title = override?.title || song?.title || "";
-  const subtitle = override?.subtitle || "";
-
-  const extraTitle = override?.extra_title || "";
-  const extraHTML = override?.extra_html || "";
-  const about = song?.description_html || "";
-  const lyricsHTML = override?.lyrics_html || "";
-
-  console.log("=== PLAYLIST DEBUG START ===");
-  console.log("window.autoplay:", window.autoplay);
-  console.log("autoplay.enabled:", window.autoplay?.enabled);
-  console.log("SELECTED_SONG_ID:", songId);
-  console.log("Song object:", song);
-  console.log("Override object:", override);
-  console.log("YouTube ID:", song?.youtube_id);
-  console.log("About to build embed...");
-
-  // Update header
-  const header = document.getElementById("selected-song-header");
-  header.innerHTML = `
-    ${title ? `<h2 class="section-header">${title}</h2>` : ""}
-    ${subtitle ? `<h3 class="song-subtitle">${subtitle}</h3>` : ""}
-  `;
-
-  // Build player
-  const playerContainer = document.getElementById("selected-song-player");
-  const youtubeId = song?.youtube_id || "";
-
-  const autoplayParam = window.autoplay?.enabled ? "1" : "0";
-  const muteParam = window.autoplay?.enabled ? "0" : "1";
-
-  const playerHTML = `
-    <div class="video-wrapper">
-      <iframe
-        id="yt-player"
-        src="https://www.youtube.com/embed/${youtubeId}?autoplay=${autoplayParam}&mute=${muteParam}&enablejsapi=1"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
+    
+    <!-- Populate the playlist title and subtitle if they exist -->
+    {% assign header_title = playlist_override.title | default: playlist.title %}
+    {% assign header_subtitle = playlist_override.subtitle %}
+    <div class="playlist-header">
+      {% if header_title %}
+        <h1 class="playlist-title">{{ header_title }}</h1>
+      {% endif %}
+      {% if header_subtitle %}
+        <h2 class="playlist-title">{{ header_subtitle }}</h2>
+      {% endif %}
     </div>
-  `;
-
-  console.log("Embed URL:", `https://www.youtube.com/embed/${youtubeId}?autoplay=${autoplayParam}&mute=${muteParam}`);
-  console.log("autoplayParam:", autoplayParam);
-  console.log("muteParam:", muteParam);
-
-  playerContainer.innerHTML = playerHTML;
-
-  // Auto-advance logic using YouTube postMessage events
-  window.addEventListener("message", (event) => {
-    if (!event.data || typeof event.data !== "string") return;
+    
+    <!-- Playlist Description — override only, hide if blank -->
+    {% assign playlist_description = playlist_override.description %}
+    {% if playlist_description %}
+      <div class="playlist-description">
+        {{ playlist_description }}
+      </div>
+    {% endif %}
+    
+    <!-- Fill out all the rest of the sections in the playlist page -->
+    <div id="selected-song-header" class="centered-column"></div>
+    <div id="selected-song-player" class="player-frame player-frame--purple"></div>
+      
+    {% assign ids = playlist_override.songs | default: playlist.song_ids %}
+    
+    {% assign ordered_songs = "" | split: "" %}
+    {% for id in ids %}
+      {% assign s = site.data.youtube_feed.songs | where: "song_id", id | first %}
+      {% if s %}
+        {% assign ordered_songs = ordered_songs | push: s %}
+      {% endif %}
+    {% endfor %}
+    
+    {% if playlist_override.is_collection != true %}
+      {% assign ordered_songs = ordered_songs | sort: "title" %}
+    {% endif %}
+    
+    {% include carousel.html songs=ordered_songs playlist_id=playlist.playlist_id %}
   
-    try {
-      const data = JSON.parse(event.data);
+    <div id="selected-song-extra" class="about-block"></div>
+    <div class="centered-column">
+      <div id="selected-song-about" class="about-block"></div>
+    </div>
+    <div id="selected-song-lyrics" class="lyrics-block"></div>
+    
+    {% assign song_ids = playlist_override.songs | default: playlist.song_ids %}
   
-      // YouTube sends {"event":"onStateChange","info":0} when video ends
-      if (data.event === "onStateChange" && data.info === 0) {
-        advanceToNextSong(songId);
+  <script>
+    window.PLAYLIST = {{ playlist | jsonify }};
+    window.PLAYLIST_OVERRIDE = {{ playlist_override | jsonify }};
+  </script>
+  
+  <script>
+  function loadSong(songId) {
+    const song = window.YOUTUBE_SONGS.find(s => s.song_id === songId);
+    const override = window.MUSIC_OVERRIDES.find(s => s.song_id === songId);
+  
+    const title = override?.title || song?.title || "";
+    const subtitle = override?.subtitle || "";
+  
+    const extraTitle = override?.extra_title || "";
+    const extraHTML = override?.extra_html || "";
+    const about = song?.description_html || "";
+    const lyricsHTML = override?.lyrics_html || "";
+  
+    console.log("=== PLAYLIST DEBUG START ===");
+    console.log("window.autoplay:", window.autoplay);
+    console.log("autoplay.enabled:", window.autoplay?.enabled);
+    console.log("SELECTED_SONG_ID:", songId);
+    console.log("Song object:", song);
+    console.log("Override object:", override);
+    console.log("YouTube ID:", song?.youtube_id);
+    console.log("About to build embed...");
+  
+    // Update header
+    const header = document.getElementById("selected-song-header");
+    header.innerHTML = `
+      ${title ? `<h2 class="section-header">${title}</h2>` : ""}
+      ${subtitle ? `<h3 class="song-subtitle">${subtitle}</h3>` : ""}
+    `;
+  
+    // Build player
+    const playerContainer = document.getElementById("selected-song-player");
+    const youtubeId = song?.youtube_id || "";
+  
+    const autoplayParam = window.autoplay?.enabled ? "1" : "0";
+    const muteParam = window.autoplay?.enabled ? "0" : "1";
+  
+    const playerHTML = `
+      <div class="video-wrapper">
+        <iframe
+          id="yt-player"
+          src="https://www.youtube.com/embed/${youtubeId}?autoplay=${autoplayParam}&mute=${muteParam}&enablejsapi=1"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    `;
+  
+    console.log("Embed URL:", `https://www.youtube.com/embed/${youtubeId}?autoplay=${autoplayParam}&mute=${muteParam}`);
+    console.log("autoplayParam:", autoplayParam);
+    console.log("muteParam:", muteParam);
+  
+    playerContainer.innerHTML = playerHTML;
+  
+    // Auto-advance logic using YouTube postMessage events
+    window.addEventListener("message", (event) => {
+      if (!event.data || typeof event.data !== "string") return;
+    
+      try {
+        const data = JSON.parse(event.data);
+    
+        // YouTube sends {"event":"onStateChange","info":0} when video ends
+        if (data.event === "onStateChange" && data.info === 0) {
+          advanceToNextSong(songId);
+        }
+      } catch (e) {
+        // Ignore non-JSON messages
       }
-    } catch (e) {
-      // Ignore non-JSON messages
-    }
+    });
+    
+    // Update extra section
+    const extra = document.getElementById("selected-song-extra");
+    extra.innerHTML = `
+      ${extraTitle ? `<h3 class="section-header">${extraTitle}</h3>` : ""}
+      ${extraHTML ? `<div class="about-text">${extraHTML}</div>` : ""}
+    `;
+  
+    // Update about section
+    const aboutContainer = document.getElementById("selected-song-about");
+    aboutContainer.innerHTML = `
+      ${about ? `<h3 class="section-header">About</h3>` : ""}
+      ${about ? `<div class="about-text">${about}</div>` : ""}
+    `;
+  
+    // Update lyrics
+    const lyricsContainer = document.getElementById("selected-song-lyrics");
+    lyricsContainer.innerHTML = lyricsHTML || "";
+  
+    // Update active tile
+    const allTiles = document.querySelectorAll('.carousel-tile');
+    allTiles.forEach(t => t.classList.remove('active'));
+    allTiles.forEach(tile => {
+      if (tile.getAttribute('data-song-id') === songId) {
+        tile.classList.add('active');
+        tile.scrollIntoView({ behavior: 'smooth', inline: 'center' });
+      }
+    });
+  }
+  
+  // INITIAL LOAD
+  if (window.SELECTED_SONG_ID) {
+    loadSong(window.SELECTED_SONG_ID);
+  }
+  
+  // TILE CLICK HANDLER (no page reload)
+  document.querySelectorAll('.carousel-tile').forEach(tile => {
+    tile.addEventListener('click', () => {
+      if (tile.classList.contains('coming-soon')) return;
+  
+      const id = tile.getAttribute('data-song-id');
+  
+      const url = new URL(window.location.href);
+      url.searchParams.set("song_id", id);
+  
+      history.pushState({}, "", url.toString());
+      loadSong(id);
+    });
   });
   
-  // Update extra section
-  const extra = document.getElementById("selected-song-extra");
-  extra.innerHTML = `
-    ${extraTitle ? `<h3 class="section-header">${extraTitle}</h3>` : ""}
-    ${extraHTML ? `<div class="about-text">${extraHTML}</div>` : ""}
-  `;
-
-  // Update about section
-  const aboutContainer = document.getElementById("selected-song-about");
-  aboutContainer.innerHTML = `
-    ${about ? `<h3 class="section-header">About</h3>` : ""}
-    ${about ? `<div class="about-text">${about}</div>` : ""}
-  `;
-
-  // Update lyrics
-  const lyricsContainer = document.getElementById("selected-song-lyrics");
-  lyricsContainer.innerHTML = lyricsHTML || "";
-
-  // Update active tile
-  const allTiles = document.querySelectorAll('.carousel-tile');
-  allTiles.forEach(t => t.classList.remove('active'));
-  allTiles.forEach(tile => {
-    if (tile.getAttribute('data-song-id') === songId) {
-      tile.classList.add('active');
-      tile.scrollIntoView({ behavior: 'smooth', inline: 'center' });
-    }
+  // Handle back/forward navigation
+  window.addEventListener("popstate", () => {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("song_id");
+    if (id) loadSong(id);
   });
-}
-
-// INITIAL LOAD
-if (window.SELECTED_SONG_ID) {
-  loadSong(window.SELECTED_SONG_ID);
-}
-
-// TILE CLICK HANDLER (no page reload)
-document.querySelectorAll('.carousel-tile').forEach(tile => {
-  tile.addEventListener('click', () => {
-    if (tile.classList.contains('coming-soon')) return;
-
-    const id = tile.getAttribute('data-song-id');
-
+    function advanceToNextSong(currentId) {
+    const tiles = Array.from(document.querySelectorAll('.carousel-tile:not(.coming-soon)'));
+    const index = tiles.findIndex(t => t.getAttribute('data-song-id') === currentId);
+  
+    if (index === -1) return;
+  
+    const nextTile = tiles[index + 1];
+    if (!nextTile) return; // no next song
+  
+    const nextId = nextTile.getAttribute('data-song-id');
+  
+    // Update URL
     const url = new URL(window.location.href);
-    url.searchParams.set("song_id", id);
-
+    url.searchParams.set("song_id", nextId);
     history.pushState({}, "", url.toString());
-    loadSong(id);
-  });
-});
-
-// Handle back/forward navigation
-window.addEventListener("popstate", () => {
-  const params = new URLSearchParams(window.location.search);
-  const id = params.get("song_id");
-  if (id) loadSong(id);
-});
-  function advanceToNextSong(currentId) {
-  const tiles = Array.from(document.querySelectorAll('.carousel-tile:not(.coming-soon)'));
-  const index = tiles.findIndex(t => t.getAttribute('data-song-id') === currentId);
-
-  if (index === -1) return;
-
-  const nextTile = tiles[index + 1];
-  if (!nextTile) return; // no next song
-
-  const nextId = nextTile.getAttribute('data-song-id');
-
-  // Update URL
-  const url = new URL(window.location.href);
-  url.searchParams.set("song_id", nextId);
-  history.pushState({}, "", url.toString());
-
-  // Load next song
-  loadSong(nextId);
-}
-
-</script>
-
-<script src="{{ site.baseurl }}/assets/js/carousel.js"></script>
-
+  
+    // Load next song
+    loadSong(nextId);
+  }
+  
+  </script>
+  
+  <script src="{{ site.baseurl }}/assets/js/carousel.js"></script>
+</main>
 
