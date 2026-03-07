@@ -1213,3 +1213,17 @@ body::before {
   font-weight: 600;
   text-shadow: 0 2px 4px rgba(0,0,0,0.6);
 }
+
+.autoplay-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1.5rem;     /* space away from nav */
+  cursor: pointer;
+}
+
+.autoplay-toggle .icon {
+  font-size: 1.75rem;      /* make it visible */
+  line-height: 1;
+  user-select: none;
+}
