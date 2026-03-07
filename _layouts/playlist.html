@@ -172,7 +172,31 @@ layout: default
         </iframe>
       </div>
     `;
-  
+
+      // Fallback: poll for video end if YouTube API doesn't initialize
+    if (window._pollInterval) clearInterval(window._pollInterval);
+    
+    window._pollInterval = setInterval(() => {
+      const iframe = document.getElementById("yt-player");
+      if (!iframe) return;
+    
+      const url = iframe.src;
+    
+      // Extract currentTime and duration from infoDelivery if available
+      // But if no events fire, we fallback to checking the URL for t= parameter
+      const tMatch = url.match(/[?&]t=(\d+)/);
+      const currentTime = tMatch ? parseInt(tMatch[1], 10) : null;
+    
+      // If we have a duration from the song object, use it
+      const duration = song?.duration_seconds || null;
+    
+      // If we know both, and we're within 2 seconds of the end, advance
+      if (currentTime && duration && currentTime >= duration - 2) {
+        clearInterval(window._pollInterval);
+        advanceToNextSong(songId);
+      }
+    }, 1000);
+
     console.log("Embed URL:", `https://www.youtube.com/embed/${youtubeId}?autoplay=${autoplayParam}&mute=${muteParam}`);
     console.log("autoplayParam:", autoplayParam);
     console.log("muteParam:", muteParam);
