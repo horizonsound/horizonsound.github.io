@@ -3,14 +3,20 @@ layout: default
 ---
 
 <main>
-<script>
-  // GLOBAL DEBUG: Log every postMessage from the YouTube iframe
-  window.addEventListener("message", (event) => {
-    console.log("YT RAW MESSAGE:", event.data);
-  });
-</script>
 
+    <!-- Load the playlist and override data -->
+    {% assign playlist = site.data.youtube_playlists.playlists
+      | where: "playlist_id", page.playlist_id
+      | first %}
+    {% assign playlist_override = site.data.playlist_overrides.overrides
+      | where: "playlist_id", page.playlist_id
+      | first %}
+    
     <script>
+      // GLOBAL DEBUG: Log every postMessage from the YouTube iframe
+      window.addEventListener("message", (event) => {
+        console.log("YT RAW MESSAGE:", event.data);
+      });
       // Ensure the handler exists before removing it
       if (window._ytMessageHandler) {
         window.removeEventListener("message", window._ytMessageHandler);
@@ -31,18 +37,8 @@ layout: default
     
       // Attach the handler
       window.addEventListener("message", window._ytMessageHandler);
-    </script>
 
-    <!-- Load the playlist and override data -->
-    {% assign playlist = site.data.youtube_playlists.playlists
-      | where: "playlist_id", page.playlist_id
-      | first %}
-    {% assign playlist_override = site.data.playlist_overrides.overrides
-      | where: "playlist_id", page.playlist_id
-      | first %}
-    
-    <!-- Make the data visible to JavaScript -->
-    <script>
+      // Make the data visible to JavaScript
       window.YOUTUBE_SONGS = {{ site.data.youtube_feed.songs | jsonify }};
       window.MUSIC_OVERRIDES = {{ site.data.music_overrides.overrides | jsonify }};
       window.BASEURL = "{{ site.baseurl }}";
