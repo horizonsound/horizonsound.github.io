@@ -89,24 +89,28 @@ layout: default
     window.PLAYLIST_OVERRIDE = {{ playlist_override | jsonify }};
   </script>
   
-  <script>
+<script>
+  // Ensure the handler exists before removing it
+  if (window._ytMessageHandler) {
     window.removeEventListener("message", window._ytMessageHandler);
-    
-    // Auto-advance logic 
-    window._ytMessageHandler = function(event) {
-      if (!event.data || typeof event.data !== "string") return;
-    
-      try {
-        const data = JSON.parse(event.data);
-    
-        if (data.event === "onStateChange" && data.info === 0) {
-          advanceToNextSong(window.SELECTED_SONG_ID);
-        }
-      } catch (e) {}
-    };
-    
-    window.addEventListener("message", window._ytMessageHandler);
-  </script>
+  }
+
+  // Define the handler
+  window._ytMessageHandler = function(event) {
+    if (!event.data || typeof event.data !== "string") return;
+
+    try {
+      const data = JSON.parse(event.data);
+
+      if (data.event === "onStateChange" && data.info === 0) {
+        advanceToNextSong(window.SELECTED_SONG_ID);
+      }
+    } catch (e) {}
+  };
+
+  // Attach the handler
+  window.addEventListener("message", window._ytMessageHandler);
+</script>
     
 <script>
   function loadSong(songId) {
