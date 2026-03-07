@@ -24,16 +24,20 @@ layout: default
     
       // Define the handler
       window._ytMessageHandler = function(event) {
-        if (!event.data || typeof event.data !== "string") return;
-    
-        try {
-          const data = JSON.parse(event.data);
-    
-          if (data.event === "onStateChange" && data.info === 0) {
-            advanceToNextSong(window.SELECTED_SONG_ID);
-          }
-        } catch (e) {}
-      };
+          if (!event.data || typeof event.data !== "string") return;
+        
+          try {
+            const data = JSON.parse(event.data);
+        
+            if (data.event === "onStateChange") {
+              console.log("YT HANDLER STATE:", data.info, "SELECTED:", window.SELECTED_SONG_ID);
+            }
+        
+            if (data.event === "onStateChange" && data.info === 0) {
+              advanceToNextSong(window.SELECTED_SONG_ID);
+            }
+          } catch (e) {}
+        };
     
       // Attach the handler
       window.addEventListener("message", window._ytMessageHandler);
