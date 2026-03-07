@@ -14,4 +14,23 @@
     <span class="icon"></span>
   </div>
 </header>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("autoplay-toggle");
+  if (!toggle) return;
 
+  const icon = toggle.querySelector(".icon");
+
+  function updateIcon() {
+    icon.textContent = window.autoplay.enabled ? "🔊" : "🔇";
+  }
+
+  toggle.addEventListener("click", () => {
+    window.autoplay.enabled = !window.autoplay.enabled;
+    updateIcon();
+  });
+
+  updateIcon();
+});
+</script>
+  
