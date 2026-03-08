@@ -79,7 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Only intercept internal navigation to Music or Playlist pages
     const isMusicPage =
       href.startsWith('{{ site.baseurl }}/music') ||
-      href.startsWith('{{ site.baseurl }}/about') ||
       href.startsWith('/music'); ||
       href.startsWith('/about');
 
