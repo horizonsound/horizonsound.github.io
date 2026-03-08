@@ -16,7 +16,7 @@ title: Horizon Sound
        NEW RELEASES
   ============================================================ -->
   <section class="homepage-section">
-    <h2 class="section-header">New Releases...</h2>
+    <h2 class="section-header">Now on stage</h2>
   
     {% assign cutoff = "now" | date: "%s" | minus: 2592000 %}
     {% assign cutoff_num = cutoff | plus: 0 %}
@@ -44,7 +44,7 @@ title: Horizon Sound
        SPOTLIGHT MUSIC
   ============================================================ -->
   <section class="homepage-section">
-    <h2 class="section-header">Spotlight Music</h2>
+    <h2 class="section-header">In the Spotlight</h2>
 
     {% assign spotlight = songs 
          | where: "videostatus", "public"
@@ -60,7 +60,7 @@ title: Horizon Sound
        COLLECTIONS (from playlist_overrides.yml)
   ============================================================ -->
   <section class="homepage-section homepage-collections">
-    <h2 class="section-header">Collections</h2>
+    <h2 class="section-header">Collection Experience</h2>
 
     {% include tiles.html 
          items=playlists 
