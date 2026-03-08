@@ -1227,3 +1227,16 @@ body::before {
   line-height: 1;
   user-select: none;
 }
+
+#selected-song-player iframe {
+  width: 100%;
+  height: 56.25vw; /* 16:9 ratio */
+  max-height: 480px;
+  border: none;
+}
+
+.player-frame {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
