@@ -1,44 +1,36 @@
-<!DOCTYPE html>
-<html>
-<body>
-
-<h1>YouTube Autoplay Test — 6 Songs</h1>
-
-<div id="player"></div>
-
-<!-- Load the real YouTube IFrame API -->
 <script src="https://www.youtube.com/iframe_api"></script>
 
 <script>
-  // Six videos to test autoplay + auto-advance
   const videos = [
-    "906ItpYuLuQ", // Forever in a Moment
-    "BrZ1VWJ2lso", // Borrowed Time
-    "-Yxig5Mq9u4", // The Quiet After
-    "YxJ5u8xJ9v0", // (placeholder - replace with real ID)
-    "abcdEFGhijk", // (placeholder - replace with real ID)
-    "LmNOpQRstuV"  // (placeholder - replace with real ID)
+    "906ItpYuLuQ",
+    "BrZ1VWJ2lso",
+    "-Yxig5Mq9u4",
+    "Xxj5U8xJ9ow",
+    "aBCdEFGhijk",
+    "LmNOpQRstuv"
   ];
 
   let index = 0;
   let player;
 
-  // Called automatically when the IFrame API is ready
   function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
       videoId: videos[index],
-      playerVars: { autoplay: 1, mute: 1 },
+      playerVars: {
+        autoplay: 1,
+        mute: 1,
+        controls: 1,
+        rel: 0
+      },
       events: {
         'onStateChange': onStateChange
       }
     });
   }
 
-  // Fires on play, pause, buffering, ended, etc.
   function onStateChange(event) {
     console.log("STATE:", event.data, "VIDEO:", videos[index]);
 
-    // 0 = ended
     if (event.data === YT.PlayerState.ENDED) {
       index++;
       if (index < videos.length) {
@@ -50,6 +42,3 @@
     }
   }
 </script>
-
-</body>
-</html>
