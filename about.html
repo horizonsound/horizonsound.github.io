@@ -65,13 +65,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const href = link.getAttribute('href');
     if (!href) return;
 
-    // Intercept internal navigation (Home, Music, Playlists)
+    // Intercept internal navigation (Home, Music, Playlists, About)
     const isInternal =
       href.startsWith('{{ site.baseurl }}/music') ||
+      href.startsWith('{{ site.baseurl }}/about') ||
+      href.startsWith('/music') ||
+      href.startsWith('/about') ||
       href === '{{ site.baseurl }}/' ||
       href === '{{ site.baseurl }}' ||
       href === '/' ||
-      href === '/music.html';
       href === '/index.html';
 
     if (!isInternal) return;
@@ -111,4 +113,3 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
-
