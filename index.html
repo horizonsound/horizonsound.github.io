@@ -8,15 +8,20 @@ title: Horizon Sound
      | where: "is_collection", true
      | sort: "order" %}
 
-<div class="homepage-wrapper">
-
-  {% include stage-announcements.html %}
+<div class="stage-wrapper">
+  <!-- ============================================================
+       Announcements
+  ============================================================ -->
+  {% include stage-announcements.html
+     announcements=site.data.stage.announcements
+     class="stage-announcements"
+  %}
 
   <!-- ============================================================
-       NEW RELEASES
+       Now on Stage
   ============================================================ -->
-  <section class="homepage-section">
-    <h2 class="section-header">New Releases...</h2>
+  <section class="stage-section">
+    <h2 class="section-header">Now on Stage</h2>
   
     {% assign cutoff = "now" | date: "%s" | minus: 2592000 %}
     {% assign cutoff_num = cutoff | plus: 0 %}
@@ -41,11 +46,10 @@ title: Horizon Sound
   </section>
   
   <!-- ============================================================
-       SPOTLIGHT MUSIC
+       In the Spotlight 
   ============================================================ -->
-  <section class="homepage-section">
-    <h2 class="section-header">Spotlight Music</h2>
-
+  <section class="stage-section">
+    <h2 class="section-header">In the Spotlight</h2>
     {% assign spotlight = songs 
          | where: "videostatus", "public"
          | sort: "view_count_num"
@@ -57,17 +61,15 @@ title: Horizon Sound
   </section>
 
   <!-- ============================================================
-       COLLECTIONS (from playlist_overrides.yml)
+       Collections Experience
   ============================================================ -->
-  <section class="homepage-section homepage-collections">
-    <h2 class="section-header">Collections</h2>
-
+  <section class="stage-collections">
+    <h2 class="section-header">Collection Experience</h2>
     {% include tiles.html 
          items=playlists 
          section="collections" 
     %}
-  </section>
-
+  </section>   
 </div>
 
 <script>
