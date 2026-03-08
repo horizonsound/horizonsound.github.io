@@ -68,6 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Intercept internal navigation (Home, Music, Playlists)
     const isInternal =
       href.startsWith('{{ site.baseurl }}/music') ||
+      href.startsWith('{{ site.baseurl }}/index') ||
       href === '{{ site.baseurl }}/' ||
       href === '{{ site.baseurl }}' ||
       href === '/' ||
