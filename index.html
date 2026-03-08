@@ -71,46 +71,50 @@ title: Horizon Sound
 </div>
 
 <script>
-document.querySelectorAll('a').forEach(link => {
-  const href = link.getAttribute('href');
-  if (!href) return;
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('a').forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href) return;
 
-  // Only intercept internal navigation
-  const isInternal = href.startsWith('{{ site.baseurl }}/music');
-  if (!isInternal) return;
+    // Only intercept internal navigation to Music or Playlist pages
+    const isMusicPage =
+      href.startsWith('{{ site.baseurl }}/music') ||
+      href.startsWith('/music');
 
-  link.addEventListener('click', async (e) => {
-    e.preventDefault();
+    if (!isMusicPage) return;
 
-    const url = link.href;
+    link.addEventListener('click', async (e) => {
+      e.preventDefault();
 
-    // Fetch the target page
-    const response = await fetch(url, { credentials: 'same-origin' });
-    const html = await response.text();
+      const url = link.href;
 
-    // Parse and extract the new <main>
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(html, 'text/html');
-    const newMain = doc.querySelector('main');
+      // Fetch the target page
+      const response = await fetch(url, { credentials: 'same-origin' });
+      const html = await response.text();
 
-    // Replace current <main>
-    document.querySelector('main').replaceWith(newMain);
+      // Parse and extract the new <main>
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      const newMain = doc.querySelector('main');
 
-    // Update URL without reload
-    history.pushState({}, "", url);
+      // Replace current <main>
+      document.querySelector('main').replaceWith(newMain);
 
-    // Re-run scripts inside the new <main>
-    const scripts = newMain.querySelectorAll("script");
-    scripts.forEach(oldScript => {
-      const s = document.createElement("script");
-      if (oldScript.src) {
-        s.src = oldScript.src;
-      } else {
-        s.textContent = oldScript.textContent;
-      }
-      document.body.appendChild(s);
+      // Update URL without reload
+      history.pushState({}, "", url);
+
+      // Re-run scripts inside the new <main>
+      const scripts = newMain.querySelectorAll("script");
+      scripts.forEach(oldScript => {
+        const s = document.createElement("script");
+        if (oldScript.src) {
+          s.src = oldScript.src;
+        } else {
+          s.textContent = oldScript.textContent;
+        }
+        document.body.appendChild(s);
+      });
     });
   });
 });
 </script>
-
