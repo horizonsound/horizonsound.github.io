@@ -8,20 +8,15 @@ title: Horizon Sound
      | where: "is_collection", true
      | sort: "order" %}
 
-<div class="stage-wrapper">
-  <!-- ============================================================
-       Announcements
-  ============================================================ -->
-  {% include stage-announcements.html
-     announcements=site.data.stage.announcements
-     class="stage-announcements"
-  %}
+<div class="homepage-wrapper">
+
+  {% include homepage-teaser.html %}
 
   <!-- ============================================================
-       Now on Stage
+       NEW RELEASES
   ============================================================ -->
-  <section class="stage-section">
-    <h2 class="section-header">Now on Stage</h2>
+  <section class="homepage-section">
+    <h2 class="section-header">New Releases...</h2>
   
     {% assign cutoff = "now" | date: "%s" | minus: 2592000 %}
     {% assign cutoff_num = cutoff | plus: 0 %}
@@ -40,36 +35,39 @@ title: Horizon Sound
          | sort: "youtube_metadata.published_at"
          | reverse %}
   
-    {% include tiles.html 
-        items=new_releases 
-        section="on_stage" %}
+    {% include homepage-tiles.html 
+         items=new_releases 
+         section="new_releases" %}
   </section>
   
   <!-- ============================================================
-       In the Spotlight 
+       SPOTLIGHT MUSIC
   ============================================================ -->
-  <section class="stage-section">
-    <h2 class="section-header">In the Spotlight</h2>
+  <section class="homepage-section">
+    <h2 class="section-header">Spotlight Music</h2>
+
     {% assign spotlight = songs 
          | where: "videostatus", "public"
          | sort: "view_count_num"
          | reverse %}
-    {% include tiles.html 
+    {% include homepage-tiles.html 
          items=spotlight 
          section="spotlight" 
     %}
   </section>
 
   <!-- ============================================================
-       Collections Experience
+       COLLECTIONS (from playlist_overrides.yml)
   ============================================================ -->
-  <section class="stage-collections">
-    <h2 class="section-header">Collection Experience</h2>
-    {% include tiles.html 
+  <section class="homepage-section homepage-collections">
+    <h2 class="section-header">Collections</h2>
+
+    {% include homepage-tiles.html 
          items=playlists 
          section="collections" 
     %}
-  </section>   
+  </section>
+
 </div>
 
 <script>
@@ -81,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Only intercept internal navigation to Music or Playlist pages
     const isMusicPage =
       href.startsWith('{{ site.baseurl }}/music') ||
-      href.startsWith('/music') ||
+      href.startsWith('/music'); ||
       href.startsWith('/about');
 
     if (!isMusicPage) return;
