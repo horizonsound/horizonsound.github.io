@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>YouTube Autoplay Test</h1>
+
+<div id="player"></div>
+
+<script>
+  const videos = [
+    "906ItpYuLuQ", // Forever in a Moment
+    "BrZ1VWJ2lso"  // Borrowed Time
+  ];
+
+  let index = 0;
+
+  function loadVideo(id) {
+    const cacheBuster = Date.now();
+    document.getElementById("player").innerHTML = `
+      <iframe
+        id="yt"
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/${id}?autoplay=1&mute=1&enablejsapi=1&cb=${cacheBuster}"
+        frameborder="0"
+        allow="autoplay"
+      ></iframe>
+    `;
+  }
+
+  // YouTube event listener
+  window.addEventListener("message", (event) => {
+    try {
+      const data = JSON.parse(event.data);
+
+      if (data.event === "onStateChange") {
+        console.log("STATE:", data.info);
+
+        // 0 = ended
+        if (data.info === 0) {
+          index++;
+          if (index < videos.length) {
+            loadVideo(videos[index]);
+          }
+        }
+      }
+    } catch (e) {}
+  });
+
+  // Load first video
+  loadVideo(videos[index]);
+</script>
+
+</body>
+</html>
