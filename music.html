@@ -466,7 +466,8 @@ document.addEventListener("DOMContentLoaded", () => {
       href === '{{ site.baseurl }}/' ||
       href === '{{ site.baseurl }}' ||
       href === '/' ||
-      href === '/index.html';
+      href === '/index.html'; ||
+      href === '/about.html';
 
     if (!isInternal) return;
 
