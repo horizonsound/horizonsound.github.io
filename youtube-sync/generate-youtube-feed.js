@@ -104,9 +104,24 @@ function formatDescriptionToHtml(desc, playlistTitleMap) {
     .map(p => {
       const collapsed = p.replace(/\n+/g, " ").trim();
       const linked = linkify(collapsed, playlistTitleMap);
+      // If the paragraph contains "Label <a href="...">Label</a>"
+      const listItemMatch = linked.match(/^(.+?)\s*<a /);
+      
+      if (listItemMatch) {
+        const label = listItemMatch[1].trim();
+        const link = linked.replace(label, "").trim();
+        return `<li>${link}</li>`;
+      }
+      
       return `<p>${linked}</p>`;
     })
-    .join("");
+  const html = paragraphs.join("");
+  
+  if (html.includes("<li>")) {
+    return `<ul class="playlist-links">${html}</ul>`;
+  }
+  
+  return html;
 }
 
 function linkify(text, playlistTitleMap) {
