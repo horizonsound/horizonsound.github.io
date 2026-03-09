@@ -69,11 +69,18 @@ layout: default
     {% endif %}
 
     <div id="selected-song-player" class="player-frame player-frame--purple">
-        <!-- Song Sections -->
-        <div id="selected-song-header" class="centered-column"></div>
-        <div id="player-container"></div>
+        
+        <div class="player-frame-inner">
+            <div class="player-header">
+                <h2 class="player-title"></h2>
+                <h3 class="player-subtitle"></h3>
+            </div>
     
-        {% include carousel.html songs=ordered_songs playlist_id=playlist.playlist_id %}
+            <div id="player-container"></div>
+    
+            {% include carousel.html songs=ordered_songs playlist_id=playlist.playlist_id %}
+        </div>
+    
     </div>
 
     <div id="selected-song-extra" class="about-block"></div>
