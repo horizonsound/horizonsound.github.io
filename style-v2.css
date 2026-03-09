@@ -1249,7 +1249,7 @@ body::before {
    PLAYLIST PAGE — FULL-WIDTH APPLE TV OVERRIDES
 ============================================ */
 
-/* Make the entire playlist page full-width */
+/* Make the playlist page full-width */
 .playlist-page {
   width: 100%;
   margin: 0;
@@ -1265,60 +1265,91 @@ body::before {
 
 .playlist-page .hero-banner img.hero-image {
   width: 100%;
-  height: 420px !important;
+  height: 480px !important;
   object-fit: cover;
   border-radius: 0;
 }
 
-/* Full-width header block */
+/* Playlist header */
 .playlist-page .playlist-header {
   width: 100%;
   max-width: 1400px;
-  margin: -120px auto 40px;
+  margin: -160px auto 40px;
   padding: 0 40px;
   text-align: center;
 }
 
 .playlist-page .playlist-header .playlist-title {
-  font-size: 3rem !important;
+  font-size: 3.2rem !important;
   font-weight: 700;
   letter-spacing: -0.5px;
+  margin-bottom: 8px;
 }
 
-/* Full-width player frame */
+/* ============================================
+   PLAYER FRAME — FULL WIDTH + CAROUSEL INSIDE
+============================================ */
+
 .playlist-page .player-frame {
   width: 100% !important;
   max-width: none !important;
-  margin: 0 auto 60px !important;
-  padding: 40px 0 !important;
+  margin: 0 !important;
+  padding: 60px 0 !important;
   border-radius: 0 !important;
 
   background: rgba(255,255,255,0.06) !important;
   backdrop-filter: blur(14px) !important;
   box-shadow: inset 0 0 60px rgba(0,0,0,0.35);
+
+  /* DEBUG */
+  border: 4px solid red !important;
 }
 
-/* Center the video inside the full-width frame */
-.playlist-page #selected-song-player {
+/* Center all children inside the full-width frame */
+.playlist-page .player-frame > * {
   max-width: 1400px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
-/* Larger, cinematic video */
+/* ============================================
+   VIDEO — REMOVE HEIGHT CONSTRAINTS
+============================================ */
+
+/* Remove the old 16:9 padding-bottom hack */
 .playlist-page .player-frame .video-wrapper {
-  padding-bottom: 48% !important;
+  padding-bottom: 0 !important;
+  height: auto !important;
   border-radius: 16px;
   overflow: hidden;
 }
 
-/* Carousel becomes part of the player frame */
+/* Let the iframe be cinematic */
+.playlist-page .player-frame iframe {
+  width: 100% !important;
+  height: 70vh !important;   /* Apple TV cinematic height */
+  max-height: none !important;
+  border: none;
+}
+
+/* Ensure the player container grows with the iframe */
+.playlist-page #selected-song-player {
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* ============================================
+   CAROUSEL — NOW PART OF THE PLAYER FRAME
+============================================ */
+
 .playlist-page .player-frame .carousel {
   max-width: 1400px;
   margin: 40px auto 0 !important;
   padding: 0 40px;
 }
 
-/* Larger tiles for cinematic feel */
 .playlist-page .player-frame .carousel-tile {
   flex: 0 0 220px !important;
   width: 220px !important;
@@ -1329,7 +1360,10 @@ body::before {
   border-radius: 12px;
 }
 
-/* Description + About + Lyrics centered but not constrained */
+/* ============================================
+   DESCRIPTION + ABOUT + LYRICS
+============================================ */
+
 .playlist-page .playlist-description,
 .playlist-page .about-block,
 .playlist-page .lyrics-block {
@@ -1337,56 +1371,4 @@ body::before {
   margin: 60px auto;
   padding: 0 40px;
   text-align: center;
-}
-
-/* ============================================
-   PLAYLIST PAGE — FIX PLAYER HEIGHT CONSTRAINT
-============================================ */
-
-/* Remove the fixed 16:9 padding-bottom ratio */
-.playlist-page .player-frame .video-wrapper {
-  padding-bottom: 0 !important;
-  height: auto !important;
-}
-
-/* Let the iframe define its own height */
-.playlist-page #selected-song-player iframe {
-  height: 60vh !important;   /* cinematic height */
-  max-height: none !important;
-  width: 100% !important;
-  border: none;
-}
-
-/* Ensure the player frame expands with the iframe */
-.playlist-page #selected-song-player {
-  width: 100% !important;
-  height: auto !important;
-}
-
-/* Optional: even more cinematic (Apple TV uses 65–75vh) */
-.playlist-page #selected-song-player iframe {
-  height: 70vh !important;
-}
-/* DEBUG — visualize the full player frame */
-.playlist-page .player-frame {
-  border: 4px solid red !important;
-}
-.playlist-page .player-frame {
-  width: 100% !important;
-  max-width: none !important;
-  margin: 0 !important;
-  padding: 60px 0 !important;
-  border-radius: 0 !important;
-}
-.playlist-page .player-frame > * {
-  max-width: 1400px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 40px;
-  padding-right: 40px;
-}
-.playlist-page .player-frame iframe {
-  width: 100% !important;
-  height: 60vh !important;
-  max-height: none !important;
 }
