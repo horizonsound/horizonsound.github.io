@@ -115,30 +115,32 @@ function formatDescriptionToHtml(desc, playlistTitleMap) {
     const containsVibeEmoji = /🎧|🎤|🎛️|⚡/.test(collapsed);
 
     // --- FORMAT A: One-paragraph playlist block ---
+    const containsInlineBullets = linked.includes("•");
+
     if (playlistUrls >= 2 && containsInlineBullets) {
       const firstUrlIndex = linked.search(/https?:\/\//);
       const headerText = linked.slice(0, firstUrlIndex).trim();
       const playlistPortion = linked.slice(firstUrlIndex).trim();
-
+    
       const items = playlistPortion
-        .split(" • ")
+        .split("•")
         .map(item => {
           const match = item.match(/<a [^>]+>(.*?)<\/a>/);
           if (!match) return null;
-
+    
           const url = match[0].match(/href="([^"]+)"/)[1];
           const title = match[1];
-
+    
           return `<li>${title} <a href="${url}" target="_blank" rel="noopener">▶️</a></li>`;
         })
         .filter(Boolean)
         .join("");
-
+    
       output.push(`<p class="playlist-header">${headerText}</p>`);
       output.push(`<ul class="playlist-links">${items}</ul>`);
       continue;
     }
-
+    
     // --- FORMAT B: Multi-paragraph playlist block ---
     if (collapsed.startsWith("•") && playlistUrls === 1) {
       const match = linked.match(/<a [^>]+>(.*?)<\/a>/);
