@@ -220,6 +220,83 @@ function linkify(text, playlistTitleMap) {
   });
 }
 
+function convertToHtmlParagraphs(raw) {
+  if (!raw) return "";
+
+  raw = raw.replace(/\r/g, "");
+
+  const paragraphs = raw
+    .split(/\n\s*\n/)
+    .map(p => p.trim())
+    .filter(Boolean);
+
+  return paragraphs.map(p => `<p>${p}</p>`).join("\n");
+}
+
+function formatPlaylistBlocks(html) {
+  if (!html) return "";
+
+  const blocks = html.split(/(?=<p>)/g);
+
+  const output = [];
+  let i = 0;
+
+  while (i < blocks.length) {
+    const block = blocks[i];
+
+    const isHeader =
+      block.includes("🎵") ||
+      /More from/i.test(block);
+
+    if (isHeader) {
+      const headerText = block.replace(/<\/?p>/g, "").trim();
+
+      const items = [];
+      let j = i + 1;
+
+      while (j < blocks.length) {
+        const next = blocks[j];
+
+        const isBullet = next.includes("•");
+        const hasUrl = /https?:\/\/\S+/.test(next);
+
+        if (!isBullet && !hasUrl) break;
+
+        const text = next.replace(/<\/?p>/g, "").trim();
+        const urlMatch = text.match(/https?:\/\/\S+/);
+        const url = urlMatch ? urlMatch[0] : null;
+        const title = text.replace(url, "").replace("•", "").trim();
+
+        if (url && title) {
+          items.push({ title, url });
+        }
+
+        j++;
+      }
+
+      output.push(`<p><strong>${headerText}</strong></p>`);
+      output.push(
+        `<ul class="playlist-links">` +
+          items
+            .map(
+              item =>
+                `<li>${item.title} <a href="${item.url}" target="_blank" rel="noopener">▶️</a></li>`
+            )
+            .join("") +
+          `</ul>`
+      );
+
+      i = j;
+      continue;
+    }
+
+    output.push(block);
+    i++;
+  }
+
+  return output.join("\n");
+}
+
 /* -------------------------------------------------------------
    SONG OBJECT NORMALIZATION
    Converts raw YouTube API video objects into stable, normalized
@@ -228,27 +305,32 @@ function linkify(text, playlistTitleMap) {
 
 function buildSongObject(video, playlistTitleMap) {
   const song_id = video.slug;
+  const rawDescription = video.description || "";
+
+  // Phase 1: Convert raw text → <p> blocks
+  const htmlParagraphs = convertToHtmlParagraphs(rawDescription);
+
+  // Phase 2: Rewrite playlist blocks after HTML exists
+  const finalHtml = formatPlaylistBlocks(htmlParagraphs);
 
   return {
     song_id,
     youtube_id: video.id,
     title: video.title,
 
-    // Formatted HTML description (canonical)
-    description_html: formatDescriptionToHtml(video.youtube_metadata?.description || "", playlistTitleMap),
+    // Canonical formatted HTML description
+    description_html: finalHtml,
 
     url: `/music/${song_id}/`,
     thumbnail: `/assets/thumbnails/${song_id}.jpeg`,
     videostatus: video.videostatus_raw,
     playlists: video.playlists || [],
 
-    // Numeric view count (normalized)
     view_count_num: parseInt(
       video.youtube_metadata?.statistics?.view_count || "0",
       10
     ),
 
-    // Full upstream YouTube metadata (append‑only)
     youtube_metadata: {
       published_at: video.publishedAt || null,
       scheduled_at: video.scheduledAt || null,
@@ -257,17 +339,15 @@ function buildSongObject(video, playlistTitleMap) {
       category_id: video.youtube_metadata?.category_id || null,
       tags: video.youtube_metadata?.tags || [],
 
-      // contentDetails
       duration: video.youtube_metadata?.duration || null,
       definition: video.youtube_metadata?.definition || null,
-      dimension: video.youtube_metadata?.dimension || null,                 // ⭐ NEW
-      caption: video.youtube_metadata?.caption || null,                     // ⭐ NEW
-      licensed_content: video.youtube_metadata?.licensed_content || false,  // ⭐ NEW
+      dimension: video.youtube_metadata?.dimension || null,
+      caption: video.youtube_metadata?.caption || null,
+      licensed_content: video.youtube_metadata?.licensed_content || false,
       region_allowed: video.youtube_metadata?.region_allowed || [],
       region_blocked: video.youtube_metadata?.region_blocked || [],
-      content_rating: video.youtube_metadata?.content_rating || {},         // ⭐ upgraded
+      content_rating: video.youtube_metadata?.content_rating || {},
 
-      // statistics
       statistics: video.youtube_metadata?.statistics || {
         view_count: 0,
         like_count: 0,
@@ -275,16 +355,15 @@ function buildSongObject(video, playlistTitleMap) {
         comment_count: 0
       },
 
-      // status
       made_for_kids: video.youtube_metadata?.made_for_kids || false,
       self_declared_made_for_kids: video.youtube_metadata?.self_declared_made_for_kids || false,
       topic_categories: video.youtube_metadata?.topic_categories || [],
       privacy_status: video.privacyStatus || null,
       upload_status: video.uploadStatus || null,
       publish_at: video.publishAt || null,
-      license: video.youtube_metadata?.license || "",                              // ⭐ NEW
-      embeddable: video.youtube_metadata?.embeddable ?? true,                      // ⭐ NEW
-      public_stats_viewable: video.youtube_metadata?.public_stats_viewable ?? true // ⭐ NEW
+      license: video.youtube_metadata?.license || "",
+      embeddable: video.youtube_metadata?.embeddable ?? true,
+      public_stats_viewable: video.youtube_metadata?.public_stats_viewable ?? true
     }
   };
 }
