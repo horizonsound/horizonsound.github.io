@@ -97,7 +97,11 @@ function writeYaml(filepath, data) {
 function formatDescriptionToHtml(desc, playlistTitleMap) {
   if (!desc) return "";
 
-  // Split paragraphs FIRST — preserve formatting
+  // --- STEP 1: Pre-normalize ONLY the playlist URL lines ---
+  // Merge URL-only lines with the previous line so playlist name + URL stay together.
+  desc = desc.replace(/\n(https?:\/\/[^\s]+)/g, " $1");
+
+  // --- STEP 2: Split into paragraphs (raw text, formatting preserved) ---
   const rawParagraphs = desc
     .replace(/\r/g, "")
     .split(/\n\s*\n/)
@@ -107,61 +111,77 @@ function formatDescriptionToHtml(desc, playlistTitleMap) {
   const output = [];
   let pendingFormatBItems = [];
 
-  for (let i = 0; i < rawParagraphs.length; i++) {
-    let p = rawParagraphs[i];
+  // Utility: extract playlist items from raw text BEFORE linkify
+  function extractPlaylistItems(raw) {
+    // Normalize bullet spacing inside this paragraph only
+    const normalized = raw.replace(/\s*•\s*/g, " • ");
+    const parts = normalized.split("•").map(s => s.trim()).filter(Boolean);
 
-    // Detect playlist URLs BEFORE collapsing anything
+    const header = parts[0];
+    const items = [];
+
+    for (let i = 1; i < parts.length; i++) {
+      const seg = parts[i];
+
+      // Extract raw URL
+      const urlMatch = seg.match(/https?:\/\/[^\s]+/);
+      if (!urlMatch) continue;
+
+      const url = urlMatch[0];
+
+      // Extract title (text before URL)
+      const title = seg.replace(url, "").trim();
+
+      items.push({ title, url });
+    }
+
+    return { header, items };
+  }
+
+  // --- STEP 3: Process each paragraph ---
+  for (let i = 0; i < rawParagraphs.length; i++) {
+    const p = rawParagraphs[i];
+
     const playlistUrls = (p.match(/playlist\?list=/g) || []).length;
     const containsBullet = p.includes("•");
 
-    // --- FORMAT A: One-paragraph playlist block ---
+    // --- FORMAT A: One-paragraph playlist block (collapsed) ---
     if (playlistUrls >= 2 && containsBullet) {
+      const { header, items } = extractPlaylistItems(p);
 
-      // Normalize ONLY this paragraph
-      const normalized = p
-        .replace(/\n+/g, " ")        // collapse internal newlines
-        .replace(/\s*•\s*/g, " • "); // normalize bullet spacing
-
-      const linked = linkify(normalized, playlistTitleMap);
-
-      const segments = linked.split("•").map(s => s.trim()).filter(Boolean);
-      const headerText = segments[0];
-
-      const items = segments.slice(1).map(seg => {
-        const match = seg.match(/<a [^>]+>(.*?)<\/a>/);
-        if (!match) return null;
-
-        const url = match[0].match(/href="([^"]+)"/)[1];
-        const title = match[1];
-
-        return `<li>${title} <a href="${url}" target="_blank" rel="noopener">▶️</a></li>`;
-      }).filter(Boolean).join("");
-
-      output.push(`<p class="playlist-header">${headerText}</p>`);
-      output.push(`<ul class="playlist-links">${items}</ul>`);
+      output.push(`<p><strong>${header}</strong></p>`);
+      output.push(
+        `<ul class="playlist-links">` +
+          items
+            .map(
+              item =>
+                `<li>${item.title} <a href="${item.url}" target="_blank" rel="noopener">▶️</a></li>`
+            )
+            .join("") +
+          `</ul>`
+      );
       continue;
     }
 
-    // --- FORMAT B: Multi-paragraph playlist block ---
+    // --- FORMAT B: Multi-paragraph playlist block (bullets on separate lines) ---
     if (p.startsWith("•") && playlistUrls === 1) {
-      const linked = linkify(p, playlistTitleMap);
-      const match = linked.match(/<a [^>]+>(.*?)<\/a>/);
-
-      if (match) {
-        const url = match[0].match(/href="([^"]+)"/)[1];
-        const title = match[1];
-        pendingFormatBItems.push(`<li>${title} <a href="${url}" target="_blank" rel="noopener">▶️</a></li>`);
+      const { items } = extractPlaylistItems(p);
+      if (items.length > 0) {
+        const item = items[0];
+        pendingFormatBItems.push(
+          `<li>${item.title} <a href="${item.url}" target="_blank" rel="noopener">▶️</a></li>`
+        );
         continue;
       }
     }
 
-    // Flush Format B items
+    // Flush Format B items when we hit a non-playlist paragraph
     if (pendingFormatBItems.length > 0) {
       output.push(`<ul class="playlist-links">${pendingFormatBItems.join("")}</ul>`);
       pendingFormatBItems = [];
     }
 
-    // --- VIBE BLOCK ---
+    // --- VIBE BLOCK (raw text, before linkify) ---
     const containsVibeEmoji = /🎧|🎤|🎛️|⚡/.test(p);
     if (containsVibeEmoji && p.includes(":")) {
       const linked = linkify(p, playlistTitleMap);
@@ -171,7 +191,7 @@ function formatDescriptionToHtml(desc, playlistTitleMap) {
       continue;
     }
 
-    // --- NORMAL PARAGRAPH ---
+    // --- NORMAL PARAGRAPH (linkify allowed) ---
     output.push(`<p>${linkify(p, playlistTitleMap)}</p>`);
   }
 
