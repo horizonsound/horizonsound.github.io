@@ -114,17 +114,6 @@ function linkify(text) {
   const urlRegex = /(https?:\/\/[^\s]+)/g;
 
   return text.replace(urlRegex, url => {
-    // Detect YouTube playlist links
-    const match = url.match(/[?&]list=([^&]+)/);
-    if (match) {
-      const playlistId = match[1];
-      const title = playlistTitleMap[playlistId];
-      if (title) {
-        return `<a href="${url}" target="_blank" rel="noopener">${title}</a>`;
-      }
-    }
-
-    // Fallback: show raw URL
     return `<a href="${url}" target="_blank" rel="noopener">${url}</a>`;
   });
 }
