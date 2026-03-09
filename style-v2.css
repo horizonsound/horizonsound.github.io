@@ -1240,3 +1240,101 @@ body::before {
   max-width: 900px;
   margin: 0 auto;
 }
+/* ============================================
+   PLAYLIST PAGE — APPLE TV STYLE OVERRIDES
+   (Temporary override layer — safe to remove later)
+============================================ */
+
+/* Wider, more cinematic content column */
+.playlist-page,
+.playlist-header,
+.player-frame,
+.playlist-description,
+.playlist-about,
+.playlist-lyrics {
+  max-width: 1200px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 40px !important;
+  padding-right: 40px !important;
+}
+
+/* Larger, premium playlist title */
+.playlist-header .section-header {
+  font-size: 3rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.5px !important;
+  margin-bottom: 12px !important;
+}
+
+/* Subtitle / artist name */
+.playlist-header .playlist-subtitle {
+  font-size: 1.4rem !important;
+  opacity: 0.85 !important;
+  margin-top: 4px !important;
+}
+
+/* Cinematic hero height */
+.hero-banner img.hero-image {
+  height: 420px !important;
+  object-fit: cover !important;
+}
+
+/* Apple TV–style player: large, centered, cinematic */
+.player-frame {
+  background: rgba(255,255,255,0.06) !important;
+  backdrop-filter: blur(14px) !important;
+  border-radius: 20px !important;
+  padding: 32px !important;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.45) !important;
+  margin-top: 48px !important;
+  margin-bottom: 48px !important;
+}
+
+/* Larger video player */
+.player-frame .video-wrapper {
+  padding-bottom: 48% !important; /* taller than 16:9 for premium feel */
+  border-radius: 16px !important;
+}
+
+/* Carousel spacing + premium feel */
+.player-frame .carousel {
+  margin-top: 32px !important;
+}
+
+.player-frame .carousel-tile {
+  flex: 0 0 200px !important;
+  width: 200px !important;
+}
+
+.player-frame .carousel-tile img {
+  height: 200px !important;
+  border-radius: 12px !important;
+}
+
+/* Apple TV–style section headers */
+.playlist-about .section-header,
+.playlist-lyrics .section-header {
+  font-size: 2.2rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.3px !important;
+  margin-bottom: 20px !important;
+}
+
+/* Premium description text */
+.playlist-description {
+  font-size: 1.4rem !important;
+  line-height: 1.65 !important;
+  opacity: 0.92 !important;
+  max-width: 900px !important;
+  text-align: center !important;
+  margin-top: 24px !important;
+  margin-bottom: 40px !important;
+}
+
+/* More breathing room between sections */
+.playlist-about,
+.playlist-lyrics {
+  margin-top: 60px !important;
+  margin-bottom: 60px !important;
+}
