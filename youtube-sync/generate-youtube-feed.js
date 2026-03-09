@@ -97,31 +97,32 @@ function writeYaml(filepath, data) {
 function formatDescriptionToHtml(desc, playlistTitleMap) {
   if (!desc) return "";
 
-  // Build array of <p> or <li> blocks
   const paragraphs = desc
     .split(/\n\s*\n/)
     .map(p => p.trim())
     .filter(p => p.length > 0)
-    .map(p => {
+    .flatMap(p => {
       const collapsed = p.replace(/\n+/g, " ").trim();
       const linked = linkify(collapsed, playlistTitleMap);
 
-      // Detect "Label <a href="...">Label</a>"
-      const listItemMatch = linked.match(/^(.+?)\s*<a /);
-
-      if (listItemMatch) {
-        const label = listItemMatch[1].trim();
-        const link = linked.replace(label, "").trim();
-        return `<li>${link}</li>`;
+      // Detect playlist line (contains multiple " • " separators)
+      if (linked.includes(" • ")) {
+        return linked
+          .split(" • ")
+          .map(item => {
+            // Extract the <a>...</a> part
+            const match = item.match(/<a [^>]+>.*?<\/a>/);
+            if (match) return `<li>${match[0]}</li>`;
+            return null;
+          })
+          .filter(Boolean);
       }
 
       return `<p>${linked}</p>`;
     });
 
-  // Join into one string
   const html = paragraphs.join("");
 
-  // If any <li> exists, wrap in <ul>
   if (html.includes("<li>")) {
     return `<ul class="playlist-links">${html}</ul>`;
   }
