@@ -1385,3 +1385,8 @@ body::before {
   padding-left: 40px;
   padding-right: 40px;
 }
+.playlist-page .player-frame iframe {
+  width: 100% !important;
+  height: 60vh !important;
+  max-height: none !important;
+}
