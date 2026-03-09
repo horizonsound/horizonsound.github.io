@@ -97,17 +97,10 @@ function writeYaml(filepath, data) {
 function formatDescriptionToHtml(desc, playlistTitleMap) {
   if (!desc) return "";
 
-  // Normalize bullets and spacing BEFORE splitting into paragraphs
-  desc = desc
-    .replace(/\r/g, "")
-    .replace(/\n+/g, "\n")               // collapse multiple newlines
-    .replace(/•\s*/g, "• ")              // ensure space after bullet
-    .replace(/\s*•/g, " •")              // ensure space before bullet
-    .replace(/•\s+/g, "• ")              // normalize bullet spacing
-    .replace(/\s+https:\/\//g, " https://"); // ensure space before URLs
-
+  // Split paragraphs FIRST — preserve formatting
   const rawParagraphs = desc
-    .split(/\n\s*\n/)                    // split on blank lines
+    .replace(/\r/g, "")
+    .split(/\n\s*\n/)
     .map(p => p.trim())
     .filter(Boolean);
 
@@ -115,20 +108,23 @@ function formatDescriptionToHtml(desc, playlistTitleMap) {
   let pendingFormatBItems = [];
 
   for (let i = 0; i < rawParagraphs.length; i++) {
-    const p = rawParagraphs[i];
+    let p = rawParagraphs[i];
 
-    // Collapse internal newlines inside a paragraph
-    const collapsed = p.replace(/\n+/g, " ").trim();
-    const linked = linkify(collapsed, playlistTitleMap);
-
-    const playlistUrls = (linked.match(/playlist\?list=/g) || []).length;
-    const containsBullet = linked.includes("•");
-    const containsVibeEmoji = /🎧|🎤|🎛️|⚡/.test(collapsed);
+    // Detect playlist URLs BEFORE collapsing anything
+    const playlistUrls = (p.match(/playlist\?list=/g) || []).length;
+    const containsBullet = p.includes("•");
 
     // --- FORMAT A: One-paragraph playlist block ---
     if (playlistUrls >= 2 && containsBullet) {
-      const segments = linked.split("•").map(s => s.trim()).filter(Boolean);
 
+      // Normalize ONLY this paragraph
+      const normalized = p
+        .replace(/\n+/g, " ")        // collapse internal newlines
+        .replace(/\s*•\s*/g, " • "); // normalize bullet spacing
+
+      const linked = linkify(normalized, playlistTitleMap);
+
+      const segments = linked.split("•").map(s => s.trim()).filter(Boolean);
       const headerText = segments[0];
 
       const items = segments.slice(1).map(seg => {
@@ -147,8 +143,10 @@ function formatDescriptionToHtml(desc, playlistTitleMap) {
     }
 
     // --- FORMAT B: Multi-paragraph playlist block ---
-    if (collapsed.startsWith("•") && playlistUrls === 1) {
+    if (p.startsWith("•") && playlistUrls === 1) {
+      const linked = linkify(p, playlistTitleMap);
       const match = linked.match(/<a [^>]+>(.*?)<\/a>/);
+
       if (match) {
         const url = match[0].match(/href="([^"]+)"/)[1];
         const title = match[1];
@@ -164,15 +162,17 @@ function formatDescriptionToHtml(desc, playlistTitleMap) {
     }
 
     // --- VIBE BLOCK ---
-    if (containsVibeEmoji && collapsed.includes(":")) {
-      const parts = collapsed.split(/ (?=🎤|🎛️|⚡)/);
+    const containsVibeEmoji = /🎧|🎤|🎛️|⚡/.test(p);
+    if (containsVibeEmoji && p.includes(":")) {
+      const linked = linkify(p, playlistTitleMap);
+      const parts = linked.split(/ (?=🎤|🎛️|⚡)/);
       const items = parts.map(part => `<li>${part}</li>`).join("");
       output.push(`<ul class="vibe-list">${items}</ul>`);
       continue;
     }
 
     // --- NORMAL PARAGRAPH ---
-    output.push(`<p>${linked}</p>`);
+    output.push(`<p>${linkify(p, playlistTitleMap)}</p>`);
   }
 
   // Flush any remaining Format B items
