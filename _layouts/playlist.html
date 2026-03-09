@@ -63,7 +63,6 @@ layout: default
         <!-- The ONLY player container -->
         <div id="selected-song-player"></div>
     
-        <!-- Carousel lives inside the same frame -->
         {% assign ids = playlist_override.songs | default: playlist.song_ids %}
         {% assign ordered_songs = "" | split: "" %}
         {% for id in ids %}
