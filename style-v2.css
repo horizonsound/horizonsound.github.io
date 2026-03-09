@@ -1245,3 +1245,59 @@ body::before {
   display: block;
   width: 100%;
 }
+
+/* ----------------------------------------------------------
+   APPLE MUSIC–STYLE TYPOGRAPHY FOR PLAYER FRAME
+   ---------------------------------------------------------- */
+
+/* Global smoothing */
+.player-frame,
+.player-frame * {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Song Title — left aligned, bold, clean */
+.player-title {
+  margin: 0;
+  padding: 0;
+  font-size: 32px;          /* Apple Music uses 28–34px for titles */
+  font-weight: 600;         /* Semi-bold, not heavy */
+  letter-spacing: -0.01em;  /* Slight tightening for premium feel */
+  line-height: 1.15;
+  text-align: left;
+  color: #ffffff;
+}
+
+/* Song Subtitle — centered, subtle, elegant */
+.player-subtitle {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;          /* Slightly smaller than title */
+  font-weight: 400;         /* Regular weight */
+  letter-spacing: 0;        /* Apple Music keeps subtitles neutral */
+  line-height: 1.2;
+  opacity: 0.85;            /* Softer presence */
+  color: #ffffff;
+
+  /* Centering relative to the player width */
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+/* Header container spacing */
+.player-header {
+  position: relative;
+  width: 100%;
+  margin-bottom: 24px;      /* Space between header and player */
+}
+
+/* Frame padding (your 40px cinematic border) */
+.player-frame {
+  padding: 40px !important;
+  box-sizing: border-box;
+}
