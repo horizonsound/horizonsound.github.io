@@ -103,17 +103,30 @@ function formatDescriptionToHtml(desc) {
     .map(p => p.trim())
     .filter(p => p.length > 0)
     .map(p => {
-      const collapsed = p.replace(/\n+/g, " ").trim();
-      const linked = linkify(collapsed);
+     const playlistTitleMap = {};
+     for (const pl of playlists) {
+       playlistTitleMap[pl.id] = pl.title;
+     }
+     const collapsed = p.replace(/\n+/g, " ").trim();
+      const linked = linkify(collapsed, playlistTitleMap);
       return `<p>${linked}</p>`;
     })
     .join("");
 }
 
-function linkify(text) {
+function linkify(text, playlistTitleMap) {
   const urlRegex = /(https?:\/\/[^\s]+)/g;
 
   return text.replace(urlRegex, url => {
+    const match = url.match(/[?&]list=([^&]+)/);
+    if (match) {
+      const playlistId = match[1];
+      const title = playlistTitleMap[playlistId];
+      if (title) {
+        return `<a href="${url}" target="_blank" rel="noopener">${title}</a>`;
+      }
+    }
+
     return `<a href="${url}" target="_blank" rel="noopener">${url}</a>`;
   });
 }
