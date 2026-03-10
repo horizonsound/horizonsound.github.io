@@ -189,7 +189,7 @@ function formatPlaylistBlocks(html) {
 
 function buildSongObject(video, playlistTitleMap) {
   const song_id = video.slug;
-  const rawDescription = video.description || "";
+  const rawDescription = video.description || "xxx";
 
   // Phase 1: Convert raw text → <p> blocks
   const htmlParagraphs = convertToHtmlParagraphs(rawDescription);
