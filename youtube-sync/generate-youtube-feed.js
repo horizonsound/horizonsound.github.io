@@ -106,7 +106,7 @@ function formatDescriptionToHtml(desc) {
     .filter(p => p.length > 0)      // remove empty paragraphs
     .map(p => {
       // collapse internal newlines into spaces
-      const collapsed = p.replace(/\n+/g, " ").trim();
+      // const collapsed = p.replace(/\n+/g, " ").trim();
       return `<p>${collapsed}</p>`;
     })
     .join("");                    // no blank lines between paragraphs
