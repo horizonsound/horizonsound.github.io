@@ -100,10 +100,12 @@ function formatDescriptionToHtml(desc) {
 
   // Force newline before every bullet
   desc = desc.replace(/•/g, "\n•");
+
   // Force blank line before each vibe marker
   desc = desc.replace(/(🎧|🎤|🎛️|⚡|🎼|✨)/g, "\n\n$1");
 
-  return desc
+  // First pass: turn paragraphs into <p> blocks
+  let html = desc
     .split(/\n\s*\n/)               // split on blank lines
     .map(p => p.trim())             // trim whitespace
     .filter(p => p.length > 0)      // remove empty paragraphs
@@ -113,38 +115,42 @@ function formatDescriptionToHtml(desc) {
         const urlMatch = p.match(/https?:\/\/\S+/);
         if (urlMatch) {
           const url = urlMatch[0];
-          const title = p.replace(url, "").trim();  // keeps the bullet + title
+          const title = p.replace(url, "").trim();
           return `<p>${title} <a href="${url}" target="_blank" rel="noopener">▶️</a></p>`;
         }
       }
 
-      // Normal paragraph
       return `<p>${p}</p>`;
     })
     .join("");
-    html = html.replace(
+
+  // Convert playlist header + bullet paragraphs into a UL
+  html = html.replace(
     /<p>🎵 More from Horizon Sound<\/p>((?:<p>•.*?<\/p>)+)/,
     (match, bullets) => {
       const items = bullets
         .match(/<p>•.*?<\/p>/g)
         .map(p => p.replace(/^<p>•\s*/, "<li>").replace(/<\/p>$/, "</li>"))
         .join("");
-  
+
       return `<p class="playlist-header">🎵 More from Horizon Sound</p><ul class="playlist-links">${items}</ul>`;
     }
   );
+
+  // Convert consecutive vibe paragraphs into a UL
   html = html.replace(
-    /((?:<p>(?:🎧|🎤|🎛️|⚡).*?<\/p>)+)/,
+    /((?:<p>(?:🎧|🎤|🎛️|⚡|🎼|✨).*?<\/p>)+)/,
     (match) => {
       const items = match
         .match(/<p>.*?<\/p>/g)
         .map(p => p.replace(/^<p>/, "<li>").replace(/<\/p>$/, "</li>"))
         .join("");
-  
+
       return `<ul class="vibe-list">${items}</ul>`;
     }
   );
 
+  return html;
 }
 
 /* -------------------------------------------------------------
