@@ -2,28 +2,6 @@
 
 
 /* ============================================
-   PLAYLIST PAGE — HEADER RESTORE
-============================================ */
-
-.playlist-header {
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  z-index: 20;
-  margin-top: -140px;   /* adjust to taste */
-  padding: 0 40px;
-  text-align: center;
-}
-
-.playlist-header .section-header {
-  font-size: 2.2rem;
-  margin-bottom: 12px;
-  text-align: center;
-}
-
-
-/* ============================================
    MOBILE — CAROUSEL TILE RESIZE (FINAL)
 ============================================ */
 @media (max-width: 450px) {
