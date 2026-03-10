@@ -196,34 +196,6 @@ footer {
 /* ============================================
    COMPONENTS — CAROUSEL
 ============================================ */
-.carousel {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  position: relative;
-}
-
-.carousel::before,
-.carousel::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 60px;
-  height: 100%;
-  pointer-events: none;
-  z-index: 5;
-}
-
-.carousel::before {
-  left: 0;
-  background: linear-gradient(to right, rgba(0,0,0,0.8), transparent);
-}
-
-.carousel::after {
-  right: 0;
-  background: linear-gradient(to left, rgba(0,0,0,0.8), transparent);
-}
-
 .horizontal-strip {
   display: flex;
   flex-direction: row;
@@ -780,10 +752,6 @@ footer {
 .music-page .carousel-tile {
   flex: 0 0 240px !important;
   width: 240px !important;
-}
-
-.player-frame .carousel {
-  overflow: visible !important;
 }
 
 .player-frame .horizontal-strip {
