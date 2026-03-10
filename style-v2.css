@@ -727,13 +727,6 @@ footer {
   text-align: center;
 }
 
-.playlist-description {
-  text-align: center !important;
-  max-width: 900px;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
 /* ============================================
    MOBILE — CAROUSEL TILE RESIZE (FINAL)
 ============================================ */
