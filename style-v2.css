@@ -1322,6 +1322,12 @@ body::before {
   margin: 4px 0;
 }
 
-.description p {
-  margin-bottom: 8px;
+.song-description p + ul,
+.playlist-about-text p + ul {
+  margin-top: 8px;
 }
+
+.song-description p + .vibe-list {
+  margin-top: 4px;
+}
+
