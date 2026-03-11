@@ -184,6 +184,80 @@ title: Catalog – Horizon Sound
   position: relative;
 }
 
+
+
+
+
+  .content-carousel {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.content-strip {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 8px 0;
+  flex: 1;
+}
+
+.content-tile {
+  width: 180px;
+  min-width: 180px;
+  max-width: 180px;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.content-tile img {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.content-title {
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  padding: 8px;
+  border-radius: 0 0 10px 10px;
+  margin: 0;
+  font-size: 0.9rem;
+  width: 100%;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+.content-tile.coming-soon .content-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  border-radius: 10px;
+}
+
+.content-arrow {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+}
+
 </style>
 
 {% assign all_songs = site.data.youtube_feed.songs %}
