@@ -107,6 +107,9 @@ title: Catalog – Horizon Sound
     </div>
     <div class="catalog-content">
       <section id="catalog-view-collection">
+        <!-- ============================================================
+             PREMIUM COLLECTIONS VIEW
+        ============================================================ -->
         {% include catalog-premium-tiles.html %}
       </section>
 
@@ -117,7 +120,7 @@ title: Catalog – Horizon Sound
                GROUPED VIEW
           ============================================================ -->
           <h3 class="catalog-section-title">Catalog Grouped View</h3>
-          <div class="catalog-placeholder">Grouped view placeholder.</div>
+          {% include catalog-grouped-view.html %}
         </section>
 
         <section id="catalog-view-all" style="display:none;">
@@ -125,7 +128,7 @@ title: Catalog – Horizon Sound
                ALL SONGS VIEW
           ============================================================ -->        
           <h3 class="catalog-section-title">Catalog All Music View</h3>
-          <div class="catalog-placeholder">All music view placeholder.</div>
+          {% include catalog-all-music-view.html %}
         </section>
 
         <section id="catalog-view-carousel" style="display:none;">
@@ -133,7 +136,7 @@ title: Catalog – Horizon Sound
                CAROUSEL VIEW
           ============================================================ -->
           <h3 class="catalog-section-title">Catalog Carousel View</h3>
-          <div class="catalog-placeholder">Carousel view placeholder.</div>
+          {% include catalog-carousel-view.html %}
         </section>
 
       </section>
