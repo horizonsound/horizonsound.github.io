@@ -11,8 +11,7 @@
       {% assign display_title = override.title | default: song.title %}
   
       {% if song.videostatus == "public" %}      
-        <a class="content-tile"
-           data-song-id="{{ song.song_id }}">
+        <a class="content-tile" href="{{ site.baseurl }}/music/playlists/{{ song.playlists[0] }}/?song_id={{ s.song_id }}">
           <img src="{{ site.baseurl }}{{ song.thumbnail }}" alt="{{ display_title }}">
           <h3 class="content-title">{{ display_title }}</h3>
         </a>
