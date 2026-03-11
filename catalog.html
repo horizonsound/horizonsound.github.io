@@ -330,6 +330,38 @@ title: Catalog – Horizon Sound
   background: rgba(255,255,255,0.2);
 }
 
+.shared-tile {
+  width: 260px;
+  min-width: 260px;
+  max-width: 260px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.shared-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+.shared-tile img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.shared-tile-title {
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  color: white;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(6px);
+}
+
+  
 </style>
 
 {% assign all_songs = site.data.youtube_feed.songs %}
