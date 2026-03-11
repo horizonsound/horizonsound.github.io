@@ -25,21 +25,23 @@
       {% endif %}
     {% endfor %}
 
-    {% for pl in active_playlists %}
-      <a class="shared-tile collection-premium"
-         href="{{ site.baseurl }}/music/playlists/{{ pl.playlist_id }}/?song_id={{ pl.song_ids | first }}">
-        <img src="{{ site.baseurl }}{{ pl.thumbnail }}">
-        <div class="shared-tile-title">{{ pl.title }}</div>
-      </a>
-    {% endfor %}
-
-    {% for pl in coming_soon_playlists %}
-      <div class="shared-tile collection-premium coming-soon">
-        <img src="{{ site.baseurl }}{{ pl.thumbnail }}">
-        <div class="tile-overlay">Coming Soon</div>
-        <div class="shared-tile-title">{{ pl.title }}</div>
-      </div>
-    {% endfor %}
+    <div class="catalog-group-panel collection-premium-panel">
+      {% for pl in active_playlists %}
+        <a class="shared-tile collection-premium"
+           href="{{ site.baseurl }}/music/playlists/{{ pl.playlist_id }}/?song_id={{ pl.song_ids | first }}">
+          <img src="{{ site.baseurl }}{{ pl.thumbnail }}">
+          <div class="shared-tile-title">{{ pl.title }}</div>
+        </a>
+      {% endfor %}
+  
+      {% for pl in coming_soon_playlists %}
+        <div class="shared-tile collection-premium coming-soon">
+          <img src="{{ site.baseurl }}{{ pl.thumbnail }}">
+          <div class="tile-overlay">Coming Soon</div>
+          <div class="shared-tile-title">{{ pl.title }}</div>
+        </div>
+      {% endfor %}
+    </div>
   </div>
 </div>
 {% for pl in site.data.youtube_playlists.playlists %}
