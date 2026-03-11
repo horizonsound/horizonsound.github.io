@@ -919,7 +919,7 @@ footer {
 
 .catalog-toggle {
   display: inline-flex;
-  background: rgba(255,255,255,0.08);
+  background: rgba(255,255,155,0.08);
   border-radius: 8px;
   padding: 4px;
   gap: 4px;
