@@ -117,13 +117,28 @@ title: Catalog – Horizon Sound
   .catalog-section-title {
     font-size: 1.1rem;
     margin: 0 0 8px;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+    white-space: normal;
+    position: relative;
+    z-index: 2;
   }
-
+  
   .catalog-placeholder {
     padding: 16px 0;
     opacity: 0.7;
     font-size: 0.95rem;
   }
+
+  .carousel-strip {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
 </style>
 
 {% assign all_songs = site.data.youtube_feed.songs %}
