@@ -1,60 +1,55 @@
 ---
 layout: default
-title: Catalog – Horizon Sound
+title: Music – Horizon Sound
 ---
 
-<section id="catalog-page">
+{% assign all_songs = site.data.youtube_feed.songs %}
+{% include hero.html %}
+<div class="music-page">
   <div class="catalog-panel">
-
     <div class="catalog-header">
-
-      <div class="catalog-header-row">
         <div class="catalog-toggle">
-          <button class="mode-toggle-button active" data-mode="collection">Collection Explorer</button>
+          <button class="mode-toggle-button active" data-mode="playlists">Playlist View</button>
           <button class="mode-toggle-button" data-mode="catalog">Catalog Explorer</button>
         </div>
-
-        <h2 class="catalog-page-title">Collection Explorer</h2>
-
-        <div class="catalog-header-spacer"></div>
-      </div>
-
-      <div class="catalog-subtoggle">
-        <button class="view-toggle-button active" data-view="grouped">Grouped by View</button>
-        <button class="view-toggle-button" data-view="all">All Music View</button>
-        <button class="view-toggle-button" data-view="carousel">Carousel View</button>
-      </div>
-
+       <h2 class="page-title">Catalog Explorer</h2>
     </div>
-
     <div class="catalog-content">
-
-      <section id="catalog-view-collection">
-        <h3 class="catalog-section-title">Collection Explorer</h3>
-        <div class="catalog-placeholder">Collection view placeholder.</div>
+      <!-- ============================================================
+           PLAYLIST VIEW (NEW DEFAULT MODE)
+           Premium 3:1 playlist tiles
+      ============================================================ -->
+      <section id="music-view-playlists">  
       </section>
-
-      <section id="catalog-view-catalog" style="display:none;">
-
-        <section id="catalog-view-grouped">
-          <h3 class="catalog-section-title">Catalog Grouped View</h3>
-          <div class="catalog-placeholder">Grouped view placeholder.</div>
+      
+      <section id="music-view-catalog" style="display:none;">
+        <div class="view-toggle">
+          <div class="view-toggle-buttons">
+            <button class="view-toggle-button active" data-view="grouped">Grouped by Playlist</button>
+            <button class="view-toggle-button" data-view="all">All Songs</button>
+            <button class="view-toggle-button" data-view="carousel">Carousel View</button>
+          </div>
+        </div>
+        <!-- ============================================================
+             GROUPED VIEW
+        ============================================================ -->
+        <section id="music-view-grouped">
         </section>
-
-        <section id="catalog-view-all" style="display:none;">
-          <h3 class="catalog-section-title">Catalog All Music View</h3>
-          <div class="catalog-placeholder">All music view placeholder.</div>
+        
+        <!-- ============================================================
+             ALL SONGS VIEW
+        ============================================================ -->
+        <section id="music-view-all" style="display:none;">
         </section>
-
-        <section id="catalog-view-carousel" style="display:none;">
-          <h3 class="catalog-section-title">Catalog Carousel View</h3>
-          <div class="catalog-placeholder">Carousel view placeholder.</div>
+        
+        <!-- ============================================================
+             CAROUSEL VIEW
+        ============================================================ -->
+        <section id="music-view-carousel" style="display:none;">
         </section>
-
+      
       </section>
-
     </div>
-
   </div>
-</section>
-
+</div>
+</div>
