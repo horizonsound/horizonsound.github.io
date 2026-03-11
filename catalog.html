@@ -360,8 +360,32 @@ title: Catalog – Horizon Sound
   background: rgba(0,0,0,0.35);
   backdrop-filter: blur(6px);
 }
+.catalog-group-panel {
+  background: rgba(255,255,255,0.05);
+  border-radius: 16px;
+  padding: 24px;
+  margin: 40px 0;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  backdrop-filter: blur(10px);
+}
 
-  
+.catalog-group-title {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+.catalog-group-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+  #catalog-view-grouped {
+  padding: 0 48px; /* match Stage */
+}
+ 
 </style>
 
 {% assign all_songs = site.data.youtube_feed.songs %}
