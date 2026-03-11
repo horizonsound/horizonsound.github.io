@@ -137,11 +137,15 @@ document.addEventListener("DOMContentLoaded", function () {
     catalogView.style.display = "block";
     modeButtons.forEach(b => b.classList.remove("active"));
     document.querySelector('[data-mode="catalog"]').classList.add("active");
+  document.querySelector(".catalog-subtoggle").style.display = "flex";
+  document.querySelector(".page-title").textContent = "Catalog Explorer";
   } else {
     playlistView.style.display = "block";
     catalogView.style.display = "none";
     modeButtons.forEach(b => b.classList.remove("active"));
     document.querySelector('[data-mode="playlists"]').classList.add("active");
+  document.querySelector(".catalog-subtoggle").style.display = "none";
+  document.querySelector(".page-title").textContent = "Playlist Explorer";
   }
 
   /* -----------------------------
