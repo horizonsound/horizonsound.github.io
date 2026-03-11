@@ -18,31 +18,23 @@ title: Music – Horizon Sound
           <button class="mode-toggle-button active" data-mode="playlists">Collection Explorer</button>
           <button class="mode-toggle-button" data-mode="catalog">Catalog Explorer</button>
         </div>
-    
+        
         <h2 class="page-title">Collection Explorer</h2>
-    
+        
         <div class="catalog-header-spacer"></div>
+        
+        <div class="catalog-subtoggle">
+          <button class="view-toggle-button active" data-view="grouped">Grouped by View</button>
+          <button class="view-toggle-button" data-view="all">All Music View</button>
+          <button class="view-toggle-button" data-view="carousel">Carousel View</button>
+        </div>      
       </div>
-    
-      <!-- ROW 2 -->
-      <div class="catalog-subtoggle">
-        <button class="view-toggle-button active" data-view="grouped">Grouped by View</button>
-        <button class="view-toggle-button" data-view="all">All Music View</button>
-        <button class="view-toggle-button" data-view="carousel">Carousel View</button>
-      </div>
-    
     </div>
 
     <!-- MAIN CONTENT -->
     <div class="catalog-content">
-      <section id="music-view-playlists">
-        <h2 class="section-header">Collection Explorer</h2>
-      </section>
 
       <section id="music-view-catalog" style="display:none;">
-        <section id="music-view-playlists">
-          <h2 class="section-header">Catalog Explorer</h2>
-        </section>
 
         <section id="music-view-grouped"></section>
           <section id="music-view-playlists">
@@ -141,92 +133,93 @@ title: Music – Horizon Sound
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   /* -----------------------------
-     TOP-LEVEL MODE RESTORE
-     (Playlist vs Catalog)
+     ELEMENT HOOKS
   ----------------------------- */
   const playlistView = document.getElementById("music-view-playlists");
-  const catalogView = document.getElementById("music-view-catalog");
-  const modeButtons = document.querySelectorAll(".mode-toggle-button");
+  const catalogView  = document.getElementById("music-view-catalog");
+  const modeButtons  = document.querySelectorAll(".mode-toggle-button");
 
+  const groupedView  = document.getElementById("music-view-grouped");
+  const allSongsView = document.getElementById("music-view-all");
+  const carouselView = document.getElementById("music-view-carousel");
+  const viewButtons  = document.querySelectorAll(".view-toggle-button");
+
+  const pageTitle    = document.querySelector(".page-title");
+  const subToggleRow = document.querySelector(".catalog-subtoggle");
+
+  /* -----------------------------
+     TOP-LEVEL MODE RESTORE
+  ----------------------------- */
   const savedMode = localStorage.getItem("music_mode") || "playlists";
 
-  if (savedMode === "catalog explorer") {
-    playlistView.style.display = "none";
-    catalogView.style.display = "block";
+  function applyMode(mode) {
+    // Update active button
     modeButtons.forEach(b => b.classList.remove("active"));
-    document.querySelector('[data-mode="catalog"]').classList.add("active");
-  document.querySelector(".catalog-subtoggle").style.display = "flex";
-  document.querySelector(".page-title").textContent = "Catalog Explorer";
-  } else {
-    playlistView.style.display = "block";
-    catalogView.style.display = "none";
-    modeButtons.forEach(b => b.classList.remove("active"));
-    document.querySelector('[data-mode="playlists"]').classList.add("active");
-  document.querySelector(".catalog-subtoggle").style.display = "none";
-  document.querySelector(".page-title").textContent = "Collection Explorer";
+    document.querySelector(`[data-mode="${mode}"]`).classList.add("active");
+
+    if (mode === "catalog") {
+      // Show catalog, hide playlists
+      if (catalogView)  catalogView.style.display  = "block";
+      if (playlistView) playlistView.style.display = "none";
+
+      // Title + sub-toggle row
+      pageTitle.textContent = "Catalog Explorer";
+      subToggleRow.style.display = "flex";
+
+      // Ensure some catalog view is active (default to grouped)
+      const savedCatalogView = localStorage.getItem("catalog_view") || "grouped";
+      applyCatalogView(savedCatalogView);
+    } else {
+      // Show playlists, hide catalog
+      if (playlistView) playlistView.style.display = "block";
+      if (catalogView)  catalogView.style.display  = "none";
+
+      pageTitle.textContent = "Collection Explorer";
+      subToggleRow.style.display = "none";
+    }
+
+    localStorage.setItem("music_mode", mode);
   }
+
+  /* -----------------------------
+     CATALOG SUB-VIEW APPLY
+  ----------------------------- */
+  function applyCatalogView(view) {
+    // Show only the selected view section
+    if (groupedView)  groupedView.style.display  = (view === "grouped")  ? "block" : "none";
+    if (allSongsView) allSongsView.style.display = (view === "all")      ? "block" : "none";
+    if (carouselView) carouselView.style.display = (view === "carousel") ? "block" : "none";
+
+    // Update active button
+    viewButtons.forEach(b => b.classList.remove("active"));
+    const activeBtn = document.querySelector(`[data-view="${view}"]`);
+    if (activeBtn) activeBtn.classList.add("active");
+
+    localStorage.setItem("catalog_view", view);
+  }
+
+  /* -----------------------------
+     INITIAL RESTORE
+  ----------------------------- */
+  applyMode(savedMode);
 
   /* -----------------------------
      TOP-LEVEL MODE CLICK HANDLER
   ----------------------------- */
   modeButtons.forEach(btn => {
     btn.addEventListener("click", () => {
-      modeButtons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-
-      const mode = btn.dataset.mode;
-
-      if (mode === "collection explorer") {
-        playlistView.style.display = "block";
-        catalogView.style.display = "none";
-        // UPDATE TITLE
-        document.querySelector(".page-title").textContent = "Collection Explorer";
-        document.querySelector(".catalog-subtoggle").style.display = "none";
-      } else {
-        playlistView.style.display = "none";
-        catalogView.style.display = "block";
-        // UPDATE TITLE
-        document.querySelector(".page-title").textContent = "Catalog Explorer";
-        document.querySelector(".catalog-subtoggle").style.display = "flex";
-      }
-
-      localStorage.setItem("music_mode", mode);
+      const mode = btn.dataset.mode; // "playlists" or "catalog"
+      applyMode(mode);
     });
   });
-  
-  /* -----------------------------
-     CATALOG SUB-VIEW RESTORE
-     (Grouped / All / Carousel)
-  ----------------------------- */
-  const groupedView = document.getElementById("music-view-grouped");
-  const allSongsView = document.getElementById("music-view-all");
-  const carouselView = document.getElementById("music-view-carousel");
-  const viewButtons = document.querySelectorAll(".view-toggle-button");
-
-  const savedCatalogView = localStorage.getItem("catalog_view") || "grouped";
-
-  groupedView.style.display = (savedCatalogView === "grouped") ? "block" : "none";
-  allSongsView.style.display = (savedCatalogView === "all") ? "block" : "none";
-  carouselView.style.display = (savedCatalogView === "carousel") ? "block" : "none";
-
-  viewButtons.forEach(b => b.classList.remove("active"));
-  document.querySelector(`[data-view="${savedCatalogView}"]`).classList.add("active");
 
   /* -----------------------------
      CATALOG SUB-VIEW CLICK HANDLER
   ----------------------------- */
   viewButtons.forEach(button => {
     button.addEventListener("click", () => {
-      viewButtons.forEach(b => b.classList.remove("active"));
-      button.classList.add("active");
-
-      const view = button.dataset.view;
-
-      groupedView.style.display = (view === "grouped") ? "block" : "none";
-      allSongsView.style.display = (view === "all") ? "block" : "none";
-      carouselView.style.display = (view === "carousel") ? "block" : "none";
-
-      localStorage.setItem("catalog_view", view);
+      const view = button.dataset.view; // "grouped" | "all" | "carousel"
+      applyCatalogView(view);
     });
   });
 });
