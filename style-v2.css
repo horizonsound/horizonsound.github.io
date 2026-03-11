@@ -358,6 +358,8 @@ footer {
   flex-direction: column !important;
   height: auto !important;
   width: 180px; /* or whatever your tile width is */
+  min-width: 180px;
+  max-width: 180px;
   flex: 0 0 auto;
   display: flex;
   flex-direction: column;
