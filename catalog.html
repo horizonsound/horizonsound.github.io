@@ -13,25 +13,28 @@ title: Music – Horizon Sound
     <div class="catalog-header">
     
       <!-- ROW 1: Mode toggle + centered title + spacer -->
-      <div class="catalog-header-row">
-        <div class="catalog-toggle">
-          <button class="mode-toggle-button active" data-mode="playlists">Collection Explorer</button>
-          <button class="mode-toggle-button" data-mode="catalog">Catalog Explorer</button>
+      <div class="catalog-header">
+      
+        <!-- ROW 1 -->
+        <div class="catalog-header-row">
+          <div class="catalog-toggle">
+            <button class="mode-toggle-button" data-mode="playlists">Collection Explorer</button>
+            <button class="mode-toggle-button" data-mode="catalog">Catalog Explorer</button>
+          </div>
+      
+          <h2 class="page-title">Collection Explorer</h2>
+      
+          <div class="catalog-header-spacer"></div>
         </div>
-    
-        <h2 class="page-title">Collection Explorer</h2>
-    
-        <div class="catalog-header-spacer"></div>
+      
+        <!-- ROW 2 -->
+        <div class="catalog-subtoggle" style="display:none;">
+          <button class="view-toggle-button" data-view="grouped">Grouped by View</button>
+          <button class="view-toggle-button" data-view="all">All Music View</button>
+          <button class="view-toggle-button" data-view="carousel">Carousel View</button>
+        </div>
+      
       </div>
-    
-      <!-- ROW 2: Sub-view toggle (hidden in playlists mode) -->
-      <div class="catalog-subtoggle" style="display:none;">
-        <button class="view-toggle-button active" data-view="grouped">Grouped by View</button>
-        <button class="view-toggle-button" data-view="all">All Music View</button>
-        <button class="view-toggle-button" data-view="carousel">Carousel View</button>
-      </div>
-    
-    </div>
 
     <!-- MAIN CONTENT -->
     <div class="catalog-content">
