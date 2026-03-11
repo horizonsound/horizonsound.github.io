@@ -1,352 +1,231 @@
 ---
 layout: default
-title: Music – Horizon Sound
+title: Catalog – Horizon Sound
 ---
 
-{% assign all_songs = site.data.youtube_feed.songs %}
-{% include hero.html %}
+<style>
+  .catalog-page {
+    padding: 0 30px;
+  }
 
-<div class="music-page">
+  .catalog-panel {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 16px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+    padding: 24px 32px 32px;
+    color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .catalog-header {
+    margin-bottom: 24px;
+  }
+
+  .catalog-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .catalog-toggle {
+    display: flex;
+    gap: 8px;
+  }
+
+  .catalog-header-spacer {
+    width: 120px; /* just enough to balance the left toggle width */
+  }
+
+  .catalog-page-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    font-size: 1.4rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .catalog-subtoggle {
+    display: none;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .catalog-content {
+    margin-top: 8px;
+  }
+
+  .mode-toggle-button,
+  .view-toggle-button {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: transparent;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .mode-toggle-button.active,
+  .view-toggle-button.active {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+  }
+
+  .catalog-section-title {
+    font-size: 1.1rem;
+    margin: 0 0 8px;
+  }
+
+  /* Placeholder content styling */
+  .catalog-placeholder {
+    padding: 16px 0;
+    opacity: 0.7;
+    font-size: 0.95rem;
+  }
+</style>
+
+<div class="catalog-page">
   <div class="catalog-panel">
 
     <!-- HEADER -->
     <div class="catalog-header">
-    
-      <!-- ROW 1: Mode toggle + centered title + spacer -->
-      <div class="catalog-header">
-      
-        <!-- ROW 1 -->
-        <div class="catalog-header-row">
-          <div class="catalog-toggle">
-            <button class="mode-toggle-button" data-mode="playlists">Collection Explorer</button>
-            <button class="mode-toggle-button" data-mode="catalog">Catalog Explorer</button>
-          </div>
-      
-          <h2 class="page-title">Collection Explorer</h2>
-      
-          <div class="catalog-header-spacer"></div>
+
+      <!-- ROW 1: page toggles + centered title + spacer -->
+      <div class="catalog-header-row">
+        <div class="catalog-toggle">
+          <button class="mode-toggle-button active" data-mode="collection">Collection Explorer</button>
+          <button class="mode-toggle-button" data-mode="catalog">Catalog Explorer</button>
         </div>
-      
-        <!-- ROW 2 -->
-        <div class="catalog-subtoggle" style="display:none;">
-          <button class="view-toggle-button" data-view="grouped">Grouped by View</button>
-          <button class="view-toggle-button" data-view="all">All Music View</button>
-          <button class="view-toggle-button" data-view="carousel">Carousel View</button>
-        </div>
-      
+
+        <h2 class="catalog-page-title">Collection Explorer</h2>
+
+        <div class="catalog-header-spacer"></div>
       </div>
+
+      <!-- ROW 2: view toggles (only in Catalog mode) -->
+      <div class="catalog-subtoggle">
+        <button class="view-toggle-button active" data-view="grouped">Grouped by View</button>
+        <button class="view-toggle-button" data-view="all">All Music View</button>
+        <button class="view-toggle-button" data-view="carousel">Carousel View</button>
+      </div>
+
+    </div>
 
     <!-- MAIN CONTENT -->
     <div class="catalog-content">
-    
-      <!-- COLLECTION EXPLORER -->
-      <section id="catalog-view-playlists">
-        <!-- (Leave empty for now — your saved content will go here) -->
+
+      <!-- COLLECTION EXPLORER (default) -->
+      <section id="catalog-view-collection">
+        <h3 class="catalog-section-title">Collection Explorer</h3>
+        <div class="catalog-placeholder">
+          Collection view placeholder (content to be added later).
+        </div>
       </section>
-    
+
       <!-- CATALOG EXPLORER -->
       <section id="catalog-view-catalog" style="display:none;">
-    
+
         <!-- GROUPED VIEW -->
         <section id="catalog-view-grouped">
-          <h2 class="section-header">Catalog Grouped View</h2>
-          <!-- (empty placeholder) -->
+          <h3 class="catalog-section-title">Catalog Grouped View</h3>
+          <div class="catalog-placeholder">
+            Grouped view placeholder (content to be added later).
+          </div>
         </section>
-    
+
         <!-- ALL MUSIC VIEW -->
         <section id="catalog-view-all" style="display:none;">
-          <h2 class="section-header">Catalog All Music View</h2>
-          <!-- (empty placeholder) -->
+          <h3 class="catalog-section-title">Catalog All Music View</h3>
+          <div class="catalog-placeholder">
+            All music view placeholder (content to be added later).
+          </div>
         </section>
-    
+
         <!-- CAROUSEL VIEW -->
         <section id="catalog-view-carousel" style="display:none;">
-          <h2 class="section-header">Catalog Carousel View</h2>
-          <!-- (empty placeholder) -->
+          <h3 class="catalog-section-title">Catalog Carousel View</h3>
+          <div class="catalog-placeholder">
+            Carousel view placeholder (content to be added later).
+          </div>
         </section>
-    
+
       </section>
-    
+
     </div>
 
-  </div><!-- catalog-panel -->
-</div><!-- music-page -->
-
-  <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const main = document.querySelector("main");
-  
-    // Intercept all playlist links on the Music page
-    document.querySelectorAll('a[href*="/music/playlists/"]').forEach(link => {
-      link.addEventListener("click", async (event) => {
-        event.preventDefault();
-  
-        const url = link.href;
-  
-        // Fetch the playlist page HTML
-        const response = await fetch(url, { credentials: "same-origin" });
-        const text = await response.text();
-  
-        // Parse the HTML
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(text, "text/html");
-  
-        // Extract the new <main> content
-        const newMain = doc.querySelector("main");
-        if (!newMain) {
-          window.location.href = url; // fallback
-          return;
-        }
-  
-        main.replaceWith(newMain);
-        history.pushState({}, "", url);
-    
-    // Execute scripts AFTER the DOM has parsed the new <main>
-    setTimeout(() => {
-      newMain.querySelectorAll("script").forEach(oldScript => {
-        const newScript = document.createElement("script");
-    
-        if (oldScript.src) {
-          newScript.src = oldScript.src;
-        } else {
-          newScript.textContent = oldScript.textContent;
-        }
-    
-        document.body.appendChild(newScript);
-        document.body.removeChild(newScript);
-      });
-    }, 0);
-  
-    // Handle back/forward navigation
-    window.addEventListener("popstate", async () => {
-      const url = window.location.href;
-      const response = await fetch(url, { credentials: "same-origin" });
-      const text = await response.text();
-  
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(text, "text/html");
-      const newMain = doc.querySelector("main");
-  
-      if (newMain) {
-        document.querySelector("main").replaceWith(newMain);
-  
-        const script = newMain.querySelector("script");
-        if (script) {
-          eval(script.innerText);
-        }
-      }
-    });
-  });
-  </script>
+  </div>
 </div>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  /* -----------------------------
-     ELEMENT HOOKS
-  ----------------------------- */
-  const playlistView = document.getElementById("music-view-playlists");
-  const catalogView  = document.getElementById("music-view-catalog");
-  const modeButtons  = document.querySelectorAll(".mode-toggle-button");
+  const modeButtons = document.querySelectorAll(".mode-toggle-button");
+  const viewButtons = document.querySelectorAll(".view-toggle-button");
 
-  const groupedView  = document.getElementById("music-view-grouped");
-  const allSongsView = document.getElementById("music-view-all");
-  const carouselView = document.getElementById("music-view-carousel");
-  const viewButtons  = document.querySelectorAll(".view-toggle-button");
+  const pageTitle      = document.querySelector(".catalog-page-title");
+  const subToggleRow   = document.querySelector(".catalog-subtoggle");
 
-  const pageTitle    = document.querySelector(".page-title");
-  const subToggleRow = document.querySelector(".catalog-subtoggle");
+  const collectionView = document.getElementById("catalog-view-collection");
+  const catalogView    = document.getElementById("catalog-view-catalog");
 
-  /* -----------------------------
-     TOP-LEVEL MODE RESTORE
-  ----------------------------- */
-  const savedMode = localStorage.getItem("music_mode") || "playlists";
+  const groupedView    = document.getElementById("catalog-view-grouped");
+  const allView        = document.getElementById("catalog-view-all");
+  const carouselView   = document.getElementById("catalog-view-carousel");
 
-  function applyMode(mode) {
-    // Update active button
+  function setMode(mode) {
     modeButtons.forEach(b => b.classList.remove("active"));
-    document.querySelector(`[data-mode="${mode}"]`).classList.add("active");
+    const activeModeBtn = document.querySelector(`[data-mode="${mode}"]`);
+    if (activeModeBtn) activeModeBtn.classList.add("active");
 
     if (mode === "catalog") {
-      // Show catalog, hide playlists
-      if (catalogView)  catalogView.style.display  = "block";
-      if (playlistView) playlistView.style.display = "none";
+      if (collectionView) collectionView.style.display = "none";
+      if (catalogView)    catalogView.style.display    = "block";
 
-      // Title + sub-toggle row
       pageTitle.textContent = "Catalog Explorer";
       subToggleRow.style.display = "flex";
 
-      // Ensure some catalog view is active (default to grouped)
-      const savedCatalogView = localStorage.getItem("catalog_view") || "grouped";
-      applyCatalogView(savedCatalogView);
+      setCatalogView("grouped");
     } else {
-      // Show playlists, hide catalog
-      if (playlistView) playlistView.style.display = "block";
-      if (catalogView)  catalogView.style.display  = "none";
+      if (collectionView) collectionView.style.display = "block";
+      if (catalogView)    catalogView.style.display    = "none";
 
       pageTitle.textContent = "Collection Explorer";
       subToggleRow.style.display = "none";
     }
-
-    localStorage.setItem("music_mode", mode);
   }
 
-  /* -----------------------------
-     CATALOG SUB-VIEW APPLY
-  ----------------------------- */
-  function applyCatalogView(view) {
-    // Show only the selected view section
+  function setCatalogView(view) {
     if (groupedView)  groupedView.style.display  = (view === "grouped")  ? "block" : "none";
-    if (allSongsView) allSongsView.style.display = (view === "all")      ? "block" : "none";
+    if (allView)      allView.style.display      = (view === "all")      ? "block" : "none";
     if (carouselView) carouselView.style.display = (view === "carousel") ? "block" : "none";
 
-    // Update active button
     viewButtons.forEach(b => b.classList.remove("active"));
-    const activeBtn = document.querySelector(`[data-view="${view}"]`);
-    if (activeBtn) activeBtn.classList.add("active");
-
-    localStorage.setItem("catalog_view", view);
+    const activeViewBtn = document.querySelector(`[data-view="${view}"]`);
+    if (activeViewBtn) activeViewBtn.classList.add("active");
   }
 
-  /* -----------------------------
-     INITIAL RESTORE
-  ----------------------------- */
-  applyMode(savedMode);
+  // Initial state: Collection Explorer
+  setMode("collection");
 
-  /* -----------------------------
-     TOP-LEVEL MODE CLICK HANDLER
-  ----------------------------- */
   modeButtons.forEach(btn => {
     btn.addEventListener("click", () => {
-      const mode = btn.dataset.mode; // "playlists" or "catalog"
-      applyMode(mode);
+      const mode = btn.dataset.mode; // "collection" | "catalog"
+      setMode(mode);
     });
   });
 
-  /* -----------------------------
-     CATALOG SUB-VIEW CLICK HANDLER
-  ----------------------------- */
-  viewButtons.forEach(button => {
-    button.addEventListener("click", () => {
-      const view = button.dataset.view; // "grouped" | "all" | "carousel"
-      applyCatalogView(view);
-    });
-  });
-});
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const savedCatalogView = localStorage.getItem("catalog_view") || "grouped";
-  
-  groupedView.style.display = (savedCatalogView === "grouped") ? "block" : "none";
-  allSongsView.style.display = (savedCatalogView === "all") ? "block" : "none";
-  carouselView.style.display = (savedCatalogView === "carousel") ? "block" : "none";
-  
-  viewButtons.forEach(b => b.classList.remove("active"));
-  document.querySelector(`[data-view="${savedCatalogView}"]`).classList.add("active");
-
-  const viewButtons = document.querySelectorAll(".view-toggle-button");
-  const groupedView = document.getElementById("music-view-grouped");
-  const allSongsView = document.getElementById("music-view-all");
-  const carouselView = document.getElementById("music-view-carousel");
-
-  viewButtons.forEach(button => {
-    button.addEventListener("click", () => {
-      viewButtons.forEach(b => b.classList.remove("active"));
-      button.classList.add("active");
-
-      const view = button.dataset.view;
-
-      groupedView.style.display = (view === "grouped") ? "block" : "none";
-      allSongsView.style.display = (view === "all") ? "block" : "none";
-      carouselView.style.display = (view === "carousel") ? "block" : "none";
-      localStorage.setItem("catalog_view", view);
-    });
-  });
-});
-</script>
-
-<script>
-document.querySelectorAll('.playlist-premium-tile, .tile').forEach(tile => {
-  tile.addEventListener('click', async (e) => {
-    if (tile.classList.contains('coming-soon')) return;
-
-    e.preventDefault(); // stop full page reload
-
-    const url = tile.getAttribute('href');
-
-    // Fetch the playlist page HTML
-    const response = await fetch(url, { credentials: 'same-origin' });
-    const html = await response.text();
-
-    // Replace the entire <main> content with the new page
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(html, 'text/html');
-    const newMain = doc.querySelector('main');
-
-    document.querySelector('main').replaceWith(newMain);
-
-    // Update the URL without reloading
-    history.pushState({}, "", url);
-
-    // Re-run the playlist page scripts
-    const scripts = newMain.querySelectorAll("script");
-    scripts.forEach(oldScript => {
-      const s = document.createElement("script");
-      if (oldScript.src) {
-        s.src = oldScript.src;
-      } else {
-        s.textContent = oldScript.textContent;
-      }
-      document.body.appendChild(s);
-    });
-  });
-});
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll('a').forEach(link => {
-    const href = link.getAttribute('href');
-    if (!href) return;
-
-    // Only intercept internal navigation
-    const isInternal =
-      href.startsWith('{{ site.baseurl }}/music') ||
-      href === '{{ site.baseurl }}/' ||
-      href === '{{ site.baseurl }}' ||
-      href === '/' ||
-      href === '/index.html'; ||
-      href === '/about.html';
-
-    if (!isInternal) return;
-
-    link.addEventListener('click', async (e) => {
-      e.preventDefault();
-
-      const url = link.href;
-
-      const response = await fetch(url, { credentials: 'same-origin' });
-      const html = await response.text();
-
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
-      const newMain = doc.querySelector('main');
-
-      document.querySelector('main').replaceWith(newMain);
-      history.pushState({}, "", url);
-
-      const scripts = newMain.querySelectorAll("script");
-      scripts.forEach(oldScript => {
-        const s = document.createElement("script");
-        if (oldScript.src) {
-          s.src = oldScript.src;
-        } else {
-          s.textContent = oldScript.textContent;
-        }
-        document.body.appendChild(s);
-      });
+  viewButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const view = btn.dataset.view; // "grouped" | "all" | "carousel"
+      setCatalogView(view);
     });
   });
 });
