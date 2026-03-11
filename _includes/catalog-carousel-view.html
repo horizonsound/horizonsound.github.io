@@ -36,23 +36,24 @@
 
           <h3 class="tile-title">{{ display_title }}</h3>
         </a>
-      {% endif %}
-    {% endfor %}
+      </div>
+    {% endif %}
+  {% endfor %}
   
-    {% for song in items %}
-      {% assign override = site.data.music_overrides.overrides | where: "song_id", song.song_id | first %}
-      {% assign display_title = override.title | default: song.title %}
-  
-      {% if song.videostatus != "public" %}
+  {% for song in items %}
+    {% assign override = site.data.music_overrides.overrides | where: "song_id", song.song_id | first %}
+    {% assign display_title = override.title | default: song.title %}
+
+    {% if song.videostatus != "public" %}
       <div class="content-tile coming-soon"
         data-song-id="{{ song.song_id }}">
 
         <img src="{{ site.baseurl }}{{ song.thumbnail }}" alt="{{ display_title }}">
         <div class="content-overlay">Coming Soon</div>
         <h3 class="content-title">{{ display_title }}</h3>
-      </div>
-    </div>    
-  {% endif %}
+      </div>    
+    {% endif %}
+  {% endfor %}
 {% endfor %}
 
 <button class="content-arrow content-arrow-right">›</button>
