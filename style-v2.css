@@ -781,9 +781,11 @@ footer {
    ============================================================ */
 
 .music-page {
-  padding: 0 40px;
   box-sizing: border-box;
+  padding-left: 30px;
+  padding-right: 30px;
 }
+
 
 .music-page .page-title {
   text-align: center;
@@ -913,7 +915,9 @@ footer {
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.15);
   backdrop-filter: blur(6px);
+  box-sizing: border-box;
 }
+
 
 .catalog-toggle {
   display: inline-flex;
