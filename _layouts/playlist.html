@@ -461,9 +461,12 @@ is_playlist_page: true
   flex: 0 0 auto;
 }
 
-  .shared-tile.active {
-  outline: 3px solid #8e24aa;
+.shared-tile.active {
+  outline: 3px solid #8e24aa !important;
   outline-offset: -3px;
+  border-radius: 6px;
+  position: relative;
+  z-index: 10;
 }
 
 </style>
