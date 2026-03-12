@@ -378,40 +378,12 @@ title: Catalog – Horizon Sound
 
 /* 5. Arrow buttons must not affect layout width */
 /* Premium carousel arrows — match production */
-.content-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.45);
-  border: none;
-  color: white;
-  font-size: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 10;
-  transition: background 0.2s ease;
-}
-
-.content-arrow:hover {
-  background: rgba(0, 0, 0, 0.65);
-}
-
 .content-arrow-left {
-  left: -22px;
+  margin-right: 12px;
 }
 
 .content-arrow-right {
-  right: -22px;
-}
-
-/* Ensure arrows don't shrink layout */
-.content-arrow {
-  flex: 0 0 auto;
+  margin-left: 12px;
 }
 
 /* Horizontal strip behavior */
@@ -439,7 +411,40 @@ title: Catalog – Horizon Sound
   display: flex;
   align-items: center;
 }
-  
+
+
+
+
+
+
+
+
+  .content-arrow {
+  background: #ffffff;
+  border: none;
+  color: #333;
+  width: 40px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.content-arrow:hover {
+  background: #f0f0f0;
+}
+
+.content-arrow.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+
+
 </style>
 
 {% assign all_songs = site.data.youtube_feed.songs %}
