@@ -3,6 +3,7 @@ layout: default
 title: Horizon Sound
 ---
 
+{% include spa-router.html %}
 {% assign songs = site.data.youtube_feed.songs %}
 {% assign playlists = site.data.playlist_overrides.overrides 
      | where: "is_collection", true
@@ -70,53 +71,3 @@ title: Horizon Sound
   </section>
 
 </div>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll('a').forEach(link => {
-    const href = link.getAttribute('href');
-    if (!href) return;
-
-    // Only intercept internal navigation to Music or Playlist pages
-    const isMusicPage =
-      href.startsWith('{{ site.baseurl }}/music') ||
-      href.startsWith('/catalog') ||
-      href.startsWith('/origins');
-
-    if (!isMusicPage) return;
-
-    link.addEventListener('click', async (e) => {
-      e.preventDefault();
-
-      const url = link.href;
-
-      // Fetch the target page
-      const response = await fetch(url, { credentials: 'same-origin' });
-      const html = await response.text();
-
-      // Parse and extract the new <main>
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
-      const newMain = doc.querySelector('main');
-
-      // Replace current <main>
-      document.querySelector('main').replaceWith(newMain);
-
-      // Update URL without reload
-      history.pushState({}, "", url);
-
-      // Re-run scripts inside the new <main>
-      const scripts = newMain.querySelectorAll("script");
-      scripts.forEach(oldScript => {
-        const s = document.createElement("script");
-        if (oldScript.src) {
-          s.src = oldScript.src;
-        } else {
-          s.textContent = oldScript.textContent;
-        }
-        document.body.appendChild(s);
-      });
-    });
-  });
-});
-</script>
