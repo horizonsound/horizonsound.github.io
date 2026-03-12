@@ -3,6 +3,7 @@ layout: default
 title: About – Horizon Sound
 ---
 
+{% include spa-router.html %}
 {% include hero.html %}
 <section class="about-page">
   <h1 class="page-title">{{ page.title }}</h1>
@@ -59,58 +60,3 @@ title: About – Horizon Sound
     This is Horizon Sound. This is my work. This is what I leave behind.
   </p>
 </section>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll('a').forEach(link => {
-    const href = link.getAttribute('href');
-    if (!href) return;
-
-    // Intercept internal navigation (Home, Music, Playlists, About)
-    const isInternal =
-      href.startsWith('{{ site.baseurl }}/music') ||
-      href.startsWith('{{ site.baseurl }}/about') ||
-      href.startsWith('/music') ||
-      href.startsWith('/about') ||
-      href === '{{ site.baseurl }}/' ||
-      href === '{{ site.baseurl }}' ||
-      href === '/' ||
-      href === '/index.html';
-
-    if (!isInternal) return;
-
-    link.addEventListener('click', async (e) => {
-      e.preventDefault();
-
-      const url = link.href;
-
-      // Fetch the target page
-      const response = await fetch(url, { credentials: 'same-origin' });
-      const html = await response.text();
-
-      // Parse and extract the new <main>
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
-      const newMain = doc.querySelector('main');
-
-      // Replace current <main>
-      document.querySelector('main').replaceWith(newMain);
-
-      // Update URL without reload
-      history.pushState({}, "", url);
-
-      // Re-run scripts inside the new <main>
-      const scripts = newMain.querySelectorAll("script");
-      scripts.forEach(oldScript => {
-        const s = document.createElement("script");
-        if (oldScript.src) {
-          s.src = oldScript.src;
-        } else {
-          s.textContent = oldScript.textContent;
-        }
-        document.body.appendChild(s);
-      });
-    });
-  });
-});
-</script>
