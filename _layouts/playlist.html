@@ -717,5 +717,33 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("=== PLAYLIST DEBUG START ===");
+
+  // 1. What does the URL say?
+  console.log("URL SELECTED_SONG_ID:", window.SELECTED_SONG_ID);
+
+  // 2. What tiles exist in the playlist carousel?
+  const tiles = document.querySelectorAll(".content-strip .shared-tile");
+  console.log("Found tiles:", tiles.length);
+
+  tiles.forEach((t, i) => {
+    console.log(
+      `Tile ${i}:`,
+      "data-song-id =", t.getAttribute("data-song-id"),
+      "title =", t.querySelector(".shared-tile-title")?.textContent.trim()
+    );
+  });
+
+  // 3. Does the page think it can find the selected tile?
+  const match = document.querySelector(
+    `.content-strip .shared-tile[data-song-id="${window.SELECTED_SONG_ID}"]`
+  );
+  console.log("Matching tile:", match);
+
+  console.log("=== PLAYLIST DEBUG END ===");
+});
+</script>
 
 </main>
