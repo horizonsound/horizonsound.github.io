@@ -235,19 +235,16 @@ title: Catalog – Horizon Sound
 /* ===========================
    CATALOG TILE SYSTEM (UNIFIED)
    =========================== */
-
-/* Base shared tile */
 .shared-tile {
-  position: relative;
   width: 260px;
-  min-width: 260px;
-  max-width: 260px;
-  border-radius: 12px;
+  display: block;
+  background: #111;
+  border-radius: 4px;
   overflow: hidden;
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-decoration: none;
+  color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative; /* for vignette overlay */
 }
 
 .shared-tile:hover {
@@ -260,6 +257,8 @@ title: Catalog – Horizon Sound
   height: 180px;
   object-fit: cover;
   display: block;
+  position: relative;
+  z-index: 1;
 }
 
 /* Subtle vignette */
