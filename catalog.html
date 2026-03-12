@@ -395,6 +395,7 @@ title: Catalog – Horizon Sound
   overflow: hidden;
   position: relative;
 }
+\
 .collection-premium .shared-tile-title {
   background: linear-gradient(90deg, #5e1a8a 0%, #8e24aa 100%);
   color: white;
@@ -414,13 +415,17 @@ title: Catalog – Horizon Sound
   box-shadow: 0 8px 28px rgba(94, 26, 138, 0.45); /* Stage glow */
   backdrop-filter: blur(12px);
 }
+
 .shared-tile-title {
   font-size: 0.95rem;
   line-height: 1.25;
   min-height: 2.6em;
   display: flex;
   align-items: center;
+  padding: 10px 12px;
+  color: white;
 }
+  
 #catalog-view-grouped {
   padding: 0 48px;
 }
@@ -430,6 +435,11 @@ title: Catalog – Horizon Sound
   opacity: 0.6;
 }
 
+.collection-premium .shared-tile-title {
+  background: linear-gradient(90deg, #5e1a8a 0%, #8e24aa 100%);
+}
+
+  
 </style>
 
 {% assign all_songs = site.data.youtube_feed.songs %}
