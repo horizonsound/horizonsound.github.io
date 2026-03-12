@@ -692,4 +692,27 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".content-carousel").forEach(carousel => {
+    const strip = carousel.querySelector(".content-strip");
+    const leftArrow = carousel.querySelector(".content-arrow-left");
+    const rightArrow = carousel.querySelector(".content-arrow-right");
+
+    if (!strip || !leftArrow || !rightArrow) return;
+
+    const SCROLL_AMOUNT = 260; // tile width + gap
+
+    leftArrow.addEventListener("click", () => {
+      strip.scrollBy({ left: -SCROLL_AMOUNT, behavior: "smooth" });
+    });
+
+    rightArrow.addEventListener("click", () => {
+      strip.scrollBy({ left: SCROLL_AMOUNT, behavior: "smooth" });
+    });
+  });
+});
+</script>
+
 </main>
