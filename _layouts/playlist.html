@@ -464,13 +464,14 @@ is_playlist_page: true
 </style>
 
 <main>
-    <!-- Load the playlist and override data -->
-    {% assign playlist = site.data.youtube_playlists.playlists
-      | where: "playlist_id", page.playlist_id
-      | first %}
-    {% assign playlist_override = site.data.playlist_overrides.overrides
-      | where: "playlist_id", page.playlist_id
-      | first %}
+  {% include spa-router.html %}
+  <!-- Load the playlist and override data -->
+  {% assign playlist = site.data.youtube_playlists.playlists
+    | where: "playlist_id", page.playlist_id
+    | first %}
+  {% assign playlist_override = site.data.playlist_overrides.overrides
+    | where: "playlist_id", page.playlist_id
+    | first %}
 
 
     <!-- Load YouTube IFrame API ONCE -->
@@ -670,65 +671,6 @@ is_playlist_page: true
           loadSong(window.SELECTED_SONG_ID);
         }
     </script>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll('a').forEach(link => {
-    const href = link.getAttribute('href');
-    if (!href) return;
-
-    // Intercept internal navigation (Home, Music, Playlists)
-    const isInternal =
-      href.startsWith('{{ site.baseurl }}/music') ||
-      href === '{{ site.baseurl }}/' ||
-      href === '{{ site.baseurl }}' ||
-      href === '/' ||
-      href === '/catalog.html' ||
-      href === '/origins.html' ||
-      href === '/index.html';
-
-    if (!isInternal) return;
-
-    link.addEventListener('click', async (e) => {
-      e.preventDefault();
-
-      const url = link.href;
-
-      // Fetch the target page
-      const response = await fetch(url, { credentials: 'same-origin' });
-      const html = await response.text();
-
-      // Parse and extract the new <main>
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
-      const newMain = doc.querySelector('main');
-
-      // Replace current <main>
-      document.querySelector('main').replaceWith(newMain);
-
-      // Update URL without reload
-      history.pushState({}, "", url);
-
-      // Re-run scripts inside the new <main>
-      const scripts = newMain.querySelectorAll("script");
-      scripts.forEach(oldScript => {
-        const s = document.createElement("script");
-        if (oldScript.src) {
-          s.src = oldScript.src;
-        } else {
-          s.textContent = oldScript.textContent;
-        }
-        document.body.appendChild(s);
-      });
-    
-      // 🔥 FIX: Re-trigger YouTube API after <main> is replaced
-      if (typeof onYouTubeIframeAPIReady === "function") {
-        onYouTubeIframeAPIReady();
-      }
-    });
-  });
-});
-</script>
 
   <script>
 document.addEventListener("DOMContentLoaded", () => {
