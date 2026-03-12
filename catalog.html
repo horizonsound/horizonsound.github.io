@@ -376,16 +376,6 @@ title: Catalog – Horizon Sound
   position: relative;
 }
 
-/* 5. Arrow buttons must not affect layout width */
-/* Premium carousel arrows — match production */
-.content-arrow-left {
-  margin-right: 12px;
-}
-
-.content-arrow-right {
-  margin-left: 12px;
-}
-
 /* Horizontal strip behavior */
 .content-strip {
   display: flex;
@@ -395,6 +385,7 @@ title: Catalog – Horizon Sound
   overflow-y: hidden;
   white-space: nowrap;
   scroll-behavior: smooth;
+  flex: 1 !important;
 }
 
 /* Prevent tile shrinking */
@@ -411,8 +402,6 @@ title: Catalog – Horizon Sound
   display: flex;
   align-items: center;
 }
-
-
 
 
 
@@ -442,6 +431,17 @@ title: Catalog – Horizon Sound
   opacity: 0.3;
   pointer-events: none;
 }
+
+.content-arrow-left {
+  margin-right: 12px;
+}
+
+.content-arrow-right {
+  margin-left: 12px;
+}
+
+
+
 
 
 
@@ -750,5 +750,50 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".content-carousel").forEach(carousel => {
+    const strip = carousel.querySelector(".content-strip");
+    const leftArrow = carousel.querySelector(".content-arrow-left");
+    const rightArrow = carousel.querySelector(".content-arrow-right");
+
+    if (!strip || !leftArrow || !rightArrow) return;
+
+    const updateArrows = () => {
+      const maxScroll = strip.scrollWidth - strip.clientWidth;
+
+      if (strip.scrollLeft <= 0) {
+        leftArrow.classList.add("disabled");
+      } else {
+        leftArrow.classList.remove("disabled");
+      }
+
+      if (strip.scrollLeft >= maxScroll - 1) {
+        rightArrow.classList.add("disabled");
+      } else {
+        rightArrow.classList.remove("disabled");
+      }
+    };
+
+    // Initial state
+    updateArrows();
+
+    // Update on scroll
+    strip.addEventListener("scroll", updateArrows);
+
+    // Arrow click handlers
+    const SCROLL_AMOUNT = 260;
+
+    leftArrow.addEventListener("click", () => {
+      strip.scrollBy({ left: -SCROLL_AMOUNT, behavior: "smooth" });
+    });
+
+    rightArrow.addEventListener("click", () => {
+      strip.scrollBy({ left: SCROLL_AMOUNT, behavior: "smooth" });
+    });
+  });
 });
 </script>
