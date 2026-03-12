@@ -22,8 +22,8 @@
       {% assign display_title = override.title | default: song.title %}
 
       {% if song.videostatus != "public" %}
-        <div class="shared-tile coming-soon" data-song-id="{{ song.song_id }}">
-          <img src="{{ site.baseurl }}{{ song.thumbnail }}" alt="{{ display_title }}">
+        <div class="shared-tile collection-premium coming-soon">
+          <img src="{{ site.baseurl }}{{ song.thumbnail }}">
           <div class="shared-tile-overlay">Coming Soon</div>
           <div class="shared-tile-title">{{ display_title }}</div>
         </div>
