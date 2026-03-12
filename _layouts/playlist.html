@@ -461,6 +461,11 @@ is_playlist_page: true
   flex: 0 0 auto;
 }
 
+  .shared-tile.active {
+  outline: 3px solid #8e24aa;
+  outline-offset: -3px;
+}
+
 </style>
 
 <main>
@@ -621,6 +626,25 @@ is_playlist_page: true
         `;
 
         document.getElementById("selected-song-lyrics").innerHTML = lyricsHTML || "";
+      }
+      function highlightTile(songId) {
+        const tiles = document.querySelectorAll('.content-strip .shared-tile');
+      
+        tiles.forEach(t => t.classList.remove('active'));
+      
+        const activeTile = document.querySelector(`.content-strip .shared-tile[data-song-id="${songId}"]`);
+        if (!activeTile) return;
+      
+        activeTile.classList.add('active');
+      
+        // Center it in the carousel
+        const strip = activeTile.closest('.content-strip');
+        if (strip) {
+          strip.scrollTo({
+            left: activeTile.offsetLeft - strip.offsetWidth / 2 + activeTile.offsetWidth / 2,
+            behavior: 'smooth'
+          });
+        }
       }
     </script>
 
