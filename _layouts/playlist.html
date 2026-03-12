@@ -638,6 +638,7 @@ is_playlist_page: true
         `;
 
         document.getElementById("selected-song-lyrics").innerHTML = lyricsHTML || "";
+        highlightTile(songId);
       }
       function highlightTile(songId) {
         const tiles = document.querySelectorAll('.content-strip .shared-tile');
