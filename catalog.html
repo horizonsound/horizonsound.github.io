@@ -187,226 +187,6 @@ title: Catalog – Horizon Sound
 
 
 
-
-  .content-carousel {
-  position: relative;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.content-strip {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 8px 0;
-  flex: 1;
-}
-
-.content-tile {
-  width: 180px;
-  min-width: 180px;
-  max-width: 180px;
-  flex: 0 0 auto;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
-.content-tile img {
-  width: 100%;
-  border-radius: 10px 10px 0 0;
-}
-
-.content-title {
-  background: rgba(0,0,0,0.4);
-  backdrop-filter: blur(6px);
-  color: #fff;
-  padding: 8px;
-  border-radius: 0 0 10px 10px;
-  margin: 0;
-  font-size: 0.9rem;
-  width: 100%;
-  white-space: normal;
-  overflow-wrap: break-word;
-}
-
-.content-tile.coming-soon .content-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0,0,0,0.45);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.9rem;
-  border-radius: 10px;
-}
-
-.content-arrow {
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.2);
-  color: #fff;
-  padding: 8px 12px;
-  border-radius: 6px;
-  cursor: pointer;
-  backdrop-filter: blur(6px);
-}
-
-  .content-carousel {
-  position: relative;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.content-strip {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 8px 0;
-  flex: 1;
-}
-
-.content-tile {
-  width: 180px;
-  min-width: 180px;
-  max-width: 180px;
-  flex: 0 0 auto;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
-  .content-tile img {
-  width: 100%;
-  border-radius: 10px 10px 0 0;
-}
-
-.content-title {
-  background: rgba(0,0,0,0.35);
-  backdrop-filter: blur(6px);
-  color: #fff;
-  padding: 8px;
-  border-radius: 0 0 10px 10px;
-  margin: 0;
-  font-size: 0.9rem;
-  width: 100%;
-  white-space: normal;
-  overflow-wrap: break-word;
-}
-
-  .content-tile.coming-soon .content-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.9rem;
-  border-radius: 10px;
-}
-
-  .content-arrow {
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.2);
-  color: #fff;
-  padding: 8px 12px;
-  border-radius: 6px;
-  cursor: pointer;
-  backdrop-filter: blur(6px);
-  transition: background 0.2s ease;
-}
-
-.content-arrow:hover {
-  background: rgba(255,255,255,0.2);
-}
-
-.shared-tile {
-  width: 260px;
-  min-width: 260px;
-  max-width: 260px;
-  border-radius: 12px;
-  overflow: hidden;
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.shared-tile:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
-}
-
-.shared-tile img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.shared-tile-title {
-  padding: 10px 12px;
-  font-size: 0.95rem;
-  color: white;
-  background: rgba(0,0,0,0.35);
-  backdrop-filter: blur(6px);
-}
-.catalog-group-panel {
-  background: rgba(255,255,255,0.05);
-  border-radius: 16px;
-  padding: 24px;
-  margin: 40px 0;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-}
-
-.catalog-group-title {
-  font-size: 1.4rem;
-  margin-bottom: 20px;
-  color: white;
-  letter-spacing: 0.5px;
-}
-
-.catalog-group-tiles {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-}
-
-  #catalog-view-grouped {
-  padding: 0 48px; /* match Stage */
-}
-
-  .collection-premium.shared-tile {
-  width: 260px;
-  min-width: 260px;
-  max-width: 260px;
-  height: 150px; /* exact Stage height */
-  border-radius: 12px;
-  overflow: hidden;
-  position: relative;
-}
-\
-.collection-premium .shared-tile-title {
-  background: linear-gradient(90deg, #5e1a8a 0%, #8e24aa 100%);
-  color: white;
-  font-weight: 500;
-  padding: 10px 12px;
-  font-size: 0.95rem;
-  line-height: 1.25;
-  min-height: 2.6em; /* identical title height */
-  display: flex;
-  align-items: center;
-}
 .catalog-group-panel.collection-premium-panel {
   background: rgba(94, 26, 138, 0.18); /* Stage purple tint */
   border-radius: 16px;
@@ -439,6 +219,167 @@ title: Catalog – Horizon Sound
   background: linear-gradient(90deg, #5e1a8a 0%, #8e24aa 100%);
 }
 
+
+
+
+
+
+
+/* ===========================
+   CATALOG TILE SYSTEM (UNIFIED)
+   =========================== */
+
+/* Base shared tile */
+.shared-tile {
+  position: relative;
+  width: 260px;
+  min-width: 260px;
+  max-width: 260px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.shared-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+.shared-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Subtle vignette */
+.shared-tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0,0,0,0) 60%, rgba(0,0,0,0.35) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Title bar */
+.shared-tile-title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  line-height: 1.25;
+  min-height: 2.6em;
+  display: flex;
+  align-items: center;
+  color: white;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(6px);
+  z-index: 2;
+}
+
+/* Collections: shorter tile + purple title */
+.collection-premium.shared-tile {
+  height: 150px;
+}
+
+.collection-premium .shared-tile-title {
+  background: linear-gradient(90deg, #5e1a8a 0%, #8e24aa 100%);
+  font-weight: 500;
+}
+
+/* Coming Soon overlay */
+.shared-tile.coming-soon {
+  position: relative;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.shared-tile-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.45);
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 3;
+}
+
+/* Group panels */
+.catalog-group-panel {
+  background: rgba(255,255,255,0.05);
+  border-radius: 16px;
+  padding: 24px;
+  margin: 40px 0;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  backdrop-filter: blur(10px);
+}
+
+.catalog-group-panel.collection-premium-panel {
+  background: rgba(94, 26, 138, 0.18);
+  box-shadow: 0 8px 28px rgba(94, 26, 138, 0.45);
+}
+
+.catalog-group-title {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+.catalog-group-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+/* Grouped view gutters */
+#catalog-view-grouped {
+  padding: 0 48px;
+}
+
+/* Carousel strip (reusing shared tiles) */
+.content-carousel {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.content-strip {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 8px 0;
+  flex: 1;
+}
+
+.content-arrow {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: background 0.2s ease;
+}
+
+.content-arrow:hover {
+  background: rgba(255,255,255,0.2);
+}
   
 </style>
 
