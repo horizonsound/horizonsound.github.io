@@ -8,9 +8,13 @@
           
     {% for pl in playlist_data %}
       {% assign override = overrides | where: "playlist_id", pl.playlist_id | first %}
-    
+
       {% if override %}
-        {% assign merged = pl | merge: override %}
+        {%- comment -%}
+          Convert override Drop → real hash so merge works correctly
+        {%- endcomment -%}
+        {% assign override_hash = override | jsonify | parse_json %}
+        {% assign merged = pl | merge: override_hash %}
         {% assign merged_playlists = merged_playlists | push: merged %}
       {% else %}
         {% assign merged_playlists = merged_playlists | push: pl %}
@@ -18,16 +22,31 @@
     {% endfor %}
 
     {% for pl in merged_playlists %}
-  
+
       {% assign first_song_id = pl.song_ids | first %}
-    
+
+      {%- comment -%}
+        Thumbnail fallback chain:
+        1. Override thumbnail (if present)
+        2. Override hero (if present)
+        3. YouTube thumbnail (if present)
+        4. Default image (guaranteed)
+      {%- endcomment -%}
+
+      {% assign display_thumbnail = 
+          pl.thumbnail 
+          | default: pl.hero 
+          | default: pl.youtube_thumbnail 
+          | default: "/assets/thumbnails/default-playlist.jpeg" 
+      %}
+
       <a 
         class="playlist-premium-tile" 
         href="{{ site.baseurl }}/music/playlists/{{ pl.playlist_id }}/?song_id={{ first_song_id }}"
       >
         <div class="playlist-premium-image-wrapper">
           <img 
-            src="{{ site.baseurl }}{{ pl.thumbnail }}" 
+            src="{{ site.baseurl }}{{ display_thumbnail }}" 
             alt="{{ pl.title }}" 
             class="playlist-premium-image"
           >
@@ -35,7 +54,7 @@
           <div class="playlist-premium-title">{{ pl.title }}</div>
         </div>
       </a>
-    
+
     {% endfor %}
   </div>
 </section>
