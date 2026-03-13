@@ -48,4 +48,38 @@
     }
   }
 
+  function loadSong(songId) {
+    window.SELECTED_SONG_ID = songId;
+
+    const song = window.YOUTUBE_SONGS.find(s => s.song_id === songId);
+    const override = window.MUSIC_OVERRIDES.find(s => s.song_id === songId);
+
+    const title = override?.title || song?.title || "";
+    const subtitle = override?.subtitle || "";
+    const extraTitle = override?.extra_title || "";
+    const extraHTML = override?.extra_html || "";
+    const about = song?.description_html || "";
+    const lyricsHTML = override?.lyrics_html || "";
+    const youtubeId = song?.youtube_id || "";
+
+    document.querySelector(".player-title").textContent = title;
+    document.querySelector(".player-subtitle").textContent = subtitle;
+
+    buildPlayer(youtubeId);
+
+    document.getElementById("selected-song-extra").innerHTML = `
+      ${extraTitle ? `<h3 class="section-header">${extraTitle}</h3>` : ""}
+      ${extraHTML ? `<div class="about-text">${extraHTML}</div>` : ""}
+    `;
+
+    document.getElementById("selected-song-about").innerHTML = `
+      ${about ? `<h3 class="section-header">About</h3>` : ""}
+      ${about ? `<div class="about-text">${about}</div>` : ""}
+    `;
+
+    document.getElementById("selected-song-lyrics").innerHTML = lyricsHTML || "";
+
+    highlightTile(songId);
+  }
+
 </script>
