@@ -121,6 +121,24 @@ document.addEventListener("click", (e) => {
   }
 });
 
+  function advanceToNextSong(currentId) {
+    const tiles = Array.from(document.querySelectorAll('.shared-tile:not(.coming-soon)'));
+    const index = tiles.findIndex(t => t.getAttribute('data-song-id') === currentId);
+
+    if (index === -1) return;
+
+    const nextTile = tiles[index + 1];
+    if (!nextTile) return;
+
+    const nextId = nextTile.getAttribute('data-song-id');
+
+    const url = new URL(window.location.href);
+    url.searchParams.set("song_id", nextId);
+    history.pushState({}, "", url.toString());
+
+    safeLoadSong(nextId);
+  }
+
 function advanceToNextSong(currentId) {
   const tiles = Array.from(document.querySelectorAll('.shared-tile:not(.coming-soon)'));
   const index = tiles.findIndex(t => t.getAttribute('data-song-id') === currentId);
