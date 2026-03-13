@@ -482,9 +482,6 @@ is_playlist_page: true
 </style>
 
 <main>
-  <script 
-    src="{{ site.baseurl }}/assets/js/player.js">
- </script>
   {% include spa-router.html %}
   <!-- Load the playlist and override data -->
   {% assign playlist = site.data.youtube_playlists.playlists
@@ -497,6 +494,7 @@ is_playlist_page: true
 
     <!-- Load YouTube IFrame API ONCE -->
     <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="{{ site.baseurl }}/assets/js/player.js"> </script>
 
     <!-- Make the data visible to JavaScript (ONLY ONCE) -->
     <script>
@@ -569,23 +567,3 @@ is_playlist_page: true
     </div>
     <div id="selected-song-lyrics" class="lyrics-block"></div>
 
-<script>
-
-  function advanceToNextSong(currentId) {
-    const tiles = Array.from(document.querySelectorAll('.shared-tile:not(.coming-soon)'));
-    const index = tiles.findIndex(t => t.getAttribute('data-song-id') === currentId);
-
-    if (index === -1) return;
-
-    const nextTile = tiles[index + 1];
-    if (!nextTile) return;
-
-    const nextId = nextTile.getAttribute('data-song-id');
-
-    const url = new URL(window.location.href);
-    url.searchParams.set("song_id", nextId);
-    history.pushState({}, "", url.toString());
-
-    safeLoadSong(nextId);
-  }
-</script>
