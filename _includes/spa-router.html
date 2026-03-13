@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!href) return;
 
     // Skip external links
-    if (href.startsWith("http")) return;
+    const url = new URL(link.href);
+    if (url.origin !== window.location.origin) return;
     if (href.startsWith("mailto:") || href.startsWith("tel:")) return;
 
     // Skip hash links
