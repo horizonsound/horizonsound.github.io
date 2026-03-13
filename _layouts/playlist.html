@@ -482,6 +482,9 @@ is_playlist_page: true
 </style>
 
 <main>
+  <script 
+    src="{{ site.baseurl }}/assets/js/player.js">
+ </script>
   {% include spa-router.html %}
   <!-- Load the playlist and override data -->
   {% assign playlist = site.data.youtube_playlists.playlists
