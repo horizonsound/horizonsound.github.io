@@ -786,7 +786,7 @@ songs:
     videostatus: public
     playlists:
       - calm-cinematic-horizon-sound-instrumentals
-    view_count_num: 105
+    view_count_num: 107
     youtube_metadata:
       published_at: '2026-02-14T15:28:51Z'
       scheduled_at: null
@@ -803,7 +803,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '105'
+        view_count: '107'
         like_count: '3'
         favorite_count: '0'
         comment_count: '0'
@@ -1240,7 +1240,7 @@ songs:
     videostatus: public
     playlists:
       - classic-country
-    view_count_num: 3
+    view_count_num: 4
     youtube_metadata:
       published_at: '2026-03-13T16:00:27Z'
       scheduled_at: null
@@ -1257,7 +1257,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '3'
+        view_count: '4'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -1673,7 +1673,7 @@ songs:
     videostatus: public
     playlists:
       - after-the-silence-performed-by-lydia-ellington
-    view_count_num: 118
+    view_count_num: 119
     youtube_metadata:
       published_at: '2026-02-03T17:00:01Z'
       scheduled_at: null
@@ -1690,7 +1690,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '118'
+        view_count: '119'
         like_count: '1'
         favorite_count: '0'
         comment_count: '1'
@@ -2255,7 +2255,7 @@ songs:
     videostatus: public
     playlists:
       - after-the-silence-performed-by-lydia-ellington
-    view_count_num: 118
+    view_count_num: 119
     youtube_metadata:
       published_at: '2026-02-24T17:00:59Z'
       scheduled_at: null
@@ -2272,7 +2272,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '118'
+        view_count: '119'
         like_count: '2'
         favorite_count: '0'
         comment_count: '0'
@@ -3669,7 +3669,7 @@ songs:
     videostatus: public
     playlists:
       - modern-country
-    view_count_num: 53
+    view_count_num: 54
     youtube_metadata:
       published_at: '2026-01-19T13:09:05Z'
       scheduled_at: null
@@ -3686,7 +3686,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '53'
+        view_count: '54'
         like_count: '2'
         favorite_count: '0'
         comment_count: '1'
@@ -4854,7 +4854,7 @@ songs:
     videostatus: public
     playlists:
       - acoustic-singer-songwriter
-    view_count_num: 94
+    view_count_num: 95
     youtube_metadata:
       published_at: '2026-01-11T21:59:03Z'
       scheduled_at: null
@@ -4871,7 +4871,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '94'
+        view_count: '95'
         like_count: '2'
         favorite_count: '0'
         comment_count: '1'
@@ -5055,10 +5055,7 @@ songs:
         comment_count: '0'
       made_for_kids: false
       self_declared_made_for_kids: false
-      topic_categories:
-        - https://en.wikipedia.org/wiki/Electronic_music
-        - https://en.wikipedia.org/wiki/Music
-        - https://en.wikipedia.org/wiki/Pop_music
+      topic_categories: []
       privacy_status: null
       upload_status: null
       publish_at: null
@@ -5486,7 +5483,7 @@ songs:
       without written permission.</p>
     url: /music/hold-on-pop-nostalgic-90s-energy-horizon-sound/
     thumbnail: /assets/thumbnails/hold-on-pop-nostalgic-90s-energy-horizon-sound.jpeg
-    videostatus: public
+    videostatus: private
     playlists:
       - pop
     view_count_num: 62
@@ -5509,7 +5506,7 @@ songs:
         view_count: '62'
         like_count: '2'
         favorite_count: '0'
-        comment_count: '1'
+        comment_count: '0'
       made_for_kids: false
       self_declared_made_for_kids: false
       topic_categories:
