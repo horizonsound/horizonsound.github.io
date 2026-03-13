@@ -1,54 +1,54 @@
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll("a").forEach(link => {
-    const href = link.getAttribute("href");
-    if (!href) return;
 
-    // Skip external links
-    const url = new URL(link.href);
-    if (url.origin !== window.location.origin) return;
-    if (href.startsWith("mailto:") || href.startsWith("tel:")) return;
+  function bindInternalLinks(scope = document) {
+    scope.querySelectorAll("a").forEach(link => {
+      if (link.dataset.spaBound === "true") return;
 
-    // Skip hash links
-    if (href.startsWith("#")) return;
+      const href = link.getAttribute("href");
+      if (!href) return;
 
-    // Everything else is internal → intercept
-    link.addEventListener("click", async (e) => {
-      e.preventDefault();
+      if (href.startsWith("mailto:") || href.startsWith("tel:")) return;
+      if (href.startsWith("#")) return;
 
-      const url = link.href;
+      const url = new URL(link.href);
+      if (url.origin !== window.location.origin) return;
 
-      const response = await fetch(url, { credentials: "same-origin" });
-      const html = await response.text();
+      link.dataset.spaBound = "true";
 
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, "text/html");
-      const newMain = doc.querySelector("main");
+      link.addEventListener("click", async (e) => {
+        e.preventDefault();
 
-      document.querySelector("main").replaceWith(newMain);
-      history.pushState({}, "", url);
+        const response = await fetch(url, { credentials: "same-origin" });
+        const html = await response.text();
 
-      // Re-run scripts inside the new <main>
-      const scripts = newMain.querySelectorAll("script");
-      scripts.forEach(oldScript => {
-        const s = document.createElement("script");
-        if (oldScript.src) {
-          s.src = oldScript.src;
-        } else {
-          s.textContent = oldScript.textContent;
-        }
-        document.body.appendChild(s);
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, "text/html");
+        const newMain = doc.querySelector("main");
+
+        const oldMain = document.querySelector("main");
+        oldMain.replaceWith(newMain);
+        history.pushState({}, "", url);
+
+        const scripts = newMain.querySelectorAll("script");
+        scripts.forEach(oldScript => {
+          const s = document.createElement("script");
+          if (oldScript.src) {
+            s.src = oldScript.src;
+          } else {
+            s.textContent = oldScript.textContent;
+          }
+          document.body.appendChild(s);
+        });
+
+        bindInternalLinks(document);
+
+        if (typeof initCatalogPage === "function") initCatalogPage();
+        if (typeof onYouTubeIframeAPIReady === "function") onYouTubeIframeAPIReady();
       });
-
-      if (typeof initCatalogPage === "function") {
-        initCatalogPage();
-      }
-
-      // Re-trigger YouTube API if needed
-      if (typeof onYouTubeIframeAPIReady === "function") {
-        onYouTubeIframeAPIReady();
-      }
     });
-  });
+  }
+
+  bindInternalLinks(document);
 });
 </script>
