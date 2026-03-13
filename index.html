@@ -3,7 +3,6 @@ layout: default
 title: Horizon Sound
 ---
 
-{% include spa-router.html %}
 {% assign songs = site.data.youtube_feed.songs %}
 {% assign playlists = site.data.playlist_overrides.overrides 
      | where: "is_collection", true
