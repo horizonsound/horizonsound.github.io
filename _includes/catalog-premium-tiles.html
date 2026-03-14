@@ -20,20 +20,26 @@
 
     {% for pl in merged_playlists %}
 
-      {% assign override = overrides | where: "playlist_id", pl.playlist_id | first %}
-      
-      {%- comment -%}
-      Use override.songs if present (collections), else fallback to pl.song_ids
-      {%- endcomment -%}
-      {% assign playlist_song_ids = override.songs | default: pl.song_ids %}
-      
-      {% assign has_public = false %}
-      {% for vid in playlist_song_ids %}
-        {% assign song = all_songs | where: "song_id", vid | first %}
-        {% if song and song.videostatus == "public" %}
-          {% assign has_public = true %}
-        {% endif %}
-      {% endfor %}
+{% assign override = overrides | where: "playlist_id", pl.playlist_id | first %}
+{% assign playlist_song_ids = override.songs | default: pl.song_ids %}
+
+{% assign has_public = false %}
+{% for vid in playlist_song_ids %}
+  {% assign song = all_songs | where: "song_id", vid | first %}
+  {% if song and song.videostatus == "public" %}
+    {% assign has_public = true %}
+  {% endif %}
+{% endfor %}
+
+    {% if pl.playlist_id == "missing-stamp-venice-trilogy" %}
+  <!-- DEBUG: Venice Trilogy -->
+  <!-- playlist_song_ids: {{ playlist_song_ids | join: ", " }} -->
+  <!-- has_public: {{ has_public }} -->
+  {% for vid in playlist_song_ids %}
+    {% assign song = all_songs | where: "song_id", vid | first %}
+    <!-- song_id: {{ vid }}, videostatus: {{ song.videostatus }} -->
+  {% endfor %}
+{% endif %}
 
       {% assign override = overrides | where: "playlist_id", pl.playlist_id | first %}
       {% assign override_thumbnail = override.thumbnail | default: override.hero %}
