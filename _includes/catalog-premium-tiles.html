@@ -20,11 +20,15 @@
 
     {% for pl in merged_playlists %}
 
+      {% assign override = overrides | where: "playlist_id", pl.playlist_id | first %}
+      
       {%- comment -%}
-      Determine if playlist has ANY public songs
+      Use override.songs if present (collections), else fallback to pl.song_ids
       {%- endcomment -%}
+      {% assign playlist_song_ids = override.songs | default: pl.song_ids %}
+      
       {% assign has_public = false %}
-      {% for vid in pl.song_ids %}
+      {% for vid in playlist_song_ids %}
         {% assign song = all_songs | where: "song_id", vid | first %}
         {% if song and song.videostatus == "public" %}
           {% assign has_public = true %}
