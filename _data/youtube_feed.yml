@@ -2596,7 +2596,7 @@ songs:
     videostatus: public
     playlists:
       - midnight-saga
-    view_count_num: 16
+    view_count_num: 17
     youtube_metadata:
       published_at: '2026-03-06T17:01:20Z'
       scheduled_at: null
@@ -2613,7 +2613,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '16'
+        view_count: '17'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -2776,7 +2776,7 @@ songs:
     videostatus: public
     playlists:
       - midnight-saga
-    view_count_num: 212
+    view_count_num: 213
     youtube_metadata:
       published_at: '2026-02-20T17:00:56Z'
       scheduled_at: null
@@ -2793,7 +2793,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '212'
+        view_count: '213'
         like_count: '4'
         favorite_count: '0'
         comment_count: '0'
@@ -5395,7 +5395,7 @@ songs:
     videostatus: public
     playlists:
       - emotional-ballads
-    view_count_num: 139
+    view_count_num: 140
     youtube_metadata:
       published_at: '2026-01-09T16:05:03Z'
       scheduled_at: null
@@ -5412,7 +5412,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '139'
+        view_count: '140'
         like_count: '3'
         favorite_count: '0'
         comment_count: '1'
