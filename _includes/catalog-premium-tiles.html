@@ -31,7 +31,16 @@
         {% endif %}
       {% endfor %}
       
-      {% assign override_thumbnail = override.thumbnail | default: override.hero %}
+{% if playlist.playlist_id == "missing-stamp-venice-trilogy" %}
+  <!-- DEBUG: Venice Trilogy -->
+  {% for vid in playlist_song_ids %}
+    {% assign song = all_songs | where: "song_id", vid | first %}
+    <!-- vid: {{ vid }} | videostatus: {{ song.videostatus }} -->
+  {% endfor %}
+  <!-- has_public: {{ has_public }} -->
+{% endif %}
+
+    {% assign override_thumbnail = override.thumbnail | default: override.hero %}
       {% assign display_thumbnail = override_thumbnail | default: playlist.thumbnail | default: playlist.hero | default: playlist.youtube_thumbnail %}
       {% assign first_song_id = playlist_song_ids | first %}
       {% assign display_title = override.title | default: playlist.title %}
