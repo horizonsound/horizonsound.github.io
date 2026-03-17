@@ -463,7 +463,6 @@ footer {
   margin: 32px 40px;
   background: rgba(0,0,0,0.35);
   margin: 0 auto;
-  outline: 4px solid red !important; /* debug */
   overflow: visible !important;
   max-width: none !important;
   width: 100% !important;
