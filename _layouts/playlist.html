@@ -497,6 +497,12 @@ is_playlist_page: true
   pointer-events: none;
 }
 
+  /* Prevent playlist carousel from stretching too wide */
+.playlist-page .content-strip {
+  flex: 0 1 auto !important;
+  min-width: 0 !important;
+}
+
 </style>
    
   <!-- Load the playlist and override data -->
