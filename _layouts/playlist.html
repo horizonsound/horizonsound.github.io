@@ -33,7 +33,7 @@ is_playlist_page: true
     left: 0;
     right: 0;
     height: 60px;
-    border-radius: inherit;
+    -radius: inherit;
     background: linear-gradient(
       to bottom,
       rgba(255,255,255,0.08),
@@ -78,17 +78,17 @@ is_playlist_page: true
   .mode-toggle-button,
   .view-toggle-button {
     background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    : 1px solid rgba(255, 255, 255, 0.12);
     color: #fff;
     padding: 6px 16px;
-    border-radius: 999px;
+    -radius: 999px;
     font-size: 0.85rem;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     cursor: pointer;
     transition: 
       background 0.2s ease,
-      border-color 0.2s ease,
+      -color 0.2s ease,
       box-shadow 0.2s ease,
       color 0.2s ease;
     backdrop-filter: blur(8px) saturate(140%);
@@ -101,7 +101,7 @@ is_playlist_page: true
   .mode-toggle-button.active,
   .view-toggle-button.active {
     background: rgba(255, 255, 255, 0.18);
-    border-color: rgba(255, 255, 255, 0.35);
+    -color: rgba(255, 255, 255, 0.35);
     color: #000;
     box-shadow:
       inset 0 2px 4px rgba(0, 0, 0, 0.45),
@@ -111,7 +111,7 @@ is_playlist_page: true
   .mode-toggle-button:hover,
   .view-toggle-button:hover {
     background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 255, 255, 0.22);
+    -color: rgba(255, 255, 255, 0.22);
   }
 
   .catalog-section-title {
@@ -499,6 +499,15 @@ is_playlist_page: true
   /* Add vertical breathing room above the carousel ONLY */
 .player-frame-inner .content-carousel {
   margin-top: 32px;
+}
+
+  .player-frame {
+  border-radius: 18px;
+  background: rgba(40, 0, 60, 0.65);
+  border: 1px solid rgba(142, 36, 170, 0.45);
+  box-shadow:
+    0 0 40px rgba(142, 36, 170, 0.35),
+    inset 0 0 60px rgba(0, 0, 0, 0.55);
 }
 
 </style>
