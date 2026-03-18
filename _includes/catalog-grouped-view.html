@@ -1,0 +1,131 @@
+
+<div class="catalog-group-panel collection-premium-panel">
+  <h2 class="catalog-group-title">Collections</h2>
+
+  <div class="catalog-group-tiles">
+    {% assign active_playlists = "" | split: "" %}
+    {% assign coming_soon_playlists = "" | split: "" %}
+    {% assign collection_overrides = site.data.playlist_overrides.overrides | where: "is_collection", true %}
+
+    {% for ov in collection_overrides %}
+      {% assign pl = site.data.youtube_playlists.playlists | where: "playlist_id", ov.playlist_id | first %}
+      {% if pl %}
+        {% assign has_public = false %}
+        {% for vid in pl.song_ids %}
+          {% assign song = all_songs | where: "song_id", vid | first %}
+          {% if song and song.videostatus == "public" %}
+            {% assign has_public = true %}
+          {% endif %}
+        {% endfor %}
+
+        {% if has_public %}
+          {% assign active_playlists = active_playlists | push: pl %}
+        {% else %}
+          {% assign coming_soon_playlists = coming_soon_playlists | push: pl %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+
+
+    {% for pl in active_playlists %}
+      {% assign ov = site.data.playlist_overrides.overrides | where: "playlist_id", pl.playlist_id | first %}
+    
+      {% assign display_title = ov.title | default: pl.title %}
+      {% assign display_thumbnail = ov.thumbnail | default: pl.thumbnail %}
+    
+      <a class="shared-tile collection-premium"
+         href="{{ site.baseurl }}/music/playlists/{{ pl.playlist_id }}/?song_id={{ pl.song_ids | first }}">
+        <img src="{{ site.baseurl }}{{ display_thumbnail }}">
+        <div class="shared-tile-title">{{ display_title }}</div>
+      </a>
+    {% endfor %}
+
+    {% for pl in coming_soon_playlists %}
+      {% assign ov = site.data.playlist_overrides.overrides | where: "playlist_id", pl.playlist_id | first %}
+    
+      {% assign display_title = ov.title | default: pl.title %}
+      {% assign display_thumbnail = ov.thumbnail | default: pl.thumbnail %}
+    
+      <div class="shared-tile collection-premium coming-soon">
+        <img src="{{ site.baseurl }}{{ display_thumbnail }}">
+        <div class="shared-tile-overlay">Coming Soon</div>
+        <div class="shared-tile-title">{{ display_title }}</div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% for pl in site.data.youtube_playlists.playlists %}
+
+  {%- comment -%}
+  Determine the correct song order:
+  1. If playlist_overrides.yml defines a custom order → use it.
+  2. Else use the order in youtube_playlists.yml.
+  3. Collections do NOT alphabetize.
+  4. Regular playlists MAY alphabetize (optional).
+  {%- endcomment -%}
+
+  {% assign playlist_override = site.data.playlist_overrides.overrides
+    | where: "playlist_id", pl.playlist_id
+    | first %}
+
+  {% assign ordered_ids = playlist_override.songs | default: pl.song_ids %}
+
+  {% assign ordered_songs = "" | split: "" %}
+  {% for sid in ordered_ids %}
+    {% assign s = all_songs | where: "song_id", sid | first %}
+    {% if s %}
+      {% assign ordered_songs = ordered_songs | push: s %}
+    {% endif %}
+  {% endfor %}
+
+  {%- comment -%}
+  Only alphabetize if this is NOT a collection.
+  (Your collections have is_collection: true in playlist_overrides.yml)
+  {%- endcomment -%}
+  {% if playlist_override.is_collection != true %}
+    {% assign ordered_songs = ordered_songs | sort: "title" %}
+  {% endif %}
+
+  {% if ordered_songs.size > 0 %}
+    <div class="catalog-group-panel">
+      <h2 class="catalog-group-title">{{ pl.title }}</h2>
+
+      <div class="catalog-group-tiles">
+
+        {%- comment -%}
+        PUBLIC SONGS FIRST
+        {%- endcomment -%}
+        {% for song in ordered_songs %}
+          {% assign override = site.data.music_overrides.overrides | where: "song_id", song.song_id | first %}
+          {% assign display_title = override.title | default: song.title %}
+
+          {% if song.videostatus == "public" %}
+            <a class="shared-tile"
+               href="{{ site.baseurl }}/music/playlists/{{ pl.playlist_id }}/?song_id={{ song.song_id }}">
+              <img src="{{ site.baseurl }}{{ song.thumbnail }}">
+              <div class="shared-tile-title">{{ display_title }}</div>
+            </a>
+          {% endif %}
+        {% endfor %}
+
+        {%- comment -%}
+        COMING SOON SONGS AFTER
+        {%- endcomment -%}
+        {% for song in ordered_songs %}
+          {% assign override = site.data.music_overrides.overrides | where: "song_id", song.song_id | first %}
+          {% assign display_title = override.title | default: song.title %}
+
+          {% if song.videostatus != "public" %}
+            <div class="shared-tile coming-soon">
+              <img src="{{ site.baseurl }}{{ song.thumbnail }}">
+              <div class="shared-tile-overlay">Coming Soon</div>
+              <div class="shared-tile-title">{{ display_title }}</div>
+            </div>
+          {% endif %}
+        {% endfor %}
+
+      </div>
+    </div>
+  {% endif %}
+{% endfor %}

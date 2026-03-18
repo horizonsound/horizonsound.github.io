@@ -1,0 +1,247 @@
+playlists:
+  - playlist_id: classic-country
+    title: Classic Country
+    description: ''
+    published_at: '2026-02-28T12:46:34.396745Z'
+    channel_id: UCiko-zjojbsoXrsEuBOPbSw
+    channel_title: Horizon Sound
+    thumbnail: /assets/thumbnails/playlist-classic-country.jpeg
+    song_ids:
+      - back-to-amarillo-50s-country-western-romance-horizon-sound
+      - bottle-on-the-table-country-western-horizon-sound
+      - sheriff-for-a-night-50s-western-tall-tale-horizon-sound
+  - playlist_id: calm-cinematic-horizon-sound-instrumentals
+    title: Calm & Cinematic - Horizon Sound Instrumentals
+    description: ''
+    published_at: '2026-02-07T10:43:53.382218Z'
+    channel_id: UCiko-zjojbsoXrsEuBOPbSw
+    channel_title: Horizon Sound
+    thumbnail: >-
+      /assets/thumbnails/playlist-calm-cinematic-horizon-sound-instrumentals.jpeg
+    song_ids:
+      - a-touch-of-light-cinematic-instrumental-horizon-sound
+      - forever-in-a-moment-cinematic-instrumental-horizon-sound
+      - held-in-the-moment-cinematic-instrumental-horizon-sound
+      - lines-of-light-cinematic-instrumental-horizon-sound
+      - the-moment-you-breathe-cinematic-instrumental-horizon-sound
+      - the-way-water-moves-cinematic-instrumental-horizon-sound
+  - playlist_id: missing-stamp-venice-trilogy
+    title: Missing Stamp - Venice Trilogy
+    description: ''
+    published_at: '2026-02-06T12:31:02.78813Z'
+    channel_id: UCiko-zjojbsoXrsEuBOPbSw
+    channel_title: Horizon Sound
+    thumbnail: null
+    song_ids:
+      - venice-waters-upbeat-acoustic-pop-adventure-horizon-sound
+      - someday-acoustic-pop-storytelling-horizon-sound
+      - missing-stamp-emotional-acoustic-pop-horizon-sound
+  - playlist_id: shorts
+    title: Shorts
+    description: A collection of Horizon Sound shorts
+    published_at: '2026-02-01T15:16:08.531871Z'
+    channel_id: UCiko-zjojbsoXrsEuBOPbSw
+    channel_title: Horizon Sound
+    thumbnail: /assets/thumbnails/playlist-shorts.jpeg
+    song_ids:
+      - rise-like-thunder-80s-rock-anthem-short-horizon-sound
+      - nineteen-summers-emotional-acoustic-pop-short-horizon-sound
+  - playlist_id: midnight-saga
+    title: Midnight Saga
+    description: ''
+    published_at: '2026-01-27T20:06:20.884413Z'
+    channel_id: UCiko-zjojbsoXrsEuBOPbSw
+    channel_title: Horizon Sound
+    thumbnail: /assets/thumbnails/playlist-midnight-saga.jpeg
+    song_ids:
+      - before-midnight-the-midnight-saga-chapter-1-horizon-sound
+      - midnight-mayhem-the-midnight-saga-chapter-2-horizon-sound
+      - midnight-madness-the-midnight-saga-chapter-3-horizon-sound
+      - after-midnight-the-midnight-saga-chapter-4-horizon-sound
+  - playlist_id: after-the-silence-performed-by-lydia-ellington
+    title: After the Silence – Performed by Lydia Ellington
+    description: >-
+      A full‑album journey performed by Lydia Ellington, whose warm, expressive
+      voice brings emotional clarity to every track. After the Silence unfolds
+      as a cinematic exploration of healing, reflection, and the quiet strength
+      that emerges in the moments we often overlook. Lydia’s intimate vocal tone
+      carries the listener through themes of resilience, rediscovery, and
+      emotional honesty, weaving each song into a cohesive narrative. With her
+      blend of softness and power, she transforms stillness into storytelling,
+      guiding the album from its most fragile confessions to its most hopeful
+      resolutions. This collection stands as a unified emotional arc —
+      thoughtful, atmospheric, and deeply human — brought to life through
+      Lydia’s unmistakable presence.
+
+
+      #LydiaEllington #AfterTheSilence #HorizonSound #CinematicPop #PopBallad
+      #EmotionalPop #IndiePop #NewMusic #Songwriter #PopAlbum #CinematicMusic
+      #FemaleVocalist #EmotionalBallad #AtmosphericPop #StorytellingMusic
+    published_at: '2026-01-16T14:08:54.234054Z'
+    channel_id: UCiko-zjojbsoXrsEuBOPbSw
+    channel_title: Horizon Sound
+    thumbnail: >-
+      /assets/thumbnails/playlist-after-the-silence-performed-by-lydia-ellington.jpeg
+    song_ids:
+      - >-
+        1-the-quiet-after-performed-by-lydia-ellington-after-the-silence-horizon-sound
+      - >-
+        2-borrowed-time-performed-by-lydia-ellington-after-the-silence-horizon-sound
+      - >-
+        3-homesick-for-you-performed-by-lydia-ellington-after-the-silence-horizon-sound
+      - >-
+        4-the-way-we-lied-performed-by-lydia-ellington-after-the-silence-horizon-sound
+      - >-
+        5-paper-walls-performed-by-lydia-ellington-after-the-silence-horizon-sound
+      - >-
+        6-half-of-me-performed-by-lydia-ellington-after-the-silence-horizon-sound
+      - >-
+        7-if-you-d-asked-performed-by-lydia-ellington-after-the-silence-horizon-sound
+      - >-
+        8-ghostlight-performed-by-lydia-ellington-after-the-silence-horizon-sound
+      - >-
+        9-after-the-silence-performed-by-lydia-ellington-after-the-silence-horizon-sound
+      - >-
+        10-saltwater-performed-by-lydia-ellington-after-the-silence-horizon-sound
+      - >-
+        11-the-dress-i-never-wore-performed-by-lydia-ellington-after-the-silence-horizon-sound
+      - >-
+        12-unsent-letters-performed-by-lydia-ellington-after-the-silence-horizon-sound
+      - >-
+        13-rise-again-performed-by-lydia-ellington-after-the-silence-horizon-sound
+  - playlist_id: a-way-back-trilogy
+    title: A Way Back – Trilogy
+    description: >-
+      Three connected songs tracing the journey from heartbreak to
+      self‑discovery. One story told through stillness, her voice, and his —
+      each chapter revealing a different truth on the way back to yourself.
+    published_at: '2026-01-16T14:08:14.9513Z'
+    channel_id: UCiko-zjojbsoXrsEuBOPbSw
+    channel_title: Horizon Sound
+    thumbnail: /assets/thumbnails/playlist-a-way-back-trilogy.jpeg
+    song_ids:
+      - lost-in-silence-from-a-way-back-horizon-sound
+      - choosing-me-her-version-acoustic-pop-horizon-sound
+      - choosing-me-his-version-pop-horizon-sound
+  - playlist_id: acoustic-singer-songwriter
+    title: Acoustic / Singer‑Songwriter
+    description: >-
+      Acoustic‑driven songs featuring honest storytelling, soft acoustic
+      textures, and a warm, intimate singer‑songwriter sound.
+    published_at: '2026-01-16T14:07:28.874406Z'
+    channel_id: UCiko-zjojbsoXrsEuBOPbSw
+    channel_title: Horizon Sound
+    thumbnail: /assets/thumbnails/playlist-acoustic-singer-songwriter.jpeg
+    song_ids:
+      - all-around-the-world-acoustic-pop-horizon-sound
+      - not-so-smart-home-folk-country-comedy-horizon-sound
+      - fixed-it-mostly-right-country-comedy-horizon-sound
+      - makin-our-way-to-california-pop-folk-horizon-sound
+  - playlist_id: emotional-ballads
+    title: Emotional Ballads
+    description: >-
+      Emotional, heartfelt ballads featuring intimate vocals, reflective lyrics,
+      and a warm, cinematic atmosphere.
+    published_at: '2026-01-16T14:06:39.030412Z'
+    channel_id: UCiko-zjojbsoXrsEuBOPbSw
+    channel_title: Horizon Sound
+    thumbnail: /assets/thumbnails/playlist-emotional-ballads.jpeg
+    song_ids:
+      - nineteen-summers-emotional-ballad-horizon-sound
+      - im-holding-on-emotional-piano-ballad-horizon-sound
+      - oh-amber-emotional-pop-storytelling-horizon-sound
+      - learning-to-live-again-pop-horizon-sound
+      - a-quiet-little-voice-emotional-pop-empowering-pop-horizon-sound
+      - nineteen-summers-emotional-acoustic-pop-horizon-sound
+  - playlist_id: modern-country
+    title: Modern Country
+    description: >-
+      Modern country featuring big choruses, heartfelt vocals, and a blend of
+      acoustic warmth and polished production. Songs that embody today’s country
+      storytelling — love, loss, grit, and the moments that feel like home.
+    published_at: '2026-01-11T14:22:16.368308Z'
+    channel_id: UCiko-zjojbsoXrsEuBOPbSw
+    channel_title: Horizon Sound
+    thumbnail: /assets/thumbnails/playlist-modern-country.jpeg
+    song_ids:
+      - the-man-behind-the-bar-90s-country-horizon-sound
+      - time-capsule-emotional-country-nostalgic-storytelling-horizon-sound
+      - already-out-the-door-modern-country-horizon-sound
+      - wildfire-modern-country-power-anthem-horizon-sound
+      - vegas-in-the-sky-country-pop-party-anthem-horizon-sound
+      - she-s-so-into-me-modern-country-love-song-horizon-sound
+  - playlist_id: electro-pop-dance-pop
+    title: Electro-Pop & Dance-Pop
+    description: >-
+      A neon‑lit mix of energetic electro‑pop featuring glossy synths, punchy
+      beats, attitude‑driven vocals, and dance‑ready hooks. Futuristic textures
+      and high‑voltage pop energy for fans of bold, modern electronic pop.
+    published_at: '2026-01-10T16:14:27.752221Z'
+    channel_id: UCiko-zjojbsoXrsEuBOPbSw
+    channel_title: Horizon Sound
+    thumbnail: /assets/thumbnails/playlist-electro-pop-dance-pop.jpeg
+    song_ids:
+      - put-you-down-electro-pop-dance-pop-horizon-sound
+      - midnight-mayhem-electro-pop-horizon-sound
+  - playlist_id: 90s-pop-pop-rock
+    title: 90s Pop & Pop-Rock
+    description: >-
+      Feel‑good 90s‑inspired pop and pop‑rock featuring bright guitar hooks,
+      heartfelt lyrics, and a warm wave of nostalgic energy.
+    published_at: '2026-01-09T14:11:00.03425Z'
+    channel_id: UCiko-zjojbsoXrsEuBOPbSw
+    channel_title: Horizon Sound
+    thumbnail: /assets/thumbnails/playlist-90s-pop-pop-rock.jpeg
+    song_ids:
+      - new-again-90s-pop-revival-horizon-sound
+      - heres-to-us-90s-rock-anthem-horizon-sound
+  - playlist_id: southern-rock
+    title: Southern Rock
+    description: >-
+      A collection of gritty, high‑energy Southern rock featuring swaggering
+      guitars, barroom storytelling, and rowdy, good‑time grooves.
+      Blues‑drenched riffs, driving drums, and cinematic outlaw energy define
+      this playlist of modern and classic‑inspired Southern‑fried anthems.
+    published_at: '2026-01-08T13:09:44.820846Z'
+    channel_id: UCiko-zjojbsoXrsEuBOPbSw
+    channel_title: Horizon Sound
+    thumbnail: /assets/thumbnails/playlist-southern-rock.jpeg
+    song_ids:
+      - one-hell-of-a-ride-gritty-southern-rock-horizon-sound
+      - gimme-three-steps-and-im-gone-southern-rock-horizon-sound
+      - barroom-brawl-southern-rock-grit-horizon-sound
+  - playlist_id: pop
+    title: Pop
+    description: >-
+      Bright, modern pop featuring emotional hooks, catchy melodies, and
+      feel‑good energy. A blend of acoustic‑leaning, 90s‑inspired, and
+      contemporary pop tracks.
+    published_at: '2026-01-08T13:05:02.080533Z'
+    channel_id: UCiko-zjojbsoXrsEuBOPbSw
+    channel_title: Horizon Sound
+    thumbnail: /assets/thumbnails/playlist-pop.jpeg
+    song_ids:
+      - becoming-me-emotional-pop-upbeat-love-song-horizon-sound
+      - rising-up-energetic-pop-rock-horizon-sound
+      - hold-on-pop-nostalgic-90s-energy-horizon-sound
+      - dont-let-the-summer-end-upbeat-1990s-style-pop-horizon-sound
+      - kaleidoscope-emotional-acoustic-pop-horizon-sound
+      - hold-on-revised-horizon-sound
+      - keep-the-light-on-90s-pop-revival-horizon-sound
+  - playlist_id: 80s-rock-pop
+    title: 80's Rock & Pop
+    description: >-
+      A tribute to the electrifying sound of the 80s, featuring big drums,
+      soaring vocals, shimmering synths, and the nostalgic energy of classic 80s
+      rock and pop.
+    published_at: '2026-01-08T13:00:48.268465Z'
+    channel_id: UCiko-zjojbsoXrsEuBOPbSw
+    channel_title: Horizon Sound
+    thumbnail: /assets/thumbnails/playlist-80s-rock-pop.jpeg
+    song_ids:
+      - total-eclipse-years-later-80s-piano-power-ballad-horizon-sound
+      - >-
+        until-the-nightmare-ends-epic-80s-synthwave-stranger-things-inspired-horizon-sound
+      - rise-like-thunder-80s-arena-rock-anthem-horizon-sound
+      - never-let-each-other-down-80s-synth-rock-horizon-sound
+      - rusty-80s-emotional-pop-ballad-horizon-sound

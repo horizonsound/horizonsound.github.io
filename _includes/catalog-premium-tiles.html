@@ -1,0 +1,80 @@
+<section id="music-view-playlists">  
+  <div class="playlist-premium-grid">
+    
+    {% assign playlist_data = site.data.youtube_playlists.playlists %}
+    {% assign overrides = site.data.playlist_overrides.overrides %}
+    
+    {% assign merged_playlists = "" | split: "" %}
+          
+    {% for pl in playlist_data %}
+      {% assign override = overrides | where: "playlist_id", pl.playlist_id | first %}
+
+      {% if override %}
+        {% assign override_hash = override | jsonify | parse_json %}
+        {% assign merged = pl | merge: override_hash %}
+        {% assign merged_playlists = merged_playlists | push: merged %}
+      {% else %}
+        {% assign merged_playlists = merged_playlists | push: pl %}
+      {% endif %}
+    {% endfor %}
+
+    {% for playlist in merged_playlists %}
+
+      {% assign override = overrides | where: "playlist_id", playlist.playlist_id | first %}
+      {% assign playlist_song_ids = override.songs | default: playlist.song_ids %}
+      
+      {% assign has_public = false %}
+      {% for vid in playlist_song_ids %}
+        {% assign song = all_songs | where: "song_id", vid | first %}
+        {% if song and song.videostatus == "public" %}
+          {% assign has_public = true %}
+        {% endif %}
+      {% endfor %}
+      
+{% if playlist.playlist_id == "missing-stamp-venice-trilogy" %}
+  <!-- DEBUG: Venice Trilogy -->
+  {% for vid in playlist_song_ids %}
+    {% assign song = all_songs | where: "song_id", vid | first %}
+    <!-- vid: {{ vid }} | videostatus: {{ song.videostatus }} -->
+  {% endfor %}
+  <!-- has_public: {{ has_public }} -->
+{% endif %}
+
+    {% assign override_thumbnail = override.thumbnail | default: override.hero %}
+      {% assign display_thumbnail = override_thumbnail | default: playlist.thumbnail | default: playlist.hero | default: playlist.youtube_thumbnail %}
+      {% assign first_song_id = playlist_song_ids | first %}
+      {% assign display_title = override.title | default: playlist.title %}
+
+      {% if has_public %}
+        <a 
+          class="playlist-premium-tile" 
+          href="{{ site.baseurl }}/music/playlists/{{ playlist.playlist_id }}/?song_id={{ first_song_id }}"
+        >
+          <div class="playlist-premium-image-wrapper">
+            <img 
+              src="{{ site.baseurl }}{{ display_thumbnail }}" 
+              alt="{{ display_title }}" 
+              class="playlist-premium-image"
+            >
+            <div class="playlist-premium-gradient"></div>
+            <div class="playlist-premium-title">{{ display_title }}</div>
+          </div>
+        </a>
+      {% else %}
+        <div class="playlist-premium-tile coming-soon">
+          <div class="playlist-premium-image-wrapper">
+            <img 
+              src="{{ site.baseurl }}{{ display_thumbnail }}" 
+              alt="{{ display_title }}" 
+              class="playlist-premium-image"
+            >
+            <div class="playlist-premium-overlay">Coming Soon</div>
+            <div class="playlist-premium-gradient"></div>
+            <div class="playlist-premium-title">{{ display_title }}</div>
+          </div>
+        </div>
+      {% endif %}
+
+    {% endfor %}
+  </div>
+</section>

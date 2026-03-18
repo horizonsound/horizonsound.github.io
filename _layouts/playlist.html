@@ -1,222 +1,822 @@
 ---
 layout: default
+is_playlist_page: true
 ---
 
-{% comment %}
-  1. Load the playlist entry from playlists.yml
-{% endcomment %}
+<style>
+  .catalog-page {
+    padding: 0 30px;
+  }
 
-{% assign playlist = site.data.playlists | where: "playlist_id", page.playlist_id | first %}
-
-<main class="playlist-page">
-  <script>
-    window.isPlaylistPage = true;
-  </script>
-
-  {% if site.debug %}
-  <div class="debug-block">
-    <pre style="background:#111; color:#0ff; padding:1rem; white-space:pre-wrap;">
-      PLAYLIST PAGE DEBUG
-      ==============================
-      
-      page.playlist_id: {{ page.playlist_id }}
-      
-      PLAYLIST YAML ENTRY:
-      {{ playlist | jsonify }}
-      
-      SONG IDS FROM PLAYLIST:
-      {{ playlist.songs | jsonify }}
-    </pre>
-  </div>
-  {% endif %}
-
-  <!-- PLAYLIST HEADER -->
-  <section class="playlist-header">
-    <h2 class="section-header">{{ playlist.title }}</h2>
-    {% if playlist.description %}
-    <p class="playlist-description">{{ playlist.description }}</p>
-    {% endif %}
-  </section>
-
-  {% comment %}
-    2. Build the list of songs for this playlist
-  {% endcomment %}
-  {% assign playlist_songs = "" | split: "" %}
-
-  {% for sid in playlist.songs %}
-    {% assign expected_song = site.data.music.songs | where: "song_id", sid | first %}
-    {% assign song_page = site.pages | where: "song_id", sid | first %}
+  .catalog-panel {
+    background: rgba(20, 20, 20, 0.55); /* dark glass */
+    backdrop-filter: blur(22px) saturate(140%);
+    -webkit-backdrop-filter: blur(22px) saturate(140%);
   
-    {% if expected_song %}
-      {% assign merged = expected_song | merge: song_page %}
-      {% assign playlist_songs = playlist_songs | push: merged %}
-    {% endif %}
-  {% endfor %}
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.08); /* subtle glass edge */
+    padding: 24px 32px 32px;
+    color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow:
+      0 20px 40px rgba(0,0,0,0.55),
+      0 0 60px rgba(0,0,0,0.35),
+      inset 0 0 0 1px rgba(255,255,255,0.04);
+  position: relative;
+  }
   
-  {% comment %}
-    3. Sort playlist songs by sequence if present
-  {% endcomment %}
+  .catalog-panel::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    -radius: inherit;
+    background: linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.08),
+      rgba(255,255,255,0)
+    );
+    pointer-events: none;
+  }
 
-  {% assign sorted = playlist_songs | sort: "sequence" %}
-  {% assign first_song = sorted | first %}
+  .catalog-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
 
-  <!-- ⭐ PLAYER FRAME WRAPPER (PURPLE THEME) ⭐ -->
-  <div class="player-frame player-frame--purple">
+  .catalog-toggle {
+    display: flex;
+    gap: 8px;
+  }
+
+  .catalog-header-spacer {
+    width: 120px;
+  }
+
+  .catalog-page-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    font-size: 1.4rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .catalog-subtoggle {
+    display: none;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .mode-toggle-button,
+  .view-toggle-button {
+    background: rgba(255, 255, 255, 0.06);
+    : 1px solid rgba(255, 255, 255, 0.12);
+    color: #fff;
+    padding: 6px 16px;
+    -radius: 999px;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 
+      background 0.2s ease,
+      -color 0.2s ease,
+      box-shadow 0.2s ease,
+      color 0.2s ease;
+    backdrop-filter: blur(8px) saturate(140%);
+    -webkit-backdrop-filter: blur(8px) saturate(140%);
+    box-shadow:
+      inset 0 1px 2px rgba(255, 255, 255, 0.08),
+      inset 0 -2px 4px rgba(0, 0, 0, 0.35);
+  }
+
+  .mode-toggle-button.active,
+  .view-toggle-button.active {
+    background: rgba(255, 255, 255, 0.18);
+    -color: rgba(255, 255, 255, 0.35);
+    color: #000;
+    box-shadow:
+      inset 0 2px 4px rgba(0, 0, 0, 0.45),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.25);
+  }
   
-    <!-- EMBED -->
-    {% include embed.html youtube_id=first_song.youtube_id %}
+  .mode-toggle-button:hover,
+  .view-toggle-button:hover {
+    background: rgba(255, 255, 255, 0.12);
+    -color: rgba(255, 255, 255, 0.22);
+  }
+
+  .catalog-section-title {
+    font-size: 1.1rem;
+    margin: 0 0 8px;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+    white-space: normal;
+    position: relative;
+    z-index: 2;
+  }
   
-    <!-- JS DATA -->
+  .catalog-placeholder {
+    padding: 16px 0;
+    opacity: 0.7;
+    font-size: 0.95rem;
+  }
+
+  .carousel-strip {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+.playlist-section .section-header {
+  font-size: 1.1rem;
+  margin: 0 0 8px;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow: visible;
+  white-space: normal;
+  position: relative;
+  z-index: 2;
+}
+
+.carousel-block {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden; /* keeps the title from inheriting scroll width */
+  position: relative;
+}
+
+.horizontal-strip[data-strip] {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.playlist-section h2.collection-section-title {
+  font-size: 1.1rem;
+  margin: 0 0 8px;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: normal;
+  position: relative;
+  z-index: 2;
+}
+
+.collection-carousel-block {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.catalog-group-panel.collection-premium-panel {
+  background: rgba(94, 26, 138, 0.18); /* Stage purple tint */
+  border-radius: 16px;
+  padding: 24px;
+  margin: 40px 0;
+  box-shadow: 0 8px 28px rgba(94, 26, 138, 0.45); /* Stage glow */
+  backdrop-filter: blur(12px);
+}
+
+.shared-tile-title {
+  font-size: 0.95rem;
+  line-height: 1.25;
+  min-height: calc(1.25em * 2); /* exactly two lines of height */
+  max-height: calc(1.25em * 2); /* prevent a third line */
+  padding: 10px 12px;
+  color: white;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;        /* limit to 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+  
+#catalog-view-grouped {
+  padding: 0 48px;
+}
+
+  .shared-tile.coming-soon {
+  position: relative;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.collection-premium .shared-tile-title {
+  background: linear-gradient(90deg, #5e1a8a 0%, #8e24aa .55%);
+}
+
+/* ===========================
+   CATALOG TILE SYSTEM (UNIFIED)
+   =========================== */
+.shared-tile {
+  width: 260px;
+  display: block;
+  background: #111;
+  border-radius: 4px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative; /* for vignette overlay */
+}
+
+.shared-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+.shared-tile img {
+  width: 260px;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* Subtle vignette */
+.shared-tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0,0,0,0) 60%, rgba(0,0,0,0.35) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Title bar */
+.shared-tile-title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  line-height: 1.25;
+  min-height: 2.6em;
+  display: flex;
+  align-items: center;
+  color: white;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(6px);
+  z-index: 2;
+}
+
+/* Collections: shorter tile + purple title */
+.collection-premium.shared-tile {
+  height: 180px;
+}
+
+.collection-premium .shared-tile-title {
+  font-weight: 500;
+  background: linear-gradient(
+    90deg,
+    rgba(94, 26, 138, 0.55) 0%,
+    rgba(142, 36, 170, 0.55) 100%
+  );
+  backdrop-filter: blur(8px);
+}
+  
+/* Coming Soon overlay */
+.shared-tile.coming-soon {
+  position: relative;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.shared-tile-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.45);
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 3;
+}
+
+/* Group panels */
+.catalog-group-panel {
+  background: rgba(255,255,255,0.05);
+  border-radius: 16px;
+  padding: 24px;
+  margin: 40px 0;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  backdrop-filter: blur(10px);
+}
+
+.catalog-group-panel.collection-premium-panel {
+  background: rgba(94, 26, 138, 0.18);
+  box-shadow: 0 8px 28px rgba(94, 26, 138, 0.45);
+}
+
+.catalog-group-title {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+.catalog-group-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Grouped view gutters */
+#catalog-view-grouped {
+  padding: 0 48px;
+}
+
+/* Carousel strip (reusing shared tiles) */
+.content-carousel {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.content-strip {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 8px 0;
+  flex: 1;
+}
+
+.content-arrow {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: background 0.2s ease;
+}
+
+.content-arrow:hover {
+  background: rgba(255,255,255,0.2);
+}
+  
+/* ============================================================
+   CAROUSEL OVERRIDES — REQUIRED ON BOTH PAGES
+   Forces horizontal flow, prevents shrinking, prevents wrapping
+============================================================ */
+
+/* 1. The strip must be a horizontal, non-wrapping flex container */
+.content-strip {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  white-space: nowrap !important;
+  scroll-behavior: smooth;
+}
+
+/* 2. Tiles inside the carousel must NOT shrink */
+.content-strip .shared-tile {
+  flex: 0 0 auto !important;
+  width: 180px; /* or your tile width */
+  flex-shrink: 0 !important;
+}
+
+/* 3. Optional but recommended: spacing between tiles */
+.content-strip .shared-tile {
+  margin-right: 16px;
+}
+
+/* 4. Ensure arrows stay aligned and don’t collapse */
+.content-carousel {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* 5. Arrow buttons must not affect layout width */
+.content-arrow {
+  flex: 0 0 auto;
+  z-index: 2;
+}
+
+/* Ensure arrows don't shrink the layout */
+.content-arrow {
+  flex: 0 0 auto;
+}
+
+.shared-tile.active {
+  outline: 4px solid #8e24aa !important;
+  outline-offset: -4px;
+  border-radius: 6px;
+  z-index: 50 !important;
+  position: relative;
+}
+  
+.shared-tile.active::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 4px solid #8e24aa;
+  border-radius: 6px;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.playlist-premium-title {
+  font-size: 20px;        /* calibrated to your tile width */
+  font-weight: 600;       /* strong but not bulky */
+  line-height: 1.2;       /* tight, premium spacing */
+  padding: 12px 14px;     /* matches the gradient thickness */
+  letter-spacing: 0.3px;  /* subtle clarity boost */
+}
+
+  .player-frame-inner .content-strip {
+  overflow-x: auto !important;
+}
+
+  /* Match catalog disabled arrow behavior */
+.content-arrow.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+  /* Prevent playlist carousel from stretching too wide */
+.playlist-page .content-strip {
+  flex: 0 1 auto !important;
+  min-width: 0 !important;
+}
+  
+.content-arrow {
+  background: #ffffff;
+  border: none;
+  color: #333;
+  width: 40px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+  /* Match catalog carousel horizontal padding */
+.player-frame-inner {
+  padding: 0 32px;
+}
+
+  /* Pull right arrow inward to match left arrow spacing */
+.player-frame-inner .content-arrow-right {
+  margin-right: 32px;
+}
+
+  /* Add vertical breathing room above the carousel ONLY */
+.player-frame-inner .content-carousel {
+  margin-top: 32px;
+}
+
+  .player-frame {
+  border-radius: 18px;
+  background: rgba(40, 0, 60, 0.65);
+  box-shadow:
+    0 0 40px rgba(142, 36, 170, 0.35),
+    inset 0 0 60px rgba(0, 0, 0, 0.55);
+}
+
+  /* Lift playlist title + subtitle onto the hero */
+.playlist-header {
+  position: relative;
+  z-index: 20;
+  margin-top: -140px; /* same lift as song page */
+  text-align: center;
+  padding: 0 40px;
+}
+
+.playlist-title {
+  font-size: 2.4rem;
+  margin: 0;
+  letter-spacing: 0.03em;
+}
+
+.playlist-header h2.playlist-title {
+  font-size: 1.3rem;
+  opacity: 0.85;
+  margin-top: 6px;
+}
+
+  /* Enhance song subtitle visibility */
+.player-subtitle {
+  font-size: 22px !important;
+  font-weight: 500 !important;
+  opacity: 0.95 !important;
+  letter-spacing: 0.02em;
+  margin-top: 4px;
+}
+
+</style>
+   
+  <!-- Load the playlist and override data -->
+  {% assign playlist = site.data.youtube_playlists.playlists
+    | where: "playlist_id", page.playlist_id
+    | first %}
+  {% assign playlist_override = site.data.playlist_overrides.overrides
+    | where: "playlist_id", page.playlist_id
+    | first %}
+
+
+    <!-- Load YouTube IFrame API ONCE -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <!-- Make the data visible to JavaScript (ONLY ONCE) -->
     <script>
-      window.allSongs = {{ sorted | jsonify }};
+      window.YOUTUBE_SONGS = {{ site.data.youtube_feed.songs | jsonify }};
+      window.MUSIC_OVERRIDES = {{ site.data.music_overrides.overrides | jsonify }};
+      window.BASEURL = "{{ site.baseurl }}";
+
+      const params = new URLSearchParams(window.location.search);
+      window.SELECTED_SONG_ID = params.get("song_id") || null;
     </script>
 
-    {% include carousel.html playlist=sorted %}
-  </div>
+    <!-- Hero -->
+    {% assign hero_image = playlist_override.hero | default: playlist.hero %}
+    {% if hero_image %}
+      <div class="hero-banner">
+        <img class="hero-image" src="{{ site.baseurl }}{{ hero_image }}" alt="{{ playlist.title }}">
+      </div>
+    {% else %}
+      {% include hero.html %}
+    {% endif %}
 
-  <!-- ABOUT + LYRICS stay inside frame -->
-  <section class="playlist-about">
+    <!-- Playlist Header -->
+    {% assign header_title = playlist_override.title | default: playlist.title %}
+    {% assign header_subtitle = playlist_override.subtitle %}
+    <div class="playlist-header">
+      {% if header_title %}
+        <h1 class="playlist-title">{{ header_title }}</h1>
+      {% endif %}
+      {% if header_subtitle %}
+        <h2 class="playlist-title">{{ header_subtitle }}</h2>
+      {% endif %}
+    </div>
+
+    <!-- Playlist Description -->
+    {% assign playlist_description = playlist_override.description %}
+    {% if playlist_description %}
+      <div class="playlist-description">
+        {{ playlist_description }}
+      </div>
+    {% endif %}
+
+    {% assign ids = playlist_override.songs | default: playlist.song_ids %}
+    {% assign ordered_songs = "" | split: "" %}
+    {% for id in ids %}
+      {% assign s = site.data.youtube_feed.songs | where: "song_id", id | first %}
+      {% if s %}
+        {% assign ordered_songs = ordered_songs | push: s %}
+      {% endif %}
+    {% endfor %}
+
+    {% if playlist_override.is_collection != true %}
+      {% assign ordered_songs = ordered_songs | sort: "title" %}
+    {% endif %}
+
+    <div id="selected-song-player" class="player-frame player-frame--purple">
+        
+        <div class="player-frame-inner">
+            <div class="player-header">
+                <h2 class="player-title"></h2>
+                <h3 class="player-subtitle"></h3>
+            </div>
+            <div id="player-container"></div>
+            {% include carousel.html songs=ordered_songs playlist_id=playlist.playlist_id %}
+        </div>
+    </div>
+
+    <div id="selected-song-extra" class="about-block"></div>
     <div class="centered-column">
-      <h2 class="section-header">About the Song</h2>
-      <div id="playlist-about" class="playlist-about-text"></div>
+      <div id="selected-song-about" class="about-block"></div>
     </div>
-  </section>
+    <div id="selected-song-lyrics" class="lyrics-block"></div>
+<script>
+  let YT_PLAYER = null;
+  let YT_READY = false;
 
-  <section class="playlist-lyrics">
-    <div class="lyrics-block">
-      <h2 class="section-header">Lyrics</h2>
-      <div id="playlist-lyrics" class="playlist-lyrics-text"></div>
-    </div>
-  </section>
-  <!-- ⭐ END PLAYER FRAME ⭐ -->
+  function onYouTubeIframeAPIReady() {
+    console.log("YOUTUBE API READY");
+    YT_READY = true;
+  }
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const aboutEl = document.getElementById("playlist-about");
-      const lyricsEl = document.getElementById("playlist-lyrics");
-    
-      const first = window.allSongs[0];
-      if (first) {
-        aboutEl.innerHTML = first.description_html || "";
-        lyricsEl.innerHTML = first.lyrics_html || "";
-      }
-    
-      document.querySelectorAll(".carousel-tile").forEach(tile => {
-        tile.addEventListener("click", () => {
-    
-          console.log("=== PLAYLIST TILE CLICKED ===");
-          console.log("Tile element:", tile);
-          console.log("dataset.song:", tile.dataset.song);
-          console.log("window.allSongs:", window.allSongs);
-    
-          const id = tile.dataset.song;
-          const song = window.allSongs.find(s => s.song_id === id);
-    
-          console.log("Matched song:", song);
-    
-          if (!song) {
-            console.warn("NO SONG FOUND FOR ID:", id);
-            return;
-          }
-    
-          aboutEl.innerHTML = song.description || "";
-          lyricsEl.innerHTML = song.lyrics || "";
-    
-          console.log("About/Lyrics updated.");
-        });
-      });
-    });
-  </script>
-  
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      function initTileSelection() {
-        const tiles = document.querySelectorAll(".carousel-tile, .playlist-tile");
-    
-        // Wait until tiles exist
-        if (!tiles.length) {
-          return requestAnimationFrame(initTileSelection);
-        }
-    
-        // If no tile is active, activate the first one
-        const alreadyActive = Array.from(tiles).some(t => t.classList.contains("active"));
-        if (!alreadyActive) {
-          tiles[0].classList.add("active");
-        }
-    
-        // Center it
-        tiles[0].scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
-      }
-    
-      initTileSelection();
-    });
-  </script>
+  function safeLoadSong(songId) {
+    if (!YT_READY) {
+      setTimeout(() => safeLoadSong(songId), 50);
+      return;
+    }
+    loadSong(songId);
+  }
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const carousels = document.querySelectorAll("[data-carousel]");
-    
-      carousels.forEach(carousel => {
-        const strip = carousel.querySelector("[data-strip]");
-        if (!strip) return;
-    
-        function updateDebug() {
-          const sw = strip.scrollWidth;
-          const cw = strip.clientWidth;
-          const sl = strip.scrollLeft;
-          const canScroll = sw > cw;
-    
-          const swEl = carousel.querySelector("[data-debug-scrollwidth]");
-          const cwEl = carousel.querySelector("[data-debug-clientwidth]");
-          const slEl = carousel.querySelector("[data-debug-scrollleft]");
-          const csEl = carousel.querySelector("[data-debug-canscroll]");
-    
-          if (swEl) swEl.textContent = sw;
-          if (cwEl) cwEl.textContent = cw;
-          if (slEl) slEl.textContent = sl;
-          if (csEl) csEl.textContent = canScroll ? "YES" : "NO";
-        }
-    
-        updateDebug();
-        strip.addEventListener("scroll", updateDebug);
-        carousel.addEventListener("carousel:refresh", updateDebug);
-    
-        const left = carousel.querySelector("[data-arrow='left']");
-        const right = carousel.querySelector("[data-arrow='right']");
-    
-        if (left) {
-          left.addEventListener("click", () => {
-            strip.scrollBy({ left: -300, behavior: "smooth" });
-            setTimeout(updateDebug, 300);
-          });
-        }
-    
-        if (right) {
-          right.addEventListener("click", () => {
-            strip.scrollBy({ left: 300, behavior: "smooth" });
-            setTimeout(updateDebug, 300);
-          });
+  function buildPlayer(youtubeId) {
+    if (!YT_READY || !ensurePlayerContainer()) {
+      setTimeout(() => buildPlayer(youtubeId), 50);
+      return;
+    }
+
+    if (!YT_PLAYER) {
+      console.log("PLAYLIST SCRIPT RUNNING");
+      YT_PLAYER = new YT.Player('player-container', {
+        videoId: youtubeId,
+        playerVars: {
+          autoplay: 1,
+          mute: 0,
+          controls: 1,
+          rel: 0
+        },
+        events: {
+          'onStateChange': onPlayerStateChange
         }
       });
-    });
-  </script>
- 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const aboutEl = document.getElementById("playlist-about");
-      const lyricsEl = document.getElementById("playlist-lyrics");
-    
-      function initAboutLyrics() {
-        if (!window.allSongs || !window.allSongs.length) {
-          return requestAnimationFrame(initAboutLyrics);
-        }
-    
-        const first = window.allSongs[0];
-        aboutEl.innerHTML = first.description_html || "";
-        lyricsEl.innerHTML = first.lyrics_html || "";
+    } else {
+      YT_PLAYER.loadVideoById(youtubeId);
+    }
+  }
+
+  function ensurePlayerContainer() {
+    return document.getElementById("player-container") !== null;
+  }
+
+  function onPlayerStateChange(event) {
+    if (event.data === YT.PlayerState.ENDED) {
+      advanceToNextSong(window.SELECTED_SONG_ID);
+    }
+  }
+
+  function loadSong(songId) {
+    window.SELECTED_SONG_ID = songId;
+
+    const song = window.YOUTUBE_SONGS.find(s => s.song_id === songId);
+    const override = window.MUSIC_OVERRIDES.find(s => s.song_id === songId);
+
+    const title = override?.title || song?.title || "";
+    const subtitle = override?.subtitle || "";
+    const extraTitle = override?.extra_title || "";
+    const extraHTML = override?.extra_html || "";
+    const about = song?.description_html || "";
+    const lyricsHTML = override?.lyrics_html || "";
+    const youtubeId = song?.youtube_id || "";
+
+    document.querySelector(".player-title").textContent = title;
+    document.querySelector(".player-subtitle").textContent = subtitle;
+
+    buildPlayer(youtubeId);
+
+    document.getElementById("selected-song-extra").innerHTML = `
+      ${extraTitle ? `<h3 class="section-header">${extraTitle}</h3>` : ""}
+      ${extraHTML ? `<div class="about-text">${extraHTML}</div>` : ""}
+    `;
+
+    document.getElementById("selected-song-about").innerHTML = `
+      ${about ? `<h3 class="section-header">About</h3>` : ""}
+      ${about ? `<div class="about-text">${about}</div>` : ""}
+    `;
+
+    document.getElementById("selected-song-lyrics").innerHTML = lyricsHTML || "";
+
+    highlightTile(songId);
+  }
+
+  function highlightTile(songId) {
+    const tiles = document.querySelectorAll('.shared-tile');
+    tiles.forEach(t => t.classList.remove('active'));
+
+    const activeTile = document.querySelector(`.shared-tile[data-song-id="${songId}"]`);
+    if (!activeTile) return;
+
+    activeTile.classList.add('active');
+
+    const strip = activeTile.closest('.content-strip, .horizontal-strip');
+    if (strip) {
+      strip.scrollTo({
+        left: activeTile.offsetLeft - strip.offsetWidth / 2 + activeTile.offsetWidth / 2,
+        behavior: 'smooth'
+      });
+    }
+  }
+</script>
+
+<script>
+  document.addEventListener("click", (e) => {
+    const tile = e.target.closest(".shared-tile");
+    if (!tile) return;
+    if (tile.classList.contains("coming-soon")) return;
+
+    const id = tile.getAttribute("data-song-id");
+
+    const url = new URL(window.location.href);
+    url.searchParams.set("song_id", id);
+    history.pushState({}, "", url.toString());
+
+    safeLoadSong(id);
+
+    const strip = tile.closest('.content-strip, .horizontal-strip');
+    if (strip) {
+      strip.scrollTo({
+        left: tile.offsetLeft - strip.offsetWidth / 2 + tile.offsetWidth / 2,
+        behavior: 'smooth'
+      });
+    }
+  });
+
+  function advanceToNextSong(currentId) {
+    const tiles = Array.from(document.querySelectorAll('.shared-tile:not(.coming-soon)'));
+    const index = tiles.findIndex(t => t.getAttribute('data-song-id') === currentId);
+
+    if (index === -1) return;
+
+    const nextTile = tiles[index + 1];
+    if (!nextTile) return;
+
+    const nextId = nextTile.getAttribute('data-song-id');
+
+    const url = new URL(window.location.href);
+    url.searchParams.set("song_id", nextId);
+    history.pushState({}, "", url.toString());
+
+    safeLoadSong(nextId);
+  }
+</script>
+
+<script>
+  if (window.SELECTED_SONG_ID) {
+    safeLoadSong(window.SELECTED_SONG_ID);
+  }
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".content-carousel").forEach(carousel => {
+    const strip = carousel.querySelector(".content-strip");
+    const leftArrow = carousel.querySelector(".content-arrow-left");
+    const rightArrow = carousel.querySelector(".content-arrow-right");
+
+    if (!strip || !leftArrow || !rightArrow) return;
+
+    const updateArrows = () => {
+      const maxScroll = strip.scrollWidth - strip.clientWidth;
+
+      if (strip.scrollLeft <= 0) {
+        leftArrow.classList.add("disabled");
+      } else {
+        leftArrow.classList.remove("disabled");
       }
-    
-      initAboutLyrics();
+
+      if (strip.scrollLeft >= maxScroll - 1) {
+        rightArrow.classList.add("disabled");
+      } else {
+        rightArrow.classList.remove("disabled");
+      }
+    };
+
+    // Initial state
+    updateArrows();
+
+    // Update on scroll
+    strip.addEventListener("scroll", updateArrows);
+
+    // Arrow click handlers
+    const SCROLL_AMOUNT = 260;
+
+    leftArrow.addEventListener("click", () => {
+      strip.scrollBy({ left: -SCROLL_AMOUNT, behavior: "smooth" });
     });
-  </script>
-</main>
+
+    rightArrow.addEventListener("click", () => {
+      strip.scrollBy({ left: SCROLL_AMOUNT, behavior: "smooth" });
+    });
+  });
+});
+</script>
+

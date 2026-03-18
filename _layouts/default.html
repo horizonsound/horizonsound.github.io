@@ -5,9 +5,7 @@
     window.__REPO_NAME__ = "{{ site.github.repository_name }}";
   </script>
   
-  <!-- ENV DEBUG: [{{ site.github.repository_name }}] -->
   {% if site.github.repository_name == "development" %}
-    <!-- dev-only -->
     <meta name="robots" content="noindex, nofollow">
   {% endif %}
 
@@ -25,7 +23,8 @@
       }
     });
   </script>
-  
+  <script src="{{ site.baseurl }}/assets/js/autoplay.js"></script>
+
   <meta charset="UTF-8" />
   <title>{{ page.title }}</title>
 
@@ -38,45 +37,24 @@
     gtag('config', 'G-JFDRHKE5CW');
   </script>
 
-  <link rel="stylesheet" href="{{ site.baseurl }}/style-v2.css?v=0" />
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      if (window.isPlaylistPage) return; // ← Skip global behavior on playlist page
-    
-      const tiles = document.querySelectorAll(".carousel-tile, .playlist-tile");
-      const iframe = document.querySelector(".video-wrapper iframe");
-    
-      if (!tiles.length) return;
-    
-      tiles.forEach(tile => {
-          tile.addEventListener("click", () => {
-      
-          console.log("Clicked tile:", tile.dataset.song);
-      
-          const songId = tile.dataset.song;
-          const song = window.allSongs?.find(s => s.song_id === songId);
-      
-          console.log("Matched song:", song);
-      
-          if (iframe && song?.youtube_id) {
-            iframe.src = "https://www.youtube.com/embed/" + song.youtube_id;
-          }
-      
-          tiles.forEach(t => t.classList.remove("active"));
-          tile.classList.add("active");
-        });
-      });
-    });
-  </script>
+  <link rel="stylesheet" href="{{ site.baseurl }}/style-v2.css?v=1" />
 </head>
-<body>
-  {% include header.html %}
-  {% include hero.html %}
 
-  <main>
-    {{ content }}
-  </main>
+  <body>
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  </script>
+    {% include header.html %}
 
-  {% include footer.html %}
-</body>
+    <div id="page-root">
+      <main>
+        {{ content }}
+      </main>
+    </div>
+    
+    {% include footer.html %}
+  </body>
 </html>

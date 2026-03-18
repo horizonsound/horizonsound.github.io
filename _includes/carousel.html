@@ -1,91 +1,36 @@
-{% if site.detailed-debug %}
-<div style="background:#111; color:#0ff; padding:1rem; margin:1rem 0;">
-  <strong>CAROUSEL INPUT DEBUG</strong><br><br>
+<div class="content-carousel">
+  <button class="content-arrow content-arrow-left">‹</button>
 
-  include.playlist: {{ include.playlist | jsonify }}<br><br>
-  include.songs: {{ include.songs | jsonify }}<br><br>
+  <div class="content-strip">
+    {% assign items = include.songs %}
 
-  items (raw):<br>
-  {% assign items = include.playlist | default: include.songs %}
-  {% for i in items %}
-    - {{ i | jsonify }}<br>
-  {% endfor %}
-</div>
-{% endif %}
+    {% for song in items %}
+      {% assign override = site.data.music_overrides.overrides | where: "song_id", song.song_id | first %}
+      {% assign display_title = override.title | default: song.title %}
 
-
-{% assign items = include.playlist | default: include.songs %}
-
-{% if site.detailed-debug %}
-<div class="debug-block">
-  <pre style="background:#111; color:#0ff; padding:1rem; white-space:pre-wrap;">
-
-CAROUSEL DEBUG
-==============================
-
-include.playlist: {{ include.playlist | jsonify }}
-include.songs:    {{ include.songs | jsonify }}
-
-MODE DETECTED:
-{% if include.playlist %}
-  PLAYLIST MODE (div tiles)
-{% else %}
-  SONG MODE (a tiles)
-{% endif %}
-
-ITEMS (titles + URLs):
-{% for item in items %}
-  - title: {{ item.title }}
-    url:   {{ item.url }}
-{% endfor %}
-
-  </pre>
-</div>
-{% endif %}
-
-<div class="carousel" data-carousel>
-
-  <!-- LEFT ARROW -->
-  <button class="carousel-arrow left-arrow" data-arrow="left">‹</button>
-
-  <div class="horizontal-strip" data-strip>
-
-
-{% if site.detailed-debug %}
-<div style="background:#111; color:#0ff; padding:10px; margin:10px 0; font-size:0.85rem;">
-  <strong>CAROUSEL DEBUG</strong><br>
-  strip.scrollWidth: <span data-debug-scrollwidth></span><br>
-  strip.clientWidth: <span data-debug-clientwidth></span><br>
-  strip.scrollLeft: <span data-debug-scrollleft></span><br>
-  tiles.count: {{ items.size }}<br>
-</div>
-{% endif %}
-
-
-    
-    {% assign items = include.playlist | default: include.songs %}
-
-    {% for song1 in items %}
-      {% if song1.videostatus == "Public" %}
-        <a class="carousel-tile" data-song="{{ song1.song_id }}" href="{{ site.baseurl }}{{ song1.url }}">
-          <img src="{{ site.baseurl }}{{ song1.image }}" alt="{{ song1.title }}">
-          <h3 class="tile-title">{{ song1.title }}</h3>
+      {% if song.videostatus == "public" %}
+        <a class="shared-tile"
+          data-song-id="{{ song.song_id }}"
+          href="{{ site.baseurl }}/music/playlists/{{ song.playlists[0] }}/?song_id={{ song.song_id }}">
+          <img src="{{ site.baseurl }}{{ song.thumbnail }}" alt="{{ display_title }}">
+          <div class="shared-tile-title">{{ display_title }}</div>
         </a>
       {% endif %}
     {% endfor %}
 
-    {% for song1 in items %}
-      {% unless song1.videostatus == "Public" %}
-        <div class="carousel-tile coming-soon" data-song="{{ song1.song_id }}">
-          <img src="{{ site.baseurl }}{{ song1.image }}" alt="{{ song1.title }}">
-          <div class="tile-overlay">Coming Soon</div>
-          <h3 class="tile-title">{{ song1.title }}</h3>
+    {% for song in items %}
+      {% assign override = site.data.music_overrides.overrides | where: "song_id", song.song_id | first %}
+      {% assign display_title = override.title | default: song.title %}
+
+      {% if song.videostatus != "public" %}
+        <div class="shared-tile coming-soon" data-song-id="{{ song.song_id }}">
+          <img src="{{ site.baseurl }}{{ song.thumbnail }}">
+          <div class="shared-tile-overlay">Coming Soon</div>
+          <div class="shared-tile-title">{{ display_title }}</div>
         </div>
-      {% endunless %}
+      {% endif %}
     {% endfor %}
   </div>
 
-  <!-- RIGHT ARROW -->
-  <button class="carousel-arrow right-arrow" data-arrow="right">›</button>
-
+  <button class="content-arrow content-arrow-right">›</button>
 </div>

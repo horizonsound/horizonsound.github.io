@@ -3,38 +3,69 @@ layout: default
 title: Horizon Sound
 ---
 
+{% assign songs = site.data.youtube_feed.songs %}
+{% assign playlists = site.data.playlist_overrides.overrides 
+     | where: "is_collection", true
+     | sort: "order" %}
+
+{% include hero.html %}
 <div class="homepage-wrapper">
 
-  {% include homepage-teaser.html %}
+  {% include stage-announcements.html %}
 
-  <!-- New Releases -->
-  {% assign new_releases_public = site.data.homepage.new_releases %}
+  <!-- ============================================================
+       NEW RELEASES
+  ============================================================ -->
   <section class="homepage-section">
-    <h2 class="section-header">New Releases...</h2>
-    {% include homepage-tiles.html 
-         title="" 
-         items=new_releases_public 
+    <h2 class="section-header">Now on stage</h2>
+  
+    {% assign cutoff = "now" | date: "%s" | minus: 2592000 %}
+    {% assign cutoff_num = cutoff | plus: 0 %}
+    {% assign new_releases = "" | split: "" %}
+  
+    {% for s in songs %}
+      {% if s.videostatus == "public" %}
+        {% assign published_ts = s.youtube_metadata.published_at | date: "%s" | plus: 0 %}
+        {% if published_ts >= cutoff_num %}
+          {% assign new_releases = new_releases | push: s %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  
+    {% assign new_releases = new_releases 
+         | sort: "youtube_metadata.published_at"
+         | reverse %}
+  
+    {% include tiles.html 
+         items=new_releases 
          section="new_releases" %}
   </section>
-
-  <!-- Spotlight -->
-  {% assign spotlight_public = site.data.homepage.spotlight %}
+  
+  <!-- ============================================================
+       SPOTLIGHT MUSIC
+  ============================================================ -->
   <section class="homepage-section">
-    <h2 class="section-header">Spotlight Music</h2>
-    {% include homepage-tiles.html 
-         title="" 
-         items=spotlight_public 
-         section="spotlight" %}
+    <h2 class="section-header">In the Spotlight</h2>
+
+    {% assign spotlight = songs 
+         | where: "videostatus", "public"
+         | sort: "view_count_num"
+         | reverse %}
+    {% include tiles.html 
+         items=spotlight 
+         section="spotlight" 
+    %}
   </section>
 
-  <!-- Collections -->
+  <!-- ============================================================
+       COLLECTIONS (from playlist_overrides.yml)
+  ============================================================ -->
   <section class="homepage-section homepage-collections">
-    <h2 class="section-header">Collections</h2>
-    {% include homepage-tiles.html 
-         title="" 
-         items=site.data.homepage.collections 
-         section="collections" %}
+    <h2 class="section-header">Collection Experience</h2>
+
+    {% include tiles.html 
+         items=playlists 
+         section="collections" 
+    %}
   </section>
-
 </div>
-

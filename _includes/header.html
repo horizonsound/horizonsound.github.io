@@ -1,14 +1,39 @@
 <header class="site-header">
-  <div class="branding">
-    <img src="{{ site.baseurl }}/assets/horizon-logo.svg" class="logo" alt="Horizon Sound Logo" />
-    <h1>Horizon Sound</h1>
+  <div class="site-header-top">
+    <div class="branding">
+      <img src="{{ site.baseurl }}/assets/horizon-logo.svg" class="logo" alt="Horizon Sound Logo" />
+      <h1>Horizon Sound</h1>
+    </div>
+    <div id="autoplay-toggle" class="autoplay-toggle">
+      <span class="icon"></span>
+    </div>
   </div>
   <nav class="main-nav">
     <ul>
-      <li><a href="{{ site.baseurl }}/" class="{% if page.url == '/' %}active{% endif %}">Home</a></li>
-      <li><a href="{{ site.baseurl }}/music.html" class="{% if page.url contains '/music' %}active{% endif %}">Music</a></li>
-      <li><a href="{{ site.baseurl }}/about.html" class="{% if page.url contains '/about' %}active{% endif %}">About</a></li>
+      <li><a href="{{ site.baseurl }}/" class="{% if page.url == '/' %}active{% endif %}">On Stage</a></li>
+      <li><a href="{{ site.baseurl }}/catalog.html" class="{% if page.url contains '/catalog' %}active{% endif %}">Explorer</a></li>
+      <li><a href="{{ site.baseurl }}/origins.html" class="{% if page.url contains '/origins' %}active{% endif %}">Origins</a></li>
     </ul>
   </nav>
 </header>
 
+<script>  
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("autoplay-toggle");
+  if (!toggle) return;
+
+  const icon = toggle.querySelector(".icon");
+
+  function updateIcon() {
+    icon.textContent = window.autoplay.enabled ? "🔊" : "🔇";
+  }
+
+  toggle.addEventListener("click", () => {
+    window.autoplay.enabled = !window.autoplay.enabled;
+    updateIcon();
+  });
+
+  updateIcon();
+});
+</script>
+  

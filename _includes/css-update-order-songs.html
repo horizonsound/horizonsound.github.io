@@ -1,0 +1,23 @@
+{% comment %}
+  INPUTS:
+  - include.ids: array of song_ids OR array of objects with song_id
+  - include.is_collection: boolean
+  OUTPUT:
+  - ordered_songs: array of full song objects
+{% endcomment %}
+
+{% assign ordered_songs = "" | split: "" %}
+
+{% for sid in include.ids %}
+  {% assign id = sid.song_id | default: sid %}
+  {% assign s = site.data.youtube_feed.songs | where: "song_id", id | first %}
+  {% if s %}
+    {% assign ordered_songs = ordered_songs | push: s %}
+  {% endif %}
+{% endfor %}
+
+{% if include.is_collection != true %}
+  {% assign ordered_songs = ordered_songs | sort: "title" %}
+{% endif %}
+
+{{ ordered_songs | jsonify }}
