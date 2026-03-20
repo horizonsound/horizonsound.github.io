@@ -1,22 +1,244 @@
 songs:
-  - song_id: shine-through
-    youtube_id: fcWz14vuQMU
-    title: Shine Through
-    description_html: ''
-    url: /music/shine-through/
-    thumbnail: /assets/thumbnails/shine-through.jpeg
-    videostatus: private
-    playlists: []
+  - song_id: break-the-gravity
+    youtube_id: wbsa_dyQRHg
+    title: Break the Gravity
+    description_html: >-
+      <p>A high-energy EDM instrumental built for movement. Bright synths,
+      punchy drums, and uplifting drops make this perfect for workouts or
+      running playlists.
+
+      Horizon Sound · Workout Series</p>
+    url: /music/break-the-gravity/
+    thumbnail: /assets/thumbnails/break-the-gravity.jpeg
+    videostatus: scheduled
+    playlists:
+      - workout-edm-horizon-sound-instrumentals
     view_count_num: 0
     youtube_metadata:
-      published_at: '2026-03-20T18:36:07Z'
-      scheduled_at: null
+      published_at: '2026-03-20T18:49:55Z'
+      scheduled_at: '2026-06-06T12:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
       tags: []
-      duration: P0D
-      definition: sd
+      duration: PT2M13S
+      definition: hd
+      dimension: null
+      caption: null
+      licensed_content: false
+      region_allowed: []
+      region_blocked: []
+      content_rating: {}
+      statistics:
+        view_count: '0'
+        like_count: '0'
+        favorite_count: '0'
+        comment_count: '0'
+      made_for_kids: false
+      self_declared_made_for_kids: false
+      topic_categories: []
+      privacy_status: null
+      upload_status: null
+      publish_at: null
+      license: ''
+      embeddable: true
+      public_stats_viewable: true
+  - song_id: electric-pulse
+    youtube_id: pWQk0g0b6QI
+    title: Electric Pulse
+    description_html: >-
+      <p>A high-energy EDM instrumental built for movement. Bright synths,
+      punchy drums, and uplifting drops make this perfect for workouts or
+      running playlists.
+
+      Horizon Sound · Workout Series</p>
+    url: /music/electric-pulse/
+    thumbnail: /assets/thumbnails/electric-pulse.jpeg
+    videostatus: scheduled
+    playlists:
+      - workout-edm-horizon-sound-instrumentals
+    view_count_num: 0
+    youtube_metadata:
+      published_at: '2026-03-20T18:47:51Z'
+      scheduled_at: '2026-04-11T12:00:00Z'
+      channel_id: UCiko-zjojbsoXrsEuBOPbSw
+      channel_title: Horizon Sound
+      category_id: '22'
+      tags: []
+      duration: PT2M19S
+      definition: hd
+      dimension: null
+      caption: null
+      licensed_content: false
+      region_allowed: []
+      region_blocked: []
+      content_rating: {}
+      statistics:
+        view_count: '0'
+        like_count: '0'
+        favorite_count: '0'
+        comment_count: '0'
+      made_for_kids: false
+      self_declared_made_for_kids: false
+      topic_categories: []
+      privacy_status: null
+      upload_status: null
+      publish_at: null
+      license: ''
+      embeddable: true
+      public_stats_viewable: true
+  - song_id: midnight-velocity
+    youtube_id: G5bL37NzpD4
+    title: Midnight Velocity
+    description_html: >-
+      <p>A synthwave workout track with retro basslines and neon-bright leads.
+      Fast, powerful, and perfect for high-energy sessions.
+
+      Horizon Sound · Workout Series</p>
+    url: /music/midnight-velocity/
+    thumbnail: /assets/thumbnails/midnight-velocity.jpeg
+    videostatus: scheduled
+    playlists:
+      - workout-edm-horizon-sound-instrumentals
+    view_count_num: 0
+    youtube_metadata:
+      published_at: '2026-03-20T18:45:17Z'
+      scheduled_at: '2026-11-21T13:00:00Z'
+      channel_id: UCiko-zjojbsoXrsEuBOPbSw
+      channel_title: Horizon Sound
+      category_id: '22'
+      tags: []
+      duration: PT2M58S
+      definition: hd
+      dimension: null
+      caption: null
+      licensed_content: false
+      region_allowed: []
+      region_blocked: []
+      content_rating: {}
+      statistics:
+        view_count: '0'
+        like_count: '0'
+        favorite_count: '0'
+        comment_count: '0'
+      made_for_kids: false
+      self_declared_made_for_kids: false
+      topic_categories: []
+      privacy_status: null
+      upload_status: null
+      publish_at: null
+      license: ''
+      embeddable: true
+      public_stats_viewable: true
+  - song_id: neon-runner
+    youtube_id: Ifj0Siju8P0
+    title: Neon Runner
+    description_html: >-
+      <p>A synthwave workout track with retro basslines and neon-bright leads.
+      Fast, powerful, and perfect for high-energy sessions.
+
+      Horizon Sound · Workout Series</p>
+    url: /music/neon-runner/
+    thumbnail: /assets/thumbnails/neon-runner.jpeg
+    videostatus: scheduled
+    playlists:
+      - workout-edm-horizon-sound-instrumentals
+    view_count_num: 0
+    youtube_metadata:
+      published_at: '2026-03-20T18:42:36Z'
+      scheduled_at: '2027-01-16T13:00:00Z'
+      channel_id: UCiko-zjojbsoXrsEuBOPbSw
+      channel_title: Horizon Sound
+      category_id: '22'
+      tags: []
+      duration: PT3M4S
+      definition: hd
+      dimension: null
+      caption: null
+      licensed_content: false
+      region_allowed: []
+      region_blocked: []
+      content_rating: {}
+      statistics:
+        view_count: '0'
+        like_count: '0'
+        favorite_count: '0'
+        comment_count: '0'
+      made_for_kids: false
+      self_declared_made_for_kids: false
+      topic_categories: []
+      privacy_status: null
+      upload_status: null
+      publish_at: null
+      license: ''
+      embeddable: true
+      public_stats_viewable: true
+  - song_id: light-up-the-runway
+    youtube_id: EonzomlQOSc
+    title: Light Up the Runway
+    description_html: >-
+      <p>An upbeat electro-pop instrumental with shimmering synths and driving
+      energy. Perfect for workouts, cardio, or getting motivated.
+
+      Horizon Sound · Workout Series</p>
+    url: /music/light-up-the-runway/
+    thumbnail: /assets/thumbnails/light-up-the-runway.jpeg
+    videostatus: scheduled
+    playlists:
+      - workout-edm-horizon-sound-instrumentals
+    view_count_num: 0
+    youtube_metadata:
+      published_at: '2026-03-20T18:39:21Z'
+      scheduled_at: '2026-09-26T12:00:00Z'
+      channel_id: UCiko-zjojbsoXrsEuBOPbSw
+      channel_title: Horizon Sound
+      category_id: '22'
+      tags: []
+      duration: PT3M43S
+      definition: hd
+      dimension: null
+      caption: null
+      licensed_content: false
+      region_allowed: []
+      region_blocked: []
+      content_rating: {}
+      statistics:
+        view_count: '0'
+        like_count: '0'
+        favorite_count: '0'
+        comment_count: '0'
+      made_for_kids: false
+      self_declared_made_for_kids: false
+      topic_categories: []
+      privacy_status: null
+      upload_status: null
+      publish_at: null
+      license: ''
+      embeddable: true
+      public_stats_viewable: true
+  - song_id: shine-through
+    youtube_id: fcWz14vuQMU
+    title: Shine Through
+    description_html: >-
+      <p>An upbeat electro-pop instrumental with shimmering synths and driving
+      energy. Perfect for workouts, cardio, or getting motivated.
+
+      Horizon Sound · Workout Series</p>
+    url: /music/shine-through/
+    thumbnail: /assets/thumbnails/shine-through.jpeg
+    videostatus: scheduled
+    playlists:
+      - workout-edm-horizon-sound-instrumentals
+    view_count_num: 0
+    youtube_metadata:
+      published_at: '2026-03-20T18:36:07Z'
+      scheduled_at: '2026-08-01T12:00:00Z'
+      channel_id: UCiko-zjojbsoXrsEuBOPbSw
+      channel_title: Horizon Sound
+      category_id: '22'
+      tags: []
+      duration: PT3M5S
+      definition: hd
       dimension: null
       caption: null
       licensed_content: false
@@ -1520,7 +1742,7 @@ songs:
     videostatus: public
     playlists:
       - calm-cinematic-horizon-sound-instrumentals
-    view_count_num: 101
+    view_count_num: 102
     youtube_metadata:
       published_at: '2026-02-28T13:01:20Z'
       scheduled_at: null
@@ -1537,7 +1759,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '101'
+        view_count: '102'
         like_count: '0'
         favorite_count: '0'
         comment_count: '0'

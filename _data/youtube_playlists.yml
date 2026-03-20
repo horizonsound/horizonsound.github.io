@@ -38,7 +38,13 @@ playlists:
     channel_id: UCiko-zjojbsoXrsEuBOPbSw
     channel_title: Horizon Sound
     thumbnail: null
-    song_ids: []
+    song_ids:
+      - electric-pulse
+      - break-the-gravity
+      - shine-through
+      - light-up-the-runway
+      - midnight-velocity
+      - neon-runner
   - playlist_id: electric-guitar-rock-horizon-sound-instrumentals
     title: Electric Guitar Rock – Horizon Sound Instrumentals
     description: ''
