@@ -6260,7 +6260,7 @@ songs:
     videostatus: public
     playlists:
       - pop
-    view_count_num: 52
+    view_count_num: 51
     youtube_metadata:
       published_at: '2026-01-10T12:30:51Z'
       scheduled_at: null
@@ -6277,7 +6277,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '52'
+        view_count: '51'
         like_count: '3'
         favorite_count: '0'
         comment_count: '1'
