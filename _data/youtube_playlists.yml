@@ -1,4 +1,93 @@
 playlists:
+  - playlist_id: pop-instrumental-horizon-sound-instrumentals
+    title: Pop Instrumental – Horizon Sound Instrumentals
+    description: ''
+    published_at: '2026-03-20T00:16:16.393704Z'
+    channel_id: UCiko-zjojbsoXrsEuBOPbSw
+    channel_title: Horizon Sound
+    thumbnail: null
+    song_ids: []
+  - playlist_id: synthwave-retrowave-horizon-sound-instrumentals
+    title: Synthwave & Retrowave – Horizon Sound Instrumentals
+    description: ''
+    published_at: '2026-03-20T00:15:42.448911Z'
+    channel_id: UCiko-zjojbsoXrsEuBOPbSw
+    channel_title: Horizon Sound
+    thumbnail: null
+    song_ids: []
+  - playlist_id: orchestral-rock-tso-style-horizon-sound-instrumentals
+    title: Orchestral Rock (TSO‑Style) – Horizon Sound Instrumentals
+    description: ''
+    published_at: '2026-03-20T00:15:16.91963Z'
+    channel_id: UCiko-zjojbsoXrsEuBOPbSw
+    channel_title: Horizon Sound
+    thumbnail: null
+    song_ids: []
+  - playlist_id: piano-emotional-horizon-sound-instrumentals
+    title: Piano Emotional – Horizon Sound Instrumentals
+    description: ''
+    published_at: '2026-03-20T00:13:53.365353Z'
+    channel_id: UCiko-zjojbsoXrsEuBOPbSw
+    channel_title: Horizon Sound
+    thumbnail: null
+    song_ids: []
+  - playlist_id: workout-edm-horizon-sound-instrumentals
+    title: Workout & EDM – Horizon Sound Instrumentals
+    description: ''
+    published_at: '2026-03-20T00:13:15.979204Z'
+    channel_id: UCiko-zjojbsoXrsEuBOPbSw
+    channel_title: Horizon Sound
+    thumbnail: null
+    song_ids:
+      - electric-pulse
+      - break-the-gravity
+      - shine-through
+      - light-up-the-runway
+      - midnight-velocity
+      - neon-runner
+  - playlist_id: electric-guitar-rock-horizon-sound-instrumentals
+    title: Electric Guitar Rock – Horizon Sound Instrumentals
+    description: ''
+    published_at: '2026-03-20T00:12:32.714184Z'
+    channel_id: UCiko-zjojbsoXrsEuBOPbSw
+    channel_title: Horizon Sound
+    thumbnail: null
+    song_ids:
+      - neon-skyline
+      - running-through-the-night
+      - fire-in-the-wires
+      - chasing-the-sparks
+      - waves-of-blue
+      - after-the-static
+  - playlist_id: acoustic-guitar-horizon-sound-instrumentals
+    title: Acoustic Guitar – Horizon Sound Instrumentals
+    description: ''
+    published_at: '2026-03-20T00:11:49.597984Z'
+    channel_id: UCiko-zjojbsoXrsEuBOPbSw
+    channel_title: Horizon Sound
+    thumbnail: null
+    song_ids:
+      - sunlight-on-the-strings
+      - wanderers-heart
+      - chasing-the-daylight
+      - running-toward-the-sun
+      - the-way-home
+      - letters-in-the-wind
+  - playlist_id: cinematic-ambient-horizon-sound-instrumentals
+    title: Cinematic & Ambient – Horizon Sound Instrumentals
+    description: ''
+    published_at: '2026-03-20T00:10:44.520832Z'
+    channel_id: UCiko-zjojbsoXrsEuBOPbSw
+    channel_title: Horizon Sound
+    thumbnail: >-
+      /assets/thumbnails/playlist-cinematic-ambient-horizon-sound-instrumentals.jpeg
+    song_ids:
+      - moments-between-moments
+      - where-the-air-glows
+      - echos-of-tomorrow
+      - the-space-we-keep
+      - breathing-in-color
+      - quiet-horizons
   - playlist_id: classic-country
     title: Classic Country
     description: ''
@@ -164,11 +253,11 @@ playlists:
     channel_title: Horizon Sound
     thumbnail: /assets/thumbnails/playlist-modern-country.jpeg
     song_ids:
+      - vegas-in-the-sky-country-pop-party-anthem-horizon-sound
       - the-man-behind-the-bar-90s-country-horizon-sound
       - time-capsule-emotional-country-nostalgic-storytelling-horizon-sound
       - already-out-the-door-modern-country-horizon-sound
       - wildfire-modern-country-power-anthem-horizon-sound
-      - vegas-in-the-sky-country-pop-party-anthem-horizon-sound
       - she-s-so-into-me-modern-country-love-song-horizon-sound
   - playlist_id: electro-pop-dance-pop
     title: Electro-Pop & Dance-Pop
