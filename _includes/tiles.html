@@ -44,49 +44,50 @@
       Coming Soon if no songs in the collection are public
       ============================================================
     {%- endcomment -%}
-{% elsif include.section == "collections" %}
+    {% elsif include.section == "collections" %}
+              
+      {% for pl in include.items %}
           
-  {% for pl in include.items %}
-      
-    {% assign has_public = false %}
-    {% assign earliest_ts = nil %}
-      
-    {% for sid in pl.songs %}
-      {% assign song = site.data.youtube_feed.songs | where: "song_id", sid | first %}
-
-      {% if song %}
-        {% if song.videostatus == "public" %}
-          {% assign has_public = true %}
-        {% elsif song.videostatus == "scheduled" and song.youtube_metadata.scheduled_at %}
-          {% assign scheduled_ts = song.youtube_metadata.scheduled_at | date: "%s" | plus: 0 %}
-
-          {% if earliest_ts == nil or scheduled_ts < earliest_ts %}
-            {% assign earliest_ts = scheduled_ts %}
+        {% assign has_public = false %}
+        {% assign earliest_ts = nil %}
+          
+        {% for sid in pl.songs %}
+          {% assign song = site.data.youtube_feed.songs | where: "song_id", sid | first %}
+    
+          {% if song %}
+            {% if song.videostatus == "public" %}
+              {% assign has_public = true %}
+            {% elsif song.videostatus == "scheduled" and song.youtube_metadata.scheduled_at %}
+              {% assign scheduled_ts = song.youtube_metadata.scheduled_at | date: "%s" | plus: 0 %}
+    
+              {% if earliest_ts == nil or scheduled_ts < earliest_ts %}
+                {% assign earliest_ts = scheduled_ts %}
+              {% endif %}
+            {% endif %}
           {% endif %}
-        {% endif %}
-      {% endif %}
-    {% endfor %}
-      
-    {% if has_public %}
-      <a class="tile" href="{{ site.baseurl }}/music/playlists/{{ pl.playlist_id }}/?song_id={{ pl.songs[0] }}">
-        <img src="{{ site.baseurl }}{{ pl.thumbnail }}" alt="{{ pl.title }}">
-        <h3 class="tile-title">{{ pl.title }}</h3>
-      </a>
-    {% else %}
-      <div class="tile coming-soon">
-        <img src="{{ site.baseurl }}{{ pl.thumbnail }}" alt="{{ pl.title }}">
-
-        {% if earliest_ts and earliest_ts <= coming_soon_cutoff %}
-          <div class="tile-overlay">
-            Coming {{ earliest_ts | date: "%b %-d" }}
-          </div>
+        {% endfor %}
+          
+        {% if has_public %}
+          <a class="tile" href="{{ site.baseurl }}/music/playlists/{{ pl.playlist_id }}/?song_id={{ pl.songs[0] }}">
+            <img src="{{ site.baseurl }}{{ pl.thumbnail }}" alt="{{ pl.title }}">
+            <h3 class="tile-title">{{ pl.title }}</h3>
+          </a>
         {% else %}
-          <div class="tile-overlay">Coming Soon</div>
+          <div class="tile coming-soon">
+            <img src="{{ site.baseurl }}{{ pl.thumbnail }}" alt="{{ pl.title }}">
+    
+            {% if earliest_ts and earliest_ts <= coming_soon_cutoff %}
+              <div class="tile-overlay">
+                Coming {{ earliest_ts | date: "%b %-d" }}
+              </div>
+            {% else %}
+              <div class="tile-overlay">Coming Soon</div>
+            {% endif %}
+    
+            <h3 class="tile-title">{{ pl.title }}</h3>
+          </div>
         {% endif %}
-
-        <h3 class="tile-title">{{ pl.title }}</h3>
-      </div>
+      {% endfor %}
     {% endif %}
-  {% endfor %}
   </div>
 </section>
