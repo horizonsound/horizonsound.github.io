@@ -23,12 +23,13 @@ title: Horizon Sound
     {% assign song = site.data.youtube_feed.songs | where: "song_id", sid | first %}
 
     {% if song %}
-      {% assign release_ts = song.release_date | date: "%s" %}
-
       {% if song.videostatus == "public" %}
         {% assign show_playlist = true %}
-      {% elsif release_ts <= coming_soon_cutoff %}
-        {% assign show_playlist = true %}
+      {% elsif song.videostatus == "scheduled" and song.youtube_metadata.scheduled_at %}
+        {% assign scheduled_ts = song.youtube_metadata.scheduled_at | date: "%s" | plus: 0 %}
+        {% if scheduled_ts >= now_ts and scheduled_ts <= coming_soon_cutoff %}
+          {% assign show_playlist = true %}
+        {% endif %}
       {% endif %}
     {% endif %}
   {% endfor %}
