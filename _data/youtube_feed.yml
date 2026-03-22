@@ -1,16 +1,279 @@
 songs:
+  - song_id: color-the-sky
+    youtube_id: JpqqScaAiy8
+    title: Color the Sky
+    description_html: >-
+      <p>A bright, uplifting pop instrumental with modern production and catchy
+      melodies. Energetic and feel-good.
+
+      Horizon Sound · Pop Instrumentals</p>
+    url: /music/color-the-sky/
+    thumbnail: /assets/thumbnails/color-the-sky.jpeg
+    videostatus: scheduled
+    playlists:
+      - pop-instrumental-horizon-sound-instrumentals
+    view_count_num: 0
+    youtube_metadata:
+      published_at: '2026-03-22T22:41:15Z'
+      scheduled_at: '2026-05-09T12:00:00Z'
+      channel_id: UCiko-zjojbsoXrsEuBOPbSw
+      channel_title: Horizon Sound
+      category_id: '22'
+      tags: []
+      duration: PT2M49S
+      definition: hd
+      dimension: null
+      caption: null
+      licensed_content: false
+      region_allowed: []
+      region_blocked: []
+      content_rating: {}
+      statistics:
+        view_count: '0'
+        like_count: '0'
+        favorite_count: '0'
+        comment_count: '0'
+      made_for_kids: false
+      self_declared_made_for_kids: false
+      topic_categories: []
+      privacy_status: null
+      upload_status: null
+      publish_at: null
+      license: ''
+      embeddable: true
+      public_stats_viewable: true
+  - song_id: open-heart-city
+    youtube_id: N8Q7e4tAlX8
+    title: Open Heart City
+    description_html: >-
+      <p>An emotional pop instrumental with atmospheric pads and clean guitar
+      accents. Warm, modern, and cinematic.
+
+      Horizon Sound · Pop Instrumentals</p>
+    url: /music/open-heart-city/
+    thumbnail: /assets/thumbnails/open-heart-city.jpeg
+    videostatus: scheduled
+    playlists:
+      - pop-instrumental-horizon-sound-instrumentals
+    view_count_num: 0
+    youtube_metadata:
+      published_at: '2026-03-22T22:37:18Z'
+      scheduled_at: '2026-12-19T13:00:00Z'
+      channel_id: UCiko-zjojbsoXrsEuBOPbSw
+      channel_title: Horizon Sound
+      category_id: '22'
+      tags: []
+      duration: PT3M41S
+      definition: hd
+      dimension: null
+      caption: null
+      licensed_content: false
+      region_allowed: []
+      region_blocked: []
+      content_rating: {}
+      statistics:
+        view_count: '0'
+        like_count: '0'
+        favorite_count: '0'
+        comment_count: '0'
+      made_for_kids: false
+      self_declared_made_for_kids: false
+      topic_categories: []
+      privacy_status: null
+      upload_status: null
+      publish_at: null
+      license: ''
+      embeddable: true
+      public_stats_viewable: true
+  - song_id: beter-days-ahead
+    youtube_id: c8o5_OGXUiM
+    title: Beter Days Ahead
+    description_html: >-
+      <p>A bright, uplifting pop instrumental with modern production and catchy
+      melodies. Energetic and feel-good.
+
+      Horizon Sound · Pop Instrumentals</p>
+    url: /music/beter-days-ahead/
+    thumbnail: /assets/thumbnails/beter-days-ahead.jpeg
+    videostatus: scheduled
+    playlists:
+      - pop-instrumental-horizon-sound-instrumentals
+    view_count_num: 0
+    youtube_metadata:
+      published_at: '2026-03-22T22:34:22Z'
+      scheduled_at: '2026-07-04T12:00:00Z'
+      channel_id: UCiko-zjojbsoXrsEuBOPbSw
+      channel_title: Horizon Sound
+      category_id: '22'
+      tags: []
+      duration: PT3M6S
+      definition: hd
+      dimension: null
+      caption: null
+      licensed_content: false
+      region_allowed: []
+      region_blocked: []
+      content_rating: {}
+      statistics:
+        view_count: '0'
+        like_count: '0'
+        favorite_count: '0'
+        comment_count: '0'
+      made_for_kids: false
+      self_declared_made_for_kids: false
+      topic_categories: []
+      privacy_status: null
+      upload_status: null
+      publish_at: null
+      license: ''
+      embeddable: true
+      public_stats_viewable: true
+  - song_id: golden-hour-groove
+    youtube_id: zmkfLtlIJlk
+    title: Golden Hour Groove
+    description_html: >-
+      <p>A chill modern pop instrumental with warm keys and soft synth plucks.
+      Smooth, melodic, and perfect for background listening.
+
+      Horizon Sound · Pop Instrumentals</p>
+    url: /music/golden-hour-groove/
+    thumbnail: /assets/thumbnails/golden-hour-groove.jpeg
+    videostatus: scheduled
+    playlists:
+      - pop-instrumental-horizon-sound-instrumentals
+    view_count_num: 0
+    youtube_metadata:
+      published_at: '2026-03-22T22:30:41Z'
+      scheduled_at: '2026-08-29T12:00:00Z'
+      channel_id: UCiko-zjojbsoXrsEuBOPbSw
+      channel_title: Horizon Sound
+      category_id: '22'
+      tags: []
+      duration: PT4M20S
+      definition: hd
+      dimension: null
+      caption: null
+      licensed_content: false
+      region_allowed: []
+      region_blocked: []
+      content_rating: {}
+      statistics:
+        view_count: '0'
+        like_count: '0'
+        favorite_count: '0'
+        comment_count: '0'
+      made_for_kids: false
+      self_declared_made_for_kids: false
+      topic_categories: []
+      privacy_status: null
+      upload_status: null
+      publish_at: null
+      license: ''
+      embeddable: true
+      public_stats_viewable: true
+  - song_id: soft-light
+    youtube_id: Mrvm4Xwl7U0
+    title: Soft Light
+    description_html: >-
+      <p>A chill modern pop instrumental with warm keys and soft synth plucks.
+      Smooth, melodic, and perfect for background listening.
+
+      Horizon Sound · Pop Instrumentals</p>
+    url: /music/soft-light/
+    thumbnail: /assets/thumbnails/soft-light.jpeg
+    videostatus: scheduled
+    playlists:
+      - pop-instrumental-horizon-sound-instrumentals
+    view_count_num: 0
+    youtube_metadata:
+      published_at: '2026-03-22T22:26:52Z'
+      scheduled_at: '2026-10-24T12:00:00Z'
+      channel_id: UCiko-zjojbsoXrsEuBOPbSw
+      channel_title: Horizon Sound
+      category_id: '22'
+      tags: []
+      duration: PT4M25S
+      definition: hd
+      dimension: null
+      caption: null
+      licensed_content: false
+      region_allowed: []
+      region_blocked: []
+      content_rating: {}
+      statistics:
+        view_count: '0'
+        like_count: '0'
+        favorite_count: '0'
+        comment_count: '0'
+      made_for_kids: false
+      self_declared_made_for_kids: false
+      topic_categories: []
+      privacy_status: null
+      upload_status: null
+      publish_at: null
+      license: ''
+      embeddable: true
+      public_stats_viewable: true
+  - song_id: brightest-part-of-you
+    youtube_id: Oyw2l53T9do
+    title: Brightest Part of You
+    description_html: >-
+      <p>An emotional pop instrumental with atmospheric pads and clean guitar
+      accents. Warm, modern, and cinematic.
+
+      Horizon Sound · Pop Instrumentals</p>
+    url: /music/brightest-part-of-you/
+    thumbnail: /assets/thumbnails/brightest-part-of-you.jpeg
+    videostatus: scheduled
+    playlists:
+      - pop-instrumental-horizon-sound-instrumentals
+    view_count_num: 0
+    youtube_metadata:
+      published_at: '2026-03-22T22:23:27Z'
+      scheduled_at: '2027-02-13T13:00:00Z'
+      channel_id: UCiko-zjojbsoXrsEuBOPbSw
+      channel_title: Horizon Sound
+      category_id: '22'
+      tags: []
+      duration: PT3M19S
+      definition: hd
+      dimension: null
+      caption: null
+      licensed_content: false
+      region_allowed: []
+      region_blocked: []
+      content_rating: {}
+      statistics:
+        view_count: '0'
+        like_count: '0'
+        favorite_count: '0'
+        comment_count: '0'
+      made_for_kids: false
+      self_declared_made_for_kids: false
+      topic_categories: []
+      privacy_status: null
+      upload_status: null
+      publish_at: null
+      license: ''
+      embeddable: true
+      public_stats_viewable: true
   - song_id: nightfall-circuit
     youtube_id: 1vHd2pwa6DU
     title: Nightfall Circuit
-    description_html: ''
+    description_html: >-
+      <p>A nostalgic synthwave instrumental with retro basslines and neon-bright
+      leads. Cinematic, atmospheric, and perfect for late-night listening.
+
+      Horizon Sound · Synthwave Series</p>
     url: /music/nightfall-circuit/
     thumbnail: /assets/thumbnails/nightfall-circuit.jpeg
-    videostatus: private
-    playlists: []
+    videostatus: scheduled
+    playlists:
+      - synthwave-retrowave-horizon-sound-instrumentals
     view_count_num: 0
     youtube_metadata:
       published_at: '2026-03-22T18:24:20Z'
-      scheduled_at: null
+      scheduled_at: '2026-06-27T12:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -40,15 +303,20 @@ songs:
   - song_id: retrodrive
     youtube_id: Eps1ed1Fir8
     title: Retrodrive
-    description_html: ''
+    description_html: >-
+      <p>A nostalgic synthwave instrumental with retro basslines and neon-bright
+      leads. Cinematic, atmospheric, and perfect for late-night listening.
+
+      Horizon Sound · Synthwave Series</p>
     url: /music/retrodrive/
     thumbnail: /assets/thumbnails/retrodrive.jpeg
-    videostatus: private
-    playlists: []
+    videostatus: scheduled
+    playlists:
+      - synthwave-retrowave-horizon-sound-instrumentals
     view_count_num: 0
     youtube_metadata:
       published_at: '2026-03-22T18:20:57Z'
-      scheduled_at: null
+      scheduled_at: '2026-05-02T12:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -78,15 +346,20 @@ songs:
   - song_id: memory-loop
     youtube_id: a1YoVCEApPo
     title: Memory Loop
-    description_html: ''
+    description_html: >-
+      <p>A dreamy retrowave instrumental built around pulsing arpeggios and warm
+      analog pads. Emotional, nostalgic, and cinematic.
+
+      Horizon Sound · Synthwave Series</p>
     url: /music/memory-loop/
     thumbnail: /assets/thumbnails/memory-loop.jpeg
-    videostatus: private
-    playlists: []
+    videostatus: scheduled
+    playlists:
+      - synthwave-retrowave-horizon-sound-instrumentals
     view_count_num: 0
     youtube_metadata:
       published_at: '2026-03-22T18:18:27Z'
-      scheduled_at: null
+      scheduled_at: '2026-10-17T12:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -116,15 +389,20 @@ songs:
   - song_id: midnight-ascension
     youtube_id: LWIjisnuC3w
     title: Midnight Ascension
-    description_html: ''
+    description_html: >-
+      <p>A high-energy synthwave track with dark retro bass and heroic 80s
+      leads. Fast, powerful, and perfect for workouts or cinematic moments.
+
+      Horizon Sound · Synthwave Series</p>
     url: /music/midnight-ascension/
     thumbnail: /assets/thumbnails/midnight-ascension.jpeg
-    videostatus: private
-    playlists: []
+    videostatus: scheduled
+    playlists:
+      - synthwave-retrowave-horizon-sound-instrumentals
     view_count_num: 0
     youtube_metadata:
       published_at: '2026-03-22T18:14:36Z'
-      scheduled_at: null
+      scheduled_at: '2026-12-12T13:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -154,15 +432,20 @@ songs:
   - song_id: dreamwave-avenue
     youtube_id: So0bW7D38Zw
     title: Dreamwave Avenue
-    description_html: ''
+    description_html: >-
+      <p>A dreamy retrowave instrumental built around pulsing arpeggios and warm
+      analog pads. Emotional, nostalgic, and cinematic.
+
+      Horizon Sound · Synthwave Series</p>
     url: /music/dreamwave-avenue/
     thumbnail: /assets/thumbnails/dreamwave-avenue.jpeg
-    videostatus: private
-    playlists: []
+    videostatus: scheduled
+    playlists:
+      - synthwave-retrowave-horizon-sound-instrumentals
     view_count_num: 0
     youtube_metadata:
       published_at: '2026-03-22T18:11:30Z'
-      scheduled_at: null
+      scheduled_at: '2026-08-22T12:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -192,15 +475,20 @@ songs:
   - song_id: neon-vanguard
     youtube_id: 4f584gG7U14
     title: Neon Vanguard
-    description_html: ''
+    description_html: >-
+      <p>A high-energy synthwave track with dark retro bass and heroic 80s
+      leads. Fast, powerful, and perfect for workouts or cinematic moments.
+
+      Horizon Sound · Synthwave Series</p>
     url: /music/neon-vanguard/
     thumbnail: /assets/thumbnails/neon-vanguard.jpeg
-    videostatus: private
-    playlists: []
+    videostatus: scheduled
+    playlists:
+      - synthwave-retrowave-horizon-sound-instrumentals
     view_count_num: 0
     youtube_metadata:
       published_at: '2026-03-22T18:08:08Z'
-      scheduled_at: null
+      scheduled_at: '2027-02-06T13:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -230,15 +518,20 @@ songs:
   - song_id: the-frozen-overture
     youtube_id: b0cnzGgpSZ8
     title: The Frozen Overture
-    description_html: ''
+    description_html: >-
+      <p>An epic orchestral rock instrumental blending electric guitar with
+      dramatic strings and cinematic percussion. High-energy and heroic.
+
+      Horizon Sound · Orchestral Rock Series</p>
     url: /music/the-frozen-overture/
     thumbnail: /assets/thumbnails/the-frozen-overture.jpeg
-    videostatus: private
-    playlists: []
+    videostatus: scheduled
+    playlists:
+      - orchestral-rock-tso-style-horizon-sound-instrumentals
     view_count_num: 0
     youtube_metadata:
       published_at: '2026-03-22T13:15:00Z'
-      scheduled_at: null
+      scheduled_at: '2026-06-20T12:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -268,15 +561,20 @@ songs:
   - song_id: the-rising-storm
     youtube_id: GWvSxleB-BY
     title: The Rising Storm
-    description_html: ''
+    description_html: >-
+      <p>A heroic orchestral rock track with fast strings, electric guitar, and
+      dramatic choir accents. Intense and cinematic.
+
+      Horizon Sound</p>
     url: /music/the-rising-storm/
     thumbnail: /assets/thumbnails/the-rising-storm.jpeg
-    videostatus: private
-    playlists: []
+    videostatus: scheduled
+    playlists:
+      - orchestral-rock-tso-style-horizon-sound-instrumentals
     view_count_num: 0
     youtube_metadata:
       published_at: '2026-03-22T13:12:08Z'
-      scheduled_at: null
+      scheduled_at: '2026-08-15T12:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -306,15 +604,20 @@ songs:
   - song_id: fire-in-the-choir
     youtube_id: 0w-6Vk-KMyA
     title: Fire in the Choir
-    description_html: ''
+    description_html: >-
+      <p>A heroic orchestral rock track with fast strings, electric guitar, and
+      dramatic choir accents. Intense and cinematic.
+
+      Horizon Sound</p>
     url: /music/fire-in-the-choir/
     thumbnail: /assets/thumbnails/fire-in-the-choir.jpeg
-    videostatus: private
-    playlists: []
+    videostatus: scheduled
+    playlists:
+      - orchestral-rock-tso-style-horizon-sound-instrumentals
     view_count_num: 0
     youtube_metadata:
       published_at: '2026-03-22T13:08:08Z'
-      scheduled_at: null
+      scheduled_at: '2026-10-10T12:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -344,15 +647,21 @@ songs:
   - song_id: glacierstorm
     youtube_id: eG4S9bwsRTw
     title: Glacierstorm
-    description_html: ''
+    description_html: >-
+      <p>A dramatic orchestral rock instrumental blending fast strings, electric
+      guitar harmonies, and cinematic percussion. Intense, heroic, and inspired
+      by the Trans‑Siberian Orchestra sound.
+
+      Horizon Sound · Orchestral Rock Series</p>
     url: /music/glacierstorm/
     thumbnail: /assets/thumbnails/glacierstorm.jpeg
-    videostatus: private
-    playlists: []
+    videostatus: scheduled
+    playlists:
+      - orchestral-rock-tso-style-horizon-sound-instrumentals
     view_count_num: 0
     youtube_metadata:
       published_at: '2026-03-22T13:04:13Z'
-      scheduled_at: null
+      scheduled_at: '2026-12-05T13:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -382,15 +691,20 @@ songs:
   - song_id: winterfire
     youtube_id: FJFPlmz-S_4
     title: Winterfire
-    description_html: ''
+    description_html: >-
+      <p>An epic orchestral rock instrumental blending electric guitar with
+      dramatic strings and cinematic percussion. High-energy and heroic.
+
+      Horizon Sound · Orchestral Rock Series</p>
     url: /music/winterfire/
     thumbnail: /assets/thumbnails/winterfire.jpeg
-    videostatus: private
-    playlists: []
+    videostatus: scheduled
+    playlists:
+      - orchestral-rock-tso-style-horizon-sound-instrumentals
     view_count_num: 0
     youtube_metadata:
       published_at: '2026-03-22T13:00:19Z'
-      scheduled_at: null
+      scheduled_at: '2026-04-25T12:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -417,18 +731,24 @@ songs:
       license: ''
       embeddable: true
       public_stats_viewable: true
-  - song_id: winterfire-copy
+  - song_id: the-winter-requiem
     youtube_id: hw6yYYE8fYc
-    title: Winterfire copy
-    description_html: ''
-    url: /music/winterfire-copy/
-    thumbnail: /assets/thumbnails/winterfire-copy.jpeg
-    videostatus: private
-    playlists: []
-    view_count_num: 0
+    title: The Winter Requiem
+    description_html: >-
+      <p>A dramatic orchestral rock instrumental blending fast strings, electric
+      guitar harmonies, and cinematic percussion. Intense, heroic, and inspired
+      by the Trans‑Siberian Orchestra sound.
+
+      Horizon Sound · Orchestral Rock Series</p>
+    url: /music/the-winter-requiem/
+    thumbnail: /assets/thumbnails/the-winter-requiem.jpeg
+    videostatus: scheduled
+    playlists:
+      - orchestral-rock-tso-style-horizon-sound-instrumentals
+    view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-22T12:56:54Z'
-      scheduled_at: null
+      scheduled_at: '2027-01-30T13:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -442,7 +762,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '0'
+        view_count: '1'
         like_count: '0'
         favorite_count: '0'
         comment_count: '0'
@@ -3939,7 +4259,7 @@ songs:
     videostatus: public
     playlists:
       - after-the-silence-performed-by-lydia-ellington
-    view_count_num: 35
+    view_count_num: 36
     youtube_metadata:
       published_at: '2026-03-03T17:01:12Z'
       scheduled_at: null
@@ -3956,7 +4276,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '35'
+        view_count: '36'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -6976,7 +7296,7 @@ songs:
     videostatus: public
     playlists:
       - pop
-    view_count_num: 63
+    view_count_num: 65
     youtube_metadata:
       published_at: '2026-01-10T12:30:51Z'
       scheduled_at: null
@@ -6993,7 +7313,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '63'
+        view_count: '65'
         like_count: '3'
         favorite_count: '0'
         comment_count: '1'

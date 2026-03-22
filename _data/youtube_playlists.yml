@@ -6,7 +6,13 @@ playlists:
     channel_id: UCiko-zjojbsoXrsEuBOPbSw
     channel_title: Horizon Sound
     thumbnail: null
-    song_ids: []
+    song_ids:
+      - color-the-sky
+      - beter-days-ahead
+      - golden-hour-groove
+      - soft-light
+      - open-heart-city
+      - brightest-part-of-you
   - playlist_id: synthwave-retrowave-horizon-sound-instrumentals
     title: Synthwave & Retrowave – Horizon Sound Instrumentals
     description: ''
@@ -14,7 +20,13 @@ playlists:
     channel_id: UCiko-zjojbsoXrsEuBOPbSw
     channel_title: Horizon Sound
     thumbnail: null
-    song_ids: []
+    song_ids:
+      - retrodrive
+      - nightfall-circuit
+      - dreamwave-avenue
+      - memory-loop
+      - midnight-ascension
+      - neon-vanguard
   - playlist_id: orchestral-rock-tso-style-horizon-sound-instrumentals
     title: Orchestral Rock (TSO‑Style) – Horizon Sound Instrumentals
     description: ''
@@ -22,7 +34,13 @@ playlists:
     channel_id: UCiko-zjojbsoXrsEuBOPbSw
     channel_title: Horizon Sound
     thumbnail: null
-    song_ids: []
+    song_ids:
+      - winterfire
+      - the-frozen-overture
+      - the-rising-storm
+      - fire-in-the-choir
+      - glacierstorm
+      - the-winter-requiem
   - playlist_id: piano-emotional-horizon-sound-instrumentals
     title: Piano Emotional – Horizon Sound Instrumentals
     description: ''
