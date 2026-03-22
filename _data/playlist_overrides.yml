@@ -57,12 +57,12 @@ overrides:
     thumbnail: /assets/thumbnails/moments-between-moments.jpeg
     hero:
     songs:
-      - electric-pulse
-      - break-the-gravity
-      - shine-through
-      - light-up-the-runway
-      - midnight-velocity
-      - neon-runner
+      - moments-betwee-moments
+      - where-the-air-glows
+      - echos-of-tomorrow
+      - the-space-we-keep
+      - breathing-in-color
+      - quiet-horizons
     order: 
     
   - playlist_id: electric-guitar-rock-horizon-sound-instrumentals
