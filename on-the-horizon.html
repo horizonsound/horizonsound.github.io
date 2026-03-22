@@ -5,610 +5,106 @@ permalink: /on-the-horizon.html
 ---
 
 <style>
+  
+  /* Page wrapper */
   .catalog-page {
     padding: 0 30px;
   }
-
-  .catalog-panel {
-    background: rgba(20, 20, 20, 0.55); /* dark glass */
-    backdrop-filter: blur(22px) saturate(140%);
-    -webkit-backdrop-filter: blur(22px) saturate(140%);
   
-    border-radius: 18px;
-    border: 1px solid rgba(255, 255, 255, 0.08); /* subtle glass edge */
-    padding: 24px 32px 32px;
-    color: #fff;
-    width: 100%;
-    box-sizing: border-box;
-    box-shadow:
-      0 20px 40px rgba(0,0,0,0.55),
-      0 0 60px rgba(0,0,0,0.35),
-      inset 0 0 0 1px rgba(255,255,255,0.04);
-  position: relative;
+  /* Group panel container */
+  .catalog-group-panel {
+    background: rgba(255,255,255,0.05);
+    border-radius: 16px;
+    padding: 24px;
+    margin: 40px 0;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    backdrop-filter: blur(10px);
   }
   
-  .catalog-panel::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    border-radius: inherit;
-    background: linear-gradient(
-      to bottom,
-      rgba(255,255,255,0.08),
-      rgba(255,255,255,0)
-    );
+  /* Purple-tinted panel for collections */
+  .catalog-group-panel.collection-premium-panel {
+    background: rgba(94, 26, 138, 0.18);
+    box-shadow: 0 8px 28px rgba(94, 26, 138, 0.45);
+  }
+  
+  /* Section titles */
+  .catalog-group-title {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    color: white;
+    letter-spacing: 0.5px;
+  }
+  
+  /* Tile grid */
+  .catalog-group-tiles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  
+  /* Shared tile */
+  .shared-tile {
+    width: 260px;
+    display: block;
+    background: #111;
+    border-radius: 4px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #fff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+  }
+  
+  .shared-tile img {
+    width: 260px;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* Coming Soon overlay */
+  .shared-tile.coming-soon {
+    position: relative;
+    opacity: 0.6;
     pointer-events: none;
   }
-
-  .catalog-header-row {
+  
+  .shared-tile-overlay {
+    position: absolute;
+    inset: 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    position: relative;
-  }
-
-  .catalog-toggle {
-    display: flex;
-    gap: 8px;
-  }
-
-  .catalog-header-spacer {
-    width: 120px;
-  }
-
-  .catalog-page-title {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: 0;
-    font-size: 1.4rem;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
-
-  .catalog-subtoggle {
-    display: none;
     justify-content: center;
-    gap: 8px;
-    margin-top: 16px;
-  }
-
-  .mode-toggle-button,
-  .view-toggle-button {
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    color: #fff;
-    padding: 6px 16px;
-    border-radius: 999px;
-    font-size: 0.85rem;
-    letter-spacing: 0.05em;
+    background: rgba(0,0,0,0.45);
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
     text-transform: uppercase;
-    cursor: pointer;
-    transition: 
-      background 0.2s ease,
-      border-color 0.2s ease,
-      box-shadow 0.2s ease,
-      color 0.2s ease;
-    backdrop-filter: blur(8px) saturate(140%);
-    -webkit-backdrop-filter: blur(8px) saturate(140%);
-    box-shadow:
-      inset 0 1px 2px rgba(255, 255, 255, 0.08),
-      inset 0 -2px 4px rgba(0, 0, 0, 0.35);
-  }
-
-  .mode-toggle-button.active,
-  .view-toggle-button.active {
-    background: rgba(255, 255, 255, 0.18);
-    border-color: rgba(255, 255, 255, 0.35);
-    color: #000;
-    box-shadow:
-      inset 0 2px 4px rgba(0, 0, 0, 0.45),
-      inset 0 -1px 0 rgba(255, 255, 255, 0.25);
+    letter-spacing: 0.5px;
+    z-index: 3;
   }
   
-  .mode-toggle-button:hover,
-  .view-toggle-button:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 255, 255, 0.22);
-  }
-
-  .catalog-section-title {
-    font-size: 1.1rem;
-    margin: 0 0 8px;
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    overflow: visible;
-    white-space: normal;
-    position: relative;
-    z-index: 2;
-  }
-  
-  .catalog-placeholder {
-    padding: 16px 0;
-    opacity: 0.7;
+  /* Tile title */
+  .shared-tile-title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 10px 12px;
     font-size: 0.95rem;
-  }
-
-  .carousel-strip {
-    display: flex;
-    gap: 16px;
-    overflow-x: auto;
-    padding-bottom: 8px;
-  }
-
-.playlist-section .section-header {
-  font-size: 1.1rem;
-  margin: 0 0 8px;
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  overflow: visible;
-  white-space: normal;
-  position: relative;
-  z-index: 2;
-}
-
-.carousel-block {
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden; /* keeps the title from inheriting scroll width */
-  position: relative;
-}
-
-.horizontal-strip[data-strip] {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  padding-bottom: 8px;
-}
-
-.playlist-section h2.collection-section-title {
-  font-size: 1.1rem;
-  margin: 0 0 8px;
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden;
-  white-space: normal;
-  position: relative;
-  z-index: 2;
-}
-
-.collection-carousel-block {
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden;
-  position: relative;
-}
-
-.catalog-group-panel.collection-premium-panel {
-  background: rgba(94, 26, 138, 0.18); /* Stage purple tint */
-  border-radius: 16px;
-  padding: 24px;
-  margin: 40px 0;
-  box-shadow: 0 8px 28px rgba(94, 26, 138, 0.45); /* Stage glow */
-  backdrop-filter: blur(12px);
-}
+    line-height: 1.25;
+    min-height: 2.6em;
+    color: white;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(6px);
+    z-index: 2;
   
-#catalog-view-grouped {
-  padding: 0 48px;
-}
-
-  .shared-tile.coming-soon {
-  position: relative;
-  opacity: 0.6;
-  pointer-events: none;
-}
-
-/* ===========================
-   CATALOG TILE SYSTEM (UNIFIED)
-   =========================== */
-.shared-tile {
-  width: 260px;
-  display: block;
-  background: #111;
-  border-radius: 4px;
-  overflow: hidden;
-  text-decoration: none;
-  color: #fff;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  position: relative; /* for vignette overlay */
-}
-
-.shared-tile:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
-}
-
-.shared-tile img {
-  width: 260px;
-  height: 180px;
-  object-fit: cover;
-  display: block;
-  position: relative;
-  z-index: 1;
-}
-
-/* Subtle vignette */
-.shared-tile::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at center, rgba(0,0,0,0) 60%, rgba(0,0,0,0.35) 100%);
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Group panels */
-.catalog-group-panel {
-  background: rgba(255,255,255,0.05);
-  border-radius: 16px;
-  padding: 24px;
-  margin: 40px 0;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-}
-
-.catalog-group-panel.collection-premium-panel {
-  background: rgba(94, 26, 138, 0.18);
-  box-shadow: 0 8px 28px rgba(94, 26, 138, 0.45);
-}
-
-.catalog-group-title {
-  font-size: 1.4rem;
-  margin-bottom: 20px;
-  color: white;
-  letter-spacing: 0.5px;
-}
-
-.catalog-group-tiles {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-/* Grouped view gutters */
-#catalog-view-grouped {
-  padding: 0 48px;
-}
-
-/* ============================================================
-   CAROUSEL OVERRIDES — REQUIRED ON BOTH PAGES
-   Forces horizontal flow, prevents shrinking, prevents wrapping
-============================================================ */
-
-/* 1. The strip must be a horizontal, non-wrapping flex container */
-
-  /* 2. Tiles inside the carousel must NOT shrink */
-.content-strip .shared-tile {
-  flex: 0 0 auto !important;
-  width: 180px; /* or your tile width */
-  flex-shrink: 0 !important;
-}
-
-/* 3. Optional but recommended: spacing between tiles */
-.content-strip .shared-tile {
-  margin-right: 16px;
-}
-
-/* 4. Ensure arrows stay aligned and don’t collapse */
-.content-carousel {
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-
-/* Horizontal strip behavior */
-.content-strip {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  overflow-y: hidden;
-  white-space: nowrap;
-  scroll-behavior: smooth;
-
-  /* FIX: allow overflow instead of stretching */
-  min-width: 0;
-  flex: 0 1 auto;
-}
-
-/* Prevent tile shrinking */
-.content-strip .shared-tile {
-  flex: 0 0 auto;
-  flex-shrink: 0;
-  width: 180px; /* match your tile width */
-  margin-right: 16px;
-}
-
-/* Carousel container */
-.content-carousel {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-  .content-arrow {
-  background: #ffffff;
-  border: none;
-  color: #333;
-  width: 40px;
-  height: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  cursor: pointer;
-  border-radius: 6px;
-  transition: background 0.2s ease, opacity 0.2s ease;
-}
-
-.content-arrow:hover {
-  background: #f0f0f0;
-}
-
-.content-arrow.disabled {
-  opacity: 0.3;
-  pointer-events: none;
-}
-
-.content-arrow-left {
-  margin-right: 12px;
-}
-
-.content-arrow-right {
-  margin-left: 12px;
-}
-
-
-.catalog-carousel-panel {
-  background: rgba(20, 20, 20, 0.55);
-  backdrop-filter: blur(22px) saturate(140%);
-  -webkit-backdrop-filter: blur(22px) saturate(140%);
-  border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 24px 32px;
-  margin: 32px 0;
-  position: relative;
-  box-shadow:
-    0 20px 40px rgba(0,0,0,0.55),
-    0 0 60px rgba(0,0,0,0.35),
-    inset 0 0 0 1px rgba(255,255,255,0.04);
-}
-
-.catalog-carousel-panel::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  border-radius: inherit;
-  background: linear-gradient(
-    to bottom,
-    rgba(255,255,255,0.08),
-    rgba(255,255,255,0)
-  );
-  pointer-events: none;
-}
-
-.shared-tile-title {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 10px 12px;
-  font-size: 0.95rem;
-  line-height: 1.25;
-  min-height: 2.6em;
-  color: white;
-  background: rgba(0,0,0,0.45);
-  backdrop-filter: blur(6px);
-  z-index: 2;
-
-  /* Two-line clamp */
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  align-items: flex-start;
-  white-space: normal !important;
-}
-
-.collection-premium .shared-tile-title {
-  background: linear-gradient(90deg, #5e1a8a 0%, #8e24aa .55%);
-}
-
-/* Collections: shorter tile + purple title */
-.collection-premium.shared-tile {
-  height: 180px;
-}
-
-.collection-premium .shared-tile-title {
-  font-weight: 500;
-  background: linear-gradient(
-    90deg,
-    rgba(94, 26, 138, 0.55) 0%,
-    rgba(142, 36, 170, 0.55) 100%
-  );
-  backdrop-filter: blur(8px);
-}
-  
-/* Coming Soon overlay */
-.shared-tile.coming-soon {
-  position: relative;
-  opacity: 0.6;
-  pointer-events: none;
-}
-
-.shared-tile-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0,0,0,0.45);
-  color: white;
-  font-weight: 600;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  z-index: 3;
-}
-
-#catalog-view-all {
-  margin-top: 32px;
-}
-
-  .catalog-allmusic-panel {
-  background: rgba(20, 20, 20, 0.55);
-  backdrop-filter: blur(22px) saturate(140%);
-  -webkit-backdrop-filter: blur(22px) saturate(140%);
-  border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 32px;
-  margin: 32px 0;
-  position: relative;
-  box-shadow:
-    0 20px 40px rgba(0,0,0,0.55),
-    0 0 60px rgba(0,0,0,0.35),
-    inset 0 0 0 1px rgba(255,255,255,0.04);
-}
-
-.catalog-allmusic-panel::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  border-radius: inherit;
-  background: linear-gradient(
-    to bottom,
-    rgba(255,255,255,0.08),
-    rgba(255,255,255,0)
-  );
-  pointer-events: none;
-}
-/* ============================================================
-   PREMIUM TILE SYSTEM — CLEAN, CINEMATIC, CORRECTED
-   ============================================================ */
-
-/* Grid layout */
-.playlist-premium-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-  padding: 16px 0;
-  padding-top: 32px;     /* increased separation from toggles */
-  padding-bottom: 16px;
-}
-
-@media (min-width: 600px) {
-  .playlist-premium-grid {
-    grid-template-columns: repeat(2, 1fr);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    white-space: normal;
   }
-}
-
-@media (min-width: 900px) {
-  .playlist-premium-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* Image wrapper */
-.playlist-premium-image-wrapper {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  border-radius: 14px;
-  box-shadow:
-    0 12px 28px rgba(0,0,0,0.45),
-    0 0 40px rgba(0,0,0,0.25);
-  aspect-ratio: 3 / 1;   /* shorter, cinematic */
-  height: auto;
-}
-
-/* Image */
-.playlist-premium-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Gradient overlay */
-.playlist-premium-gradient {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0,0,0,0.75) 0%,
-    rgba(0,0,0,0.35) 40%,
-    rgba(0,0,0,0) 100%
-  );
-  pointer-events: none;
-}
-
-/* Title */
-.playlist-premium-title {
-  position: absolute;
-  left: 18px;
-  right: 18px;
-  bottom: 18px;
-
-  color: white;
-  font-size: 2rem;       /* calibrated for ~874px wide tiles */
-  font-weight: 700;        /* premium, album-cover presence */
-  line-height: 1.15;       /* tight, cinematic */
-  letter-spacing: 0.3px;
-
-  text-shadow:
-    0 3px 6px rgba(0,0,0,0.65),
-    0 0 12px rgba(0,0,0,0.45);
-
-  z-index: 3;
-  pointer-events: none;
-}
-
-  /* ============================================================
-   PREMIUM TILE — COMING SOON OVERLAY
-   ============================================================ */
-
-.playlist-premium-tile.coming-soon .playlist-premium-image-wrapper {
-  position: relative;
-  filter: grayscale(40%) brightness(0.75);
-}
-
-.playlist-premium-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
-  backdrop-filter: blur(4px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  color: white;
-  font-size: 1.4rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-
-  z-index: 4;
-  border-radius: 14px;
-  pointer-events: none;
-}
-
-.playlist-premium-tile.coming-soon .playlist-premium-title {
-  opacity: 0.85;
-}
-
 </style>
 
 {% assign horizon_days = site.data.site.settings.horizon_window_days %}
