@@ -1,3 +1,49 @@
+<section class="homepage-section">
+  <div class="tile-grid">
+
+    {%- comment -%}
+      ============================================================
+      NEW RELEASES — rolling 30‑day window
+      Unlimited items
+      Title overrides supported
+      ============================================================
+    {%- endcomment -%}
+    {% if include.section == "new_releases" %}
+
+      {% for s in include.items %}
+        {% assign override = site.data.music_overrides.overrides | where: "song_id", s.song_id | first %}
+        {% assign display_title = override.title | default: s.title %}
+
+        <a class="tile" href="{{ site.baseurl }}/music/playlists/{{ s.playlists[0] }}/?song_id={{ s.song_id }}">
+          <img src="{{ site.baseurl }}{{ s.thumbnail }}" alt="{{ display_title }}">
+          <h3 class="tile-title">{{ display_title }}</h3>
+        </a>
+      {% endfor %}
+
+    {%- comment -%}
+      ============================================================
+      SPOTLIGHT — top 12 by view_count_num
+      Title overrides supported
+      ============================================================
+    {%- endcomment -%}
+    {% elsif include.section == "spotlight" %}
+
+      {% for s in include.items limit:12 %}
+        {% assign override = site.data.music_overrides.overrides | where: "song_id", s.song_id | first %}
+        {% assign display_title = override.title | default: s.title %}
+
+        <a class="tile" href="{{ site.baseurl }}/music/playlists/{{ s.playlists[0] }}/?song_id={{ s.song_id }}">
+          <img src="{{ site.baseurl }}{{ s.thumbnail }}" alt="{{ display_title }}">
+          <h3 class="tile-title">{{ display_title }}</h3>
+        </a>
+      {% endfor %}
+
+    {%- comment -%}
+      ============================================================
+      COLLECTIONS — playlists from _data/collections.yml
+      Coming Soon if no songs in the collection are public
+      ============================================================
+    {%- endcomment -%}
 {% elsif include.section == "collections" %}
           
   {% for pl in include.items %}
@@ -42,3 +88,5 @@
       </div>
     {% endif %}
   {% endfor %}
+  </div>
+</section>
