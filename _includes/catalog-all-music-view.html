@@ -43,7 +43,15 @@
           {% if scheduled_ts >= now_ts and scheduled_ts <= coming_soon_cutoff %}
             <div class="shared-tile coming-soon">
               <img src="{{ site.baseurl }}{{ song.thumbnail }}" alt="{{ display_title }}">
-              <div class="shared-tile-overlay">Coming Soon</div>
+            
+              {% if scheduled_ts <= coming_soon_cutoff %}
+                <div class="shared-tile-overlay">
+                  Coming {{ song.youtube_metadata.scheduled_at | date: "%b %-d" }}
+                </div>
+              {% else %}
+                <div class="shared-tile-overlay">Coming Soon</div>
+              {% endif %}
+            
               <div class="shared-tile-title">{{ display_title }}</div>
             </div>
           {% endif %}
