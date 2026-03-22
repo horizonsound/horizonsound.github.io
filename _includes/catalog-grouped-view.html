@@ -144,15 +144,25 @@
             </a>
           {% endif %}
         {% endfor %}
-
+        
         {% for song in ordered_songs %}
           {% assign override = site.data.music_overrides.overrides | where: "song_id", song.song_id | first %}
           {% assign display_title = override.title | default: song.title %}
-
-          {% if song.videostatus == "scheduled" %}
+        
+          {% if song.videostatus == "scheduled" and song.youtube_metadata.scheduled_at %}
+            {% assign scheduled_ts = song.youtube_metadata.scheduled_at | date: "%s" | plus: 0 %}
+        
             <div class="shared-tile coming-soon">
               <img src="{{ site.baseurl }}{{ song.thumbnail }}">
-              <div class="shared-tile-overlay">Coming Soon</div>
+        
+              {% if scheduled_ts <= coming_soon_cutoff %}
+                <div class="shared-tile-overlay">
+                  Coming {{ song.youtube_metadata.scheduled_at | date: "%b %-d" }}
+                </div>
+              {% else %}
+                <div class="shared-tile-overlay">Coming Soon</div>
+              {% endif %}
+        
               <div class="shared-tile-title">{{ display_title }}</div>
             </div>
           {% endif %}
