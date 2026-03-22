@@ -61,6 +61,32 @@
     {% endfor %}
 
     {%- comment -%}
+      Sort COMING SOON playlists by earliest scheduled date
+    {%- endcomment -%}
+    {% assign coming_soon_sorted = "" | split: "" %}
+
+    {% for playlist in coming_soon_playlists %}
+      {% assign override = overrides | where: "playlist_id", playlist.playlist_id | first %}
+      {% assign playlist_song_ids = override.songs | default: playlist.song_ids %}
+
+      {% assign earliest_ts = nil %}
+      {% for vid in playlist_song_ids %}
+        {% assign song = all_songs | where: "song_id", vid | first %}
+        {% if song and song.videostatus == "scheduled" and song.youtube_metadata.scheduled_at %}
+          {% assign scheduled_ts = song.youtube_metadata.scheduled_at | date: "%s" | plus: 0 %}
+          {% if earliest_ts == nil or scheduled_ts < earliest_ts %}
+            {% assign earliest_ts = scheduled_ts %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+      {% assign playlist = playlist | merge: {"_earliest_ts": earliest_ts} %}
+      {% assign coming_soon_sorted = coming_soon_sorted | push: playlist %}
+    {% endfor %}
+
+    {% assign coming_soon_sorted = coming_soon_sorted | sort: "_earliest_ts" %}
+
+    {%- comment -%}
       RENDER ACTIVE PLAYLISTS FIRST
     {%- endcomment -%}
     {% for playlist in active_playlists %}
@@ -88,28 +114,14 @@
     {% endfor %}
 
     {%- comment -%}
-      RENDER COMING SOON PLAYLISTS AFTER, WITH DATE LOGIC
+      RENDER COMING SOON PLAYLISTS AFTER, ORDERED BY DATE
     {%- endcomment -%}
-    {% for playlist in coming_soon_playlists %}
+    {% for playlist in coming_soon_sorted %}
       {% assign override = overrides | where: "playlist_id", playlist.playlist_id | first %}
       {% assign playlist_song_ids = override.songs | default: playlist.song_ids %}
       {% assign display_title = override.title | default: playlist.title %}
       {% assign override_thumbnail = override.thumbnail | default: override.hero %}
       {% assign display_thumbnail = override_thumbnail | default: playlist.thumbnail | default: playlist.hero | default: playlist.youtube_thumbnail %}
-
-      {% comment %}
-        Find earliest scheduled date
-      {% endcomment %}
-      {% assign earliest_ts = nil %}
-      {% for vid in playlist_song_ids %}
-        {% assign song = all_songs | where: "song_id", vid | first %}
-        {% if song and song.videostatus == "scheduled" and song.youtube_metadata.scheduled_at %}
-          {% assign scheduled_ts = song.youtube_metadata.scheduled_at | date: "%s" | plus: 0 %}
-          {% if earliest_ts == nil or scheduled_ts < earliest_ts %}
-            {% assign earliest_ts = scheduled_ts %}
-          {% endif %}
-        {% endif %}
-      {% endfor %}
 
       <div class="playlist-premium-tile coming-soon">
         <div class="playlist-premium-image-wrapper">
@@ -119,9 +131,9 @@
             class="playlist-premium-image"
           >
 
-          {% if earliest_ts and earliest_ts <= coming_soon_cutoff %}
+          {% if playlist._earliest_ts and playlist._earliest_ts <= coming_soon_cutoff %}
             <div class="playlist-premium-overlay">
-              Coming {{ earliest_ts | date: "%b %-d" }}
+              Coming {{ playlist._earliest_ts | date: "%b %-d" }}
             </div>
           {% else %}
             <div class="playlist-premium-overlay">Coming Soon</div>
