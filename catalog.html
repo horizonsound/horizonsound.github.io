@@ -661,13 +661,23 @@ title: Catalog – Horizon Sound
   aspect-ratio: 16 / 10;
 }
 
-/* Force 3-across grouped tiles on mobile */
-.catalog-group-tiles {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+@media (max-width: 1100px) {
+  .catalog-group-tiles {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
+/* Allow tiles to shrink so they don't overflow */
+.catalog-group-tiles .shared-tile,
+.catalog-group-tiles .grouped-tile {
+  min-width: 0;
+}
+
+/* Ensure grid respects panel padding */
+.catalog-group-tiles {
+  width: 100%;
+  box-sizing: border-box;
+}
 </style>
 
 {% assign all_songs = site.data.youtube_feed.songs %}
