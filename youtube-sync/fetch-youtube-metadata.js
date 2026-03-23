@@ -97,51 +97,49 @@ export async function fetchAllVideos() {
 
   const youtube = google.youtube({ version: "v3", auth: oauth2Client });
 
+  // -------------------------------------------------------------
+  // 1. Fetch all playlists (cheap)
+  // -------------------------------------------------------------
+  log("Discovering videos via playlists...");
+  const playlists = await fetchPlaylistsWithMembership();
+
+  // Collect all video IDs from all playlists
+  const allIds = new Set();
+  playlists.forEach(pl => {
+    pl.videoIds.forEach(id => allIds.add(id));
+  });
+
+  const videoIds = Array.from(allIds);
+  log(`TOTAL UNIQUE VIDEO IDS FROM PLAYLISTS: ${videoIds.length}`);
+
+  if (videoIds.length === 0) {
+    error("No video IDs discovered from playlists. Aborting.");
+    return [];
+  }
+
+  // -------------------------------------------------------------
+  // 2. Fetch full metadata in batches of 50 (cheap)
+  // -------------------------------------------------------------
   let allVideos = [];
-  let nextPageToken = null;
-  let page = 1;
 
-  log("Fetching videos from YouTube...");
-
-  // Paginated fetch of all videos on the channel
-  do {
-    log(`VIDEO PAGE ${page}...`);
-
-    const searchRes = await youtube.search.list({
-      part: ["id", "snippet"],
-      forMine: true,
-      maxResults: 50,
-      pageToken: nextPageToken,
-      type: "video"
-    });
-
-    if (!searchRes.data.items) {
-      error("YouTube returned no items for video search.");
-      break;
-    }
-
-    // Log each discovered video
-    searchRes.data.items.forEach(item => {
-      log(`  VIDEO FOUND: ${item.id.videoId} — ${item.snippet?.title || "(no title)"}`);
-    });
-
-    // Fetch full metadata for all videos in this page
-    const ids = searchRes.data.items.map(item => item.id.videoId).join(",");
+  for (let i = 0; i < videoIds.length; i += 50) {
+    const batch = videoIds.slice(i, i + 50);
+    log(`Fetching metadata for videos ${i + 1}–${i + batch.length}...`);
 
     const details = await youtube.videos.list({
       part: [
-        "snippet",        // title, description, tags, thumbnails
-        "status",         // privacy, publishAt, uploadStatus
-        "contentDetails", // duration, definition, region restrictions
-        "statistics",     // views, likes, comments
-        "topicDetails"    // topic categories
+        "snippet",
+        "status",
+        "contentDetails",
+        "statistics",
+        "topicDetails"
       ],
-      id: ids
+      id: batch.join(",")
     });
 
     if (!details.data.items) {
-      error("YouTube returned no details for video list.");
-      break;
+      warn("YouTube returned no details for a batch.");
+      continue;
     }
 
     // Normalize each video into the final data model
@@ -153,7 +151,6 @@ export async function fetchAllVideos() {
       const topics = item.topicDetails || {};
       const thumbs = snippet.thumbnails || {};
 
-      // Thumbnail selection priority (highest → lowest)
       const thumbnail =
         thumbs.maxres?.url ||
         thumbs.standard?.url ||
@@ -162,32 +159,20 @@ export async function fetchAllVideos() {
         thumbs.default?.url ||
         "";
 
-      if (!thumbnail) {
-        warn(`No thumbnail found for video "${snippet.title}" (${item.id})`);
-      } else {
-        log(`  THUMBNAIL SELECTED for ${item.id}: ${thumbnail}`);
-      }
-
       return {
         id: item.id,
         title: snippet.title || "",
         slug: slugify(snippet.title || ""),
 
-        // Canonical status fields for the site
         videostatus_raw: normalizeVideoStatus(snippet, status),
         publishedAt: snippet.publishedAt || "",
         scheduledAt: status.publishAt || "",
         thumbnail,
 
-        // Filled later by playlist membership
         playlists: [],
 
-        /**
-         * Full raw metadata block used by the site.
-         * This MUST remain append‑only. Never remove fields.
-         */
         youtube_metadata: {
-          description: item.snippet.description || "",
+          description: snippet.description || "",
           published_at: snippet.publishedAt || "",
           channel_id: snippet.channelId || "",
           channel_title: snippet.channelTitle || "",
@@ -207,8 +192,6 @@ export async function fetchAllVideos() {
           made_for_kids: status.madeForKids ?? false,
           self_declared_made_for_kids: status.selfDeclaredMadeForKids ?? false,
           topic_categories: topics.topicCategories || [],
-
-          // Raw YouTube status fields
           privacy_status: status.privacyStatus || "",
           upload_status: status.uploadStatus || "",
           publish_at: status.publishAt || ""
@@ -217,16 +200,9 @@ export async function fetchAllVideos() {
     });
 
     allVideos.push(...normalized);
-    nextPageToken = searchRes.data.nextPageToken;
-    page++;
-  } while (nextPageToken);
-
-  log(`TOTAL VIDEOS FETCHED: ${allVideos.length}`);
-
-  if (allVideos.length === 0) {
-    error("No videos returned from YouTube. Aborting.");
   }
 
+  log(`TOTAL VIDEOS FETCHED: ${allVideos.length}`);
   return allVideos;
 }
 

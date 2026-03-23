@@ -608,6 +608,59 @@ title: Catalog – Horizon Sound
   opacity: 0.85;
 }
 
+/* ============================================================
+   MOBILE FIX — PREMIUM COLLECTION EXPLORER TILES
+   ============================================================ */
+@media (max-width: 1100px) {
+
+  /* Force 2 tiles across */
+  .playlist-premium-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  /* Make tiles fill their grid cell */
+  .playlist-premium-tile {
+    width: 100% !important;
+  }
+
+  /* Cinematic but compact image ratio */
+  .playlist-premium-image-wrapper {
+    aspect-ratio: 16 / 10 !important;
+    height: auto !important;
+  }
+
+  .playlist-premium-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  /* Scale title down slightly for mobile */
+  .playlist-premium-title {
+    font-size: 1.2rem !important;
+    bottom: 12px !important;
+    left: 12px !important;
+    right: 12px !important;
+  }
+
+  /* Add breathing room under the header */
+  .catalog-page-title {
+    margin-bottom: 24px !important;
+  }
+
+  .catalog-header-row {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    position: relative;
+  }
+}
+
+.catalog-group-tiles .shared-tile {
+  aspect-ratio: 16 / 10;
+}
+
 </style>
 
 {% assign all_songs = site.data.youtube_feed.songs %}
