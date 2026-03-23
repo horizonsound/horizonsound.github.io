@@ -608,40 +608,45 @@ title: Catalog – Horizon Sound
   opacity: 0.85;
 }
 
-  /* MOBILE FIX — Catalog Explorer premium tiles */
+/* ============================================================
+   MOBILE FIX — PREMIUM COLLECTION EXPLORER TILES
+   ============================================================ */
 @media (max-width: 768px) {
-  .catalog-group-tiles {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+
+  /* Force 2 tiles across */
+  .playlist-premium-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
   }
 
-  .catalog-group-tiles .shared-tile {
+  /* Make tiles fill their grid cell */
+  .playlist-premium-tile {
     width: 100% !important;
-    height: auto;
   }
 
-  .catalog-group-tiles .shared-tile img {
+  /* Cinematic but compact image ratio */
+  .playlist-premium-image-wrapper {
+    aspect-ratio: 16 / 10 !important;
+    height: auto !important;
+  }
+
+  .playlist-premium-image {
     width: 100% !important;
-    height: 140px; /* cinematic but compact */
-    object-fit: cover;
+    height: 100% !important;
+    object-fit: cover !important;
   }
-}
 
-/* MOBILE FIX — Header spacing */
-@media (max-width: 768px) {
-  .catalog-group-title,
-  .catalog-page-title,
-  .collection-explorer-title {
+  /* Scale title down slightly for mobile */
+  .playlist-premium-title {
+    font-size: 1.2rem !important;
+    bottom: 12px !important;
+    left: 12px !important;
+    right: 12px !important;
+  }
+
+  /* Add breathing room under the header */
+  .catalog-page-title {
     margin-bottom: 24px !important;
-  }
-}
-
-/* MOBILE FIX — Tile title scaling */
-@media (max-width: 768px) {
-  .shared-tile-title {
-    font-size: 0.85rem;
-    padding: 8px 10px;
   }
 }
 
