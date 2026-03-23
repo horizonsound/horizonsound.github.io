@@ -1366,7 +1366,7 @@ footer {
 .hero-title-overlay {
   position: absolute;
   z-index: 2;        /* <-- this is the missing piece */
-  bottom: 1rem;
+  bottom: 3rem;
   left: 0;
   width: 100%;
   text-align: center;
