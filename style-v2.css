@@ -1363,22 +1363,12 @@ footer {
   text-align: left !important;
 }
 
-.hero-banner {
-  position: relative;
-}
-
 .hero-title-overlay {
   position: absolute;
   z-index: 2;        /* <-- this is the missing piece */
-  bottom: -1.5rem;
+  bottom: 1.5rem;
   left: 0;
   width: 100%;
   text-align: center;
   pointer-events: none;
 }
-
-.hero-banner .hero-image {
-  position: relative;
-  z-index: 1;        /* <-- ensures the image stays behind the title */
-}
-
