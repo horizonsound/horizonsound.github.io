@@ -250,3 +250,24 @@ footer p {
 .tile:hover .tile-overlay {
   opacity: 1;
 }
+
+.hero-banner {
+  position: relative;
+}
+
+.hero-title-overlay {
+  position: absolute;
+  bottom: -1.5rem; /* adjust as needed */
+  left: 0;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+}
+
+.hero-title-overlay .catalog-page-title {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.35);
+}

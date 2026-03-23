@@ -644,16 +644,15 @@ title: Catalog – Horizon Sound
     right: 12px !important;
   }
 
-  /* Add breathing room under the header */
-  .catalog-page-title {
-    margin-bottom: 24px !important;
+  /* Force 3-across grouped tiles on mobile */
+  .catalog-group-tiles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
   }
 
-  .catalog-header-row {
+  .catalog-group-tiles .shared-tile {
     width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    position: relative;
   }
 }
 
@@ -661,6 +660,31 @@ title: Catalog – Horizon Sound
   aspect-ratio: 16 / 10;
 }
 
+/* Allow tiles to shrink so they don't overflow */
+.catalog-group-tiles .shared-tile,
+.catalog-group-tiles .grouped-tile {
+  min-width: 0;
+}
+
+/* Ensure grid respects panel padding */
+.catalog-group-tiles {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+  /* Make the carousel fill the panel */
+.content-carousel {
+  width: 100%;
+  flex: 1 1 auto;
+  box-sizing: border-box;
+}
+
+/* Make the horizontal strip fill the carousel */
+.content-strip {
+  flex: 1 1 auto;
+  width: 100%;
+  min-width: 0;
+}
 </style>
 
 {% assign all_songs = site.data.youtube_feed.songs %}
@@ -673,10 +697,6 @@ title: Catalog – Horizon Sound
           <button class="mode-toggle-button active" data-mode="collection">Collection Explorer</button>
           <button class="mode-toggle-button" data-mode="catalog">Catalog Explorer</button>
         </div>
-
-        <h2 class="catalog-page-title">Collection Explorer</h2>
-
-        <div class="catalog-header-spacer"></div>
       </div>
       <div class="catalog-subtoggle">
         <button class="view-toggle-button active" data-view="grouped">Grouped by View</button>
