@@ -2778,7 +2778,7 @@ songs:
     videostatus: public
     playlists:
       - calm-cinematic-horizon-sound-instrumentals
-    view_count_num: 106
+    view_count_num: 107
     youtube_metadata:
       published_at: '2026-02-28T13:01:20Z'
       scheduled_at: null
@@ -2795,7 +2795,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '106'
+        view_count: '107'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -4259,7 +4259,7 @@ songs:
     videostatus: public
     playlists:
       - after-the-silence-performed-by-lydia-ellington
-    view_count_num: 37
+    view_count_num: 36
     youtube_metadata:
       published_at: '2026-03-03T17:01:12Z'
       scheduled_at: null
@@ -4276,7 +4276,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '37'
+        view_count: '36'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
