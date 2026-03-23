@@ -1363,3 +1363,39 @@ footer {
   text-align: left !important;
 }
 
+/* ============================================================
+   MOBILE FIX — PREMIUM COLLECTION EXPLORER TILES
+   ============================================================ */
+@media (max-width: 768px) {
+
+  .playlist-premium-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  .playlist-premium-tile {
+    width: 100% !important;
+  }
+
+  .playlist-premium-image-wrapper {
+    aspect-ratio: 16 / 10 !important;
+    height: auto !important;
+  }
+
+  .playlist-premium-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .playlist-premium-title {
+    font-size: 1.2rem !important;
+    bottom: 12px !important;
+    left: 12px !important;
+    right: 12px !important;
+  }
+
+  .catalog-page-title {
+    margin-bottom: 24px !important;
+  }
+}
