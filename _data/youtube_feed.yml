@@ -1827,7 +1827,7 @@ songs:
     videostatus: public
     playlists:
       - cinematic-ambient-horizon-sound-instrumentals
-    view_count_num: 0
+    view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-21T12:01:30Z'
       scheduled_at: null
@@ -1844,7 +1844,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '0'
+        view_count: '1'
         like_count: '0'
         favorite_count: '0'
         comment_count: '0'
