@@ -3401,7 +3401,7 @@ songs:
     videostatus: public
     playlists:
       - midnight-saga
-    view_count_num: 229
+    view_count_num: 228
     youtube_metadata:
       published_at: '2026-02-20T17:00:56Z'
       scheduled_at: null
@@ -3418,7 +3418,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '229'
+        view_count: '228'
         like_count: '4'
         favorite_count: '0'
         comment_count: '0'
@@ -5021,7 +5021,7 @@ songs:
     videostatus: public
     playlists:
       - acoustic-singer-songwriter
-    view_count_num: 99
+    view_count_num: 100
     youtube_metadata:
       published_at: '2026-01-11T21:59:03Z'
       scheduled_at: null
@@ -5038,7 +5038,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '99'
+        view_count: '100'
         like_count: '2'
         favorite_count: '0'
         comment_count: '1'
