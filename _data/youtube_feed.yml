@@ -3580,7 +3580,7 @@ songs:
     videostatus: public
     playlists:
       - midnight-saga
-    view_count_num: 20
+    view_count_num: 21
     youtube_metadata:
       published_at: '2026-03-06T17:01:20Z'
       scheduled_at: null
@@ -3597,7 +3597,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '20'
+        view_count: '21'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -4569,7 +4569,7 @@ songs:
     videostatus: public
     playlists:
       - after-the-silence-performed-by-lydia-ellington
-    view_count_num: 4
+    view_count_num: 5
     youtube_metadata:
       published_at: '2026-03-24T16:00:34Z'
       scheduled_at: null
@@ -4586,7 +4586,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '4'
+        view_count: '5'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
