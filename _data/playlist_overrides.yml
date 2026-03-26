@@ -4,7 +4,7 @@ overrides:
     title: Pop Instrumental – Horizon Sound Instrumentals
     subtitle: 
     description: ''
-    thumbnail: /assets/thumbnails/color-the-sky.jpeg
+    thumbnail: /assets/playlist thumbnails/playlist - pop instrumental.jpg
     hero:
     songs: []
     order: 
@@ -14,7 +14,7 @@ overrides:
     title: Synthwave & Retrowave – Horizon Sound Instrumentals
     subtitle: 
     description: ''
-    thumbnail: /assets/thumbnails/retrodrive.jpeg
+    thumbnail: /assets/playlist thumbnails/playlist - synthwave & retrowave instrumental.jpg
     hero:
     songs: []
     order: 
@@ -24,7 +24,7 @@ overrides:
     title: Orchestral Rock (TSO‑Style) – Horizon Sound Instrumentals
     subtitle: 
     description: ''
-    thumbnail: /assets/thumbnails/winterfire.jpeg
+    thumbnail: /assets/playlist thumbnails/playlist - orchestral rock (tso-style).jpg
     hero:
     songs: []
     order: 
@@ -34,7 +34,7 @@ overrides:
     title: Piano Emotional – Horizon Sound Instrumentals
     subtitle: 
     description: ''
-    thumbnail: /assets/thumbnails/holding-the-light.jpeg
+    thumbnail:  /assets/playlist thumbnails/playlist - emotional piano.jpg
     hero:
     songs: []
     order: 
@@ -44,7 +44,7 @@ overrides:
     title: Workout & EDM – Horizon Sound Instrumentals
     subtitle: 
     description: ''
-    thumbnail: /assets/thumbnails/electric-pulse.jpeg
+    thumbnail: /assets/playlist thumbnails/playlist - workout & edm - intrumental.jpg
     hero:
     songs: []
     order: 
@@ -54,7 +54,7 @@ overrides:
     title: Cinematic & Ambient – Horizon Sound Instrumentals
     subtitle: 
     description: ''
-    thumbnail: /assets/thumbnails/moments-between-moments.jpeg
+    thumbnail: /assets/playlist thumbnails/playlist - cinematic & ambient.jpg
     hero:
     songs:
       - moments-between-moments
@@ -70,7 +70,7 @@ overrides:
     title: Electric Guitar Rock – Horizon Sound Instrumentals
     subtitle: 
     description: ''
-    thumbnail: /assets/thumbnails/neon-skyline.jpeg
+    thumbnail: /assets/playlist thumbnails/playlist - electric guitar rock.jpg
     hero:
     songs:
       - neon-skyline
@@ -86,7 +86,7 @@ overrides:
     title: Acoustic Guitar – Horizon Sound Instrumentals
     subtitle: 
     description: ''
-    thumbnail: /assets/thumbnails/sunlight-on-the-strings.jpeg
+    thumbnail: /assets/playlist thumbnails/playlist - acoustic guitar - instrumental.jpg
     hero:
     songs:
       - sunlight-on-the-strings
@@ -102,7 +102,7 @@ overrides:
     title: 
     subtitle: 
     description: 
-    thumbnail:
+    thumbnail:  /assets/playlist thumbnails/playlist - classic country.jpg
     hero:
     songs:
     order: 1
@@ -112,7 +112,7 @@ overrides:
     title: 
     subtitle: 
     description: 
-    thumbnail:
+    thumbnail: /assets/playlist thumbnails/playlist - calm & cinematic.jpg
     hero:
     songs:
     order: 2
@@ -128,7 +128,7 @@ overrides:
       “Someday,” to the heartbreak and distance of “Missing Stamp,” and finally to 
       the sun‑drenched release of “Venice Waters,” this collection traces the moment 
       a friendship becomes a story worth remembering—and maybe worth returning to.
-    thumbnail: /assets/thumbnails/playlist-venice-trilogy-missing-stamp.jpeg
+    thumbnail:  /assets/playlist thumbnails/playlist - missing stamp - venice trilogy.jpeg
     hero: /assets/thumbnails/playlist-hero-venice-trilogy.jpeg
     songs:
       - someday-acoustic-pop-storytelling-horizon-sound
@@ -141,7 +141,7 @@ overrides:
     title: 
     subtitle: 
     description: 
-    thumbnail:
+    thumbnail: /assets/playlist thumbnails/playlist - shorts.jpg
     hero:
     songs:
     order: 4
@@ -155,7 +155,7 @@ overrides:
       transformation. The Midnight Saga follows a character through escalating
       emotional turbulence — from the moment before midnight, into mayhem and
       madness, and finally into the clarity that comes after the storm breaks.
-    thumbnail: /assets/thumbnails/playlist-midnight-saga2.jpeg
+    thumbnail:  /assets/playlist thumbnails/playlist - midnight saga.jpeg
     hero:  /assets/thumbnails/playlist-hero-midnight-saga.jpeg
     songs:
       - before-midnight-the-midnight-saga-chapter-1-horizon-sound
@@ -172,7 +172,7 @@ overrides:
       A reflective, emotional collection exploring the quiet moments after a
       heartbreak — the healing, the reckoning, and the rediscovery of hope.
       These songs live in the space between what was lost and what comes next.
-    thumbnail: /assets/thumbnails/playlist-after-the-silence-performed-by-lydia-ellington.jpeg
+    thumbnail:  /assets/playlist thumbnails/playlist - after the silence – lydia ellington.jpeg
     hero: /assets/thumbnails/playlist-hero-after-the-silence.jpeg
     songs:
       - 1-the-quiet-after-performed-by-lydia-ellington-after-the-silence-horizon-sound
@@ -200,7 +200,7 @@ overrides:
       perspectives, this trilogy follows the quiet unraveling of a relationship,
       the rediscovery of identity, and the moment two people decide whether to
       walk away or walk toward each other again.
-    thumbnail: /assets/thumbnails/playlist-a-way-back-trilogy.jpeg
+    thumbnail:  /assets/playlist thumbnails/playlist - a-way-back - trilogy.jpeg
     hero: /assets/thumbnails/playlist-hero-a-way-back.jpeg
     songs:
       - lost-in-silence-from-a-way-back-horizon-sound
@@ -213,7 +213,7 @@ overrides:
     title: 
     subtitle: 
     description: 
-    thumbnail:
+    thumbnail:  /assets/playlist thumbnails/playlist - acoustic-singer‑songwriter.jpg
     hero:
     songs:
     order: 8
@@ -223,7 +223,7 @@ overrides:
     title: 
     subtitle: 
     description: 
-    thumbnail:
+    thumbnail:  /assets/playlist thumbnails/playlist - emotional ballads.jpg
     hero:
     songs:
     order: 9
@@ -233,7 +233,7 @@ overrides:
     title: 
     subtitle: 
     description: 
-    thumbnail:
+    thumbnail:  /assets/playlist thumbnails/playlist - modern country.jpg
     hero:
     songs:
     order: 10
@@ -243,7 +243,7 @@ overrides:
     title: 
     subtitle: 
     description: 
-    thumbnail:
+    thumbnail:  /assets/playlist thumbnails/playlist - electro‑pop & dance‑pop.jpg
     hero:
     songs:
     order: 11
@@ -253,7 +253,7 @@ overrides:
     title: 
     subtitle: 
     description: 
-    thumbnail:
+    thumbnail:  /assets/playlist thumbnails/playlist - 90s pop & pop‑rock.jpg
     hero:
     songs:
     order: 12
@@ -263,7 +263,7 @@ overrides:
     title: 
     subtitle: 
     description: 
-    thumbnail:
+    thumbnail:  /assets/playlist thumbnails/playlist - southern rock.jpg
     hero:
     songs:
     order: 13
@@ -273,7 +273,7 @@ overrides:
     title: 
     subtitle: 
     description: 
-    thumbnail:
+    thumbnail:  /assets/playlist thumbnails/playlist - pop.jpg
     hero:
     songs:
     order: 14
@@ -283,7 +283,7 @@ overrides:
     title: 
     subtitle: 
     description: 
-    thumbnail:
+    thumbnail:  /assets/playlist thumbnails/playlist - 80s rock & pop.jpg
     hero:
     songs:
     order: 15
