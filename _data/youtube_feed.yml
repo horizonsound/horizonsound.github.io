@@ -1827,7 +1827,7 @@ songs:
     videostatus: public
     playlists:
       - cinematic-ambient-horizon-sound-instrumentals
-    view_count_num: 14
+    view_count_num: 15
     youtube_metadata:
       published_at: '2026-03-21T12:01:30Z'
       scheduled_at: null
@@ -1844,7 +1844,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '14'
+        view_count: '15'
         like_count: '0'
         favorite_count: '0'
         comment_count: '0'
@@ -5865,6 +5865,103 @@ songs:
       license: ''
       embeddable: true
       public_stats_viewable: true
+  - song_id: wildfire-modern-country-power-anthem-horizon-sound
+    youtube_id: Tc0wt00clNM
+    title: Wildfire (Modern Country Power Anthem) – Horizon Sound
+    description_html: >-
+      <p>Official audio for “Wildfire” by Horizon Sound.</p><p>“Wildfire” is a
+      fierce, modern‑country power anthem driven by bold female vocals, big
+      drums, electric guitars, and a cinematic, high‑octane lift. The track
+      captures the unstoppable force of a woman who refuses to be tamed — a
+      storm of fire, fury, and resilience rising against someone who tried to
+      break her. With its explosive chorus, dramatic pre‑chorus, and confident
+      Nashville production, “Wildfire” delivers the heat of a woman reclaiming
+      her strength and burning brighter than ever.</p><p>This song tells the
+      story of a woman who’s been underestimated for the last time. Born with
+      lightning under her skin, she finally breaks free — hitting the highway,
+      windows down, hair flying in the Oklahoma wind. Every mile fuels her fire,
+      turning her into a force of nature no one can outrun. With smoke on the
+      horizon and power in her stride, she rises, fights, and refuses to be
+      confined. “Wildfire” is her anthem — fierce, fearless, and burning hot
+      tonight.</p><ul class="vibe-list"><li>🎧 Vibe: fierce, empowering, modern
+      country, cinematic</li><li>🎤 Vocals: bold female lead, emotional grit,
+      powerhouse delivery</li><li>🎛️ Production: big drums, electric guitars,
+      dramatic lift, Nashville polish</li><li>⚡ Mood: unstoppable, fiery,
+      defiant, triumphant</li></ul><p class="playlist-header">🎵 More from
+      Horizon Sound</p><ul class="playlist-links"><li>Pop <a
+      href="https://www.youtube.com/playlist?list=PLcKs1ONZE1Pzgel83xUYhwppTDYuYxVHE"
+      target="_blank" rel="noopener">▶️</a></li><li>Emotional Ballads <a
+      href="https://www.youtube.com/playlist?list=PLcKs1ONZE1PzzBjl-mSFvM2oM_wWIHHsi"
+      target="_blank" rel="noopener">▶️</a></li><li>Acoustic / Singer‑Songwriter
+      <a
+      href="https://www.youtube.com/playlist?list=PLcKs1ONZE1PxC_S8buSFa962RiMQCacXW"
+      target="_blank" rel="noopener">▶️</a></li><li>80s Rock & Pop <a
+      href="https://www.youtube.com/playlist?list=PLcKs1ONZE1PziRS7yrFMWKrxbgQUnw_k0"
+      target="_blank" rel="noopener">▶️</a></li><li>90s Pop & Pop‑Rock <a
+      href="https://www.youtube.com/playlist?list=PLcKs1ONZE1PzBqW6Niq31vWxQjOLfdZHO"
+      target="_blank" rel="noopener">▶️</a></li><li>Electro‑Pop & Dance‑Pop <a
+      href="https://www.youtube.com/playlist?list=PLcKs1ONZE1PzQeXDhkhPH792NQONQ0SU5"
+      target="_blank" rel="noopener">▶️</a></li><li>Modern Country <a
+      href="https://www.youtube.com/playlist?list=PLcKs1ONZE1Pw9sRUaBV_izyIqwOcwAKMz"
+      target="_blank" rel="noopener">▶️</a></li><li>Southern Rock <a
+      href="https://www.youtube.com/playlist?list=PLcKs1ONZE1Pwdl4fpEbkxORvona6pl8hA"
+      target="_blank" rel="noopener">▶️</a></li><li>Midnight Saga <a
+      href="https://www.youtube.com/playlist?list=PLcKs1ONZE1PzhwIF1yE_gEUS1kZoW6oiH"
+      target="_blank" rel="noopener">▶️</a></li><li>A Way Back <a
+      href="https://www.youtube.com/playlist?list=PLcKs1ONZE1PzZpPNcgo40R2K0pbfTuZaH"
+      target="_blank" rel="noopener">▶️</a></li><li>After the Silence – Full
+      Album <a
+      href="https://www.youtube.com/playlist?list=PLcKs1ONZE1Pz6NzlQFL-96c_9VIgXwuVh"
+      target="_blank" rel="noopener">▶️</a></li><li>Missing Stamp – Venice
+      Trilogy <a
+      href="https://www.youtube.com/playlist?list=PLcKs1ONZE1PyAbowXjZwZ_Zhzu8eOzQnN"
+      target="_blank" rel="noopener">▶️</a></li><li>Calm & Cinematic – Horizon
+      Sound Instrumentals <a
+      href="https://www.youtube.com/playlist?list=PLcKs1ONZE1PyTxIEXEolv_F5r7xqRr8TU"
+      target="_blank" rel="noopener">▶️</a></li></ul><p>💬 About Horizon Sound
+
+      Original pop, acoustic, synthwave, and cinematic music — emotional
+      stories, big melodies, and modern production.</p><p>© 2026 Horizon Sound.
+      All lyrics and original content are the property of Horizon Sound.
+      Unauthorized use, reproduction, or distribution is prohibited without
+      written permission.</p>
+    url: /music/wildfire-modern-country-power-anthem-horizon-sound/
+    thumbnail: /assets/thumbnails/wildfire-modern-country-power-anthem-horizon-sound.jpeg
+    videostatus: public
+    playlists:
+      - modern-country
+    view_count_num: 2
+    youtube_metadata:
+      published_at: '2026-03-27T16:00:39Z'
+      scheduled_at: null
+      channel_id: UCiko-zjojbsoXrsEuBOPbSw
+      channel_title: Horizon Sound
+      category_id: '22'
+      tags: []
+      duration: PT4M53S
+      definition: hd
+      dimension: null
+      caption: null
+      licensed_content: false
+      region_allowed: []
+      region_blocked: []
+      content_rating: {}
+      statistics:
+        view_count: '2'
+        like_count: '1'
+        favorite_count: '0'
+        comment_count: '0'
+      made_for_kids: false
+      self_declared_made_for_kids: false
+      topic_categories:
+        - https://en.wikipedia.org/wiki/Country_music
+        - https://en.wikipedia.org/wiki/Music
+      privacy_status: null
+      upload_status: null
+      publish_at: null
+      license: ''
+      embeddable: true
+      public_stats_viewable: true
   - song_id: vegas-in-the-sky-country-pop-party-anthem-horizon-sound
     youtube_id: n87_yKJTcUw
     title: Vegas in the Sky (Country‑Pop Party Anthem) – Horizon Sound
@@ -6237,101 +6334,6 @@ songs:
       topic_categories:
         - https://en.wikipedia.org/wiki/Country_music
         - https://en.wikipedia.org/wiki/Music
-      privacy_status: null
-      upload_status: null
-      publish_at: null
-      license: ''
-      embeddable: true
-      public_stats_viewable: true
-  - song_id: wildfire-modern-country-power-anthem-horizon-sound
-    youtube_id: Tc0wt00clNM
-    title: Wildfire (Modern Country Power Anthem) – Horizon Sound
-    description_html: >-
-      <p>Official audio for “Wildfire” by Horizon Sound.</p><p>“Wildfire” is a
-      fierce, modern‑country power anthem driven by bold female vocals, big
-      drums, electric guitars, and a cinematic, high‑octane lift. The track
-      captures the unstoppable force of a woman who refuses to be tamed — a
-      storm of fire, fury, and resilience rising against someone who tried to
-      break her. With its explosive chorus, dramatic pre‑chorus, and confident
-      Nashville production, “Wildfire” delivers the heat of a woman reclaiming
-      her strength and burning brighter than ever.</p><p>This song tells the
-      story of a woman who’s been underestimated for the last time. Born with
-      lightning under her skin, she finally breaks free — hitting the highway,
-      windows down, hair flying in the Oklahoma wind. Every mile fuels her fire,
-      turning her into a force of nature no one can outrun. With smoke on the
-      horizon and power in her stride, she rises, fights, and refuses to be
-      confined. “Wildfire” is her anthem — fierce, fearless, and burning hot
-      tonight.</p><ul class="vibe-list"><li>🎧 Vibe: fierce, empowering, modern
-      country, cinematic</li><li>🎤 Vocals: bold female lead, emotional grit,
-      powerhouse delivery</li><li>🎛️ Production: big drums, electric guitars,
-      dramatic lift, Nashville polish</li><li>⚡ Mood: unstoppable, fiery,
-      defiant, triumphant</li></ul><p class="playlist-header">🎵 More from
-      Horizon Sound</p><ul class="playlist-links"><li>Pop <a
-      href="https://www.youtube.com/playlist?list=PLcKs1ONZE1Pzgel83xUYhwppTDYuYxVHE"
-      target="_blank" rel="noopener">▶️</a></li><li>Emotional Ballads <a
-      href="https://www.youtube.com/playlist?list=PLcKs1ONZE1PzzBjl-mSFvM2oM_wWIHHsi"
-      target="_blank" rel="noopener">▶️</a></li><li>Acoustic / Singer‑Songwriter
-      <a
-      href="https://www.youtube.com/playlist?list=PLcKs1ONZE1PxC_S8buSFa962RiMQCacXW"
-      target="_blank" rel="noopener">▶️</a></li><li>80s Rock & Pop <a
-      href="https://www.youtube.com/playlist?list=PLcKs1ONZE1PziRS7yrFMWKrxbgQUnw_k0"
-      target="_blank" rel="noopener">▶️</a></li><li>90s Pop & Pop‑Rock <a
-      href="https://www.youtube.com/playlist?list=PLcKs1ONZE1PzBqW6Niq31vWxQjOLfdZHO"
-      target="_blank" rel="noopener">▶️</a></li><li>Electro‑Pop & Dance‑Pop <a
-      href="https://www.youtube.com/playlist?list=PLcKs1ONZE1PzQeXDhkhPH792NQONQ0SU5"
-      target="_blank" rel="noopener">▶️</a></li><li>Modern Country <a
-      href="https://www.youtube.com/playlist?list=PLcKs1ONZE1Pw9sRUaBV_izyIqwOcwAKMz"
-      target="_blank" rel="noopener">▶️</a></li><li>Southern Rock <a
-      href="https://www.youtube.com/playlist?list=PLcKs1ONZE1Pwdl4fpEbkxORvona6pl8hA"
-      target="_blank" rel="noopener">▶️</a></li><li>Midnight Saga <a
-      href="https://www.youtube.com/playlist?list=PLcKs1ONZE1PzhwIF1yE_gEUS1kZoW6oiH"
-      target="_blank" rel="noopener">▶️</a></li><li>A Way Back <a
-      href="https://www.youtube.com/playlist?list=PLcKs1ONZE1PzZpPNcgo40R2K0pbfTuZaH"
-      target="_blank" rel="noopener">▶️</a></li><li>After the Silence – Full
-      Album <a
-      href="https://www.youtube.com/playlist?list=PLcKs1ONZE1Pz6NzlQFL-96c_9VIgXwuVh"
-      target="_blank" rel="noopener">▶️</a></li><li>Missing Stamp – Venice
-      Trilogy <a
-      href="https://www.youtube.com/playlist?list=PLcKs1ONZE1PyAbowXjZwZ_Zhzu8eOzQnN"
-      target="_blank" rel="noopener">▶️</a></li><li>Calm & Cinematic – Horizon
-      Sound Instrumentals <a
-      href="https://www.youtube.com/playlist?list=PLcKs1ONZE1PyTxIEXEolv_F5r7xqRr8TU"
-      target="_blank" rel="noopener">▶️</a></li></ul><p>💬 About Horizon Sound
-
-      Original pop, acoustic, synthwave, and cinematic music — emotional
-      stories, big melodies, and modern production.</p><p>© 2026 Horizon Sound.
-      All lyrics and original content are the property of Horizon Sound.
-      Unauthorized use, reproduction, or distribution is prohibited without
-      written permission.</p>
-    url: /music/wildfire-modern-country-power-anthem-horizon-sound/
-    thumbnail: /assets/thumbnails/wildfire-modern-country-power-anthem-horizon-sound.jpeg
-    videostatus: scheduled
-    playlists:
-      - modern-country
-    view_count_num: 2
-    youtube_metadata:
-      published_at: '2026-02-08T14:41:27Z'
-      scheduled_at: '2026-03-27T16:00:00Z'
-      channel_id: UCiko-zjojbsoXrsEuBOPbSw
-      channel_title: Horizon Sound
-      category_id: '22'
-      tags: []
-      duration: PT4M53S
-      definition: hd
-      dimension: null
-      caption: null
-      licensed_content: false
-      region_allowed: []
-      region_blocked: []
-      content_rating: {}
-      statistics:
-        view_count: '2'
-        like_count: '1'
-        favorite_count: '0'
-        comment_count: '0'
-      made_for_kids: false
-      self_declared_made_for_kids: false
-      topic_categories: []
       privacy_status: null
       upload_status: null
       publish_at: null

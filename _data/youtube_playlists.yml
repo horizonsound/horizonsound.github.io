@@ -277,11 +277,11 @@ playlists:
     channel_title: Horizon Sound
     thumbnail: /assets/thumbnails/playlist-modern-country.jpeg
     song_ids:
+      - wildfire-modern-country-power-anthem-horizon-sound
       - vegas-in-the-sky-country-pop-party-anthem-horizon-sound
       - the-man-behind-the-bar-90s-country-horizon-sound
       - time-capsule-emotional-country-nostalgic-storytelling-horizon-sound
       - already-out-the-door-modern-country-horizon-sound
-      - wildfire-modern-country-power-anthem-horizon-sound
       - she-s-so-into-me-modern-country-love-song-horizon-sound
   - playlist_id: electro-pop-dance-pop
     title: Electro-Pop & Dance-Pop
