@@ -89,7 +89,8 @@ playlists:
     published_at: '2026-03-20T00:11:49.597984Z'
     channel_id: UCiko-zjojbsoXrsEuBOPbSw
     channel_title: Horizon Sound
-    thumbnail: null
+    thumbnail: >-
+      /assets/thumbnails/playlist-acoustic-guitar-horizon-sound-instrumentals.jpeg
     song_ids:
       - sunlight-on-the-strings
       - wanderers-heart
