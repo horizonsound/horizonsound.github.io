@@ -4847,7 +4847,7 @@ songs:
     videostatus: public
     playlists:
       - a-way-back-trilogy
-    view_count_num: 311
+    view_count_num: 312
     youtube_metadata:
       published_at: '2026-01-30T17:01:11Z'
       scheduled_at: null
@@ -4864,7 +4864,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '311'
+        view_count: '312'
         like_count: '5'
         favorite_count: '0'
         comment_count: '1'
