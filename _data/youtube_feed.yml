@@ -58,7 +58,7 @@ songs:
     videostatus: scheduled
     playlists:
       - rum-soaked-paradise-cody-sails
-    view_count_num: 1
+    view_count_num: 3
     youtube_metadata:
       published_at: '2026-03-29T11:50:12Z'
       scheduled_at: '2026-04-24T16:00:00Z'
@@ -75,7 +75,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '1'
+        view_count: '3'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -149,7 +149,7 @@ songs:
     videostatus: scheduled
     playlists:
       - rum-soaked-paradise-cody-sails
-    view_count_num: 0
+    view_count_num: 2
     youtube_metadata:
       published_at: '2026-03-29T11:09:47Z'
       scheduled_at: '2026-05-01T16:00:00Z'
@@ -166,7 +166,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '0'
+        view_count: '2'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -336,7 +336,7 @@ songs:
     videostatus: scheduled
     playlists:
       - rum-soaked-paradise-cody-sails
-    view_count_num: 0
+    view_count_num: 4
     youtube_metadata:
       published_at: '2026-03-29T11:46:21Z'
       scheduled_at: '2026-05-15T16:00:00Z'
@@ -353,7 +353,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '0'
+        view_count: '4'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -427,7 +427,7 @@ songs:
     videostatus: scheduled
     playlists:
       - rum-soaked-paradise-cody-sails
-    view_count_num: 0
+    view_count_num: 2
     youtube_metadata:
       published_at: '2026-03-29T12:29:32Z'
       scheduled_at: '2026-05-22T16:00:00Z'
@@ -444,7 +444,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '0'
+        view_count: '2'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -608,7 +608,7 @@ songs:
     videostatus: scheduled
     playlists:
       - rum-soaked-paradise-cody-sails
-    view_count_num: 0
+    view_count_num: 2
     youtube_metadata:
       published_at: '2026-03-29T13:19:35Z'
       scheduled_at: '2026-06-05T16:00:00Z'
@@ -625,7 +625,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '0'
+        view_count: '2'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
