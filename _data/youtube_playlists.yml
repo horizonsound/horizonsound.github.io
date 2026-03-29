@@ -5,12 +5,16 @@ playlists:
     published_at: '2026-03-29T13:39:57.869637Z'
     channel_id: UCiko-zjojbsoXrsEuBOPbSw
     channel_title: Horizon Sound
-    thumbnail: /assets/thumbnails/playlist-rum-soaked-paradise-cody-sails.jpeg
+    thumbnail: null
     song_ids:
       - rum-soaked-paradise-cody-sails-horizon-sound
       - salt-on-the-rim-cody-sails-horizon-sound
       - barefoot-and-buzzed-cody-sails-horizon-sound
       - island-girl-trouble-cody-sails-horizon-sound
+      - leilani-cody-sails-horizon-sound
+      - high-tide-cody-sails-horizon-sound
+      - sunburned-and-smiling-cody-sails-horizon-sound
+      - wind-in-your-sails-cody-sails-horizon-sound
   - playlist_id: pop-instrumental-horizon-sound-instrumentals
     title: Pop Instrumental – Horizon Sound Instrumentals
     description: ''
