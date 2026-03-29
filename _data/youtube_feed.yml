@@ -76,7 +76,7 @@ songs:
       content_rating: {}
       statistics:
         view_count: '1'
-        like_count: '1'
+        like_count: '0'
         favorite_count: '0'
         comment_count: '0'
       made_for_kids: false
@@ -167,7 +167,7 @@ songs:
       content_rating: {}
       statistics:
         view_count: '0'
-        like_count: '1'
+        like_count: '0'
         favorite_count: '0'
         comment_count: '0'
       made_for_kids: false
@@ -261,7 +261,7 @@ songs:
       content_rating: {}
       statistics:
         view_count: '0'
-        like_count: '1'
+        like_count: '0'
         favorite_count: '0'
         comment_count: '0'
       made_for_kids: false
@@ -354,7 +354,7 @@ songs:
       content_rating: {}
       statistics:
         view_count: '0'
-        like_count: '1'
+        like_count: '0'
         favorite_count: '0'
         comment_count: '0'
       made_for_kids: false
@@ -445,7 +445,7 @@ songs:
       content_rating: {}
       statistics:
         view_count: '0'
-        like_count: '1'
+        like_count: '0'
         favorite_count: '0'
         comment_count: '0'
       made_for_kids: false
@@ -626,7 +626,7 @@ songs:
       content_rating: {}
       statistics:
         view_count: '0'
-        like_count: '1'
+        like_count: '0'
         favorite_count: '0'
         comment_count: '0'
       made_for_kids: false
@@ -7942,7 +7942,7 @@ songs:
     videostatus: public
     playlists:
       - pop
-    view_count_num: 69
+    view_count_num: 70
     youtube_metadata:
       published_at: '2026-01-10T12:30:51Z'
       scheduled_at: null
@@ -7959,7 +7959,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '69'
+        view_count: '70'
         like_count: '3'
         favorite_count: '0'
         comment_count: '1'
