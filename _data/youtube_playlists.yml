@@ -198,9 +198,9 @@ playlists:
     channel_title: Horizon Sound
     thumbnail: null
     song_ids:
-      - venice-waters-upbeat-acoustic-pop-adventure-horizon-sound
       - someday-acoustic-pop-storytelling-horizon-sound
       - missing-stamp-emotional-acoustic-pop-horizon-sound
+      - venice-waters-upbeat-acoustic-pop-adventure-horizon-sound
   - playlist_id: shorts
     title: Shorts
     description: >-
