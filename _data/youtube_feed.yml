@@ -953,26 +953,20 @@ songs:
 
       Horizon Sound · Pop Instrumentals</p><p>🎵 Premium Collections
 
-      https://www.youtube.com/playlist?list=PLcKs1ONZE1Pz6NzlQFL-96c_9VIgXwuVh    
       https://www.youtube.com/playlist?list=PLcKs1ONZE1PycVbB_e_Dx-_A3QtzXLBcZ
 
-      https://www.youtube.com/playlist?list=PLcKs1ONZE1PyAbowXjZwZ_Zhzu8eOzQnN    
+      https://www.youtube.com/playlist?list=PLcKs1ONZE1Pz6NzlQFL-96c_9VIgXwuVh
+
+      https://www.youtube.com/playlist?list=PLcKs1ONZE1PyAbowXjZwZ_Zhzu8eOzQnN
+
       https://www.youtube.com/playlist?list=PLcKs1ONZE1PzhwIF1yE_gEUS1kZoW6oiH
 
       https://www.youtube.com/playlist?list=PLcKs1ONZE1PzZpPNcgo40R2K0pbfTuZaH</p><p>🎵
-      Horizon Sound Genre Playlists
-
-      https://www.youtube.com/playlist?list=PLcKs1ONZE1PziRS7yrFMWKrxbgQUnw_k0
-
-      https://www.youtube.com/playlist?list=PLcKs1ONZE1PzBqW6Niq31vWxQjOLfdZHO
-
-      https://www.youtube.com/playlist?list=PLcKs1ONZE1PxC_S8buSFa962RiMQCacXW
+      Horizon Sound Playlists
 
       https://www.youtube.com/playlist?list=PLcKs1ONZE1Px-Bl42_MAvyaAYY2Y_9L4i
 
       https://www.youtube.com/playlist?list=PLcKs1ONZE1PzzBjl-mSFvM2oM_wWIHHsi
-
-      https://www.youtube.com/playlist?list=PLcKs1ONZE1PzQeXDhkhPH792NQONQ0SU5
 
       https://www.youtube.com/playlist?list=PLcKs1ONZE1Pw9sRUaBV_izyIqwOcwAKMz
 
@@ -980,16 +974,16 @@ songs:
 
       https://www.youtube.com/playlist?list=PLcKs1ONZE1Pzgel83xUYhwppTDYuYxVHE
 
-      https://www.youtube.com/playlist?list=PLcKs1ONZE1Pwdl4fpEbkxORvona6pl8hA</p><p>🎵
+      https://www.youtube.com/playlist?list=PLcKs1ONZE1PziRS7yrFMWKrxbgQUnw_k0
+
+      https://www.youtube.com/playlist?list=PLcKs1ONZE1Pwdl4fpEbkxORvona6pl8hA
+
+      https://www.youtube.com/playlist?list=PLcKs1ONZE1PxC_S8buSFa962RiMQCacXW
+
+      https://www.youtube.com/playlist?list=PLcKs1ONZE1PzBqW6Niq31vWxQjOLfdZHO
+
+      https://www.youtube.com/playlist?list=PLcKs1ONZE1PzQeXDhkhPH792NQONQ0SU5</p><p>🎵
       Horizon Sound Instrumentals
-
-      https://www.youtube.com/playlist?list=PLcKs1ONZE1PxhrdDQQgz-sMbsUtgHWOqx
-
-      https://www.youtube.com/playlist?list=PLcKs1ONZE1PyTxIEXEolv_F5r7xqRr8TU
-
-      https://www.youtube.com/playlist?list=PLcKs1ONZE1PzY-ZUXXfQzTb4qq_0xKhxS
-
-      https://www.youtube.com/playlist?list=PLcKs1ONZE1Pz5Jah7OueALc4LHrpm3XLt
 
       https://www.youtube.com/playlist?list=PLcKs1ONZE1PxlrV9-OTy0EgyU_SJOMk_i
 
@@ -999,7 +993,15 @@ songs:
 
       https://www.youtube.com/playlist?list=PLcKs1ONZE1Py2NOaI1R5FnB9HTmDnY9Z-
 
-      https://www.youtube.com/playlist?list=PLcKs1ONZE1Pzjo0-6GfACegPFHQRbB3pt</p>
+      https://www.youtube.com/playlist?list=PLcKs1ONZE1Pz5Jah7OueALc4LHrpm3XLt
+
+      https://www.youtube.com/playlist?list=PLcKs1ONZE1Pzjo0-6GfACegPFHQRbB3pt
+
+      https://www.youtube.com/playlist?list=PLcKs1ONZE1PxhrdDQQgz-sMbsUtgHWOqx
+
+      https://www.youtube.com/playlist?list=PLcKs1ONZE1PzY-ZUXXfQzTb4qq_0xKhxS
+
+      https://www.youtube.com/playlist?list=PLcKs1ONZE1PyTxIEXEolv_F5r7xqRr8TU</p>
     url: /music/brightest-part-of-you/
     thumbnail: /assets/thumbnails/brightest-part-of-you.jpeg
     videostatus: scheduled
@@ -5348,7 +5350,7 @@ songs:
     videostatus: public
     playlists:
       - after-the-silence-performed-by-lydia-ellington
-    view_count_num: 21
+    view_count_num: 23
     youtube_metadata:
       published_at: '2026-03-24T16:00:34Z'
       scheduled_at: null
@@ -5365,7 +5367,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '21'
+        view_count: '23'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
