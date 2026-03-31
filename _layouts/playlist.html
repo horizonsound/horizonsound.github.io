@@ -539,6 +539,57 @@ is_playlist_page: true
   margin-top: 4px;
 }
 
+.playlist-cell {
+  vertical-align: top;
+  padding: 0.4rem 0.2rem;
+  min-width: 0;
+  word-break: break-word;
+}
+
+/* Add breathing room above each playlist section */
+.playlist-header {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* Add spacing below the table so sections don’t collide */
+.playlist-table {
+  width: 100%;
+  margin-bottom: 2rem;
+  display: block;
+  margin-top: 2rem;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* Optional: spacing between description and vibe list */
+.vibe-list {
+  margin-bottom: 1.5rem;
+}
+
+/* Optional: spacing after the last paragraph before playlists */
+p {
+  margin-bottom: 1rem;
+}
+
+.playlist-table tr {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two equal columns */
+  gap: 0.5rem;
+}
+
+.playlist-table td {
+  padding: 0.4rem 0.2rem;
+  word-break: break-word;
+  min-width: 0;
+}
+
+.centered-column {
+  max-width: 1000px !important;
+}
+
 </style>
    
   <!-- Load the playlist and override data -->
