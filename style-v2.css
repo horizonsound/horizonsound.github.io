@@ -1395,11 +1395,11 @@ footer {
 /* Add spacing below the table so sections don’t collide */
 .playlist-table {
   width: 100%;
-  border-collapse: collapse;
   margin-bottom: 2rem;
-  border-spacing: 0 0.5rem;
   display: block;
   margin-top: 2rem;
+  border-collapse: separate;
+  border-spacing: 0;
 }
 
 /* Optional: spacing between description and vibe list */
@@ -1413,11 +1413,17 @@ p {
 }
 
 .playlist-table tr {
-  display: flex;
-  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two equal columns */
+  gap: 0.5rem;
 }
 
 .playlist-table td {
-  flex: 1;
   padding: 0.4rem 0.2rem;
+  word-break: break-word;
+  min-width: 0;
+}
+
+.centered-column {
+  max-width: 1000px !important;
 }
