@@ -160,37 +160,37 @@ function formatDescriptionToHtml(desc, playlistTitleLookup, playlistSlugMap, bas
      4. CONVERT PLAYLIST URLS → INTERNAL LINKS + SPLIT INTO <p>
   ------------------------------------------------------------- */
 
-html = html.replace(
-  /(https?:\/\/www\.youtube\.com\/playlist\?list=([A-Za-z0-9_-]+))/g,
-  (match, fullUrl, playlistId) => {
-    console.log("MATCHED PLAYLIST URL: ", fullUrl);   // <— ADD THIS
-
-    const title = playlistTitleLookup[playlistId] || fullUrl;
-    const slug = playlistSlugMap[playlistId];
-
-    if (!slug) return `<p>${title}</p>`;
-
-    return    `<a href="${baseurl}/music/playlists/${slug}/" class="internal-playlist-link">▶️</a> ${title}`;
-  }
-);
-
+  html = html.replace(
+    /(https?:\/\/www\.youtube\.com\/playlist\?list=([A-Za-z0-9_-]+))/g,
+    (match, fullUrl, playlistId) => {
+      console.log("MATCHED PLAYLIST URL: ", fullUrl);   // <— ADD THIS
+  
+      const title = playlistTitleLookup[playlistId] || fullUrl;
+      const slug = playlistSlugMap[playlistId];
+  
+      if (!slug) return `<p>${title}</p>`;
+  
+      return    `<a href="${baseurl}/music/playlists/${slug}/" class="internal-playlist-link">▶️</a> ${title}`;
+    }
+  );
+  
   /* -------------------------------------------------------------
      5. CONVERT PLAYLIST SECTIONS INTO 2-COLUMN TABLES
   ------------------------------------------------------------- */
-
+  
   html = html.replace(
-    /<p>🎵 ([^<]+)<\/p>((?:<p>.*?<\/p>)+)/g,
+    /<p>🎵 ([^<]+)<\/p>((?:<p>(?!🎵 ).*?<\/p>)+)/g,
     (match, header, itemsBlock) => {
       const items = itemsBlock
         .match(/<p>.*?<\/p>/g)
         .map(p => p.replace(/^<p>/, "").replace(/<\/p>$/, "").trim())
         .filter(x => x.length > 0);
-
+  
       let rows = "";
       for (let i = 0; i < items.length; i += 2) {
         const left = items[i] || "";
         const right = items[i + 1] || "";
-
+  
         rows += `
           <tr>
             <td class="playlist-cell">${left}</td>
@@ -198,7 +198,7 @@ html = html.replace(
           </tr>
         `;
       }
-
+  
       return `
         <p class="playlist-header">🎵 ${header}</p>
         <table class="playlist-table">
