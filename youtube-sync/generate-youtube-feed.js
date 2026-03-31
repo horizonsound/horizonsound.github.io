@@ -124,7 +124,7 @@ function formatDescriptionToHtml(desc, playlistTitleLookup, playlistSlugMap, bas
   ------------------------------------------------------------- */
 
   let html = desc
-    .split(/\n\s*\n/)
+    .split(/\n+/)
     .map(p => p.trim())
     .filter(p => p.length > 0)
     .map(p => {
