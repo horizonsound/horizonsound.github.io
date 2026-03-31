@@ -130,22 +130,6 @@ let html = desc
   .map(p => `<p>${p}</p>`)
   .join("");
 
-    // ADD IT HERE — after html is defined
-    console.log("PARAGRAPHS >>>", html);
-
-      // Bullet + URL → bullet + linked arrow
-      if (p.startsWith("•")) {
-        const urlMatch = p.match(/https?:\/\/\S+/);
-        if (urlMatch) {
-          const url = urlMatch[0];
-          const title = p.replace(url, "").trim();
-          return `<p>${title} <a href="${url}" target="_blank" rel="noopener">▶️</a></p>`;
-        }
-      }
-      return `<p>${p}</p>`;
-    })
-    .join("");
-
   /* -------------------------------------------------------------
      3. CONVERT VIBE PARAGRAPHS INTO <ul>
   ------------------------------------------------------------- */
