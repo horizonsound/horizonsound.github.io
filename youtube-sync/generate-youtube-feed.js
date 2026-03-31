@@ -95,7 +95,7 @@ function writeYaml(filepath, data) {
    - Produces deterministic HTML
 ------------------------------------------------------------- */
 
-function formatDescriptionToHtml(desc) {
+function formatDescriptionToHtml(desc, playlistTitleLookup) {
   if (!desc) return "";
 
   // Force newline before every bullet
@@ -149,18 +149,21 @@ function formatDescriptionToHtml(desc) {
       return `<ul class="vibe-list">${items}</ul>`;
     }
   );
-  // Convert any raw URLs into clickable links
-  html = html.replace(
-    /(https?:\/\/[^\s<]+)/g,
-    (match) => `<a href="${match}" target="_blank" rel="noopener">${match}</a>`
-  );
-
   // Convert raw URLs into clickable links, but ignore ones already inside <a>
   html = html.replace(
     /(?<!href=")(https?:\/\/[^\s<"]+)/g,
     (url) => `<a href="${url}" target="_blank" rel="noopener">${url}</a>`
   );
-  return html;
+
+  // Convert raw playlist URLs into clickable links with playlist titles
+  html = html.replace(
+    /(https?:\/\/www\.youtube\.com\/playlist\?list=([A-Za-z0-9_-]+))/g,
+    (match, fullUrl, playlistId) => {
+      const title = playlistTitleLookup[playlistId] || fullUrl;
+      return `<a href="${fullUrl}" target="_blank" rel="noopener">${title}</a>`;
+    }
+  );
+return html;
 }
 
 /* -------------------------------------------------------------
@@ -178,7 +181,10 @@ function buildSongObject(video) {
     title: video.title,
 
     // Formatted HTML description (canonical)
-    description_html: formatDescriptionToHtml(video.youtube_metadata?.description || ""),
+    description_html: formatDescriptionToHtml(
+      video.youtube_metadata?.description || "",
+      playlistTitleLookup
+    ),
 
     url: `/music/${song_id}/`,
     thumbnail: `/assets/thumbnails/${song_id}.jpeg`,
@@ -256,6 +262,12 @@ async function generate() {
 
   console.log("Fetching playlists + membership...");
   const playlists = await fetchPlaylistsWithMembership();
+  
+  // Build lookup: YouTube playlist ID → playlist title
+  const playlistTitleLookup = {};
+  for (const pl of playlists) {
+    playlistTitleLookup[pl.id] = pl.title;
+  }
 
   if (!playlists) {
     console.error("ERROR: fetchPlaylistsWithMembership() returned undefined.");
