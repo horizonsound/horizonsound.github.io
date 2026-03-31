@@ -9011,13 +9011,13 @@ songs:
       /music/13-rise-again-performed-by-lydia-ellington-after-the-silence-horizon-sound/
     thumbnail: >-
       /assets/thumbnails/13-rise-again-performed-by-lydia-ellington-after-the-silence-horizon-sound.jpeg
-    videostatus: scheduled
+    videostatus: public
     playlists:
       - after-the-silence-performed-by-lydia-ellington
     view_count_num: 2
     youtube_metadata:
-      published_at: '2026-02-16T20:19:53Z'
-      scheduled_at: '2026-03-31T16:00:00Z'
+      published_at: '2026-03-31T16:00:39Z'
+      scheduled_at: null
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -9037,7 +9037,10 @@ songs:
         comment_count: '0'
       made_for_kids: false
       self_declared_made_for_kids: false
-      topic_categories: []
+      topic_categories:
+        - https://en.wikipedia.org/wiki/Music
+        - https://en.wikipedia.org/wiki/Pop_music
+        - https://en.wikipedia.org/wiki/Soul_music
       privacy_status: null
       upload_status: null
       publish_at: null
@@ -10592,7 +10595,7 @@ songs:
     videostatus: public
     playlists:
       - modern-country
-    view_count_num: 40
+    view_count_num: 42
     youtube_metadata:
       published_at: '2026-03-27T16:00:39Z'
       scheduled_at: null
@@ -10609,8 +10612,8 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '40'
-        like_count: '1'
+        view_count: '42'
+        like_count: '2'
         favorite_count: '0'
         comment_count: '0'
       made_for_kids: false
