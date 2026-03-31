@@ -95,7 +95,7 @@ function writeYaml(filepath, data) {
    - Produces deterministic HTML
 ------------------------------------------------------------- */
 
-function formatDescriptionToHtml(desc, playlistTitleLookup, playlistSlugMap) {
+function formatDescriptionToHtml(desc, playlistTitleLookup, playlistSlugMap, baseurl = "")
   if (!desc) return "";
 
   // Force newline before every bullet
@@ -149,9 +149,17 @@ function formatDescriptionToHtml(desc, playlistTitleLookup, playlistSlugMap) {
   );
 
   // Convert remaining raw URLs into clickable links (ignore ones already linked)
+  // Convert playlist URLs into INTERNAL playlist links + split into <p> blocks
   html = html.replace(
-    /(?<!href=")(https?:\/\/[^\s<"]+)/g,
-    (url) => `<a href="${url}" target="_blank" rel="noopener">${url}</a>`
+    /(https?:\/\/www\.youtube\.com\/playlist\?list=([A-Za-z0-9_-]+))/g,
+    (match, fullUrl, playlistId) => {
+      const title = playlistTitleLookup[playlistId] || fullUrl;
+      const slug = playlistSlugMap[playlistId];
+  
+      if (!slug) return `<p>${title}</p>`;
+  
+      return `<p><a href="${baseurl}/music/playlists/${slug}/" class="internal-playlist-link">▶️</a> ${title}</p>`;
+    }
   );
 
   // ⭐ Convert playlist sections into 2-column tables
@@ -208,7 +216,8 @@ function buildSongObject(video, playlistTitleLookup, playlistSlugMap) {
     description_html: formatDescriptionToHtml(
       video.youtube_metadata?.description || "",
       playlistTitleLookup,
-      playlistSlugMap
+      playlistSlugMap,
+      process.env.BASEURL || ""   // e.g. "" or "/development"
     ),
 
     url: `/music/${song_id}/`,
