@@ -636,15 +636,13 @@ is_playlist_page: true
         </div>
     </div>
 
-  <div id="selected-song-description" class="description-block"></div>
-  
-  <div id="selected-song-extra" class="about-block"></div>
-  
-  <div class="centered-column">
-    <div id="selected-song-about" class="about-block"></div>
-  </div>
-  
-  <div id="selected-song-lyrics" class="lyrics-block"></div>
+    <div id="selected-song-extra" class="about-block"></div>
+    
+    <div class="centered-column">
+      <div id="selected-song-about" class="about-block"></div>
+    </div>
+    
+    <div id="selected-song-lyrics" class="lyrics-block"></div>
 
 <script>
   window.YOUTUBE_PLAYLISTS = {{ site.data.youtube_playlists.playlists | jsonify }};
@@ -729,8 +727,6 @@ function loadSong(songId) {
     ${extraTitle ? `<h3 class="section-header">${extraTitle}</h3>` : ""}
     ${extraHTML ? `<div class="about-text">${extraHTML}</div>` : ""}
   `;
-
-  document.getElementById("selected-song-description").innerHTML = about || "";
 
   document.getElementById("selected-song-about").innerHTML = `
     ${about ? `<h3 class="section-header">About</h3>` : ""}
