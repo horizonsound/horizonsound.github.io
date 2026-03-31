@@ -8798,7 +8798,7 @@ songs:
     videostatus: public
     playlists:
       - classic-country
-    view_count_num: 124
+    view_count_num: 125
     youtube_metadata:
       published_at: '2026-01-17T15:32:29Z'
       scheduled_at: null
@@ -8815,7 +8815,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '124'
+        view_count: '125'
         like_count: '3'
         favorite_count: '0'
         comment_count: '1'
@@ -17654,7 +17654,7 @@ songs:
     videostatus: public
     playlists:
       - southern-rock
-    view_count_num: 85
+    view_count_num: 86
     youtube_metadata:
       published_at: '2026-01-12T13:57:24Z'
       scheduled_at: null
@@ -17671,7 +17671,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '85'
+        view_count: '86'
         like_count: '1'
         favorite_count: '0'
         comment_count: '1'
