@@ -747,27 +747,72 @@ is_playlist_page: true
 </script>
 
 <script>
-  document.addEventListener("click", (e) => {
-    const tile = e.target.closest(".shared-tile");
-    if (!tile) return;
-    if (tile.classList.contains("coming-soon")) return;
+document.addEventListener("click", (e) => {
+  // 1. Internal playlist link
+  const playlistLink = e.target.closest(".internal-playlist-link");
+  if (playlistLink) {
+    e.preventDefault();
 
-    const id = tile.getAttribute("data-song-id");
+    const url = playlistLink.getAttribute("href");
 
-    const url = new URL(window.location.href);
-    url.searchParams.set("song_id", id);
-    history.pushState({}, "", url.toString());
+    history.pushState({}, "", url);
+    loadInternalPlaylist(url);
 
-    safeLoadSong(id);
+    return;
+  }
 
-    const strip = tile.closest('.content-strip, .horizontal-strip');
-    if (strip) {
-      strip.scrollTo({
-        left: tile.offsetLeft - strip.offsetWidth / 2 + tile.offsetWidth / 2,
-        behavior: 'smooth'
-      });
-    }
-  });
+  // 2. Song tile click
+  const tile = e.target.closest(".shared-tile");
+  if (!tile || tile.classList.contains("coming-soon")) return;
+
+  const id = tile.getAttribute("data-song-id");
+
+  const newUrl = new URL(window.location.href);
+  newUrl.searchParams.set("song_id", id);
+  history.pushState({}, "", newUrl.toString());
+
+  safeLoadSong(id);
+
+  const strip = tile.closest('.content-strip, .horizontal-strip');
+  if (strip) {
+    strip.scrollTo({
+      left: tile.offsetLeft - strip.offsetWidth / 2 + tile.offsetWidth / 2,
+      behavior: 'smooth'
+    });
+  }
+});
+
+  function loadInternalPlaylist(url) {
+  // Extract playlist slug from URL
+  const slug = url.split("/").filter(Boolean).pop();
+
+  // Find playlist data
+  const playlist = window.YOUTUBE_PLAYLISTS.find(p => p.playlist_id === slug);
+  if (!playlist) {
+    console.error("Playlist not found:", slug);
+    return;
+  }
+
+  // Load carousel tiles for this playlist
+  const songIds = playlist.song_ids;
+
+  // Update carousel UI
+  const strip = document.querySelector(".content-strip");
+  strip.innerHTML = songIds.map(id => {
+    const song = window.YOUTUBE_SONGS.find(s => s.song_id === id);
+    return `
+      <div class="shared-tile" data-song-id="${song.song_id}">
+        <img src="/assets/thumbnails/${song.song_id}.jpeg" />
+        <div class="tile-title">${song.title}</div>
+      </div>
+    `;
+  }).join("");
+
+  // Auto-select first song
+  if (songIds.length > 0) {
+    safeLoadSong(songIds[0]);
+  }
+}
 
   function advanceToNextSong(currentId) {
     const tiles = Array.from(document.querySelectorAll('.shared-tile:not(.coming-soon)'));
