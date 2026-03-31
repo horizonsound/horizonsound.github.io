@@ -150,26 +150,46 @@ function formatDescriptionToHtml(desc, playlistTitleLookup) {
     }
   );
   
-  // Wrap each playlist link in its own <li>
-  html = html.replace(
-    /<p>🎵 ([^<]+?) (.*?)<\/p>/g,
-    (match, header, items) => {
-      // Split on playlist titles (already replaced by your lookup)
-      const list = items
-        .trim()
-        .split(/\s{2,}|\s(?=[A-Z][a-z]+(?:\s|$))/g)
-        .filter(x => x.trim().length > 0)
-        .map(title => `<li>▶️ • ${title.trim()}</li>`)
-        .join("");
-  
-      return `
-        <p class="playlist-header">🎵 ${header.trim()}</p>
-        <ul class="playlist-links">
-          ${list}
-        </ul>
+// Convert playlist sections into 2‑column tables with ▶️ links
+html = html.replace(
+  /<p>🎵 ([^<]+?) (.*?)<\/p>/g,
+  (match, header, items) => {
+    // Split playlist titles (already replaced by lookup)
+    const titles = items
+      .trim()
+      .split(/\s{2,}|\s(?=[A-Z][a-z]+(?:\s|$))/g)
+      .filter(x => x.trim().length > 0);
+
+    // Build rows of 2 columns
+    let rows = "";
+    for (let i = 0; i < titles.length; i += 2) {
+      const left = titles[i];
+      const right = titles[i + 1] || "";
+
+      rows += `
+        <tr>
+          <td>
+            <ul class="playlist-links">
+              <li>▶️ ${left}</li>
+            </ul>
+          </td>
+          <td>
+            ${right
+              ? `<ul class="playlist-links"><li>▶️ ${right}</li></ul>`
+              : ""}
+          </td>
+        </tr>
       `;
     }
-  );
+
+    return `
+      <p class="playlist-header">🎵 ${header.trim()}</p>
+      <table class="playlist-table">
+        ${rows}
+      </table>
+    `;
+  }
+);
   
   // Convert raw playlist URLs into clickable links with playlist titles
   html = html.replace(
