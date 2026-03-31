@@ -636,11 +636,15 @@ is_playlist_page: true
         </div>
     </div>
 
-    <div id="selected-song-extra" class="about-block"></div>
-    <div class="centered-column">
-      <div id="selected-song-about" class="about-block"></div>
-    </div>
-    <div id="selected-song-lyrics" class="lyrics-block"></div>
+  <div id="selected-song-description" class="description-block"></div>
+  
+  <div id="selected-song-extra" class="about-block"></div>
+  
+  <div class="centered-column">
+    <div id="selected-song-about" class="about-block"></div>
+  </div>
+  
+  <div id="selected-song-lyrics" class="lyrics-block"></div>
 
 <script>
   window.YOUTUBE_PLAYLISTS = {{ site.data.youtube_playlists.playlists | jsonify }};
