@@ -95,7 +95,7 @@ function writeYaml(filepath, data) {
    - Produces deterministic HTML
 ------------------------------------------------------------- */
 
-function formatDescriptionToHtml(desc, playlistTitleLookup, playlistSlugMap, baseurl = "")
+function formatDescriptionToHtml(desc, playlistTitleLookup, playlistSlugMap, baseurl = "") {
   if (!desc) return "";
 
   // Force newline before every bullet
