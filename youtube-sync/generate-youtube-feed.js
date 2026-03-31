@@ -170,7 +170,7 @@ html = html.replace(
 
     if (!slug) return `<p>${title}</p>`;
 
-    return `<p><a href="${baseurl}/music/playlists/${slug}/" class="internal-playlist-link">▶️</a> ${title}</p>`;
+    return    `<a href="${baseurl}/music/playlists/${slug}/" class="internal-playlist-link">▶️</a> ${title}`;
   }
 );
 
