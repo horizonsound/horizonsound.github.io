@@ -165,7 +165,9 @@ let html = desc
       return    `<a href="${baseurl}/music/playlists/${slug}/" class="internal-playlist-link">▶️</a> ${title}`;
     }
   );
-  
+
+  console.log("PARAGRAPHS BEFORE TABLE >>>", html);
+
   /* -------------------------------------------------------------
      5. CONVERT PLAYLIST SECTIONS INTO 2-COLUMN TABLES
   ------------------------------------------------------------- */
