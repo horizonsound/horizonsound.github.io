@@ -149,15 +149,15 @@ function formatDescriptionToHtml(desc, playlistTitleLookup) {
       return `<ul class="vibe-list">${items}</ul>`;
     }
   );
-
+  
   // Convert playlist sections into YouTube‑style vertical lists
   html = html.replace(
     /<p>🎵 ([^<]+?) (.*?)<\/p>/g,
     (match, header, items) => {
-      // Split playlist titles by two or more spaces
+      // Split playlist titles by two or more spaces OR capital‑letter boundaries
       const list = items
         .trim()
-        .split(/\s{2,}|\s(?=[A-Z][a-z]+(?:\s|$))/g) // heuristic split
+        .split(/\s{2,}|\s(?=[A-Z][a-z]+(?:\s|$))/g)
         .filter(x => x.trim().length > 0)
         .map(title => {
           return `<li>▶️ • ${title.trim()}</li>`;
