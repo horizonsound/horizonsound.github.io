@@ -98,6 +98,8 @@ function writeYaml(filepath, data) {
 function formatDescriptionToHtml(desc, playlistTitleLookup, playlistSlugMap, baseurl = "") {
   if (!desc) return "";
 
+  console.log("RAW DESC >>>", JSON.stringify(desc));
+
   // Force newline before every bullet
   desc = desc.replace(/•/g, "\n•");
 
