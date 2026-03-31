@@ -1376,3 +1376,14 @@ footer {
 .hero-banner .hero-image {
   z-index: 1;        /* <-- ensures the image stays behind the title */
 }
+
+.playlist-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+.playlist-cell {
+  padding: 4px 12px 4px 0;
+  vertical-align: top;
+}
