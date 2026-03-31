@@ -163,7 +163,7 @@ function formatDescriptionToHtml(desc, playlistTitleLookup, playlistSlugMap, bas
 html = html.replace(
   /(https?:\/\/www\.youtube\.com\/playlist\?list=([A-Za-z0-9_-]+))/g,
   (match, fullUrl, playlistId) => {
-    console.log("MATCHED PLAYLIST URL:", fullUrl);   // <— ADD THIS
+    console.log("MATCHED PLAYLIST URL: ", fullUrl);   // <— ADD THIS
 
     const title = playlistTitleLookup[playlistId] || fullUrl;
     const slug = playlistSlugMap[playlistId];
