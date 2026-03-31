@@ -149,6 +149,11 @@ function formatDescriptionToHtml(desc) {
       return `<ul class="vibe-list">${items}</ul>`;
     }
   );
+  // Convert any raw URLs into clickable links
+  html = html.replace(
+    /(https?:\/\/[^\s<]+)/g,
+    (match) => `<a href="${match}" target="_blank" rel="noopener">${match}</a>`
+  );
 
   return html;
 }
