@@ -539,6 +539,129 @@ is_playlist_page: true
   margin-top: 4px;
 }
 
+.playlist-cell {
+  vertical-align: top;
+  padding: 0.4rem 0.2rem;
+  min-width: 0;
+  word-break: break-word;
+}
+
+/* Add breathing room above each playlist section */
+.playlist-header {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* Add spacing below the table so sections don’t collide */
+.playlist-table {
+  width: 100%;
+  margin-bottom: 2rem;
+  display: block;
+  margin-top: 2rem;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* Optional: spacing between description and vibe list */
+.vibe-list {
+  margin-bottom: 1.5rem;
+}
+
+/* Optional: spacing after the last paragraph before playlists */
+p {
+  margin-bottom: 1rem;
+}
+
+.playlist-table tr {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two equal columns */
+  gap: 0.5rem;
+}
+
+.playlist-table td {
+  padding: 0.4rem 0.2rem;
+  word-break: break-word;
+  min-width: 0;
+}
+
+.centered-column {
+  max-width: 1000px !important;
+  width: 1200px !important;
+  margin: 0 auto !important;
+  display: block !important;
+}
+
+.playlist-table {
+  width: 1000px !important;
+  margin: 2rem auto !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  display: block !important;
+}
+
+.playlist-table tr {
+  display: grid !important;
+  grid-template-columns: 500px 500px !important;
+}
+
+.playlist-table td {
+  width: 600px !important;
+  padding: 0.4rem 0.2rem !important;
+  word-break: break-word !important;
+}
+
+.playlist-header {
+  margin-top: 2rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+
+
+
+
+.centered-column {
+  max-width: 1200px !important;
+  width: 1200px !important;
+  margin: 0 auto !important;
+  display: block !important;
+}
+
+.centered-column .about-block,
+.centered-column .lyrics-block {
+  width: 1200px !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  display: block !important;
+}
+
+.playlist-table {
+  width: 1200px !important;
+  margin: 2rem auto !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  display: block !important;
+}
+
+.playlist-table tr {
+  display: grid !important;
+  grid-template-columns: 600px 600px !important;
+}
+
+.playlist-table td {
+  width: 600px !important;
+  padding: 0.4rem 0.2rem !important;
+  word-break: break-word !important;
+}
+
+.playlist-header {
+  text-align: left !important;
+  margin-top: 2rem !important;
+  margin-bottom: 0.5rem !important;
+  width: 1200px !important;
+}
+
 </style>
    
   <!-- Load the playlist and override data -->
@@ -637,164 +760,204 @@ is_playlist_page: true
     </div>
 
     <div id="selected-song-extra" class="about-block"></div>
+    
     <div class="centered-column">
       <div id="selected-song-about" class="about-block"></div>
     </div>
+    
     <div id="selected-song-lyrics" class="lyrics-block"></div>
+
 <script>
-  let YT_PLAYER = null;
-  let YT_READY = false;
+  window.YOUTUBE_PLAYLISTS = {{ site.data.youtube_playlists.playlists | jsonify }};
+</script>
+<script>
+/* -------------------------------------------------------
+   YOUTUBE PLAYER SETUP
+------------------------------------------------------- */
+let YT_PLAYER = null;
+let YT_READY = false;
 
-  function onYouTubeIframeAPIReady() {
-    console.log("YOUTUBE API READY");
-    YT_READY = true;
+function onYouTubeIframeAPIReady() {
+  console.log("YOUTUBE API READY");
+  YT_READY = true;
+}
+
+function ensurePlayerContainer() {
+  return document.getElementById("player-container") !== null;
+}
+
+function buildPlayer(youtubeId) {
+  if (!YT_READY || !ensurePlayerContainer()) {
+    setTimeout(() => buildPlayer(youtubeId), 50);
+    return;
   }
 
-  function safeLoadSong(songId) {
-    if (!YT_READY) {
-      setTimeout(() => safeLoadSong(songId), 50);
-      return;
-    }
-    loadSong(songId);
+  if (!YT_PLAYER) {
+    YT_PLAYER = new YT.Player("player-container", {
+      videoId: youtubeId,
+      playerVars: {
+        autoplay: 1,
+        mute: 0,
+        controls: 1,
+        rel: 0
+      },
+      events: {
+        onStateChange: onPlayerStateChange
+      }
+    });
+  } else {
+    YT_PLAYER.loadVideoById(youtubeId);
+  }
+}
+
+function onPlayerStateChange(event) {
+  if (event.data === YT.PlayerState.ENDED) {
+    advanceToNextSong(window.SELECTED_SONG_ID);
+  }
+}
+
+/* -------------------------------------------------------
+   SONG LOADING
+------------------------------------------------------- */
+function safeLoadSong(songId) {
+  if (!YT_READY) {
+    setTimeout(() => safeLoadSong(songId), 50);
+    return;
+  }
+  loadSong(songId);
+}
+
+function loadSong(songId) {
+  window.SELECTED_SONG_ID = songId;
+
+  const song = window.YOUTUBE_SONGS.find(s => s.song_id === songId);
+  const override = window.MUSIC_OVERRIDES.find(s => s.song_id === songId);
+
+  const title = override?.title || song?.title || "";
+  const subtitle = override?.subtitle || "";
+  const extraTitle = override?.extra_title || "";
+  const extraHTML = override?.extra_html || "";
+  const about = song?.description_html || "";
+  const lyricsHTML = override?.lyrics_html || "";
+  const youtubeId = song?.youtube_id || "";
+
+  document.querySelector(".player-title").textContent = title;
+  document.querySelector(".player-subtitle").textContent = subtitle;
+
+  buildPlayer(youtubeId);
+
+  document.getElementById("selected-song-extra").innerHTML = `
+    ${extraTitle ? `<h3 class="section-header">${extraTitle}</h3>` : ""}
+    ${extraHTML ? `<div class="about-text">${extraHTML}</div>` : ""}
+  `;
+
+  document.getElementById("selected-song-about").innerHTML = `
+    ${about ? `<h3 class="section-header">About</h3>` : ""}
+    ${about ? `<div class="about-text">${about}</div>` : ""}
+  `;
+
+  document.getElementById("selected-song-lyrics").innerHTML = lyricsHTML || "";
+
+  highlightTile(songId);
+}
+
+function highlightTile(songId) {
+  const tiles = document.querySelectorAll(".shared-tile");
+  tiles.forEach(t => t.classList.remove("active"));
+
+  const activeTile = document.querySelector(`.shared-tile[data-song-id="${songId}"]`);
+  if (!activeTile) return;
+
+  activeTile.classList.add("active");
+
+  const strip = activeTile.closest(".content-strip, .horizontal-strip");
+  if (strip) {
+    strip.scrollTo({
+      left: activeTile.offsetLeft - strip.offsetWidth / 2 + activeTile.offsetWidth / 2,
+      behavior: "smooth"
+    });
+  }
+}
+
+/* -------------------------------------------------------
+   INTERNAL PLAYLIST LOADING
+------------------------------------------------------- */
+function loadInternalPlaylist(url) {
+  const slug = url.split("/").filter(Boolean).pop();
+
+  const playlist = window.YOUTUBE_PLAYLISTS.find(p => p.playlist_id === slug);
+  if (!playlist) {
+    console.error("Playlist not found:", slug);
+    return;
   }
 
-  function buildPlayer(youtubeId) {
-    if (!YT_READY || !ensurePlayerContainer()) {
-      setTimeout(() => buildPlayer(youtubeId), 50);
-      return;
-    }
+  const songIds = playlist.song_ids;
 
-    if (!YT_PLAYER) {
-      console.log("PLAYLIST SCRIPT RUNNING");
-      YT_PLAYER = new YT.Player('player-container', {
-        videoId: youtubeId,
-        playerVars: {
-          autoplay: 1,
-          mute: 0,
-          controls: 1,
-          rel: 0
-        },
-        events: {
-          'onStateChange': onPlayerStateChange
-        }
-      });
-    } else {
-      YT_PLAYER.loadVideoById(youtubeId);
-    }
-  }
-
-  function ensurePlayerContainer() {
-    return document.getElementById("player-container") !== null;
-  }
-
-  function onPlayerStateChange(event) {
-    if (event.data === YT.PlayerState.ENDED) {
-      advanceToNextSong(window.SELECTED_SONG_ID);
-    }
-  }
-
-  function loadSong(songId) {
-    window.SELECTED_SONG_ID = songId;
-
-    const song = window.YOUTUBE_SONGS.find(s => s.song_id === songId);
-    const override = window.MUSIC_OVERRIDES.find(s => s.song_id === songId);
-
-    const title = override?.title || song?.title || "";
-    const subtitle = override?.subtitle || "";
-    const extraTitle = override?.extra_title || "";
-    const extraHTML = override?.extra_html || "";
-    const about = song?.description_html || "";
-    const lyricsHTML = override?.lyrics_html || "";
-    const youtubeId = song?.youtube_id || "";
-
-    document.querySelector(".player-title").textContent = title;
-    document.querySelector(".player-subtitle").textContent = subtitle;
-
-    buildPlayer(youtubeId);
-
-    document.getElementById("selected-song-extra").innerHTML = `
-      ${extraTitle ? `<h3 class="section-header">${extraTitle}</h3>` : ""}
-      ${extraHTML ? `<div class="about-text">${extraHTML}</div>` : ""}
+  const strip = document.querySelector(".content-strip");
+  strip.innerHTML = songIds.map(id => {
+    const song = window.YOUTUBE_SONGS.find(s => s.song_id === id);
+    return `
+      <div class="shared-tile" data-song-id="${song.song_id}">
+        <img src="/assets/thumbnails/${song.song_id}.jpeg" />
+        <div class="tile-title">${song.title}</div>
+      </div>
     `;
+  }).join("");
 
-    document.getElementById("selected-song-about").innerHTML = `
-      ${about ? `<h3 class="section-header">About</h3>` : ""}
-      ${about ? `<div class="about-text">${about}</div>` : ""}
-    `;
+  if (songIds.length > 0) {
+    safeLoadSong(songIds[0]);
+  }
+}
 
-    document.getElementById("selected-song-lyrics").innerHTML = lyricsHTML || "";
+/* -------------------------------------------------------
+   CLICK HANDLER (PLAYLISTS + SONG TILES)
+------------------------------------------------------- */
+document.addEventListener("click", (e) => {
+  // Playlist link
+  const playlistLink = e.target.closest(".internal-playlist-link");
+  if (playlistLink) {
+    e.preventDefault();
 
-    highlightTile(songId);
+    const url = playlistLink.getAttribute("href");
+
+    history.pushState({}, "", url);
+    loadInternalPlaylist(url);
+
+    return;
   }
 
-  function highlightTile(songId) {
-    const tiles = document.querySelectorAll('.shared-tile');
-    tiles.forEach(t => t.classList.remove('active'));
+  // Song tile
+  const tile = e.target.closest(".shared-tile");
+  if (!tile || tile.classList.contains("coming-soon")) return;
 
-    const activeTile = document.querySelector(`.shared-tile[data-song-id="${songId}"]`);
-    if (!activeTile) return;
+  const id = tile.getAttribute("data-song-id");
 
-    activeTile.classList.add('active');
+  const newUrl = new URL(window.location.href);
+  newUrl.searchParams.set("song_id", id);
+  history.pushState({}, "", newUrl.toString());
 
-    const strip = activeTile.closest('.content-strip, .horizontal-strip');
-    if (strip) {
-      strip.scrollTo({
-        left: activeTile.offsetLeft - strip.offsetWidth / 2 + activeTile.offsetWidth / 2,
-        behavior: 'smooth'
-      });
-    }
+  safeLoadSong(id);
+
+  const strip = tile.closest(".content-strip, .horizontal-strip");
+  if (strip) {
+    strip.scrollTo({
+      left: tile.offsetLeft - strip.offsetWidth / 2 + tile.offsetWidth / 2,
+      behavior: "smooth"
+    });
   }
-</script>
+});
 
-<script>
-  document.addEventListener("click", (e) => {
-    const tile = e.target.closest(".shared-tile");
-    if (!tile) return;
-    if (tile.classList.contains("coming-soon")) return;
+/* -------------------------------------------------------
+   AUTO-LOAD SONG IF URL HAS ?song_id
+------------------------------------------------------- */
+if (window.SELECTED_SONG_ID) {
+  safeLoadSong(window.SELECTED_SONG_ID);
+}
 
-    const id = tile.getAttribute("data-song-id");
-
-    const url = new URL(window.location.href);
-    url.searchParams.set("song_id", id);
-    history.pushState({}, "", url.toString());
-
-    safeLoadSong(id);
-
-    const strip = tile.closest('.content-strip, .horizontal-strip');
-    if (strip) {
-      strip.scrollTo({
-        left: tile.offsetLeft - strip.offsetWidth / 2 + tile.offsetWidth / 2,
-        behavior: 'smooth'
-      });
-    }
-  });
-
-  function advanceToNextSong(currentId) {
-    const tiles = Array.from(document.querySelectorAll('.shared-tile:not(.coming-soon)'));
-    const index = tiles.findIndex(t => t.getAttribute('data-song-id') === currentId);
-
-    if (index === -1) return;
-
-    const nextTile = tiles[index + 1];
-    if (!nextTile) return;
-
-    const nextId = nextTile.getAttribute('data-song-id');
-
-    const url = new URL(window.location.href);
-    url.searchParams.set("song_id", nextId);
-    history.pushState({}, "", url.toString());
-
-    safeLoadSong(nextId);
-  }
-</script>
-
-<script>
-  if (window.SELECTED_SONG_ID) {
-    safeLoadSong(window.SELECTED_SONG_ID);
-  }
-</script>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
+/* -------------------------------------------------------
+   CAROUSEL ARROWS
+------------------------------------------------------- */
+document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".content-carousel").forEach(carousel => {
     const strip = carousel.querySelector(".content-strip");
     const leftArrow = carousel.querySelector(".content-arrow-left");
@@ -805,26 +968,13 @@ is_playlist_page: true
     const updateArrows = () => {
       const maxScroll = strip.scrollWidth - strip.clientWidth;
 
-      if (strip.scrollLeft <= 0) {
-        leftArrow.classList.add("disabled");
-      } else {
-        leftArrow.classList.remove("disabled");
-      }
-
-      if (strip.scrollLeft >= maxScroll - 1) {
-        rightArrow.classList.add("disabled");
-      } else {
-        rightArrow.classList.remove("disabled");
-      }
+      leftArrow.classList.toggle("disabled", strip.scrollLeft <= 0);
+      rightArrow.classList.toggle("disabled", strip.scrollLeft >= maxScroll - 1);
     };
 
-    // Initial state
     updateArrows();
-
-    // Update on scroll
     strip.addEventListener("scroll", updateArrows);
 
-    // Arrow click handlers
     const SCROLL_AMOUNT = 260;
 
     leftArrow.addEventListener("click", () => {
@@ -837,4 +987,3 @@ is_playlist_page: true
   });
 });
 </script>
-

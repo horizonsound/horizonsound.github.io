@@ -271,3 +271,24 @@ footer p {
   color: white;
   text-shadow: 0 2px 4px rgba(0,0,0,0.35);
 }
+
+.playlist-table {
+  display: block;
+  width: 100%;
+  margin: 2rem 0;
+  border-collapse: collapse;
+}
+
+.playlist-table tr {
+  display: flex;
+  width: 100%;
+}
+
+.playlist-table td {
+  flex: 1;
+  padding: 0.4rem 0.2rem;
+}
+
+.description-block {
+  margin-bottom: 2rem;
+}

@@ -95,8 +95,14 @@ function writeYaml(filepath, data) {
    - Produces deterministic HTML
 ------------------------------------------------------------- */
 
-function formatDescriptionToHtml(desc) {
+function formatDescriptionToHtml(desc, playlistTitleLookup, playlistSlugMap, baseurl = "") {
   if (!desc) return "";
+
+  console.log("RAW DESC >>>", JSON.stringify(desc));
+
+  /* -------------------------------------------------------------
+     1. MODIFY DESC BEFORE ANY <p> PROCESSING
+  ------------------------------------------------------------- */
 
   // Force newline before every bullet
   desc = desc.replace(/•/g, "\n•");
@@ -104,40 +110,33 @@ function formatDescriptionToHtml(desc) {
   // Force blank line before each vibe marker
   desc = desc.replace(/(🎧|🎤|🎛️|⚡|🎼|✨)/g, "\n\n$1");
 
-  // First pass: turn paragraphs into <p> blocks
-  let html = desc
-    .split(/\n\s*\n/)               // split on blank lines
-    .map(p => p.trim())             // trim whitespace
-    .filter(p => p.length > 0)      // remove empty paragraphs
-    .map(p => {
-      // FORMAT A: bullet + URL → bullet + linked arrow
-      if (p.startsWith("•")) {
-        const urlMatch = p.match(/https?:\/\/\S+/);
-        if (urlMatch) {
-          const url = urlMatch[0];
-          const title = p.replace(url, "").trim();
-          return `<p>${title} <a href="${url}" target="_blank" rel="noopener">▶️</a></p>`;
-        }
-      }
-
-      return `<p>${p}</p>`;
-    })
-    .join("");
-
-  // Convert playlist header + bullet paragraphs into a UL
-  html = html.replace(
-    /<p>🎵 More from Horizon Sound<\/p>((?:<p>•.*?<\/p>)+)/,
-    (match, bullets) => {
-      const items = bullets
-        .match(/<p>•.*?<\/p>/g)
-        .map(p => p.replace(/^<p>•\s*/, "<li>").replace(/<\/p>$/, "</li>"))
-        .join("");
-
-      return `<p class="playlist-header">🎵 More from Horizon Sound</p><ul class="playlist-links">${items}</ul>`;
-    }
+  // Split multiple playlist URLs on the same line into separate lines
+  desc = desc.replace(
+    /(https?:\/\/www\.youtube\.com\/playlist\?list=[A-Za-z0-9_-]+)\s+(https?:\/\/www\.youtube\.com\/playlist\?list=[A-Za-z0-9_-]+)/g,
+    "$1\n$2"
   );
 
-  // Convert consecutive vibe paragraphs into a UL
+  // Force playlist headers onto their own line
+  desc = desc.replace(/🎵 ([^\n]+)/g, "🎵 $1\n");
+
+  /* -------------------------------------------------------------
+     2. BUILD <p> BLOCKS FROM DESC
+  ------------------------------------------------------------- */
+
+let html = desc
+  .split(/\n+/)
+  .map(p => p.trim())
+  .filter(p => p.length > 0)
+  .map(p => `<p>${p}</p>`)
+  .join("");
+
+      // ADD IT HERE — after html is defined
+    console.log("PARAGRAPHS >>>", html);
+
+  /* -------------------------------------------------------------
+     3. CONVERT VIBE PARAGRAPHS INTO <ul>
+  ------------------------------------------------------------- */
+
   html = html.replace(
     /((?:<p>(?:🎧|🎤|🎛️|⚡|🎼|✨).*?<\/p>)+)/,
     (match) => {
@@ -145,10 +144,108 @@ function formatDescriptionToHtml(desc) {
         .match(/<p>.*?<\/p>/g)
         .map(p => p.replace(/^<p>/, "<li>").replace(/<\/p>$/, "</li>"))
         .join("");
-
       return `<ul class="vibe-list">${items}</ul>`;
     }
   );
+
+  /* -------------------------------------------------------------
+     4. CONVERT PLAYLIST URLS → INTERNAL LINKS + SPLIT INTO <p>
+  ------------------------------------------------------------- */
+
+  html = html.replace(
+    /(https?:\/\/www\.youtube\.com\/playlist\?list=([A-Za-z0-9_-]+))/g,
+    (match, fullUrl, playlistId) => {
+      console.log("MATCHED PLAYLIST URL: ", fullUrl);   // <— ADD THIS
+  
+      const title = playlistTitleLookup[playlistId] || fullUrl;
+      const slug = playlistSlugMap[playlistId];
+  
+      if (!slug) return `<p>${title}</p>`;
+  
+      return    `<a href="${baseurl}/music/playlists/${slug}/" class="internal-playlist-link">▶️</a> ${title}`;
+    }
+  );
+
+  console.log("PARAGRAPHS BEFORE TABLE >>>", html);
+
+/* -------------------------------------------------------------
+   5. BUILD PLAYLIST TABLES USING A CLEAN STATE MACHINE
+------------------------------------------------------------- */
+
+{
+  // Split into blocks (<p> and <ul> stay intact)
+  const blocks = html.match(/<p>.*?<\/p>|<ul[\s\S]*?<\/ul>/g) || [];
+
+  let output = [];
+  let inTable = false;
+  let currentHeader = "";
+  let currentRows = [];
+
+  const isHeader = p => /^<p>🎵 /.test(p);
+  const isPlaylistItem = p => /internal-playlist-link/.test(p);
+  const isDivider = p => /^<p>---/.test(p);
+  const isAbout = p => /^<p>💬/.test(p);
+  const isCopyright = p => /^<p>©/.test(p);
+  const isHashtags = p => /^<p>#/.test(p);
+
+  const flushTable = () => {
+    if (!inTable) return;
+
+    let rowsHtml = "";
+    for (let i = 0; i < currentRows.length; i += 2) {
+      const left = currentRows[i] || "";
+      const right = currentRows[i + 1] || "";
+      rowsHtml += `
+        <tr>
+          <td class="playlist-cell">${left}</td>
+          <td class="playlist-cell">${right}</td>
+        </tr>`;
+    }
+
+    output.push(`
+      <p class="playlist-header">${currentHeader}</p>
+      <table class="playlist-table">
+        ${rowsHtml}
+      </table>
+    `);
+
+    inTable = false;
+    currentHeader = "";
+    currentRows = [];
+  };
+
+  for (const block of blocks) {
+    if (isHeader(block)) {
+      flushTable();
+      inTable = true;
+      currentHeader = block.replace(/^<p>|<\/p>$/g, "");
+      continue;
+    }
+
+    if (inTable && isPlaylistItem(block)) {
+      const clean = block.replace(/^<p>|<\/p>$/g, "");
+      currentRows.push(clean);
+      continue;
+    }
+
+    if (inTable && (isDivider(block) || isAbout(block) || isCopyright(block) || isHashtags(block))) {
+      flushTable();
+      output.push(block);
+      continue;
+    }
+
+    if (inTable && !isPlaylistItem(block)) {
+      flushTable();
+      output.push(block);
+      continue;
+    }
+
+    output.push(block);
+  }
+
+  flushTable();
+  html = output.join("\n");
+}
 
   return html;
 }
@@ -159,7 +256,7 @@ function formatDescriptionToHtml(desc) {
    song objects used by the site. This is the canonical schema.
 ------------------------------------------------------------- */
 
-function buildSongObject(video) {
+function buildSongObject(video, playlistTitleLookup, playlistSlugMap) {
   const song_id = video.slug;
 
   return {
@@ -167,21 +264,24 @@ function buildSongObject(video) {
     youtube_id: video.id,
     title: video.title,
 
-    // Formatted HTML description (canonical)
-    description_html: formatDescriptionToHtml(video.youtube_metadata?.description || ""),
+    // ⭐ Correct: pass playlistSlugMap into formatter
+    description_html: formatDescriptionToHtml(
+      video.youtube_metadata?.description || "",
+      playlistTitleLookup,
+      playlistSlugMap,
+      process.env.BASEURL || ""   // e.g. "" or "/development"
+    ),
 
     url: `/music/${song_id}/`,
     thumbnail: `/assets/thumbnails/${song_id}.jpeg`,
     videostatus: video.videostatus_raw,
     playlists: video.playlists || [],
 
-    // Numeric view count (normalized)
     view_count_num: parseInt(
       video.youtube_metadata?.statistics?.view_count || "0",
       10
     ),
 
-    // Full upstream YouTube metadata (append‑only)
     youtube_metadata: {
       published_at: video.publishedAt || null,
       scheduled_at: video.scheduledAt || null,
@@ -190,17 +290,15 @@ function buildSongObject(video) {
       category_id: video.youtube_metadata?.category_id || null,
       tags: video.youtube_metadata?.tags || [],
 
-      // contentDetails
       duration: video.youtube_metadata?.duration || null,
       definition: video.youtube_metadata?.definition || null,
-      dimension: video.youtube_metadata?.dimension || null,                 // ⭐ NEW
-      caption: video.youtube_metadata?.caption || null,                     // ⭐ NEW
-      licensed_content: video.youtube_metadata?.licensed_content || false,  // ⭐ NEW
+      dimension: video.youtube_metadata?.dimension || null,
+      caption: video.youtube_metadata?.caption || null,
+      licensed_content: video.youtube_metadata?.licensed_content || false,
       region_allowed: video.youtube_metadata?.region_allowed || [],
       region_blocked: video.youtube_metadata?.region_blocked || [],
-      content_rating: video.youtube_metadata?.content_rating || {},         // ⭐ upgraded
+      content_rating: video.youtube_metadata?.content_rating || {},
 
-      // statistics
       statistics: video.youtube_metadata?.statistics || {
         view_count: 0,
         like_count: 0,
@@ -208,16 +306,15 @@ function buildSongObject(video) {
         comment_count: 0
       },
 
-      // status
       made_for_kids: video.youtube_metadata?.made_for_kids || false,
       self_declared_made_for_kids: video.youtube_metadata?.self_declared_made_for_kids || false,
       topic_categories: video.youtube_metadata?.topic_categories || [],
       privacy_status: video.privacyStatus || null,
       upload_status: video.uploadStatus || null,
       publish_at: video.publishAt || null,
-      license: video.youtube_metadata?.license || "",                              // ⭐ NEW
-      embeddable: video.youtube_metadata?.embeddable ?? true,                      // ⭐ NEW
-      public_stats_viewable: video.youtube_metadata?.public_stats_viewable ?? true // ⭐ NEW
+      license: video.youtube_metadata?.license || "",
+      embeddable: video.youtube_metadata?.embeddable ?? true,
+      public_stats_viewable: video.youtube_metadata?.public_stats_viewable ?? true
     }
   };
 }
@@ -246,6 +343,12 @@ async function generate() {
 
   console.log("Fetching playlists + membership...");
   const playlists = await fetchPlaylistsWithMembership();
+  
+  // Build lookup: YouTube playlist ID → playlist title
+  const playlistTitleLookup = {};
+  for (const pl of playlists) {
+    playlistTitleLookup[pl.id] = pl.title;
+  }
 
   if (!playlists) {
     console.error("ERROR: fetchPlaylistsWithMembership() returned undefined.");
@@ -316,7 +419,7 @@ for (const pl of playlists) {
      NORMALIZE SONG OBJECTS
   ------------------------------------------------------------- */
   console.log("Building song objects...");
-  const Videos = videos.map(buildSongObject);
+  const Videos = videos.map(video => buildSongObject(video, playlistTitleLookup, playlistSlugMap));
 
   /* -------------------------------------------------------------
      WRITE SONG FEED
