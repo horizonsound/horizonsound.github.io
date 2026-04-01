@@ -14109,7 +14109,7 @@ songs:
     videostatus: public
     playlists:
       - emotional-ballads
-    view_count_num: 86
+    view_count_num: 87
     youtube_metadata:
       published_at: '2026-01-14T01:17:28Z'
       scheduled_at: null
@@ -14126,7 +14126,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '86'
+        view_count: '87'
         like_count: '4'
         favorite_count: '0'
         comment_count: '1'
