@@ -93,12 +93,8 @@ function extractHashtags(desc) {
   const tagRegex = /#[A-Za-z0-9_-]+/g;
   const tags = desc.match(tagRegex) || [];
 
-  // Remove hashtags from the description
-  let clean = desc.replace(tagRegex, "");
+  const clean = desc.replace(tagRegex, "").trim();
   
-  // Remove leftover punctuation from hashtag removal (commas, slashes, pipes, extra spaces)
-  clean = clean.replace(/^[\s,;:|/-]+/gm, "").trim();
-
   // Normalize tags (strip #)
   const normalized = tags.map(t => t.slice(1).toLowerCase());
 
