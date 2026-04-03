@@ -6460,7 +6460,7 @@ songs:
       - popmusic
       - instrumentalmusic
       - songwriter
-    view_count_num: 3
+    view_count_num: 4
     youtube_metadata:
       published_at: '2026-03-28T12:01:18Z'
       scheduled_at: null
@@ -6477,7 +6477,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '3'
+        view_count: '4'
         like_count: '0'
         favorite_count: '0'
         comment_count: '0'
@@ -9489,7 +9489,7 @@ songs:
       - popmusic
       - instrumentalmusic
       - songwriter
-    view_count_num: 4
+    view_count_num: 5
     youtube_metadata:
       published_at: '2026-04-03T16:00:03Z'
       scheduled_at: null
@@ -9506,7 +9506,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '4'
+        view_count: '5'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -10384,7 +10384,7 @@ songs:
       - popmusic
       - instrumentalmusic
       - songwriter
-    view_count_num: 236
+    view_count_num: 237
     youtube_metadata:
       published_at: '2026-02-20T17:00:56Z'
       scheduled_at: null
@@ -10401,7 +10401,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '236'
+        view_count: '237'
         like_count: '5'
         favorite_count: '0'
         comment_count: '0'
@@ -13238,7 +13238,7 @@ songs:
       - popmusic
       - instrumentalmusic
       - songwriter
-    view_count_num: 316
+    view_count_num: 315
     youtube_metadata:
       published_at: '2026-01-30T17:01:11Z'
       scheduled_at: null
@@ -13255,7 +13255,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '316'
+        view_count: '315'
         like_count: '5'
         favorite_count: '0'
         comment_count: '1'
@@ -15099,7 +15099,7 @@ songs:
       - popmusic
       - instrumentalmusic
       - songwriter
-    view_count_num: 69
+    view_count_num: 72
     youtube_metadata:
       published_at: '2026-03-27T16:00:39Z'
       scheduled_at: null
@@ -15116,7 +15116,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '69'
+        view_count: '72'
         like_count: '3'
         favorite_count: '0'
         comment_count: '0'
