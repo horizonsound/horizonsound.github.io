@@ -2966,7 +2966,7 @@ songs:
       <p>#MusicVideo #IndieArtist #PopMusic #InstrumentalMusic #Songwriter</p>
     url: /music/winterfire/
     thumbnail: /assets/thumbnails/winterfire.jpeg
-    videostatus: scheduled
+    videostatus: public
     playlists:
       - orchestral-rock-tso-style-horizon-sound-instrumentals
     view_count_num: 1
