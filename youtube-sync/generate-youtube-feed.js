@@ -87,6 +87,21 @@ function writeYaml(filepath, data) {
   fs.writeFileSync(filepath, yaml.dump(data), "utf8");
 }
 
+function extractHashtags(desc) {
+  if (!desc) return { clean: "", tags: [] };
+
+  const tagRegex = /#[A-Za-z0-9_-]+/g;
+  const tags = desc.match(tagRegex) || [];
+
+  // Remove hashtags from the description
+  const clean = desc.replace(tagRegex, "").trim();
+
+  // Normalize tags (strip #)
+  const normalized = tags.map(t => t.slice(1).toLowerCase());
+
+  return { clean, tags: normalized };
+}
+
 /* -------------------------------------------------------------
    DESCRIPTION FORMATTER
    Converts raw YouTube description text into compact <p> blocks.
@@ -255,27 +270,31 @@ let html = desc
    Converts raw YouTube API video objects into stable, normalized
    song objects used by the site. This is the canonical schema.
 ------------------------------------------------------------- */
-
 function buildSongObject(video, playlistTitleLookup, playlistSlugMap) {
   const song_id = video.slug;
+
+  // Extract hashtags BEFORE formatting
+  const rawDesc = video.youtube_metadata?.description || "";
+  const { clean, tags } = extractHashtags(rawDesc);
 
   return {
     song_id,
     youtube_id: video.id,
     title: video.title,
 
-    // ⭐ Correct: pass playlistSlugMap into formatter
     description_html: formatDescriptionToHtml(
-      video.youtube_metadata?.description || "",
+      clean,                    // ← cleaned description
       playlistTitleLookup,
       playlistSlugMap,
-      process.env.BASEURL || ""   // e.g. "" or "/development"
+      process.env.BASEURL || ""
     ),
 
     url: `/music/${song_id}/`,
     thumbnail: `/assets/thumbnails/${song_id}.jpeg`,
     videostatus: video.videostatus_raw,
     playlists: video.playlists || [],
+
+    tags,                       // ← NEW FIELD
 
     view_count_num: parseInt(
       video.youtube_metadata?.statistics?.view_count || "0",
