@@ -2969,7 +2969,7 @@ songs:
     videostatus: scheduled
     playlists:
       - orchestral-rock-tso-style-horizon-sound-instrumentals
-    view_count_num: 1
+    view_count_num: 2
     youtube_metadata:
       published_at: '2026-03-22T13:00:19Z'
       scheduled_at: '2026-04-25T12:00:00Z'
@@ -2986,7 +2986,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '1'
+        view_count: '2'
         like_count: '0'
         favorite_count: '0'
         comment_count: '0'
@@ -9270,13 +9270,13 @@ songs:
       <p>#MusicVideo #IndieArtist #PopMusic #InstrumentalMusic #Songwriter</p>
     url: /music/someday-acoustic-pop-storytelling-horizon-sound/
     thumbnail: /assets/thumbnails/someday-acoustic-pop-storytelling-horizon-sound.jpeg
-    videostatus: scheduled
+    videostatus: public
     playlists:
       - missing-stamp-venice-trilogy
     view_count_num: 4
     youtube_metadata:
-      published_at: '2026-02-05T18:57:27Z'
-      scheduled_at: '2026-04-03T16:00:00Z'
+      published_at: '2026-04-03T16:00:03Z'
+      scheduled_at: null
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -9296,7 +9296,9 @@ songs:
         comment_count: '0'
       made_for_kids: false
       self_declared_made_for_kids: false
-      topic_categories: []
+      topic_categories:
+        - https://en.wikipedia.org/wiki/Music
+        - https://en.wikipedia.org/wiki/Pop_music
       privacy_status: null
       upload_status: null
       publish_at: null

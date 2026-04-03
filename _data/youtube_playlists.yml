@@ -196,7 +196,7 @@ playlists:
     published_at: '2026-02-06T12:31:02.78813Z'
     channel_id: UCiko-zjojbsoXrsEuBOPbSw
     channel_title: Horizon Sound
-    thumbnail: null
+    thumbnail: /assets/thumbnails/playlist-missing-stamp-venice-trilogy.jpeg
     song_ids:
       - someday-acoustic-pop-storytelling-horizon-sound
       - missing-stamp-emotional-acoustic-pop-horizon-sound
@@ -217,9 +217,13 @@ playlists:
   - playlist_id: midnight-saga
     title: Midnight Saga
     description: >-
+      #dancepop, #electronicdancemusic 
+
       A four‑chapter musical story unfolding across late‑night energy, mystery,
       and cinematic tension. Each track builds on the last, creating a cohesive
       arc that moves from dusk to chaos to clarity.
+
+      #horizonsound
     published_at: '2026-01-27T20:06:20.884413Z'
     channel_id: UCiko-zjojbsoXrsEuBOPbSw
     channel_title: Horizon Sound
