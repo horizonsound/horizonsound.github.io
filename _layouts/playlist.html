@@ -688,15 +688,16 @@ p {
 
     <!-- Hero -->
     {% assign hero_image = playlist_override.hero | default: playlist.hero %}
-    {% if hero_image %}
-      <div class="hero-banner">
+    
+    <div class="hero-banner" style="{% if hero_image %}display:block{% else %}display:none{% endif %}">
+      {% if hero_image %}
         <img class="hero-image" src="{{ site.baseurl }}{{ hero_image }}" alt="{{ playlist.title }}">
-      </div>
-    {% else %}
-      <div class="default-hero">
-        {% include hero.html %}
-      </div>
-    {% endif %}
+      {% endif %}
+    </div>
+    
+    <div class="default-hero" style="{% if hero_image %}display:none{% else %}display:block{% endif %}">
+      {% include hero.html %}
+    </div>
 
     <!-- Playlist Header -->
     {% assign header_title = playlist_override.title | default: playlist.title %}
