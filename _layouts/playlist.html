@@ -909,8 +909,6 @@ function loadInternalPlaylist(url) {
   const slug = url.split("/").filter(Boolean).pop();
   updateHeroForPlaylist(slug);
 
-  const slug = url.split("/").filter(Boolean).pop();
-
   const playlist = window.YOUTUBE_PLAYLISTS.find(p => p.playlist_id === slug);
   if (!playlist) {
     console.error("Playlist not found:", slug);
