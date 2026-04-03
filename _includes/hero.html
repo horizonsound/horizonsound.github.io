@@ -1,7 +1,9 @@
 <div class="hero-banner">
   <img src="{{ site.baseurl }}/assets/hero.jpeg" class="hero-image" alt="Horizon Sound" />
 
+  {% if page.hero_title %}
   <div class="hero-title-overlay">
-    <h2 class="catalog-page-title">Catalog Explorer</h2>
+    <h2 class="catalog-page-title">{{ page.hero_title }}</h2>
   </div>
+  {% endif %}
 </div>
