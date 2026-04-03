@@ -10384,7 +10384,7 @@ songs:
       - popmusic
       - instrumentalmusic
       - songwriter
-    view_count_num: 236
+    view_count_num: 237
     youtube_metadata:
       published_at: '2026-02-20T17:00:56Z'
       scheduled_at: null
@@ -10401,7 +10401,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '236'
+        view_count: '237'
         like_count: '5'
         favorite_count: '0'
         comment_count: '0'
@@ -13238,7 +13238,7 @@ songs:
       - popmusic
       - instrumentalmusic
       - songwriter
-    view_count_num: 316
+    view_count_num: 315
     youtube_metadata:
       published_at: '2026-01-30T17:01:11Z'
       scheduled_at: null
@@ -13255,7 +13255,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '316'
+        view_count: '315'
         like_count: '5'
         favorite_count: '0'
         comment_count: '1'
