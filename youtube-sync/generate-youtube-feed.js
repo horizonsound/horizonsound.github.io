@@ -454,12 +454,22 @@ for (const pl of playlists) {
     playlists: playlists.map(pl => ({
       playlist_id: pl.slug,
       title: pl.title,
-      description: pl.description,
-      published_at: pl.publishedAt,
-      channel_id: pl.channel_id,        // ⭐ NEW
-      channel_title: pl.channel_title,  // ⭐ NEW
-      thumbnail: pl.thumbnail,
-      song_ids: pl.videoIds .map(id => slugLookup[id]) .filter(Boolean)
+
+      // Extract playlist-level hashtags
+      const { clean: cleanDesc, tags: playlistTags } = extractHashtags(pl.description || "");
+      
+      return {
+        playlist_id: pl.slug,
+        title: pl.title,
+        description: cleanDesc,       // ← cleaned description
+        tags: playlistTags,           // ← NEW FIELD
+        published_at: pl.publishedAt,
+        channel_id: pl.channel_id,
+        channel_title: pl.channel_title,
+        thumbnail: pl.thumbnail,
+        song_ids: pl.videoIds.map(id => slugLookup[id]).filter(Boolean)
+      };
+
     }))
     
   });
