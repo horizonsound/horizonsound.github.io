@@ -772,6 +772,29 @@ p {
   border-color: rgba(255, 255, 255, 0.25);
 }
 
+  .playlist-list {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.playlist-pill {
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  color: #f7d774; /* gold accent */
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.playlist-pill:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
 </style>
    
   <!-- Load the playlist and override data -->
@@ -904,7 +927,17 @@ p {
       <div id="selected-song-lyrics" class="lyrics-block"></div>
     </div>
   </div>
-  
+    
+  <!-- PLAYLISTS (collapsible, only if multiple playlists exist) -->
+  <div class="section" id="section-playlists">
+    <button class="section-toggle" data-target="playlists-content">
+      Also in these playlists
+    </button>
+    <div id="playlists-content" class="section-content">
+      <div id="selected-song-playlists"></div>
+    </div>
+  </div>
+
   <!-- TAGS (collapsible, always shown if tags exist) -->
   <div class="section" id="section-tags">
     <button class="section-toggle" data-target="tags-content">
@@ -926,7 +959,13 @@ function hideEmptySections() {
   const lyricsContent = document.getElementById("selected-song-lyrics");
   const tagsSection = document.getElementById("section-tags");
   const tagsContent = document.getElementById("selected-song-tags");
+  const playlistSection = document.getElementById("section-playlists");
+  const playlistContent = document.getElementById("selected-song-playlists");
   
+  if (playlistSection && playlistContent && playlistContent.textContent.trim() === "") {
+    playlistSection.style.display = "none";
+  }
+
   if (tagsSection && tagsContent && tagsContent.textContent.trim() === "") {
     tagsSection.style.display = "none";
   }
@@ -1088,7 +1127,28 @@ function onPlayerStateChange(event) {
             </ul>
           `
         : "";
+
+    // Inject Playlist Links (excluding the primary one)
+    const allPlaylists = song?.playlists || [];
+    const primary = window.CURRENT_PLAYLIST_ID; // the one loaded in the carousel
+    const otherPlaylists = allPlaylists.filter(p => p !== primary);
     
+    document.getElementById("selected-song-playlists").innerHTML =
+      otherPlaylists.length
+        ? `
+            <div class="playlist-list">
+              ${otherPlaylists
+                .map(id => {
+                  const pl = window.YOUTUBE_PLAYLISTS.find(p => p.playlist_id === id);
+                  return pl
+                    ? `<span class="playlist-pill" data-playlist-id="${id}">${pl.title}</span>`
+                    : "";
+                })
+                .join("")}
+            </div>
+          `
+        : "";
+
     // Inject Tags (from youtube_feed.yml)
     const tags = song?.tags || [];
     
@@ -1203,7 +1263,17 @@ function onPlayerStateChange(event) {
       safeLoadSong(songIds[0]);
     }
   }
-
+  
+  document.addEventListener("click", e => {
+    if (!e.target.classList.contains("playlist-pill")) return;
+  
+    const playlistId = e.target.getAttribute("data-playlist-id");
+    if (!playlistId) return;
+  
+    // Navigate to the playlist page
+    window.location.href = `${window.BASEURL}/playlist/${playlistId}/`;
+  });
+  
 /* -------------------------------------------------------
    CLICK HANDLER (PLAYLISTS + SONG TILES)
 ------------------------------------------------------- */
