@@ -700,6 +700,32 @@ p {
   padding: 10px 0 20px;
 }
 
+  /* Lyric block container */
+.lyrics-block {
+  white-space: pre-wrap;      /* preserves line breaks */
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #ddd;
+  padding: 0.5rem 0;
+}
+
+/* Section headers like [Verse 1], [Chorus], etc. */
+.lyrics-block strong,
+.lyrics-block b {
+  display: block;
+  margin-top: 1.2rem;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  color: #f7d774; /* your gold/yellow accent */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Optional: add spacing between lyric paragraphs */
+.lyrics-block p {
+  margin: 0.6rem 0;
+}
+
 </style>
    
   <!-- Load the playlist and override data -->
@@ -829,7 +855,7 @@ p {
       Lyrics
     </button>
     <div id="lyrics-content" class="section-content">
-      <div id="selected-song-lyrics"></div>
+      <div id="selected-song-lyrics" class="lyrics-block"></div>
     </div>
   </div>
   
