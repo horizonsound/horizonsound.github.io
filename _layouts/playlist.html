@@ -937,69 +937,67 @@ function onPlayerStateChange(event) {
   }
 }
 
-/* -------------------------------------------------------
-   SONG LOADING
-------------------------------------------------------- */
-function safeLoadSong(songId) {
-  if (!YT_READY) {
-    setTimeout(() => safeLoadSong(songId), 50);
-    return;
+  /* -------------------------------------------------------
+     SONG LOADING
+  ------------------------------------------------------- */
+  function safeLoadSong(songId) {
+    if (!YT_READY) {
+      setTimeout(() => safeLoadSong(songId), 50);
+      return;
+    }
+    loadSong(songId);
   }
-  loadSong(songId);
-}
 
-function loadSong(songId) {
-  window.SELECTED_SONG_ID = songId;
-
-  const song = window.YOUTUBE_SONGS.find(s => s.song_id === songId);
-  const override = window.MUSIC_OVERRIDES.find(s => s.song_id === songId);
-
-  const title = override?.title || song?.title || "";
-  const subtitle = override?.subtitle || "";
-  const extraTitle = override?.extra_title || "";
-  const extraHTML = override?.extra_html || "";
-  const about = song?.description_html || "";
-  const lyricsHTML = override?.lyrics_html || "";
-  const youtubeId = song?.youtube_id || "";
-
-  document.querySelector(".player-title").textContent = title;
-  document.querySelector(".player-subtitle").textContent = subtitle;
-
-  buildPlayer(youtubeId);
-
-document.getElementById("selected-song-extra").innerHTML = `
-  ${extraTitle ? `<h3 class="section-header">${extraTitle}</h3>` : ""}
-  ${extraHTML ? `<div class="about-text">${extraHTML}</div>` : ""}
-`;
-
-document.getElementById("selected-song-about").innerHTML = `
-  ${about ? `<h3 class="section-header">About</h3>` : ""}
-  ${about ? `<div class="about-text">${about}</div>` : ""}
-`;
-
-document.getElementById("selected-song-lyrics").innerHTML = lyricsHTML || "";
-
-  /* ⭐ DEBUG: confirm content injection */
-  console.log("ABOUT HTML:", document.getElementById("selected-song-about").innerHTML);
-  console.log("EXTRA HTML:", document.getElementById("selected-song-extra").innerHTML);
-  console.log("LYRICS HTML:", document.getElementById("selected-song-lyrics").innerHTML);
-
-  /* ⭐ FIRE EVENT */
-  document.dispatchEvent(new Event("songContentLoaded"));
-
-  highlightTile(songId);
-}
+  function loadSong(songId) {
+    window.SELECTED_SONG_ID = songId;
   
-document.addEventListener("songContentLoaded", () => {
-  console.log("EVENT: songContentLoaded fired");
-});
+    const song = window.YOUTUBE_SONGS.find(s => s.song_id === songId);
+    const override = window.MUSIC_OVERRIDES.find(s => s.song_id === songId);
   
-  /* ⭐ ADD THIS LINE ⭐ */
-  document.dispatchEvent(new Event("songContentLoaded"));}
-  document.addEventListener("songContentLoaded", () => {
-  console.log("EVENT: songContentLoaded fired");});
-
-
+    const title = override?.title || song?.title || "";
+    const subtitle = override?.subtitle || "";
+    const extraTitle = override?.extra_title || "";
+    const extraHTML = override?.extra_html || "";
+    const about = song?.description_html || "";
+    const lyricsHTML = override?.lyrics_html || "";
+    const youtubeId = song?.youtube_id || "";
+  
+    // Update player header
+    document.querySelector(".player-title").textContent = title;
+    document.querySelector(".player-subtitle").textContent = subtitle;
+  
+    // Load YouTube player
+    buildPlayer(youtubeId);
+  
+    // Inject Inspiration / Extra
+    document.getElementById("selected-song-extra").innerHTML = `
+      ${extraTitle ? `<h3 class="section-header">${extraTitle}</h3>` : ""}
+      ${extraHTML ? `<div class="about-text">${extraHTML}</div>` : ""}
+    `;
+  
+    // Inject Description
+    document.getElementById("selected-song-about").innerHTML = `
+      ${about ? `<h3 class="section-header">About</h3>` : ""}
+      ${about ? `<div class="about-text">${about}</div>` : ""}
+    `;
+  
+    // Inject Lyrics
+    document.getElementById("selected-song-lyrics").innerHTML = lyricsHTML || "";
+  
+    /* ⭐ DEBUG: confirm content injection */
+    console.log("ABOUT HTML:", document.getElementById("selected-song-about").innerHTML);
+    console.log("EXTRA HTML:", document.getElementById("selected-song-extra").innerHTML);
+    console.log("LYRICS HTML:", document.getElementById("selected-song-lyrics").innerHTML);
+  
+    /* ⭐ FIRE EVENT so hideEmptySections() runs at the correct time */
+    document.dispatchEvent(new Event("songContentLoaded"));
+  
+    // Highlight the active tile
+    highlightTile(songId);
+  }
+  
+  document.addEventListener("songContentLoaded", () => { console.log("EVENT: songContentLoaded fired"); });
+  
 function highlightTile(songId) {
   const tiles = document.querySelectorAll(".shared-tile");
   tiles.forEach(t => t.classList.remove("active"));
