@@ -691,8 +691,7 @@ p {
 .section-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.35s ease, padding 0.35s ease;
-  padding: 0;
+  transition: max-height 0.35s ease;
 }
 
 .section-content.open {
@@ -969,6 +968,18 @@ function onPlayerStateChange(event) {
     advanceToNextSong(window.SELECTED_SONG_ID);
   }
 }
+
+  function toggleSection(section) {
+    const content = document.getElementById(section);
+  
+    if (content.classList.contains("open")) {
+      content.style.maxHeight = null;
+      content.classList.remove("open");
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+      content.classList.add("open");
+    }
+  }
 
   /* -------------------------------------------------------
      SONG LOADING
