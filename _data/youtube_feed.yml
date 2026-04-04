@@ -6460,7 +6460,7 @@ songs:
       - popmusic
       - instrumentalmusic
       - songwriter
-    view_count_num: 4
+    view_count_num: 5
     youtube_metadata:
       published_at: '2026-03-28T12:01:18Z'
       scheduled_at: null
@@ -6477,7 +6477,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '4'
+        view_count: '5'
         like_count: '0'
         favorite_count: '0'
         comment_count: '0'
@@ -7292,7 +7292,7 @@ songs:
       - popmusic
       - instrumentalmusic
       - songwriter
-    view_count_num: 16
+    view_count_num: 17
     youtube_metadata:
       published_at: '2026-03-21T12:01:30Z'
       scheduled_at: null
@@ -7309,7 +7309,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '16'
+        view_count: '17'
         like_count: '0'
         favorite_count: '0'
         comment_count: '0'
@@ -9489,7 +9489,7 @@ songs:
       - popmusic
       - instrumentalmusic
       - songwriter
-    view_count_num: 6
+    view_count_num: 7
     youtube_metadata:
       published_at: '2026-04-03T16:00:03Z'
       scheduled_at: null
@@ -9506,7 +9506,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '6'
+        view_count: '7'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -11040,7 +11040,7 @@ songs:
       - emotionalballad
       - atmosphericpop
       - storytellingmusic
-    view_count_num: 96
+    view_count_num: 97
     youtube_metadata:
       published_at: '2026-02-04T17:00:18Z'
       scheduled_at: null
@@ -11057,7 +11057,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '96'
+        view_count: '97'
         like_count: '2'
         favorite_count: '0'
         comment_count: '1'
@@ -11557,7 +11557,7 @@ songs:
       - emotionalballad
       - atmosphericpop
       - storytellingmusic
-    view_count_num: 116
+    view_count_num: 117
     youtube_metadata:
       published_at: '2026-02-17T17:01:06Z'
       scheduled_at: null
@@ -11574,7 +11574,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '116'
+        view_count: '117'
         like_count: '2'
         favorite_count: '0'
         comment_count: '0'
@@ -11728,7 +11728,7 @@ songs:
       - emotionalballad
       - atmosphericpop
       - storytellingmusic
-    view_count_num: 95
+    view_count_num: 96
     youtube_metadata:
       published_at: '2026-02-18T17:00:21Z'
       scheduled_at: null
@@ -11745,7 +11745,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '95'
+        view_count: '96'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -11900,7 +11900,7 @@ songs:
       - emotionalballad
       - atmosphericpop
       - storytellingmusic
-    view_count_num: 137
+    view_count_num: 138
     youtube_metadata:
       published_at: '2026-02-24T17:00:59Z'
       scheduled_at: null
@@ -11917,7 +11917,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '137'
+        view_count: '138'
         like_count: '3'
         favorite_count: '0'
         comment_count: '0'
@@ -12243,7 +12243,7 @@ songs:
       - emotionalballad
       - atmosphericpop
       - storytellingmusic
-    view_count_num: 43
+    view_count_num: 44
     youtube_metadata:
       published_at: '2026-03-03T17:01:12Z'
       scheduled_at: null
@@ -12260,7 +12260,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '43'
+        view_count: '44'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
