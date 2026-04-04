@@ -351,9 +351,9 @@ function buildSongObject(video, playlistTitleLookup, playlistSlugMap) {
   
   // Step 2: remove header block
   const descNoHeader = stripHeaderBlock(clean);
-
+  
   // Step 3: extract vibes + trim description
-  const { descriptionWithoutVibes, vibes } = extractVibes(clean);
+  const { descriptionWithoutVibes, vibes } = extractVibes(descNoHeader);
 
   return {
     song_id,
