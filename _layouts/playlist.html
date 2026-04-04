@@ -1038,11 +1038,7 @@ function onPlayerStateChange(event) {
     let html = lyricsEl.innerHTML;
   
     // Convert [Verse 1] → <span class="lyric-section">Verse 1</span>
-    const sectionRegex = new RegExp("\
-  
-  \[(.*?)\\]
-  
-  ", "g");
+    const sectionRegex = new RegExp("\\[(.*?)\\]", "g");
     html = html.replace(sectionRegex, (match, p1) => {
       return `<span class="lyric-section">${p1}</span>`;
     });
