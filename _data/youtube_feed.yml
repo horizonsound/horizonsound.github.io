@@ -15099,7 +15099,7 @@ songs:
       - popmusic
       - instrumentalmusic
       - songwriter
-    view_count_num: 83
+    view_count_num: 86
     youtube_metadata:
       published_at: '2026-03-27T16:00:39Z'
       scheduled_at: null
@@ -15116,7 +15116,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '83'
+        view_count: '86'
         like_count: '3'
         favorite_count: '0'
         comment_count: '0'
