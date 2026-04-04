@@ -1128,26 +1128,40 @@ function onPlayerStateChange(event) {
           `
         : "";
 
-    // Inject Playlist Links (excluding the primary one)
-    const allPlaylists = song?.playlists || [];
-    const primary = window.CURRENT_PLAYLIST_ID; // the one loaded in the carousel
-    const otherPlaylists = allPlaylists.filter(p => p !== primary);
+    // PLAYLIST EXPLORER (global navigation using overrides)
+    const playlists = window.PLAYLIST_OVERRIDES || [];
     
-    document.getElementById("selected-song-playlists").innerHTML =
-      otherPlaylists.length
-        ? `
-            <div class="playlist-list">
-              ${otherPlaylists
-                .map(id => {
-                  const pl = window.YOUTUBE_PLAYLISTS.find(p => p.playlist_id === id);
-                  return pl
-                    ? `<span class="playlist-pill" data-playlist-id="${id}">${pl.title}</span>`
-                    : "";
-                })
-                .join("")}
-            </div>
-          `
-        : "";
+    const premium = playlists.filter(p => p.is_collection);
+    const instrumental = playlists.filter(p => p.is_instrumental && !p.is_collection);
+    const genre = playlists.filter(p => !p.is_collection && !p.is_instrumental);
+    
+    let explorerHTML = "";
+    
+    // Premium Collections
+    if (premium.length) {
+      explorerHTML += `<h4 class="playlist-group-header">Premium Collections</h4>`;
+      explorerHTML += premium
+        .map(pl => `<div class="playlist-row" data-playlist-id="${pl.playlist_id}">📺 ${pl.title || pl.playlist_id}</div>`)
+        .join("");
+    }
+    
+    // Horizon Sound Genre Playlists
+    if (genre.length) {
+      explorerHTML += `<h4 class="playlist-group-header">Horizon Sound Genre Playlists</h4>`;
+      explorerHTML += genre
+        .map(pl => `<div class="playlist-row" data-playlist-id="${pl.playlist_id}">📺 ${pl.title || pl.playlist_id}</div>`)
+        .join("");
+    }
+    
+    // Horizon Sound Instrumentals
+    if (instrumental.length) {
+      explorerHTML += `<h4 class="playlist-group-header">Horizon Sound Instrumentals</h4>`;
+      explorerHTML += instrumental
+        .map(pl => `<div class="playlist-row" data-playlist-id="${pl.playlist_id}">📺 ${pl.title || pl.playlist_id}</div>`)
+        .join("");
+    }
+    
+    document.getElementById("playlist-explorer").innerHTML = explorerHTML;
 
     // Inject Tags (from youtube_feed.yml)
     const tags = song?.tags || [];
