@@ -960,7 +960,7 @@ function hideEmptySections() {
   const tagsSection = document.getElementById("section-tags");
   const tagsContent = document.getElementById("selected-song-tags");
   const playlistSection = document.getElementById("section-playlists");
-  const playlistContent = document.getElementById("selected-song-playlists");
+  const playlistContent = document.getElementById("playlist-explorer");
   
   if (playlistSection && playlistContent && playlistContent.textContent.trim() === "") {
     playlistSection.style.display = "none";
@@ -1205,6 +1205,16 @@ function onPlayerStateChange(event) {
     });
   
     lyricsEl.innerHTML = html;
+  });
+
+  document.addEventListener("click", e => {
+    const row = e.target.closest(".playlist-row");
+    if (!row) return;
+  
+    const playlistId = row.getAttribute("data-playlist-id");
+    if (!playlistId) return;
+  
+    window.location.href = `${window.BASEURL}/playlist/${playlistId}/`;
   });
 
   function highlightTile(songId) {
