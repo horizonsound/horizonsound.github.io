@@ -840,6 +840,25 @@ p {
 </div>
 
 <script>
+  function hideEmptySections() {
+    const inspSection = document.getElementById("section-inspiration");
+    const inspContent = document.getElementById("selected-song-extra");
+  
+    if (inspSection && inspContent && inspContent.textContent.trim() === "") {
+      inspSection.style.display = "none";
+    }
+  
+    const lyricsSection = document.getElementById("section-lyrics");
+    const lyricsContent = document.getElementById("selected-song-lyrics");
+  
+    if (lyricsSection && lyricsContent && lyricsContent.textContent.trim() === "") {
+      lyricsSection.style.display = "none";
+    }
+  }
+  
+  // IMPORTANT: Call this AFTER your existing JS populates the content
+  document.addEventListener("songContentLoaded", hideEmptySections);
+  
   document.addEventListener("click", function(e) {
     if (!e.target.classList.contains("section-toggle")) return;
   
