@@ -1025,7 +1025,19 @@ function onPlayerStateChange(event) {
       ${about ? `<h3 class="section-header">About</h3>` : ""}
       ${about ? `<div class="about-text">${about}</div>` : ""}
     `;
-  
+
+    // Inject Vibes (from youtube_feed.yml)
+    const vibes = song?.vibes || [];
+    document.getElementById("selected-song-vibes").innerHTML = 
+      vibes.length
+        ? `
+            <h3 class="section-header">Vibes</h3>
+            <ul class="vibe-list">
+              ${vibes.map(v => `<li>${v}</li>`).join("")}
+            </ul>
+          `
+        : "";
+
     // Inject Lyrics
     document.getElementById("selected-song-lyrics").innerHTML = lyricsHTML || "";
   
