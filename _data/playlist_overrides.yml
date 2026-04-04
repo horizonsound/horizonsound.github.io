@@ -1,6 +1,7 @@
 overrides:
   - playlist_id: pop-instrumental-horizon-sound-instrumentals
     is_collection: false
+    is_instrumental: true
     title: Pop Instrumental – Horizon Sound Instrumentals
     subtitle: 
     description: ''
@@ -11,6 +12,7 @@ overrides:
     
   - playlist_id: synthwave-retrowave-horizon-sound-instrumentals
     is_collection: false
+    is_instrumental: true
     title: Synthwave & Retrowave – Horizon Sound Instrumentals
     subtitle: 
     description: ''
@@ -21,6 +23,7 @@ overrides:
     
   - playlist_id: orchestral-rock-tso-style-horizon-sound-instrumentals
     is_collection: false
+    is_instrumental: true
     title: Orchestral Rock (TSO‑Style) – Horizon Sound Instrumentals
     subtitle: 
     description: ''
@@ -31,6 +34,7 @@ overrides:
     
   - playlist_id: piano-emotional-horizon-sound-instrumentals
     is_collection: false
+    is_instrumental: true
     title: Piano Emotional – Horizon Sound Instrumentals
     subtitle: 
     description: ''
@@ -41,6 +45,7 @@ overrides:
     
   - playlist_id: workout-edm-horizon-sound-instrumentals
     is_collection: false
+    is_instrumental: true
     title: Workout & EDM – Horizon Sound Instrumentals
     subtitle: 
     description: ''
@@ -51,6 +56,7 @@ overrides:
     
   - playlist_id: cinematic-ambient-horizon-sound-instrumentals
     is_collection: false
+    is_instrumental: true
     title: Cinematic & Ambient – Horizon Sound Instrumentals
     subtitle: 
     description: ''
@@ -67,6 +73,7 @@ overrides:
     
   - playlist_id: electric-guitar-rock-horizon-sound-instrumentals
     is_collection: false
+    is_instrumental: true
     title: Electric Guitar Rock – Horizon Sound Instrumentals
     subtitle: 
     description: ''
@@ -83,6 +90,7 @@ overrides:
     
   - playlist_id: acoustic-guitar-horizon-sound-instrumentals
     is_collection: false
+    is_instrumental: true
     title: Acoustic Guitar – Horizon Sound Instrumentals
     subtitle: 
     description: ''
@@ -99,6 +107,7 @@ overrides:
     
   - playlist_id: classic-country
     is_collection: false
+    is_instrumental: false
     title: 
     subtitle: 
     description: 
@@ -109,6 +118,7 @@ overrides:
   
   - playlist_id: calm-cinematic-horizon-sound-instrumentals
     is_collection: false
+    is_instrumental: true
     title: 
     subtitle: 
     description: 
@@ -119,6 +129,7 @@ overrides:
   
   - playlist_id: missing-stamp-venice-trilogy
     is_collection: true
+    is_instrumental: false
     title: "Venice Trilogy - Missing Stamp"
     subtitle: 
     description: >
@@ -138,6 +149,7 @@ overrides:
   
   - playlist_id: shorts
     is_collection: false
+    is_instrumental: false
     title: 
     subtitle: 
     description: 
@@ -148,6 +160,7 @@ overrides:
   
   - playlist_id: midnight-saga
     is_collection: true
+    is_instrumental: false
     title: "Midnight Saga"
     subtitle: "Ravyn"
     description: >
@@ -166,6 +179,7 @@ overrides:
   
   - playlist_id: after-the-silence-performed-by-lydia-ellington
     is_collection: true
+    is_instrumental: false
     title: "After the Silence"
     subtitle: "Lydia Ellington"
     description: >
@@ -196,6 +210,7 @@ overrides:
   
   - playlist_id: a-way-back-trilogy
     is_collection: true
+    is_instrumental: false
     title: "A Way Back Trilogy"
     subtitle: "A breakup told from differnt perspectives"
     description: >
@@ -214,6 +229,7 @@ overrides:
   
   - playlist_id: acoustic-singer-songwriter
     is_collection: false
+    is_instrumental: false
     title: 
     subtitle: 
     description: 
@@ -224,6 +240,7 @@ overrides:
   
   - playlist_id: emotional-ballads
     is_collection: false
+    is_instrumental: false
     title: 
     subtitle: 
     description: 
@@ -234,6 +251,7 @@ overrides:
   
   - playlist_id: modern-country
     is_collection: false
+    is_instrumental: false
     title: 
     subtitle: 
     description: 
@@ -244,6 +262,7 @@ overrides:
   
   - playlist_id: electro-pop-dance-pop
     is_collection: false
+    is_instrumental: false
     title: 
     subtitle: 
     description: 
@@ -254,6 +273,7 @@ overrides:
   
   - playlist_id: 90s-pop-pop-rock
     is_collection: false
+    is_instrumental: false
     title: 
     subtitle: 
     description: 
@@ -264,6 +284,7 @@ overrides:
   
   - playlist_id: southern-rock
     is_collection: false
+    is_instrumental: false
     title: 
     subtitle: 
     description: 
@@ -274,6 +295,7 @@ overrides:
   
   - playlist_id: pop
     is_collection: false
+    is_instrumental: false
     title: 
     subtitle: 
     description: 
@@ -284,6 +306,7 @@ overrides:
   
   - playlist_id: 80s-rock-pop
     is_collection: false
+    is_instrumental: false
     title: 
     subtitle: 
     description: 
