@@ -979,15 +979,20 @@ document.getElementById("selected-song-about").innerHTML = `
 
 document.getElementById("selected-song-lyrics").innerHTML = lyricsHTML || "";
 
-/* ⭐ DEBUG: confirm content injection */
-console.log("ABOUT HTML:", document.getElementById("selected-song-about").innerHTML);
-console.log("EXTRA HTML:", document.getElementById("selected-song-extra").innerHTML);
-console.log("LYRICS HTML:", document.getElementById("selected-song-lyrics").innerHTML);
+  /* ⭐ DEBUG: confirm content injection */
+  console.log("ABOUT HTML:", document.getElementById("selected-song-about").innerHTML);
+  console.log("EXTRA HTML:", document.getElementById("selected-song-extra").innerHTML);
+  console.log("LYRICS HTML:", document.getElementById("selected-song-lyrics").innerHTML);
 
-/* ⭐ FIRE EVENT */
-document.dispatchEvent(new Event("songContentLoaded"));
+  /* ⭐ FIRE EVENT */
+  document.dispatchEvent(new Event("songContentLoaded"));
 
   highlightTile(songId);
+}
+  
+document.addEventListener("songContentLoaded", () => {
+  console.log("EVENT: songContentLoaded fired");
+});
   
   /* ⭐ ADD THIS LINE ⭐ */
   document.dispatchEvent(new Event("songContentLoaded"));}
