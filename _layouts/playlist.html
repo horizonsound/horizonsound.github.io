@@ -1039,9 +1039,7 @@ function onPlayerStateChange(event) {
   
     // Convert [Verse 1] → <span class="lyric-section">Verse 1</span>
 html = html.replace(/
-
 \[(.*?)\]
-
 /g, (match, p1) => {
   return `<span class="lyric-section">${p1}</span>`;
 });
