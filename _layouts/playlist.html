@@ -812,10 +812,9 @@ p {
       <div id="selected-song-vibes"></div>
     </div>
   </div>
-
-  <!-- INSPIRATION (only if exists) -->
-  {% if selected_song.extra and selected_song.extra != "" %}
-  <div class="section">
+  
+  <!-- INSPIRATION (JS will hide if empty) -->
+  <div class="section" id="section-inspiration">
     <button class="section-toggle" data-target="insp-content">
       Inspiration
     </button>
@@ -823,11 +822,9 @@ p {
       <div id="selected-song-extra"></div>
     </div>
   </div>
-  {% endif %}
-
-  <!-- LYRICS (only if exists) -->
-  {% if selected_song.lyrics and selected_song.lyrics != "" %}
-  <div class="section">
+  
+  <!-- LYRICS (JS will hide if empty) -->
+  <div class="section" id="section-lyrics">
     <button class="section-toggle" data-target="lyrics-content">
       Lyrics
     </button>
@@ -835,8 +832,7 @@ p {
       <div id="selected-song-lyrics"></div>
     </div>
   </div>
-  {% endif %}
-
+  
 </div>
 
 <script>
