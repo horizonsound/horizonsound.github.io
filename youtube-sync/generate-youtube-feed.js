@@ -86,23 +86,64 @@ function writeYaml(filepath, data) {
   ensureDir(path.dirname(filepath));
   fs.writeFileSync(filepath, yaml.dump(data), "utf8");
 }
-
-function extractHashtags(desc) {
-  if (!desc) return { clean: "", tags: [] };
-
-  const tagRegex = /#[A-Za-z0-9_-]+/g;
-  const tags = desc.match(tagRegex) || [];
-
-  let clean = desc.replace(tagRegex, "");
   
-  // Remove leftover punctuation from hashtag removal (commas, slashes, pipes, extra spaces)
-  clean = clean.replace(/^[\s,;:|/-]+/gm, "").trim();
+  function extractHashtags(desc) {
+    if (!desc) return { clean: "", tags: [] };
   
-  // Normalize tags (strip #)
-  const normalized = tags.map(t => t.slice(1).toLowerCase());
+    const tagRegex = /#[A-Za-z0-9_-]+/g;
+    const tags = desc.match(tagRegex) || [];
+  
+    let clean = desc.replace(tagRegex, "");
+    
+    // Remove leftover punctuation from hashtag removal (commas, slashes, pipes, extra spaces)
+    clean = clean.replace(/^[\s,;:|/-]+/gm, "").trim();
+    
+    // Normalize tags (strip #)
+    const normalized = tags.map(t => t.slice(1).toLowerCase());
+  
+    return { clean, tags: normalized };
+  }
 
-  return { clean, tags: normalized };
-}
+  function extractVibes(desc) {
+    if (!desc) return { descriptionWithoutVibes: "", vibes: [] };
+  
+    // Vibe markers
+    const vibeRegex = /(🎧|🎤|🎛️|⚡|🎼|✨)/;
+  
+    // Find where vibes start
+    const vibeStart = desc.search(vibeRegex);
+    if (vibeStart === -1) {
+      // No vibes found → return untouched
+      return { descriptionWithoutVibes: desc.trim(), vibes: [] };
+    }
+  
+    // Split into lines
+    const lines = desc.split("\n");
+  
+    let vibes = [];
+    let inVibes = false;
+  
+    for (const line of lines) {
+      if (!inVibes && vibeRegex.test(line)) {
+        inVibes = true;
+      }
+  
+      if (inVibes) {
+        // Only collect lines that START with a vibe emoji
+        if (vibeRegex.test(line.trim().charAt(0))) {
+          vibes.push(line.trim());
+        }
+      }
+    }
+  
+    // Everything ABOVE the first vibe line stays
+    const descriptionWithoutVibes = lines
+      .slice(0, lines.findIndex(l => vibeRegex.test(l)))
+      .join("\n")
+      .trim();
+  
+    return { descriptionWithoutVibes, vibes };
+  }
 
 /* -------------------------------------------------------------
    DESCRIPTION FORMATTER
@@ -273,11 +314,14 @@ let html = desc
    song objects used by the site. This is the canonical schema.
 ------------------------------------------------------------- */
 function buildSongObject(video, playlistTitleLookup, playlistSlugMap) {
-  const song_id = video.slug;
 
-  // Extract hashtags BEFORE formatting
   const rawDesc = video.youtube_metadata?.description || "";
+
+  // Step 1: remove hashtags
   const { clean, tags } = extractHashtags(rawDesc);
+  
+  // Step 2: extract vibes + trim description
+  const { descriptionWithoutVibes, vibes } = extractVibes(clean);
 
   return {
     song_id,
@@ -285,12 +329,15 @@ function buildSongObject(video, playlistTitleLookup, playlistSlugMap) {
     title: video.title,
 
     description_html: formatDescriptionToHtml(
-      clean,                    // ← cleaned description
+      descriptionWithoutVibes,
       playlistTitleLookup,
       playlistSlugMap,
       process.env.BASEURL || ""
     ),
-
+    
+    vibes,   // ← NEW FIELD
+    tags,    // ← already added
+    
     url: `/music/${song_id}/`,
     thumbnail: `/assets/thumbnails/${song_id}.jpeg`,
     videostatus: video.videostatus_raw,
