@@ -55,6 +55,10 @@
       </main>
     </div>
     
-    {% include footer.html %}
+    {% if page.footer_type == "player" %}
+      {% include footer-player.html %}
+    {% else %}
+      {% include footer.html %}
+    {% endif %}
   </body>
 </html>
