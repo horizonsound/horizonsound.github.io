@@ -20,6 +20,9 @@ songs:
       Soaked Paradise” celebrates the beauty of letting go, unwinding, and
       soaking in the moment.</p>
     vibes:
+      - '🎧 Vibe: tropical pop, mellow, sunset‑warm'
+      - '🎤 Vocals: smooth, relaxed, coastal'
+      - '🎛️ Production: warm guitar, island percussion, soft ambience'
       - '⚡ Mood: calm, dreamy, escapist'
     tags:
       - horizonsound
@@ -112,6 +115,9 @@ songs:
       glow, “Salt on the Rim” celebrates the small rituals that help you let go,
       loosen up, and remember how to breathe again.</p>
     vibes:
+      - '🎧 Vibe: coastal pop, mellow, beach‑bar'
+      - '🎤 Vocals: relaxed, smooth, sun‑worn'
+      - '🎛️ Production: acoustic guitar, light percussion, gentle groove'
       - '⚡ Mood: unwound, easy, content'
     tags:
       - horizonsound
@@ -206,6 +212,9 @@ songs:
       salt‑air warmth, “Barefoot & Buzzed” celebrates the beauty of slowing
       down, breathing deep, and remembering what really matters.</p>
     vibes:
+      - '🎧 Vibe: coastal pop, warm, breezy, golden‑hour'
+      - '🎤 Vocals: relaxed, intimate, sun‑soft delivery'
+      - '🎛️ Production: acoustic guitar, soft percussion, gentle lift'
       - '⚡ Mood: carefree, nostalgic, peaceful'
     tags:
       - horizonsound
@@ -300,6 +309,9 @@ songs:
       “Island Girl Trouble” celebrates the kind of love that’s messy, thrilling,
       and worth every moment.</p>
     vibes:
+      - '🎧 Vibe: tropical pop, upbeat, flirty, sun‑soaked'
+      - '🎤 Vocals: playful, warm, relaxed'
+      - '🎛️ Production: bright guitars, rhythmic percussion, coastal bounce'
       - '⚡ Mood: fun, chaotic, romantic'
     tags:
       - horizonsound
@@ -391,6 +403,9 @@ songs:
       coastal warmth, “Leilani” captures the bittersweet ache of remembering
       someone who changed you in quiet, lasting ways.</p>
     vibes:
+      - '🎧 Vibe: coastal ballad, soft, emotional, warm'
+      - '🎤 Vocals: tender, sincere, intimate'
+      - '🎛️ Production: acoustic layers, gentle percussion, warm harmonies'
       - '⚡ Mood: nostalgic, romantic, reflective'
     tags:
       - horizonsound
@@ -482,6 +497,9 @@ songs:
       captures the beauty of connection, presence, and the kind of love that
       feels effortless.</p>
     vibes:
+      - '🎧 Vibe: nighttime coastal pop, warm, slow, romantic'
+      - '🎤 Vocals: soft, intimate, heartfelt'
+      - '🎛️ Production: mellow guitar, gentle percussion, glowing ambience'
       - '⚡ Mood: peaceful, romantic, reflective'
     tags:
       - horizonsound
@@ -573,6 +591,9 @@ songs:
       sun goes down. With its upbeat chorus and radiant coastal vibe, “Sunburned
       & Smiling” celebrates the beauty of living in the moment.</p>
     vibes:
+      - '🎧 Vibe: upbeat coastal pop, sunny, joyful'
+      - '🎤 Vocals: bright, warm, relaxed'
+      - '🎛️ Production: acoustic guitar, light percussion, breezy lift'
       - '⚡ Mood: happy, carefree, radiant'
     tags:
       - horizonsound
@@ -663,6 +684,9 @@ songs:
       its inspiring chorus and soft coastal glow, “Wind in Your Sails” captures
       the beauty of being someone’s anchor and their lift at the same time.</p>
     vibes:
+      - '🎧 Vibe: coastal folk‑pop, warm, uplifting'
+      - '🎤 Vocals: sincere, comforting, steady'
+      - '🎛️ Production: acoustic guitar, soft percussion, emotional lift'
       - '⚡ Mood: hopeful, supportive, heartfelt'
     tags:
       - horizonsound
@@ -7441,6 +7465,11 @@ songs:
       the pull of something like home. “Back to Amarillo” is a romantic,
       heartfelt look at the kind of love that keeps a wanderer coming back.</p>
     vibes:
+      - '🎧 Vibe: 1950s western ballad, warm, nostalgic'
+      - '🎤 Vocals: smooth male baritone, gentle vibrato, classic phrasing'
+      - >-
+        🎛️ Production: acoustic guitar, upright bass, brushed drums, vintage
+        reverb
       - '⚡ Mood: romantic, dusty‑trail, heartfelt, cinematic'
     tags:
       - horizonsound
@@ -7516,6 +7545,11 @@ songs:
       delivery, and timeless country sorrow, “Bottle on the Table” feels like a
       lost classic pulled straight from a 1950s honky‑tonk.</p>
     vibes:
+      - '🎧 Vibe: vintage country‑western, slow, dusty, emotional'
+      - '🎤 Vocals: warm baritone male, classic early‑country delivery'
+      - >-
+        🎛️ Production: mono recording, tube mic warmth, light tape hiss, steel
+        guitar, upright bass, gentle western swing rhythm
       - '⚡ Mood: heartbroken, reflective, lonely, timeless'
     tags:
       - horizonsound
@@ -7590,6 +7624,11 @@ songs:
       swears he didn’t do a thing. “Sheriff for a Night” is a fun, cinematic
       tribute to the legends small towns love to tell.</p>
     vibes:
+      - '🎧 Vibe: 1950s Western swing, warm, nostalgic, comedic'
+      - '🎤 Vocals: smooth male baritone, classic phrasing, storytelling delivery'
+      - >-
+        🎛️ Production: acoustic guitar, upright bass, brushed drums, vintage
+        reverb
       - '⚡ Mood: humorous, dusty‑trail, tall‑tale, cinematic'
     tags:
       - horizonsound
@@ -7654,6 +7693,9 @@ songs:
       clouds — small, delicate, but powerful enough to change everything. It’s
       peaceful, bright, and emotionally soothing.</p>
     vibes:
+      - '🎧 Vibe: warm, uplifting, cinematic'
+      - '🎼 Style: ambient instrumental, emotional score'
+      - '🎛️ Production: glowing pads, soft textures, gentle lift'
       - '✨ Mood: hopeful, comforting, serene'
     tags:
       - horizonsound
@@ -7720,6 +7762,9 @@ songs:
       — a moment so quiet and beautiful it feels like it could last forever.
       It’s emotional, spacious, and deeply reflective.</p>
     vibes:
+      - '🎧 Vibe: dreamy, warm, cinematic'
+      - '🎼 Style: ambient instrumental, emotional score'
+      - '🎛️ Production: soft pads, glowing textures, slow movement'
       - '✨ Mood: nostalgic, peaceful, timeless'
     tags:
       - horizonsound
@@ -7786,6 +7831,9 @@ songs:
       presence. It’s the feeling of pausing long enough to notice the world —
       and letting that moment hold you in return.</p>
     vibes:
+      - '🎧 Vibe: intimate, calm, atmospheric'
+      - '🎼 Style: ambient instrumental, cinematic minimalism'
+      - '🎛️ Production: soft textures, warm pads, subtle movement'
       - '✨ Mood: reflective, grounding, serene'
     tags:
       - horizonsound
@@ -7852,6 +7900,9 @@ songs:
       quiet uplift. It feels like watching sunlight break through clouds —
       simple, beautiful, and full of quiet hope.</p>
     vibes:
+      - '🎧 Vibe: luminous, modern, atmospheric'
+      - '🎼 Style: ambient instrumental, cinematic texture'
+      - '🎛️ Production: light pulses, airy pads, soft contrast'
       - '✨ Mood: hopeful, spacious, uplifting'
     tags:
       - horizonsound
@@ -7920,6 +7971,11 @@ songs:
       atmospheric, capturing the quiet inhale before life begins to move once
       more.</p>
     vibes:
+      - '🎧 Vibe: calm, reflective, cinematic'
+      - '🎼 Style: ambient instrumental, atmospheric, modern score'
+      - >-
+        🎛️ Production: soft pads, airy textures, subtle motion, warm tonal
+        palette
       - '✨ Mood: peaceful, introspective, luminous, grounding'
     tags:
       - horizonsound
@@ -7987,6 +8043,9 @@ songs:
       water shift and shimmer — always moving, always changing, always
       alive.</p>
     vibes:
+      - '🎧 Vibe: calm, fluid, atmospheric'
+      - '🎼 Style: ambient instrumental, cinematic, reflective'
+      - '🎛️ Production: soft pads, gentle motion, warm tonal palette'
       - '✨ Mood: peaceful, meditative, soothing'
     tags:
       - horizonsound
@@ -8059,6 +8118,11 @@ songs:
       life will take to fulfill it. It’s the beginning of a lifelong story, the
       first chapter of a dream that waits patiently for decades.</p>
     vibes:
+      - '🎧 Vibe: warm acoustic‑pop, nostalgic, hopeful'
+      - '🎤 Vocals: bright female lead, soft harmonies, expressive phrasing'
+      - >-
+        🎛️ Production: acoustic guitars, light percussion, gentle lift,
+        cinematic warmth
       - '⚡ Mood: innocent, dreamy, heartfelt, reflective'
     tags:
       - horizonsound
@@ -8129,6 +8193,11 @@ songs:
       ever. “Missing Stamp” is the middle chapter of the Venice Trilogy, the
       emotional low point where the dream feels lost but not forgotten.</p>
     vibes:
+      - '🎧 Vibe: emotional acoustic‑pop, soft, reflective'
+      - '🎤 Vocals: warm female lead, intimate delivery, heartfelt phrasing'
+      - >-
+        🎛️ Production: piano, acoustic guitar, soft strings, cinematic
+        melancholy
       - '⚡ Mood: nostalgic, aching, honest, bittersweet'
     tags:
       - horizonsound
@@ -8198,6 +8267,9 @@ songs:
       is fulfilled, the passport gets its stamp, and the world feels wide open
       again.</p>
     vibes:
+      - '🎧 Vibe: upbeat acoustic‑pop, warm, adventurous'
+      - '🎤 Vocals: bright female lead, expressive, joyful'
+      - '🎛️ Production: acoustic guitars, light drums, piano, cinematic strings'
       - '⚡ Mood: nostalgic, uplifting, feel‑good, celebratory'
     tags:
       - horizonsound
@@ -8256,7 +8328,8 @@ songs:
 
       <p>A 17-second chorus moment from Rise Like Thunder - cinematic rock
       energy and emotional lift.</p>
-    vibes: []
+    vibes:
+      - '🎧 Full track: https://youtu.be/g_AZ5B9ssFQ'
     tags:
       - horizonsound
       - originalmusic
@@ -8319,7 +8392,8 @@ songs:
       class="internal-playlist-link">▶️</a> Shorts</p>
 
       <p>A 14-second moment from Nineteen Summers - Emotional Acoustic Pop.</p>
-    vibes: []
+    vibes:
+      - '🎧 Full track: https://youtu.be/r16qSkxEcI4'
     tags:
       - horizonsound
       - originalmusic
@@ -8391,6 +8465,9 @@ songs:
       forward. “Before Midnight” sets the emotional foundation for the journey
       ahead, where curiosity becomes momentum and momentum becomes mayhem.</p>
     vibes:
+      - '🎧 Vibe: cinematic pop, neon‑lit, atmospheric, anticipatory'
+      - '🎤 Vocals: smooth female lead, soft intensity, late‑night tone'
+      - '🎛️ Production: warm synths, steady drums, glowing textures'
       - '⚡ Mood: curious, electric, suspended, ready‑to‑ignite'
     tags:
       - horizonsound
@@ -8465,6 +8542,9 @@ songs:
       point where curiosity becomes chaos, and the night reveals its wildest
       side.</p>
     vibes:
+      - '🎧 Vibe: high‑energy pop, neon chaos, late‑night adrenaline'
+      - '🎤 Vocals: bold female lead, energetic phrasing, electric delivery'
+      - '🎛️ Production: bright synths, sharp drums, rhythmic drive'
       - '⚡ Mood: wild, reckless, euphoric, fast‑moving'
     tags:
       - horizonsound
@@ -8538,6 +8618,9 @@ songs:
       “Midnight Madness” is the heart of the saga — the point where time
       dissolves, the world spins, and the night becomes its own universe.</p>
     vibes:
+      - '🎧 Vibe: hypnotic pop, neon swirl, dreamlike intensity'
+      - '🎤 Vocals: expressive female lead, drifting and powerful'
+      - '🎛️ Production: glowing synths, pulsing drums, immersive textures'
       - '⚡ Mood: dizzy, electric, surreal, all‑consuming'
     tags:
       - horizonsound
@@ -8610,6 +8693,9 @@ songs:
       leaves you changed. “After Midnight” is the sunrise moment of the saga,
       where everything settles and the story finds its meaning.</p>
     vibes:
+      - '🎧 Vibe: cinematic pop, reflective, warm, late‑night calm'
+      - '🎤 Vocals: heartfelt female lead, soft and steady'
+      - '🎛️ Production: warm pads, soft synths, steady drums'
       - '⚡ Mood: peaceful, introspective, resolved, sunrise‑ready'
     tags:
       - horizonsound
@@ -8689,6 +8775,13 @@ songs:
       they lost. As she picks up the pieces, she begins the slow process of
       learning how to live again.</p>
     vibes:
+      - '🎧 Vibe: slow, cinematic, emotional, reflective'
+      - >-
+        🎤 Vocals: warm female lead, rich tone, smooth vibrato, intimate
+        phrasing
+      - >-
+        🎛️ Production: soft piano, warm strings, subtle drums, atmospheric
+        reverb
       - >-
         ⚡ Mood: heartbreak‑after‑the‑storm, heavy, introspective, quietly
         devastating
@@ -8782,6 +8875,9 @@ songs:
       growing. It’s a confession of loving in the shadows of inevitability, and
       cherishing the seconds that were never really hers.</p>
     vibes:
+      - '🎧 Vibe: tender, nostalgic, bittersweet'
+      - '🎤 Vocals: warm female lead, smooth vibrato, emotional phrasing'
+      - '🎛️ Production: warm piano, soft strings, light drums, cinematic glow'
       - '⚡ Mood: reflective, aching, quietly hopeful'
     tags:
       - horizonsound
@@ -8873,6 +8969,9 @@ songs:
       she carried back then. It’s a search for the self she left behind, and a
       hope that she can find her way back to that version of herself again.</p>
     vibes:
+      - '🎧 Vibe: soft, nostalgic, reflective'
+      - '🎤 Vocals: warm female lead, intimate phrasing, emotional tone'
+      - '🎛️ Production: gentle piano, warm pads, subtle strings, airy reverb'
       - '⚡ Mood: longing, introspective, quietly emotional'
     tags:
       - horizonsound
@@ -8964,6 +9063,11 @@ songs:
       we cling to something already slipping away, and the pain of finally
       facing what’s been true all along.</p>
     vibes:
+      - '🎧 Vibe: slow, heavy, emotional'
+      - '🎤 Vocals: warm female lead, rich tone, intimate delivery'
+      - >-
+        🎛️ Production: soft piano, warm strings, light drums, atmospheric
+        reverb
       - '⚡ Mood: aching, reflective, quietly devastating'
     tags:
       - horizonsound
@@ -9055,6 +9159,9 @@ songs:
       realizes that vulnerability isn’t weakness — it’s the beginning of being
       truly seen.</p>
     vibes:
+      - '🎧 Vibe: vulnerable, intimate, cinematic'
+      - '🎤 Vocals: warm female lead, smooth vibrato, emotional phrasing'
+      - '🎛️ Production: soft piano, warm strings, airy pads, light drums'
       - '⚡ Mood: fragile‑to‑soaring, honest, cathartic'
     tags:
       - horizonsound
@@ -9145,6 +9252,9 @@ songs:
       to stay small. “Half of Me” is the sound of taking back space,
       rediscovering strength, and choosing authenticity over approval.</p>
     vibes:
+      - '🎧 Vibe: rising, bold, emotional'
+      - '🎤 Vocals: warm female lead, expressive phrasing, powerful lift'
+      - '🎛️ Production: piano, warm strings, steady drums, cinematic rise'
       - '⚡ Mood: empowering, self‑reclaiming, triumphant'
     tags:
       - horizonsound
@@ -9236,6 +9346,11 @@ songs:
       words she never got to say. “If You’d Asked” captures the pain of unspoken
       love and the ache of a goodbye that didn’t have to happen.</p>
     vibes:
+      - '🎧 Vibe: slow, cinematic, emotional'
+      - '🎤 Vocals: warm female lead, intimate delivery, aching tone'
+      - >-
+        🎛️ Production: soft piano, warm strings, subtle drums, atmospheric
+        reverb
       - '⚡ Mood: regretful, tender, heartbreaking'
     tags:
       - horizonsound
@@ -9326,6 +9441,11 @@ songs:
       once filled the room. “Ghostlight” captures the beauty and ache of holding
       on to the last flicker of someone’s presence.</p>
     vibes:
+      - '🎧 Vibe: haunting, glowing, cinematic'
+      - '🎤 Vocals: warm female lead, rich tone, emotional phrasing'
+      - >-
+        🎛️ Production: soft piano, warm strings, subtle percussion, atmospheric
+        reverb
       - '⚡ Mood: nostalgic, theatrical, bittersweet'
     tags:
       - horizonsound
@@ -9417,6 +9537,9 @@ songs:
       “After the Silence” captures the slow rise of hope, the courage to trust
       again, and the quiet power of rebuilding from the inside out.</p>
     vibes:
+      - '🎧 Vibe: calm, reflective, cinematic'
+      - '🎤 Vocals: warm female lead, smooth vibrato, intimate phrasing'
+      - '🎛️ Production: soft piano, warm strings, airy pads, gentle drums'
       - '⚡ Mood: healing, uplifting, quietly powerful'
     tags:
       - horizonsound
@@ -9504,6 +9627,9 @@ songs:
       the cleansing power of release, the beauty in breaking open, and the quiet
       transformation that comes when you finally stop fighting the tide.</p>
     vibes:
+      - '🎧 Vibe: flowing, emotional, cinematic'
+      - '🎤 Vocals: warm female lead, rich tone, expressive phrasing'
+      - '🎛️ Production: soft piano, warm strings, airy pads, gentle drums'
       - '⚡ Mood: cathartic, cleansing, tender'
     tags:
       - horizonsound
@@ -9595,6 +9721,9 @@ songs:
       Wore” captures the heartbreak of letting go, the courage of rediscovery,
       and the moment she begins to see herself clearly again.</p>
     vibes:
+      - '🎧 Vibe: slow, emotional, cinematic'
+      - '🎤 Vocals: warm female lead, smooth vibrato, intimate delivery'
+      - '🎛️ Production: soft piano, warm strings, light drums, airy pads'
       - '⚡ Mood: reflective, tender, bittersweet'
     tags:
       - horizonsound
@@ -9688,6 +9817,9 @@ songs:
       unspoken words, and the quiet strength found in finally choosing
       yourself.</p>
     vibes:
+      - '🎧 Vibe: intimate, confessional, late‑night'
+      - '🎤 Vocals: warm female lead, smooth vibrato, emotional phrasing'
+      - '🎛️ Production: soft piano, warm strings, airy pads, subtle drums'
       - '⚡ Mood: tender, reflective, quietly cathartic'
     tags:
       - horizonsound
@@ -9781,6 +9913,11 @@ songs:
       emotional lift, “Rise Again” captures the moment a person chooses
       themselves and refuses to fall back into the shadows.</p>
     vibes:
+      - '🎧 Vibe: cinematic pop, emotional, uplifting, triumphant'
+      - >-
+        🎤 Vocals: warm expressive female lead, smooth vibrato, intimate
+        phrasing
+      - '🎛️ Production: piano, strings, steady drums, airy pads, cinematic build'
       - '⚡ Mood: empowering, victorious, resilient, transformative'
     tags:
       - horizonsound
@@ -9867,6 +10004,11 @@ songs:
       go. Their final chorus becomes a mutual release — not out of anger, but
       acceptance — as they step into new light with gratitude and clarity.</p>
     vibes:
+      - '🎧 Vibe: acoustic‑pop, warm, emotional, reflective'
+      - '🎤 Vocals: expressive female lead + soft male duet, airy harmonies'
+      - >-
+        🎛️ Production: bright acoustic guitar, light indie‑pop percussion, warm
+        bass, clean modern polish
       - '⚡ Mood: bittersweet, honest, gentle, quietly hopeful'
     tags:
       - horizonsound
@@ -9937,6 +10079,11 @@ songs:
       breathing again. It’s a gentle, empowering anthem about choosing peace,
       choosing growth, and ultimately choosing herself.</p>
     vibes:
+      - '🎧 Vibe: coastal acoustic‑pop, breezy, warm, uplifting'
+      - '🎤 Vocals: soft female lead, airy harmonies, smile‑in‑the‑voice delivery'
+      - >-
+        🎛️ Production: bright acoustic guitar, brushed snare, subtle shaker,
+        clean modern polish
       - '⚡ Mood: hopeful, light, self‑reclaiming, fresh'
     tags:
       - horizonsound
@@ -10006,6 +10153,11 @@ songs:
       into a stronger, clearer version of himself. It’s a hopeful,
       forward‑moving anthem about learning, healing, and choosing to grow.</p>
     vibes:
+      - '🎧 Vibe: modern pop‑rock, energetic, heartfelt, uplifting'
+      - '🎤 Vocals: clean male lead, warm tone, tight harmonies'
+      - >-
+        🎛️ Production: bright electric guitars, punchy drums, groovy bass,
+        polished mix
       - '⚡ Mood: honest, determined, optimistic, empowering'
     tags:
       - horizonsound
@@ -10079,6 +10231,11 @@ songs:
       emotionally open, “All Around the World” is a soundtrack for anyone
       finding themselves after letting go.</p>
     vibes:
+      - '🎧 Vibe: bright acoustic pop, breezy, youthful, heartfelt'
+      - '🎤 Vocals: warm female lead, airy harmonies, emotional delivery'
+      - >-
+        🎛️ Production: acoustic guitars, handclaps, tambourine, light
+        percussion, wide stereo layers
       - '⚡ Mood: nostalgic, hopeful, adventurous, vulnerable'
     tags:
       - horizonsound
@@ -10152,6 +10309,11 @@ songs:
       lighthearted anthem for anyone who’s ever argued with their
       appliances.</p>
     vibes:
+      - '🎧 Vibe: upbeat folk‑country, playful, mischievous, energetic'
+      - '🎤 Vocals: expressive male lead, comedic timing, crisp delivery'
+      - >-
+        🎛️ Production: acoustic guitar, light percussion, subtle tech sound
+        effects, warm mix
       - '⚡ Mood: fun, chaotic, exasperated, clever'
     tags:
       - horizonsound
@@ -10225,6 +10387,13 @@ songs:
       disaster in all of us. It’s loud, it’s messy, it’s hilarious… and it’s
       country to the bone.</p>
     vibes:
+      - '🎧 Vibe: rowdy honky‑tonk, comedic, upbeat, chaotic'
+      - >-
+        🎤 Vocals: exaggerated male lead, humorous delivery, high‑energy
+        personality
+      - >-
+        🎛️ Production: twangy electric guitars, lively drums, playful fiddle,
+        barroom mix
       - '⚡ Mood: fun, reckless, lighthearted, mischievous'
     tags:
       - horizonsound
@@ -10296,6 +10465,11 @@ songs:
       open, “Makin’ Our Way to California” is a celebration of family, freedom,
       and the kind of trip that stays with you forever.</p>
     vibes:
+      - '🎧 Vibe: bright pop-folk, summery, nostalgic, upbeat'
+      - '🎤 Vocals: energetic female lead, youthful tone, emotional clarity'
+      - >-
+        🎛️ Production: acoustic guitars, modern pop drums, shimmering
+        harmonies, clean stereo mix
       - '⚡ Mood: adventurous, warm, reflective, joyful'
     tags:
       - horizonsound
@@ -10368,7 +10542,9 @@ songs:
       how love, memory, and connection can outlive even the shortest time on
       earth. Emotional, uplifting, and deeply human, “Nineteen Summers” honors
       the beauty of a life lived fully.</p>
-    vibes: []
+    vibes:
+      - '🎧 Vibe: emotional acoustic‑pop, nostalgic, bittersweet, heartfelt'
+      - '🎤 Vocals: intimate, expressive, warm'
     tags:
       - horizonsound
       - originalmusic
@@ -10437,7 +10613,9 @@ songs:
       to welcome into the world. Emotional, vulnerable, and deeply human, “I’m
       Holding On” is a tribute to the courage it takes to believe in reunion,
       healing, and home.</p>
-    vibes: []
+    vibes:
+      - '🎧 Vibe: emotional ballad, intimate, cinematic, heartfelt'
+      - '🎤 Vocals: warm, expressive, vulnerable'
     tags:
       - horizonsound
       - originalmusic
@@ -10512,6 +10690,11 @@ songs:
       Amber” is a tribute to the pets who raise us, steady us, and stay with us
       long after they’re gone.</p>
     vibes:
+      - '🎧 Vibe: emotional pop, nostalgic, acoustic‑leaning, cinematic'
+      - '🎤 Vocals: warm female lead, expressive phrasing, heartfelt delivery'
+      - >-
+        🎛️ Production: acoustic guitar, soft piano, light drums, subtle
+        country‑pop color, swelling chorus
       - '⚡ Mood: tender, bittersweet, comforting, reflective'
     tags:
       - horizonsound
@@ -10584,6 +10767,11 @@ songs:
       a steady emotional climb make “Learning to Live Again” a comforting
       soundtrack for anyone finding their way out of the dark.</p>
     vibes:
+      - '🎧 Vibe: soft electro‑pop, dreamy, reflective, emotional'
+      - '🎤 Vocals: warm, breathy female lead, gentle vibrato, intimate delivery'
+      - >-
+        🎛️ Production: atmospheric pads, subtle synths, light percussion,
+        smooth harmonies, spacious mix
       - '⚡ Mood: hopeful, vulnerable, uplifting, quietly powerful'
     tags:
       - horizonsound
@@ -10653,7 +10841,9 @@ songs:
       about courage, identity, and the beauty of becoming yourself. Hopeful,
       emotional, and full of forward momentum, “New Beginnings” celebrates the
       journey toward living openly and joyfully.</p>
-    vibes: []
+    vibes:
+      - '🎧 Vibe: empowering pop, uplifting, emotional, modern'
+      - '🎤 Vocals: bright, expressive female lead'
     tags:
       - horizonsound
       - originalmusic
@@ -10725,7 +10915,9 @@ songs:
       how love, memory, and connection can outlive even the shortest time on
       earth. Emotional, uplifting, and deeply human, “Nineteen Summers” honors
       the beauty of a life lived fully.</p>
-    vibes: []
+    vibes:
+      - '🎧 Vibe: emotional acoustic‑pop, nostalgic, bittersweet, heartfelt'
+      - '🎤 Vocals: intimate, expressive, warm'
     tags:
       - horizonsound
       - originalmusic
@@ -10800,6 +10992,11 @@ songs:
       refuses to be confined. “Wildfire” is her anthem — fierce, fearless, and
       burning hot tonight.</p>
     vibes:
+      - '🎧 Vibe: fierce, empowering, modern country, cinematic'
+      - '🎤 Vocals: bold female lead, emotional grit, powerhouse delivery'
+      - >-
+        🎛️ Production: big drums, electric guitars, dramatic lift, Nashville
+        polish
       - '⚡ Mood: unstoppable, fiery, defiant, triumphant'
     tags:
       - horizonsound
@@ -10872,6 +11069,11 @@ songs:
       chorus and festival‑ready momentum, “Vegas in the Sky” celebrates the
       thrill of letting loose before the wheels even touch down.</p>
     vibes:
+      - '🎧 Vibe: country‑pop party, rowdy, fun, chaotic'
+      - '🎤 Vocals: male lead, swagger, humor, storytelling'
+      - >-
+        🎛️ Production: acoustic guitar, stomps, claps, fiddle accents, bright
+        modern mix
       - '⚡ Mood: energetic, comedic, feel‑good, high‑spirited'
     tags:
       - horizonsound
@@ -10946,6 +11148,11 @@ songs:
       Behind the Bar” is a tribute to the people who hold communities together
       one story at a time.</p>
     vibes:
+      - '🎧 Vibe: 90s country, warm, nostalgic, small‑town'
+      - '🎤 Vocals: conversational male lead, heartfelt, steady and sincere'
+      - >-
+        🎛️ Production: acoustic guitars, fiddle, pedal steel, brushed drums,
+        clean electric fills, simple bass groove
       - '⚡ Mood: comforting, reflective, grounded, quietly uplifting'
     tags:
       - horizonsound
@@ -11026,6 +11233,11 @@ songs:
       moment someone realizes they’re falling in love all over again, simply by
       seeing the history that shaped her.</p>
     vibes:
+      - '🎧 Vibe: nostalgic, warm, emotional, reflective'
+      - '🎤 Vocals: intimate male lead, soft delivery, storytelling tone'
+      - >-
+        🎛️ Production: acoustic foundation, gentle pop elements, subtle
+        cinematic lift
       - '⚡ Mood: tender, memory‑rich, quietly romantic, heartfelt'
     tags:
       - horizonsound
@@ -11103,6 +11315,11 @@ songs:
       confession for anyone who’s stayed too long, hoped too hard, and finally
       walked away with nothing left to give.</p>
     vibes:
+      - '🎧 Vibe: modern country, mid‑tempo, emotional, reflective'
+      - '🎤 Vocals: sincere male lead, warm tone, soft harmonies in the chorus'
+      - >-
+        🎛️ Production: acoustic‑driven, subtle electric fills, clean Nashville
+        mix
       - '⚡ Mood: wounded, resigned, honest, quietly powerful'
     tags:
       - horizonsound
@@ -11176,6 +11393,13 @@ songs:
       captures the magic of realizing someone’s been waiting for you all
       along.</p>
     vibes:
+      - '🎧 Vibe: modern country, warm, romantic, feel‑good'
+      - >-
+        🎤 Vocals: charming male lead, flirty, expressive, slightly
+        self‑deprecating
+      - >-
+        🎛️ Production: acoustic guitars, snaps, soft electric layers, smooth
+        upbeat groove
       - '⚡ Mood: sweet, flirty, uplifting, radio‑ready'
     tags:
       - horizonsound
@@ -11247,6 +11471,11 @@ songs:
       Loud, chaotic, and electrifying, “Put You Down” is the soundtrack to a
       midnight breakdown in the best possible way.</p>
     vibes:
+      - '🎧 Vibe: high‑energy electro‑pop, chaotic, bold, rebellious'
+      - '🎤 Vocals: fierce female lead, talk‑sing swagger, glitchy vocal chops'
+      - >-
+        🎛️ Production: distorted synth bass, punchy drums, stutter FX,
+        explosive drops
       - '⚡ Mood: wild, unfiltered, confident, late‑night adrenaline'
     tags:
       - horizonsound
@@ -11315,6 +11544,9 @@ songs:
       “Midnight Mayhem” is a neon‑soaked anthem for anyone who lives for the
       wild side of the night.</p>
     vibes:
+      - '🎧 Vibe: chaotic electro‑pop, neon, high‑energy, wild'
+      - '🎤 Vocals: talk‑sing swagger, raspy edges, attitude‑heavy'
+      - '🎛️ Production: rubbery synths, heavy bass, stomp‑claps, cosmic FX'
       - '⚡ Mood: explosive, reckless, glossy, late‑night'
     tags: []
     url: /music/midnight-mayhem-electro-pop-horizon-sound/
@@ -11378,6 +11610,11 @@ songs:
       captures the moment she chooses herself, steps into her power, and refuses
       to look back.</p>
     vibes:
+      - '🎧 Vibe: 90s pop revival, high‑energy, emotional, empowering'
+      - '🎤 Vocals: strong female lead, expressive phrasing, confident delivery'
+      - >-
+        🎛️ Production: bright synths, tight drums, rhythmic build, modern pop
+        polish
       - '⚡ Mood: sad‑to‑strong, cathartic, bold, self‑reclaiming'
     tags:
       - horizonsound
@@ -11448,6 +11685,13 @@ songs:
       survivors, and the ones who never gave up. Anthemic, uplifting, and
       defiant, it’s a rock‑driven tribute to resilience and togetherness.</p>
     vibes:
+      - '🎧 Vibe: anthemic 90s rock, gritty, emotional, communal'
+      - >-
+        🎤 Vocals: controlled female grit, gang vocals, spoken intro,
+        shout‑along chorus
+      - >-
+        🎛️ Production: soaring guitars, punchy drums, crowd‑chant bridge, raw
+        but polished mix
       - '⚡ Mood: triumphant, resilient, heartfelt, uplifting'
     tags:
       - horizonsound
@@ -11517,7 +11761,9 @@ songs:
       hell, trashing hotel rooms, playing wild shows, and living fast without
       crossing into explicit territory. It’s loud, loose, and full of momentum,
       capturing the chaos, camaraderie, and adrenaline of life on the road.</p>
-    vibes: []
+    vibes:
+      - '🎧 Vibe: southern rock, blues‑rock, gritty, energetic, rebellious'
+      - '🎤 Vocals: raw, swagger‑filled male lead'
     tags:
       - horizonsound
       - originalmusic
@@ -11591,6 +11837,11 @@ songs:
       playful, and full of Southern swagger, “Gimme Three Steps, and I’m Gone”
       is a modern spin on the bar‑fight storytelling tradition.</p>
     vibes:
+      - '🎧 Vibe: 70s Southern rock, rowdy, gritty, high‑energy'
+      - '🎤 Vocals: male lead, storytelling grit, playful tension'
+      - >-
+        🎛️ Production: bluesy electric guitars, shuffle drums, swaggering bass,
+        harmonized leads
       - '⚡ Mood: urgent, humorous, cinematic, chaotic‑night‑gone‑wrong'
     tags:
       - horizonsound
@@ -11667,6 +11918,10 @@ songs:
 
       <p>🎸 Vibe: Southern rock, gritty, high‑energy, cinematic</p>
     vibes:
+      - '🎤 Vocals: raw male lead, attitude‑driven phrasing, emotional grit'
+      - >-
+        🎛️ Production: bluesy guitars, driving drums, barroom textures, modern
+        rock polish
       - '⚡ Mood: chaotic‑to‑connected, rowdy, defiant, emotionally charged'
     tags:
       - horizonsound
@@ -11739,7 +11994,9 @@ songs:
       be seen, chosen, and transformed by love. Romantic, tender, and full of
       momentum, “Becoming Me” captures the moment when desire becomes trust and
       vulnerability becomes strength.</p>
-    vibes: []
+    vibes:
+      - '🎧 Vibe: emotional pop, romantic, bright, energetic'
+      - '🎤 Vocals: expressive female lead with layered harmonies'
     tags:
       - horizonsound
       - originalmusic
@@ -11811,7 +12068,8 @@ songs:
       captures the moment you stop surviving — and start becoming
       unstoppable.</p>
     vibes:
-      - '⚡ Mood: powerful, electric, determined, triumphant'
+      - '🎧 Vibe: energetic pop‑rock, emotional, uplifting, anthemic'
+      - '🎤 Vocals: soaring male + female leads, expressive harmonies'
     tags:
       - horizonsound
       - originalmusic
@@ -11882,7 +12140,9 @@ songs:
       feels unsteady, you’re closer to breakthrough than you think. Hopeful,
       empowering, and emotionally honest, this track encourages listeners to
       keep going, keep believing, and keep holding on.</p>
-    vibes: []
+    vibes:
+      - '🎧 Vibe: upbeat pop, nostalgic 90s energy, motivational, bright'
+      - '🎤 Vocals: warm, expressive, confident'
     tags:
       - horizonsound
       - originalmusic
@@ -11949,7 +12209,9 @@ songs:
       when the season fades. Emotional, nostalgic, and full of cinematic warmth,
       “Don’t Let the Summer End” blends modern pop shimmer with acoustic
       intimacy for a perfect sunset‑drive soundtrack.</p>
-    vibes: []
+    vibes:
+      - '🎧 Vibe: bright pop, summery, nostalgic, romantic'
+      - '🎤 Vocals: emotional, warm, expressive'
     tags:
       - horizonsound
       - originalmusic
@@ -12023,6 +12285,11 @@ songs:
       the quiet courage of letting go, breathing through uncertainty, and
       trusting that every turn brings a new kind of light.</p>
     vibes:
+      - '🎧 Vibe: emotional acoustic‑pop, warm, reflective, uplifting'
+      - '🎤 Vocals: intimate female lead, expressive phrasing, soft harmonies'
+      - >-
+        🎛️ Production: piano‑led, light acoustic guitar, gentle percussion,
+        modern singer‑songwriter polish
       - '⚡ Mood: hopeful, introspective, poetic, quietly empowering'
     tags:
       - horizonsound
@@ -12096,6 +12363,13 @@ songs:
       feels winding, you’re stronger than the moment you’re in — and you’re made
       for something more.</p>
     vibes:
+      - >-
+        🎧 Vibe: upbeat 90s‑pop revival, acoustic‑pop warmth, motivational
+        energy
+      - '🎤 Vocals: bright female lead, expressive phrasing, uplifting delivery'
+      - >-
+        🎛️ Production: warm acoustics, rhythmic drums, smooth synths, light
+        guitar textures
       - '⚡ Mood: hopeful, determined, empowering, forward‑moving'
     tags:
       - horizonsound
@@ -12168,6 +12442,11 @@ songs:
       message, “Keep the Light On” celebrates the quiet courage it takes to keep
       moving forward.</p>
     vibes:
+      - '🎧 Vibe: 90s pop revival, upbeat, motivational, feel‑good'
+      - '🎤 Vocals: bright female lead, warm tone, expressive phrasing'
+      - >-
+        🎛️ Production: acoustic layers, steady drums, shimmering synths, modern
+        pop clarity
       - '⚡ Mood: hopeful, energetic, uplifting, resilient'
     tags:
       - horizonsound
@@ -12240,7 +12519,9 @@ songs:
       around” delivered in a soft‑to‑strong dynamic, the track captures the
       moment of finally seeing yourself clearly and choosing a new path
       forward.</p>
-    vibes: []
+    vibes:
+      - '🎧 Vibe: 80s ballad, emotional, cinematic, empowering'
+      - '🎤 Vocals: warm, expressive female rock vocal with controlled rasp'
     tags:
       - horizonsound
       - originalmusic
@@ -12312,7 +12593,8 @@ songs:
       verses, and a huge, heroic chorus. The vocals carry the emotional weight
       of Hawkins: fear, loyalty, and the unbreakable bond that keeps the crew
       standing together even when the sky turns red.</p>
-    vibes: []
+    vibes:
+      - 🎧 About the Song
     tags:
       - horizonsound
       - originalmusic
@@ -12383,7 +12665,9 @@ songs:
       chorus and fierce attitude, “Rise Like Thunder” celebrates the moment when
       passion, persistence, and raw talent collide. It’s loud, proud, and built
       to be sung at full volume.</p>
-    vibes: []
+    vibes:
+      - '🎧 Vibe: 80s arena rock, energetic, triumphant'
+      - '🎤 Vocals: powerful, raspy, harmony‑rich'
     tags:
       - horizonsound
       - originalmusic
@@ -12457,6 +12741,11 @@ songs:
       Other Down” is a celebration of loyalty, courage, and standing side by
       side through every storm.</p>
     vibes:
+      - '🎧 Vibe: up‑tempo 80s synth‑rock, energetic, bold, uplifting'
+      - '🎤 Vocals: confident female lead, clean delivery, emotional clarity'
+      - >-
+        🎛️ Production: pulsing synth bass, gated‑reverb drums, melodic electric
+        fills, wide arena mix
       - '⚡ Mood: triumphant, passionate, determined, hopeful'
     tags:
       - horizonsound
@@ -12532,6 +12821,11 @@ songs:
       form, reminding her she’s stronger, softer, and more alive than she
       realized.</p>
     vibes:
+      - '🎧 Vibe: emotional 80s pop, warm, nostalgic, uplifting'
+      - '🎤 Vocals: heartfelt female lead, airy harmonies, expressive delivery'
+      - >-
+        🎛️ Production: shimmering synth pads, chorus‑washed guitars, steady
+        pulse, cinematic reverb
       - '⚡ Mood: hopeful, tender, comforting, quietly triumphant'
     tags:
       - horizonsound
