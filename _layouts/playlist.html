@@ -1038,16 +1038,13 @@ function onPlayerStateChange(event) {
     let html = lyricsEl.innerHTML;
   
     // Convert [Verse 1] → <span class="lyric-section">Verse 1</span>
-    html = html.replace(/
-  
-  \[(.*?)\]
-  
-  /g, (match, p1) => {
-      return `<span class="lyric-section">${p1}</span>`;
-    });
-  
-    lyricsEl.innerHTML = html;
-  });
+html = html.replace(/
+
+\[(.*?)\]
+
+/g, (match, p1) => {
+  return `<span class="lyric-section">${p1}</span>`;
+});
 
 function highlightTile(songId) {
   const tiles = document.querySelectorAll(".shared-tile");
