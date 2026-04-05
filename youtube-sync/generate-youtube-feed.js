@@ -435,8 +435,239 @@ function buildSongObject(video, playlistTitleLookup, playlistSlugMap) {
    MAIN GENERATION PIPELINE
    Fetch → Thumbnails → Membership → Normalize → YAML
 ------------------------------------------------------------- */
-
 async function generate() {
+  console.log("Fetching videos...");
+  const videos = await fetchAllVideos();
+
+  // Build lookup: YouTube video ID → slug
+  const slugLookup = {};
+  for (const v of videos) {
+    slugLookup[v.id] = v.slug;
+  }
+
+  if (!videos || videos.length === 0) {
+    console.error("ERROR: No videos returned from YouTube. Aborting.");
+    process.exit(1);
+  }
+
+  console.log(`VIDEO COUNT: ${videos.length}`);
+
+  console.log("Fetching playlists + membership...");
+  const playlists = await fetchPlaylistsWithMembership();
+  
+  // Build lookup: YouTube playlist ID → playlist title
+  const playlistTitleLookup = {};
+  for (const pl of playlists) {
+    playlistTitleLookup[pl.id] = pl.title;
+  }
+
+  if (!playlists) {
+    console.error("ERROR: fetchPlaylistsWithMembership() returned undefined.");
+    process.exit(1);
+  }
+
+  // Build a lookup: { YouTube playlist ID → slug }
+  playlistSlugMap = {};
+  for (const pl of playlists) {
+    playlistSlugMap[pl.id] = pl.slug;   // pl.id = YouTube playlist ID, pl.slug = your slug
+  }
+
+  console.log(`PLAYLIST COUNT: ${playlists.length}`);
+
+  /* -------------------------------------------------------------
+     PLAYLIST THUMBNAILS
+  ------------------------------------------------------------- */
+  console.log("Downloading playlist thumbnails...");
+  await processPlaylistThumbnails(playlists, THUMBNAIL_DIR);
+
+  /* -------------------------------------------------------------
+     SONG THUMBNAILS
+  ------------------------------------------------------------- */
+  console.log("Downloading song thumbnails...");
+  ensureDir(THUMBNAIL_DIR);
+
+  for (const video of videos) {
+    const filename = `${video.slug}.jpeg`;
+    const filepath = path.join(THUMBNAIL_DIR, filename);
+
+    if (!video.thumbnail) {
+      console.warn(`WARNING: No thumbnail URL for video "${video.title}"`);
+      continue;
+    }
+
+    try {
+      console.log(`  → ${filename}`);
+      const res = await fetch(video.thumbnail);
+      const buf = Buffer.from(await res.arrayBuffer());
+      fs.writeFileSync(filepath, buf);
+    } catch (err) {
+      console.error(`ERROR downloading thumbnail for "${video.title}": ${err.message}`);
+    }
+  }
+
+  /* -------------------------------------------------------------
+     ATTACH PLAYLIST MEMBERSHIP
+  ------------------------------------------------------------- */
+  console.log("Attaching playlist membership to videos...");
+  const playlistMap = {};
+  playlists.forEach(pl => {
+    pl.videoIds.forEach(id => {
+      const slug = slugLookup[id];
+      if (!slug) {
+        console.warn(`WARNING: Playlist ${pl.title} references unknown video ID: ${id}`);
+        return;
+      }
+      if (!playlistMap[slug]) playlistMap[slug] = [];
+      playlistMap[slug].push(pl.slug);
+    });
+  });
+
+  videos.forEach(video => {
+    video.playlists = playlistMap[video.slug] || [];
+  });
+
+  /* -------------------------------------------------------------
+     NORMALIZE SONG OBJECTS
+  ------------------------------------------------------------- */
+  console.log("Building song objects...");
+  const Videos = videos.map(video => buildSongObject(video, playlistTitleLookup, playlistSlugMap));
+
+  /* -------------------------------------------------------------
+     WRITE SONG FEED
+  ------------------------------------------------------------- */
+  console.log("Writing youtube_feed.yml...");
+  writeYaml(VIDEO_FEED_PATH, { songs: Videos });
+
+  /* -------------------------------------------------------------
+     WRITE PLAYLIST FEED
+  ------------------------------------------------------------- */
+  console.log("Writing youtube_playlists.yml...");
+  writeYaml(PLAYLIST_FEED_PATH, {
+    playlists: playlists.map(pl => {
+      // Extract playlist-level hashtags
+      const { clean: cleanDesc, tags: playlistTags } = extractHashtags(pl.description || "");
+  
+      return {
+        playlist_id: pl.slug,
+        title: pl.title,
+        description: cleanDesc,       // cleaned description
+        tags: playlistTags,           // NEW FIELD
+        published_at: pl.publishedAt,
+        channel_id: pl.channel_id,
+        channel_title: pl.channel_title,
+        thumbnail: pl.thumbnail,
+        song_ids: pl.videoIds.map(id => slugLookup[id]).filter(Boolean)
+      };
+    })
+  });
+
+  /* -------------------------------------------------------------
+     ENSURE OVERRIDE COMPLETENESS
+     - Every song gets a music override
+     - Every playlist gets a playlist override
+  ------------------------------------------------------------- */
+  const musicOverridePath = "./_data/music_overrides.yml";
+  const playlistOverridePath = "./_data/playlist_overrides.yml";
+
+  let musicOverrides = [];
+  let playlistOverrides = [];
+
+  if (fs.existsSync(musicOverridePath)) {
+    const parsed = yaml.load(fs.readFileSync(musicOverridePath, "utf8")) || {};
+    musicOverrides = parsed.overrides || [];
+  }
+
+  if (fs.existsSync(playlistOverridePath)) {
+    const parsed = yaml.load(fs.readFileSync(playlistOverridePath, "utf8")) || {};
+    playlistOverrides = parsed.overrides || [];
+  }
+
+  const musicOverrideSet = new Set(musicOverrides.map(o => o.song_id));
+  const playlistOverrideSet = new Set(playlistOverrides.map(o => o.playlist_id));
+
+  // Add missing song overrides
+  for (const song of Videos) {
+    if (!musicOverrideSet.has(song.song_id)) {
+      musicOverrides.push({
+        title: "",
+        song_id: song.song_id,
+        subtitle: "",
+        collection: null,
+        order: null,
+        extra_title: null,
+        extra_html: null,
+        lyrics_html: ""
+      });
+    }
+  }
+
+  // Add missing playlist overrides
+  for (const pl of playlists) {
+    if (!playlistOverrideSet.has(pl.slug)) {
+      playlistOverrides.push({
+        playlist_id: pl.slug,
+        is_collection: false,
+        is_instrumental: false,
+        title: "",
+        subtitle: "",
+        description: "",
+        thumbnail: "",
+        hero: "",
+        songs: [],
+        order: null
+      });
+    }
+  }
+
+  writeYaml(musicOverridePath, { overrides: musicOverrides });
+  writeYaml(playlistOverridePath, { overrides: playlistOverrides });
+
+  /* -------------------------------------------------------------
+     GENERATE PLAYLIST PAGE FILES
+     Creates: _playlists/<slug>
+  ------------------------------------------------------------- */
+  console.log("Generating playlist page files...");
+  
+  const PLAYLIST_PAGES_DIR = "./_playlists";
+  
+  for (const pl of playlists) {
+    const filepath = path.join(PLAYLIST_PAGES_DIR, `${pl.slug}.md`);
+  
+    // Ensure _playlists directory exists
+    ensureDir(PLAYLIST_PAGES_DIR);
+  
+    const frontMatter =
+`---
+layout: playlist
+playlist_id: ${pl.slug}
+title: "${pl.title.replace(/"/g, '\\"')}"
+is_playlist_page: true
+permalink: /music/playlists/${pl.slug}/
+---
+`;
+  
+    fs.writeFileSync(filepath, frontMatter, "utf8");
+  
+    console.log(`  → ${filepath}`);
+  }
+
+  /* -------------------------------------------------------------
+     SUMMARY
+  ------------------------------------------------------------- */
+  console.log("\nSUMMARY:");
+  console.log(`  Videos fetched: ${videos.length}`);
+  console.log(`  Playlists fetched: ${playlists.length}`);
+  console.log(`  Song thumbnails downloaded: ${videos.length}`);
+  console.log(`  Playlist thumbnails downloaded: ${playlists.filter(pl => pl.thumbnail).length}/${playlists.length}`);
+  console.log("  Feed written: _data/youtube_feed.yml");
+  console.log("  Playlists written: _data/youtube_playlists.yml");
+  console.log("  Music overrides: ", musicOverrides.length);
+  console.log("  Playlist overrides: ", playlistOverrides.length);
+  console.log("");
+  console.log("Done.");
+}
+
+async function xgenerate() {
   console.log("Fetching videos...");
   const videos = await fetchAllVideos();
 
