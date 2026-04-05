@@ -1004,13 +1004,17 @@ function hideEmptySections() {
 }
 
   document.addEventListener("click", e => {
-    const row = e.target.closest(".playlist-row");
-    if (!row) return;
+    if (!e.target.classList.contains("playlist-pill")) return;
   
-    const playlistId = row.getAttribute("data-playlist-id");
+    const playlistId = e.target.getAttribute("data-playlist-id");
     if (!playlistId) return;
   
-    window.location.href = `${window.BASEURL}/music/playlists/${playlistId}/`;
+    const playlist = window.YOUTUBE_PLAYLISTS.find(p => p.playlist_id === playlistId);
+    if (!playlist || !playlist.song_ids.length) return;
+  
+    const firstSongId = playlist.song_ids[0];
+  
+    window.location.href = `${window.BASEURL}/playlist/${playlistId}/?song_id=${firstSongId}`;
   });
 
 
