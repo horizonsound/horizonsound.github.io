@@ -7174,7 +7174,7 @@ songs:
     videostatus: public
     playlists:
       - 90s-pop-pop-rock
-    view_count_num: 37
+    view_count_num: 38
     youtube_metadata:
       published_at: '2026-01-13T15:30:30Z'
       scheduled_at: null
@@ -7191,7 +7191,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '37'
+        view_count: '38'
         like_count: '2'
         favorite_count: '0'
         comment_count: '1'
