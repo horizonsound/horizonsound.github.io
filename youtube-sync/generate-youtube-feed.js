@@ -104,56 +104,60 @@ function writeYaml(filepath, data) {
     return { clean, tags: normalized };
   }
   
-  function extractVibes(desc) {
-    if (!desc) return { descriptionWithoutVibes: "", vibes: [] };
-  
-    const vibeMarker = /^(🎧|🎤|🎛️|⚡|🎼|✨)/;
-  
-    const lines = desc.split("\n");
-  
-    let firstVibeIndex = -1;
-    let vibes = [];
-  
-    // Find first vibe line
-    for (let i = 0; i < lines.length; i++) {
-      if (vibeMarker.test(lines[i].trim())) {
-        firstVibeIndex = i;
-        break;
-      }
+function extractVibes(desc) {
+  if (!desc) return { descriptionWithoutVibes: "", vibes: [] };
+
+  const vibeMarker = /^(🎧|🎤|🎛️|⚡|🎼|✨)/;
+  const lines = desc.split("\n");
+
+  let firstVibeIndex = -1;
+  let vibes = [];
+
+  // Find first vibe line
+  for (let i = 0; i < lines.length; i++) {
+    if (vibeMarker.test(lines[i].trim())) {
+      firstVibeIndex = i;
+      break;
     }
-  
-    // No vibes → return untouched
-    if (firstVibeIndex === -1) {
-      if (playlistHeaderIndex !== -1) {
-        return {
-          descriptionWithoutVibes: lines.slice(0, playlistHeaderIndex).join("\n").trim(),
-          vibes: []
-        };
-      }
-    
-      // No vibes, no playlist block → return untouched
-      return { descriptionWithoutVibes: desc.trim(), vibes: [] };
+  }
+
+  // NEW: find playlist header fallback anchor
+  const playlistHeaderIndex = lines.findIndex(line =>
+    line.includes("playlist-header") || line.includes("🎵")
+  );
+
+  // CASE 1: No vibes found
+  if (firstVibeIndex === -1) {
+    // If playlist header exists → trim from there downward
+    if (playlistHeaderIndex !== -1) {
+      return {
+        descriptionWithoutVibes: lines.slice(0, playlistHeaderIndex).join("\n").trim(),
+        vibes: []
+      };
     }
 
-    // Collect consecutive vibe lines starting at firstVibeIndex
-    for (let i = firstVibeIndex; i < lines.length; i++) {
-      const line = lines[i].trim();
-      if (vibeMarker.test(line)) {
-        vibes.push(line);
-      } else {
-        // Stop at the first non‑vibe line
-        break;
-      }
-    }
-  
-    // Everything above the first vibe line stays
-    const descriptionWithoutVibes = lines
-      .slice(0, firstVibeIndex)
-      .join("\n")
-      .trim();
-  
-    return { descriptionWithoutVibes, vibes };
+    // No vibes, no playlist header → return untouched
+    return { descriptionWithoutVibes: desc.trim(), vibes: [] };
   }
+
+  // CASE 2: Vibes exist → collect them
+  for (let i = firstVibeIndex; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (vibeMarker.test(line)) {
+      vibes.push(line);
+    } else {
+      break;
+    }
+  }
+
+  // Everything above the first vibe line stays
+  const descriptionWithoutVibes = lines
+    .slice(0, firstVibeIndex)
+    .join("\n")
+    .trim();
+
+  return { descriptionWithoutVibes, vibes };
+}
   
   function stripHeaderBlock(desc) {
     if (!desc) return desc;
