@@ -802,6 +802,14 @@ p {
   display: inline-block;
 }
 
+.playlist-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* two equal columns */
+  column-gap: 1.25rem;              /* spacing between columns */
+  row-gap: 4px;                     /* vertical spacing between rows */
+  align-items: start;
+}
+
 </style>
    
   <!-- Load the playlist and override data -->
@@ -1162,8 +1170,10 @@ function onPlayerStateChange(event) {
         .slice()                 // defensive copy
         .sort((a, b) => (a.title || "").localeCompare(b.title || ""))
         .map(pl => `
-          <div class="playlist-row" data-playlist-id="${pl.playlist_id}">
-            <span class="playlist-title">📺 ${pl.title || pl.playlist_id}</span>
+          <div class="playlist-grid">
+            <div class="playlist-row" data-playlist-id="${pl.playlist_id}">
+              <span class="playlist-title">📺 ${pl.title || pl.playlist_id}</span>
+            </div>
           </div>
         `).join("");
     }
@@ -1175,8 +1185,10 @@ function onPlayerStateChange(event) {
         .slice()                 // defensive copy
         .sort((a, b) => (a.title || "").localeCompare(b.title || ""))
         .map(pl => `
-          <div class="playlist-row" data-playlist-id="${pl.playlist_id}">
-            <span class="playlist-title">📺 ${pl.title || pl.playlist_id}</span>
+          <div class="playlist-grid">
+            <div class="playlist-row" data-playlist-id="${pl.playlist_id}">
+              <span class="playlist-title">📺 ${pl.title || pl.playlist_id}</span>
+            </div>
           </div>
         `).join("");
     }
@@ -1188,8 +1200,10 @@ function onPlayerStateChange(event) {
         .slice()                 // defensive copy
         .sort((a, b) => (a.title || "").localeCompare(b.title || ""))
         .map(pl => `
-          <div class="playlist-row" data-playlist-id="${pl.playlist_id}">
-            <span class="playlist-title">📺 ${pl.title || pl.playlist_id}</span>
+          <div class="playlist-grid">
+            <div class="playlist-row" data-playlist-id="${pl.playlist_id}">
+              <span class="playlist-title">📺 ${pl.title || pl.playlist_id}</span>
+            </div>
           </div>
         `).join("");
     }
