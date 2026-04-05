@@ -2,7 +2,7 @@ overrides:
   - playlist_id: pop-instrumental-horizon-sound-instrumentals
     is_collection: false
     is_instrumental: true
-    title: Pop Instrumental – Horizon Sound Instrumentals
+    title: Pop Instrumental – Instrumentals
     subtitle: 
     description: ''
     thumbnail: /assets/playlist thumbnails/playlist - pop instrumental.jpg
@@ -13,7 +13,7 @@ overrides:
   - playlist_id: synthwave-retrowave-horizon-sound-instrumentals
     is_collection: false
     is_instrumental: true
-    title: Synthwave & Retrowave – Horizon Sound Instrumentals
+    title: Synthwave & Retrowave – Instrumentals
     subtitle: 
     description: ''
     thumbnail: /assets/playlist thumbnails/playlist - synthwave & retrowave instrumental.jpg
@@ -24,7 +24,7 @@ overrides:
   - playlist_id: orchestral-rock-tso-style-horizon-sound-instrumentals
     is_collection: false
     is_instrumental: true
-    title: Orchestral Rock (TSO‑Style) – Horizon Sound Instrumentals
+    title: Orchestral Rock (TSO‑Style) – Instrumentals
     subtitle: 
     description: ''
     thumbnail: /assets/playlist thumbnails/playlist - orchestral rock (tso-style).jpg
@@ -35,7 +35,7 @@ overrides:
   - playlist_id: piano-emotional-horizon-sound-instrumentals
     is_collection: false
     is_instrumental: true
-    title: Piano Emotional – Horizon Sound Instrumentals
+    title: Piano Emotional – Instrumentals
     subtitle: 
     description: ''
     thumbnail:  /assets/playlist thumbnails/playlist - emotional piano.jpg
@@ -46,7 +46,7 @@ overrides:
   - playlist_id: workout-edm-horizon-sound-instrumentals
     is_collection: false
     is_instrumental: true
-    title: Workout & EDM – Horizon Sound Instrumentals
+    title: Workout & EDM – Instrumentals
     subtitle: 
     description: ''
     thumbnail: /assets/playlist thumbnails/playlist - workout & edm - intrumental.jpg
@@ -57,7 +57,7 @@ overrides:
   - playlist_id: cinematic-ambient-horizon-sound-instrumentals
     is_collection: false
     is_instrumental: true
-    title: Cinematic & Ambient – Horizon Sound Instrumentals
+    title: Cinematic & Ambient – Instrumentals
     subtitle: 
     description: ''
     thumbnail: /assets/playlist thumbnails/playlist - cinematic & ambient.jpg
@@ -74,7 +74,7 @@ overrides:
   - playlist_id: electric-guitar-rock-horizon-sound-instrumentals
     is_collection: false
     is_instrumental: true
-    title: Electric Guitar Rock – Horizon Sound Instrumentals
+    title: Electric Guitar Rock – Instrumentals
     subtitle: 
     description: ''
     thumbnail: /assets/playlist thumbnails/playlist - electric guitar rock.jpg
@@ -91,7 +91,7 @@ overrides:
   - playlist_id: acoustic-guitar-horizon-sound-instrumentals
     is_collection: false
     is_instrumental: true
-    title: Acoustic Guitar – Horizon Sound Instrumentals
+    title: Acoustic Guitar – Instrumentals
     subtitle: 
     description: ''
     thumbnail: /assets/playlist thumbnails/playlist - acoustic guitar – instrumental.jpg
