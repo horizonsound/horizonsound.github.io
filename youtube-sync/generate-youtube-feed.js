@@ -124,9 +124,17 @@ function writeYaml(filepath, data) {
   
     // No vibes → return untouched
     if (firstVibeIndex === -1) {
+      if (playlistHeaderIndex !== -1) {
+        return {
+          descriptionWithoutVibes: lines.slice(0, playlistHeaderIndex).join("\n").trim(),
+          vibes: []
+        };
+      }
+    
+      // No vibes, no playlist block → return untouched
       return { descriptionWithoutVibes: desc.trim(), vibes: [] };
     }
-  
+
     // Collect consecutive vibe lines starting at firstVibeIndex
     for (let i = firstVibeIndex; i < lines.length; i++) {
       const line = lines[i].trim();
