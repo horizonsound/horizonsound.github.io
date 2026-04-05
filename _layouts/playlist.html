@@ -812,11 +812,26 @@ p {
 .playlist-link:hover {
   cursor: pointer;
 }
+
+  /* ============================================
+   GLOBAL MOBILE FIX — force full-width layout
+   ============================================ */
 @media (max-width: 1100px) {
-  .song-sections {
+
+  html,
+  body,
+  #page-root,
+  main,
+  .page-content,
+  .wrapper,
+  .container,
+  .content,
+  .centered-column {
     max-width: 100% !important;
-    margin: 20px 0 !important;
-    padding: 0 20px !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 }
 
