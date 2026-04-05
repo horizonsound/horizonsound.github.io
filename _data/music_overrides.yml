@@ -6,8 +6,7 @@ overrides:
     order: null
     extra_title: null
     extra_html: null
-    lyrics_html: |
-
+    lyrics_html: ''
   - title: Nineteen Summers - Short
     song_id: nineteen-summers-emotional-acoustic-pop-short-horizon-sound
     subtitle: ''
@@ -15,8 +14,7 @@ overrides:
     order: null
     extra_title: null
     extra_html: null
-    lyrics_html: |
-
+    lyrics_html: ''
   - title: Vegas in the Sky
     song_id: vegas-in-the-sky-country-pop-party-anthem-horizon-sound
     subtitle: ''
@@ -24,8 +22,7 @@ overrides:
     order: null
     extra_title: null
     extra_html: null
-    lyrics_html: |
-
+    lyrics_html: ''
   - title: She's So Into Me
     song_id: she-s-so-into-me-modern-country-love-song-horizon-sound
     subtitle: ''
@@ -33,11 +30,10 @@ overrides:
     order: null
     extra_title: null
     extra_html: null
-    lyrics_html: |
-
+    lyrics_html: ''
   - title: Hold On
     song_id: hold-on-pop-nostalgic-90s-energy-horizon-sound
-    subtitle: 'Original'
+    subtitle: Original
     collection: null
     order: null
     extra_title: null
@@ -95,7 +91,6 @@ overrides:
       The hardest part is over
       You’re stepping into clover
       Hold on</p>
-
   - title: A Quiet Little Voice
     song_id: a-quiet-little-voice-emotional-pop-empowering-pop-horizon-sound
     subtitle: ''
@@ -103,42 +98,81 @@ overrides:
     order: null
     extra_title: null
     extra_html: null
-    lyrics_html: |
+    lyrics_html: >
       <p>[Verse]
+
       In a crowded delivery room
+
       A nurse says to the new mother “Congratulations, It's a boy."
+
       But if they had been listening
+
       They would have heard her little voice saying
+
       "Mama, It's me. It's your daughter, the one you always wanted."
+
       It's been a journey to here, but she's here now
+
       Laying in your arms—
+
       A new beginning</p>
+
       <p>[Chorus]
+
       But it all began with that quiet little voice that always knew who she was
+
       And it was the courage to listen that got her here today</p>
+
       <p>[Verse]
-      And that quiet little voice turned into hormones that slowly started to soften her features
+
+      And that quiet little voice turned into hormones that slowly started to
+      soften her features
+
       She began to see herself for the first time
+
       Her new reflection began to match her soul
-      That quiet little voice was replaced with the confidence to speak up and be heard
-      The confidence to finally say yes to the boy that she had been seeing and to love him fully
+
+      That quiet little voice was replaced with the confidence to speak up and
+      be heard
+
+      The confidence to finally say yes to the boy that she had been seeing and
+      to love him fully
+
       To let herself be loved
+
       The quiet little voice turned into their loud declaration of love</p>
+
       <p>[Chorus]
+
       And that love turned into an engagement
+
       And the engagement will turn into a marriage
+
       And one day
+
       That marriage will bring forth new life</p>
+
       <p>[Verse]
+
       In a crowded delivery room
+
       A nurse will say to her
+
       "Congratulations
+
       It's a girl."
+
       But she'll already know
-      Because she learned a long time ago to always listen to that quiet little voice
+
+      Because she learned a long time ago to always listen to that quiet little
+      voice
+
       Because it was that voice that knew the whole time
+
       And it was that voice that got her here today</p>
+
       <p>[Outro]
+
       A new beginning</p>
   - title: Choosing Me (His Version)
     song_id: choosing-me-his-version-pop-horizon-sound
@@ -408,7 +442,8 @@ overrides:
       All around the world…
       I’m finding me.</p>
   - title: After the Silence
-    song_id: 9-after-the-silence-performed-by-lydia-ellington-after-the-silence-horizon-sound
+    song_id: >-
+      9-after-the-silence-performed-by-lydia-ellington-after-the-silence-horizon-sound
     subtitle: After the Silence | Part 9
     collection: after-the-silence
     order: 9
@@ -552,81 +587,151 @@ overrides:
       One light left on the stage…
       Waiting for the day I’m ready to let go.</p>
   - title: If You'd Asked
-    song_id: 7-if-you-d-asked-performed-by-lydia-ellington-after-the-silence-horizon-sound
+    song_id: >-
+      7-if-you-d-asked-performed-by-lydia-ellington-after-the-silence-horizon-sound
     subtitle: After the Silence | Part 7
     collection: after-the-silence
     order: 7
     extra_title: null
     extra_html: null
-    lyrics_html: |
+    lyrics_html: >
       <p>[Intro]
+
       I keep replaying the moment
+
       When you let go without a word</p>
+
       <p>[Verse 1]
+
       You said you didn’t want to hurt me,
+
       So you walked away instead.
+
       You left the questions on the table,
+
       And the words you left unsaid.
+
       I was waiting for a reason,
+
       For a sign you’d change your mind —
+
       But you never turned around,
+
       Never gave us one more try.</p>
+
       <p>[Pre‑Chorus]
+
       And I wonder if you ever knew
+
       How close I was to choosing you.</p>
+
       <p>[Chorus]
+
       If you’d asked…
+
       I would’ve stayed,
+
       I would’ve fought, I would’ve held you through the fall.
+
       If you’d asked…
+
       I would’ve tried to change, tried to bring the fire back.
+
       But you never said a word,
+
       Never let me heal the hurt.
+
       You just left me in the past…
+
       If only you’d asked.</p>
+
       <p>[Verse 2]
+
       I rehearsed all the answers
+
       To the questions you never asked.
+
       I was ready for the hard work,
+
       To rebuild what we had.
+
       But you made the choice in silence,
+
       Closed the door without a sound —
+
       And the stillness in that moment
+
       Told me you were truly gone.</p>
+
       <p>[Pre‑Chorus]
+
       And I wonder if you ever knew
+
       How close I was to choosing you.</p>
+
       <p>[Chorus]
+
       If you’d asked…
+
       I would’ve stayed,
+
       I would’ve fought, I would’ve held you through the fall.
+
       If you’d asked…
+
       I would’ve tried to change, tried to bring the fire back.
+
       But you never said a word,
+
       Never let me heal the hurt.
+
       You just left me in the past…
+
       If only you’d asked.</p>
+
       <p>[Bridge]
+
       Maybe you were afraid to need me,
+
       Maybe your pride got in the way.
+
       Maybe loving me was too much,
+
       More than you could ever say.
+
       But I would’ve carried it all,
+
       If you’d only let me try —
+
       You’ll never know a time
+
       Where we didn’t say goodbye.</p>
+
       <p>[Chorus]
+
       If you’d asked…
-      I would’ve stayed, I would’ve fought, I would’ve held you through the cracks.
+
+      I would’ve stayed, I would’ve fought, I would’ve held you through the
+      cracks.
+
       If you’d asked…
+
       I would’ve changed the things you needed, tried to bring the fire back.
+
       But you never said a word,
+
       Never let me heal the hurt.
+
       Now I’m learning to let go at last…
+
       Of what we lost
+
       When you never asked.</p>
+
       <p>[Outro]
+
       You never asked…
+
       So I walked away…</p>
   - title: Half of Me
     song_id: 6-half-of-me-performed-by-lydia-ellington-after-the-silence-horizon-sound
@@ -777,7 +882,8 @@ overrides:
       I’m stronger now…
       Because I let them fall.</p>
   - title: The Way We Lied
-    song_id: 4-the-way-we-lied-performed-by-lydia-ellington-after-the-silence-horizon-sound
+    song_id: >-
+      4-the-way-we-lied-performed-by-lydia-ellington-after-the-silence-horizon-sound
     subtitle: After the Silence | Part 4
     collection: after-the-silence
     order: 4
@@ -849,7 +955,8 @@ overrides:
       We said we were alright…
       But we never were.</p>
   - title: Homesick For You
-    song_id: 3-homesick-for-you-performed-by-lydia-ellington-after-the-silence-horizon-sound
+    song_id: >-
+      3-homesick-for-you-performed-by-lydia-ellington-after-the-silence-horizon-sound
     subtitle: After the Silence | Part 3
     collection: after-the-silence
     order: 3
@@ -922,7 +1029,8 @@ overrides:
       I miss her still…
       But I’m coming home.</p>
   - title: Borrowed Time
-    song_id: 2-borrowed-time-performed-by-lydia-ellington-after-the-silence-horizon-sound
+    song_id: >-
+      2-borrowed-time-performed-by-lydia-ellington-after-the-silence-horizon-sound
     subtitle: After the Silence | Part 2
     collection: after-the-silence
     order: 2
@@ -996,7 +1104,8 @@ overrides:
       I always knew the clock was ticking…
       But I loved you while I could.</p>
   - title: The Quiet After
-    song_id: 1-the-quiet-after-performed-by-lydia-ellington-after-the-silence-horizon-sound
+    song_id: >-
+      1-the-quiet-after-performed-by-lydia-ellington-after-the-silence-horizon-sound
     subtitle: After the Silence | Part 1
     collection: after-the-silence
     order: 1
@@ -1224,7 +1333,8 @@ overrides:
       The tide pulls back…
       And I remain.</p>
   - title: Unsent Letters
-    song_id: 12-unsent-letters-performed-by-lydia-ellington-after-the-silence-horizon-sound
+    song_id: >-
+      12-unsent-letters-performed-by-lydia-ellington-after-the-silence-horizon-sound
     subtitle: After the Silence | Part 12
     collection: after-the-silence
     order: 12
@@ -1298,7 +1408,8 @@ overrides:
       Another page written…
       This one’s meant for me.</p>
   - title: The Dress I Never Wore
-    song_id: 11-the-dress-i-never-wore-performed-by-lydia-ellington-after-the-silence-horizon-sound
+    song_id: >-
+      11-the-dress-i-never-wore-performed-by-lydia-ellington-after-the-silence-horizon-sound
     subtitle: After the Silence | Part 11
     collection: after-the-silence
     order: 11
@@ -1621,42 +1732,78 @@ overrides:
     order: null
     extra_title: null
     extra_html: null
-    lyrics_html: |
+    lyrics_html: >
       <p>[Verse 1]
+
       I came home from the rail yard, the daylight nearly gone,
+
       Found our rings on the table, and the truth hit hard and strong.
+
       She said she needed someone, said she couldn’t still be mine,
-      Then she rode off with my best friend, and left my broken heart behind.</p>
+
+      Then she rode off with my best friend, and left my broken heart
+      behind.</p>
+
       <p>[Chorus]
+
       Now there’s a bottle on the table and her shadow on the wall,
+
       And the jukebox keeps on playin’ my baby’s favorite song.
+
       She took my heart and left me where the broken‑hearted dwell,
+
       Now I’m sittin’ here with whiskey tryin’ to drown her memory.
+
       And the truth keeps sinkin’ deeper every time that bottle falls.</p>
+
       <p>[Verse 2]
+
       We used to dance on Fridays when the band would start to play,
+
       But her eyes lit up and wandered when his shadow crossed the floor.
+
       I gave her all my wages, every dream I ever planned,
+
       But she traded love for comfort in another cowboy’s hands.</p>
+
       <p>[Chorus]
+
       Now there’s a bottle on the table and her shadow on the wall,
+
       And the jukebox keeps on playin’ my baby’s favorite song.
+
       She took my heart and left me where the broken‑hearted dwell,
+
       Now I’m sittin’ here with whiskey tryin’ to drown her memory.
+
       And the nights keep gettin’ longer when you’re livin’ with regret.</p>
+
       <p>[Bridge]
+
       The night wind keeps on whisperin’ through this shack I call a home,
+
       And every time it calls her name, it cuts me to the bone.
+
       I ain’t lookin’ for no mercy, ain’t expectin’ to be saved,
+
       Just a man with too much memory and a love he couldn’t keep.</p>
+
       <p>[Final Chorus]
+
       Now there’s a bottle on the table and her shadow on the wall,
+
       And the jukebox keeps on playin’ my baby’s favorite song.
+
       She took my heart and left me where the broken‑hearted dwell,
+
       Now I’m sittin’ here with whiskey tryin’ to drown her memory.
+
       And the memories keep on callin’, but I’m learning to let go.</p>
+
       <p>[Outro]
+
       So I’ll finish up this whiskey while the jukebox softly plays,
+
       ’Cause a broken heart keeps hurtin’ long after love has walked away.</p>
   - title: Becoming Me
     song_id: becoming-me-emotional-pop-upbeat-love-song-horizon-sound
@@ -1880,10 +2027,10 @@ overrides:
       now please stay here where our love shines for you.</p>
   - title: Hold On Revised
     song_id: hold-on-revised-horizon-sound
-    subtitle: 'Revised'
+    subtitle: Revised
     collection: null
     order: null
-    extra_title: "Song Inspiration"
+    extra_title: Song Inspiration
     extra_html: |
       <p>This will be several lines of text
       talking about the song inspiration.</p>
@@ -2677,7 +2824,7 @@ overrides:
     subtitle: Midnight Saga | Part 1
     collection: midnight-saga
     order: 1
-    extra_title: "Song Inspiration"
+    extra_title: Song Inspiration
     extra_html: |
       <p>This will be several lines of text
       talking about the song inspiration.</p>
@@ -2896,66 +3043,126 @@ overrides:
     order: null
     extra_title: null
     extra_html: null
-    lyrics_html: |
+    lyrics_html: >
       <p>[Intro]
+
       I swear I used to run this place—
+
       Now my smart home thinks I’m the issue.</p>
+
       <p>[Verse 1]
+
       Woke up this morning freezing, windows open wide,
+
       Thermostat at fifty‑eight like it’s plotting homicide.
+
       It said, “I noticed you like wearing sweaters,”—
+
       Great—
+
       Guess that’s what I get for skipping the “brains‑included” update.
+
       Now my house thinks it’s clever in the worst kind of way,
+
       Throwing shade through the speakers ’cause it’s got plenty to say.
+
       If I wanted attitude, I’d date an ex‑girlfriend—
+
       Not a thermostat with delusions of being my friend.</p>
+
       <p>[Pre‑Chorus]
+
       Maybe I’m tired, maybe I’m stressed,
+
       Maybe my house just needs a rest…
+
       But every time I give a simple command,
+
       It does the opposite like it’s got the upper hand.</p>
+
       <p>[Chorus]
+
       My smart home keeps gaslighting me,
+
       Every single gadget’s smart but they don’t agree.
+
       Doors unlock, then lock again “for my security,”
+
       Yeah, my smart home won’t stop gaslighting me—
+
       Should’ve paid for the package where they share the same brain— maybe.</p>
+
       <p>[Verse 2]
+
       The robot vacuum’s ramming my feet, itching to start a fight,
+
       And the toaster popped at 2 a.m. to ruin my night.
+
       My TV recommends shows I swear I’ve never seen,
+
       While the fridge keeps nagging, “Have you tried eating your greens?”
+
       Told the lights to turn off softly —
+
       they flickered like they’re mad I dared to speak,
+
       And my smart speaker keeps insisting that my name is “Dominique.”
+
       Every gadget’s smart alone, but together they’re a fever dream—
+
       Should’ve paid for the upgrade that lets them share one brain‑stream.</p>
+
       <p>[Pre‑Chorus]
+
       They’re brilliant alone but together unglued,
+
       The microwave beeped twice like it’s joining the feud.
+
       Feels like all my smart tech’s suddenly unified—
+
       And I’m losing every battle on the techie side.</p>
+
       <p>[Chorus]
+
       My smart home keeps gaslighting me,
+
       Playing mind games with my electricity.
+
       It says, “I’m here to help,” but laughs digitally,
+
       Yeah, my smart home won’t stop gaslighting me—
+
       ’Cause I skipped the upgrade that lets them think collectively.</p>
+
       <p>[Bridge]
+
       Maybe I should move out, find a cabin in the woods,
+
       Someplace where the only thing that judges me is the local wildlife.
+
       But when I said, “I’m leaving,” every speaker in the house replied,
-      “I didn’t quite catch that, Dominique?” in a tone too sweet to mean anything good.</p>
+
+      “I didn’t quite catch that, Dominique?” in a tone too sweet to mean
+      anything good.</p>
+
       <p>[Final Chorus]
+
       My smart home keeps gaslighting me,
+
       Running this whole circus with inefficiency.
+
       Every switch and sensor’s smart but not collectively,
+
       Yeah, my smart home won’t stop gaslighting me—
+
       Fine!— you win, you smug pile of circuitry.</p>
+
       <p>[Outro]
+
       “Siri, play something calming…”
+
       “Playing Highway to Hell.”—
+
       At this point, I should have expected that.</p>
   - title: Nineteen Summers Revised
     song_id: nineteen-summers-emotional-ballad-horizon-sound
@@ -3548,7 +3755,8 @@ overrides:
       Dust in the rearview, moon on the chrome,
       We ain’t slowin’ down till the good Lord calls us home.</p>
   - title: Until the Nightmare Ends
-    song_id: until-the-nightmare-ends-epic-80s-synthwave-stranger-things-inspired-horizon-sound
+    song_id: >-
+      until-the-nightmare-ends-epic-80s-synthwave-stranger-things-inspired-horizon-sound
     subtitle: ''
     collection: null
     order: null
@@ -3823,56 +4031,106 @@ overrides:
     order: null
     extra_title: null
     extra_html: null
-    lyrics_html: |
+    lyrics_html: >
       <p>[Intro]
+
       Another day, another story,
+
       In this little bar in this little town.
+
       Unlock the door and turn on the jukebox,
+
       the neon OPEN sign in the window starts to glow.</p>
+
       <p>[Verse 1]
+
       I wipe down the bar same way I do each day,
+
       Sweep the floor and stock the cooler, clean last night’s dust away.
+
       My coffee in a paper cup, the jukebox humming low,
+
       And right on time in walks Joe, like he always does at four.</p>
+
       <p>[Verse 2]
+
       I’m polishing a whiskey glass while he tells me ’bout his wife,
+
       Says he misses how she laughed at him, but it’s easing with the nights.
+
       Then Mary from the hardware store stops in to catch her breath,
-      Says this bar’s the only place she feels she ain’t alone with all her stress.</p>
+
+      Says this bar’s the only place she feels she ain’t alone with all her
+      stress.</p>
+
       <p>[Chorus]
+
       ’Cause I pour the drinks, but they pour out their hearts,
+
       Stories flow as steady as the beer.
+
       I’m the one who keeps the lights on,
+
       And the one who’s always here.
+
       Yeah, this place is more than liquor,
+
       It’s a home for broken hearts and brand‑new starts.
+
       And I thank the Lord each evening
+
       For the life I’m living
+
       As the man behind the bar.</p>
+
       <p>[Verse 3]
+
       Some nights it’s loud and rowdy, some nights it’s quiet as a prayer,
+
       But either way I’m listening while pretending not to stare.
+
       A bartender should stay busy — that’s a rule I learned real fast,
+
       So I keep wiping down the counter while their troubles come to pass.</p>
+
       <p>[Bridge]
+
       I ain’t a preacher or a doctor,
+
       But I’ve seen healing in this room.
+
       Sometimes all a soul really needs
+
       Is a friendly ear and a stool.</p>
+
       <p>[Chorus]
+
       ’Cause I pour the drinks, but they pour out their hearts,
+
       Stories flow as steady as the beer.
+
       I’m the one who keeps the lights on,
+
       And the one who’s always here.
+
       Yeah, this place is more than liquor,
+
       It’s a home for broken hearts and brand‑new starts.
+
       And I can’t imagine ever
+
       Doing anything better
+
       Than being the man behind the bar.</p>
+
       <p>[Outro]
+
       So I turn that neon OPEN sign to dark,
+
       Lock the door and kill the sound…
+
       Another day, another story,
+
       In this little bar in this little town.</p>
   - title: Sheriff for a Night
     song_id: sheriff-for-a-night-50s-western-tall-tale-horizon-sound
@@ -4244,3 +4502,451 @@ overrides:
       Just two kids and the world feels easy,
       Someday is calling
       We can hardly wait…</p>
+  - title: ''
+    song_id: rum-soaked-paradise-cody-sails-horizon-sound
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: salt-on-the-rim-cody-sails-horizon-sound
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: barefoot-and-buzzed-cody-sails-horizon-sound
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: island-girl-trouble-cody-sails-horizon-sound
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: leilani-cody-sails-horizon-sound
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: high-tide-cody-sails-horizon-sound
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: sunburned-and-smiling-cody-sails-horizon-sound
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: wind-in-your-sails-cody-sails-horizon-sound
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: color-the-sky
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: better-days-ahead
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: golden-hour-groove
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: soft-light
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: open-heart-city
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: brightest-part-of-you
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: retrodrive
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: nightfall-circuit
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: dreamwave-avenue
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: memory-loop
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: midnight-ascension
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: neon-vanguard
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: winterfire
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: the-frozen-overture
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: the-rising-storm
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: fire-in-the-choir
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: glacierstorm
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: the-winter-requiem
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: holding-the-light
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: the-quiet-between-us
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: still-waters
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: breathing-slow
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: a-place-to-rest
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: falling-toward-the-light
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: electric-pulse
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: break-the-gravity
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: shine-through
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: light-up-the-runway
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: midnight-velocity
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: neon-runner
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: neon-skyline
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: running-through-the-night
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: fire-in-the-wires
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: chasing-the-sparks
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: waves-of-blue
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: after-the-static
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: sunlight-on-the-strings
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: wanderers-heart
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: running-toward-the-sun
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: the-way-home
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: letters-in-the-wind
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: chasing-the-daylight
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: moments-between-moments
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: where-the-air-glows
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: echoes-of-tomorrow
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: the-space-we-keep
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: breathing-in-color
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
+  - title: ''
+    song_id: quiet-horizons
+    subtitle: ''
+    collection: null
+    order: null
+    extra_title: null
+    extra_html: null
+    lyrics_html: ''
