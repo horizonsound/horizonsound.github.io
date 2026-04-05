@@ -897,10 +897,6 @@ p {
       {% endif %}
     {% endfor %}
 
-    {% if playlist_override.is_collection != true %}
-      {% assign ordered_songs = ordered_songs | sort: "title" %}
-    {% endif %}
-
     <div id="selected-song-player" class="player-frame player-frame--purple">
         
         <div class="player-frame-inner">
