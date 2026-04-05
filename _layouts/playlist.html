@@ -790,7 +790,7 @@ p {
   display: inline-flex;
 }
   
-.playlist-row:hover {
+.playlist-title:hover {
   cursor: pointer;
 }
 
@@ -1154,7 +1154,7 @@ function onPlayerStateChange(event) {
         .map(pl => `
           <div class="playlist-row" data-playlist-id="${pl.playlist_id}">
             <span class="playlist-icon">📺</span>
-            ${pl.title || pl.playlist_id}
+            <span class="playlist-title">${pl.title}</span>
           </div>
         `).join("");
     }
@@ -1166,7 +1166,7 @@ function onPlayerStateChange(event) {
         .map(pl => `
           <div class="playlist-row" data-playlist-id="${pl.playlist_id}">
             <span class="playlist-icon">📺</span>
-            ${pl.title || pl.playlist_id}
+            <span class="playlist-title">${pl.title}</span>
           </div>
         `).join("");
     }
@@ -1178,7 +1178,7 @@ function onPlayerStateChange(event) {
         .map(pl => `
           <div class="playlist-row" data-playlist-id="${pl.playlist_id}">
             <span class="playlist-icon">📺</span>
-            ${pl.title || pl.playlist_id}
+            <span class="playlist-title">${pl.title}</span>
           </div>
         `).join("");
     }
