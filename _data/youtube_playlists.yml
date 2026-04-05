@@ -20,8 +20,8 @@ playlists:
       - high-tide-cody-sails-horizon-sound
       - sunburned-and-smiling-cody-sails-horizon-sound
       - wind-in-your-sails-cody-sails-horizon-sound
-  - playlist_id: pop-instrumental-horizon-sound-instrumentals
-    title: Pop Instrumental – Horizon Sound Instrumentals
+  - playlist_id: pop-instrumental-instrumentals
+    title: Pop Instrumental – Instrumentals
     description: >-
       Bright, modern pop instrumentals built around uplifting melodies, clean
       production, and feel‑good energy. Perfect for creators, storytelling, or
@@ -38,8 +38,8 @@ playlists:
       - soft-light
       - open-heart-city
       - brightest-part-of-you
-  - playlist_id: synthwave-retrowave-horizon-sound-instrumentals
-    title: Synthwave & Retrowave – Horizon Sound Instrumentals
+  - playlist_id: synthwave-retrowave-instrumentals
+    title: Synthwave & Retrowave – Instrumentals
     description: >-
       A neon‑lit blend of retro synths, pulsing basslines, and cinematic
       nostalgia. These instrumentals channel the glow of 80s futurism with a
@@ -56,8 +56,8 @@ playlists:
       - memory-loop
       - midnight-ascension
       - neon-vanguard
-  - playlist_id: orchestral-rock-tso-style-horizon-sound-instrumentals
-    title: Orchestral Rock (TSO‑Style) – Horizon Sound Instrumentals
+  - playlist_id: orchestral-rock-tso-style-instrumentals
+    title: Orchestral Rock (TSO‑Style) – Instrumentals
     description: >-
       Epic, high‑drama instrumentals blending rock power with orchestral scale.
       Sweeping strings, bold percussion, and electric energy come together in a
@@ -74,8 +74,8 @@ playlists:
       - fire-in-the-choir
       - glacierstorm
       - the-winter-requiem
-  - playlist_id: piano-emotional-horizon-sound-instrumentals
-    title: Piano Emotional – Horizon Sound Instrumentals
+  - playlist_id: piano-emotional-instrumentals
+    title: Piano Emotional – Instrumentals
     description: >-
       Intimate, reflective piano pieces shaped around warmth, space, and
       emotional depth. These tracks create a quiet world of stillness and
@@ -93,8 +93,8 @@ playlists:
       - breathing-slow
       - a-place-to-rest
       - falling-toward-the-light
-  - playlist_id: workout-edm-horizon-sound-instrumentals
-    title: Workout & EDM – Horizon Sound Instrumentals
+  - playlist_id: workout-edm-instrumentals
+    title: Workout & EDM – Instrumentals
     description: >-
       High‑energy electronic instrumentals built for movement, motivation, and
       momentum. Driving beats, bright synths, and dynamic drops deliver a clean,
@@ -111,8 +111,8 @@ playlists:
       - light-up-the-runway
       - midnight-velocity
       - neon-runner
-  - playlist_id: electric-guitar-rock-horizon-sound-instrumentals
-    title: Electric Guitar Rock – Horizon Sound Instrumentals
+  - playlist_id: electric-guitar-rock-instrumentals
+    title: Electric Guitar Rock – Instrumentals
     description: >-
       A collection of electric‑driven rock instrumentals filled with grit,
       atmosphere, and cinematic edge. From soaring leads to moody riffs, these
@@ -121,8 +121,7 @@ playlists:
     published_at: '2026-03-20T00:12:32.714184Z'
     channel_id: UCiko-zjojbsoXrsEuBOPbSw
     channel_title: Horizon Sound
-    thumbnail: >-
-      /assets/thumbnails/playlist-electric-guitar-rock-horizon-sound-instrumentals.jpeg
+    thumbnail: /assets/thumbnails/playlist-electric-guitar-rock-instrumentals.jpeg
     song_ids:
       - neon-skyline
       - running-through-the-night
@@ -130,8 +129,8 @@ playlists:
       - chasing-the-sparks
       - waves-of-blue
       - after-the-static
-  - playlist_id: acoustic-guitar-horizon-sound-instrumentals
-    title: Acoustic Guitar – Horizon Sound Instrumentals
+  - playlist_id: acoustic-guitar-instrumentals
+    title: Acoustic Guitar - Instrumentals
     description: >-
       Warm, organic acoustic instrumentals shaped by gentle strumming, heartfelt
       melodies, and a sense of open‑air simplicity. Perfect for storytelling,
@@ -140,8 +139,7 @@ playlists:
     published_at: '2026-03-20T00:11:49.597984Z'
     channel_id: UCiko-zjojbsoXrsEuBOPbSw
     channel_title: Horizon Sound
-    thumbnail: >-
-      /assets/thumbnails/playlist-acoustic-guitar-horizon-sound-instrumentals.jpeg
+    thumbnail: /assets/thumbnails/playlist-acoustic-guitar-instrumentals.jpeg
     song_ids:
       - sunlight-on-the-strings
       - wanderers-heart
@@ -149,8 +147,8 @@ playlists:
       - the-way-home
       - letters-in-the-wind
       - chasing-the-daylight
-  - playlist_id: cinematic-ambient-horizon-sound-instrumentals
-    title: Cinematic & Ambient – Horizon Sound Instrumentals
+  - playlist_id: cinematic-ambient-instrumentals
+    title: Cinematic & Ambient – Instrumentals
     description: >-
       Atmospheric, spacious instrumentals designed to evoke mood, movement, and
       quiet wonder. These tracks blend soft textures, evolving soundscapes, and
@@ -159,8 +157,7 @@ playlists:
     published_at: '2026-03-20T00:10:44.520832Z'
     channel_id: UCiko-zjojbsoXrsEuBOPbSw
     channel_title: Horizon Sound
-    thumbnail: >-
-      /assets/thumbnails/playlist-cinematic-ambient-horizon-sound-instrumentals.jpeg
+    thumbnail: /assets/thumbnails/playlist-cinematic-ambient-instrumentals.jpeg
     song_ids:
       - moments-between-moments
       - where-the-air-glows
@@ -183,15 +180,14 @@ playlists:
       - back-to-amarillo-50s-country-western-romance-horizon-sound
       - bottle-on-the-table-country-western-horizon-sound
       - sheriff-for-a-night-50s-western-tall-tale-horizon-sound
-  - playlist_id: calm-cinematic-horizon-sound-instrumentals
-    title: Calm & Cinematic - Horizon Sound Instrumentals
+  - playlist_id: calm-cinematic-instrumentals
+    title: Calm & Cinematic - Instrumentals
     description: ''
     tags: []
     published_at: '2026-02-07T10:43:53.382218Z'
     channel_id: UCiko-zjojbsoXrsEuBOPbSw
     channel_title: Horizon Sound
-    thumbnail: >-
-      /assets/thumbnails/playlist-calm-cinematic-horizon-sound-instrumentals.jpeg
+    thumbnail: /assets/thumbnails/playlist-calm-cinematic-instrumentals.jpeg
     song_ids:
       - a-touch-of-light-cinematic-instrumental-horizon-sound
       - forever-in-a-moment-cinematic-instrumental-horizon-sound
