@@ -1161,8 +1161,7 @@ function onPlayerStateChange(event) {
       explorerHTML += premium
         .map(pl => `
           <div class="playlist-row" data-playlist-id="${pl.playlist_id}">
-            <span class="playlist-icon">📺</span>
-            <span class="playlist-title">${pl.title || pl.playlist_id}</span>
+            <span class="playlist-title">📺 ${pl.title || pl.playlist_id}</span>
           </div>
         `).join("");
     }
@@ -1173,8 +1172,7 @@ function onPlayerStateChange(event) {
       explorerHTML += genre
         .map(pl => `
           <div class="playlist-row" data-playlist-id="${pl.playlist_id}">
-            <span class="playlist-icon">📺</span>
-            <span class="playlist-title">${pl.title || pl.playlist_id}</span>
+            <span class="playlist-title">📺 ${pl.title || pl.playlist_id}</span>
           </div>
         `).join("");
     }
@@ -1185,8 +1183,7 @@ function onPlayerStateChange(event) {
       explorerHTML += instrumental
         .map(pl => `
           <div class="playlist-row" data-playlist-id="${pl.playlist_id}">
-            <span class="playlist-icon">📺</span>
-            <span class="playlist-title">${pl.title || pl.playlist_id}</span>
+            <span class="playlist-title">📺 ${pl.title || pl.playlist_id}</span>
           </div>
         `).join("");
     }
