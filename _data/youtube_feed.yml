@@ -1365,7 +1365,7 @@ songs:
     videostatus: scheduled
     playlists:
       - orchestral-rock-tso-style-horizon-sound-instrumentals
-    view_count_num: 3
+    view_count_num: 4
     youtube_metadata:
       published_at: '2026-03-22T13:00:19Z'
       scheduled_at: '2026-04-25T12:00:00Z'
@@ -1382,7 +1382,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '3'
+        view_count: '4'
         like_count: '0'
         favorite_count: '0'
         comment_count: '0'
