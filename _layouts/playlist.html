@@ -844,29 +844,6 @@ p {
 
 
 
-    <div class="default-hero" style="{% if hero_image %}display:none{% else %}display:block{% endif %}">
-      {% include hero.html %}
-    </div>
-
-    <!-- Playlist Header -->
-    {% assign header_title = playlist_override.title | default: playlist.title %}
-    {% assign header_subtitle = playlist_override.subtitle %}
-    <div class="playlist-header">
-      {% if header_title %}
-        <h1 class="playlist-title">{{ header_title }}</h1>
-      {% endif %}
-      {% if header_subtitle %}
-        <h2 class="playlist-title">{{ header_subtitle }}</h2>
-      {% endif %}
-    </div>
-
-    <!-- Playlist Description -->
-    {% assign playlist_description = playlist_override.description %}
-    {% if playlist_description %}
-      <div class="playlist-description">
-        {{ playlist_description }}
-      </div>
-    {% endif %}
     
     {% assign window_days = site.data.site.settings.coming_soon_window_days %}
     {% assign window_seconds = window_days | times: 86400 %}
