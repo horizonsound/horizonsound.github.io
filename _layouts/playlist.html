@@ -655,14 +655,7 @@ p {
   word-break: break-word !important;
 }
 
-.playlist-header {
-  text-align: left !important;
-  margin-top: 2rem !important;
-  margin-bottom: 0.5rem !important;
-  width: 1200px !important;
-}
-
-  .song-sections {
+.song-sections {
   max-width: 800px;
   margin: 40px auto;
 }
@@ -813,6 +806,22 @@ p {
   cursor: pointer;
 }
 
+  
+  .playlist-header {
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 40px;
+}
+
+@media (min-width: 1100px) {
+  .playlist-header {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 </style>
 
 <!-- Load the playlist and override data -->
@@ -857,14 +866,14 @@ p {
     <!-- Playlist Header -->
     {% assign header_title = playlist_override.title | default: playlist.title %}
     {% assign header_subtitle = playlist_override.subtitle %}
-    <!-- <div class="playlist-header"> -->
+    <div class="playlist-header">
       {% if header_title %}
         <h1 class="playlist-title">{{ header_title }}</h1>
       {% endif %}
       {% if header_subtitle %}
         <h2 class="playlist-title">{{ header_subtitle }}</h2>
       {% endif %}
-    <!-- </div> -->
+    </div>
 
 
 
