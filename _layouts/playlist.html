@@ -617,10 +617,6 @@ p {
   margin-bottom: 0.5rem !important;
 }
 
-
-
-
-
 .centered-column {
   max-width: 1200px !important;
   width: 1200px !important;
@@ -655,14 +651,7 @@ p {
   word-break: break-word !important;
 }
 
-.playlist-header {
-  text-align: left !important;
-  margin-top: 2rem !important;
-  margin-bottom: 0.5rem !important;
-  width: 1200px !important;
-}
-
-  .song-sections {
+.song-sections {
   max-width: 800px;
   margin: 40px auto;
 }
@@ -813,9 +802,25 @@ p {
   cursor: pointer;
 }
 
+  
+  .playlist-header {
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 40px;
+}
+
+@media (min-width: 1100px) {
+  .playlist-header {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 </style>
-   
-  <!-- Load the playlist and override data -->
+
+<!-- Load the playlist and override data -->
   {% assign playlist = site.data.youtube_playlists.playlists
     | where: "playlist_id", page.playlist_id
     | first %}
@@ -837,7 +842,7 @@ p {
       window.SELECTED_SONG_ID = params.get("song_id") || null;
     </script>
 
-    <!-- Hero -->
+      <!-- Hero -->
     {% assign hero_image = playlist_override.hero | default: playlist.hero %}
     
     <div class="hero-banner" style="{% if hero_image %}display:block{% else %}display:none{% endif %}">
@@ -845,7 +850,7 @@ p {
         <img class="hero-image" src="{{ site.baseurl }}{{ hero_image }}" alt="{{ playlist.title }}">
       {% endif %}
     </div>
-    
+
     <div class="default-hero" style="{% if hero_image %}display:none{% else %}display:block{% endif %}">
       {% include hero.html %}
     </div>
@@ -908,7 +913,7 @@ p {
             {% include carousel.html songs=ordered_songs playlist_id=playlist.playlist_id %}
         </div>
     </div>
-
+   
 <div class="song-sections">
 
   <!-- DESCRIPTION (always shown) -->
