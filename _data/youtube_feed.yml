@@ -5549,7 +5549,7 @@ songs:
     videostatus: public
     playlists:
       - after-the-silence-performed-by-lydia-ellington
-    view_count_num: 22
+    view_count_num: 23
     youtube_metadata:
       published_at: '2026-03-31T16:00:39Z'
       scheduled_at: null
@@ -5566,13 +5566,14 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '22'
+        view_count: '23'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
       made_for_kids: false
       self_declared_made_for_kids: false
       topic_categories:
+        - https://en.wikipedia.org/wiki/Electronic_music
         - https://en.wikipedia.org/wiki/Music
         - https://en.wikipedia.org/wiki/Pop_music
         - https://en.wikipedia.org/wiki/Soul_music
