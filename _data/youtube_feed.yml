@@ -3267,6 +3267,81 @@ songs:
       license: ''
       embeddable: true
       public_stats_viewable: true
+  - song_id: sheriff-for-a-night-50s-western-tall-tale-horizon-sound
+    youtube_id: oMSIQ5Gv2ZI
+    title: Sheriff for a Night (50s Western Tall‑Tale) – Horizon Sound
+    description_html: >-
+      <p>“Sheriff for a Night” is a playful, vintage‑inspired 1950s Western tune
+      built on twangy guitars, upright bass, brushed drums, and a warm baritone
+      vocal. Blending classic cowboy storytelling with a comedic tall‑tale
+      twist, the track captures the dusty charm of old frontier towns and the
+      accidental legends born in them. With its swinging rhythm, cinematic
+      atmosphere, and nostalgic production, the song feels like a lost scene
+      from a golden‑age Western film.</p>
+
+      <p>This song tells the story of a drifter who rides into Red Rock City
+      looking for nothing more than a warm meal and a place to rest — only to be
+      thrown into chaos when the mayor slaps a sheriff’s star on him for one
+      wild night. From breaking up bar fights to corralling drunks and staring
+      down bandits, he somehow stumbles his way into saving the town. Now, every
+      time he passes through, the locals cheer like he’s a hero… even though he
+      swears he didn’t do a thing. “Sheriff for a Night” is a fun, cinematic
+      tribute to the legends small towns love to tell.</p>
+    vibes:
+      - '🎧 Vibe: 1950s Western swing, warm, nostalgic, comedic'
+      - '🎤 Vocals: smooth male baritone, classic phrasing, storytelling delivery'
+      - >-
+        🎛️ Production: acoustic guitar, upright bass, brushed drums, vintage
+        reverb
+      - '⚡ Mood: humorous, dusty‑trail, tall‑tale, cinematic'
+    tags:
+      - horizonsound
+      - originalmusic
+      - newmusic
+      - musicvideo
+      - indieartist
+      - popmusic
+      - instrumentalmusic
+      - songwriter
+    url: /music/sheriff-for-a-night-50s-western-tall-tale-horizon-sound/
+    thumbnail: >-
+      /assets/thumbnails/sheriff-for-a-night-50s-western-tall-tale-horizon-sound.jpeg
+    videostatus: public
+    playlists:
+      - classic-country
+    view_count_num: 3
+    youtube_metadata:
+      published_at: '2026-04-07T16:01:20Z'
+      scheduled_at: null
+      channel_id: UCiko-zjojbsoXrsEuBOPbSw
+      channel_title: Horizon Sound
+      category_id: '22'
+      tags: []
+      duration: PT2M39S
+      definition: hd
+      dimension: null
+      caption: null
+      licensed_content: false
+      region_allowed: []
+      region_blocked: []
+      content_rating: {}
+      statistics:
+        view_count: '3'
+        like_count: '1'
+        favorite_count: '0'
+        comment_count: '0'
+      made_for_kids: false
+      self_declared_made_for_kids: false
+      topic_categories:
+        - https://en.wikipedia.org/wiki/Country_music
+        - https://en.wikipedia.org/wiki/Music
+        - https://en.wikipedia.org/wiki/Pop_music
+      privacy_status: null
+      upload_status: null
+      publish_at: null
+      license: ''
+      embeddable: true
+      public_stats_viewable: true
   - song_id: back-to-amarillo-50s-country-western-romance-horizon-sound
     youtube_id: H-_2aKmiFc0
     title: Back to Amarillo (50s Country‑Western Romance) – Horizon Sound
@@ -3405,78 +3480,6 @@ songs:
       topic_categories:
         - https://en.wikipedia.org/wiki/Country_music
         - https://en.wikipedia.org/wiki/Music
-      privacy_status: null
-      upload_status: null
-      publish_at: null
-      license: ''
-      embeddable: true
-      public_stats_viewable: true
-  - song_id: sheriff-for-a-night-50s-western-tall-tale-horizon-sound
-    youtube_id: oMSIQ5Gv2ZI
-    title: Sheriff for a Night (50s Western Tall‑Tale) – Horizon Sound
-    description_html: >-
-      <p>“Sheriff for a Night” is a playful, vintage‑inspired 1950s Western tune
-      built on twangy guitars, upright bass, brushed drums, and a warm baritone
-      vocal. Blending classic cowboy storytelling with a comedic tall‑tale
-      twist, the track captures the dusty charm of old frontier towns and the
-      accidental legends born in them. With its swinging rhythm, cinematic
-      atmosphere, and nostalgic production, the song feels like a lost scene
-      from a golden‑age Western film.</p>
-
-      <p>This song tells the story of a drifter who rides into Red Rock City
-      looking for nothing more than a warm meal and a place to rest — only to be
-      thrown into chaos when the mayor slaps a sheriff’s star on him for one
-      wild night. From breaking up bar fights to corralling drunks and staring
-      down bandits, he somehow stumbles his way into saving the town. Now, every
-      time he passes through, the locals cheer like he’s a hero… even though he
-      swears he didn’t do a thing. “Sheriff for a Night” is a fun, cinematic
-      tribute to the legends small towns love to tell.</p>
-    vibes:
-      - '🎧 Vibe: 1950s Western swing, warm, nostalgic, comedic'
-      - '🎤 Vocals: smooth male baritone, classic phrasing, storytelling delivery'
-      - >-
-        🎛️ Production: acoustic guitar, upright bass, brushed drums, vintage
-        reverb
-      - '⚡ Mood: humorous, dusty‑trail, tall‑tale, cinematic'
-    tags:
-      - horizonsound
-      - originalmusic
-      - newmusic
-      - musicvideo
-      - indieartist
-      - popmusic
-      - instrumentalmusic
-      - songwriter
-    url: /music/sheriff-for-a-night-50s-western-tall-tale-horizon-sound/
-    thumbnail: >-
-      /assets/thumbnails/sheriff-for-a-night-50s-western-tall-tale-horizon-sound.jpeg
-    videostatus: scheduled
-    playlists:
-      - classic-country
-    view_count_num: 3
-    youtube_metadata:
-      published_at: '2026-02-06T22:30:51Z'
-      scheduled_at: '2026-04-07T16:00:00Z'
-      channel_id: UCiko-zjojbsoXrsEuBOPbSw
-      channel_title: Horizon Sound
-      category_id: '22'
-      tags: []
-      duration: PT2M39S
-      definition: hd
-      dimension: null
-      caption: null
-      licensed_content: false
-      region_allowed: []
-      region_blocked: []
-      content_rating: {}
-      statistics:
-        view_count: '3'
-        like_count: '1'
-        favorite_count: '0'
-        comment_count: '0'
-      made_for_kids: false
-      self_declared_made_for_kids: false
-      topic_categories: []
       privacy_status: null
       upload_status: null
       publish_at: null
@@ -3892,7 +3895,7 @@ songs:
     videostatus: public
     playlists:
       - missing-stamp-venice-trilogy
-    view_count_num: 29
+    view_count_num: 31
     youtube_metadata:
       published_at: '2026-04-03T16:00:03Z'
       scheduled_at: null
@@ -3909,7 +3912,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '29'
+        view_count: '31'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -5549,7 +5552,7 @@ songs:
     videostatus: public
     playlists:
       - after-the-silence-performed-by-lydia-ellington
-    view_count_num: 23
+    view_count_num: 24
     youtube_metadata:
       published_at: '2026-03-31T16:00:39Z'
       scheduled_at: null
@@ -5566,7 +5569,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '23'
+        view_count: '24'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -6773,9 +6776,9 @@ songs:
       content_rating: {}
       statistics:
         view_count: '39'
-        like_count: '2'
+        like_count: '0'
         favorite_count: '0'
-        comment_count: '1'
+        comment_count: '0'
       made_for_kids: false
       self_declared_made_for_kids: false
       topic_categories:

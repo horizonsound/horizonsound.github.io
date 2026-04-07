@@ -180,9 +180,9 @@ playlists:
     channel_title: Horizon Sound
     thumbnail: /assets/thumbnails/playlist-classic-country.jpeg
     song_ids:
+      - sheriff-for-a-night-50s-western-tall-tale-horizon-sound
       - back-to-amarillo-50s-country-western-romance-horizon-sound
       - bottle-on-the-table-country-western-horizon-sound
-      - sheriff-for-a-night-50s-western-tall-tale-horizon-sound
   - playlist_id: calm-cinematic-horizon-sound-instrumentals
     title: Calm & Cinematic - Horizon Sound Instrumentals
     description: ''
