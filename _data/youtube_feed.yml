@@ -2645,7 +2645,7 @@ songs:
     videostatus: public
     playlists:
       - acoustic-guitar-horizon-sound-instrumentals
-    view_count_num: 5
+    view_count_num: 7
     youtube_metadata:
       published_at: '2026-03-28T12:01:18Z'
       scheduled_at: null
@@ -2662,7 +2662,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '5'
+        view_count: '7'
         like_count: '0'
         favorite_count: '0'
         comment_count: '0'
