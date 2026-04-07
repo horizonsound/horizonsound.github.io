@@ -6776,9 +6776,9 @@ songs:
       content_rating: {}
       statistics:
         view_count: '39'
-        like_count: '0'
+        like_count: '2'
         favorite_count: '0'
-        comment_count: '0'
+        comment_count: '1'
       made_for_kids: false
       self_declared_made_for_kids: false
       topic_categories:
