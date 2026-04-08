@@ -29,11 +29,12 @@ jobs:
         run: node update-youtube.js
         working-directory: ./youtube-sync
 
+      # IMPORTANT: Git commands must run from repo root
       - name: Commit changes
         run: |
           git config user.name "Horizon Bot"
           git config user.email "bot@horizonsound.com"
-          git add ../_data/youtube_feed.yml
+          git add _data/youtube_feed.yml
           git commit -m "Update YouTube metadata" || echo "No changes to commit"
 
       - name: Push changes
