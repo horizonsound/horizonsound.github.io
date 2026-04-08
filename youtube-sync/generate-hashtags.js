@@ -1,8 +1,20 @@
-// scripts/generate-hashtags.js
+// generate-hashtags.js
 
 export function generateHashtags(songs) {
+  console.log("Starting hashtag generation...\n");
+
   return songs.map(song => {
+    console.log(`---`);
+    console.log(`Song: ${song.title}`);
+    console.log(`Slug: ${song.song_id}`);
+    console.log(`Playlists: ${song.playlists.join(", ")}`);
+    console.log(`Vibes: ${song.vibes.join(", ")}`);
+    console.log(`Existing tags: ${song.tags.join(", ")}`);
+
     const hashtags = buildHashtags(song);
+
+    console.log(`Generated hashtags: ${hashtags.join(", ")}\n`);
+
     return { ...song, hashtags };
   });
 }
@@ -24,6 +36,5 @@ function buildHashtags(song) {
 
   const all = [...base, ...vibeTags, ...playlistTags, ...existingTags];
 
-  // Deduplicate + limit to 12
   return Array.from(new Set(all)).slice(0, 12);
 }
