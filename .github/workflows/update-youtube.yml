@@ -41,9 +41,6 @@ jobs:
         run: node update-youtube.js
         working-directory: ./youtube-sync
 
-      # ---------------------------
-      # DEV MODE COMMIT
-      # ---------------------------
       - name: Commit dev changes
         if: ${{ github.event.inputs.mode == 'dev' }}
         run: |
@@ -51,17 +48,14 @@ jobs:
           git config user.name "Horizon Bot"
           git config user.email "bot@horizonsound.com"
           git add _data/youtube_feed_dev.yml
-          git commit -m "Dev metadata test" || echo "No changes to commit"
+          git commit -m "Dev metadata test" || echo "No changes"
           git push origin metadata-dev
 
-      # ---------------------------
-      # PROD MODE COMMIT
-      # ---------------------------
       - name: Commit prod changes
         if: ${{ github.event.inputs.mode == 'prod' }}
         run: |
           git config user.name "Horizon Bot"
           git config user.email "bot@horizonsound.com"
           git add _data/youtube_feed.yml
-          git commit -m "Update YouTube metadata" || echo "No changes to commit"
+          git commit -m "Update YouTube metadata" || echo "No changes"
           git push
