@@ -18,8 +18,14 @@ async function main() {
   console.log("Hashtag generation complete.\n");
 
   console.log("Writing updated YAML...");
-  writeSongsYaml(songs);
-  console.log("YAML write complete.\n");
+  try {
+    writeSongsYaml(songs);
+    console.log("YAML write complete.\n");
+  } catch (err) {
+    console.error("ERROR WRITING YAML:", err.message);
+    console.error(err.stack);
+    throw err; // stop execution so we see the failure
+  }
 
   // -----------------------------
   // DEV MODE: Skip YouTube updates
