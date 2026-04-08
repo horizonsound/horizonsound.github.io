@@ -2,7 +2,7 @@
 import fs from "fs";
 import yaml from "js-yaml";
 
-const FEED_PATH = "./_data/youtube_feed.yml";
+const FEED_PATH = "../_data/youtube_feed.yml";
 
 export function loadSongsYaml() {
   const raw = fs.readFileSync(FEED_PATH, "utf8");
