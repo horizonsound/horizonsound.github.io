@@ -1,10 +1,7 @@
 name: Update YouTube Metadata
 
 on:
-  workflow_dispatch:   # manual trigger
-  push:
-    branches:
-      - metadata       # optional: run when pushing to metadata branch
+  workflow_dispatch:
 
 jobs:
   update:
@@ -21,15 +18,17 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        working-directory: ./youtube-sync
 
       - name: Run metadata update
-        run: node scripts/update-youtube.js
+        run: node update-youtube.js
+        working-directory: ./youtube-sync
 
       - name: Commit changes
         run: |
           git config user.name "Horizon Bot"
           git config user.email "bot@horizonsound.com"
-          git add _data/youtube_feed.yml
+          git add ../_data/youtube_feed.yml
           git commit -m "Update YouTube metadata" || echo "No changes to commit"
 
       - name: Push changes
