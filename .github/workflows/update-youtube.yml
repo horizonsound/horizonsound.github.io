@@ -11,11 +11,15 @@ on:
           - dev
           - prod
 
+permissions:
+  contents: write
+
 jobs:
   update:
     runs-on: ubuntu-latest
 
     env:
+      MODE: ${{ github.event.inputs.mode }}
       GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
       GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
       GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
@@ -37,13 +41,27 @@ jobs:
         run: node update-youtube.js
         working-directory: ./youtube-sync
 
-      # IMPORTANT: Git commands must run from repo root
-      - name: Commit changes
+      # ---------------------------
+      # DEV MODE COMMIT
+      # ---------------------------
+      - name: Commit dev changes
+        if: ${{ github.event.inputs.mode == 'dev' }}
+        run: |
+          git checkout -B metadata-dev
+          git config user.name "Horizon Bot"
+          git config user.email "bot@horizonsound.com"
+          git add _data/youtube_feed_dev.yml
+          git commit -m "Dev metadata test" || echo "No changes to commit"
+          git push origin metadata-dev
+
+      # ---------------------------
+      # PROD MODE COMMIT
+      # ---------------------------
+      - name: Commit prod changes
+        if: ${{ github.event.inputs.mode == 'prod' }}
         run: |
           git config user.name "Horizon Bot"
           git config user.email "bot@horizonsound.com"
           git add _data/youtube_feed.yml
           git commit -m "Update YouTube metadata" || echo "No changes to commit"
-
-      - name: Push changes
-        run: git push
+          git push
