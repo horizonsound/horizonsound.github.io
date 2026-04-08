@@ -3,8 +3,11 @@ import { loadSongsYaml, writeSongsYaml } from "./utils/loadYaml.js";
 import { generateHashtags } from "./generate-hashtags.js";
 import { updateYoutubeTags } from "./youtube-update-tags.js";
 
+const mode = process.env.MODE || "prod"; // default to prod if not set
+
 async function main() {
   console.log("=== Horizon Sound Metadata Pipeline ===");
+  console.log(`Running in MODE: ${mode.toUpperCase()}\n`);
 
   console.log("Loading songs from YAML...");
   let songs = loadSongsYaml();
@@ -18,6 +21,19 @@ async function main() {
   writeSongsYaml(songs);
   console.log("YAML write complete.\n");
 
+  // -----------------------------
+  // DEV MODE: Skip YouTube updates
+  // -----------------------------
+  if (mode === "dev") {
+    console.log("DEV MODE: Skipping YouTube tag updates entirely.");
+    console.log("DEV MODE: No API calls were made.\n");
+    console.log("=== Pipeline Complete (DEV MODE) ===");
+    return;
+  }
+
+  // -----------------------------
+  // PROD MODE: Update YouTube
+  // -----------------------------
   console.log("Updating YouTube tags...\n");
 
   for (const song of songs) {
@@ -33,7 +49,7 @@ async function main() {
     }
   }
 
-  console.log("=== Pipeline Complete ===");
+  console.log("=== Pipeline Complete (PROD MODE) ===");
 }
 
 main().catch(err => {
