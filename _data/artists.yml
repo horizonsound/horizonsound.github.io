@@ -34,20 +34,19 @@ artists:
         span: 1
   
     albums:
-      - title: Golden Hour Stories
+      - slug: after-the-silence
         year: 2025
         description: Cinematic pop moments about growth, hope, and emotional clarity.
-        cover: /images/artists/lydia/albums/golden-hour-stories.jpg
         links:
-          apple_music: https://music.apple.com/...
-          spotify: https://open.spotify.com/...
-          youtube_music: https://music.youtube.com/...
+          apple_music: https://music.apple.com/us/album/after-the-silence/1889528896
+          spotify: https://open.spotify.com/album/2mP8NXfE8Uhp68raM2iNM1?si=eVZAzRckQ6inVch5bjJNfw
+          youtube_music: https://www.youtube.com/watch?v=GtGKAZdE0Do&list=OLAK5uy_mgHIFz_S2uiQ40O_uey8gXUTG8NmVeh3k
     singles: []
     links:
-      website: https://horizonsound.com/lydia
-      apple_music: https://music.apple.com/...
-      spotify: https://open.spotify.com/...
-      youtube: https://youtube.com/...
+      website: https://www.horizonsound.org/development/artists/lydia-ellington.html
+      apple_music: https://music.apple.com/us/artist/lydia-ellington/1889073260
+      spotify: https://open.spotify.com/artist/6NmeEuax1ZPpDmSLfjSS7V?si=4E8XlQEYSW2jiGg8nVySbw
+      youtube: https://www.youtube.com/@LydiaEllington-hs
 
   - slug: cody-sails
     name:
@@ -86,16 +85,17 @@ artists:
         span: 1
 
     albums:
-      - title: Tides & Good Days
+      - slug: rum-soaked-paradise
         year: 2025
         description: Sunset acoustic songs for easy nights and long weekends.
-        cover: /images/artists/cody/albums/tides-and-good-days.jpg
         links:
-          apple_music: https://music.apple.com/...
-          spotify: https://open.spotify.com/...
+          apple_music: https://music.apple.com/us/album/rum-soaked-paradise/1890779746
+          spotify: https://open.spotify.com/album/3uhsHVcKirhL0njJpkF2Nt?si=tkqnPIDAQ6aJ0jRbh8STtw
+          youtube_music: https://www.youtube.com/watch?v=e1i-B7IRMxE&list=OLAK5uy_kXBmtBn7PKGJu1K8CmC4u2plbGE3Gs0W8
     singles: []
     links:
-      apple_music: https://music.apple.com/...
-      spotify: https://open.spotify.com/...
-      youtube: https://youtube.com/...
+      website: https://www.horizonsound.org/development/artists/cody-sails.html
+      apple_music: https://music.apple.com/us/artist/cody-sails/1890255704
+      spotify: https://open.spotify.com/artist/5JXSFheKggmlJJ3qUZPefn?si=nQJqpPSCQMqDe71C1rnW5A
+      youtube: https://www.youtube.com/channel/UCKrDH3xQ-iQkj6aNA1SI4qw
 
