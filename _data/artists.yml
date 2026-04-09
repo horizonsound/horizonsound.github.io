@@ -73,10 +73,10 @@ artists:
         span: 1
       - src: ../assets/artists/cody4.jpeg
         span: 1
-      - src: ../assets/artists/cody9.jpeg
-        span: 2
       - src: ../assets/artists/cody5.jpeg
         span: 1
+      - src: ../assets/artists/cody9.jpeg
+        span: 2
       - src: ../assets/artists/cody6.jpeg
         span: 1
       - src: ../assets/artists/cody7.jpeg
