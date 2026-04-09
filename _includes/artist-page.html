@@ -1,0 +1,35 @@
+<div class="artist-hero" style="background-image: url('{{ artist.headshot }}')">
+  <div class="artist-hero-overlay">
+    <h1 class="artist-name">{{ artist.name.full }}</h1>
+    <p class="artist-tagline">{{ artist.tagline }}</p>
+  </div>
+</div>
+
+<section class="artist-bio">
+  {% for paragraph in artist.bio %}
+    <p>{{ paragraph }}</p>
+  {% endfor %}
+</section>
+
+{% if artist.photo_wall %}
+<section class="artist-photo-wall">
+  {% for photo in artist.photo_wall %}
+    <div class="photo" style="background-image: url('{{ photo }}')"></div>
+  {% endfor %}
+</section>
+{% endif %}
+
+{% if artist.albums %}
+<section class="artist-albums">
+  <h2>Albums</h2>
+  <div class="album-grid">
+    {% for album in artist.albums %}
+      <div class="album-card">
+        <img src="{{ album.cover }}" alt="{{ album.title }}">
+        <h3>{{ album.title }}</h3>
+        <p>{{ album.description }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
