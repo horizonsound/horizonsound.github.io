@@ -42,6 +42,50 @@ permalink: /artists.html
     font-weight: 600;
     letter-spacing: 0.5px;
   }
+  
+  .artist-tile {
+    display: block;
+    text-decoration: none;
+    color: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .artist-tile:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.45);
+  }
+  
+  .artist-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  /* This is the big, premium name overlay */
+  .artist-name-overlay {
+    position: absolute;
+    inset: 0; /* fill the tile */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    /* transparent / glassy background */
+    background: radial-gradient(circle at center, rgba(0,0,0,0.45), rgba(0,0,0,0.75));
+    backdrop-filter: blur(4px);
+  
+    /* typography */
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-align: center;
+    padding: 0 1rem;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.7);
+  }
 
   .artists-page .page-header {
     margin-bottom: 48px;
@@ -67,9 +111,14 @@ permalink: /artists.html
 
   <section class="artists-grid">
   {% for artist in site.data.artists.artists %}
-    <a class="artist-tile" href="{{ site.baseurl }}/assets/artists/{{ artist.slug }}.html">
-      <div class="artist-image" style="background-image: url('{{ artist.headshot }}')"></div>
-      <div class="artist-name">{{ artist.name.full }}</div>
+    <a class="artist-tile" href="{{ site.baseurl }}/artists/{{ artist.slug }}.html">
+      <div class="artist-image" style="background-image: url('{{ artist.headshot }}')">
+        <div class="artist-name-overlay">
+          {{ artist.name.full }}
+        </div>
+      </div>
     </a>
   {% endfor %}
 </section>
+
+
