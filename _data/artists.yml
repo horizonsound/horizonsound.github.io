@@ -14,15 +14,25 @@ artists:
       - Lydia writes about growth, resilience, love, and the quiet strength found in vulnerability.
       - Within Horizon Sound, Lydia defines the Cinematic Pop lane — glowing, emotional, and deeply expressive.
     photo_wall:
-      - ../assets/artists/lydia1.jpeg
-      - ../assets/artists/lydia2.jpeg
-      - ../assets/artists/lydia3.jpeg
-      - ../assets/artists/lydia4.jpeg
-      - ../assets/artists/lydia5.jpeg
-      - ../assets/artists/lydia6.jpeg
-      - ../assets/artists/lydia7.jpeg
-      - ../assets/artists/lydia8.jpeg
-      - ../assets/artists/lydia9.jpeg
+      - src: ../assets/artists/lydia1.jpeg
+        span: 1
+      - src: ../assets/artists/lydia2.jpeg
+        span: 1
+      - src: ../assets/artists/lydia3.jpeg
+        span: 1
+      - src: ../assets/artists/lydia4.jpeg
+        span: 1
+      - src: ../assets/artists/lydia5.jpeg
+        span: 1
+      - src: ../assets/artists/lydia6.jpeg
+        span: 1
+      - src: ../assets/artists/lydia7.jpeg
+        span: 1
+      - src: ../assets/artists/lydia8.jpeg
+        span: 1
+      - src: ../assets/artists/lydia9.jpeg
+        span: 1
+  
     albums:
       - title: Golden Hour Stories
         year: 2025
@@ -54,15 +64,25 @@ artists:
       - He sings about tides, friends, freedom, and the simple moments that make life feel lighter.
       - Within Horizon Sound, Cody anchors the Coastal Acoustic lane — warm, approachable, and emotionally grounded.
     photo_wall:
-      - ../assets/artists/cody1.jpeg
-      - ../assets/artists/cody2.jpeg
-      - ../assets/artists/cody3.jpeg
-      - ../assets/artists/cody4.jpeg
-      - ../assets/artists/cody5.jpeg
-      - ../assets/artists/cody6.jpeg
-      - ../assets/artists/cody7.jpeg
-      - ../assets/artists/cody8.jpeg
-      - ../assets/artists/cody9.jpeg
+    photo_wall:
+      - src: ../assets/artists/cody1.jpeg
+        span: 1
+      - src: ../assets/artists/cody2.jpeg
+        span: 1
+      - src: ../assets/artists/cody3.jpeg
+        span: 1
+      - src: ../assets/artists/cody4.jpeg
+        span: 1
+      - src: ../assets/artists/cody5.jpeg
+        span: 1
+      - src: ../assets/artists/cody6.jpeg
+        span: 1
+      - src: ../assets/artists/cody7.jpeg
+        span: 1
+      - src: ../assets/artists/cody8.jpeg
+        span: 1
+      - src: ../assets/artists/cody9.jpeg
+        span: 1
     albums:
       - title: Tides & Good Days
         year: 2025
