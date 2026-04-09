@@ -1,0 +1,104 @@
+artists:
+  - slug: lydia-ellington
+    name:
+      full: Lydia Ellington
+      first: Lydia
+      last: Ellington
+    tagline: Cinematic pop with a glowing, emotional core
+    primary_color: "#F4B5D8"
+    secondary_color: "#5C3B8C"
+    headshot: /images/artists/lydia/headshot.jpg
+    bio:
+      - Lydia Ellington is a cinematic pop vocalist with a glowing emotional core and a voice that feels like light breaking through clouds.
+      - Her music blends modern pop, orchestral textures, and heartfelt storytelling, creating songs that feel both intimate and widescreen.
+      - Lydia writes about growth, resilience, love, and the quiet strength found in vulnerability.
+      - Within Horizon Sound, Lydia defines the Cinematic Pop lane — glowing, emotional, and deeply expressive.
+    photo_wall:
+      - /images/artists/lydia/wall-1.jpg
+      - /images/artists/lydia/wall-2.jpg
+      - /images/artists/lydia/wall-3.jpg
+      - /images/artists/lydia/wall-4.jpg
+      - /images/artists/lydia/wall-5.jpg
+      - /images/artists/lydia/wall-6.jpg
+      - /images/artists/lydia/wall-7.jpg
+      - /images/artists/lydia/wall-8.jpg
+    albums:
+      - title: Golden Hour Stories
+        year: 2025
+        description: Cinematic pop moments about growth, hope, and emotional clarity.
+        cover: /images/artists/lydia/albums/golden-hour-stories.jpg
+        links:
+          apple_music: https://music.apple.com/...
+          spotify: https://open.spotify.com/...
+          youtube_music: https://music.youtube.com/...
+    singles: []
+    links:
+      website: https://horizonsound.com/lydia
+      apple_music: https://music.apple.com/...
+      spotify: https://open.spotify.com/...
+      youtube: https://youtube.com/...
+
+  - slug: cody-sails
+    name:
+      full: Cody Sails
+      first: Cody
+      last: Sails
+    tagline: Sun‑soaked coastal storyteller with a barefoot spirit
+    primary_color: "#F6B35A"
+    secondary_color: "#1C6E8C"
+    headshot: /images/artists/cody/headshot.jpg
+    bio:
+      - Cody Sails is a warm‑hearted coastal storyteller with a sun‑soaked voice and a barefoot, easygoing spirit.
+      - His music blends beach‑folk, mellow pop, and golden‑hour acoustic grooves — always relaxed and inviting.
+      - He sings about tides, friends, freedom, and the simple moments that make life feel lighter.
+      - Within Horizon Sound, Cody anchors the Coastal Acoustic lane — warm, approachable, and emotionally grounded.
+    photo_wall:
+      - /images/artists/cody/wall-1.jpg
+      - /images/artists/cody/wall-2.jpg
+      - /images/artists/cody/wall-3.jpg
+      - /images/artists/cody/wall-4.jpg
+      - /images/artists/cody/wall-5.jpg
+      - /images/artists/cody/wall-6.jpg
+    albums:
+      - title: Tides & Good Days
+        year: 2025
+        description: Sunset acoustic songs for easy nights and long weekends.
+        cover: /images/artists/cody/albums/tides-and-good-days.jpg
+        links:
+          apple_music: https://music.apple.com/...
+          spotify: https://open.spotify.com/...
+    singles: []
+    links:
+      apple_music: https://music.apple.com/...
+      spotify: https://open.spotify.com/...
+      youtube: https://youtube.com/...
+
+  - slug: ravyn
+    name:
+      full: Ravyn
+      first: ""
+      last: ""
+    tagline: ""
+    primary_color: ""
+    secondary_color: ""
+    headshot: ""
+    bio: []
+    photo_wall: []
+    albums: []
+    singles: []
+    links: {}
+
+  - slug: kids-choir
+    name:
+      full: Kids Choir
+      first: ""
+      last: ""
+    tagline: ""
+    primary_color: ""
+    secondary_color: ""
+    headshot: ""
+    bio: []
+    photo_wall: []
+    albums: []
+    singles: []
+    links: {}
