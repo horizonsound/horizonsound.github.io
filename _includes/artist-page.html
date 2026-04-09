@@ -192,15 +192,23 @@
         {% assign override = site.data.playlist_overrides.overrides | where: "playlist_id", album.slug | first %}
   
         {% assign artwork = override.thumbnail | default: override.hero | default: pl.thumbnail | default: pl.hero | default: pl.youtube_thumbnail %}
-        {% assign first_track = pl.song_ids | first %}
         {% assign title = override.title | default: pl.title %}
+        {% assign first_track = playlist_song_ids | first %}
   
-        {% include album-premium-tile.html 
-            album=album 
-            title=title 
-            artwork=artwork 
-            first_track=first_track 
-        %}
+        {% if has_public %}
+          {% include album-premium-tile.html 
+              title=title 
+              artwork=artwork 
+              first_track=first_track 
+              playlist_id=pl.playlist_id 
+          %}
+        {% else %}
+          {% include album-premium-comingsoon-tile.html 
+              title=title 
+              artwork=artwork 
+              earliest_ts=earliest_ts 
+          %}
+        {% endif %}
       {% endfor %}
     </div>
   </section>
