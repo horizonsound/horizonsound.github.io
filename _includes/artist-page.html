@@ -3,8 +3,8 @@
       width: 100%;
       height: 60vh;
       background-size: cover;
-      background-position: center 20%;
-      position: relative;
+      background-position: center 20%; /* this is the correct one */
+      position: relative;             /* required for overlay */
   }
 
   .artist-hero-overlay {
@@ -31,16 +31,16 @@
   }
 
   .artist-bio {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 4rem 6vw;
+    max-width: 1100px;        /* keeps the column readable */
+    margin: 0 auto;          /* centers the column */
+    padding: 4rem 6vw;      /* breathing room on both sides */
   }
   
   .artist-bio p {
-    text-align: left;
-    font-size: 2.5rem;
-    margin-bottom: 1.75rem;
-    letter-spacing: 0.01em;
+    text-align: left;        /* left‑aligned text */
+    font-size: 2.5rem;       /* premium readable size */
+    margin-bottom: 1.75rem;  /* space between paragraphs */
+    letter-spacing: 0.01em;  /* subtle polish */
     color: rgba(255, 255, 255, 0.92);
     font-weight: 200;
     line-height: 1.85;
@@ -49,9 +49,10 @@
   .artist-photo-wall {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 24px;
+    grid-auto-rows: 10px;      /* masonry effect */
     gap: 1rem;
     padding: 3rem 10vw;
+    grid-auto-rows: 24px; /* smaller = smoother masonry */
   }
   
   .span-1 { grid-row: span 25; }
@@ -60,22 +61,25 @@
 
   .artist-photo-wall img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 100%;          /* fill the grid cell */
+    object-fit: cover;     /* crop instead of distort */
     border-radius: 10px;
     display: block;
   }
 
+  /* span: 1 (default) */
   .artist-photo-wall img.span-1 {
     grid-column: span 1;
     grid-row: span 20;
   }
   
+  /* span: 2 (wide) */
   .artist-photo-wall img.span-2 {
     grid-column: span 2;
     grid-row: span 20;
   }
   
+  /* span: 3 (full width hero) */
   .artist-photo-wall img.span-3 {
     grid-column: span 3;
     grid-row: span 25;
@@ -85,7 +89,9 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 24px;
-    padding: 32px 0 16px 0;
+    padding: 16px 0;
+    padding-top: 32px;
+    padding-bottom: 16px;
   }
   
   @media (min-width: 600px) {
@@ -166,7 +172,11 @@
 <section class="artist-photo-wall">
   {% for photo in artist.photo_wall %}
     {% assign span = photo.span | default: 1 %}
-    <img src="{{ photo.src }}" class="span-{{ span }}" alt="{{ artist.name.full }} photo">
+    <img 
+      src="{{ photo.src }}" 
+      class="span-{{ span }}"
+      alt="{{ artist.name.full }} photo"
+    >
   {% endfor %}
 </section>
 {% endif %}
@@ -174,136 +184,21 @@
 <section class="artist-albums">
   <h2>Albums</h2>
 
-  <section id="music-view-playlists">  
-    <div class="playlist-premium-grid">
-    
-      {% assign window_days = site.data.site.settings.coming_soon_window_days %}
-      {% assign window_seconds = window_days | times: 86400 %}
-      {% assign now_ts = 'now' | date: "%s" | plus: 0 %}
-      {% assign coming_soon_cutoff = now_ts | plus: window_seconds %}
+  <div class="playlist-premium-grid">
+    {% for album in artist.albums %}
+      {% assign pl = site.data.youtube_playlists.playlists | where: "playlist_id", album.slug | first %}
+      {% assign override = site.data.playlist_overrides.overrides | where: "playlist_id", album.slug | first %}
 
-      {% assign overrides = site.data.playlist_overrides.overrides %}
-      {% assign all_songs = site.data.youtube_songs.songs %}
+      {% assign artwork = override.thumbnail | default: override.hero | default: pl.thumbnail | default: pl.hero | default: pl.youtube_thumbnail %}
+      {% assign first_track = pl.song_ids | first %}
+      {% assign title = override.title | default: pl.title %}
 
-      {% assign playlist_data = site.data.youtube_playlists.playlists | where_exp: "pl", "artist.albums contains pl.playlist_id" %}
-      
-      {% assign merged_playlists = "" | split: "" %}
-            
-      {% for pl in playlist_data %}
-        {% assign override = overrides | where: "playlist_id", pl.playlist_id | first %}
-        {% if override %}
-          {% assign override_hash = override | jsonify | parse_json %}
-          {% assign merged = pl | merge: override_hash %}
-          {% assign merged_playlists = merged_playlists | push: merged %}
-        {% else %}
-          {% assign merged_playlists = merged_playlists | push: pl %}
-        {% endif %}
-      {% endfor %}
-
-      {% assign active_playlists = "" | split: "" %}
-      {% assign coming_soon_playlists = "" | split: "" %}
-
-      {% for playlist in merged_playlists %}
-        {% assign override = overrides | where: "playlist_id", playlist.playlist_id | first %}
-        {% assign playlist_song_ids = override.songs | default: playlist.song_ids %}
-
-        {% assign show_active = false %}
-        {% assign show_coming_soon = false %}
-
-        {% for vid in playlist_song_ids %}
-          {% assign song = all_songs | where: "song_id", vid | first %}
-          {% if song %}
-            {% if song.videostatus == "public" %}
-              {% assign show_active = true %}
-            {% elsif song.videostatus == "scheduled" and song.youtube_metadata.scheduled_at %}
-              {% assign scheduled_ts = song.youtube_metadata.scheduled_at | date: "%s" | plus: 0 %}
-              {% if scheduled_ts >= now_ts and scheduled_ts <= coming_soon_cutoff %}
-                {% assign show_coming_soon = true %}
-              {% endif %}
-            {% endif %}
-          {% endif %}
-        {% endfor %}
-
-        {% if show_active %}
-          {% assign active_playlists = active_playlists | push: playlist %}
-        {% elsif show_coming_soon %}
-          {% assign coming_soon_playlists = coming_soon_playlists | push: playlist %}
-        {% endif %}
-      {% endfor %}
-
-      {% assign cs_pairs = "" | split: "" %}
-
-      {% for playlist in coming_soon_playlists %}
-        {% assign override = overrides | where: "playlist_id", playlist.playlist_id | first %}
-        {% assign playlist_song_ids = override.songs | default: playlist.song_ids %}
-
-        {% assign earliest_ts = 9999999999 %}
-        {% for vid in playlist_song_ids %}
-          {% assign song = all_songs | where: "song_id", vid | first %}
-          {% if song and song.videostatus == "scheduled" and song.youtube_metadata.scheduled_at %}
-            {% assign ts = song.youtube_metadata.scheduled_at | date: "%s" | plus: 0 %}
-            {% if ts < earliest_ts %}
-              {% assign earliest_ts = ts %}
-            {% endif %}
-          {% endif %}
-        {% endfor %}
-
-        {% assign pair = earliest_ts | append: "||" | append: playlist.playlist_id %}
-        {% assign cs_pairs = cs_pairs | push: pair %}
-      {% endfor %}
-
-      {% assign cs_pairs = cs_pairs | sort %}
-
-      {% for playlist in active_playlists %}
-        {% assign override = overrides | where: "playlist_id", playlist.playlist_id | first %}
-        {% assign playlist_song_ids = override.songs | default: playlist.song_ids %}
-        {% assign display_title = override.title | default: playlist.title %}
-        {% assign override_thumbnail = override.thumbnail | default: override.hero %}
-        {% assign display_thumbnail = override_thumbnail | default: playlist.thumbnail | default: playlist.hero | default: playlist.youtube_thumbnail %}
-        {% assign first_song_id = playlist_song_ids | first %}
-
-        <a 
-          class="playlist-premium-tile" 
-          href="{{ site.baseurl }}/music/playlists/{{ playlist.playlist_id }}/?song_id={{ first_song_id }}"
-        >
-          <div class="playlist-premium-image-wrapper">
-            <img src="{{ site.baseurl }}{{ display_thumbnail }}" class="playlist-premium-image">
-            <div class="playlist-premium-gradient"></div>
-            <div class="playlist-premium-title">{{ display_title }}</div>
-          </div>
-        </a>
-      {% endfor %}
-
-      {% for pair in cs_pairs %}
-        {% assign parts = pair | split: "||" %}
-        {% assign earliest_ts = parts[0] | plus: 0 %}
-        {% assign pid = parts[1] %}
-
-        {% assign playlist = coming_soon_playlists | where: "playlist_id", pid | first %}
-        {% assign override = overrides | where: "playlist_id", pid | first %}
-        {% assign playlist_song_ids = override.songs | default: playlist.song_ids %}
-        {% assign display_title = override.title | default: playlist.title %}
-        {% assign override_thumbnail = override.thumbnail | default: override.hero %}
-        {% assign display_thumbnail = override_thumbnail | default: playlist.thumbnail | default: playlist.hero | default: playlist.youtube_thumbnail %}
-
-        <div class="playlist-premium-tile coming-soon">
-          <div class="playlist-premium-image-wrapper">
-            <img src="{{ site.baseurl }}{{ display_thumbnail }}" class="playlist-premium-image">
-
-            {% if earliest_ts <= coming_soon_cutoff %}
-              <div class="playlist-premium-overlay">
-                Coming {{ earliest_ts | date: "%b %-d" }}
-              </div>
-            {% else %}
-              <div class="playlist-premium-overlay">Coming Soon</div>
-            {% endif %}
-
-            <div class="playlist-premium-gradient"></div>
-            <div class="playlist-premium-title">{{ display_title }}</div>
-          </div>
-        </div>
-      {% endfor %}
-
-    </div>
-  </section>
+      {% include album-premium-tile.html 
+          album=album 
+          title=title 
+          artwork=artwork 
+          first_track=first_track 
+      %}
+    {% endfor %}
+  </div>
 </section>
