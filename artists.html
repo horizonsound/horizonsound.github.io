@@ -1,0 +1,13 @@
+---
+layout: default
+title: Artists
+---
+
+<section class="artists-grid">
+  {% for artist in site.data.artists.artists %}
+    <a class="artist-tile" href="{{ site.baseurl }}/artists/{{ artist.slug }}.html">
+      <div class="artist-image" style="background-image: url('{{ artist.headshot }}')"></div>
+      <div class="artist-name">{{ artist.name.full }}</div>
+    </a>
+  {% endfor %}
+</section>
