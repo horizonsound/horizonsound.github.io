@@ -181,78 +181,24 @@
 </section>
 {% endif %}
 
-{% assign all_songs = site.data.youtube_songs.songs %}
-
-{% if artist.albums %}
 <section class="artist-albums">
   <h2>Albums</h2>
 
   <div class="playlist-premium-grid">
-
     {% for album in artist.albums %}
-
       {% assign pl = site.data.youtube_playlists.playlists | where: "playlist_id", album.slug | first %}
       {% assign override = site.data.playlist_overrides.overrides | where: "playlist_id", album.slug | first %}
 
-      {% assign playlist_song_ids = nil %}
-      {% if override and override.songs %}
-        {% assign playlist_song_ids = override.songs %}
-      {% endif %}
-      {% if playlist_song_ids == nil or playlist_song_ids == empty %}
-        {% assign playlist_song_ids = pl.song_ids %}
-      {% endif %}
-
       {% assign artwork = override.thumbnail | default: override.hero | default: pl.thumbnail | default: pl.hero | default: pl.youtube_thumbnail %}
+      {% assign first_track = pl.song_ids | first %}
       {% assign title = override.title | default: pl.title %}
 
-      {% assign window_days = site.data.site.settings.coming_soon_window_days %}
-      {% assign window_seconds = window_days | times: 86400 %}
-      {% assign now_ts = 'now' | date: "%s" | plus: 0 %}
-      {% assign coming_soon_cutoff = now_ts | plus: window_seconds %}
-
-      {% assign has_public = false %}
-      {% assign earliest_ts = 9999999999 %}
-
-      {% for vid in playlist_song_ids %}
-        {% assign song = all_songs | where: "song_id", vid | first %}
-        {% if song %}
-          {% if song.videostatus == "public" %}
-            {% assign has_public = true %}
-          {% elsif song.videostatus == "scheduled" and song.youtube_metadata.scheduled_at %}
-            {% assign ts = song.youtube_metadata.scheduled_at | date: "%s" | plus: 0 %}
-            {% if ts < earliest_ts %}
-              {% assign earliest_ts = ts %}
-            {% endif %}
-          {% endif %}
-        {% endif %}
-      {% endfor %}
-
-      {% assign show_coming_soon = false %}
-      {% if has_public == false and earliest_ts < 9999999999 %}
-        {% if earliest_ts >= now_ts and earliest_ts <= coming_soon_cutoff %}
-          {% assign show_coming_soon = true %}
-        {% endif %}
-      {% endif %}
-
-      {% assign first_track = playlist_song_ids | first %}
-
-      {% if has_public %}
-        {% include album-premium-tile.html 
-            title=title 
-            artwork=artwork 
-            first_track=first_track 
-            playlist_id=pl.playlist_id 
-        %}
-      {% elsif show_coming_soon %}
-        {% include album-premium-comingsoon-tile.html 
-            title=title 
-            artwork=artwork 
-            earliest_ts=earliest_ts 
-        %}
-      {% endif %}
-
+      {% include album-premium-tile.html 
+          album=album 
+          title=title 
+          artwork=artwork 
+          first_track=first_track 
+      %}
     {% endfor %}
-
   </div>
 </section>
-{% endif %}
