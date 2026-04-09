@@ -181,6 +181,8 @@
 </section>
 {% endif %}
 
+{% assign all_songs = site.data.youtube_songs.songs %}
+
 {% if artist.albums %}
 <section class="artist-albums">
   <h2>Albums</h2>
@@ -192,18 +194,31 @@
       {% assign pl = site.data.youtube_playlists.playlists | where: "playlist_id", album.slug | first %}
       {% assign override = site.data.playlist_overrides.overrides | where: "playlist_id", album.slug | first %}
 
-      {% assign playlist_song_ids = override.songs %}
+      {# STEP 1 — Resolve playlist song IDs safely #}
+
+      {% assign playlist_song_ids = nil %}
+
+      {% if override and override.songs %}
+        {% assign playlist_song_ids = override.songs %}
+      {% endif %}
+
       {% if playlist_song_ids == nil or playlist_song_ids == empty %}
         {% assign playlist_song_ids = pl.song_ids %}
       {% endif %}
 
+      {# STEP 2 — Resolve artwork + title #}
+
       {% assign artwork = override.thumbnail | default: override.hero | default: pl.thumbnail | default: pl.hero | default: pl.youtube_thumbnail %}
       {% assign title = override.title | default: pl.title %}
+
+      {# STEP 3 — Coming Soon window #}
 
       {% assign window_days = site.data.site.settings.coming_soon_window_days %}
       {% assign window_seconds = window_days | times: 86400 %}
       {% assign now_ts = 'now' | date: "%s" | plus: 0 %}
       {% assign coming_soon_cutoff = now_ts | plus: window_seconds %}
+
+      {# STEP 4 — Determine album status #}
 
       {% assign has_public = false %}
       {% assign earliest_ts = 9999999999 %}
@@ -223,6 +238,8 @@
         {% endif %}
       {% endfor %}
 
+      {# STEP 5 — Determine Coming Soon flag #}
+
       {% assign show_coming_soon = false %}
       {% if has_public == false and earliest_ts < 9999999999 %}
         {% if earliest_ts >= now_ts and earliest_ts <= coming_soon_cutoff %}
@@ -230,7 +247,14 @@
         {% endif %}
       {% endif %}
 
+      {# STEP 6 — Resolve first track safely #}
+
       {% assign first_track = playlist_song_ids | first %}
+      {% if first_track == nil %}
+        {% assign first_track = "" %}
+      {% endif %}
+
+      {# STEP 7 — Render tile #}
 
       {% if has_public %}
         {% include album-premium-tile.html 
