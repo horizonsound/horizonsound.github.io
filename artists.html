@@ -69,31 +69,40 @@ permalink: /artists.html
   /* This is the big, premium name overlay */
   .artist-name-overlay {
     position: absolute;
-    inset: 0; /* fill the tile */
+    inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
   
-    /* transparent / glassy background */
-    background: radial-gradient(circle at center, rgba(0,0,0,0.45), rgba(0,0,0,0.75));
-    backdrop-filter: blur(4px);
+    /* fully transparent background */
+    background: rgba(0, 0, 0, 0);
   
     /* typography */
-    font-size: 2.4rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
+    font-size: 3rem;        /* MUCH larger */
+    font-weight: 800;
+    letter-spacing: 0.08em;
     text-align: center;
     padding: 0 1rem;
-    text-shadow: 0 3px 10px rgba(0,0,0,0.7);
+  
+    /* subtle glow so it stays readable */
+    text-shadow:
+      0 0 12px rgba(0,0,0,0.65),
+      0 0 24px rgba(0,0,0,0.45);
   }
 
-  .artists-page .page-header {
+  .page-header {
+    padding: 0 8vw;
     margin-bottom: 48px;
   }
-
-  .artists-page .page-subtitle {
-    font-size: 1.25rem;
-    line-height: 1.55;
+  
+  .page-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .page-subtitle {
+    font-size: 1.3rem;
+    line-height: 1.6;
     opacity: 0.9;
     max-width: 720px;
   }
@@ -104,8 +113,7 @@ permalink: /artists.html
   <div class="page-header">
     <h1>Horizon Sound Artists</h1>
     <p class="page-subtitle">
-      A curated look at the music scheduled for release in the months ahead. 
-      These tracks and collections are already in motion — here’s what’s on the horizon.
+      A growing roster of artists defining the Horizon Sound identity — one song, one story at a time.
     </p>
   </div>
 
