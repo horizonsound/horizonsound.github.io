@@ -175,10 +175,8 @@ overrides:
     description: >-
       A reflective pop‑soul journey about healing, clarity, and finding your
       voice ag
-    thumbnail: >- 
-    /assets/thumbnails/playlist-after-the-silence-performed-by-lydia-ellington.jpeg
-    hero: >- 
-    /assets/playlist thumbnails/playlist - after the silence – lydia ellington.jpeg
+    thumbnail: /assets/thumbnails/playlist-after-the-silence-performed-by-lydia-ellington.jpeg
+    hero: /assets/playlist thumbnails/playlist - after the silence – lydia ellington.jpeg
     songs:
       - >-
         1-the-quiet-after-performed-by-lydia-ellington-after-the-silence-horizon-sound
