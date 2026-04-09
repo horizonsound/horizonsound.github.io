@@ -193,8 +193,6 @@
       {% assign first_track = pl.song_ids | first %}
       {% assign title = override.title | default: pl.title %}
 
-      {# --- COMING SOON LOGIC --- #}
-
       {% assign has_public = false %}
       {% assign earliest_ts = 9999999999 %}
 
@@ -223,8 +221,6 @@
           {% assign show_coming_soon = true %}
         {% endif %}
       {% endif %}
-
-      {# --- TILE RENDERING --- #}
 
       {% if has_public %}
         {% include album-premium-tile.html 
