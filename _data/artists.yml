@@ -46,7 +46,7 @@ artists:
     tagline: Sun‑soaked coastal storyteller with a barefoot spirit
     primary_color: "#F6B35A"
     secondary_color: "#1C6E8C"
-    headshot: ../assets/artists/cody-sails.jpg
+    headshot: ./assets/artists/cody-sails.jpg
     bio:
       - Cody Sails is a warm‑hearted coastal storyteller with a sun‑soaked voice and a barefoot, easygoing spirit.
       - His music blends beach‑folk, mellow pop, and golden‑hour acoustic grooves — always relaxed and inviting.
