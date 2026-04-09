@@ -14,14 +14,15 @@ artists:
       - Lydia writes about growth, resilience, love, and the quiet strength found in vulnerability.
       - Within Horizon Sound, Lydia defines the Cinematic Pop lane — glowing, emotional, and deeply expressive.
     photo_wall:
-      - /images/artists/lydia/wall-1.jpg
-      - /images/artists/lydia/wall-2.jpg
-      - /images/artists/lydia/wall-3.jpg
-      - /images/artists/lydia/wall-4.jpg
-      - /images/artists/lydia/wall-5.jpg
-      - /images/artists/lydia/wall-6.jpg
-      - /images/artists/lydia/wall-7.jpg
-      - /images/artists/lydia/wall-8.jpg
+      - /assets/artists/image1.jpeg
+      - /assets/artists/image2.jpeg
+      - /assets/artists/image3.jpeg
+      - /assets/artists/image4.jpeg
+      - /assets/artists/image5.jpeg
+      - /assets/artists/image6.jpeg
+      - /assets/artists/image7.jpeg
+      - /assets/artists/image8.jpeg
+      - /assets/artists/image9.jpeg
     albums:
       - title: Golden Hour Stories
         year: 2025
@@ -53,12 +54,15 @@ artists:
       - He sings about tides, friends, freedom, and the simple moments that make life feel lighter.
       - Within Horizon Sound, Cody anchors the Coastal Acoustic lane — warm, approachable, and emotionally grounded.
     photo_wall:
-      - /images/artists/cody/wall-1.jpg
-      - /images/artists/cody/wall-2.jpg
-      - /images/artists/cody/wall-3.jpg
-      - /images/artists/cody/wall-4.jpg
-      - /images/artists/cody/wall-5.jpg
-      - /images/artists/cody/wall-6.jpg
+      - /assets/artists/image11.jpeg
+      - /assets/artists/image12.jpeg
+      - /assets/artists/image13.jpeg
+      - /assets/artists/image14.jpeg
+      - /assets/artists/image15.jpeg
+      - /assets/artists/image16.jpeg
+      - /assets/artists/image17.jpeg
+      - /assets/artists/image18.jpeg
+      - /assets/artists/image19.jpeg
     albums:
       - title: Tides & Good Days
         year: 2025
