@@ -17,21 +17,29 @@
           On Stage
         </a>
       </li>
-  
+
       <li>
         <a href="{{ site.baseurl }}/catalog.html" 
            class="{% if page.url contains '/catalog' %}active{% endif %}">
           Explorer
         </a>
       </li>
-  
+
       <li>
         <a href="{{ site.baseurl }}/on-the-horizon.html" 
            class="{% if page.url contains '/on-the-horizon' %}active{% endif %}">
           On the Horizon
         </a>
       </li>
-  
+
+      <!-- ⭐ NEW MENU ITEM -->
+      <li>
+        <a href="{{ site.baseurl }}/artists.html"
+           class="{% if page.url contains '/artists' %}active{% endif %}">
+          Artists
+        </a>
+      </li>
+
       <li>
         <a href="{{ site.baseurl }}/origins.html" 
            class="{% if page.url contains '/origins' %}active{% endif %}">
@@ -40,7 +48,6 @@
       </li>
     </ul>
   </nav>
-
 </header>
 
 <script>  
