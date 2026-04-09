@@ -31,17 +31,6 @@
   }
 
   .artist-bio {
-    padding: 3rem 8vw;
-    max-width: 800px;
-  }
-
-  .artist-photo-wall {
-    column-count: 3;              /* three columns */
-    column-gap: 1rem;             /* spacing between columns */
-    padding: 3rem 10vw;           /* breathing room on sides */
-  }
-  
-  .artist-bio {
     max-width: 900px;        /* keeps the column readable */
     margin: 0 auto;          /* centers the column */
     padding: 4rem 10vw;      /* breathing room on both sides */
@@ -63,16 +52,21 @@
     grid-auto-rows: 10px;      /* masonry effect */
     gap: 1rem;
     padding: 3rem 10vw;
+    grid-auto-rows: 12px; /* smaller = smoother masonry */
   }
   
+  .span-1 { grid-row: span 25; }
+  .span-2 { grid-row: span 25; }
+  .span-3 { grid-row: span 35; }
+
   .artist-photo-wall img {
     width: 100%;
-    height: auto;
+    height: 100%;          /* fill the grid cell */
+    object-fit: cover;     /* crop instead of distort */
     border-radius: 10px;
     display: block;
-    object-fit: cover;
   }
-  
+
   /* span: 1 (default) */
   .artist-photo-wall img.span-1 {
     grid-column: span 1;
