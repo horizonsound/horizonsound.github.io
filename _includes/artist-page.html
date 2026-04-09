@@ -192,11 +192,8 @@
       {% assign now_ts = 'now' | date: "%s" | plus: 0 %}
       {% assign coming_soon_cutoff = now_ts | plus: window_seconds %}
   
+      {% assign playlist_data = site.data.youtube_playlists.playlists %}
       {% assign overrides = site.data.playlist_overrides.overrides %}
-      {% assign all_songs = site.data.youtube_songs.songs %}
-  
-      {# FILTER TO THIS ARTIST’S ALBUMS ONLY #}
-      {% assign playlist_data = site.data.youtube_playlists.playlists | where_exp: "pl", "artist.albums contains pl.playlist_id" %}
       
       {% assign merged_playlists = "" | split: "" %}
             
@@ -212,6 +209,9 @@
         {% endif %}
       {% endfor %}
   
+      {%- comment -%}
+        Build ACTIVE and COMING SOON arrays
+      {%- endcomment -%}
       {% assign active_playlists = "" | split: "" %}
       {% assign coming_soon_playlists = "" | split: "" %}
   
@@ -246,6 +246,9 @@
   
       {% endfor %}
   
+      {%- comment -%}
+        Build parallel arrays for sorting COMING SOON by earliest date
+      {%- endcomment -%}
       {% assign cs_pairs = "" | split: "" %}
   
       {% for playlist in coming_soon_playlists %}
@@ -269,6 +272,9 @@
   
       {% assign cs_pairs = cs_pairs | sort %}
   
+      {%- comment -%}
+        RENDER ACTIVE PLAYLISTS FIRST
+      {%- endcomment -%}
       {% for playlist in active_playlists %}
         {% assign override = overrides | where: "playlist_id", playlist.playlist_id | first %}
         {% assign playlist_song_ids = override.songs | default: playlist.song_ids %}
@@ -289,6 +295,9 @@
         </a>
       {% endfor %}
   
+      {%- comment -%}
+        RENDER COMING SOON PLAYLISTS IN SORTED ORDER
+      {%- endcomment -%}
       {% for pair in cs_pairs %}
         {% assign parts = pair | split: "||" %}
         {% assign earliest_ts = parts[0] | plus: 0 %}
