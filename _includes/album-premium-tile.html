@@ -1,6 +1,6 @@
 <div class="playlist-premium-tile-wrapper">
 
-  {% if album.links %}
+  {% if include.links %}
     <div class="album-links">
       {% if album.links.spotify %}
         <a href="{{ album.links.spotify }}" target="_blank">
@@ -8,13 +8,13 @@
         </a>
       {% endif %}
 
-      {% if album.links.apple_music %}
+      {% if include.links.apple_music %}
         <a href="{{ album.links.apple_music }}" target="_blank">
           <svg class="icon" viewBox="0 0 24 24"><path d="M16.365 1.43c-.96.04-2.12.68-2.81 1.53-.61.75-1.14 1.93-.94 3.06 1.08.08 2.2-.55 2.88-1.4.67-.83 1.17-2.03.87-3.19z"/></svg>
         </a>
       {% endif %}
 
-      {% if album.links.youtube_music %}
+      {% if include.links.youtube_music %}
         <a href="{{ album.links.youtube_music }}" target="_blank">
           <svg class="icon" viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-9.96 4.46-9.96 9.96s4.46 9.96 9.96 9.96 9.96-4.46 9.96-9.96S17.5 2.04 12 2.04zm-2 14.5V7.46l6 4.54-6 4.54z"/></svg>
         </a>
