@@ -192,7 +192,10 @@
       {% assign pl = site.data.youtube_playlists.playlists | where: "playlist_id", album.slug | first %}
       {% assign override = site.data.playlist_overrides.overrides | where: "playlist_id", album.slug | first %}
 
-      {% assign playlist_song_ids = override.songs | default: pl.song_ids %}
+      {% assign playlist_song_ids = override.songs %}
+      {% if playlist_song_ids == nil or playlist_song_ids == empty %}
+        {% assign playlist_song_ids = pl.song_ids %}
+      {% endif %}
 
       {% assign artwork = override.thumbnail | default: override.hero | default: pl.thumbnail | default: pl.hero | default: pl.youtube_thumbnail %}
       {% assign title = override.title | default: pl.title %}
