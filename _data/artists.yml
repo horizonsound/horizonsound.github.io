@@ -41,7 +41,14 @@ artists:
           apple_music: https://music.apple.com/us/album/after-the-silence/1889528896
           spotify: https://open.spotify.com/album/2mP8NXfE8Uhp68raM2iNM1?si=eVZAzRckQ6inVch5bjJNfw
           youtube_music: https://www.youtube.com/watch?v=GtGKAZdE0Do&list=OLAK5uy_mgHIFz_S2uiQ40O_uey8gXUTG8NmVeh3k
-    singles: []
+    singles: 
+      - slug: after-the-silence-performed-by-lydia-ellington
+        year: 2025
+        description: Cinematic pop moments about growth, hope, and emotional clarity.
+        links:
+          apple_music: https://music.apple.com/us/album/after-the-silence/1889528896
+          spotify: https://open.spotify.com/album/2mP8NXfE8Uhp68raM2iNM1?si=eVZAzRckQ6inVch5bjJNfw
+          youtube_music: https://www.youtube.com/watch?v=GtGKAZdE0Do&list=OLAK5uy_mgHIFz_S2uiQ40O_uey8gXUTG8NmVeh3k
     links:
       website: https://www.horizonsound.org/development/artists/lydia-ellington.html
       apple_music: https://music.apple.com/us/artist/lydia-ellington/1889073260
