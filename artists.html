@@ -4,7 +4,16 @@ title: Artists
 permalink: /artists.html
 ---
 
-<section class="artists-grid">
+{% include hero.html %}
+  <div class="page-header">
+    <h1>Horizon Sound Artists</h1>
+    <p class="page-subtitle">
+      A curated look at the music scheduled for release in the months ahead. 
+      These tracks and collections are already in motion — here’s what’s on the horizon.
+    </p>
+  </div>
+
+  <section class="artists-grid">
   {% for artist in site.data.artists.artists %}
     <a class="artist-tile" href="{{ site.baseurl }}/artists/{{ artist.slug }}.html">
       <div class="artist-image" style="background-image: url('{{ artist.headshot }}')"></div>
