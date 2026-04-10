@@ -160,12 +160,12 @@ artists:
     photo_wall:
       - src: ../assets/artists/ascension-youth-choir/AYC19.jpeg
         span: 1
-      - src: ../assets/artists/ascension-youth-choir/AYC9.jpeg
+      - src: ../assets/artists/ascension-youth-choir/AYC16.jpeg
+        span: 2
+      - src: ../assets/artists/ascension-youth-choir/AYC11.jpeg
         span: 2
       - src: ../assets/artists/ascension-youth-choir/AYC17.jpeg
         span: 1
-      - src: ../assets/artists/ascension-youth-choir/AYC16.jpeg
-        span: 2
       - src: ../assets/artists/ascension-youth-choir/AYC7.jpeg
         span: 1
       - src: ../assets/artists/ascension-youth-choir/AYC20.jpeg
