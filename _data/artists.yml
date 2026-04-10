@@ -143,3 +143,57 @@ artists:
       apple_music: https://music.apple.com/us/album/midnight-saga-ravyn-ep/1890661455
       spotify: https://open.spotify.com/artist/36A7eQseX0fkXYyAuzG79r?si=eul5z_4sSH2HqHJet4ohuw
       youtube: https://music.youtube.com/playlist?list=PLcKs1ONZE1PzhwIF1yE_gEUS1kZoW6oiH&si=DrzIeGgcZXb-7C12
+
+  - slug: ascension-youth-choir
+    name:
+      full: Ascension Youth Choir
+      first: 
+      last:
+    tagline: 
+    primary_color: 
+    secondary_color: 
+    headshot: ./assets/artists/ravyn/Ravyn Headshot 3000x3000.jpg
+    bio:
+      - Ravyn is an unpredictable pop artist with a wild heart and a taste for the edge.
+      - Her sound blends emotional pop, rebellious energy, and a spark of beautiful chaos — always bold, always alive.
+      - She writes about risk, desire, impulsive choices, and the moments where confidence and vulnerability collide.
+      - Within Horizon Sound, Ravyn stands as the fearless experimenter — equally at home in dark, cinematic eras like Midnight Saga or in bright, high‑energy pop built for movement and release.
+    photo_wall:
+      - src: ../assets/artists/ravyn/ravyn26.jpeg
+        span: 2
+      - src: ../assets/artists/ravyn/ravyn14.jpeg
+        span: 1
+      - src: ../assets/artists/ravyn/ravyn24.jpeg
+        span: 1
+      - src: ../assets/artists/ravyn/ravyn5.jpeg
+        span: 2
+      - src: ../assets/artists/ravyn/ravyn17.jpeg
+        span: 1
+      - src: ../assets/artists/ravyn/ravyn1.jpeg
+        span: 1
+      - src: ../assets/artists/ravyn/ravyn7.jpeg
+        span: 1
+      - src: ../assets/artists/ravyn/ravyn23.jpeg
+        span: 2
+      - src: ../assets/artists/ravyn/ravyn3.jpeg
+        span: 1
+      - src: ../assets/artists/ravyn/ravyn19.jpeg
+        span: 1
+      - src: ../assets/artists/ravyn/ravyn4.jpeg
+        span: 1
+      - src: ../assets/artists/ravyn/ravyn25.jpeg
+        span: 1  
+    albums: 
+      - slug: midnight-saga
+        year: 2025
+        description: Cinematic pop moments about growth, hope, and emotional clarity.
+        links:
+          apple_music: 
+          spotify: 
+          youtube_music: 
+    singles: []
+    links:
+      website: 
+      apple_music: 
+      spotify: 
+      youtube: 
