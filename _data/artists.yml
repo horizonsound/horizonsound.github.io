@@ -152,29 +152,29 @@ artists:
     tagline: Voices rising with purpose, unity, and heart
     primary_color: "#2A4C8F"
     secondary_color: "#E8EAF3"
-    headshot: ./assets/artists/ascension-youth-choir/AYC6.jpg
+    headshot: ./assets/artists/ascension-youth-choir/AYC6.jpeg
     bio: |
       Ascension Youth Choir is a vibrant ensemble of young singers ages eight to fifteen, united by a shared love of music and a spirit of encouragement. Known for their warm harmonies, expressive performances, and genuine connection with one another, the choir brings an uplifting energy to every stage they step onto.
       Whether they are rehearsing in a sunlit room, laughing between takes, or delivering a heartfelt performance, the members of Ascension Youth Choir embody the joy and authenticity of youth. Their sound blends innocence with emerging confidence, creating a unique musical identity that feels both grounded and full of possibility.
       As part of the Horizon Sound family, the choir represents growth, community, and the belief that every young voice has something meaningful to offer. Their performances celebrate unity, diversity, and the simple power of singing together.
     photo_wall:
-      - src: ../assets/artists/ascension-youth-choir/AYC19.jpg
+      - src: ../assets/artists/ascension-youth-choir/AYC19.jpeg
         span: 1
-      - src: ../assets/artists/ascension-youth-choir/AYC9.jpg
+      - src: ../assets/artists/ascension-youth-choir/AYC9.jpeg
         span: 2
-      - src: ../assets/artists/ascension-youth-choir/AYC17.jpg
+      - src: ../assets/artists/ascension-youth-choir/AYC17.jpeg
         span: 1
-      - src: ../assets/artists/ascension-youth-choir/AYC16.jpg
-        span: 1
-      - src: ../assets/artists/ascension-youth-choir/AYC7.jpg
-        span: 1
-      - src: ../assets/artists/ascension-youth-choir/AYC20.jpg
-        span: 1
-      - src: ../assets/artists/ascension-youth-choir/AYC12.jpg
-        span: 1
-      - src: ../assets/artists/ascension-youth-choir/AYC14.jpg
+      - src: ../assets/artists/ascension-youth-choir/AYC16.jpeg
         span: 2
-      - src: ../assets/artists/ascension-youth-choir/AYC1.jpg
+      - src: ../assets/artists/ascension-youth-choir/AYC7.jpeg
+        span: 1
+      - src: ../assets/artists/ascension-youth-choir/AYC20.jpeg
+        span: 1
+      - src: ../assets/artists/ascension-youth-choir/AYC12.jpeg
+        span: 1
+      - src: ../assets/artists/ascension-youth-choir/AYC14.jpeg
+        span: 2
+      - src: ../assets/artists/ascension-youth-choir/AYC1.jpeg
         span: 1
     albums: []
     singles: []
