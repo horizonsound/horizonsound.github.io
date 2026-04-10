@@ -101,3 +101,28 @@ artists:
       spotify: https://open.spotify.com/artist/5JXSFheKggmlJJ3qUZPefn?si=nQJqpPSCQMqDe71C1rnW5A
       youtube: https://www.youtube.com/channel/UCKrDH3xQ-iQkj6aNA1SI4qw
 
+    - slug: ravyn
+      name:
+        full: Ravyn
+        first: Ravyn
+        last:
+      tagline: A wild heart with a taste for the edge
+      primary_color: "#F6B35A"
+      secondary_color: "#1C6E8C"
+      headshot: ./assets/artists/ravyn/Ravyn Headshot 3000x3000.jpg
+      bio:
+        - Ravyn is an unpredictable pop artist with a wild heart and a taste for the edge.
+        - Her sound blends emotional pop, rebellious energy, and a spark of beautiful chaos — always bold, always alive.
+        - She writes about risk, desire, impulsive choices, and the moments where confidence and vulnerability collide.
+        - Within Horizon Sound, Ravyn stands as the fearless experimenter — equally at home in dark, cinematic eras like Midnight Saga or in bright, high‑energy pop built for movement and release.
+      photo_wall:
+    
+      albums: []
+    
+      singles: []
+    
+      links:
+        website: https://www.horizonsound.org/development/artists/ravyn.html
+        apple_music: https://music.apple.com/us/album/midnight-saga-ravyn-ep/1890661455
+        spotify: https://open.spotify.com/artist/36A7eQseX0fkXYyAuzG79r?si=eul5z_4sSH2HqHJet4ohuw
+        youtube: https://music.youtube.com/playlist?list=PLcKs1ONZE1PzhwIF1yE_gEUS1kZoW6oiH&si=DrzIeGgcZXb-7C12
