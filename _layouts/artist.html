@@ -1,0 +1,12 @@
+---
+layout: default
+permalink: /artists/:slug.html
+---
+
+{% assign artist = site.data.artists.artists | where: "slug", page.slug | first %}
+
+{% if artist %}
+  {% include artist-page.html artist=artist %}
+{% else %}
+  <p>Artist not found.</p>
+{% endif %}

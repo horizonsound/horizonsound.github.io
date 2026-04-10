@@ -1,0 +1,301 @@
+<style>
+  .artist-hero {
+      width: 100%;
+      height: 60vh;
+      background-size: cover;
+      background-position: center 20%; /* this is the correct one */
+      position: relative;             /* required for overlay */
+  }
+
+  .artist-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.75));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 4rem 8vw;
+  }
+  
+  .artist-name {
+    font-size: 8rem;
+    font-weight: 800;
+    color: white;
+    margin: 0;
+  }
+  
+  .artist-tagline {
+    font-size: 1.5rem;
+    color: rgba(255,255,255,0.85);
+    margin-top: 1rem;
+  }
+
+  .artist-bio {
+    max-width: 1100px;        /* keeps the column readable */
+    margin: 0 auto;          /* centers the column */
+    padding: 4rem 6vw;      /* breathing room on both sides */
+  }
+  
+  .artist-bio p {
+    text-align: left;        /* left‑aligned text */
+    font-size: 2.5rem;       /* premium readable size */
+    margin-bottom: 1.75rem;  /* space between paragraphs */
+    letter-spacing: 0.01em;  /* subtle polish */
+    color: rgba(255, 255, 255, 0.92);
+    font-weight: 200;
+    line-height: 1.85;
+  }
+
+  .artist-photo-wall {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 10px;      /* masonry effect */
+    gap: 1rem;
+    padding: 3rem 10vw;
+    grid-auto-rows: 24px; /* smaller = smoother masonry */
+  }
+  
+  .span-1 { grid-row: span 25; }
+  .span-2 { grid-row: span 25; }
+  .span-3 { grid-row: span 35; }
+
+  .artist-photo-wall img {
+    width: 100%;
+    height: 100%;          /* fill the grid cell */
+    object-fit: cover;     /* crop instead of distort */
+    border-radius: 10px;
+    display: block;
+  }
+
+  /* span: 1 (default) */
+  .artist-photo-wall img.span-1 {
+    grid-column: span 1;
+    grid-row: span 20;
+  }
+  
+  /* span: 2 (wide) */
+  .artist-photo-wall img.span-2 {
+    grid-column: span 2;
+    grid-row: span 20;
+  }
+  
+  /* span: 3 (full width hero) */
+  .artist-photo-wall img.span-3 {
+    grid-column: span 3;
+    grid-row: span 25;
+  }
+
+  .playlist-premium-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 16px 0;
+    padding-top: 32px;
+    padding-bottom: 16px;
+  }
+  
+  @media (min-width: 600px) {
+    .playlist-premium-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 900px) {
+    .playlist-premium-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .playlist-premium-image-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 14px;
+    box-shadow:
+      0 12px 28px rgba(0,0,0,0.45),
+      0 0 40px rgba(0,0,0,0.25);
+    aspect-ratio: 1 / 1; /* square album cover */
+    height: auto;
+  }
+
+  .playlist-premium-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .playlist-premium-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(0,0,0,0.75) 0%,
+      rgba(0,0,0,0.35) 40%,
+      rgba(0,0,0,0) 100%
+    );
+    pointer-events: none;
+  }
+  
+  .playlist-premium-title {
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: 0.3px;
+    text-shadow:
+      0 3px 6px rgba(0,0,0,0.65),
+      0 0 12px rgba(0,0,0,0.45);
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  .artist-albums h2 {
+    padding-left: 10vw;
+    margin-bottom: 1rem;
+  }
+  
+  .playlist-premium-grid {
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+  
+  .artist-albums h2 {
+    padding-left: 10vw;
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: white;
+    margin: 0 0 2rem 0;
+  }
+
+  .wall-title h2 {
+    padding-left: 10vw;
+    margin-bottom: 1rem;
+  }
+
+  .wall-title h2 {
+    padding-left: 10vw;
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: white;
+    margin: 0 0 2rem 0;
+  }
+
+  .icon {
+    width: 28px;
+    height: 28px;
+    fill: white;
+    opacity: 0.9;
+    transition: opacity 0.2s ease;
+  }
+  .icon:hover {
+    opacity: 1;
+  }
+
+  .artist-links {
+    display: flex;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+
+  .album-links {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    display: flex;
+    gap: 0.75rem;
+    z-index: 10;
+  }
+
+  .album-links .icon {
+    width: 22px;
+    height: 22px;
+    opacity: 0.85;
+  }
+</style>
+
+<div class="artist-hero" style="background-image: url('.{{ artist.headshot }}')">
+  <div class="artist-hero-overlay">
+    <h1 class="artist-name">{{ artist.name.full }}</h1>
+    <p class="artist-tagline">{{ artist.tagline }}</p>
+    <div class="artist-links">
+      {% if artist.links.spotify %}
+        <a href="{{ artist.links.spotify }}" target="_blank">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 6.64 5.37 12 12 12s12-5.36 12-12C24 5.37 18.63 0 12 0zm5.52 17.28c-.23.37-.71.49-1.08.26-2.97-1.82-6.7-2.23-11.11-1.22-.43.1-.86-.17-.96-.6-.1-.43.17-.86.6-.96 4.82-1.11 9.02-.64 12.33 1.36.37.23.49.71.26 1.08zm1.54-3.45c-.29.47-.9.62-1.37.33-3.4-2.09-8.6-2.7-12.63-1.48-.52.15-1.06-.15-1.21-.67-.15-.52.15-1.06.67-1.21 4.57-1.33 10.27-.65 14.1 1.72.47.29.62.9.33 1.37zm.14-3.66c-4.02-2.39-10.67-2.61-14.52-1.43-.62.19-1.28-.16-1.47-.78-.19-.62.16-1.28.78-1.47 4.39-1.35 11.78-1.09 16.43 1.67.56.33.75 1.05.42 1.61-.33.56-1.05.75-1.61.42z"/></svg>
+        </a>
+      {% endif %}
+    
+      {% if artist.links.apple_music %}
+        <a href="{{ artist.links.apple_music }}" target="_blank">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M16.365 1.43c-.96.04-2.12.68-2.81 1.53-.61.75-1.14 1.93-.94 3.06 1.08.08 2.2-.55 2.88-1.4.67-.83 1.17-2.03.87-3.19zm3.02 10.26c-.03-3.23 2.64-4.79 2.76-4.86-1.51-2.2-3.86-2.5-4.69-2.53-1.98-.2-3.87 1.17-4.87 1.17-.99 0-2.56-1.14-4.21-1.11-2.16.03-4.16 1.26-5.27 3.2-2.26 3.92-.58 9.72 1.62 12.9 1.07 1.54 2.34 3.27 4.01 3.21 1.62-.07 2.23-1.04 4.19-1.04 1.96 0 2.51 1.04 4.22.99 1.75-.03 2.85-1.56 3.92-3.1 1.24-1.81 1.75-3.57 1.78-3.66-.04-.02-3.39-1.3-3.43-5.17z"/></svg>
+        </a>
+      {% endif %}
+    
+      {% if artist.links.youtube %}
+        <a href="{{ artist.links.youtube }}" target="_blank">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M23.5 6.2s-.2-1.7-.8-2.4c-.8-.9-1.7-.9-2.1-1C17.3 2.5 12 2.5 12 2.5h-.1s-5.3 0-8.6.3c-.4.1-1.3.1-2.1 1-.6.7-.8 2.4-.8 2.4S0 8.1 0 10v1.9c0 1.9.2 3.8.2 3.8s.2 1.7.8 2.4c.8.9 1.9.9 2.4 1 1.8.2 7.6.3 7.6.3s5.3 0 8.6-.3c.4-.1 1.3-.1 2.1-1 .6-.7.8-2.4.8-2.4s.2-1.9.2-3.8V10c0-1.9-.2-3.8-.2-3.8zM9.6 14.9V8.1l6.4 3.4-6.4 3.4z"/></svg>
+        </a>
+      {% endif %}
+    
+      {% if artist.links.website %}
+        <a href="{{ artist.links.website }}" target="_blank">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.373 0 12c0 6.628 5.372 12 12 12s12-5.372 12-12C24 5.373 18.628 0 12 0zm0 3c1.657 0 3 4.03 3 9s-1.343 9-3 9-3-4.03-3-9 1.343-9 3-9zm-9 9c0-1.657 4.03-3 9-3s9 1.343 9 3-4.03 3-9 3-9-1.343-9-3z"/></svg>
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<section class="artist-bio">
+  {% for paragraph in artist.bio %}
+    <p>{{ paragraph }}</p>
+  {% endfor %}
+</section>
+
+{% if artist.photo_wall %}
+  <section class="wall-title">
+    <h2>Behind the Scenes</h2>
+  </section>
+  <section class="artist-photo-wall">
+    {% for photo in artist.photo_wall %}
+      {% assign span = photo.span | default: 1 %}
+      <img 
+        src="{{ photo.src }}" 
+        class="span-{{ span }}"
+        alt="{{ artist.name.full }} photo"
+      >
+    {% endfor %}
+  </section>
+{% endif %}
+
+{% if artist.albums and artist.albums.size > 0 %}
+  <section class="artist-albums">
+    <h2>Albums</h2>
+  
+    <div class="playlist-premium-grid">
+      {% for album in artist.albums %}
+        {% assign pl = site.data.youtube_playlists.playlists | where: "playlist_id", album.slug | first %}
+        {% assign override = site.data.playlist_overrides.overrides | where: "playlist_id", album.slug | first %}
+  
+        {% assign artwork = override.thumbnail | default: override.hero | default: pl.thumbnail | default: pl.hero | default: pl.youtube_thumbnail %}
+        {% assign first_track = pl.song_ids | first %}
+        {% assign title = override.title | default: pl.title %}
+  
+        {% include album-premium-tile.html 
+            album=album 
+            links=album.links
+            title=title 
+            artwork=artwork 
+            first_track=first_track 
+        %}
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}
+

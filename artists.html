@@ -1,0 +1,147 @@
+---
+layout: default
+title: Artists
+permalink: /artists.html
+---
+
+<style>
+  .artists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    padding: 4rem 8vw;
+  }
+  
+  .artist-tile {
+    display: block;
+    text-decoration: none;
+    color: white;
+    background: #11121a;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .artist-tile:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.45);
+  }
+  
+  .artist-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .artist-name {
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  
+  .artist-tile {
+    display: block;
+    text-decoration: none;
+    color: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .artist-tile:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.45);
+  }
+  
+  .artist-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  /* This is the big, premium name overlay */
+/* This is the big, premium name overlay */
+.artist-name-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  background: rgba(0,0,0,0);
+
+  font-size: 8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+
+  padding-bottom: 10%;
+
+  /* subtle glow so it stays readable */
+  text-shadow:
+    0 0 12px rgba(0,0,0,0.65),
+    0 0 24px rgba(0,0,0,0.45);
+}
+
+  @media (max-width: 1100px) {
+    .artist-name-overlay {
+      font-size: clamp(2rem, 6vw, 3.5rem); /* mobile-friendly */
+      letter-spacing: 0.05em; /* tighter tracking */
+      padding-bottom: 6%;     /* moves it up slightly */
+    }
+  }
+
+  .page-header {
+    padding: 0 8vw;
+    margin-bottom: 48px;
+  }
+  
+  .page-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .page-subtitle {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    max-width: 720px;
+  }
+  
+.page-header {
+  margin-top: -120px; /* pull it up onto the hero */
+  position: relative;
+  z-index: 20;
+  padding: 0 8vw;
+  margin-bottom: 48px;
+}
+
+</style>
+
+{% include hero.html %}
+  <div class="page-header">
+    <h1>Horizon Sound Artists</h1>
+    <p class="page-subtitle">
+      A growing roster of artists defining the Horizon Sound identity — one song, one story at a time.
+    </p>
+  </div>
+
+  <section class="artists-grid">
+  {% for artist in site.data.artists.artists %}
+    <a class="artist-tile" href="{{ site.baseurl }}/artists/{{ artist.slug }}.html">
+      <div class="artist-image" style="background-image: url('{{ artist.headshot }}')">
+        <div class="artist-name-overlay">
+          {{ artist.name.full }}
+        </div>
+      </div>
+    </a>
+  {% endfor %}
+</section>
+
+

@@ -73,7 +73,9 @@ overrides:
     title: Electric Guitar Rock – Instrumentals
     subtitle: null
     description: ''
-    thumbnail: /assets/playlist thumbnails/playlist - electric guitar rock.jpg
+    thumbnail: >-
+      /assets/playlist thumbnails/playlist - electric guitar rock –
+      instrumental.jpg
     hero: null
     songs:
       - neon-skyline
@@ -176,9 +178,10 @@ overrides:
       A reflective pop‑soul journey about healing, clarity, and finding your
       voice ag
     thumbnail: >-
+      /assets/thumbnails/playlist-after-the-silence-performed-by-lydia-ellington.jpeg
+    hero: >-
       /assets/playlist thumbnails/playlist - after the silence – lydia
       ellington.jpeg
-    hero: /assets/thumbnails/playlist-hero-after-the-silence.jpeg
     songs:
       - >-
         1-the-quiet-after-performed-by-lydia-ellington-after-the-silence-horizon-sound
@@ -311,7 +314,7 @@ overrides:
     title: ''
     subtitle: ''
     description: ''
-    thumbnail: ''
+    thumbnail: /assets/thumbnails/playlist-rum-soaked-paradise-cody-sails.jpeg
     hero: ''
     songs: []
     order: null

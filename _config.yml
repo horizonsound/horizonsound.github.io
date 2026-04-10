@@ -13,3 +13,6 @@ collections:
   playlists:
     output: true
     permalink: /music/playlists/:name/
+  artists:
+    output: true
+    permalink: /artists/:name.html

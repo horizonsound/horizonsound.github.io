@@ -1,0 +1,103 @@
+artists:
+  - slug: lydia-ellington
+    name:
+      full: Lydia Ellington
+      first: Lydia
+      last: Ellington
+    tagline: Cinematic pop with a glowing, emotional core
+    primary_color: "#F4B5D8"
+    secondary_color: "#5C3B8C"
+    headshot: ./assets/artists/lydia-ellington/lydia-ellington.jpg
+    bio:
+      - Lydia Ellington is a cinematic pop vocalist with a glowing emotional core and a voice that feels like light breaking through clouds.
+      - Her music blends modern pop, orchestral textures, and heartfelt storytelling, creating songs that feel both intimate and widescreen.
+      - Lydia writes about growth, resilience, love, and the quiet strength found in vulnerability.
+      - Within Horizon Sound, Lydia defines the Cinematic Pop lane — glowing, emotional, and deeply expressive.
+    photo_wall:
+      - src: ../assets/artists/lydia-ellington/lydia2.jpeg
+        span: 2
+      - src: ../assets/artists/lydia-ellington/lydia21.jpeg
+        span: 1
+      - src: ../assets/artists/lydia-ellington/lydia19.jpeg
+        span: 1
+      - src: ../assets/artists/lydia-ellington/lydia11a.jpeg
+        span: 2
+      - src: ../assets/artists/lydia-ellington/lydia15.jpeg
+        span: 2
+      - src: ../assets/artists/lydia-ellington/lydia12.jpeg
+        span: 1
+      - src: ../assets/artists/lydia-ellington/lydia22.jpeg
+        span: 1
+      - src: ../assets/artists/lydia-ellington/lydia7.jpeg
+        span: 1
+      - src: ../assets/artists/lydia-ellington/lydia5.jpeg
+        span: 1
+  
+    albums:
+      - slug: after-the-silence-performed-by-lydia-ellington
+        year: 2025
+        description: Cinematic pop moments about growth, hope, and emotional clarity.
+        links:
+          apple_music: https://music.apple.com/us/album/after-the-silence/1889528896
+          spotify: https://open.spotify.com/album/2mP8NXfE8Uhp68raM2iNM1?si=eVZAzRckQ6inVch5bjJNfw
+          youtube_music: https://www.youtube.com/watch?v=GtGKAZdE0Do&list=OLAK5uy_mgHIFz_S2uiQ40O_uey8gXUTG8NmVeh3k
+    singles: 
+      - slug: after-the-silence-performed-by-lydia-ellington
+        year: 2025
+        description: Cinematic pop moments about growth, hope, and emotional clarity.
+        links:
+          apple_music: https://music.apple.com/us/album/after-the-silence/1889528896
+          spotify: https://open.spotify.com/album/2mP8NXfE8Uhp68raM2iNM1?si=eVZAzRckQ6inVch5bjJNfw
+          youtube_music: https://www.youtube.com/watch?v=GtGKAZdE0Do&list=OLAK5uy_mgHIFz_S2uiQ40O_uey8gXUTG8NmVeh3k
+    links:
+      website: https://www.horizonsound.org/development/artists/lydia-ellington.html
+      apple_music: https://music.apple.com/us/artist/lydia-ellington/1889073260
+      spotify: https://open.spotify.com/artist/6NmeEuax1ZPpDmSLfjSS7V?si=4E8XlQEYSW2jiGg8nVySbw
+      youtube: https://www.youtube.com/@LydiaEllington-hs
+
+  - slug: cody-sails
+    name:
+      full: Cody Sails
+      first: Cody
+      last: Sails
+    tagline: Sun‑soaked coastal storyteller with a barefoot spirit
+    primary_color: "#F6B35A"
+    secondary_color: "#1C6E8C"
+    headshot: ./assets/artists/cody-sails/cody-sails.jpg
+    bio:
+      - Cody Sails is a warm‑hearted coastal storyteller with a sun‑soaked voice and a barefoot, easygoing spirit.
+      - His music blends beach‑folk, mellow pop, and golden‑hour acoustic grooves — always relaxed and inviting.
+      - He sings about tides, friends, freedom, and the simple moments that make life feel lighter.
+      - Within Horizon Sound, Cody anchors the Coastal Acoustic lane — warm, approachable, and emotionally grounded.
+    photo_wall:
+      - src: ../assets/artists/cody-sails/cody19.jpeg
+        span: 2
+      - src: ../assets/artists/cody-sails/cody18.jpeg
+        span: 1
+      - src: ../assets/artists/cody-sails/cody17.jpeg
+        span: 1
+      - src: ../assets/artists/cody-sails/cody13.jpeg
+        span: 1
+      - src: ../assets/artists/cody-sails/cody16.jpeg
+        span: 1
+      - src: ../assets/artists/cody-sails/cody3.jpeg
+        span: 2
+      - src: ../assets/artists/cody-sails/cody6.jpeg
+        span: 1
+      - src: ../assets/artists/cody-sails/cody12.jpeg
+        span: 1
+      - src: ../assets/artists/cody-sails/cody7a.jpeg
+        span: 1
+      - src: ../assets/artists/cody-sails/cody1.jpeg
+        span: 1
+
+    albums: []
+    
+    singles: []
+
+    links:
+      website: https://www.horizonsound.org/development/artists/cody-sails.html
+      apple_music: https://music.apple.com/us/artist/cody-sails/1890255704
+      spotify: https://open.spotify.com/artist/5JXSFheKggmlJJ3qUZPefn?si=nQJqpPSCQMqDe71C1rnW5A
+      youtube: https://www.youtube.com/channel/UCKrDH3xQ-iQkj6aNA1SI4qw
+
