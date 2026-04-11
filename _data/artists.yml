@@ -162,6 +162,8 @@ artists:
     photo_wall:
       - src: ../assets/artists/ascension-youth-choir/AYC22.jpeg
         span: 3
+      - src: ../assets/artists/ascension-youth-choir/AYC21.jpeg
+        span: 3
       - src: ../assets/artists/ascension-youth-choir/AYC19.jpeg
         span: 1
       - src: ../assets/artists/ascension-youth-choir/AYC16.jpeg
