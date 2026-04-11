@@ -160,10 +160,6 @@ artists:
     
       As part of the Horizon Sound family, the choir represents growth, community, and the belief that every young voice has something meaningful to offer. Their performances celebrate unity, diversity, and the simple power of singing together.
     photo_wall:
-      - src: ../assets/artists/ascension-youth-choir/AYC22.jpeg
-        span: 3
-      - src: ../assets/artists/ascension-youth-choir/AYC21.jpeg
-        span: 3
       - src: ../assets/artists/ascension-youth-choir/AYC19.jpeg
         span: 1
       - src: ../assets/artists/ascension-youth-choir/AYC16.jpeg
@@ -178,10 +174,10 @@ artists:
         span: 1
       - src: ../assets/artists/ascension-youth-choir/AYC12.jpeg
         span: 1
-      - src: ../assets/artists/ascension-youth-choir/AYC14.jpeg
-        span: 2
       - src: ../assets/artists/ascension-youth-choir/AYC1.jpeg
         span: 1
+      - src: ../assets/artists/ascension-youth-choir/AYC14.jpeg
+        span: 2
     albums: []
     singles: []
     links:
