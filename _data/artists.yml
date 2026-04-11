@@ -31,8 +31,7 @@ artists:
       - src: ../assets/artists/lydia-ellington/lydia7.jpeg
         span: 1
       - src: ../assets/artists/lydia-ellington/lydia5.jpeg
-        span: 1
-  
+        span: 1  
     albums:
       - slug: after-the-silence-performed-by-lydia-ellington
         year: 2025
@@ -41,14 +40,7 @@ artists:
           apple_music: https://music.apple.com/us/album/after-the-silence/1889528896
           spotify: https://open.spotify.com/album/2mP8NXfE8Uhp68raM2iNM1?si=eVZAzRckQ6inVch5bjJNfw
           youtube_music: https://www.youtube.com/watch?v=GtGKAZdE0Do&list=OLAK5uy_mgHIFz_S2uiQ40O_uey8gXUTG8NmVeh3k
-    singles: 
-      - slug: after-the-silence-performed-by-lydia-ellington
-        year: 2025
-        description: Cinematic pop moments about growth, hope, and emotional clarity.
-        links:
-          apple_music: https://music.apple.com/us/album/after-the-silence/1889528896
-          spotify: https://open.spotify.com/album/2mP8NXfE8Uhp68raM2iNM1?si=eVZAzRckQ6inVch5bjJNfw
-          youtube_music: https://www.youtube.com/watch?v=GtGKAZdE0Do&list=OLAK5uy_mgHIFz_S2uiQ40O_uey8gXUTG8NmVeh3k
+    singles: []
     links:
       website: https://www.horizonsound.org/development/artists/lydia-ellington.html
       apple_music: https://music.apple.com/us/artist/lydia-ellington/1889073260
@@ -90,14 +82,106 @@ artists:
         span: 1
       - src: ../assets/artists/cody-sails/cody1.jpeg
         span: 1
-
-    albums: []
-    
+    albums: []    
     singles: []
-
     links:
       website: https://www.horizonsound.org/development/artists/cody-sails.html
       apple_music: https://music.apple.com/us/artist/cody-sails/1890255704
       spotify: https://open.spotify.com/artist/5JXSFheKggmlJJ3qUZPefn?si=nQJqpPSCQMqDe71C1rnW5A
       youtube: https://www.youtube.com/channel/UCKrDH3xQ-iQkj6aNA1SI4qw
 
+  - slug: ravyn
+    name:
+      full: Ravyn
+      first: Ravyn
+      last:
+    tagline: A wild heart with a taste for the edge
+    primary_color: "#F6B35A"
+    secondary_color: "#1C6E8C"
+    headshot: ./assets/artists/ravyn/Ravyn Headshot 3000x3000.jpg
+    bio:
+      - Ravyn is an unpredictable pop artist with a wild heart and a taste for the edge.
+      - Her sound blends emotional pop, rebellious energy, and a spark of beautiful chaos — always bold, always alive.
+      - She writes about risk, desire, impulsive choices, and the moments where confidence and vulnerability collide.
+      - Within Horizon Sound, Ravyn stands as the fearless experimenter — equally at home in dark, cinematic eras like Midnight Saga or in bright, high‑energy pop built for movement and release.
+    photo_wall:
+      - src: ../assets/artists/ravyn/ravyn26.jpeg
+        span: 2
+      - src: ../assets/artists/ravyn/ravyn14.jpeg
+        span: 1
+      - src: ../assets/artists/ravyn/ravyn24.jpeg
+        span: 1
+      - src: ../assets/artists/ravyn/ravyn5.jpeg
+        span: 2
+      - src: ../assets/artists/ravyn/ravyn17.jpeg
+        span: 1
+      - src: ../assets/artists/ravyn/ravyn1.jpeg
+        span: 1
+      - src: ../assets/artists/ravyn/ravyn7.jpeg
+        span: 1
+      - src: ../assets/artists/ravyn/ravyn23.jpeg
+        span: 2
+      - src: ../assets/artists/ravyn/ravyn3.jpeg
+        span: 1
+      - src: ../assets/artists/ravyn/ravyn19.jpeg
+        span: 1
+      - src: ../assets/artists/ravyn/ravyn4.jpeg
+        span: 1
+      - src: ../assets/artists/ravyn/ravyn25.jpeg
+        span: 1  
+    albums: 
+      - slug: midnight-saga
+        year: 2025
+        description: Cinematic pop moments about growth, hope, and emotional clarity.
+        links:
+          apple_music: 
+          spotify: 
+          youtube_music: 
+    singles: []
+    links:
+      website: https://www.horizonsound.org/development/artists/ravyn.html
+      apple_music: https://music.apple.com/us/album/midnight-saga-ravyn-ep/1890661455
+      spotify: https://open.spotify.com/artist/36A7eQseX0fkXYyAuzG79r?si=eul5z_4sSH2HqHJet4ohuw
+      youtube: https://music.youtube.com/playlist?list=PLcKs1ONZE1PzhwIF1yE_gEUS1kZoW6oiH&si=DrzIeGgcZXb-7C12
+  
+  - slug: ascension-youth-choir
+    name:
+      full: Ascension Youth Choir
+      first:
+      last:
+    tagline: Voices rising with purpose, unity, and heart
+    primary_color: "#2A4C8F"
+    secondary_color: "#E8EAF3"
+    headshot: ./assets/artists/ascension-youth-choir/AYC6.jpeg
+    bio: |
+      Ascension Youth Choir is a vibrant ensemble of young singers ages eight to fifteen, united by a shared love of music and a spirit of encouragement. Because of this age range, the choir is always evolving: wonderful singers grow up and move on, and new voices step in to carry the sound forward. Together, they keep the spirit of Ascension Youth Choir alive from season to season.
+    
+      Known for their warm harmonies, expressive performances, and genuine connection with one another, the choir brings an uplifting energy to every stage they step onto. Whether they are rehearsing in a sunlit room, laughing between takes, or delivering a heartfelt performance, the members of Ascension Youth Choir embody the joy and authenticity of youth. Their sound blends innocence with emerging confidence, creating a unique musical identity that feels both grounded and full of possibility.
+    
+      As part of the Horizon Sound family, the choir represents growth, community, and the belief that every young voice has something meaningful to offer. Their performances celebrate unity, diversity, and the simple power of singing together.
+    photo_wall:
+      - src: ../assets/artists/ascension-youth-choir/AYC19.jpeg
+        span: 1
+      - src: ../assets/artists/ascension-youth-choir/AYC16.jpeg
+        span: 2
+      - src: ../assets/artists/ascension-youth-choir/AYC11.jpeg
+        span: 2
+      - src: ../assets/artists/ascension-youth-choir/AYC17.jpeg
+        span: 1
+      - src: ../assets/artists/ascension-youth-choir/AYC13.jpeg
+        span: 1
+      - src: ../assets/artists/ascension-youth-choir/AYC20.jpeg
+        span: 1
+      - src: ../assets/artists/ascension-youth-choir/AYC12.jpeg
+        span: 1
+      - src: ../assets/artists/ascension-youth-choir/AYC14.jpeg
+        span: 2
+      - src: ../assets/artists/ascension-youth-choir/AYC1.jpeg
+        span: 1
+    albums: []
+    singles: []
+    links:
+      website:
+      apple_music:
+      spotify:
+      youtube:

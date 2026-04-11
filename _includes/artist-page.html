@@ -218,6 +218,16 @@
     height: 22px;
     opacity: 0.85;
   }
+
+  .coming-soon-message {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 3rem;
+    font-weight: 500;
+    font-family: var(--premium-font, 'Georgia', serif);
+    color: white;
+    opacity: 0.85;
+  }
 </style>
 
 <div class="artist-hero" style="background-image: url('.{{ artist.headshot }}')">
@@ -297,5 +307,10 @@
       {% endfor %}
     </div>
   </section>
+{% else %}
+  <section class="artist-albums">
+    <div class="coming-soon-message">
+      <p>Music from this artist will be available soon</p>
+    </div>
+  </section>
 {% endif %}
-
