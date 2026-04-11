@@ -6535,7 +6535,7 @@ songs:
     videostatus: public
     playlists:
       - modern-country
-    view_count_num: 116
+    view_count_num: 117
     youtube_metadata:
       published_at: '2026-03-27T16:00:39Z'
       scheduled_at: null
@@ -6552,7 +6552,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '116'
+        view_count: '117'
         like_count: '5'
         favorite_count: '0'
         comment_count: '0'
@@ -8224,7 +8224,7 @@ songs:
     videostatus: public
     playlists:
       - 80s-rock-pop
-    view_count_num: 26
+    view_count_num: 27
     youtube_metadata:
       published_at: '2026-01-22T11:57:37Z'
       scheduled_at: null
@@ -8241,7 +8241,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '26'
+        view_count: '27'
         like_count: '2'
         favorite_count: '0'
         comment_count: '1'
