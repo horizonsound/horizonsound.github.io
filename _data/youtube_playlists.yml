@@ -103,7 +103,7 @@ playlists:
     published_at: '2026-03-20T00:13:15.979204Z'
     channel_id: UCiko-zjojbsoXrsEuBOPbSw
     channel_title: Horizon Sound
-    thumbnail: null
+    thumbnail: /assets/thumbnails/playlist-workout-edm-horizon-sound-instrumentals.jpeg
     song_ids:
       - electric-pulse
       - break-the-gravity
