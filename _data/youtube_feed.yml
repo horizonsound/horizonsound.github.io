@@ -21,18 +21,282 @@ songs:
       - songwriter
     url: /music/across-the-emerald-coast/
     thumbnail: /assets/thumbnails/across-the-emerald-coast.jpeg
-    videostatus: private
+    videostatus: scheduled
     playlists:
       - irish-celtic-horizon-sound-instrumentals
     view_count_num: 0
     youtube_metadata:
       published_at: '2026-04-12T12:35:15Z'
-      scheduled_at: null
+      scheduled_at: '2026-05-16T12:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
       tags: []
       duration: PT2M25S
+      definition: hd
+      dimension: null
+      caption: null
+      licensed_content: false
+      region_allowed: []
+      region_blocked: []
+      content_rating: {}
+      statistics:
+        view_count: '0'
+        like_count: '0'
+        favorite_count: '0'
+        comment_count: '0'
+      made_for_kids: false
+      self_declared_made_for_kids: false
+      topic_categories: []
+      privacy_status: null
+      upload_status: null
+      publish_at: null
+      license: ''
+      embeddable: true
+      public_stats_viewable: true
+  - song_id: fire-in-the-fiddle
+    youtube_id: 3zemHQQc4So
+    title: Fire in the Fiddle
+    description_html: >-
+      <p>A high‑energy Irish Celtic instrumental filled with fast fiddle runs,
+      bright whistles, and the pulse of traditional dance rhythms. Perfect for
+      workouts, celebrations, or anyone who loves the Riverdance‑style
+      sound.</p>
+    vibes: []
+    tags:
+      - horizonsound
+      - originalmusic
+      - newmusic
+      - musicvideo
+      - indieartist
+      - popmusic
+      - instrumentalmusic
+      - songwriter
+    url: /music/fire-in-the-fiddle/
+    thumbnail: /assets/thumbnails/fire-in-the-fiddle.jpeg
+    videostatus: scheduled
+    playlists:
+      - irish-celtic-horizon-sound-instrumentals
+    view_count_num: 0
+    youtube_metadata:
+      published_at: '2026-04-12T12:32:20Z'
+      scheduled_at: '2026-11-14T06:00:00Z'
+      channel_id: UCiko-zjojbsoXrsEuBOPbSw
+      channel_title: Horizon Sound
+      category_id: '22'
+      tags: []
+      duration: PT2M28S
+      definition: hd
+      dimension: null
+      caption: null
+      licensed_content: false
+      region_allowed: []
+      region_blocked: []
+      content_rating: {}
+      statistics:
+        view_count: '0'
+        like_count: '0'
+        favorite_count: '0'
+        comment_count: '0'
+      made_for_kids: false
+      self_declared_made_for_kids: false
+      topic_categories: []
+      privacy_status: null
+      upload_status: null
+      publish_at: null
+      license: ''
+      embeddable: true
+      public_stats_viewable: true
+  - song_id: the-chase-through-galway
+    youtube_id: Sn19AxM3YMk
+    title: The Chase through Galway
+    description_html: >-
+      <p>A lively Celtic instrumental built around dueling fiddle lines and
+      spirited Irish rhythms. This track captures the heart of traditional folk
+      sessions — energetic, joyful, and full of storytelling.</p>
+    vibes: []
+    tags:
+      - horizonsound
+      - originalmusic
+      - newmusic
+      - musicvideo
+      - indieartist
+      - popmusic
+      - instrumentalmusic
+      - songwriter
+    url: /music/the-chase-through-galway/
+    thumbnail: /assets/thumbnails/the-chase-through-galway.jpeg
+    videostatus: scheduled
+    playlists:
+      - irish-celtic-horizon-sound-instrumentals
+    view_count_num: 0
+    youtube_metadata:
+      published_at: '2026-04-12T12:37:49Z'
+      scheduled_at: '2026-07-11T12:00:00Z'
+      channel_id: UCiko-zjojbsoXrsEuBOPbSw
+      channel_title: Horizon Sound
+      category_id: '22'
+      tags: []
+      duration: PT2M32S
+      definition: hd
+      dimension: null
+      caption: null
+      licensed_content: false
+      region_allowed: []
+      region_blocked: []
+      content_rating: {}
+      statistics:
+        view_count: '0'
+        like_count: '0'
+        favorite_count: '0'
+        comment_count: '0'
+      made_for_kids: false
+      self_declared_made_for_kids: false
+      topic_categories: []
+      privacy_status: null
+      upload_status: null
+      publish_at: null
+      license: ''
+      embeddable: true
+      public_stats_viewable: true
+  - song_id: fiddlers-at-dawn
+    youtube_id: cf1m2D00mPU
+    title: Fiddlers at Dawn
+    description_html: >-
+      <p>A lively Celtic instrumental built around dueling fiddle lines and
+      spirited Irish rhythms. This track captures the heart of traditional folk
+      sessions — energetic, joyful, and full of storytelling.</p>
+    vibes: []
+    tags:
+      - horizonsound
+      - originalmusic
+      - newmusic
+      - musicvideo
+      - indieartist
+      - popmusic
+      - instrumentalmusic
+      - songwriter
+    url: /music/fiddlers-at-dawn/
+    thumbnail: /assets/thumbnails/fiddlers-at-dawn.jpeg
+    videostatus: scheduled
+    playlists:
+      - irish-celtic-horizon-sound-instrumentals
+    view_count_num: 0
+    youtube_metadata:
+      published_at: '2026-04-12T12:40:38Z'
+      scheduled_at: '2027-03-20T12:00:00Z'
+      channel_id: UCiko-zjojbsoXrsEuBOPbSw
+      channel_title: Horizon Sound
+      category_id: '22'
+      tags: []
+      duration: PT2M
+      definition: hd
+      dimension: null
+      caption: null
+      licensed_content: false
+      region_allowed: []
+      region_blocked: []
+      content_rating: {}
+      statistics:
+        view_count: '0'
+        like_count: '0'
+        favorite_count: '0'
+        comment_count: '0'
+      made_for_kids: false
+      self_declared_made_for_kids: false
+      topic_categories: []
+      privacy_status: null
+      upload_status: null
+      publish_at: null
+      license: ''
+      embeddable: true
+      public_stats_viewable: true
+  - song_id: the-path-to-dunmore-head
+    youtube_id: 9AweE6Lo68M
+    title: The Path to Dunmore Head
+    description_html: >-
+      <p>A bright and adventurous Irish Celtic instrumental featuring soaring
+      uilleann pipes, rhythmic acoustic guitar, spirited fiddle harmonies, and a
+      driving bodhrán pulse. This track captures the windswept energy of
+      Ireland’s coastal cliffs — lively, uplifting, and full of folk‑driven
+      movement. Perfect for storytelling, travel, festivals, or anyone who loves
+      the spirited sound of Celtic tradition.</p>
+    vibes: []
+    tags:
+      - horizonsound
+      - originalmusic
+      - newmusic
+      - musicvideo
+      - indieartist
+      - popmusic
+      - instrumentalmusic
+      - songwriter
+    url: /music/the-path-to-dunmore-head/
+    thumbnail: /assets/thumbnails/the-path-to-dunmore-head.jpeg
+    videostatus: scheduled
+    playlists:
+      - irish-celtic-horizon-sound-instrumentals
+    view_count_num: 0
+    youtube_metadata:
+      published_at: '2026-04-12T12:42:23Z'
+      scheduled_at: '2027-01-02T13:00:00Z'
+      channel_id: UCiko-zjojbsoXrsEuBOPbSw
+      channel_title: Horizon Sound
+      category_id: '22'
+      tags: []
+      duration: PT2M48S
+      definition: hd
+      dimension: null
+      caption: null
+      licensed_content: false
+      region_allowed: []
+      region_blocked: []
+      content_rating: {}
+      statistics:
+        view_count: '0'
+        like_count: '0'
+        favorite_count: '0'
+        comment_count: '0'
+      made_for_kids: false
+      self_declared_made_for_kids: false
+      topic_categories: []
+      privacy_status: null
+      upload_status: null
+      publish_at: null
+      license: ''
+      embeddable: true
+      public_stats_viewable: true
+  - song_id: journey-to-skellig-bay
+    youtube_id: 8I-lbI5se1s
+    title: Journey to Skellig Bay
+    description_html: >-
+      <p>A bright, coastal Celtic instrumental blending tin whistle, fiddle, and
+      gentle percussion. Perfect for travel, storytelling, or anyone who loves
+      the uplifting side of Irish folk music.</p>
+    vibes: []
+    tags:
+      - horizonsound
+      - originalmusic
+      - newmusic
+      - musicvideo
+      - indieartist
+      - popmusic
+      - instrumentalmusic
+      - songwriter
+    url: /music/journey-to-skellig-bay/
+    thumbnail: /assets/thumbnails/journey-to-skellig-bay.jpeg
+    videostatus: scheduled
+    playlists:
+      - irish-celtic-horizon-sound-instrumentals
+    view_count_num: 0
+    youtube_metadata:
+      published_at: '2026-04-12T12:44:46Z'
+      scheduled_at: '2026-09-12T05:00:00Z'
+      channel_id: UCiko-zjojbsoXrsEuBOPbSw
+      channel_title: Horizon Sound
+      category_id: '22'
+      tags: []
+      duration: PT2M50S
       definition: hd
       dimension: null
       caption: null
@@ -948,7 +1212,7 @@ songs:
     view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-22T22:34:22Z'
-      scheduled_at: '2026-07-04T12:00:00Z'
+      scheduled_at: '2026-08-01T12:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -1011,7 +1275,7 @@ songs:
     view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-22T22:30:41Z'
-      scheduled_at: '2026-08-29T12:00:00Z'
+      scheduled_at: '2026-09-05T12:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -1074,7 +1338,7 @@ songs:
     view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-22T22:26:52Z'
-      scheduled_at: '2026-10-24T12:00:00Z'
+      scheduled_at: '2026-11-07T13:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -1137,7 +1401,7 @@ songs:
     view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-22T22:37:18Z'
-      scheduled_at: '2026-12-19T13:00:00Z'
+      scheduled_at: '2026-12-26T13:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -1198,7 +1462,7 @@ songs:
     view_count_num: 30
     youtube_metadata:
       published_at: '2026-03-22T22:23:27Z'
-      scheduled_at: '2027-02-13T13:00:00Z'
+      scheduled_at: '2027-02-27T13:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -1324,7 +1588,7 @@ songs:
     view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-22T18:24:20Z'
-      scheduled_at: '2026-06-27T12:00:00Z'
+      scheduled_at: '2026-07-04T12:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -1387,7 +1651,7 @@ songs:
     view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-22T18:11:30Z'
-      scheduled_at: '2026-08-22T12:00:00Z'
+      scheduled_at: '2026-08-29T12:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -1450,7 +1714,7 @@ songs:
     view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-22T18:18:27Z'
-      scheduled_at: '2026-10-17T12:00:00Z'
+      scheduled_at: '2026-10-31T12:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -1576,7 +1840,7 @@ songs:
     view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-22T18:08:08Z'
-      scheduled_at: '2027-02-06T13:00:00Z'
+      scheduled_at: '2027-02-20T13:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -1702,7 +1966,7 @@ songs:
     view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-22T13:15:00Z'
-      scheduled_at: '2026-06-20T12:00:00Z'
+      scheduled_at: '2026-06-27T12:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -1765,7 +2029,7 @@ songs:
     view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-22T13:12:08Z'
-      scheduled_at: '2026-08-15T12:00:00Z'
+      scheduled_at: '2026-08-22T12:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -1828,7 +2092,7 @@ songs:
     view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-22T13:08:08Z'
-      scheduled_at: '2026-10-10T12:00:00Z'
+      scheduled_at: '2026-10-24T12:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -1956,7 +2220,7 @@ songs:
     view_count_num: 2
     youtube_metadata:
       published_at: '2026-03-22T12:56:54Z'
-      scheduled_at: '2027-01-30T13:00:00Z'
+      scheduled_at: '2027-03-06T13:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -2145,7 +2409,7 @@ songs:
     view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-22T00:00:35Z'
-      scheduled_at: '2026-08-08T12:00:00Z'
+      scheduled_at: '2026-08-15T12:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -2208,7 +2472,7 @@ songs:
     view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-21T23:52:49Z'
-      scheduled_at: '2026-10-03T12:00:00Z'
+      scheduled_at: '2026-10-17T12:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -2271,7 +2535,7 @@ songs:
     view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-21T23:49:50Z'
-      scheduled_at: '2027-01-23T13:00:00Z'
+      scheduled_at: '2027-02-13T13:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -2334,7 +2598,7 @@ songs:
     view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-22T00:04:34Z'
-      scheduled_at: '2026-11-28T13:00:00Z'
+      scheduled_at: '2027-03-13T13:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -2464,7 +2728,7 @@ songs:
     view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-20T18:49:55Z'
-      scheduled_at: '2026-06-06T12:00:00Z'
+      scheduled_at: '2026-06-13T12:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -2527,7 +2791,7 @@ songs:
     view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-20T18:36:07Z'
-      scheduled_at: '2026-08-01T12:00:00Z'
+      scheduled_at: '2026-08-08T12:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -2590,7 +2854,7 @@ songs:
     view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-20T18:39:21Z'
-      scheduled_at: '2026-09-26T12:00:00Z'
+      scheduled_at: '2026-10-10T12:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -2653,7 +2917,7 @@ songs:
     view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-20T18:45:17Z'
-      scheduled_at: '2026-11-21T13:00:00Z'
+      scheduled_at: '2026-11-28T13:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -2716,7 +2980,7 @@ songs:
     view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-20T18:42:36Z'
-      scheduled_at: '2027-01-16T13:00:00Z'
+      scheduled_at: '2027-02-06T13:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -2846,7 +3110,7 @@ songs:
     view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-20T13:26:26Z'
-      scheduled_at: '2026-05-30T12:00:00Z'
+      scheduled_at: '2026-06-06T12:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -2909,7 +3173,7 @@ songs:
     view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-20T13:16:35Z'
-      scheduled_at: '2026-07-25T12:00:00Z'
+      scheduled_at: '2026-08-01T12:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -2972,7 +3236,7 @@ songs:
     view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-20T13:06:45Z'
-      scheduled_at: '2026-09-19T12:00:00Z'
+      scheduled_at: '2026-10-03T12:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -3035,7 +3299,7 @@ songs:
     view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-20T13:31:13Z'
-      scheduled_at: '2026-11-14T13:00:00Z'
+      scheduled_at: '2026-12-19T13:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -3098,7 +3362,7 @@ songs:
     view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-20T12:58:07Z'
-      scheduled_at: '2027-01-09T13:00:00Z'
+      scheduled_at: '2027-01-30T13:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -3226,7 +3490,7 @@ songs:
     view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-19T19:26:09Z'
-      scheduled_at: '2026-05-23T12:00:00Z'
+      scheduled_at: '2026-05-30T12:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -3290,7 +3554,7 @@ songs:
     view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-19T19:47:07Z'
-      scheduled_at: '2026-09-12T12:00:00Z'
+      scheduled_at: '2026-09-26T12:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -3353,7 +3617,7 @@ songs:
     view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-19T19:56:28Z'
-      scheduled_at: '2026-11-07T13:00:00Z'
+      scheduled_at: '2027-01-23T13:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -3416,7 +3680,7 @@ songs:
     view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-19T20:09:18Z'
-      scheduled_at: '2027-01-02T13:00:00Z'
+      scheduled_at: '2027-01-16T13:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -3480,7 +3744,7 @@ songs:
     view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-19T19:37:46Z'
-      scheduled_at: '2026-07-18T12:00:00Z'
+      scheduled_at: '2026-07-25T12:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -3608,7 +3872,7 @@ songs:
     view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-19T22:45:36Z'
-      scheduled_at: '2026-05-16T12:00:00Z'
+      scheduled_at: '2026-05-23T12:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -3672,7 +3936,7 @@ songs:
     view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-19T22:54:14Z'
-      scheduled_at: '2026-07-11T12:00:00Z'
+      scheduled_at: '2026-07-18T12:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -3736,7 +4000,7 @@ songs:
     view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-19T23:01:02Z'
-      scheduled_at: '2026-09-05T12:00:00Z'
+      scheduled_at: '2026-09-19T12:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -3800,7 +4064,7 @@ songs:
     view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-19T23:05:27Z'
-      scheduled_at: '2026-10-31T12:00:00Z'
+      scheduled_at: '2026-11-21T13:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -3864,7 +4128,7 @@ songs:
     view_count_num: 1
     youtube_metadata:
       published_at: '2026-03-19T23:09:21Z'
-      scheduled_at: '2026-12-26T13:00:00Z'
+      scheduled_at: '2027-01-09T13:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'

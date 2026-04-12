@@ -9,6 +9,11 @@ playlists:
     thumbnail: null
     song_ids:
       - across-the-emerald-coast
+      - fire-in-the-fiddle
+      - the-chase-through-galway
+      - fiddlers-at-dawn
+      - the-path-to-dunmore-head
+      - journey-to-skellig-bay
   - playlist_id: rum-soaked-paradise-cody-sails
     title: Rum Soaked Paradise - Cody Sails
     description: >-
