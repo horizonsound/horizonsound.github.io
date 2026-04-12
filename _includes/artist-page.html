@@ -288,6 +288,28 @@
   <section class="artist-albums">
     <h2>Albums</h2>
 
+    <h2>Albums</h2>
+
+    <!-- DEBUG ALWAYS RUNS -->
+    <div style="color:yellow; font-size:2rem; padding:1rem;">
+      DEBUG: Artist has {{ artist.albums.size }} albums<br>
+      Looping through albums now...
+    </div>
+    
+    {% for album in artist.albums %}
+      {% include playlist-status.html playlist_id=album.slug %}
+    
+      <div style="color:cyan; font-size:1.5rem; padding:1rem;">
+        Album slug: {{ album.slug }}<br>
+        Status: {{ include.playlist_status }}<br>
+        Title: {{ include.playlist_display_title }}<br>
+        Thumb: {{ include.playlist_display_thumbnail }}<br>
+        First Song: {{ include.playlist_first_song_id }}<br>
+        Earliest TS: {{ include.playlist_earliest_ts }}
+      </div>
+    {% endfor %}
+    
+    
     <div class="playlist-premium-grid">
 
       {% assign active_albums = "" | split: "" %}
