@@ -1,4 +1,14 @@
 playlists:
+  - playlist_id: irish-celtic-horizon-sound-instrumentals
+    title: Irish Celtic - Horizon Sound Instrumentals
+    description: ''
+    tags: []
+    published_at: '2026-04-12T12:38:19.829787Z'
+    channel_id: UCiko-zjojbsoXrsEuBOPbSw
+    channel_title: Horizon Sound
+    thumbnail: null
+    song_ids:
+      - across-the-emerald-coast
   - playlist_id: rum-soaked-paradise-cody-sails
     title: Rum Soaked Paradise - Cody Sails
     description: >-

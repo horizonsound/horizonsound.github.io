@@ -318,3 +318,13 @@ overrides:
     hero: ''
     songs: []
     order: null
+  - playlist_id: irish-celtic-horizon-sound-instrumentals
+    is_collection: false
+    is_instrumental: false
+    title: ''
+    subtitle: ''
+    description: ''
+    thumbnail: ''
+    hero: ''
+    songs: []
+    order: null
