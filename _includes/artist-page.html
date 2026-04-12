@@ -287,24 +287,58 @@
 {% if artist.albums and artist.albums.size > 0 %}
   <section class="artist-albums">
     <h2>Albums</h2>
-  
+
     <div class="playlist-premium-grid">
+
+      {% assign active_albums = "" | split: "" %}
+      {% assign coming_albums = "" | split: "" %}
+
       {% for album in artist.albums %}
-        {% assign pl = site.data.youtube_playlists.playlists | where: "playlist_id", album.slug | first %}
-        {% assign override = site.data.playlist_overrides.overrides | where: "playlist_id", album.slug | first %}
-  
-        {% assign artwork = override.thumbnail | default: override.hero | default: pl.thumbnail | default: pl.hero | default: pl.youtube_thumbnail %}
-        {% assign first_track = pl.song_ids | first %}
-        {% assign title = override.title | default: pl.title %}
-  
+        {% include playlist-status.html playlist_id=album.slug %}
+
+        {% if playlist_status == "active" %}
+          {% assign active_albums = active_albums | push: album %}
+        {% elsif playlist_status == "coming_soon" %}
+          {% assign coming_albums = coming_albums | push: album %}
+        {% endif %}
+      {% endfor %}
+
+      {# Render ACTIVE first #}
+      {% for album in active_albums %}
+        {% include playlist-status.html playlist_id=album.slug %}
         {% include album-premium-tile.html 
-            album=album 
+            album=album
             links=album.links
-            title=title 
-            artwork=artwork 
-            first_track=first_track 
+            title=playlist_display_title
+            artwork=playlist_display_thumbnail
+            first_track=playlist_first_song_id
         %}
       {% endfor %}
+
+      {# Sort coming soon by earliest date #}
+      {% assign sorted_coming = coming_albums | sort: "playlist_earliest_ts" %}
+
+      {% for album in sorted_coming %}
+        {% include playlist-status.html playlist_id=album.slug %}
+
+        <div class="playlist-premium-tile coming-soon">
+          <div class="playlist-premium-image-wrapper">
+            <img src="{{ site.baseurl }}{{ playlist_display_thumbnail }}" class="playlist-premium-image">
+
+            {% if playlist_earliest_ts <= coming_soon_cutoff %}
+              <div class="playlist-premium-overlay">
+                Coming {{ playlist_earliest_ts | date: "%b %-d" }}
+              </div>
+            {% else %}
+              <div class="playlist-premium-overlay">Coming Soon</div>
+            {% endif %}
+
+            <div class="playlist-premium-gradient"></div>
+            <div class="playlist-premium-title">{{ playlist_display_title }}</div>
+          </div>
+        </div>
+      {% endfor %}
+
     </div>
   </section>
 {% else %}
