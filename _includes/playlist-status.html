@@ -1,0 +1,84 @@
+{%- comment -%}
+  INPUT:
+    playlist_id (string)
+
+  OUTPUT VARIABLES (in parent scope):
+    playlist_status          = "active", "coming_soon", or "hidden"
+    playlist_display_title
+    playlist_display_thumbnail
+    playlist_first_song_id
+    playlist_earliest_ts     (for sorting coming soon)
+{%- endcomment -%}
+
+{%- assign window_days = site.data.site.settings.coming_soon_window_days -%}
+{%- assign window_seconds = window_days | times: 86400 -%}
+{%- assign now_ts = 'now' | date: "%s" | plus: 0 -%}
+{%- assign coming_soon_cutoff = now_ts | plus: window_seconds -%}
+
+{%- assign playlist_data = site.data.youtube_playlists.playlists -%}
+{%- assign overrides = site.data.playlist_overrides.overrides -%}
+
+{%- assign pl = playlist_data | where: "playlist_id", include.playlist_id | first -%}
+{%- assign override = overrides | where: "playlist_id", include.playlist_id | first -%}
+
+{%- if pl == nil -%}
+  {%- assign playlist_status = "hidden" -%}
+  {%- assign playlist_display_title = "" -%}
+  {%- assign playlist_display_thumbnail = "" -%}
+  {%- assign playlist_first_song_id = "" -%}
+  {%- assign playlist_earliest_ts = "" -%}
+  {%- return -%}
+{%- endif -%}
+
+{%- comment -%}
+  Merge override into playlist
+{%- endcomment -%}
+{%- if override -%}
+  {%- assign override_hash = override | jsonify | parse_json -%}
+  {%- assign merged = pl | merge: override_hash -%}
+{%- else -%}
+  {%- assign merged = pl -%}
+{%- endif -%}
+
+{%- assign playlist_song_ids = override.songs | default: merged.song_ids -%}
+
+{%- assign show_active = false -%}
+{%- assign show_coming_soon = false -%}
+{%- assign earliest_ts = 9999999999 -%}
+
+{%- for vid in playlist_song_ids -%}
+  {%- assign song = all_songs | where: "song_id", vid | first -%}
+
+  {%- if song -%}
+    {%- if song.videostatus == "public" -%}
+      {%- assign show_active = true -%}
+    {%- elsif song.videostatus == "scheduled" and song.youtube_metadata.scheduled_at -%}
+      {%- assign ts = song.youtube_metadata.scheduled_at | date: "%s" | plus: 0 -%}
+      {%- if ts < earliest_ts -%}
+        {%- assign earliest_ts = ts -%}
+      {%- endif -%}
+
+      {%- if ts >= now_ts and ts <= coming_soon_cutoff -%}
+        {%- assign show_coming_soon = true -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- comment -%}
+  Determine final status
+{%- endcomment -%}
+
+{%- if show_active -%}
+  {%- assign playlist_status = "active" -%}
+{%- elsif show_coming_soon -%}
+  {%- assign playlist_status = "coming_soon" -%}
+{%- else -%}
+  {%- assign playlist_status = "hidden" -%}
+{%- endif -%}
+
+{%- assign playlist_display_title = override.title | default: merged.title -%}
+{%- assign override_thumbnail = override.thumbnail | default: override.hero -%}
+{%- assign playlist_display_thumbnail = override_thumbnail | default: merged.thumbnail | default: merged.hero | default: merged.youtube_thumbnail -%}
+{%- assign playlist_first_song_id = playlist_song_ids | first -%}
+{%- assign playlist_earliest_ts = earliest_ts -%}
