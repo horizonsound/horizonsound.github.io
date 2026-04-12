@@ -2,12 +2,12 @@
   INPUT:
     playlist_id (string)
 
-  OUTPUT VARIABLES (in parent scope):
-    playlist_status          = "active", "coming_soon", or "hidden"
-    playlist_display_title
-    playlist_display_thumbnail
-    playlist_first_song_id
-    playlist_earliest_ts     (for sorting coming soon)
+  OUTPUT VARIABLES (parent must reference as include.variable):
+    include.playlist_status
+    include.playlist_display_title
+    include.playlist_display_thumbnail
+    include.playlist_first_song_id
+    include.playlist_earliest_ts
 {%- endcomment -%}
 
 {%- assign window_days = site.data.site.settings.coming_soon_window_days -%}
@@ -22,11 +22,11 @@
 {%- assign override = overrides | where: "playlist_id", include.playlist_id | first -%}
 
 {%- if pl == nil -%}
-  {%- assign playlist_status = "hidden" -%}
-  {%- assign playlist_display_title = "" -%}
-  {%- assign playlist_display_thumbnail = "" -%}
-  {%- assign playlist_first_song_id = "" -%}
-  {%- assign playlist_earliest_ts = "" -%}
+  {%- assign include.playlist_status = "hidden" -%}
+  {%- assign include.playlist_display_title = "" -%}
+  {%- assign include.playlist_display_thumbnail = "" -%}
+  {%- assign include.playlist_first_song_id = "" -%}
+  {%- assign include.playlist_earliest_ts = "" -%}
 {%- else -%}
 
   {%- comment -%}
@@ -64,22 +64,18 @@
     {%- endif -%}
   {%- endfor -%}
 
-  {%- comment -%}
-    Determine final status
-  {%- endcomment -%}
-
   {%- if show_active -%}
-    {%- assign playlist_status = "active" -%}
+    {%- assign include.playlist_status = "active" -%}
   {%- elsif show_coming_soon -%}
-    {%- assign playlist_status = "coming_soon" -%}
+    {%- assign include.playlist_status = "coming_soon" -%}
   {%- else -%}
-    {%- assign playlist_status = "hidden" -%}
+    {%- assign include.playlist_status = "hidden" -%}
   {%- endif -%}
 
-  {%- assign playlist_display_title = override.title | default: merged.title -%}
+  {%- assign include.playlist_display_title = override.title | default: merged.title -%}
   {%- assign override_thumbnail = override.thumbnail | default: override.hero -%}
-  {%- assign playlist_display_thumbnail = override_thumbnail | default: merged.thumbnail | default: merged.hero | default: merged.youtube_thumbnail -%}
-  {%- assign playlist_first_song_id = playlist_song_ids | first -%}
-  {%- assign playlist_earliest_ts = earliest_ts -%}
+  {%- assign include.playlist_display_thumbnail = override_thumbnail | default: merged.thumbnail | default: merged.hero | default: merged.youtube_thumbnail -%}
+  {%- assign include.playlist_first_song_id = playlist_song_ids | first -%}
+  {%- assign include.playlist_earliest_ts = earliest_ts -%}
 
 {%- endif -%}
