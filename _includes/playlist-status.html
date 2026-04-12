@@ -1,38 +1,31 @@
 <!-- INCLUDE DEBUG -->
 <div style="color:magenta; font-size:1.2rem; padding:0.5rem; border:1px solid magenta; margin:0.5rem 0;">
   <strong>INCLUDE DEBUG</strong><br>
-  playlist_id passed in: {{ include.playlist_id }}<br>
+
+  playlist_id passed in: {{ include.playlist_id }}<br><br>
 
   {% assign debug_pl = site.data.youtube_playlists.playlists | where: "playlist_id", include.playlist_id | first %}
   playlist found? {% if debug_pl %}YES{% else %}NO{% endif %}<br>
 
   {% if debug_pl %}
-    playlist.title: {{ debug_pl.title }}<br>
-    playlist.thumbnail: {{ debug_pl.thumbnail }}<br>
-    playlist.song_ids: {{ debug_pl.song_ids | join: ", " }}<br>
+    <div style="margin-left:1rem;">
+      playlist.title: {{ debug_pl.title }}<br>
+      playlist.thumbnail: {{ debug_pl.thumbnail }}<br>
+      playlist.song_ids: {{ debug_pl.song_ids | join: ", " }}<br>
+    </div>
   {% endif %}
 
   {% assign debug_override = site.data.playlist_overrides.overrides | where: "playlist_id", include.playlist_id | first %}
   override found? {% if debug_override %}YES{% else %}NO{% endif %}<br>
 
   {% if debug_override %}
-    override.title: {{ debug_override.title }}<br>
-    override.thumbnail: {{ debug_override.thumbnail }}<br>
-    override.songs: {{ debug_override.songs | join: ", " }}<br>
+    <div style="margin-left:1rem;">
+      override.title: {{ debug_override.title }}<br>
+      override.thumbnail: {{ debug_override.thumbnail }}<br>
+      override.songs: {{ debug_override.songs | join: ", " }}<br>
+    </div>
   {% endif %}
 </div>
-
-{%- comment -%}
-  INPUT:
-    playlist_id (string)
-
-  OUTPUT VARIABLES (parent must reference as include.variable):
-    include.playlist_status
-    include.playlist_display_title
-    include.playlist_display_thumbnail
-    include.playlist_first_song_id
-    include.playlist_earliest_ts
-{%- endcomment -%}
 
 {%- assign window_days = site.data.site.settings.coming_soon_window_days -%}
 {%- assign window_seconds = window_days | times: 86400 -%}
@@ -46,16 +39,15 @@
 {%- assign override = overrides | where: "playlist_id", include.playlist_id | first -%}
 
 {%- if pl == nil -%}
-  {%- assign include.playlist_status = "hidden" -%}
-  {%- assign include.playlist_display_title = "" -%}
-  {%- assign include.playlist_display_thumbnail = "" -%}
-  {%- assign include.playlist_first_song_id = "" -%}
-  {%- assign include.playlist_earliest_ts = "" -%}
+
+  {% capture playlist_status %}hidden{% endcapture %}
+  {% capture playlist_display_title %}{% endcapture %}
+  {% capture playlist_display_thumbnail %}{% endcapture %}
+  {% capture playlist_first_song_id %}{% endcapture %}
+  {% capture playlist_earliest_ts %}{% endcapture %}
+
 {%- else -%}
 
-  {%- comment -%}
-    Merge override into playlist
-  {%- endcomment -%}
   {%- if override -%}
     {%- assign override_hash = override | jsonify | parse_json -%}
     {%- assign merged = pl | merge: override_hash -%}
@@ -89,17 +81,14 @@
   {%- endfor -%}
 
   {%- if show_active -%}
-    {%- assign include.playlist_status = "active" -%}
+    {% capture playlist_status %}active{% endcapture %}
   {%- elsif show_coming_soon -%}
-    {%- assign include.playlist_status = "coming_soon" -%}
+    {% capture playlist_status %}coming_soon{% endcapture %}
   {%- else -%}
-    {%- assign include.playlist_status = "hidden" -%}
+    {% capture playlist_status %}hidden{% endcapture %}
   {%- endif -%}
 
-  {%- assign include.playlist_display_title = override.title | default: merged.title -%}
-  {%- assign override_thumbnail = override.thumbnail | default: override.hero -%}
-  {%- assign include.playlist_display_thumbnail = override_thumbnail | default: merged.thumbnail | default: merged.hero | default: merged.youtube_thumbnail -%}
-  {%- assign include.playlist_first_song_id = playlist_song_ids | first -%}
-  {%- assign include.playlist_earliest_ts = earliest_ts -%}
-
-{%- endif -%}
+  {% capture playlist_display_title %}{{ override.title | default: merged.title }}{% endcapture %}
+  {% capture playlist_display_thumbnail %}{{ override.thumbnail | default: override.hero | default: merged.thumbnail | default: merged.hero | default: merged.youtube_thumbnail }}{% endcapture %}
+  {% capture playlist_first_song_id %}{{ playlist_song_ids | first }}{% endcapture %}
+  {% capture playlist_earliest_ts %}{{ earliest
