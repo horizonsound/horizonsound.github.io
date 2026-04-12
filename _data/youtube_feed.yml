@@ -4547,7 +4547,7 @@ songs:
     videostatus: public
     playlists:
       - missing-stamp-venice-trilogy
-    view_count_num: 80
+    view_count_num: 81
     youtube_metadata:
       published_at: '2026-04-03T16:00:03Z'
       scheduled_at: null
@@ -4564,7 +4564,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '80'
+        view_count: '81'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -4617,7 +4617,7 @@ songs:
     videostatus: public
     playlists:
       - missing-stamp-venice-trilogy
-    view_count_num: 11
+    view_count_num: 10
     youtube_metadata:
       published_at: '2026-04-10T16:01:15Z'
       scheduled_at: null
@@ -4634,7 +4634,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '11'
+        view_count: '10'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
