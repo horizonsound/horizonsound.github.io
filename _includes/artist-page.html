@@ -1,255 +1,267 @@
 <style>
-  .artist-hero {
-      width: 100%;
-      height: 60vh;
-      background-size: cover;
-      background-position: center 20%; /* this is the correct one */
-      position: relative;             /* required for overlay */
-  }
 
-  .artist-hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.75));
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 4rem 8vw;
-  }
-  
-  .artist-name {
-    font-size: 8rem;
-    font-weight: 800;
-    color: white;
-    margin: 0;
-  }
-  
-  .artist-tagline {
-    font-size: 1.5rem;
-    color: rgba(255,255,255,0.85);
-    margin-top: 1rem;
-  }
+/* -----------------------------------------------------
+   ARTIST HERO
+----------------------------------------------------- */
+.artist-hero {
+  width: 100%;
+  height: 60vh;
+  background-size: cover;
+  background-position: center 20%;
+  position: relative;
+}
 
-  .artist-bio {
-    max-width: 1100px;        /* keeps the column readable */
-    margin: 0 auto;          /* centers the column */
-    padding: 4rem 6vw;      /* breathing room on both sides */
-  }
-  
-  .artist-bio p {
-    text-align: left;        /* left‑aligned text */
-    font-size: 2.5rem;       /* premium readable size */
-    margin-bottom: 1.75rem;  /* space between paragraphs */
-    letter-spacing: 0.01em;  /* subtle polish */
-    color: rgba(255, 255, 255, 0.92);
-    font-weight: 200;
-    line-height: 1.85;
-  }
+.artist-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.75));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 4rem 8vw;
+}
 
-  .artist-photo-wall {
-    display: grid;
+.artist-name {
+  font-size: 8rem;
+  font-weight: 800;
+  color: white;
+  margin: 0;
+}
+
+.artist-tagline {
+  font-size: 1.5rem;
+  color: rgba(255,255,255,0.85);
+  margin-top: 1rem;
+}
+
+/* -----------------------------------------------------
+   ARTIST BIO
+----------------------------------------------------- */
+.artist-bio {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 6vw;
+}
+
+.artist-bio p {
+  text-align: left;
+  font-size: 2.5rem;
+  margin-bottom: 1.75rem;
+  letter-spacing: 0.01em;
+  color: rgba(255,255,255,0.92);
+  font-weight: 200;
+  line-height: 1.85;
+}
+
+/* -----------------------------------------------------
+   PHOTO WALL
+----------------------------------------------------- */
+.artist-photo-wall {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 3rem 10vw;
+  grid-auto-rows: 24px;
+}
+
+.artist-photo-wall img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+.artist-photo-wall img.span-1 { grid-column: span 1; grid-row: span 20; }
+.artist-photo-wall img.span-2 { grid-column: span 2; grid-row: span 20; }
+.artist-photo-wall img.span-3 { grid-column: span 3; grid-row: span 25; }
+
+/* -----------------------------------------------------
+   ALBUM GRID
+----------------------------------------------------- */
+.playlist-premium-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  padding: 32px 10vw 16px;
+}
+
+@media (min-width: 600px) {
+  .playlist-premium-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .playlist-premium-grid {
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 10px;      /* masonry effect */
-    gap: 1rem;
-    padding: 3rem 10vw;
-    grid-auto-rows: 24px; /* smaller = smoother masonry */
   }
-  
-  .span-1 { grid-row: span 25; }
-  .span-2 { grid-row: span 25; }
-  .span-3 { grid-row: span 35; }
+}
 
-  .artist-photo-wall img {
-    width: 100%;
-    height: 100%;          /* fill the grid cell */
-    object-fit: cover;     /* crop instead of distort */
-    border-radius: 10px;
-    display: block;
-  }
+/* -----------------------------------------------------
+   MODERN VINYL SLEEVE — BASE TILE
+----------------------------------------------------- */
+.playlist-premium-image-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 14px;
+  aspect-ratio: 1 / 1;
+  height: auto;
 
-  /* span: 1 (default) */
-  .artist-photo-wall img.span-1 {
-    grid-column: span 1;
-    grid-row: span 20;
-  }
-  
-  /* span: 2 (wide) */
-  .artist-photo-wall img.span-2 {
-    grid-column: span 2;
-    grid-row: span 20;
-  }
-  
-  /* span: 3 (full width hero) */
-  .artist-photo-wall img.span-3 {
-    grid-column: span 3;
-    grid-row: span 25;
-  }
+  /* Depth */
+  box-shadow:
+    inset 0 0 18px rgba(0,0,0,0.25),
+    0 12px 28px rgba(0,0,0,0.45),
+    0 0 40px rgba(0,0,0,0.25);
 
-  .playlist-premium-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 16px 0;
-    padding-top: 32px;
-    padding-bottom: 16px;
-  }
-  
-  @media (min-width: 600px) {
-    .playlist-premium-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
-  @media (min-width: 900px) {
-    .playlist-premium-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-  
-  .playlist-premium-image-wrapper {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    border-radius: 14px;
-    box-shadow:
-      0 12px 28px rgba(0,0,0,0.45),
-      0 0 40px rgba(0,0,0,0.25);
-    aspect-ratio: 1 / 1; /* square album cover */
-    height: auto;
-  }
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
 
-  .playlist-premium-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  
-  .playlist-premium-gradient {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to top,
-      rgba(0,0,0,0.75) 0%,
-      rgba(0,0,0,0.35) 40%,
-      rgba(0,0,0,0) 100%
-    );
-    pointer-events: none;
-  }
-  
-  .playlist-premium-title {
-    position: absolute;
-    left: 18px;
-    right: 18px;
-    bottom: 18px;
-    color: white;
-    font-size: 2rem;
-    font-weight: 700;
-    line-height: 1.15;
-    letter-spacing: 0.3px;
-    text-shadow:
-      0 3px 6px rgba(0,0,0,0.65),
-      0 0 12px rgba(0,0,0,0.45);
-    z-index: 3;
-    pointer-events: none;
-  }
+/* Hover lift (active tiles only) */
+.playlist-premium-tile:hover .playlist-premium-image-wrapper {
+  transform: translateY(-4px);
+  box-shadow:
+    inset 0 0 18px rgba(0,0,0,0.25),
+    0 18px 36px rgba(0,0,0,0.55),
+    0 0 50px rgba(0,0,0,0.35);
+}
 
-  .artist-albums h2 {
-    padding-left: 10vw;
-    margin-bottom: 1rem;
-  }
-  
-  .playlist-premium-grid {
-    padding-left: 10vw;
-    padding-right: 10vw;
-  }
-  
-  .artist-albums h2 {
-    padding-left: 10vw;
-    font-size: 3.5rem;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-    color: white;
-    margin: 0 0 2rem 0;
-  }
+/* Album art */
+.playlist-premium-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 
-  .wall-title h2 {
-    padding-left: 10vw;
-    margin-bottom: 1rem;
-  }
+  /* Analog warmth */
+  filter: saturate(1.05) contrast(1.03);
+}
 
-  .wall-title h2 {
-    padding-left: 10vw;
-    font-size: 3.5rem;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-    color: white;
-    margin: 0 0 2rem 0;
-  }
+/* Subtle paper texture */
+.playlist-premium-image-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23grain)" opacity="0.08"/></svg>');
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 2;
+}
 
-  .icon {
-    width: 28px;
-    height: 28px;
-    fill: white;
-    opacity: 0.9;
-    transition: opacity 0.2s ease;
-  }
-  .icon:hover {
-    opacity: 1;
-  }
+/* Vinyl ring-wear */
+.playlist-premium-image-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(255,255,255,0.08) 0%,
+    rgba(255,255,255,0.02) 40%,
+    rgba(0,0,0,0.15) 75%,
+    rgba(0,0,0,0.25) 100%
+  );
+  pointer-events: none;
+  z-index: 3;
+}
 
-  .artist-links {
-    display: flex;
-    gap: 1.25rem;
-    margin-top: 1.5rem;
-  }
+/* Title */
+.playlist-premium-title {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0.3px;
+  text-shadow:
+    0 3px 6px rgba(0,0,0,0.65),
+    0 0 12px rgba(0,0,0,0.45);
+  z-index: 4;
+  pointer-events: none;
+}
 
-  .album-links {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    display: flex;
-    gap: 0.75rem;
-    z-index: 10;
-  }
+/* Gradient */
+.playlist-premium-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.75) 0%,
+    rgba(0,0,0,0.35) 40%,
+    rgba(0,0,0,0) 100%
+  );
+  pointer-events: none;
+  z-index: 3;
+}
 
-  .album-links .icon {
-    width: 22px;
-    height: 22px;
-    opacity: 0.85;
-  }
+/* -----------------------------------------------------
+   ALBUM LINKS
+----------------------------------------------------- */
+.album-links {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  gap: 0.75rem;
+  z-index: 10;
+}
 
-  .coming-soon-message {
-    text-align: center;
-    padding: 2rem 1rem;
-    font-size: 3rem;
-    font-weight: 500;
-    font-family: var(--premium-font, 'Georgia', serif);
-    color: white;
-    opacity: 0.85;
-  }
+.album-links .icon {
+  width: 22px;
+  height: 22px;
+  opacity: 0.85;
+}
 
-  /* Dim the entire tile when coming soon */
-  .playlist-premium-tile.coming-soon .playlist-premium-image-wrapper {
-    filter: brightness(0.55);
-  }
-  
-  /* Coming Soon overlay styling */
-  .playlist-premium-overlay {
-    position: absolute;
-    bottom: 18px;
-    left: 18px;
-    right: 18px;
-    padding: 0.4rem 0.75rem;
-    background: rgba(0,0,0,0.65);
-    color: white;
-    font-size: 1.4rem;
-    font-weight: 600;
-    border-radius: 6px;
-    z-index: 20;
-    text-align: center;
-    pointer-events: none;
-  }
+/* -----------------------------------------------------
+   COMING SOON
+----------------------------------------------------- */
+.playlist-premium-tile.coming-soon .playlist-premium-image-wrapper {
+  filter: brightness(0.55);
+}
+
+.playlist-premium-overlay {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  right: 18px;
+  padding: 0.4rem 0.75rem;
+  background: rgba(0,0,0,0.65);
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-radius: 6px;
+  z-index: 20;
+  text-align: center;
+  pointer-events: none;
+}
+
+/* -----------------------------------------------------
+   MISC
+----------------------------------------------------- */
+.icon {
+  width: 28px;
+  height: 28px;
+  fill: white;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+.icon:hover {
+  opacity: 1;
+}
+
+.coming-soon-message {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 3rem;
+  font-weight: 500;
+  font-family: var(--premium-font, 'Georgia', serif);
+  color: white;
+  opacity: 0.85;
+}
 
 </style>
 
