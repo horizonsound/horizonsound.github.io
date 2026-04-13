@@ -4936,7 +4936,7 @@ songs:
     videostatus: public
     playlists:
       - missing-stamp-venice-trilogy
-    view_count_num: 12
+    view_count_num: 13
     youtube_metadata:
       published_at: '2026-04-10T16:01:15Z'
       scheduled_at: null
@@ -4953,7 +4953,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '12'
+        view_count: '13'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -7519,7 +7519,7 @@ songs:
     videostatus: public
     playlists:
       - modern-country
-    view_count_num: 121
+    view_count_num: 122
     youtube_metadata:
       published_at: '2026-03-27T16:00:39Z'
       scheduled_at: null
@@ -7536,8 +7536,8 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '121'
-        like_count: '5'
+        view_count: '122'
+        like_count: '6'
         favorite_count: '0'
         comment_count: '0'
       made_for_kids: false
