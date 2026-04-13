@@ -290,7 +290,7 @@
 
     <div class="playlist-premium-grid">
       {% for album in artist.albums %}
-        {% include playlist-tile.html album=album %}
+        {% include artist-album-tiles.html artist=artist %}
       {% endfor %}
     </div>
   </section>
