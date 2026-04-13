@@ -1,0 +1,186 @@
+{%- assign window_days = site.data.site.settings.coming_soon_window_days -%}
+{%- assign window_seconds = window_days | times: 86400 -%}
+{%- assign now_ts = 'now' | date: "%s" | plus: 0 -%}
+{%- assign coming_soon_cutoff = now_ts | plus: window_seconds -%}
+
+{%- assign playlist_data = site.data.youtube_playlists.playlists -%}
+{%- assign overrides = site.data.playlist_overrides.overrides -%}
+{%- assign all_songs = site.data.youtube_feed.songs -%}
+
+{%- assign artist_album_slugs = artist.albums | map: "slug" -%}
+{%- assign merged_playlists = "" | split: "" -%}
+
+{%- for pl in playlist_data -%}
+  {%- if artist_album_slugs contains pl.playlist_id -%}
+    {%- assign override = overrides | where: "playlist_id", pl.playlist_id | first -%}
+    {%- if override -%}
+      {%- assign override_hash = override | jsonify | parse_json -%}
+      {%- assign merged = pl | merge: override_hash -%}
+      {%- assign merged_playlists = merged_playlists | push: merged -%}
+    {%- else -%}
+      {%- assign merged_playlists = merged_playlists | push: pl -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- assign active_playlists = "" | split: "" -%}
+{%- assign coming_soon_playlists = "" | split: "" -%}
+
+{%- for playlist in merged_playlists -%}
+  {%- assign override = overrides | where: "playlist_id", playlist.playlist_id | first -%}
+  {%- assign playlist_song_ids = override.songs | default: playlist.song_ids -%}
+
+  {%- assign show_active = false -%}
+  {%- assign show_coming_soon = false -%}
+
+  {%- for vid in playlist_song_ids -%}
+    {%- assign song = all_songs | where: "song_id", vid | first -%}
+    {%- if song -%}
+      {%- if song.videostatus == "public" -%}
+        {%- assign show_active = true -%}
+      {%- elsif song.videostatus == "scheduled" and song.youtube_metadata.scheduled_at -%}
+        {%- assign scheduled_ts = song.youtube_metadata.scheduled_at | date: "%s" | plus: 0 -%}
+        {%- if scheduled_ts >= now_ts and scheduled_ts <= coming_soon_cutoff -%}
+          {%- assign show_coming_soon = true -%}
+        {%- endif -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+
+  {%- if show_active -%}
+    {%- assign active_playlists = active_playlists | push: playlist -%}
+  {%- elsif show_coming_soon -%}
+    {%- assign coming_soon_playlists = coming_soon_playlists | push: playlist -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- assign active_pairs = "" | split: "" -%}
+{%- for playlist in active_playlists -%}
+  {%- assign override = overrides | where: "playlist_id", playlist.playlist_id | first -%}
+  {%- assign display_title = override.title | default: playlist.title -%}
+  {%- assign pair = display_title | append: "||" | append: playlist.playlist_id -%}
+  {%- assign active_pairs = active_pairs | push: pair -%}
+{%- endfor -%}
+{%- assign active_pairs = active_pairs | sort -%}
+
+{%- assign cs_pairs = "" | split: "" -%}
+{%- for playlist in coming_soon_playlists -%}
+  {%- assign override = overrides | where: "playlist_id", playlist.playlist_id | first -%}
+  {%- assign playlist_song_ids = override.songs | default: playlist.song_ids -%}
+
+  {%- assign earliest_ts = 9999999999 -%}
+  {%- for vid in playlist_song_ids -%}
+    {%- assign song = all_songs | where: "song_id", vid | first -%}
+    {%- if song and song.videostatus == "scheduled" and song.youtube_metadata.scheduled_at -%}
+      {%- assign ts = song.youtube_metadata.scheduled_at | date: "%s" | plus: 0 -%}
+      {%- if ts < earliest_ts -%}
+        {%- assign earliest_ts = ts -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+
+  {%- assign pair = earliest_ts | append: "||" | append: playlist.playlist_id -%}
+  {%- assign cs_pairs = cs_pairs | push: pair -%}
+{%- endfor -%}
+{%- assign cs_pairs = cs_pairs | sort -%}
+
+{%- comment -%}
+  RENDER ACTIVE FIRST
+{%- endcomment -%}
+{%- for pair in active_pairs -%}
+  {%- assign parts = pair | split: "||" -%}
+  {%- assign pid = parts[1] -%}
+
+  {%- assign playlist = active_playlists | where: "playlist_id", pid | first -%}
+  {%- assign override = overrides | where: "playlist_id", pid | first -%}
+  {%- assign playlist_song_ids = override.songs | default: playlist.song_ids -%}
+  {%- assign display_title = override.title | default: playlist.title -%}
+  {%- assign override_thumbnail = override.thumbnail | default: override.hero -%}
+  {%- assign display_thumbnail = override_thumbnail | default: playlist.thumbnail | default: playlist.hero | default: playlist.youtube_thumbnail -%}
+  {%- assign first_song_id = playlist_song_ids | first -%}
+
+  <div class="playlist-premium-tile-wrapper">
+
+    {% if artist.links.spotify or artist.links.apple_music or artist.links.youtube_music %}
+      <div class="album-links">
+        {% if artist.links.spotify %}
+          <a href="{{ artist.links.spotify }}" target="_blank">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 6.64 5.37 12 12 12s12-5.36 12-12C24 5.37 18.63 0 12 0zm5.52 17.28c-.23.37-.71.49-1.08.26-2.97-1.82-6.7-2.23-11.11-1.22-.43.1-.86-.17-.96-.6-.1-.43.17-.86.6-.96 4.82-1.11 9.02-.64 12.33 1.36.37.23.49.71.26 1.08z"/></svg>
+          </a>
+        {% endif %}
+        {% if artist.links.apple_music %}
+          <a href="{{ artist.links.apple_music }}" target="_blank">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M16.365 1.43c-.96.04-2.12.68-2.81 1.53-.61.75-1.14 1.93-.94 3.06 1.08.08 2.2-.55 2.88-1.4.67-.83 1.17-2.03.87-3.19z"/></svg>
+          </a>
+        {% endif %}
+        {% if artist.links.youtube %}
+          <a href="{{ artist.links.youtube }}" target="_blank">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M23.5 6.2s-.2-1.7-.8-2.4c-.8-.9-1.7-.9-2.1-1C17.3 2.5 12 2.5 12 2.5h-.1s-5.3 0-8.6.3c-.4.1-1.3.1-2.1 1-.6.7-.8 2.4-.8 2.4S0 8.1 0 10v1.9c0 1.9.2 3.8.2 3.8s.2 1.7.8 2.4c.8.9 1.9.9 2.4 1 1.8.2 7.6.3 7.6.3s5.3 0 8.6-.3c.4-.1 1.3-.1 2.1-1 .6-.7.8-2.4.8-2.4s.2-1.9.2-3.8V10c0-1.9-.2-3.8-.2-3.8zM9.6 14.9V8.1l6.4 3.4-6.4 3.4z"/></svg>
+          </a>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <a class="playlist-premium-tile" href="{{ site.baseurl }}/music/playlists/{{ playlist.playlist_id }}/?song_id={{ first_song_id }}">
+      <div class="playlist-premium-image-wrapper">
+        <img src="{{ site.baseurl }}{{ display_thumbnail }}" class="playlist-premium-image">
+        <div class="playlist-premium-gradient"></div>
+        <div class="playlist-premium-title">{{ display_title }}</div>
+      </div>
+    </a>
+
+  </div>
+{%- endfor -%}
+
+{%- comment -%}
+  RENDER COMING SOON (not clickable)
+{%- endcomment -%}
+{%- for pair in cs_pairs -%}
+  {%- assign parts = pair | split: "||" -%}
+  {%- assign earliest_ts = parts[0] | plus: 0 -%}
+  {%- assign pid = parts[1] -%}
+
+  {%- assign playlist = coming_soon_playlists | where: "playlist_id", pid | first -%}
+  {%- assign override = overrides | where: "playlist_id", pid | first -%}
+  {%- assign playlist_song_ids = override.songs | default: playlist.song_ids -%}
+  {%- assign display_title = override.title | default: playlist.title -%}
+  {%- assign override_thumbnail = override.thumbnail | default: override.hero -%}
+  {%- assign display_thumbnail = override_thumbnail | default: playlist.thumbnail | default: playlist.hero | default: playlist.youtube_thumbnail -%}
+
+  <div class="playlist-premium-tile-wrapper">
+
+    {% if artist.links.spotify or artist.links.apple_music or artist.links.youtube %}
+      <div class="album-links">
+        {% if artist.links.spotify %}
+          <a href="{{ artist.links.spotify }}" target="_blank">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 6.64 5.37 12 12 12s12-5.36 12-12C24 5.37 18.63 0 12 0zm5.52 17.28c-.23.37-.71.49-1.08.26-2.97-1.82-6.7-2.23-11.11-1.22-.43.1-.86-.17-.96-.6-.1-.43.17-.86.6-.96 4.82-1.11 9.02-.64 12.33 1.36.37.23.49.71.26 1.08z"/></svg>
+          </a>
+        {% endif %}
+        {% if artist.links.apple_music %}
+          <a href="{{ artist.links.apple_music }}" target="_blank">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M16.365 1.43c-.96.04-2.12.68-2.81 1.53-.61.75-1.14 1.93-.94 3.06 1.08.08 2.2-.55 2.88-1.4.67-.83 1.17-2.03.87-3.19z"/></svg>
+          </a>
+        {% endif %}
+        {% if artist.links.youtube %}
+          <a href="{{ artist.links.youtube }}" target="_blank">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M23.5 6.2s-.2-1.7-.8-2.4c-.8-.9-1.7-.9-2.1-1C17.3 2.5 12 2.5 12 2.5h-.1s-5.3 0-8.6.3c-.4.1-1.3.1-2.1 1-.6.7-.8 2.4-.8 2.4S0 8.1 0 10v1.9c0 1.9.2 3.8.2 3.8s.2 1.7.8 2.4c.8.9 1.9.9 2.4 1 1.8.2 7.6.3 7.6.3s5.3 0 8.6-.3c.4-.1 1.3-.1 2.1-1 .6-.7.8-2.4.8-2.4s.2-1.9.2-3.8V10c0-1.9-.2-3.8-.2-3.8zM9.6 14.9V8.1l6.4 3.4-6.4 3.4z"/></svg>
+          </a>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="playlist-premium-tile coming-soon">
+      <div class="playlist-premium-image-wrapper">
+        <img src="{{ site.baseurl }}{{ display_thumbnail }}" class="playlist-premium-image">
+
+        <div class="playlist-premium-overlay">
+          Coming {{ earliest_ts | date: "%b %-d" }}
+        </div>
+
+        <div class="playlist-premium-gradient"></div>
+        <div class="playlist-premium-title">{{ display_title }}</div>
+      </div>
+    </div>
+
+  </div>
+{%- endfor -%}
