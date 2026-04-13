@@ -289,74 +289,9 @@
     <h2>Albums</h2>
 
     <div class="playlist-premium-grid">
-
-      {% assign active_albums = "" | split: "" %}
-      {% assign coming_albums = "" | split: "" %}
-
       {% for album in artist.albums %}
-        {% include playlist-status.html playlist_id=album.slug %}
-
-        {% assign album_status = playlist_status %}
-        {% assign album_title = playlist_display_title %}
-        {% assign album_thumb = playlist_display_thumbnail %}
-        {% assign album_first = playlist_first_song_id %}
-        {% assign album_ts = playlist_earliest_ts %}
-
-        {% if album_status == "active" %}
-          {% assign active_albums = active_albums | push: album %}
-        {% elsif album_status == "coming_soon" %}
-          {% assign album = album | merge: 
-            ( "playlist_earliest_ts": album_ts )
-          %}
-          {% assign coming_albums = coming_albums | push: album %}
-        {% endif %}
+        {% include playlist-tile.html album=album %}
       {% endfor %}
-
-      {# Render ACTIVE first #}
-      {% for album in active_albums %}
-        {% include playlist-status.html playlist_id=album.slug %}
-
-        {% assign album_title = playlist_display_title %}
-        {% assign album_thumb = playlist_display_thumbnail %}
-        {% assign album_first = playlist_first_song_id %}
-
-        {% include album-premium-tile.html 
-            album=album
-            links=album.links
-            title=album_title
-            artwork=album_thumb
-            first_track=album_first
-        %}
-      {% endfor %}
-
-      {# Sort coming soon by earliest date #}
-      {% assign sorted_coming = coming_albums | sort: "playlist_earliest_ts" %}
-
-      {% for album in sorted_coming %}
-        {% include playlist-status.html playlist_id=album.slug %}
-
-        {% assign album_title = playlist_display_title %}
-        {% assign album_thumb = playlist_display_thumbnail %}
-        {% assign album_ts = playlist_earliest_ts %}
-
-        <div class="playlist-premium-tile coming-soon">
-          <div class="playlist-premium-image-wrapper">
-            <img src="{{ site.baseurl }}{{ album_thumb }}" class="playlist-premium-image">
-
-            {% if album_ts <= coming_soon_cutoff %}
-              <div class="playlist-premium-overlay">
-                Coming {{ album_ts | date: "%b %-d" }}
-              </div>
-            {% else %}
-              <div class="playlist-premium-overlay">Coming Soon</div>
-            {% endif %}
-
-            <div class="playlist-premium-gradient"></div>
-            <div class="playlist-premium-title">{{ album_title }}</div>
-          </div>
-        </div>
-      {% endfor %}
-
     </div>
   </section>
 {% else %}
@@ -366,3 +301,4 @@
     </div>
   </section>
 {% endif %}
+
