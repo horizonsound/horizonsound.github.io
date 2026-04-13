@@ -30,6 +30,10 @@
   {%- for vid in playlist_song_ids -%}
     {%- assign song = all_songs | where: "song_id", vid | first -%}
 
+     vid: {{ vid }} 
+     song_found: {{ song != nil }} 
+     song_ids_in_all_songs_first_3: {{ all_songs[0].song_id }}, {{ all_songs[1].song_id }}, {{ all_songs[2].song_id }} 
+
     {%- if song -%}
       {%- if song.videostatus == "public" -%}
         {%- assign show_active = true -%}
