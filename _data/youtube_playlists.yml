@@ -1,4 +1,14 @@
 playlists:
+  - playlist_id: lifes-a-kaleidoscope-ascension-youth-choir
+    title: Life's a Kaleidoscope - Ascension Youth Choir
+    description: ''
+    tags: []
+    published_at: '2026-04-13T14:43:53.41623Z'
+    channel_id: UCiko-zjojbsoXrsEuBOPbSw
+    channel_title: Horizon Sound
+    thumbnail: null
+    song_ids:
+      - kaleidoscope-ascension-youth-choir-official-video-horizon-sound
   - playlist_id: irish-celtic-horizon-sound-instrumentals
     title: Irish Celtic - Horizon Sound Instrumentals
     description: ''

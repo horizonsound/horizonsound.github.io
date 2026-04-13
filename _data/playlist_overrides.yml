@@ -328,3 +328,13 @@ overrides:
     hero: ''
     songs: []
     order: null
+  - playlist_id: lifes-a-kaleidoscope-ascension-youth-choir
+    is_collection: false
+    is_instrumental: false
+    title: ''
+    subtitle: ''
+    description: ''
+    thumbnail: ''
+    hero: ''
+    songs: []
+    order: null
