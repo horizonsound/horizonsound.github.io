@@ -34,7 +34,7 @@ songs:
     videostatus: public
     playlists:
       - lifes-a-kaleidoscope-ascension-youth-choir
-    view_count_num: 4
+    view_count_num: 5
     youtube_metadata:
       published_at: '2026-04-14T16:00:28Z'
       scheduled_at: null
@@ -51,7 +51,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '4'
+        view_count: '5'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
