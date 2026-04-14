@@ -6743,7 +6743,7 @@ songs:
     videostatus: public
     playlists:
       - a-way-back-trilogy
-    view_count_num: 317
+    view_count_num: 318
     youtube_metadata:
       published_at: '2026-01-30T17:01:11Z'
       scheduled_at: null
@@ -6760,7 +6760,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '317'
+        view_count: '318'
         like_count: '5'
         favorite_count: '0'
         comment_count: '1'
@@ -9127,7 +9127,7 @@ songs:
     videostatus: public
     playlists:
       - 80s-rock-pop
-    view_count_num: 164
+    view_count_num: 165
     youtube_metadata:
       published_at: '2026-01-09T17:43:44Z'
       scheduled_at: null
@@ -9144,7 +9144,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '164'
+        view_count: '165'
         like_count: '2'
         favorite_count: '0'
         comment_count: '1'
