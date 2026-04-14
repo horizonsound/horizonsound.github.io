@@ -31,13 +31,13 @@ songs:
     url: /music/kaleidoscope-ascension-youth-choir-official-video-horizon-sound/
     thumbnail: >-
       /assets/thumbnails/kaleidoscope-ascension-youth-choir-official-video-horizon-sound.jpeg
-    videostatus: scheduled
+    videostatus: public
     playlists:
       - lifes-a-kaleidoscope-ascension-youth-choir
     view_count_num: 4
     youtube_metadata:
-      published_at: '2026-04-13T14:39:40Z'
-      scheduled_at: '2026-04-14T16:00:00Z'
+      published_at: '2026-04-14T16:00:28Z'
+      scheduled_at: null
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -57,7 +57,9 @@ songs:
         comment_count: '0'
       made_for_kids: false
       self_declared_made_for_kids: false
-      topic_categories: []
+      topic_categories:
+        - https://en.wikipedia.org/wiki/Music
+        - https://en.wikipedia.org/wiki/Pop_music
       privacy_status: null
       upload_status: null
       publish_at: null
@@ -203,58 +205,6 @@ songs:
       category_id: '22'
       tags: []
       duration: PT2M32S
-      definition: hd
-      dimension: null
-      caption: null
-      licensed_content: false
-      region_allowed: []
-      region_blocked: []
-      content_rating: {}
-      statistics:
-        view_count: '0'
-        like_count: '0'
-        favorite_count: '0'
-        comment_count: '0'
-      made_for_kids: false
-      self_declared_made_for_kids: false
-      topic_categories: []
-      privacy_status: null
-      upload_status: null
-      publish_at: null
-      license: ''
-      embeddable: true
-      public_stats_viewable: true
-  - song_id: fiddlers-at-dawn
-    youtube_id: cf1m2D00mPU
-    title: Fiddlers at Dawn
-    description_html: >-
-      <p>A lively Celtic instrumental built around dueling fiddle lines and
-      spirited Irish rhythms. This track captures the heart of traditional folk
-      sessions — energetic, joyful, and full of storytelling.</p>
-    vibes: []
-    tags:
-      - horizonsound
-      - originalmusic
-      - newmusic
-      - musicvideo
-      - indieartist
-      - popmusic
-      - instrumentalmusic
-      - songwriter
-    url: /music/fiddlers-at-dawn/
-    thumbnail: /assets/thumbnails/fiddlers-at-dawn.jpeg
-    videostatus: scheduled
-    playlists:
-      - irish-celtic-horizon-sound-instrumentals
-    view_count_num: 0
-    youtube_metadata:
-      published_at: '2026-04-12T12:40:38Z'
-      scheduled_at: '2027-03-20T12:00:00Z'
-      channel_id: UCiko-zjojbsoXrsEuBOPbSw
-      channel_title: Horizon Sound
-      category_id: '22'
-      tags: []
-      duration: PT2M
       definition: hd
       dimension: null
       caption: null
@@ -4931,7 +4881,7 @@ songs:
     videostatus: public
     playlists:
       - missing-stamp-venice-trilogy
-    view_count_num: 82
+    view_count_num: 83
     youtube_metadata:
       published_at: '2026-04-03T16:00:03Z'
       scheduled_at: null
@@ -4948,7 +4898,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '82'
+        view_count: '83'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -5001,7 +4951,7 @@ songs:
     videostatus: public
     playlists:
       - missing-stamp-venice-trilogy
-    view_count_num: 16
+    view_count_num: 17
     youtube_metadata:
       published_at: '2026-04-10T16:01:15Z'
       scheduled_at: null
@@ -5018,7 +4968,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '16'
+        view_count: '17'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -6603,7 +6553,7 @@ songs:
     videostatus: public
     playlists:
       - after-the-silence-performed-by-lydia-ellington
-    view_count_num: 34
+    view_count_num: 35
     youtube_metadata:
       published_at: '2026-03-31T16:00:39Z'
       scheduled_at: null
@@ -6620,7 +6570,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '34'
+        view_count: '35'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
