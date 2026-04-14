@@ -6,7 +6,8 @@ playlists:
     published_at: '2026-04-13T14:43:53.41623Z'
     channel_id: UCiko-zjojbsoXrsEuBOPbSw
     channel_title: Horizon Sound
-    thumbnail: null
+    thumbnail: >-
+      /assets/thumbnails/playlist-lifes-a-kaleidoscope-ascension-youth-choir.jpeg
     song_ids:
       - kaleidoscope-ascension-youth-choir-official-video-horizon-sound
   - playlist_id: irish-celtic-horizon-sound-instrumentals
@@ -21,7 +22,6 @@ playlists:
       - across-the-emerald-coast
       - fire-in-the-fiddle
       - the-chase-through-galway
-      - fiddlers-at-dawn
       - the-path-to-dunmore-head
       - journey-to-skellig-bay
   - playlist_id: rum-soaked-paradise-cody-sails
