@@ -333,6 +333,61 @@ songs:
       license: ''
       embeddable: true
       public_stats_viewable: true
+  - song_id: fiddlers-at-dawn
+    youtube_id: cf1m2D00mPU
+    title: Fiddlers at Dawn
+    description_html: >-
+      <p>A lively Celtic instrumental built around dueling fiddle lines and
+      spirited Irish rhythms. This track captures the heart of traditional folk
+      sessions — energetic, joyful, and full of storytelling.</p>
+    vibes: []
+    tags:
+      - horizonsound
+      - originalmusic
+      - newmusic
+      - musicvideo
+      - indieartist
+      - popmusic
+      - instrumentalmusic
+      - songwriter
+    url: /music/fiddlers-at-dawn/
+    thumbnail: /assets/thumbnails/fiddlers-at-dawn.jpeg
+    videostatus: scheduled
+    playlists:
+      - irish-celtic-horizon-sound-instrumentals
+    view_count_num: 0
+    youtube_metadata:
+      published_at: '2026-04-12T12:40:38Z'
+      scheduled_at: '2027-03-20T12:00:00Z'
+      channel_id: UCiko-zjojbsoXrsEuBOPbSw
+      channel_title: Horizon Sound
+      category_id: '22'
+      tags:
+        - '#demo'
+        - '#horizonsound'
+        - '#internaltool'
+      duration: PT2M
+      definition: hd
+      dimension: null
+      caption: null
+      licensed_content: false
+      region_allowed: []
+      region_blocked: []
+      content_rating: {}
+      statistics:
+        view_count: '0'
+        like_count: '0'
+        favorite_count: '0'
+        comment_count: '0'
+      made_for_kids: false
+      self_declared_made_for_kids: false
+      topic_categories: []
+      privacy_status: null
+      upload_status: null
+      publish_at: null
+      license: ''
+      embeddable: true
+      public_stats_viewable: true
   - song_id: rum-soaked-paradise-cody-sails-horizon-sound
     youtube_id: VQDzKI401eI
     title: Rum Soaked Paradise – Cody Sails | Horizon Sound
@@ -4259,6 +4314,8 @@ songs:
       self_declared_made_for_kids: false
       topic_categories:
         - https://en.wikipedia.org/wiki/Country_music
+        - https://en.wikipedia.org/wiki/Electronic_music
+        - https://en.wikipedia.org/wiki/Independent_music
         - https://en.wikipedia.org/wiki/Music
         - https://en.wikipedia.org/wiki/Pop_music
       privacy_status: null
@@ -4951,7 +5008,7 @@ songs:
     videostatus: public
     playlists:
       - missing-stamp-venice-trilogy
-    view_count_num: 17
+    view_count_num: 19
     youtube_metadata:
       published_at: '2026-04-10T16:01:15Z'
       scheduled_at: null
@@ -4968,7 +5025,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '17'
+        view_count: '19'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -6553,7 +6610,7 @@ songs:
     videostatus: public
     playlists:
       - after-the-silence-performed-by-lydia-ellington
-    view_count_num: 35
+    view_count_num: 36
     youtube_metadata:
       published_at: '2026-03-31T16:00:39Z'
       scheduled_at: null
@@ -6570,7 +6627,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '35'
+        view_count: '36'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -7534,7 +7591,7 @@ songs:
     videostatus: public
     playlists:
       - modern-country
-    view_count_num: 126
+    view_count_num: 127
     youtube_metadata:
       published_at: '2026-03-27T16:00:39Z'
       scheduled_at: null
@@ -7551,7 +7608,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '126'
+        view_count: '127'
         like_count: '6'
         favorite_count: '0'
         comment_count: '0'
