@@ -4277,7 +4277,7 @@ songs:
     videostatus: public
     playlists:
       - classic-country
-    view_count_num: 26
+    view_count_num: 27
     youtube_metadata:
       published_at: '2026-04-07T16:01:20Z'
       scheduled_at: null
@@ -4306,7 +4306,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '26'
+        view_count: '27'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
