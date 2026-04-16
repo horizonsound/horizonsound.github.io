@@ -4277,7 +4277,7 @@ songs:
     videostatus: public
     playlists:
       - classic-country
-    view_count_num: 30
+    view_count_num: 31
     youtube_metadata:
       published_at: '2026-04-07T16:01:20Z'
       scheduled_at: null
@@ -4306,7 +4306,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '30'
+        view_count: '31'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -4448,7 +4448,7 @@ songs:
     videostatus: public
     playlists:
       - classic-country
-    view_count_num: 125
+    view_count_num: 126
     youtube_metadata:
       published_at: '2026-01-17T15:32:29Z'
       scheduled_at: null
@@ -4478,7 +4478,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '125'
+        view_count: '126'
         like_count: '3'
         favorite_count: '0'
         comment_count: '1'
@@ -5339,7 +5339,7 @@ songs:
     videostatus: public
     playlists:
       - midnight-saga
-    view_count_num: 244
+    view_count_num: 246
     youtube_metadata:
       published_at: '2026-02-20T17:00:56Z'
       scheduled_at: null
@@ -5356,7 +5356,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '244'
+        view_count: '246'
         like_count: '5'
         favorite_count: '0'
         comment_count: '0'
