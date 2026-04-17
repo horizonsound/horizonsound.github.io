@@ -104,7 +104,7 @@ songs:
     videostatus: scheduled
     playlists:
       - lifes-a-kaleidoscope-ascension-youth-choir
-    view_count_num: 2
+    view_count_num: 3
     youtube_metadata:
       published_at: '2026-04-17T16:29:44Z'
       scheduled_at: '2026-04-21T16:00:00Z'
@@ -121,7 +121,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '2'
+        view_count: '3'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -169,7 +169,7 @@ songs:
     videostatus: scheduled
     playlists:
       - lifes-a-kaleidoscope-ascension-youth-choir
-    view_count_num: 1
+    view_count_num: 3
     youtube_metadata:
       published_at: '2026-04-17T16:58:50Z'
       scheduled_at: '2026-04-28T16:00:00Z'
@@ -186,7 +186,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '1'
+        view_count: '3'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -252,7 +252,7 @@ songs:
       content_rating: {}
       statistics:
         view_count: '1'
-        like_count: '1'
+        like_count: '0'
         favorite_count: '0'
         comment_count: '0'
       made_for_kids: false
@@ -299,7 +299,7 @@ songs:
     videostatus: scheduled
     playlists:
       - lifes-a-kaleidoscope-ascension-youth-choir
-    view_count_num: 0
+    view_count_num: 2
     youtube_metadata:
       published_at: '2026-04-17T16:53:53Z'
       scheduled_at: '2026-05-12T16:00:00Z'
@@ -316,7 +316,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '0'
+        view_count: '2'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -365,7 +365,7 @@ songs:
     videostatus: scheduled
     playlists:
       - lifes-a-kaleidoscope-ascension-youth-choir
-    view_count_num: 0
+    view_count_num: 1
     youtube_metadata:
       published_at: '2026-04-17T16:55:37Z'
       scheduled_at: '2026-05-19T16:00:00Z'
@@ -382,7 +382,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '0'
+        view_count: '1'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -502,7 +502,7 @@ songs:
     videostatus: scheduled
     playlists:
       - lifes-a-kaleidoscope-ascension-youth-choir
-    view_count_num: 0
+    view_count_num: 1
     youtube_metadata:
       published_at: '2026-04-17T17:03:58Z'
       scheduled_at: '2026-06-02T16:00:00Z'
@@ -519,7 +519,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '0'
+        view_count: '1'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -639,7 +639,7 @@ songs:
     videostatus: scheduled
     playlists:
       - lifes-a-kaleidoscope-ascension-youth-choir
-    view_count_num: 2
+    view_count_num: 3
     youtube_metadata:
       published_at: '2026-04-17T17:09:40Z'
       scheduled_at: '2026-06-16T16:00:00Z'
@@ -656,7 +656,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '2'
+        view_count: '3'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
