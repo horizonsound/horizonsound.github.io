@@ -1,23 +1,21 @@
 songs:
-  - song_id: wind-in-your-sails-ascension-youth-choir-official-video-horizon-sound
-    youtube_id: p-ghTMr0L6I
-    title: >-
-      Wind in Your Sails - Ascension Youth Choir (Official Video) | Horizon
-      Sound
+  - song_id: kaleidoscope-ascension-youth-choir-official-video-horizon-sound
+    youtube_id: M_sd7eqcVFs
+    title: Kaleidoscope - Ascension Youth Choir (Official Video) | Horizon Sound
     description_html: >-
-      <p>“Wind in Your Sails” is a bright, uplifting anthem from the Ascension
-      Youth Choir — celebrating freedom, adventure, and the courage to chase the
-      horizon with hope in your heart.</p>
+      <p>Kaleidoscope is the debut release from the Ascension Youth Choir — a
+      bright, harmony‑rich, Color Choir style anthem celebrating unity, joy, and
+      the way young voices can light up the world.</p>
 
       <p>Ascension Youth Choir is a youth‑driven music choir built around
       positivity, color, and creativity.</p>
 
       <p>More songs are coming soon — subscribe to follow the journey.</p>
     vibes:
-      - '🎧 Vibe: Color Choir Style, coastal‑inspired pop'
-      - '🎤 Vocals: Breezy harmonies, joyful tone'
-      - '🎛️ Production: Acoustic guitar, light drums, airy textures'
-      - '⚡ Mood: free‑spirited, adventurous, uplifting, hopeful'
+      - '🎧 Vibe: Color Choir Style, upbeat vibrant‑pop'
+      - '🎤 Vocals: Big harmonies, vibrant energy'
+      - '🎛️ Production: Hand Claps, acoustic guitars, light drums'
+      - '⚡ Mood: nostalgic, uplifting, feel‑good, celebratory'
     tags:
       - horizonsound
       - originalmusic
@@ -28,24 +26,93 @@ songs:
       - instrumentalmusic
       - songwriter
       - ascensionyouthchoir
-      - windinyoursails
+      - kaleidoscope
+      - colorchoir
+    url: /music/kaleidoscope-ascension-youth-choir-official-video-horizon-sound/
+    thumbnail: >-
+      /assets/thumbnails/kaleidoscope-ascension-youth-choir-official-video-horizon-sound.jpeg
+    videostatus: public
+    playlists:
+      - lifes-a-kaleidoscope-ascension-youth-choir
+    view_count_num: 7
+    youtube_metadata:
+      published_at: '2026-04-14T16:00:28Z'
+      scheduled_at: null
+      channel_id: UCiko-zjojbsoXrsEuBOPbSw
+      channel_title: Horizon Sound
+      category_id: '22'
+      tags: []
+      duration: PT3M46S
+      definition: hd
+      dimension: null
+      caption: null
+      licensed_content: false
+      region_allowed: []
+      region_blocked: []
+      content_rating: {}
+      statistics:
+        view_count: '7'
+        like_count: '1'
+        favorite_count: '0'
+        comment_count: '0'
+      made_for_kids: false
+      self_declared_made_for_kids: false
+      topic_categories:
+        - https://en.wikipedia.org/wiki/Music
+        - https://en.wikipedia.org/wiki/Pop_music
+      privacy_status: null
+      upload_status: null
+      publish_at: null
+      license: ''
+      embeddable: true
+      public_stats_viewable: true
+  - song_id: all-around-the-world-ascension-youth-choir-official-video-horizon-sound
+    youtube_id: 8TjpfMgqrco
+    title: >-
+      All Around the World - Ascension Youth Choir (Official Video) | Horizon
+      Sound
+    description_html: >-
+      <p>“All Around the World” is a joyful, globe‑spanning anthem from the
+      Ascension Youth Choir — celebrating unity, connection, and the way young
+      voices can bridge distances with hope and harmony.</p>
+
+      <p>Ascension Youth Choir is a youth‑driven music choir built around
+      positivity, color, and creativity.</p>
+
+      <p>More songs are coming soon — subscribe to follow the journey.</p>
+    vibes:
+      - '🎧 Vibe: Color Choir Style, bright global‑pop'
+      - '🎤 Vocals: Layered harmonies, energetic group vocals'
+      - '🎛️ Production: Acoustic guitars, hand percussion, upbeat drums'
+      - '⚡ Mood: joyful, adventurous, uplifting, connected'
+    tags:
+      - horizonsound
+      - originalmusic
+      - newmusic
+      - musicvideo
+      - indieartist
+      - popmusic
+      - instrumentalmusic
+      - songwriter
+      - ascensionyouthchoir
+      - allaroundtheworld
       - colorchoir
     url: >-
-      /music/wind-in-your-sails-ascension-youth-choir-official-video-horizon-sound/
+      /music/all-around-the-world-ascension-youth-choir-official-video-horizon-sound/
     thumbnail: >-
-      /assets/thumbnails/wind-in-your-sails-ascension-youth-choir-official-video-horizon-sound.jpeg
+      /assets/thumbnails/all-around-the-world-ascension-youth-choir-official-video-horizon-sound.jpeg
     videostatus: scheduled
     playlists:
       - lifes-a-kaleidoscope-ascension-youth-choir
     view_count_num: 2
     youtube_metadata:
-      published_at: '2026-04-17T17:09:40Z'
-      scheduled_at: '2026-06-16T16:00:00Z'
+      published_at: '2026-04-17T16:29:44Z'
+      scheduled_at: '2026-04-21T16:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
       tags: []
-      duration: PT2M4S
+      duration: PT3M10S
       definition: hd
       dimension: null
       caption: null
@@ -55,144 +122,6 @@ songs:
       content_rating: {}
       statistics:
         view_count: '2'
-        like_count: '1'
-        favorite_count: '0'
-        comment_count: '0'
-      made_for_kids: false
-      self_declared_made_for_kids: false
-      topic_categories: []
-      privacy_status: null
-      upload_status: null
-      publish_at: null
-      license: ''
-      embeddable: true
-      public_stats_viewable: true
-  - song_id: >-
-      total-eclipse-years-later-ascension-youth-choir-official-video-horizon-sound
-    youtube_id: WAj5vAZ9tEc
-    title: >-
-      Total Eclipse (Years Later) - Ascension Youth Choir (Official Video) |
-      Horizon Sound
-    description_html: >-
-      <p>“Total Eclipse (Years Later)” is a dramatic, cinematic anthem from the
-      Ascension Youth Choir — capturing the awe, mystery, and wonder of watching
-      the sky transform into a moment of pure magic.</p>
-
-      <p>Ascension Youth Choir is a youth‑driven music choir built around
-      positivity, color, and creativity.</p>
-
-      <p>More songs are coming soon — subscribe to follow the journey.</p>
-    vibes:
-      - '🎧 Vibe: Color Choir Style, cinematic pop'
-      - '🎤 Vocals: Expansive harmonies, soaring energy'
-      - '🎛️ Production: Big drums, atmospheric synths, glowing textures'
-      - '⚡ Mood: epic, awe‑struck, powerful, emotional'
-    tags:
-      - horizonsound
-      - originalmusic
-      - newmusic
-      - musicvideo
-      - indieartist
-      - popmusic
-      - instrumentalmusic
-      - songwriter
-      - ascensionyouthchoir
-      - totaleclipse
-      - colorchoir
-    url: >-
-      /music/total-eclipse-years-later-ascension-youth-choir-official-video-horizon-sound/
-    thumbnail: >-
-      /assets/thumbnails/total-eclipse-years-later-ascension-youth-choir-official-video-horizon-sound.jpeg
-    videostatus: scheduled
-    playlists:
-      - lifes-a-kaleidoscope-ascension-youth-choir
-    view_count_num: 1
-    youtube_metadata:
-      published_at: '2026-04-17T17:07:43Z'
-      scheduled_at: '2026-06-09T16:00:00Z'
-      channel_id: UCiko-zjojbsoXrsEuBOPbSw
-      channel_title: Horizon Sound
-      category_id: '22'
-      tags: []
-      duration: PT4M22S
-      definition: hd
-      dimension: null
-      caption: null
-      licensed_content: false
-      region_allowed: []
-      region_blocked: []
-      content_rating: {}
-      statistics:
-        view_count: '1'
-        like_count: '1'
-        favorite_count: '0'
-        comment_count: '0'
-      made_for_kids: false
-      self_declared_made_for_kids: false
-      topic_categories: []
-      privacy_status: null
-      upload_status: null
-      publish_at: null
-      license: ''
-      embeddable: true
-      public_stats_viewable: true
-  - song_id: >-
-      the-things-that-stayed-with-me-ascension-youth-choir-official-video-horizon-sound
-    youtube_id: f6KkdIDs-HI
-    title: >-
-      The Things That Stayed With Me - Ascension Youth Choir (Official Video) |
-      Horizon Sound
-    description_html: >-
-      <p>“The Things That Stayed With Me” is a nostalgic, reflective anthem from
-      the Ascension Youth Choir — honoring the memories, lessons, and moments
-      that shape who we become.</p>
-
-      <p>Ascension Youth Choir is a youth‑driven music choir built around
-      positivity, color, and creativity.</p>
-
-      <p>More songs are coming soon — subscribe to follow the journey.</p>
-    vibes:
-      - '🎧 Vibe: Color Choir Style, emotional storytelling pop'
-      - '🎤 Vocals: Soft harmonies, reflective tone'
-      - '🎛️ Production: Acoustic guitar, warm pads, gentle percussion'
-      - '⚡ Mood: nostalgic, heartfelt, thoughtful, emotional'
-    tags:
-      - horizonsound
-      - originalmusic
-      - newmusic
-      - musicvideo
-      - indieartist
-      - popmusic
-      - instrumentalmusic
-      - songwriter
-      - ascensionyouthchoir
-      - thethingsthatstayedwithme
-      - colorchoir
-    url: >-
-      /music/the-things-that-stayed-with-me-ascension-youth-choir-official-video-horizon-sound/
-    thumbnail: >-
-      /assets/thumbnails/the-things-that-stayed-with-me-ascension-youth-choir-official-video-horizon-sound.jpeg
-    videostatus: scheduled
-    playlists:
-      - lifes-a-kaleidoscope-ascension-youth-choir
-    view_count_num: 0
-    youtube_metadata:
-      published_at: '2026-04-17T17:03:58Z'
-      scheduled_at: '2026-06-02T16:00:00Z'
-      channel_id: UCiko-zjojbsoXrsEuBOPbSw
-      channel_title: Horizon Sound
-      category_id: '22'
-      tags: []
-      duration: PT3M24S
-      definition: hd
-      dimension: null
-      caption: null
-      licensed_content: false
-      region_allowed: []
-      region_blocked: []
-      content_rating: {}
-      statistics:
-        view_count: '0'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
@@ -335,6 +264,71 @@ songs:
       license: ''
       embeddable: true
       public_stats_viewable: true
+  - song_id: hold-on-ascension-youth-choir-official-video-horizon-sound
+    youtube_id: Vv-FP9ZjtE0
+    title: Hold On - Ascension Youth Choir (Official Video) | Horizon Sound
+    description_html: >-
+      <p>“Hold On” is an encouraging anthem from the Ascension Youth Choir — a
+      reminder that even in tough moments, brighter days are ahead and you’re
+      never facing the storm alone.</p>
+
+      <p>Ascension Youth Choir is a youth‑driven music choir built around
+      positivity, color, and creativity.</p>
+
+      <p>More songs are coming soon — subscribe to follow the journey.</p>
+    vibes:
+      - '🎧 Vibe: Color Choir Style, uplifting pop'
+      - '🎤 Vocals: Supportive harmonies, hopeful tone'
+      - '🎛️ Production: Acoustic guitar, soft drums, warm pads'
+      - '⚡ Mood: reassuring, heartfelt, steady, optimistic'
+    tags:
+      - horizonsound
+      - originalmusic
+      - newmusic
+      - musicvideo
+      - indieartist
+      - popmusic
+      - instrumentalmusic
+      - songwriter
+      - ascensionyouthchoir
+      - holdon
+      - colorchoir
+    url: /music/hold-on-ascension-youth-choir-official-video-horizon-sound/
+    thumbnail: >-
+      /assets/thumbnails/hold-on-ascension-youth-choir-official-video-horizon-sound.jpeg
+    videostatus: scheduled
+    playlists:
+      - lifes-a-kaleidoscope-ascension-youth-choir
+    view_count_num: 0
+    youtube_metadata:
+      published_at: '2026-04-17T16:53:53Z'
+      scheduled_at: '2026-05-12T16:00:00Z'
+      channel_id: UCiko-zjojbsoXrsEuBOPbSw
+      channel_title: Horizon Sound
+      category_id: '22'
+      tags: []
+      duration: PT3M44S
+      definition: hd
+      dimension: null
+      caption: null
+      licensed_content: false
+      region_allowed: []
+      region_blocked: []
+      content_rating: {}
+      statistics:
+        view_count: '0'
+        like_count: '1'
+        favorite_count: '0'
+        comment_count: '0'
+      made_for_kids: false
+      self_declared_made_for_kids: false
+      topic_categories: []
+      privacy_status: null
+      upload_status: null
+      publish_at: null
+      license: ''
+      embeddable: true
+      public_stats_viewable: true
   - song_id: keep-the-light-on-ascension-youth-choir-official-video-horizon-sound
     youtube_id: PeSDuBXDrtw
     title: Keep the Light On - Ascension Youth Choir (Official Video) | Horizon Sound
@@ -380,71 +374,6 @@ songs:
       category_id: '22'
       tags: []
       duration: PT3M6S
-      definition: hd
-      dimension: null
-      caption: null
-      licensed_content: false
-      region_allowed: []
-      region_blocked: []
-      content_rating: {}
-      statistics:
-        view_count: '0'
-        like_count: '1'
-        favorite_count: '0'
-        comment_count: '0'
-      made_for_kids: false
-      self_declared_made_for_kids: false
-      topic_categories: []
-      privacy_status: null
-      upload_status: null
-      publish_at: null
-      license: ''
-      embeddable: true
-      public_stats_viewable: true
-  - song_id: hold-on-ascension-youth-choir-official-video-horizon-sound
-    youtube_id: Vv-FP9ZjtE0
-    title: Hold On - Ascension Youth Choir (Official Video) | Horizon Sound
-    description_html: >-
-      <p>“Hold On” is an encouraging anthem from the Ascension Youth Choir — a
-      reminder that even in tough moments, brighter days are ahead and you’re
-      never facing the storm alone.</p>
-
-      <p>Ascension Youth Choir is a youth‑driven music choir built around
-      positivity, color, and creativity.</p>
-
-      <p>More songs are coming soon — subscribe to follow the journey.</p>
-    vibes:
-      - '🎧 Vibe: Color Choir Style, uplifting pop'
-      - '🎤 Vocals: Supportive harmonies, hopeful tone'
-      - '🎛️ Production: Acoustic guitar, soft drums, warm pads'
-      - '⚡ Mood: reassuring, heartfelt, steady, optimistic'
-    tags:
-      - horizonsound
-      - originalmusic
-      - newmusic
-      - musicvideo
-      - indieartist
-      - popmusic
-      - instrumentalmusic
-      - songwriter
-      - ascensionyouthchoir
-      - holdon
-      - colorchoir
-    url: /music/hold-on-ascension-youth-choir-official-video-horizon-sound/
-    thumbnail: >-
-      /assets/thumbnails/hold-on-ascension-youth-choir-official-video-horizon-sound.jpeg
-    videostatus: scheduled
-    playlists:
-      - lifes-a-kaleidoscope-ascension-youth-choir
-    view_count_num: 0
-    youtube_metadata:
-      published_at: '2026-04-17T16:53:53Z'
-      scheduled_at: '2026-05-12T16:00:00Z'
-      channel_id: UCiko-zjojbsoXrsEuBOPbSw
-      channel_title: Horizon Sound
-      category_id: '22'
-      tags: []
-      duration: PT3M44S
       definition: hd
       dimension: null
       caption: null
@@ -534,25 +463,26 @@ songs:
       license: ''
       embeddable: true
       public_stats_viewable: true
-  - song_id: all-around-the-world-ascension-youth-choir-official-video-horizon-sound
-    youtube_id: 8TjpfMgqrco
+  - song_id: >-
+      the-things-that-stayed-with-me-ascension-youth-choir-official-video-horizon-sound
+    youtube_id: f6KkdIDs-HI
     title: >-
-      All Around the World - Ascension Youth Choir (Official Video) | Horizon
-      Sound
+      The Things That Stayed With Me - Ascension Youth Choir (Official Video) |
+      Horizon Sound
     description_html: >-
-      <p>“All Around the World” is a joyful, globe‑spanning anthem from the
-      Ascension Youth Choir — celebrating unity, connection, and the way young
-      voices can bridge distances with hope and harmony.</p>
+      <p>“The Things That Stayed With Me” is a nostalgic, reflective anthem from
+      the Ascension Youth Choir — honoring the memories, lessons, and moments
+      that shape who we become.</p>
 
       <p>Ascension Youth Choir is a youth‑driven music choir built around
       positivity, color, and creativity.</p>
 
       <p>More songs are coming soon — subscribe to follow the journey.</p>
     vibes:
-      - '🎧 Vibe: Color Choir Style, bright global‑pop'
-      - '🎤 Vocals: Layered harmonies, energetic group vocals'
-      - '🎛️ Production: Acoustic guitars, hand percussion, upbeat drums'
-      - '⚡ Mood: joyful, adventurous, uplifting, connected'
+      - '🎧 Vibe: Color Choir Style, emotional storytelling pop'
+      - '🎤 Vocals: Soft harmonies, reflective tone'
+      - '🎛️ Production: Acoustic guitar, warm pads, gentle percussion'
+      - '⚡ Mood: nostalgic, heartfelt, thoughtful, emotional'
     tags:
       - horizonsound
       - originalmusic
@@ -563,24 +493,161 @@ songs:
       - instrumentalmusic
       - songwriter
       - ascensionyouthchoir
-      - allaroundtheworld
+      - thethingsthatstayedwithme
       - colorchoir
     url: >-
-      /music/all-around-the-world-ascension-youth-choir-official-video-horizon-sound/
+      /music/the-things-that-stayed-with-me-ascension-youth-choir-official-video-horizon-sound/
     thumbnail: >-
-      /assets/thumbnails/all-around-the-world-ascension-youth-choir-official-video-horizon-sound.jpeg
+      /assets/thumbnails/the-things-that-stayed-with-me-ascension-youth-choir-official-video-horizon-sound.jpeg
+    videostatus: scheduled
+    playlists:
+      - lifes-a-kaleidoscope-ascension-youth-choir
+    view_count_num: 0
+    youtube_metadata:
+      published_at: '2026-04-17T17:03:58Z'
+      scheduled_at: '2026-06-02T16:00:00Z'
+      channel_id: UCiko-zjojbsoXrsEuBOPbSw
+      channel_title: Horizon Sound
+      category_id: '22'
+      tags: []
+      duration: PT3M24S
+      definition: hd
+      dimension: null
+      caption: null
+      licensed_content: false
+      region_allowed: []
+      region_blocked: []
+      content_rating: {}
+      statistics:
+        view_count: '0'
+        like_count: '1'
+        favorite_count: '0'
+        comment_count: '0'
+      made_for_kids: false
+      self_declared_made_for_kids: false
+      topic_categories: []
+      privacy_status: null
+      upload_status: null
+      publish_at: null
+      license: ''
+      embeddable: true
+      public_stats_viewable: true
+  - song_id: >-
+      total-eclipse-years-later-ascension-youth-choir-official-video-horizon-sound
+    youtube_id: WAj5vAZ9tEc
+    title: >-
+      Total Eclipse (Years Later) - Ascension Youth Choir (Official Video) |
+      Horizon Sound
+    description_html: >-
+      <p>“Total Eclipse (Years Later)” is a dramatic, cinematic anthem from the
+      Ascension Youth Choir — capturing the awe, mystery, and wonder of watching
+      the sky transform into a moment of pure magic.</p>
+
+      <p>Ascension Youth Choir is a youth‑driven music choir built around
+      positivity, color, and creativity.</p>
+
+      <p>More songs are coming soon — subscribe to follow the journey.</p>
+    vibes:
+      - '🎧 Vibe: Color Choir Style, cinematic pop'
+      - '🎤 Vocals: Expansive harmonies, soaring energy'
+      - '🎛️ Production: Big drums, atmospheric synths, glowing textures'
+      - '⚡ Mood: epic, awe‑struck, powerful, emotional'
+    tags:
+      - horizonsound
+      - originalmusic
+      - newmusic
+      - musicvideo
+      - indieartist
+      - popmusic
+      - instrumentalmusic
+      - songwriter
+      - ascensionyouthchoir
+      - totaleclipse
+      - colorchoir
+    url: >-
+      /music/total-eclipse-years-later-ascension-youth-choir-official-video-horizon-sound/
+    thumbnail: >-
+      /assets/thumbnails/total-eclipse-years-later-ascension-youth-choir-official-video-horizon-sound.jpeg
+    videostatus: scheduled
+    playlists:
+      - lifes-a-kaleidoscope-ascension-youth-choir
+    view_count_num: 1
+    youtube_metadata:
+      published_at: '2026-04-17T17:07:43Z'
+      scheduled_at: '2026-06-09T16:00:00Z'
+      channel_id: UCiko-zjojbsoXrsEuBOPbSw
+      channel_title: Horizon Sound
+      category_id: '22'
+      tags: []
+      duration: PT4M22S
+      definition: hd
+      dimension: null
+      caption: null
+      licensed_content: false
+      region_allowed: []
+      region_blocked: []
+      content_rating: {}
+      statistics:
+        view_count: '1'
+        like_count: '1'
+        favorite_count: '0'
+        comment_count: '0'
+      made_for_kids: false
+      self_declared_made_for_kids: false
+      topic_categories: []
+      privacy_status: null
+      upload_status: null
+      publish_at: null
+      license: ''
+      embeddable: true
+      public_stats_viewable: true
+  - song_id: wind-in-your-sails-ascension-youth-choir-official-video-horizon-sound
+    youtube_id: p-ghTMr0L6I
+    title: >-
+      Wind in Your Sails - Ascension Youth Choir (Official Video) | Horizon
+      Sound
+    description_html: >-
+      <p>“Wind in Your Sails” is a bright, uplifting anthem from the Ascension
+      Youth Choir — celebrating freedom, adventure, and the courage to chase the
+      horizon with hope in your heart.</p>
+
+      <p>Ascension Youth Choir is a youth‑driven music choir built around
+      positivity, color, and creativity.</p>
+
+      <p>More songs are coming soon — subscribe to follow the journey.</p>
+    vibes:
+      - '🎧 Vibe: Color Choir Style, coastal‑inspired pop'
+      - '🎤 Vocals: Breezy harmonies, joyful tone'
+      - '🎛️ Production: Acoustic guitar, light drums, airy textures'
+      - '⚡ Mood: free‑spirited, adventurous, uplifting, hopeful'
+    tags:
+      - horizonsound
+      - originalmusic
+      - newmusic
+      - musicvideo
+      - indieartist
+      - popmusic
+      - instrumentalmusic
+      - songwriter
+      - ascensionyouthchoir
+      - windinyoursails
+      - colorchoir
+    url: >-
+      /music/wind-in-your-sails-ascension-youth-choir-official-video-horizon-sound/
+    thumbnail: >-
+      /assets/thumbnails/wind-in-your-sails-ascension-youth-choir-official-video-horizon-sound.jpeg
     videostatus: scheduled
     playlists:
       - lifes-a-kaleidoscope-ascension-youth-choir
     view_count_num: 2
     youtube_metadata:
-      published_at: '2026-04-17T16:29:44Z'
-      scheduled_at: '2026-04-21T16:00:00Z'
+      published_at: '2026-04-17T17:09:40Z'
+      scheduled_at: '2026-06-16T16:00:00Z'
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
       tags: []
-      duration: PT3M10S
+      duration: PT2M4S
       definition: hd
       dimension: null
       caption: null
@@ -596,73 +663,6 @@ songs:
       made_for_kids: false
       self_declared_made_for_kids: false
       topic_categories: []
-      privacy_status: null
-      upload_status: null
-      publish_at: null
-      license: ''
-      embeddable: true
-      public_stats_viewable: true
-  - song_id: kaleidoscope-ascension-youth-choir-official-video-horizon-sound
-    youtube_id: M_sd7eqcVFs
-    title: Kaleidoscope - Ascension Youth Choir (Official Video) | Horizon Sound
-    description_html: >-
-      <p>Kaleidoscope is the debut release from the Ascension Youth Choir — a
-      bright, harmony‑rich, Color Choir style anthem celebrating unity, joy, and
-      the way young voices can light up the world.</p>
-
-      <p>Ascension Youth Choir is a youth‑driven music choir built around
-      positivity, color, and creativity.</p>
-
-      <p>More songs are coming soon — subscribe to follow the journey.</p>
-    vibes:
-      - '🎧 Vibe: Color Choir Style, upbeat vibrant‑pop'
-      - '🎤 Vocals: Big harmonies, vibrant energy'
-      - '🎛️ Production: Hand Claps, acoustic guitars, light drums'
-      - '⚡ Mood: nostalgic, uplifting, feel‑good, celebratory'
-    tags:
-      - horizonsound
-      - originalmusic
-      - newmusic
-      - musicvideo
-      - indieartist
-      - popmusic
-      - instrumentalmusic
-      - songwriter
-      - ascensionyouthchoir
-      - kaleidoscope
-      - colorchoir
-    url: /music/kaleidoscope-ascension-youth-choir-official-video-horizon-sound/
-    thumbnail: >-
-      /assets/thumbnails/kaleidoscope-ascension-youth-choir-official-video-horizon-sound.jpeg
-    videostatus: public
-    playlists:
-      - lifes-a-kaleidoscope-ascension-youth-choir
-    view_count_num: 6
-    youtube_metadata:
-      published_at: '2026-04-14T16:00:28Z'
-      scheduled_at: null
-      channel_id: UCiko-zjojbsoXrsEuBOPbSw
-      channel_title: Horizon Sound
-      category_id: '22'
-      tags: []
-      duration: PT3M46S
-      definition: hd
-      dimension: null
-      caption: null
-      licensed_content: false
-      region_allowed: []
-      region_blocked: []
-      content_rating: {}
-      statistics:
-        view_count: '6'
-        like_count: '1'
-        favorite_count: '0'
-        comment_count: '0'
-      made_for_kids: false
-      self_declared_made_for_kids: false
-      topic_categories:
-        - https://en.wikipedia.org/wiki/Music
-        - https://en.wikipedia.org/wiki/Pop_music
       privacy_status: null
       upload_status: null
       publish_at: null
