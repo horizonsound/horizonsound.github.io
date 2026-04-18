@@ -2953,7 +2953,7 @@ songs:
     videostatus: public
     playlists:
       - piano-emotional-horizon-sound-instrumentals
-    view_count_num: 2
+    view_count_num: 3
     youtube_metadata:
       published_at: '2026-04-18T12:01:23Z'
       scheduled_at: null
@@ -2980,7 +2980,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '2'
+        view_count: '3'
         like_count: '1'
         favorite_count: '0'
         comment_count: '0'
