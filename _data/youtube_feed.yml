@@ -2950,13 +2950,13 @@ songs:
       - songwriter
     url: /music/holding-the-light/
     thumbnail: /assets/thumbnails/holding-the-light.jpeg
-    videostatus: scheduled
+    videostatus: public
     playlists:
       - piano-emotional-horizon-sound-instrumentals
-    view_count_num: 1
+    view_count_num: 2
     youtube_metadata:
-      published_at: '2026-03-21T23:45:54Z'
-      scheduled_at: '2026-04-18T12:00:00Z'
+      published_at: '2026-04-18T12:01:23Z'
+      scheduled_at: null
       channel_id: UCiko-zjojbsoXrsEuBOPbSw
       channel_title: Horizon Sound
       category_id: '22'
@@ -2980,13 +2980,14 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '1'
-        like_count: '0'
+        view_count: '2'
+        like_count: '1'
         favorite_count: '0'
         comment_count: '0'
       made_for_kids: false
       self_declared_made_for_kids: false
-      topic_categories: []
+      topic_categories:
+        - https://en.wikipedia.org/wiki/Music
       privacy_status: null
       upload_status: null
       publish_at: null
@@ -5945,7 +5946,7 @@ songs:
     videostatus: public
     playlists:
       - midnight-saga
-    view_count_num: 247
+    view_count_num: 248
     youtube_metadata:
       published_at: '2026-02-20T17:00:56Z'
       scheduled_at: null
@@ -5962,7 +5963,7 @@ songs:
       region_blocked: []
       content_rating: {}
       statistics:
-        view_count: '247'
+        view_count: '248'
         like_count: '5'
         favorite_count: '0'
         comment_count: '0'

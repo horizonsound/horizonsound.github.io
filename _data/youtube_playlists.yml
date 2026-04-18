@@ -122,7 +122,8 @@ playlists:
     published_at: '2026-03-20T00:13:53.365353Z'
     channel_id: UCiko-zjojbsoXrsEuBOPbSw
     channel_title: Horizon Sound
-    thumbnail: null
+    thumbnail: >-
+      /assets/thumbnails/playlist-piano-emotional-horizon-sound-instrumentals.jpeg
     song_ids:
       - holding-the-light
       - the-quiet-between-us
