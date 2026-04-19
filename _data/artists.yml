@@ -48,35 +48,6 @@ artists:
       spotify: https://open.spotify.com/artist/6NmeEuax1ZPpDmSLfjSS7V?si=4E8XlQEYSW2jiGg8nVySbw
       youtube: https://www.youtube.com/@LydiaEllington-hs
 
-  - slug: ellie-hale
-    name:
-      full: Ellie Hale
-      first: Ellie
-      last: Hale
-    tagline: 
-    primary_color: 
-    secondary_color: 
-    headshot: ./assets/artists/ellie-hale/ellie-hale.jpg
-    bio:
-    photo_wall:
-      - src: ../assets/artists/ellie-hale/ellie-hale1.jpg
-        span: 1
-      - src: ../assets/artists/ellie-hale/ellie-hale4.jpg
-        span: 1
-      - src: ../assets/artists/ellie-hale/ellie-hale5.jpg
-        span: 1
-      - src: ../assets/artists/ellie-hale/ellie-hale3.jpg
-        span: 1
-      - src: ../assets/artists/ellie-hale/ellie-hale2.jpg
-        span: 1
-    albums:
-    singles: []
-    links:
-      website: 
-      apple_music: 
-      spotify: 
-      youtube: 
-
   - slug: cody-sails
     name:
       full: Cody Sails
@@ -127,6 +98,51 @@ artists:
       apple_music: https://music.apple.com/us/artist/cody-sails/1890255704
       spotify: https://open.spotify.com/artist/5JXSFheKggmlJJ3qUZPefn?si=nQJqpPSCQMqDe71C1rnW5A
       youtube: https://www.youtube.com/channel/UCKrDH3xQ-iQkj6aNA1SI4qw
+
+  - slug: ellie-hale
+    name:
+      full: Ellie Hale
+      first: Ellie
+      last: Hale
+    tagline: 
+    primary_color: 
+    secondary_color: 
+    headshot: ./assets/artists/ellie-hale/ellie-hale.jpg
+    bio:
+    photo_wall:
+      - src: ../assets/artists/ellie-hale/ellie-hale13.jpeg
+        span: 2
+      - src: ../assets/artists/ellie-hale/ellie-hale15.jpeg
+        span: 1
+      - src: ../assets/artists/ellie-hale/ellie-hale19.jpeg
+        span: 1
+      - src: ../assets/artists/ellie-hale/ellie-hale22.jpeg
+        span: 1
+      - src: ../assets/artists/ellie-hale/ellie-hale20.jpeg
+        span: 1
+      - src: ../assets/artists/ellie-hale/ellie-hale31.jpeg
+        span: 1
+      - src: ../assets/artists/ellie-hale/ellie-hale11.jpeg
+        span: 2
+      - src: ../assets/artists/ellie-hale/ellie-hale12.jpeg
+        span: 1
+      - src: ../assets/artists/ellie-hale/ellie-hale34.jpeg
+        span: 1
+      - src: ../assets/artists/ellie-hale/ellie-hale32.jpeg
+        span: 1
+      - src: ../assets/artists/ellie-hale/ellie-hale6.jpeg
+        span: 1
+      - src: ../assets/artists/ellie-hale/ellie-hale21.jpeg
+        span: 1
+      - src: ../assets/artists/ellie-hale/ellie-hale29.jpeg
+        span: 1
+    albums:
+    singles: []
+    links:
+      website: 
+      apple_music: 
+      spotify: 
+      youtube: 
 
   - slug: ravyn
     name:
