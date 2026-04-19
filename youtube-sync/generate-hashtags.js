@@ -1,20 +1,26 @@
 // generate-hashtags.js
+const DEBUG = false;
 
 export function generateHashtags(songs) {
-  console.log("Starting hashtag generation...\n");
+  if (DEBUG) {
+    console.log("Starting hashtag generation...\n");
+  }
+
 
   return songs.map(song => {
-    console.log(`---`);
-    console.log(`Song: ${song.title}`);
-    console.log(`Slug: ${song.song_id}`);
-    console.log(`Playlists: ${song.playlists.join(", ")}`);
-    console.log(`Vibes: ${song.vibes.join(", ")}`);
-    console.log(`Existing tags: ${song.tags.join(", ")}`);
-
+    if (DEBUG) {
+      console.log(`---`);
+      console.log(`Song: ${song.title}`);
+      console.log(`Slug: ${song.song_id}`);
+      console.log(`Playlists: ${song.playlists.join(", ")}`);
+      console.log(`Vibes: ${song.vibes.join(", ")}`);
+      console.log(`Existing tags: ${song.tags.join(", ")}`);
+    }
     const hashtags = buildHashtags(song);
 
-    console.log(`Generated hashtags: ${hashtags.join(", ")}\n`);
-
+    if (DEBUG) {
+      console.log(`Generated hashtags: ${hashtags.join(", ")}\n`);
+    }
     return { ...song, hashtags };
   });
 }
