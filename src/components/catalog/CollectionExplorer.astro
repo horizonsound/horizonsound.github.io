@@ -1,0 +1,53 @@
+---
+// @ts-nocheck
+const { releases } = Astro.props;
+
+// Filter out singles — show albums, sagas, EPs, etc.
+const collectionReleases = releases.filter(r =>
+  r.type !== "single" && r.status === "public"
+);
+---
+
+<section class="collection-explorer">
+  {collectionReleases.map((rel) => (
+    <a class="collection-tile" href={`/release/${rel.slug}`}>
+      <img
+        src={rel.artwork?.cover ?? "/assets/thumbnails/fallback.jpg"}
+        alt={rel.title}
+      />
+      <div class="collection-title">{rel.title}</div>
+    </a>
+  ))}
+</section>
+
+<style>
+  .collection-explorer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .collection-tile {
+    display: block;
+    background: rgba(255,255,255,0.04);
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+  }
+
+  .collection-tile img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .collection-title {
+    padding: 0.9rem 1.1rem;
+    font-size: 1.05rem;
+    font-weight: 500;
+    text-align: center;
+  }
+</style>

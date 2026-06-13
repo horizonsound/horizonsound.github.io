@@ -1,0 +1,162 @@
+/* ================================
+   Origins Page — Premium Styling
+================================ */
+.origins-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px 100px;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.92);
+}
+
+/* Section spacing */
+.origins-section {
+  margin-bottom: 60px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Headings */
+.origins-heading {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+}
+
+/* Body text */
+.origins-body {
+  font-size: 1.15rem;
+  opacity: 0.92;
+  margin-bottom: 24px;
+  white-space: pre-line; /* preserves YAML formatting */
+}
+
+/* Lists */
+.origins-list {
+  margin: 0;
+  padding-left: 22px;
+  list-style: disc;
+}
+
+.origins-list-item {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Subtle fade-in animation */
+.origins-section {
+  animation: fadeInUp 0.6s ease both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ================================
+Desktop — Light scaling css
+================================ */
+@media (min-width: 901px) {
+}
+
+/* ================================
+Portrait (440px) — heavy scaling css
+================================ */
+@media (max-width: 480px) {
+
+  .origins-container {
+    max-width: 900px;
+    padding: 60px 20px 100px;
+    line-height: 1.65;
+  }
+
+  /* Section spacing */
+  .origins-section {
+    margin-bottom: 60px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  /* Headings */
+  .origins-heading {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+  }
+
+  /* Body text */
+  .origins-body {
+    font-size: 1.15rem;
+    opacity: 0.92;
+    margin-bottom: 24px;
+  }
+
+  /* Lists */
+  .origins-list {
+    margin: 0;
+    padding-left: 22px;
+  }
+
+  .origins-list-item {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    opacity: 0.9;
+  }
+}
+
+/* ================================
+Landscape (832px) — moderate scaling css
+================================ */
+@media (min-width: 481px) and (max-width: 900px) {
+  .origins-container {
+    max-width: 900px;
+    padding: 60px 20px 100px;
+    line-height: 1.65;
+  }
+
+  /* Section spacing */
+  .origins-section {
+    margin-bottom: 60px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  /* Headings */
+  .origins-heading {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+  }
+
+  /* Body text */
+  .origins-body {
+    font-size: 1.15rem;
+    opacity: 0.92;
+    margin-bottom: 24px;
+  }
+
+  /* Lists */
+  .origins-list {
+    margin: 0;
+    padding-left: 22px;
+  }
+
+  .origins-list-item {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    opacity: 0.9;
+  }
+}

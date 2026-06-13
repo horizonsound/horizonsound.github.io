@@ -1,0 +1,324 @@
+---
+// @ts-nocheck
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getReleases } from '../../engine-api/releases';
+import { getTracks } from '../../engine-api/tracks';
+import { getAllArtists } from '../../engine-api/artists';
+import ExperienceTracklist from '../../components/ExperienceTracklist.jsx';
+import "../../styles/experience.css";
+
+const trackId = Astro.url.searchParams.get("trackId");
+
+export async function getStaticPaths() {
+  const releases = await getReleases();
+
+  return releases.map(release => ({
+    params: { slug: release.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const allReleases = await getReleases();
+const release = allReleases.find(r => r.slug === slug);
+
+if (!release) {
+  throw new Error(`Release not found for slug: ${slug}`);
+}
+
+// Normalize release to avoid undefined fields
+const safeRelease = {
+  ...release,
+  artwork: {
+    cover: release?.artwork?.cover ?? "/assets/fallbacks/release-cover.jpg",
+    banner: release?.artwork?.banner ?? null,
+    gallery: release?.artwork?.gallery ?? []
+  },
+  links: release?.links ?? {},
+  credits: release?.credits ?? {},
+  vibes: release?.vibes ?? [],
+  description: release?.description ?? "",
+  story_html: release?.story_html ?? "",
+  tracklist: release?.tracklist ?? []
+};
+
+// Resolve primary artist for this release
+const allArtists = await getAllArtists();
+const artist = allArtists.find(a => a.id === release.primary_artist);
+const safeArtist = {
+  ...artist,
+  images: {
+    gallery: artist?.images?.gallery ?? []
+  },
+  colors: {
+    primary: artist?.colors?.primary ?? "#050509",
+    secondary: artist?.colors?.secondary ?? "#15151c"
+  }
+};
+
+// Safe color fallbacks
+const primaryColor = artist?.colors?.primary || '#050509';
+const secondaryColor = artist?.colors?.secondary || '#15151c';
+
+// Gradient: artist colors → fade to black
+const gradientStyle = `
+  background:
+    radial-gradient(circle at top,
+      ${primaryColor} 4%,
+      ${secondaryColor} 15%,
+      #000000 28%,
+      #000000 100%
+    );
+`;
+
+// All tracks (for resolving release tracklist)
+const tracks = await getTracks();
+
+// Resolve full track objects for this release
+const resolvedTracks = safeRelease.tracklist.map(entry => {
+const track = tracks.find(t => t.id === entry.track_id) ?? {};
+
+  // Default to mastered if the flag is missing or true
+const folder = track.mastered === false ? "unmastered" : "mastered";
+
+  return {
+    ...track,
+audio_url: track.slug
+  ? `https://pub-c8a54ee8378f4fafbb360d62cd00410e.r2.dev/${folder}/${track.slug}.wav`
+  : null
+  };
+});
+
+// Release videos (from resolvedTracks)
+const releaseVideos = resolvedTracks
+  .flatMap(track => track?.videos ?? [])
+  .filter(v => v?.status === "Public");
+
+// Gallery images (release gallery fallback to artist gallery)
+const galleryImages =
+  safeRelease.artwork.gallery.length > 0
+    ? safeRelease.artwork.gallery
+    : safeArtist.images.gallery;
+
+// Related releases (same artist, excluding current)
+const relatedReleases = allReleases
+  .filter(r => r.primary_artist === release.primary_artist && r.id !== release.id)
+  .sort((a, b) => new Date(b.release_date) - new Date(a.release_date));
+
+// Credits
+const producers  = safeRelease.credits.producers ?? [];
+const writers    = safeRelease.credits.writers ?? [];
+const mixers     = safeRelease.credits.mixers ?? [];
+const mastering  = safeRelease.credits.mastering_engineers ?? [];
+const musicians  = safeRelease.credits.musicians ?? [];
+const engineers  = safeRelease.credits.engineers ?? [];
+
+// Commentary tracks (tracks with context_html)
+const commentaryTracks = resolvedTracks.filter(
+  (track) => track.context_html && track.context_html.trim().length > 0
+);
+
+// Listen Next recommendations
+
+// 1. Exclude current release
+let candidates = allReleases.filter(r => r.id !== release.id);
+
+// 2. Remove releases already shown in "More from this artist"
+const relatedIds = new Set(relatedReleases.map(r => r.id));
+candidates = candidates.filter(r => !relatedIds.has(r.id));
+
+// 3. Score candidates by genre + vibes overlap
+function scoreRelease(r) {
+  let score = 0;
+
+  // Genre match
+  if (r.genres?.primary === release.genres?.primary) score += 3;
+
+  // Secondary genre match
+  if (r.genres?.secondary && r.genres.secondary === release.genres?.secondary) score += 2;
+
+  // Vibes overlap
+  const vibesA = new Set(safeRelease.vibes);
+  const vibesB = new Set(r.vibes || []);
+  const vibeOverlap = [...vibesA].filter(v => vibesB.has(v)).length;
+  score += vibeOverlap;
+
+  return score;
+}
+
+const listenNext = candidates
+  .map(r => ({ release: r, score: scoreRelease(r) }))
+  .sort((a, b) => b.score - a.score)
+  .slice(0, 6)
+  .map(item => item.release);
+
+const releaseUrl = `https://horizonsound.com/experience/${release.slug}`;
+---
+
+<BaseLayout title={release.title}>
+    <main class="experience-page">
+      <div class="experience-bg" style={gradientStyle}></div>
+      <div class="experience-inner">
+
+          <ExperienceTracklist
+            tracks={resolvedTracks}
+            release={safeRelease}
+            artist={safeArtist}
+            client:load
+          />
+
+          {safeRelease.story_html && (
+            <section class="experience-story-block">
+              <div class="story-inner">
+                <h2 class="story-block-title">Behind the Album</h2>
+                <div class="story-block-text" set:html={release.story_html}></div>
+              </div>
+            </section>
+          )}
+
+          {release.description && (
+            <section class="experience-story">
+              <div class="story-inner">
+                <h2 class="story-title">About the Album</h2>
+                <p class="story-text">{release.description}</p>
+              </div>
+            </section>
+          )}
+
+          {galleryImages && galleryImages.length > 0 && (
+          <section class="experience-gallery">
+              <h2 class="gallery-title">Gallery</h2>
+
+              <div class="gallery-grid">
+              {galleryImages.map((img) => (
+                  <div class={`gallery-item span-${img.span || 1}`}>
+                  <img src={img.src} alt={release.title} />
+                  </div>
+              ))}
+              </div>
+          </section>
+          )}
+
+          {releaseVideos.length > 0 && (
+          <section class="experience-videos">
+              <h2 class="videos-title">Videos</h2>
+
+              <div class="video-grid">
+              {releaseVideos.map((video) => (
+                  <div class="video-item">
+                  <iframe
+                      src={video.url.replace("watch?v=", "embed/")}
+                      title={video.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                  ></iframe>
+                  <p class="video-caption">{video.title}</p>
+                  </div>
+              ))}
+              </div>
+          </section>
+          )}
+
+          {relatedReleases.length > 0 && (
+          <section class="experience-related">
+              <h2 class="related-title">More from {safeArtist?.name?.full ?? "Unknown Artist"}</h2>
+
+              <div class="related-grid">
+              {relatedReleases.map((rel) => (
+                  <a class="related-item" href={`/experience/${rel.slug}`}>
+                    <img src={rel?.artwork?.cover ?? "/assets/fallbacks/release-cover.jpg"} alt={rel.title} />
+                  <p class="related-name">{rel.title}</p>
+                  </a>
+              ))}
+              </div>
+          </section>
+          )}
+
+          {listenNext.length > 0 && (
+          <section class="experience-next">
+              <h2 class="next-title">Listen Next</h2>
+
+              <div class="next-grid">
+              {listenNext.map((rel) => (
+                  <a class="next-item" href={`/experience/${rel.slug}`}>
+                    <img src={rel?.artwork?.cover ?? "/assets/fallbacks/release-cover.jpg"} alt={rel.title} />
+                    <p class="next-name">{rel.title}</p>
+                  </a>
+              ))}
+              </div>
+          </section>
+          )}
+
+          {commentaryTracks.length > 0 && (
+          <section class="experience-commentary">
+              <h2 class="commentary-title">Track‑by‑Track Commentary</h2>
+
+              <div class="commentary-list">
+              {commentaryTracks.map((track) => (
+                  <div class="commentary-item">
+                  <h3 class="commentary-track-title">{track.title}</h3>
+                  <div class="commentary-text" set:html={track.context_html}></div>
+                  </div>
+              ))}
+              </div>
+          </section>
+          )}
+
+<section class="experience-credits">
+  <h2 class="credits-title">Credits</h2>
+  <div class="credits-grid">
+
+    <div class="credit-item">
+      <div class="credit-label">Producers</div>
+      <div class="credit-names">
+        {producers.map(name => <div>{name}</div>)}
+      </div>
+    </div>
+
+    <div class="credit-item">
+      <div class="credit-label">Writers</div>
+      <div class="credit-names">
+        {writers.map(name => <div>{name}</div>)}
+      </div>
+    </div>
+
+    <div class="credit-item">
+      <div class="credit-label">Mixers</div>
+      <div class="credit-names">
+        {mixers.map(name => <div>{name}</div>)}
+      </div>
+    </div>
+
+    <div class="credit-item">
+      <div class="credit-label">Mastering</div>
+      <div class="credit-names">
+        {mastering.map(name => <div>{name}</div>)}
+      </div>
+    </div>
+
+    <div class="credit-item">
+      <div class="credit-label">Musicians</div>
+      <div class="credit-names">
+        {musicians.map(name => <div>{name}</div>)}
+      </div>
+    </div>
+
+    <div class="credit-item">
+      <div class="credit-label">Engineers</div>
+      <div class="credit-names">
+        {engineers.map(name => <div>{name}</div>)}
+      </div>
+    </div>
+
+  </div>
+</section>
+      </div>
+    </main>
+  </div>
+
+<script
+  type="application/json"
+  id="inline-player-data"
+  set:html={JSON.stringify(resolvedTracks)}
+></script>
+
+</BaseLayout>

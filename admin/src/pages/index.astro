@@ -1,0 +1,38 @@
+---
+// @ts-nocheck
+const cookie = Astro.request.headers.get('cookie') || '';
+const isAdmin = cookie.includes('admin=1');
+
+if (!isAdmin) {
+  return Astro.redirect('/login');
+}
+
+import { getTracks } from '../../server/engine/tracks.js';
+const tracks = getTracks();
+
+//Needed to ensure admin is unreachable in production
+if (import.meta.env.PROD) {
+  return Astro.redirect('/');
+}
+---
+
+<html>
+  <body>
+    <h1>HorizonSound Workbench</h1>
+
+    <a href="/admin/new-track">+ New Track</a>
+
+    <ul>
+      {tracks.map(track => (
+        <li>
+          <a href={`/admin/track/${track.id}`}>
+            {track.title} — {track.artist}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </body>
+</html>
+
+<style>
+</style>

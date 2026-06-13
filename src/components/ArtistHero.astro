@@ -1,0 +1,29 @@
+---
+const { artist } = Astro.props;
+
+// Safely resolve hero image
+const heroImage =
+  artist.images?.hero ||
+  artist.images?.profile ||
+  null;
+---
+
+<div 
+  class="artist-hero"
+  style={heroImage ? `background-image: url('${heroImage}')` : ""}
+>
+  <div class="artist-hero-overlay">
+    <h1 class="artist-name">{artist.name.full}</h1>
+
+    {artist.tagline && (
+      <p class="artist-tagline">{artist.tagline}</p>
+    )}
+
+    {artist.links && (
+      <div class="artist-links">
+        <!-- your link icons unchanged -->
+      </div>
+    )}
+  </div>
+</div>
+

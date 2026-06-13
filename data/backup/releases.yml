@@ -1,0 +1,1374 @@
+- id: rel-one_hell_of_a_ride-scf
+  slug: one_hell_of_a_ride-scf
+  title: "One Hell of a Ride"
+  subtitle:
+  story_html: >
+    A gritty Southern‑rock anthem built on roaring guitars, highway energy, and a rebellious spirit. 
+    Southern Crossfire delivers a high‑octane performance that captures the rush of living fast, loving hard, 
+    and holding on tight when life kicks into overdrive.
+  type: single
+  version: null
+  status: public
+  instrumental: false
+  description: >
+    A high‑energy Southern‑rock track driven by crunchy guitars, bold vocals, and a wild‑on‑the‑road attitude. 
+    Southern Crossfire’s debut single sets the tone for their gritty, rebellious sound.
+  release_date: 2026-04-18
+  upload_date: 2026-04-18
+  preorder_date:
+  upc: "825393797326"
+  label: "Horizon Sound"
+  artwork:
+    cover: "/assets/releases/one-hell-of-a-ride/cover/one-hell-of-a-ride-cover.jpg"
+    banner:
+    gallery: []
+  links:
+    spotify:
+    apple_music:
+    youtube_music:
+    amazon_music:
+    tidal:
+  primary_artist: art-southern_crossfire
+  featuring_artists: []
+  tracklist:
+    - track_id: trk-onehellofaride-hs-001
+      track_number: 1
+  credits:
+    producers:
+      - Horizon Sound Collective
+    writers:
+      - Kevin Jandrow
+    mixers:
+      - Horizon Sound Studios
+    mastering_engineers:
+      - Horizon Sound Labs
+    musicians:
+      - Horizon Sound
+    engineers:
+      - Horizon Sound Labs  internal:
+    notes: "DistroKid metadata lists Horizon Sound as artist; catalog uses Southern Crossfire."
+    priority: 10
+  genres:
+    primary: Rock
+    secondary: Country Rock
+    tertiary: null
+  seo:
+    title: "One Hell of a Ride — Southern Crossfire"
+    description: "A gritty Southern‑rock anthem full of highway energy and rebellious spirit."
+    keywords:
+      - one hell of a ride
+      - southern crossfire
+      - southern rock
+      - horizon sound
+
+- id: rel-until_the_nightmare_ends-cm
+  slug: until_the_nightmare_ends-cm
+  title: "Until the Nightmare Ends (Stranger Things Anthem)"
+  subtitle:
+  story_html: >
+    A dark, emotional pop anthem inspired by the world of *Stranger Things*. 
+    Craig Mitchell blends cinematic tension with heartfelt vocals, capturing the feeling of fighting through fear, 
+    holding onto hope, and refusing to let the darkness win.
+  type: single
+  version: null
+  status: public
+  instrumental: false
+  description: >
+    A cinematic pop single with atmospheric production, emotional lift, and a dramatic, synth‑driven edge. 
+    Craig Mitchell channels the intensity and heart of *Stranger Things* into a powerful standalone anthem.
+  release_date: 2026-04-18
+  upload_date: 2026-04-18
+  preorder_date:
+  upc: "825393810704"
+  label: "Horizon Sound"
+  artwork:
+    cover: "/assets/releases/until-the-nightmare-ends/cover/until-the-nightmare-ends-cover.jpg"
+    banner:
+    gallery: []
+  links:
+    spotify:
+    apple_music:
+    youtube_music:
+    amazon_music:
+    tidal:
+  primary_artist: art-craig_mitchell
+  featuring_artists: []
+  tracklist:
+    - track_id: trk-untilthenightma-hs-001
+      track_number: 1
+  credits:
+    producers:
+      - Horizon Sound Collective
+    writers:
+      - Kevin Jandrow
+      - Craig Mitchell
+      - Ellie Hale
+    mixers:
+      - Horizon Sound Studios
+    mastering_engineers:
+      - Horizon Sound Labs
+    musicians:
+      - Horizon Sound
+    engineers:
+      - Horizon Sound Labs  internal:
+    notes: "DistroKid metadata lists Horizon Sound as artist; catalog uses Craig Mitchell."
+    priority: 11
+  genres:
+    primary: Pop
+    secondary: Cinematic Pop
+    tertiary: null
+  seo:
+    title: "Until the Nightmare Ends — Craig Mitchell"
+    description: "A cinematic pop anthem inspired by the world of Stranger Things."
+    keywords:
+      - craig mitchell
+      - until the nightmare ends
+      - stranger things anthem
+      - horizon sound
+
+- id: rel-wildfire-mr
+  slug: wildfire-mr
+  title: "Wildfire"
+  subtitle:
+  story_html: >
+    A fierce, emotional pop track fueled by raw energy and unstoppable momentum. 
+    Maddie Rowan delivers a bold, expressive performance that captures the feeling of burning bright, 
+    breaking free, and refusing to be contained.
+  type: single
+  version: null
+  status: public
+  instrumental: false
+  description: >
+    A high‑energy emotional pop single with sharp modern production, expressive vocals, and a fiery, unstoppable spirit. 
+    Maddie Rowan’s breakout track blends intensity, vulnerability, and attitude.
+  release_date: 2026-04-11
+  upload_date: 2026-04-07
+  preorder_date:
+  upc: "825500017941"
+  label: "Horizon Sound"
+  artwork:
+    cover: "/assets/releases/wildfire/cover/wildfire-cover.jpg"
+    banner:
+    gallery: []
+  links:
+    spotify:
+    apple_music:
+    youtube_music:
+    amazon_music:
+    tidal:
+  primary_artist: art-maddie_rowan
+  featuring_artists: []
+  tracklist:
+    - track_id: trk-wildfire-hs-001
+      track_number: 1
+  credits:
+    producers:
+      - Horizon Sound Collective
+    writers:
+      - Kevin Jandrow
+      - Lydia Ellington
+      - Maddie Rowan
+    mixers:
+      - Horizon Sound Studios
+    mastering_engineers:
+      - Horizon Sound Labs
+    musicians:
+      - Horizon Sound
+    engineers:
+      - Horizon Sound Labs  internal:
+    notes: "DistroKid metadata lists Horizon Sound as artist; catalog uses Maddie Rowan."
+    priority: 12
+  genres:
+    primary: Pop
+    secondary: Alt Pop
+    tertiary: null
+  seo:
+    title: "Wildfire — Maddie Rowan"
+    description: "A fiery emotional pop single with bold vocals and modern production."
+    keywords:
+      - wildfire
+      - maddie rowan
+      - emotional pop
+      - horizon sound
+
+- id: rel-lifes_a_kaleidoscope-ayc
+  slug: lifes_a_kaleidoscope-ayc
+  title: "Life’s a Kaleidoscope"
+  subtitle:
+  story_html: >
+    A bright, uplifting collection celebrating unity, growth, and the ever‑changing colors of youth. 
+    Ascension Youth Choir brings warm harmonies, expressive performances, and heartfelt optimism to every track — 
+    capturing the feeling of discovering who you are, together.
+  type: album
+  version: null
+  status: public
+  instrumental: false
+  description: >
+    A vibrant 10‑track youth‑ensemble album blending pop, acoustic warmth, and emotional storytelling. 
+    Ascension Youth Choir delivers an uplifting, hopeful sound filled with harmony, heart, and youthful confidence.
+  release_date: 2026-04-17
+  upload_date: 2026-04-17
+  preorder_date:
+  upc: "825393994336"
+  label: "Horizon Sound"
+  artwork:
+    cover: "/assets/releases/lifes-a-kaleidoscope/cover/lifes-a-kaleidoscope-cover.jpg"
+    banner:
+    gallery: []
+  links:
+    spotify:
+    apple_music:
+    youtube_music:
+    amazon_music:
+    tidal:
+  primary_artist: art-ascension_youth_choir
+  featuring_artists: []
+  tracklist:
+    - track_id: trk-kaleidoscope-ayc-001
+      track_number: 1
+    - track_id: trk-allaroundthewor-ayc-001
+      track_number: 2
+    - track_id: trk-rusty-ayc-001
+      track_number: 3
+    - track_id: trk-risingup-ayc-001
+      track_number: 4
+    - track_id: trk-holdon-ayc-001
+      track_number: 5
+    - track_id: trk-keepthelighton-ayc-001
+      track_number: 6
+    - track_id: trk-betterthanbefor-ayc-001
+      track_number: 7
+    - track_id: trk-thethingsthatst-ayc-001
+      track_number: 8
+    - track_id: trk-totaleclipse-ayc-001
+      track_number: 9
+    - track_id: trk-windinyoursails-ayc-001
+      track_number: 10
+  credits:
+    producers:
+      - Horizon Sound Collective
+    writers:
+      - Kevin Jandrow
+    mixers:
+      - Horizon Sound Studios
+    mastering_engineers:
+      - Horizon Sound Labs
+    musicians:
+      - Horizon Sound
+    engineers:
+      - Horizon Sound Labs  internal:
+    notes: "AYC’s flagship debut album. Tone: uplifting, warm, youth‑ensemble pop."
+    priority: 20
+  genres:
+    primary: Pop
+    secondary: Youth Ensemble
+    tertiary: null
+  seo:
+    title: "Life’s a Kaleidoscope — Ascension Youth Choir"
+    description: "A vibrant youth‑ensemble album filled with harmony, heart, and uplifting energy."
+    keywords:
+      - ascension youth choir
+      - life’s a kaleidoscope
+      - youth ensemble
+      - horizon sound
+
+- id: rel-irish_celtic-hs
+  slug: irish_celtic-hs
+  title: "Irish Celtic"
+  subtitle:
+  story_html: >
+    A cinematic journey across windswept cliffs, ancient paths, and emerald landscapes. 
+    This instrumental collection blends traditional Celtic instrumentation with modern production, 
+    creating a sweeping, atmospheric experience rooted in heritage and storytelling.
+  type: album
+  version: null
+  status: public
+  instrumental: true
+  description: >
+    A 6‑track instrumental Celtic album featuring fiddles, pipes, acoustic textures, and cinematic folk arrangements. 
+    Horizon Sound explores the spirit of Ireland through melody, movement, and atmosphere.
+  release_date: 2026-04-11
+  upload_date: 2026-04-07
+  preorder_date:
+  upc: "825486932474"
+  label: "Horizon Sound"
+  artwork:
+    cover: "/assets/releases/irish-celtic/cover/irish-celtic-cover.jpg"
+    banner:
+    gallery: []
+  links:
+    spotify:
+    apple_music:
+    youtube_music:
+    amazon_music:
+    tidal:
+  primary_artist: art-horizon_sound
+  featuring_artists: []
+  tracklist:
+    - track_id: trk-fiddlersatdawn-hs-001
+      track_number: 1
+    - track_id: trk-journeytoskelli-hs-001
+      track_number: 2
+    - track_id: trk-thepathtodunmor-hs-001
+      track_number: 3
+    - track_id: trk-acrosstheemeral-hs-001
+      track_number: 4
+    - track_id: trk-fireinthefiddle-hs-001
+      track_number: 5
+    - track_id: trk-thechasethrough-hs-001
+      track_number: 6
+  credits:
+    producers:
+      - Horizon Sound Collective
+    writers:
+    mixers:
+      - Horizon Sound Studios
+    mastering_engineers:
+      - Horizon Sound Labs
+    musicians:
+      - Horizon Sound
+    engineers:
+      - Horizon Sound Labs  internal:
+    notes: "Instrumental concept album under Horizon Sound. Celtic + cinematic folk."
+    priority: 21
+  genres:
+    primary: Celtic
+    secondary: Instrumental
+    tertiary: Cinematic Folk
+  seo:
+    title: "Irish Celtic — Horizon Sound"
+    description: "A cinematic instrumental journey through Celtic landscapes and folk tradition."
+    keywords:
+      - irish celtic
+      - celtic instrumental
+      - horizon sound
+
+- id: rel-workout_electronic_dance_music-hs
+  slug: workout_electronic_dance_music-hs
+  title: "Workout & Electronic Dance Music"
+  subtitle:
+  story_html: >
+    A high‑energy collection built for movement, momentum, and adrenaline. 
+    Pulsing synths, driving beats, and neon‑lit production create the perfect soundtrack 
+    for workouts, late‑night runs, or high‑intensity focus.
+  type: album
+  version: null
+  status: public
+  instrumental: true
+  description: >
+    A 6‑track instrumental EDM collection featuring energetic drops, modern synth design, 
+    and high‑tempo production crafted for workouts and movement‑based playlists.
+  release_date: 2026-04-11
+  upload_date: 2026-04-07
+  preorder_date:
+  upc: "825486959952"
+  label: "Horizon Sound"
+  artwork:
+    cover: "/assets/releases/workout-electronic-dance-music/cover/workout-electronic-dance-music-cover.jpg"
+    banner:
+    gallery: []
+  links:
+    spotify:
+    apple_music:
+    youtube_music:
+    amazon_music:
+    tidal:
+  primary_artist: art-horizon_sound
+  featuring_artists: []
+  tracklist:
+    - track_id: trk-electricpulse-hs-001
+      track_number: 1
+    - track_id: trk-breakthegravity-hs-001
+      track_number: 2
+    - track_id: trk-shinethrough-hs-001
+      track_number: 3
+    - track_id: trk-lightuptherunwa-hs-001
+      track_number: 4
+    - track_id: trk-midnightvelocit-hs-001
+      track_number: 5
+    - track_id: trk-neonrunner-hs-001
+      track_number: 6
+  credits:
+    producers:
+      - Horizon Sound Collective
+    writers:
+    mixers:
+      - Horizon Sound Studios
+    mastering_engineers:
+      - Horizon Sound Labs
+    musicians:
+      - Horizon Sound
+    engineers:
+      - Horizon Sound Labs  internal:
+    notes: "Instrumental EDM workout collection. Neon‑energy, high‑tempo, movement‑focused."
+    priority: 22
+  genres:
+    primary: EDM
+    secondary: Instrumental
+    tertiary: Electronic
+  seo:
+    title: "Workout & Electronic Dance Music — Horizon Sound"
+    description: "A high‑energy instrumental EDM collection built for workouts and movement."
+    keywords:
+      - workout edm
+      - electronic dance music
+      - horizon sound
+
+- id: rel-synthwave_retrowave-hs
+  slug: synthwave_retrowave-hs
+  title: "Synthwave & Retrowave"
+  subtitle:
+  story_html: >
+    A neon‑drenched journey through retro‑future soundscapes. 
+    Pulsing basslines, shimmering pads, and cinematic night‑drive energy define this instrumental collection — 
+    built for nostalgia, motion, and the glow of city lights after dark.
+  type: album
+  version: null
+  status: public
+  instrumental: true
+  description: >
+    A 6‑track instrumental synthwave album blending retro analog textures, modern production, 
+    and cinematic night‑drive atmosphere. Horizon Sound explores the nostalgic pulse of the 80s 
+    through warm synths, steady rhythms, and neon‑lit mood.
+  release_date: 2026-04-11
+  upload_date: 2026-04-07
+  preorder_date:
+  upc: "825486962747"
+  label: "Horizon Sound"
+  artwork:
+    cover: "/assets/releases/synthwave-retrowave/cover/synthwave-retrowave-cover.jpg"
+    banner:
+    gallery: []
+  links:
+    spotify:
+    apple_music:
+    youtube_music:
+    amazon_music:
+    tidal:
+  primary_artist: art-horizon_sound
+  featuring_artists: []
+  tracklist:
+    - track_id: trk-retrodrive-hs-001
+      track_number: 1
+    - track_id: trk-nightfallcircui-hs-001
+      track_number: 2
+    - track_id: trk-dreamwaveavenue-hs-001
+      track_number: 3
+    - track_id: trk-memoryloop-hs-001
+      track_number: 4
+    - track_id: trk-midnightascensi-hs-001
+      track_number: 5
+    - track_id: trk-neonvanguard-hs-001
+      track_number: 6
+  credits:
+    producers:
+      - Horizon Sound Collective
+    writers:
+    mixers:
+      - Horizon Sound Studios
+    mastering_engineers:
+      - Horizon Sound Labs
+    musicians:
+      - Horizon Sound
+    engineers:
+      - Horizon Sound Labs  internal:
+    notes: "Instrumental synthwave concept album. Neon‑lit, retro‑future, cinematic night‑drive tone."
+    priority: 30
+  genres:
+    primary: Synthwave
+    secondary: Retrowave
+    tertiary: Instrumental
+  seo:
+    title: "Synthwave & Retrowave — Horizon Sound"
+    description: "A neon‑drenched instrumental synthwave album blending retro textures and cinematic night‑drive energy."
+    keywords:
+      - synthwave
+      - retrowave
+      - instrumental synthwave
+      - horizon sound
+
+- id: rel-pop_instrumentals-hs
+  slug: pop_instrumentals-hs
+  title: "Pop Instrumentals"
+  subtitle:
+  story_html: >
+    A warm, melodic collection of feel‑good pop instrumentals built around bright hooks, 
+    gentle grooves, and uplifting emotional tone. 
+    Each track captures a different shade of modern pop — from golden‑hour warmth to soft, reflective glow.
+  version: null
+  type: album
+  status: public
+  instrumental: true
+  description: >
+    A 6‑track instrumental pop album featuring bright melodies, warm acoustic textures, 
+    and modern pop production. Designed for creators, background playlists, and emotional uplift.
+  release_date: 2026-04-11
+  upload_date: 2026-04-07
+  preorder_date:
+  upc: "825486966028"
+  label: "Horizon Sound"
+  artwork:
+    cover: "/assets/releases/pop-instrumentals/cover/pop-instrumentals-cover.jpg"
+    banner:
+    gallery: []
+  links:
+    spotify:
+    apple_music:
+    youtube_music:
+    amazon_music:
+    tidal:
+  primary_artist: art-horizon_sound
+  featuring_artists: []
+  tracklist:
+    - track_id: trk-colorthesky-hs-001
+      track_number: 1
+    - track_id: trk-betterdaysahead-hs-001
+      track_number: 2
+    - track_id: trk-goldenhourgroov-hs-001
+      track_number: 3
+    - track_id: trk-softlight-hs-001
+      track_number: 4
+    - track_id: trk-openheartcity-hs-001
+      track_number: 5
+    - track_id: trk-brightestpartof-hs-001
+      track_number: 6
+  credits:
+    producers:
+      - Horizon Sound Collective
+    writers:
+    mixers:
+      - Horizon Sound Studios
+    mastering_engineers:
+      - Horizon Sound Labs
+    musicians:
+      - Horizon Sound
+    engineers:
+      - Horizon Sound Labs  internal:
+    notes: "Instrumental pop collection. Warm, melodic, creator‑friendly, emotional uplift."
+    priority: 31
+  genres:
+    primary: Pop
+    secondary: Instrumental
+    tertiary: Indie Pop
+  seo:
+    title: "Pop Instrumentals — Horizon Sound"
+    description: "A warm, melodic instrumental pop collection featuring bright hooks and modern production."
+    keywords:
+      - pop instrumentals
+      - instrumental pop
+      - horizon sound
+
+- id: rel-piano_emotional-hs
+  slug: piano_emotional-hs
+  title: "Piano Emotional"
+  subtitle:
+  story_html: >
+    A gentle, introspective piano collection shaped by quiet moments, soft light, 
+    and emotional stillness. Each piece explores a different shade of reflection — 
+    from healing to longing to peaceful release.
+  type: album
+  version: null
+  status: public
+  instrumental: true
+  description: >
+    A 6‑track emotional piano album featuring soft dynamics, warm resonance, 
+    and cinematic minimalism. Horizon Sound captures the intimate, reflective side of modern piano music.
+  release_date: 2026-04-11
+  upload_date: 2026-04-07
+  preorder_date:
+  upc: "825486945573"
+  label: "Horizon Sound"
+  artwork:
+    cover: "/assets/releases/piano-emotional/cover/piano-emotional-cover.jpg"
+    banner:
+    gallery: []
+  links:
+    spotify:
+    apple_music:
+    youtube_music:
+    amazon_music:
+    tidal:
+  primary_artist: art-horizon_sound
+  featuring_artists: []
+  tracklist:
+    - track_id: trk-holdingthelight-hs-001
+      track_number: 1
+    - track_id: trk-thequietbetween-hs-001
+      track_number: 2
+    - track_id: trk-stillwaters-hs-001
+      track_number: 3
+    - track_id: trk-breathingslow-hs-001
+      track_number: 4
+    - track_id: trk-aplacetorest-hs-001
+      track_number: 5
+    - track_id: trk-fallingtowardth-hs-001
+      track_number: 6
+  credits:
+    producers:
+      - Horizon Sound Collective
+    writers:
+    mixers:
+      - Horizon Sound Studios
+    mastering_engineers:
+      - Horizon Sound Labs
+    musicians:
+      - Horizon Sound
+    engineers:
+      - Horizon Sound Labs  internal:
+    notes: "Instrumental emotional piano collection. Soft, cinematic, reflective."
+    priority: 32
+  genres:
+    primary: Piano
+    secondary: Instrumental
+    tertiary: Cinematic
+  seo:
+    title: "Piano Emotional — Horizon Sound"
+    description: "A soft, reflective piano album blending emotional minimalism and cinematic warmth."
+    keywords:
+      - piano emotional
+      - emotional piano
+      - horizon sound
+
+- id: rel-orchestral_rock-hs
+  slug: orchestral_rock-hs
+  title: "Orchestral Rock"
+  subtitle:
+  story_html: >
+    A dramatic fusion of soaring orchestral arrangements and driving rock energy. 
+    This instrumental collection blends strings, brass, and cinematic percussion 
+    with electric guitars and modern production — creating a storm‑lit world of 
+    tension, triumph, and elemental power.
+  type: album
+  version: null
+  status: public
+  instrumental: true
+  description: >
+    A 6‑track instrumental album combining orchestral grandeur with rock intensity. 
+    Horizon Sound delivers sweeping cinematic themes, bold guitar work, and 
+    high‑impact arrangements built for trailers, storytelling, and dramatic moments.
+  release_date: 2026-04-11
+  upload_date: 2026-04-07
+  preorder_date:
+  upc: "825486975518"
+  label: "Horizon Sound"
+  artwork:
+    cover: "/assets/releases/orchestral-rock/cover/orchestral-rock-cover.jpg"
+    banner:
+    gallery: []
+  links:
+    spotify:
+    apple_music:
+    youtube_music:
+    amazon_music:
+    tidal:
+  primary_artist: art-horizon_sound
+  featuring_artists: []
+  tracklist:
+    - track_id: trk-winterfire-hs-001
+      track_number: 1
+    - track_id: trk-thefrozenovertu-hs-001
+      track_number: 2
+    - track_id: trk-therisingstorm-hs-001
+      track_number: 3
+    - track_id: trk-fireinthechoir-hs-001
+      track_number: 4
+    - track_id: trk-glacierstorm-hs-001
+      track_number: 5
+    - track_id: trk-thewinterrequie-hs-001
+      track_number: 6
+  credits:
+    producers:
+      - Horizon Sound Collective
+    writers:
+    mixers:
+      - Horizon Sound Studios
+    mastering_engineers:
+      - Horizon Sound Labs
+    musicians:
+      - Horizon Sound
+    engineers:
+      - Horizon Sound Labs  internal:
+    notes: "Instrumental orchestral‑rock fusion. Big, dramatic, trailer‑ready energy."
+    priority: 40
+  genres:
+    primary: Rock
+    secondary: Orchestral
+    tertiary: Instrumental
+  seo:
+    title: "Orchestral Rock — Horizon Sound"
+    description: "A dramatic fusion of orchestral grandeur and rock intensity."
+    keywords:
+      - orchestral rock
+      - cinematic rock
+      - instrumental rock
+      - horizon sound
+
+- id: rel-electric_guitar_rock-hs
+  slug: electric_guitar_rock-hs
+  title: "Electric Guitar Rock"
+  subtitle:
+  story_html: >
+    A high‑voltage collection built around soaring leads, gritty riffs, and 
+    modern rock attitude. This instrumental album channels neon‑city energy, 
+    late‑night motion, and the spark of electricity in the air.
+  type: album
+  version: null
+  status: public
+  instrumental: true
+  description: >
+    A 6‑track instrumental rock album featuring bold electric‑guitar work, 
+    energetic rhythms, and modern production. Horizon Sound blends cinematic 
+    rock textures with melodic hooks and driving momentum.
+  release_date: 2026-04-11
+  upload_date: 2026-04-07
+  preorder_date:
+  upc: "825486979479"
+  label: "Horizon Sound"
+  artwork:
+    cover: "/assets/releases/electric-guitar-rock/cover/electric-guitar-rock-cover.jpg"
+    banner:
+    gallery: []
+  links:
+    spotify:
+    apple_music:
+    youtube_music:
+    amazon_music:
+    tidal:
+  primary_artist: art-horizon_sound
+  featuring_artists: []
+  tracklist:
+    - track_id: trk-neonskyline-hs-001
+      track_number: 1
+    - track_id: trk-runningthrought-hs-001
+      track_number: 2
+    - track_id: trk-fireinthewires-hs-001
+      track_number: 3
+    - track_id: trk-chasingthespark-hs-001
+      track_number: 4
+    - track_id: trk-wavesofblue-hs-001
+      track_number: 5
+    - track_id: trk-afterthestatic-hs-001
+      track_number: 6
+  credits:
+    producers:
+      - Horizon Sound Collective
+    writers:
+    mixers:
+      - Horizon Sound Studios
+    mastering_engineers:
+      - Horizon Sound Labs
+    musicians:
+      - Horizon Sound
+    engineers:
+      - Horizon Sound Labs  internal:
+    notes: "Instrumental electric‑guitar album. Neon‑rock, energetic, modern."
+    priority: 41
+  genres:
+    primary: Rock
+    secondary: Instrumental
+    tertiary: Modern Rock
+  seo:
+    title: "Electric Guitar Rock — Horizon Sound"
+    description: "A high‑energy instrumental rock album built around bold electric‑guitar work."
+    keywords:
+      - electric guitar rock
+      - instrumental rock
+      - guitar instrumentals
+      - horizon sound
+
+- id: rel-cinematic_ambient-hs
+  slug: cinematic_ambient-hs
+  title: "Cinematic & Ambient"
+  subtitle:
+  story_html: >
+    A quiet, atmospheric journey through soft light, open space, and emotional stillness. 
+    This instrumental collection blends ambient textures with cinematic storytelling — 
+    creating a world of calm, reflection, and gentle motion.
+  type: album
+  version: null
+  status: public
+  instrumental: true
+  description: >
+    A 6‑track ambient‑cinematic album featuring soft pads, evolving textures, 
+    and emotional minimalism. Horizon Sound explores the quiet side of storytelling 
+    through spacious, reflective soundscapes.
+  release_date: 2026-04-11
+  upload_date: 2026-04-07
+  preorder_date:
+  upc: "825486987924"
+  label: "Horizon Sound"
+  artwork:
+    cover: "/assets/releases/cinematic-ambient/cover/cinematic-ambient-cover.jpg"
+    banner:
+    gallery: []
+  links:
+    spotify:
+    apple_music:
+    youtube_music:
+    amazon_music:
+    tidal:
+  primary_artist: art-horizon_sound
+  featuring_artists: []
+  tracklist:
+    - track_id: trk-momentsbetweenm-hs-001
+      track_number: 1
+    - track_id: trk-wheretheairglow-hs-001
+      track_number: 2
+    - track_id: trk-echoesoftomorro-hs-001
+      track_number: 3
+    - track_id: trk-thespacewekeep-hs-001
+      track_number: 4
+    - track_id: trk-breathingincolo-hs-001
+      track_number: 5
+    - track_id: trk-quiethorizons-hs-001
+      track_number: 6
+  credits:
+    producers:
+      - Horizon Sound Collective
+    writers:
+    mixers:
+      - Horizon Sound Studios
+    mastering_engineers:
+      - Horizon Sound Labs
+    musicians:
+      - Horizon Sound
+    engineers:
+      - Horizon Sound Labs  internal:
+    notes: "Ambient + cinematic fusion. Soft, reflective, atmospheric."
+    priority: 42
+  genres:
+    primary: Ambient
+    secondary: Cinematic
+    tertiary: Instrumental
+  seo:
+    title: "Cinematic & Ambient — Horizon Sound"
+    description: "A reflective ambient‑cinematic album exploring quiet emotion and atmospheric storytelling."
+    keywords:
+      - cinematic ambient
+      - ambient instrumental
+      - horizon sound
+
+- id: rel-calm_cinematic-hs
+  slug: calm_cinematic-hs
+  title: "Calm & Cinematic"
+  subtitle:
+  story_html: >
+    A gentle cinematic journey shaped by soft light, slow movement, and emotional stillness. 
+    This instrumental collection blends ambient textures with warm orchestral tones — 
+    creating a peaceful world where every note feels like a quiet breath.
+  type: album
+  version: null
+  status: public
+  instrumental: true
+  description: >
+    A 6‑track ambient‑cinematic album featuring soft pads, warm strings, and reflective minimalism. 
+    Horizon Sound explores calm emotion through spacious arrangements and delicate storytelling.
+  release_date: 2026-04-11
+  upload_date: 2026-04-07
+  preorder_date:
+  upc: "825486992430"
+  label: "Horizon Sound"
+  artwork:
+    cover: "/assets/releases/calm-cinematic/cover/calm-cinematic-cover.jpg"
+    banner:
+    gallery: []
+  links:
+    spotify:
+    apple_music:
+    youtube_music:
+    amazon_music:
+    tidal:
+  primary_artist: art-horizon_sound
+  featuring_artists: []
+  tracklist:
+    - track_id: trk-atouchoflight-hs-001
+      track_number: 1
+    - track_id: trk-foreverinamomen-hs-001
+      track_number: 2
+    - track_id: trk-heldinthemoment-hs-001
+      track_number: 3
+    - track_id: trk-linesoflight-hs-001
+      track_number: 4
+    - track_id: trk-themomentyoubre-hs-001
+      track_number: 5
+    - track_id: trk-thewaywatermove-hs-001
+      track_number: 6
+  credits:
+    producers:
+      - Horizon Sound Collective
+    writers:
+    mixers:
+      - Horizon Sound Studios
+    mastering_engineers:
+      - Horizon Sound Labs
+    musicians:
+      - Horizon Sound
+    engineers:
+      - Horizon Sound Labs  internal:
+    notes: "Ambient + cinematic fusion. Soft, peaceful, reflective tone."
+    priority: 50
+  genres:
+    primary: Ambient
+    secondary: Cinematic
+    tertiary: Instrumental
+  seo:
+    title: "Calm & Cinematic — Horizon Sound"
+    description: "A peaceful ambient‑cinematic album exploring soft emotion and quiet storytelling."
+    keywords:
+      - calm cinematic
+      - ambient cinematic
+      - horizon sound
+
+- id: rel-acoustic_guitar-hs
+  slug: acoustic_guitar-hs
+  title: "Acoustic Guitar"
+  subtitle:
+  story_html: >
+    A warm, organic collection built around fingerpicked melodies, sunlit textures, 
+    and the quiet comfort of acoustic storytelling. 
+    These instrumental pieces capture the feeling of open roads, soft mornings, 
+    and moments of peaceful reflection.
+  type: album
+  version: null
+  status: public
+  instrumental: true
+  description: >
+    A 6‑track acoustic instrumental album featuring warm guitars, gentle movement, 
+    and emotional simplicity. Horizon Sound explores the intimate, grounded side 
+    of acoustic music through melodic, heartfelt arrangements.
+  release_date: 2026-04-11
+  upload_date: 2026-04-07
+  preorder_date:
+  upc: "825486996056"
+  label: "Horizon Sound"
+  artwork:
+    cover: "/assets/releases/acoustic-guitar/cover/acoustic-guitar-cover.jpg"
+    banner:
+    gallery: []
+  links:
+    spotify:
+    apple_music:
+    youtube_music:
+    amazon_music:
+    tidal:
+  primary_artist: art-horizon_sound
+  featuring_artists: []
+  tracklist:
+    - track_id: trk-sunlightonthest-hs-001
+      track_number: 1
+    - track_id: trk-wanderersheart-hs-001
+      track_number: 2
+    - track_id: trk-runningtowardth-hs-001
+      track_number: 3
+    - track_id: trk-thewayhome-hs-001
+      track_number: 4
+    - track_id: trk-lettersinthewin-hs-001
+      track_number: 5
+    - track_id: trk-chasingthedayli-hs-001
+      track_number: 6
+  credits:
+    producers:
+      - Horizon Sound Collective
+    writers:
+    mixers:
+      - Horizon Sound Studios
+    mastering_engineers:
+      - Horizon Sound Labs
+    musicians:
+      - Horizon Sound
+    engineers:
+      - Horizon Sound Labs  internal:
+    notes: "Warm acoustic instrumental collection. Organic, melodic, grounded."
+    priority: 51
+  genres:
+    primary: Acoustic
+    secondary: Instrumental
+    tertiary: Folk
+  seo:
+    title: "Acoustic Guitar — Horizon Sound"
+    description: "A warm acoustic instrumental album featuring melodic, organic guitar storytelling."
+    keywords:
+      - acoustic guitar
+      - acoustic instrumental
+      - horizon sound
+
+- id: rel-venice_trilogy-hs
+  slug: venice_trilogy-hs
+  title: "Venice Trilogy"
+  subtitle:
+  story_html: >
+    A three‑chapter emotional journey set against the backdrop of Venice — 
+    a city of memory, longing, and quiet beauty. 
+    Each track captures a different moment along the water: hope, loss, and the 
+    gentle pull of time moving forward.
+  type: saga
+  version: null
+  status: public
+  instrumental: false
+  description: >
+    A cinematic 3‑track saga blending emotional storytelling, soft orchestral elements, 
+    and atmospheric production. Horizon Sound explores themes of memory, distance, 
+    and the quiet ache of longing.
+  release_date: 2026-04-11
+  upload_date: 2026-04-07
+  preorder_date:
+  upc: "825500019372"
+  label: "Horizon Sound"
+  artwork:
+    cover: "/assets/releases/venice-trilogy/cover/venice-trilogy-cover.jpg"
+    banner:
+    gallery: []
+  links:
+    spotify:
+    apple_music:
+    youtube_music:
+    amazon_music:
+    tidal:
+  primary_artist: art-horizon_sound
+  featuring_artists: []
+  tracklist:
+    - track_id: trk-someday-hs-001
+      track_number: 1
+    - track_id: trk-missingstamp-hs-001
+      track_number: 2
+    - track_id: trk-venicewaters-hs-001
+      track_number: 3
+  credits:
+    producers:
+      - Horizon Sound Collective
+    writers:
+      - Kevin Jandrow
+      - Ellie Hale
+      - Ravyn
+    mixers:
+      - Horizon Sound Studios
+    mastering_engineers:
+      - Horizon Sound Labs
+    musicians:
+      - Horizon Sound
+    engineers:
+      - Horizon Sound Labs  internal:
+    notes: "Three‑track cinematic saga. Emotional, atmospheric, Venice‑themed storytelling."
+    priority: 52
+  genres:
+    primary: Cinematic
+    secondary: Ambient
+    tertiary: Instrumental
+  seo:
+    title: "Venice Trilogy — Horizon Sound"
+    description: "A cinematic three‑chapter saga exploring memory, longing, and the quiet beauty of Venice."
+    keywords:
+      - venice trilogy
+      - cinematic saga
+      - horizon sound
+
+- id: rel-midnight_saga-r
+  slug: midnight_saga-r
+  title: "Midnight Saga"
+  subtitle:
+  story_html: >
+    A four‑chapter descent into neon‑lit chaos, late‑night impulse, and cinematic danger. 
+    Ravyn blends dark pop, electric attitude, and high‑voltage emotion — capturing the moment 
+    where confidence, desire, and recklessness collide under midnight lights.
+  type: saga
+  version: null
+  status: public
+  instrumental: false
+  description: >
+    A bold, cinematic pop saga built around nightlife energy, emotional tension, and Ravyn’s 
+    signature neon‑charged edge. Each chapter explores a different shade of midnight — from 
+    anticipation to chaos to the quiet aftermath.
+  release_date: 2026-04-07
+  upload_date: 2026-04-02
+  preorder_date: 2026-04-02
+  upc: "825626049970"
+  label: "Horizon Sound"
+  artwork:
+    cover: "/assets/releases/midnight-saga/cover/midnight-saga-cover.jpg"
+    banner:
+    gallery: []
+  links:
+    spotify:
+    apple_music:
+    youtube_music:
+    amazon_music:
+    tidal:
+  primary_artist: art-ravyn
+  featuring_artists: []
+  tracklist:
+    - track_id: trk-beforemidnight-r-001
+      track_number: 1
+    - track_id: trk-midnightmayhem-r-001
+      track_number: 2
+    - track_id: trk-midnightmadness-r-001
+      track_number: 3
+    - track_id: trk-aftermidnight-r-001
+      track_number: 4
+  credits:
+    producers:
+      - Horizon Sound Collective
+    writers:
+      - Kevin Jandrow
+      - Ravyn
+    mixers:
+      - Horizon Sound Studios
+    mastering_engineers:
+      - Horizon Sound Labs
+    musicians:
+      - Horizon Sound
+    engineers:
+      - Horizon Sound Labs  internal:
+    notes: "Ravyn’s defining cinematic‑pop saga. Tone: neon, chaotic, high‑voltage."
+    priority: 60
+  genres:
+    primary: Pop
+    secondary: Cinematic Pop
+    tertiary: Dark Pop
+  seo:
+    title: "Midnight Saga — Ravyn"
+    description: "A neon‑charged cinematic pop saga exploring chaos, desire, and midnight energy."
+    keywords:
+      - midnight saga
+      - ravyn
+      - cinematic pop
+      - dark pop
+
+- id: rel-rum_soaked_paradise-cs
+  slug: rum_soaked_paradise-cs
+  title: "Rum Soaked Paradise"
+  subtitle:
+  story_html: >
+    A sun‑drenched coastal escape filled with warm guitars, breezy melodies, and 
+    Cody’s signature barefoot charm. Each track feels like golden hour on the water — 
+    friends, freedom, and the kind of moments that taste like summer.
+  type: album
+  version: null
+  status: public
+  instrumental: false
+  description: >
+    A warm, coastal acoustic album blending mellow pop, beach‑folk textures, and 
+    Cody Sails’ easygoing storytelling. Rum Soaked Paradise captures the spirit of 
+    sunlit days, ocean breeze, and the simple joy of living unhurried.
+  release_date: 2026-04-07
+  upload_date: 2026-04-02
+  preorder_date: 2026-04-02
+  upc: "825626063389"
+  label: "Horizon Sound"
+  artwork:
+    cover: "/assets/releases/rum-soaked-paradise/cover/rum-soaked-paradise-cover.jpg"
+    gallery: []
+  links:
+    spotify:
+    apple_music:
+    youtube_music:
+    amazon_music:
+    tidal:
+  primary_artist: art-cody_sails
+  featuring_artists: []
+  tracklist:
+    - track_id: trk-rumsoakedparadi-cs-001
+      track_number: 1
+    - track_id: trk-saltontherim-cs-001
+      track_number: 2
+    - track_id: trk-barefootandbuzz-cs-001
+      track_number: 3
+    - track_id: trk-islandgirltroub-cs-001
+      track_number: 4
+    - track_id: trk-leilani-cs-001
+      track_number: 5
+    - track_id: trk-hightide-cs-001
+      track_number: 6
+    - track_id: trk-sunburnedandsmi-cs-001
+      track_number: 7
+    - track_id: trk-windinyoursails-cs-001
+      track_number: 8
+  credits:
+    producers:
+      - Horizon Sound Collective
+    writers:
+      - Cody Sails
+      - Kevin Jandrow
+    mixers:
+      - Horizon Sound Studios
+    mastering_engineers:
+      - Horizon Sound Labs
+    musicians:
+      - Horizon Sound
+    engineers:
+      - Horizon Sound Labs  internal:
+    notes: "Cody’s flagship coastal‑acoustic album. Tone: warm, breezy, sunlit."
+    priority: 61
+  genres:
+    primary: Coastal Acoustic
+    secondary: Folk Pop
+    tertiary: Soft Rock
+  seo:
+    title: "Rum Soaked Paradise — Cody Sails"
+    description: "A warm coastal acoustic album filled with breezy melodies and sun‑soaked storytelling."
+    keywords:
+      - rum soaked paradise
+      - cody sails
+      - coastal acoustic
+
+- id: rel-after_the_silence-le
+  slug: after_the_silence-le
+  title: "After the Silence"
+  subtitle:
+  story_html: >
+    <p><em>After the Silence</em> was written during a period of deep reflection — a quiet season 
+    where Lydia learned to sit with her emotions, listen to her heart, and rediscover her voice.</p>
+    <p>Each track explores a different shade of healing: the ache of memory, the clarity of truth, 
+    and the quiet strength that rises when the noise finally fades.</p>
+  type: album
+  version: null
+  status: public
+  instrumental: false
+  description: >
+    "After the Silence" is a cinematic pop journey through the quiet moments that follow emotional upheaval. 
+    Lydia Ellington steps into her most vulnerable storytelling yet, blending intimate vocals, widescreen 
+    orchestral textures, and modern pop production to explore the space between heartbreak and healing. 
+    Each track captures a different shade of reflection — the clarity that comes when the noise fades, 
+    the ache of what’s been lost, and the quiet strength that slowly rises in its place. 
+    This album is both a confession and a reclamation, offering a glowing emotional arc that feels 
+    deeply human, deeply honest, and unmistakably Lydia.
+  release_date: 2026-04-05
+  upload_date: 2026-03-30
+  preorder_date: 2026-03-30
+  upc: "825628461725"
+  label: "Horizon Sound"
+  artwork:
+    cover: "/assets/releases/after-the-silence/cover/after-the-silence-cover.jpg"
+    banner:
+    gallery: []
+  links:
+    apple_music: "https://music.apple.com/us/album/after-the-silence/1889528896"
+    spotify: "https://open.spotify.com/album/2mP8NXfE8Uhp68raM2iNM1?si=eVZAzRckQ6inVch5bjJNfw"
+    youtube_music: "https://www.youtube.com/watch?v=GtGKAZdE0Do&list=OLAK5uy_mgHIFz_S2uiQ40O_uey8gXUTG8NmVeh3k"
+    amazon_music:
+    tidal:
+  primary_artist: art-lydia_ellington
+  featuring_artists: []
+  tracklist:
+    - track_id: trk-thequietafter-le-001
+      track_number: 1
+    - track_id: trk-borrowedtime-le-001
+      track_number: 2
+    - track_id: trk-homesickforyou-le-001
+      track_number: 3
+    - track_id: trk-thewaywelied-le-001
+      track_number: 4
+    - track_id: trk-paperwalls-le-001
+      track_number: 5
+    - track_id: trk-halfofme-le-001
+      track_number: 6
+    - track_id: trk-ifyoudasked-le-001
+      track_number: 7
+    - track_id: trk-ghostlight-le-001
+      track_number: 8
+    - track_id: trk-afterthesilence-le-001
+      track_number: 9
+    - track_id: trk-saltwater-le-001
+      track_number: 10
+    - track_id: trk-thedressineverw-le-001
+      track_number: 11
+    - track_id: trk-unsentletters-le-001
+      track_number: 12
+    - track_id: trk-riseagain-le-001
+      track_number: 13
+  credits:
+    producers:
+      - Horizon Sound Collective
+    writers:
+      - Kevin Jandrow
+      - Lydia Ellington
+    mixers:
+      - Horizon Sound Studios
+    mastering_engineers:
+      - Horizon Sound Labs
+    musicians:
+      - Horizon Sound
+    engineers:
+      - Horizon Sound Labs
+  internal:
+    notes: "Lydia’s flagship cinematic‑pop album. Emotional arc: reflection → ache → clarity → rise."
+    priority: 62
+  genres:
+    primary: Cinematic Pop
+    secondary: Pop
+    tertiary: Orchestral Pop
+  seo:
+    title: "After the Silence — Lydia Ellington"
+    description: "A cinematic pop journey through healing, reflection, and emotional clarity."
+    keywords:
+      - after the silence
+      - lydia ellington
+      - cinematic pop
+
+- id: rel-a_way_back-hs
+  slug: a_way_back-hs
+  title: "A Way Back"
+  subtitle:
+  story_html: >
+    A quiet, internal Horizon Sound saga exploring themes of loss, reflection, 
+    and the long road toward emotional clarity. Created as a private concept project, 
+    these tracks form an intimate narrative about searching for direction, 
+    choosing truth, and finding a way back to yourself.
+  type: saga
+  version: null
+  status: private
+  instrumental: false
+  description: >
+    A private, unreleased Horizon Sound saga built around emotional storytelling 
+    and reflective modern‑cinematic production. "A Way Back" follows a three‑chapter arc 
+    centered on loss, choice, and the slow return to inner clarity.
+  release_date:
+  upload_date:
+  preorder_date:
+  upc:
+  label: "Horizon Sound"
+  artwork:
+    cover: "/assets/releases/a-way-back/cover/a-way-back-cover.jpg"
+    banner:
+    gallery: []
+  links:
+    spotify:
+    apple_music:
+    youtube_music:
+    amazon_music:
+    tidal:
+  primary_artist: art-horizon_sound
+  featuring_artists: []
+  tracklist:
+    - track_id: trk-lostinsilence-hs-001
+      track_number: 1
+    - track_id: trk-choosingmeherve-hs-001
+      track_number: 2
+    - track_id: trk-choosingmehisve-hs-001
+      track_number: 3
+  credits:
+    producers:
+      - Horizon Sound Collective
+    writers:
+      - Kevin Jandrow
+      - Lydia Ellington
+    mixers:
+      - Horizon Sound Studios
+    mastering_engineers:
+      - Horizon Sound Labs
+    musicians:
+      - Horizon Sound
+    engineers:
+      - Horizon Sound Labs  internal:
+    notes: "Private release. No UPC or ISRC assigned. Internal concept saga only."
+    priority: 99
+  genres:
+    primary: Cinematic
+    secondary: Pop
+    tertiary: Emotional
+  seo:
+    title: "A Way Back — Horizon Sound"
+    description: "A private, unreleased Horizon Sound saga exploring loss, choice, and emotional clarity."
+    keywords:
+      - a way back
+      - horizon sound
+      - cinematic saga

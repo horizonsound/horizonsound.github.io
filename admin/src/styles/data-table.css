@@ -1,0 +1,203 @@
+.admin-table-scroll {
+  max-height: 70vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.admin-table-toolbar-row {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: white;
+  display: flex;
+  align-items: center;
+  gap: 16px;           /* ⭐ spacing between left and right groups */
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+.toolbar-left button {
+  margin-right: 8px;
+}
+
+.toolbar-right {
+  display: flex;
+  gap: 8px;
+  margin-left: 24px; /* ⭐ small separation instead of pushing to the far right */
+}
+
+.save-btn {
+  background: #0070f3;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: none;
+}
+
+.cancel-btn {
+  background: #ff4d4f;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: none;
+}
+
+/* Sticky column header */
+.admin-table-scroll table thead tr {
+  position: sticky;
+  top: 48px; /* height of toolbar */
+  z-index: 40;
+  background: white;
+}
+
+.admin-table-scroll {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.editor-section-header {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+  font-family: Georgia, serif;
+}
+
+.editor-paragraph {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: Georgia, serif;
+}
+
+.bold {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+  font-family: Georgia, serif;
+}
+
+.lyrics-preview {
+  white-space: pre-wrap;
+  font-family: Georgia, serif;
+  font-size: 1rem;
+}
+
+.lyrics-preview .bold {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.lyrics-preview .editor-paragraph {
+  margin-bottom: 0.25rem;
+}
+
+.spellcheck-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: transparent;        /* text invisible */
+  pointer-events: none;      /* clicks go to editor */
+  white-space: pre-wrap;
+  font-family: Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 10px;
+  inset: 0;
+  z-index: 0;          /* ⭐ behind the editor */
+}
+
+.spellcheck-overlay .misspelled {
+  text-decoration: underline wavy red;
+  color: transparent;        /* underline only */
+}
+
+.editor-surface {
+  position: relative;
+  z-index: 1;
+}
+
+.editor-content {
+  position: relative;
+  z-index: 1;          /* ⭐ above the overlay */
+}
+
+.lyrics-modal {
+  padding: 20px;
+}
+
+.toolbar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.lyrics-editor {
+  border: 1px solid #ccc;
+  padding: 15px;
+  min-height: 300px;
+  background: white;
+}
+
+.lyrics-editor p {
+  margin: 0;
+  line-height: 2;
+}
+
+.modal-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+/* ---------------------------
+   LYRICS HEADER STYLE
+---------------------------- */
+.lyrics-editor p[data-type="lyrics-header"] {
+  font-weight: bold !important;
+  font-size: 1.4rem !important;
+  line-height: 1.5 !important;
+  margin-top: 1rem !important;
+  margin-bottom: 0.25rem !important;
+  font-family: Verdana !important;
+}
+
+/* ---------------------------
+   NORMAL LYRICS TEXT
+---------------------------- */
+.lyrics-editor p[data-type="lyrics-text"] {
+  font-size: 1.2rem !important;
+  line-height: 1.0 !important;
+  margin: 0 !important;
+  font-family: Verdana !important;
+}
+
+/* Remove default paragraph spacing */
+.lyrics-editor p {
+  margin: 0 !important;
+}
+
+
+
+
+
+
+

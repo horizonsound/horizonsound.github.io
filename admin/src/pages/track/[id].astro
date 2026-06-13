@@ -1,0 +1,81 @@
+---
+// @ts-nocheck
+import { getTrackById } from '@/client/engine/tracks.js';
+
+const { id } = Astro.params;
+const track = getTrackById(id);
+
+const cookie = Astro.request.headers.get('cookie') || '';
+const isAdmin = cookie.includes('admin=1');
+if (!isAdmin) return Astro.redirect('/login');
+
+//Needed to ensure admin is unreachable in production
+if (import.meta.env.PROD) {
+  return Astro.redirect('/');
+}
+---
+
+<html>
+  <body>
+    <h1>{track.title}</h1>
+
+    <section>
+      <h2>Artist</h2>
+      <p>{track.artist || "—"}</p>
+    </section>
+
+    <section>
+      <h2>Lyrics</h2>
+      {track.lyrics ? (
+        <pre>{track.lyrics}</pre>
+      ) : (
+        <p>No lyrics yet.</p>
+      )}
+    </section>
+
+    <section>
+      <h2>Mixes</h2>
+      {track.mixes && track.mixes.length > 0 ? (
+        <ul>
+          {track.mixes.map(mix => (
+            <li>
+              <strong>{mix.type}</strong> — {mix.date}
+              <br />
+              <audio controls src={mix.file}></audio>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>No mixes yet.</p>
+      )}
+    </section>
+
+    <section>
+      <h2>Generate New Mix</h2>
+
+      <form method="post" action={`/api/admin/track/${id}/generate`}>
+        <label>Artist Identity</label>
+        <select name="artist">
+          <option value="lydia">Lydia Ellington</option>
+          <option value="cody">Cody Sails</option>
+          <option value="ravyn">Ravyn</option>
+        </select>
+
+        <label>Style</label>
+        <select name="style">
+          <option value="pop">Pop</option>
+          <option value="country">Country</option>
+          <option value="folk">Folk</option>
+          <option value="electronic">Electronic</option>
+        </select>
+
+        <label>Production Notes</label>
+        <textarea name="production" rows="4"></textarea>
+
+        <button type="submit">Generate Mix</button>
+      </form>
+    </section>
+
+    <p><a href="/admin">Back</a></p>
+  </body>
+</html>

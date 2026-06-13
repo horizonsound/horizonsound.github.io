@@ -1,0 +1,228 @@
+astro-island,
+astro-slot,
+astro-static-slot {
+  display: block !important;
+}
+
+/* --- Stage Card (big premium image) --- */
+:global(astro-island) {
+  display: block !important;
+}
+
+.site-footer {
+  padding: 20px;
+  border-top: 1px solid #333;
+  text-align: center;
+  opacity: 0.7;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+
+  box-sizing: border-box;
+  padding: 0px 20px 0px; /* top, left/right, bottom */  
+}
+
+.site-header-top {
+  padding-top: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.branding {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.8rem;
+}
+
+.logo {
+  height: 55px;
+}
+
+.main-nav ul {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.4rem;
+  text-shadow: 0 0 8px rgba(0,0,0,0.6);
+}
+
+.autoplay-toggle {
+  cursor: pointer;
+  font-size: 2.5rem;
+}
+
+.hero-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px; /* adjust this to match how far down you want it */
+  background: rgba(0, 0, 0, 0.40); /* 80% transparent */
+  pointer-events: none;
+}
+
+.hero-banner {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-bottom: 1px solid #222;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-title-overlay {
+  position: absolute;
+  top: 135px; /* was 120px — pushes it down ~15px */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 100%;
+}
+
+.hero-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0;
+  text-shadow: 0 0 20px rgba(0,0,0,0.6);
+}
+
+  .hero-strip {
+    height: 150px; /* adjustable */
+    width: 100%;
+  }
+
+  .hero-strip img {
+    height: 180px; /* adjustable */
+    width: 100%;
+  }
+
+
+/* ================================
+Desktop — Light scaling css
+================================ */
+@media (min-width: 901px) {
+}
+
+/* ================================
+Portrait (440px) — heavy scaling css
+================================ */
+@media (max-width: 480px) {
+  /* ================================
+  Portrait (440px) — Header scaling
+  ================================ */
+  .site-header {
+    padding: 0 12px;
+  }
+
+  .branding {
+    gap: 8px;
+    font-size: 1rem;
+  }
+
+  .logo {
+    height: 25px;
+  }
+
+  .main-nav ul {
+    gap: 12px;
+    margin-top: 6px;
+  }
+
+  .main-nav a {
+    font-size: 0.90rem;
+  }
+
+  .autoplay-toggle {
+    font-size: 1rem;
+  }
+
+  .branding h1 {
+    font-size: 1.55rem;
+  }
+
+  /* ================================
+  Portrait (440px) — hero scaling
+  ================================ */
+  .hero-strip {
+    height: 100px; /* adjustable */
+    width: 100%;
+  }
+  .hero-strip img {
+    height: 90px; /* adjustable */
+    width: 100%;
+  }
+}
+
+/* ================================
+Landscape (832px) — moderate scaling css
+================================ */
+@media (min-width: 481px) and (max-width: 900px) {
+  /* ================================
+  Landscape (832px) — Header scaling
+  ================================ */
+  .site-header {
+    padding: 0 12px;
+  }
+
+  .branding {
+    gap: 8px;
+    font-size: 1rem;
+  }
+
+  .logo {
+    height: 25px;
+  }
+
+  .main-nav ul {
+    gap: 12px;
+    margin-top: 6px;
+  }
+
+  .main-nav a {
+    font-size: 0.90rem;
+  }
+
+  .autoplay-toggle {
+    font-size: 1rem;
+  }
+
+  .branding h1 {
+    font-size: 1.55rem;
+  }
+
+  /* ================================
+  Landscape (832px) — hero scaling
+  ================================ */
+  .hero-strip {
+    height: 100px; /* adjustable */
+    width: 100%;
+  }
+  .hero-strip img {
+    height: 90px; /* adjustable */
+    width: 100%;
+  }
+}
+

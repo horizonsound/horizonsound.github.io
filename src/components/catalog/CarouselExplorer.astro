@@ -1,0 +1,98 @@
+---
+// @ts-nocheck
+import ReleaseTile from '../ReleaseTile.astro';
+
+const { playlists, tracks, releases } = Astro.props;
+
+// Helper: find the release for a given track
+function findReleaseForTrack(track) {
+  return releases.find((r) =>
+    r.tracklist?.some((tl) => tl.track_id === track.id)
+  );
+}
+
+// Build groups: playlist → released tracks
+const grouped = playlists.map((pl) => {
+  const playlistTracks = pl.tracks
+    .map((trackId) => tracks.find((t) => t.id === trackId))
+    .filter(Boolean)
+    .filter((t) =>
+      releases.some((r) =>
+        r.tracklist?.some((tl) => tl.track_id === t.id)
+      )
+    );
+
+  return {
+    playlist: pl,
+    tracks: playlistTracks
+  };
+});
+---
+
+<section class="carousel-explorer">
+  {grouped.map(({ playlist, tracks }) => (
+    tracks.length > 0 && (
+      <section class="row">
+        <div class="row-header">
+          <h2>{playlist.title}</h2>
+        </div>
+
+        <div class="row-scroll">
+          {tracks.map((track) => {
+            const release = findReleaseForTrack(track);
+
+            return (
+              <div class="row-item">
+                <ReleaseTile
+                  track={track}
+                  release={release}
+                />
+              </div>
+            );
+          })}
+        </div>
+      </section>
+    )
+  ))}
+</section>
+
+<style>
+  .carousel-explorer {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .row-header h2 {
+    margin-bottom: 0.75rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+
+  .row-scroll {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    scroll-snap-type: x mandatory;
+  }
+
+  .row-scroll > * {
+    scroll-snap-align: start;
+  }
+
+  .row-item {
+    min-width: 220px;
+    max-width: 260px;
+    flex: 0 0 auto;
+  }
+
+  .row-scroll::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .row-scroll::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.25);
+    border-radius: 999px;
+  }
+</style>

@@ -1,0 +1,57 @@
+settings:
+  coming_soon_window_days: 90
+  horizon_window_days: 9999
+  seo:
+    base_tags:
+      - horizonsound
+      - originalmusic
+      - newmusic
+      - musicvideo
+      - indieartist
+      - popmusic
+      - instrumentalmusic
+      - songwriter
+  youtube_update:
+    mode: "multiple"   # single | multiple | playlist | all
+    single:
+      youtube_id: "r16qSkxEcI4"
+    multiple:
+      youtube_ids:
+        - kyNVmUkFmXQ
+        - 3zemHQQc4So
+        - r16qSkxEcI4
+        - gDkCGYOpWU0
+        - oMSIQ5Gv2ZI
+    playlist:
+      playlist_id: "pop-instrumental-horizon-sound-instrumentals"
+origins:
+  title: "About — Horizon Sound"
+  sections:
+    - heading: "A Creative Label for Story‑Driven Music."
+      body: |
+        Horizon Sound is a modern music label built around storytelling, world‑building, and emotionally resonant artistry. 
+        We develop original music across multiple genres and multiple artists, unified by a shared commitment to intention, 
+        narrative depth, and cinematic production. Every artist has a voice. Every project has a world. Every release has a purpose.
+    - heading: "Mission"
+      body: |
+        Our mission is to champion artists who create with honesty, craft, and long‑term vision. 
+        Horizon Sound exists to bring emotionally powerful, narrative‑rich music into the world — music that connects, 
+        inspires, and endures. We support artists in building catalogs that matter, not content that disappears.
+    - heading: "What Horizon Sound Stands For"
+      list:
+        - "Artist‑first development and long‑term creative growth"
+        - "Original songwriting across genres and styles"
+        - "Cinematic production and immersive world‑building"
+        - "Ethical, transparent creative practices"
+        - "Narrative depth and emotional clarity"
+        - "A catalog built for longevity, not algorithms"
+      body: |
+        Horizon Sound is the opposite of disposable, trend‑chasing content. 
+        We build worlds, not moments — and we invest in artists who want to create work that lasts.
+    - heading: "Creative Philosophy"
+      body: |
+        Horizon Sound believes that music is storytelling at its most human. 
+        We work with artists who create from a place of truth, who value craft over shortcuts, 
+        and who see every release as a chapter in a larger narrative. 
+        Our catalog spans genres, but our philosophy is singular: make music with intention, 
+        build worlds with care, and leave behind work that means something.

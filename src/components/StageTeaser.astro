@@ -1,0 +1,57 @@
+---
+// @ts-nocheck
+const { announcements } = Astro.props;
+
+// Split into paragraphs
+const lines = announcements
+  .split('\n')
+  .filter(line => line.trim().length > 0);
+---
+
+<section class="stage-teaser">
+  <div class="stage-teaser-content">
+    {lines.map(line => (
+      <p>
+        <span class="star">★</span>
+        {line}
+      </p>
+    ))}
+  </div>
+</section>
+
+<style>
+  .stage-teaser {
+    width: 100%;
+    margin-top: -100px; /* adjust lift as needed */
+    position: relative;
+    z-index: 5;
+  }
+
+  .stage-teaser-content {
+    padding: 2rem 8vw;
+    background: rgba(0,0,0,0.40);
+    backdrop-filter: blur(3px);
+    border-radius: 6px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .stage-teaser-content p {
+    font-size: 1.05rem;        /* ↓ smaller */
+    line-height: 1.45;         /* ↓ tighter */
+    color: rgba(255,255,255,0.90);
+    margin-bottom: 0.9rem;     /* ↓ tighter spacing */
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-weight: 300;
+  }
+
+  .star {
+    color: #ffd27f;
+    font-size: 1rem;           /* ↓ smaller star */
+    line-height: 1.2rem;
+    margin-top: 0.15rem;
+    flex-shrink: 0;
+  }
+</style>

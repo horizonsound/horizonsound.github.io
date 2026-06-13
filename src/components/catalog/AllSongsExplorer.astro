@@ -1,0 +1,50 @@
+---
+// @ts-nocheck
+import ReleaseTile from '../ReleaseTile.astro';
+
+const { tracks, releases } = Astro.props;
+
+// Helper: find the release for a given track
+function findReleaseForTrack(track) {
+  return releases.find((r) =>
+    r.tracklist?.some((tl) => tl.track_id === track.id)
+  );
+}
+
+// 1. Only include tracks that belong to a real release
+// 2. Sort alphabetically by track.title
+const releasedTracks = tracks
+  .filter((t) =>
+    releases.some((r) =>
+      r.tracklist?.some((tl) => tl.track_id === t.id)
+    )
+  )
+  .sort((a, b) => a.title.localeCompare(b.title));
+---
+
+<section class="all-songs-explorer">
+  <div class="grid">
+    {releasedTracks.map((track) => {
+      const release = findReleaseForTrack(track);
+
+      return (
+        <ReleaseTile
+          track={track}
+          release={release}
+        />
+      );
+    })}
+  </div>
+</section>
+
+<style>
+  .all-songs-explorer {
+    width: 100%;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+  }
+</style>

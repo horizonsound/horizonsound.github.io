@@ -1,0 +1,612 @@
+- id: ply_016
+- id: ply_015
+  slug: youth_ensemble
+  title: Youth Ensemble
+  subtitle: Harmony, heart, and hope.
+  description: |
+    Uplifting youth‑ensemble pop filled with harmony, warmth, and emotional clarity.  AYC’s signature sound — bright, heartfelt, and full of life.
+  mood:
+    - uplifting
+    - hopeful
+    - warm
+    - inspiring
+  genre_focus:
+    - Youth Ensemble
+    - Pop
+    - Acoustic Pop
+  artwork:
+    cover: /assets/thumbnails/playlist - youth ensemble.jpg
+    banner: null
+  links:
+    spotify: null
+    apple_music: null
+    youtube_music: null
+    amazon_music: null
+    tidal: null
+  tracks:
+    - trk_057
+    - trk_096
+    - trk_016
+    - trk_140
+  featured_artists: []
+  seo:
+    title: Youth Ensemble | Horizon Sound
+    description: Warm, uplifting youth‑ensemble pop with harmony and heart.
+    keywords:
+      - youth ensemble
+      - ascension youth choir
+  status: active
+  internal:
+    priority: 27
+    notes: Curated vibe‑flow ordering.
+- id: ply_014
+  slug: synthwave_retrowave
+  title: Synthwave & Retrowave
+  subtitle: Retro‑future neon energy.
+  description: |
+    Analog warmth, pulsing basslines, and cinematic night‑drive atmosphere.  A curated blend of synthwave and retrowave instrumentals.
+  mood:
+    - retro
+    - neon
+    - driving
+    - cinematic
+  genre_focus:
+    - Synthwave
+    - Retrowave
+    - Electronic
+  artwork:
+    cover: /assets/thumbnails/playlist - synthwave retrowave.jpg
+    banner: null
+  links:
+    spotify: null
+    apple_music: null
+    youtube_music: null
+    amazon_music: null
+    tidal: null
+  tracks:
+    - trk_068
+    - trk_092
+    - trk_081
+    - trk_078
+  featured_artists: []
+  seo:
+    title: Synthwave & Retrowave | Horizon Sound
+    description: Retro‑future synthwave with neon‑lit cinematic energy.
+    keywords:
+      - synthwave
+      - retrowave
+      - night drive
+  status: active
+  internal:
+    priority: 29
+    notes: Curated vibe‑flow ordering.
+- id: ply_013
+  slug: southern_rock
+  title: Southern Rock
+  subtitle: Grit, swagger, and highway heat.
+  description: |
+    Crunchy guitars, bold vocals, and the unmistakable swagger of Southern rock. A curated blend of Southern Crossfire and Horizon Sound’s rock‑driven tracks.
+  mood:
+    - gritty
+    - bold
+    - energetic
+    - rebellious
+  genre_focus:
+    - Southern Rock
+    - Rock
+    - Country Rock
+  artwork:
+    cover: /assets/thumbnails/playlist - southern rock.jpg
+    banner: null
+  links:
+    spotify: null
+    apple_music: null
+    youtube_music: null
+    amazon_music: null
+    tidal: null
+  tracks:
+    - trk_142
+    - trk_087
+    - trk_034
+    - trk_116
+  featured_artists: []
+  seo:
+    title: Southern Rock | Horizon Sound
+    description: Gritty guitars, bold vocals, and the swagger of Southern rock.
+    keywords:
+      - southern rock
+      - gritty rock
+      - americana rock
+  status: active
+  internal:
+    priority: 21
+    notes: Curated vibe‑flow ordering.
+- id: ply_012
+  slug: saga_collections
+  title: Saga Collections
+  subtitle: Cinematic stories told in chapters.
+  description: |
+    Horizon Sound’s narrative sagas — emotional, cinematic, and built in chapters.  Midnight Saga, Venice Trilogy, and A Way Back collected in one place.
+  mood:
+    - cinematic
+    - storytelling
+    - emotional
+    - atmospheric
+  genre_focus:
+    - Cinematic
+    - Pop
+    - Ambient
+  artwork:
+    cover: /assets/thumbnails/playlist - saga collections.jpg
+    banner: null
+  links:
+    spotify: null
+    apple_music: null
+    youtube_music: null
+    amazon_music: null
+    tidal: null
+  tracks:
+    - trk_014
+    - trk_071
+    - trk_070
+    - trk_002
+    - trk_110
+    - trk_074
+    - trk_135
+  featured_artists: []
+  seo:
+    title: Saga Collections | Horizon Sound
+    description: Cinematic multi‑chapter sagas from Horizon Sound
+- id: ply_011
+  slug: piano_emotional
+  title: Piano Emotional
+  subtitle: Quiet moments. Deep feeling.
+  description: |
+    Soft, reflective piano pieces shaped by emotional stillness and cinematic warmth.  A peaceful space for thought, healing, and quiet clarity.
+  mood:
+    - soft
+    - introspective
+    - emotional
+    - calm
+  genre_focus:
+    - Piano
+    - Instrumental
+    - Cinematic
+  artwork:
+    cover: /assets/thumbnails/playlist - piano emotional.jpg
+    banner: null
+  links:
+    spotify: null
+    apple_music: null
+    youtube_music: null
+    amazon_music: null
+    tidal: null
+  tracks:
+    - trk_047
+    - trk_121
+    - trk_111
+    - trk_008
+  featured_artists: []
+  seo:
+    title: Piano Emotional | Horizon Sound
+    description: Soft, reflective piano instrumentals with cinematic warmth.
+    keywords:
+      - piano emotional
+      - instrumental
+      - cinematic
+  status: active
+  internal:
+    priority: 32
+    notes: Curated vibe‑flow ordering.
+- id: ply_010
+  slug: orchestral_rock
+  title: Orchestral Rock
+  subtitle: Epic power. Cinematic fire.
+  description: |
+    Sweeping strings meet electric guitars in this dramatic fusion of orchestral  grandeur and rock intensity. Built for trailers, storytelling, and high‑impact moments.
+  mood:
+    - dramatic
+    - powerful
+    - cinematic
+    - intense
+  genre_focus:
+    - Rock
+    - Orchestral
+    - Instrumental
+  artwork:
+    cover: /assets/thumbnails/playlist - orchestral rock.jpg
+    banner: null
+  links:
+    spotify: null
+    apple_music: null
+    youtube_music: null
+    amazon_music: null
+    tidal: null
+  tracks:
+    - trk_116
+    - trk_122
+    - trk_034
+    - trk_128
+  featured_artists: []
+  seo:
+    title: Orchestral Rock | Horizon Sound
+    description: Epic orchestral‑rock fusion with cinematic power and intensity.
+    keywords:
+      - orchestral rock
+      - cinematic rock
+  status: active
+  internal:
+    priority: 33
+    notes: Curated vibe‑flow ordering.
+- id: ply_009
+  slug: modern_country
+  title: Modern Country
+  subtitle: Warm stories, open roads, and grounded heart.
+  description: |
+    Modern country with a storyteller’s edge — warm vocals, lived‑in emotion, and the feeling of long drives and late‑night clarity. A curated blend of Lucas Allen and Horizon Sound’s country‑leaning tracks.
+  mood:
+    - warm
+    - grounded
+    - storytelling
+    - uplifting
+  genre_focus:
+    - Modern Country
+    - Americana
+    - Country Rock
+  artwork:
+    cover: /assets/thumbnails/playlist - modern country.jpg
+    banner: null
+  links:
+    spotify: null
+    apple_music: null
+    youtube_music: null
+    amazon_music: null
+    tidal: null
+  tracks:
+    - trk_140
+    - trk_096
+    - trk_048
+    - trk_087
+  featured_artists: []
+  seo:
+    title: Modern Country | Horizon Sound
+    description: Warm modern country with heartfelt storytelling and open‑road energy.
+    keywords:
+      - modern country
+      - country pop
+      - americana
+      - horizon sound
+  status: active
+  internal:
+    priority: 18
+    notes: Curated vibe‑flow ordering.
+- id: ply_008
+  slug: emotional_pop
+  title: Emotional Pop
+  subtitle: Raw feeling. Modern sound.
+  description: |
+    High‑energy emotion, expressive vocals, and modern pop production.  Songs that burn bright, break open, and hit straight in the heart.
+  mood:
+    - emotional
+    - intense
+    - vulnerable
+    - uplifting
+  genre_focus:
+    - Pop
+    - Alt Pop
+    - Emotional Pop
+  artwork:
+    cover: /assets/thumbnails/playlist - emotional pop.jpg
+    banner: null
+  links:
+    spotify: null
+    apple_music: null
+    youtube_music: null
+    amazon_music: null
+    tidal: null
+  tracks:
+    - trk_139
+    - trk_043
+    - trk_052
+    - trk_093
+  featured_artists: []
+  seo:
+    title: Emotional Pop | Horizon Sound
+    description: Modern pop with expressive vocals and raw emotional energy.
+    keywords:
+      - emotional pop
+      - maddie rowan
+      - lydia ellington
+  status: active
+  internal:
+    priority: 25
+    notes: Curated vibe‑flow ordering.
+- id: ply_007
+  slug: electric_guitar_rock
+  title: Electric Guitar Rock
+  subtitle: Neon‑charged modern rock.
+  description: |
+    Bold electric‑guitar instrumentals with modern rock energy and cinematic edge.  High‑voltage riffs for late‑night motion.
+  mood:
+    - energetic
+    - neon
+    - driving
+    - modern
+  genre_focus:
+    - Rock
+    - Instrumental
+    - Modern Rock
+  artwork:
+    cover: /assets/thumbnails/playlist - electric guitar rock.jpg
+    banner: null
+  links:
+    spotify: null
+    apple_music: null
+    youtube_music: null
+    amazon_music: null
+    tidal: null
+  tracks:
+    - trk_077
+    - trk_099
+    - trk_036
+    - trk_004
+  featured_artists: []
+  seo:
+    title: Electric Guitar Rock | Horizon Sound
+    description: High‑energy electric‑guitar instrumentals with neon‑rock attitude.
+    keywords:
+      - electric guitar rock
+      - instrumental rock
+  status: active
+  internal:
+    priority: 34
+    notes: Curated vibe‑flow ordering.
+- id: ply_006
+  slug: edm_workout
+  title: EDM Workout
+  subtitle: High‑energy beats for movement.
+  description: |
+    Neon‑lit EDM built for momentum, adrenaline, and high‑intensity focus.  Synths, drops, and driving rhythms for your next workout.
+  mood:
+    - energetic
+    - intense
+    - motivating
+    - neon
+  genre_focus:
+    - EDM
+    - Electronic
+    - Instrumental
+  artwork:
+    cover: /assets/thumbnails/playlist - edm workout.jpg
+    banner: null
+  links:
+    spotify: null
+    apple_music: null
+    youtube_music: null
+    amazon_music: null
+    tidal: null
+  tracks:
+    - trk_108
+    - trk_031
+    - trk_073
+    - trk_076
+  featured_artists: []
+  seo:
+    title: EDM Workout | Horizon Sound
+    description: High‑energy EDM instrumentals built for movement and momentum.
+    keywords:
+      - edm workout
+      - electronic
+      - horizon sound
+  status: active
+  internal:
+    priority: 28
+    notes: Curated vibe‑flow ordering.
+- id: ply_005
+  slug: coastal_acoustic
+  title: Coastal Acoustic
+  subtitle: Warm breeze. Barefoot stories.
+  description: |
+    Sun‑drenched acoustic pop with beach‑folk warmth and easygoing charm.  Cody Sails leads this mellow, coastal escape.
+  mood:
+    - warm
+    - breezy
+    - relaxed
+    - sunlit
+  genre_focus:
+    - Coastal Acoustic
+    - Folk Pop
+    - Soft Rock
+  artwork:
+    cover: /assets/thumbnails/playlist - coastal acoustic.jpg
+    banner: null
+  links:
+    spotify: null
+    apple_music: null
+    youtube_music: null
+    amazon_music: null
+    tidal: null
+  tracks:
+    - trk_062
+    - trk_103
+    - trk_141
+    - trk_098
+  featured_artists: []
+  seo:
+    title: Coastal Acoustic | Horizon Sound
+    description: Warm acoustic pop with breezy, sunlit coastal energy.
+    keywords:
+      - coastal acoustic
+      - cody sails
+      - folk pop
+  status: active
+  internal:
+    priority: 26
+    notes: Curated vibe‑flow ordering.
+- id: ply_004
+  slug: cinematic_pop
+  title: Cinematic Pop
+  subtitle: Widescreen emotion with modern pop edge.
+  description: |
+    Sweeping strings, emotional vocals, and dramatic modern‑pop production.  Cinematic pop that feels like a movie moment — intimate, powerful, and beautifully human.
+  mood:
+    - cinematic
+    - emotional
+    - dramatic
+    - uplifting
+  genre_focus:
+    - Cinematic Pop
+    - Pop
+    - Orchestral Pop
+  artwork:
+    cover: /assets/thumbnails/playlist - cinematic pop.jpg
+    banner: null
+  links:
+    spotify: null
+    apple_music: null
+    youtube_music: null
+    amazon_music: null
+    tidal: null
+  tracks:
+    - trk_120
+    - trk_089
+    - trk_039
+    - trk_133
+    - trk_003
+  featured_artists: []
+  seo:
+    title: Cinematic Pop | Horizon Sound
+    description: Emotional, widescreen pop with orchestral depth and dramatic lift.
+    keywords:
+      - cinematic pop
+      - lydia ellington
+      - craig mitchell
+      - horizon sound
+  status: active
+  internal:
+    priority: 24
+    notes: Curated vibe‑flow ordering.
+- id: ply_003
+  slug: ambient_cinematic
+  title: Ambient & Cinematic
+  subtitle: Soft light. Quiet motion.
+  description: |
+    Atmospheric textures, soft pads, and reflective cinematic storytelling.  A peaceful instrumental world shaped by calm emotion and open space.
+  mood:
+    - calm
+    - reflective
+    - soft
+    - atmospheric
+  genre_focus:
+    - Ambient
+    - Cinematic
+    - Instrumental
+  artwork:
+    cover: /assets/thumbnails/playlist - ambient cinematic.jpg
+    banner: null
+  links:
+    spotify: null
+    apple_music: null
+    youtube_music: null
+    amazon_music: null
+    tidal: null
+  tracks:
+    - trk_010
+    - trk_075
+    - trk_138
+    - trk_126
+  featured_artists: []
+  seo:
+    title: Ambient & Cinematic | Horizon Sound
+    description: Soft ambient textures blended with cinematic emotional storytelling.
+    keywords:
+      - ambient
+      - cinematic
+      - instrumental
+  status: active
+  internal:
+    priority: 30
+    notes: Curated vibe‑flow ordering.
+- id: ply_002
+  slug: acoustic_guitar
+  title: Acoustic Guitar
+  subtitle: Warm, organic, sunlit.
+  description: |
+    Fingerpicked melodies and grounded acoustic warmth.  A peaceful instrumental collection shaped by open‑road simplicity.
+  mood:
+    - warm
+    - organic
+    - peaceful
+    - sunlit
+  genre_focus:
+    - Acoustic
+    - Instrumental
+    - Folk
+  artwork:
+    cover: /assets/thumbnails/playlist - acoustic guitar.jpg
+    banner: null
+  links:
+    spotify: null
+    apple_music: null
+    youtube_music: null
+    amazon_music: null
+    tidal: null
+  tracks:
+    - trk_113
+    - trk_136
+    - trk_125
+    - trk_023
+  featured_artists: []
+  seo:
+    title: Acoustic Guitar | Horizon Sound
+    description: Warm acoustic instrumentals with organic, sunlit storytelling.
+    keywords:
+      - acoustic guitar
+      - instrumental
+      - folk
+  status: active
+  internal:
+    priority: 31
+    notes: Curated vibe‑flow ordering.
+- id: ply_001
+  slug: 80s_pop_rock
+  title: 80s Pop‑Rock
+  subtitle: Neon lights, big drums, and widescreen nostalgia.
+  description: |
+    Bright synths, anthemic melodies, and retro‑modern energy inspired by the golden era of pop‑rock. A curated blend of Craig Mitchell and Horizon Sound’s synth‑driven tracks.
+  mood:
+    - nostalgic
+    - energetic
+    - uplifting
+    - retro
+  genre_focus:
+    - Pop‑Rock
+    - Synthwave
+    - Retrowave
+  artwork:
+    cover: /assets/thumbnails/playlist - 80s rock & pop.jpg
+    banner: null
+  links:
+    spotify: null
+    apple_music: null
+    youtube_music: null
+    amazon_music: null
+    tidal: null
+  tracks:
+    - trk_068
+    - trk_092
+    - trk_133
+    - trk_069
+  featured_artists: []
+  seo:
+    title: 80s Pop‑Rock | Horizon Sound
+    description: Big drums, bright synths, and anthemic melodies inspired by the 80s.
+    keywords:
+      - 80s pop rock
+      - retro pop
+      - synthwave
+      - horizon sound
+  status: active
+  internal:
+    priority: 23
+    notes: Curated vibe‑flow ordering.

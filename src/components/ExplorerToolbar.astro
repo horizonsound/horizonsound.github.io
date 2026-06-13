@@ -1,0 +1,54 @@
+---
+// @ts-nocheck
+const { viewMode, setViewMode } = Astro.props
+---
+
+<div class="explorer-toolbar">
+  <input type="text" placeholder="Search…" disabled />
+
+  <select disabled>
+    <option>Filter</option>
+  </select>
+
+  <select disabled>
+    <option>Sort</option>
+  </select>
+
+  <div class="view-buttons">
+    <button class={viewMode === 'carousel' ? 'active' : ''} onClick={() => setViewMode('carousel')}>Carousel</button>
+    <button class={viewMode === 'grid' ? 'active' : ''} onClick={() => setViewMode('grid')}>Grid</button>
+    <button class={viewMode === 'list' ? 'active' : ''} onClick={() => setViewMode('list')}>List</button>
+    <button class={viewMode === 'grouped' ? 'active' : ''} onClick={() => setViewMode('grouped')}>Grouped</button>
+  </div>
+</div>
+
+<style is:global>
+  .explorer-toolbar {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: center;
+  }
+
+  .explorer-toolbar input,
+  .explorer-toolbar select {
+    padding: 0.5rem 0.75rem;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 6px;
+    color: white;
+  }
+
+  .view-buttons button {
+    padding: 0.5rem 0.75rem;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+  }
+
+  .view-buttons button.active {
+    background: rgba(255,255,255,0.25);
+  }
+</style>

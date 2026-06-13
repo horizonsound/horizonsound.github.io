@@ -1,0 +1,20 @@
+---
+// @ts-nocheck
+import ArtistTile from "../components/ArtistTile.astro";
+import { getAllArtists } from "../engine-api/artists";
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import "../styles/artists.css";
+
+const artists = await getAllArtists();
+---
+
+<BaseLayout title="Artists">
+
+  <div class="artists-grid">
+    {artists.map(artist => (
+      <ArtistTile artist={artist} />
+    ))}
+  </div>
+
+</BaseLayout>

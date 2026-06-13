@@ -1,0 +1,31 @@
+---
+const { artist } = Astro.props;
+---
+
+<a class="artist-tile" href={`/artists/${artist.slug}`}>
+  <img src={artist.images.profile} alt={artist.name.full} />
+  <h3>{artist.name.full}</h3>
+</a>
+
+<style>
+  .artist-tile {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-decoration: none;
+    color: white;
+  }
+
+  .artist-tile img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+
+  .artist-tile h3 {
+    margin: 0;
+    font-size: 1rem;
+    text-align: center;
+  }
+</style>

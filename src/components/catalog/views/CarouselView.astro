@@ -1,0 +1,23 @@
+---
+import RowCarousel from '../../../components/global/RowCarousel.jsx'
+const { items } = Astro.props
+---
+
+<RowCarousel title="All Music">
+  {items.map((item: any) => (
+    <div class="row-item">
+      <!-- TODO: Replace with ReleaseTile once track + release props are available -->
+      <div style="color:white; padding:1rem; border:1px solid rgba(255,255,255,0.2); border-radius:8px;">
+        Placeholder Tile
+      </div>
+    </div>
+  ))}
+</RowCarousel>
+
+<style is:global>
+  .row-item {
+    min-width: 220px;
+    max-width: 260px;
+    flex: 0 0 auto;
+  }
+</style>

@@ -1,0 +1,81 @@
+---
+// @ts-nocheck
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArtistHero from '../../components/ArtistHero.astro';
+import ArtistPhotoWall from '../../components/ArtistPhotoWall.astro';
+import CarouselTile from '../../components/global/CarouselTile.jsx';
+import { getAllArtists } from '../../engine-api/artists';
+import { getReleases } from '../../engine-api/releases';
+import { getPlaylists } from '../../engine-api/playlists';
+import "../../styles/artist.css";
+import "../../styles/shelf.css";
+
+export async function getStaticPaths() {
+  const artists = await getAllArtists();
+
+  return artists.map(artist => ({
+    params: { slug: artist.slug }
+  }));
+}
+
+const { slug } = Astro.params;
+const allArtists = await getAllArtists();
+const artist = allArtists.find(a => a.slug === slug);
+
+if (!artist) {
+  throw new Error(`Artist not found: ${slug}`);
+}
+
+const allReleases = await getReleases();
+const allPlaylists = await getPlaylists();
+
+const releases = (artist.releases || [])
+  .map(id => allReleases.find(r => r.id === id))
+  .filter(Boolean);
+
+const playlists = (artist.playlists || [])
+  .map(id => allPlaylists.find(p => p.id === id))
+  .filter(Boolean);
+---
+
+<BaseLayout title={artist.name.full}>
+  <ArtistHero slot="hero" artist={artist} />
+
+    <section class="artist-bio-section" style="padding: 40px 50px;">
+      <h2>{artist.name.full}</h2>
+      <p>{artist.bio_long}</p>
+
+      <ArtistPhotoWall artist={artist} />
+    </section>
+
+    <!-- RELEASES -->
+    {releases.length > 0 && (
+      <section style="padding: 40px 50px;">
+        <h2>Releases</h2>
+
+        <div class="explorer-grid">
+          {releases.map(rel => (
+            <div class="catalog-tile" key={rel.id}>
+              <CarouselTile track={rel} />
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- PLAYLISTS -->
+    {playlists.length > 0 && (
+      <section style="padding: 40px 50px;">
+        <h2>Playlists</h2>
+
+        <div class="explorer-grid">
+          {playlists.map(ply => (
+            <div class="catalog-tile" key={ply.id}>
+              <CarouselTile track={ply} />
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+</BaseLayout>

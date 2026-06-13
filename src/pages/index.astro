@@ -1,0 +1,90 @@
+---
+// @ts-nocheck
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import StageCarousel from "../components/StageCarousel.jsx";
+import PlaylistCarousel from "../components/playlist/PlaylistCarousel.jsx";
+import ReleaseCarousel from "../components/release/ReleaseCarousel.jsx";
+
+import { getStage } from "../engine-api/stage.js";
+import { getPlaylists } from "../engine-api/playlists.js";
+import { getReleases } from "../engine-api/releases.js";
+import { getTracks } from "../engine-api/tracks.js";
+
+import "../styles/stage.css";
+import "../styles/shelf.css";
+
+// LOAD DATA FROM ENGINE
+const stage = await getStage();
+const playlists = await getPlaylists();
+const releases = await getReleases();
+const tracks = await getTracks();
+
+// Convert multiline string → array of announcement lines
+const announcementItems = stage.announcements
+  .split('\n')
+  .map(line => line.trim())
+  .filter(line => line.length > 0);
+---
+
+<BaseLayout title="On Stage">
+  <div class="announcement-ticker-wrapper">
+    <div class="announcement-ticker">
+      <div class="ticker-track">
+        {announcementItems.map(item => (
+          <span>{item}</span>
+        ))}
+        {announcementItems.map(item => (
+          <span>{item}</span>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <div class="stage-wrapper">
+    <div class="stage-panel">
+      <div class="wheel-wrapper">
+        <StageCarousel cards={stage.cards} client:load />
+      </div>
+
+      {stage.sections.map((section) => {
+        const id = section.id;
+
+        if (id.startsWith("ply_")) {
+          const pl = playlists.find((p) => p.id === id);
+          if (!pl) return null;
+
+          const tracksForPlaylist = pl.tracks.map((tid) =>
+            tracks.find((t) => t.id === tid)
+          );
+
+          return (
+            <PlaylistCarousel
+              key={id}
+              playlist={pl}
+              tracks={tracksForPlaylist}
+              releases={releases}
+              client:load
+            />
+          );
+        }
+
+        if (id.startsWith("rel_")) {
+          const rel = releases.find((r) => r.id === id);
+          if (!rel) return null;
+
+          return (
+            <ReleaseCarousel
+              key={id}
+              release={rel}
+              tracks={tracks}
+              client:load
+            />
+          );
+        }
+
+        return null;
+      })}
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,17 @@
+---
+const {
+  image = "/assets/hero.jpeg",
+  title = null
+} = Astro.props;
+---
+
+<div class="hero-banner">
+  <img src={image} class="hero-image" alt="Horizon Sound Hero" />
+
+  {title && (
+    <div class="hero-title-overlay">
+      <h2 class="hero-title">{title}</h2>
+    </div>
+  )}
+</div>
+

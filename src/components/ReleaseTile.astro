@@ -1,0 +1,102 @@
+---
+const { track, release, inactive = false } = Astro.props;
+
+// Release date (if present)
+const releaseDate = release?.release_date
+  ? new Date(release.release_date).toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric"
+    })
+  : null;
+
+// Artwork from the new SOR
+const imageSrc =
+  track?.artwork?.cover ??
+  release?.artwork?.cover ??
+  "/assets/thumbnails/fallback.jpg";
+
+// Link to the release page (NOT YouTube)
+const href = inactive || !release ? undefined : `/release/${release.slug}`;
+---
+
+<a 
+  class={`tile ${inactive ? "inactive" : ""}`} 
+  href={href}
+>
+  <div class="image-wrapper">
+    <img
+      src={imageSrc}
+      alt={track.title}
+    />
+
+    {inactive && releaseDate && (
+      <div class="tile-overlay-coming-soon">
+        Coming {releaseDate}
+      </div>
+    )}
+  </div>
+
+  <div class="tile-title">{track.title}</div>
+</a>
+
+<style>
+  .tile {
+    display: block;
+    background: rgba(255,255,255,0.03);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+  }
+
+  .tile:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.45);
+  }
+
+  .tile.inactive:hover {
+    transform: none;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+    cursor: default;
+  }
+
+  .image-wrapper {
+    position: relative;
+  }
+
+  .tile img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .tile.inactive .image-wrapper img {
+    filter: brightness(0.55);
+  }
+
+  .tile-overlay-coming-soon {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    right: 14px;
+    padding: 0.4rem 0.75rem;
+    background: rgba(0,0,0,0.65);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    text-align: center;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .tile-title {
+    padding: 0.75rem 1rem;
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+  }
+</style>

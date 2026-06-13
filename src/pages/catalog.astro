@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import ExplorerToolbar from '../components/catalog/ExplorerToolbar.astro'
+import ExplorerRenderer from '../components/catalog/ExplorerRenderer.jsx'
+
+import "../styles/shelf.css";
+import "../styles/catalog.css";
+
+import { getItemsByGenre } from '../engine-api/catalog.js';
+
+// ⭐ Fetch catalog items from the Engine
+const items = await getItemsByGenre();
+
+// ⭐ Log what the Engine actually returned
+console.log("🔍 [CATALOG] Engine returned:", items);
+console.log("🔍 [CATALOG] Type:", typeof items);
+console.log("🔍 [CATALOG] Array?", Array.isArray(items));
+console.log("🔍 [CATALOG] Length:", Array.isArray(items) ? items.length : "N/A");
+---
+
+<BaseLayout title="Catalog">
+  <div class="catalog-panel">
+    <ExplorerToolbar />
+
+    <div id="react-root">
+      <ExplorerRenderer client:load items={items} />
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,138 @@
+---
+const { tracks, artist } = Astro.props;
+---
+
+<div class="mini-player-wrapper">
+  <script type="application/json" id="mini-player-data">
+    {JSON.stringify({ tracks })}
+  </script>
+
+  <div class="mini-player" style="display:none;">
+    <audio id="audio-player"></audio>
+
+    <div class="mini-player-inner">
+      <div class="mini-player-meta">
+        <p id="mini-player-title"></p>
+        <p class="mini-player-artist">{artist.name.full}</p>
+      </div>
+
+      <div class="mini-player-controls">
+        <button id="prev-btn">⏮</button>
+        <button id="play-btn">▶</button>
+        <button id="next-btn">⏭</button>
+      </div>
+    </div>
+
+    <input type="range" id="progress-bar" min="0" max="100" value="0" />
+  </div>
+
+<script>
+  console.log("[MiniPlayer] Script loaded");
+
+  // Read JSON from the DOM — safe, no scoping issues
+  const dataEl = document.getElementById("mini-player-data") as HTMLScriptElement | null;
+  console.log("[MiniPlayer] dataEl =", dataEl);
+
+  if (!dataEl) {
+    console.error("[MiniPlayer] ERROR: mini-player-data element not found");
+    throw new Error("Mini player data element not found");
+  }
+
+  const dataText = dataEl.textContent;
+  console.log("[MiniPlayer] data text =", dataText);
+
+  const data = JSON.parse(dataText || "{}");
+  console.log("[MiniPlayer] parsed data =", data);
+
+  const tracks = data.tracks;
+  console.log("[MiniPlayer] tracks =", tracks);
+
+  let currentIndex = 0;
+
+  // Explicit DOM element types — TS-safe with non-null assertions
+  const audio = document.getElementById("audio-player")! as HTMLAudioElement;
+  const titleEl = document.getElementById("mini-player-title")! as HTMLParagraphElement;
+  const playBtn = document.getElementById("play-btn")! as HTMLButtonElement;
+  const nextBtn = document.getElementById("next-btn")! as HTMLButtonElement;
+  const prevBtn = document.getElementById("prev-btn")! as HTMLButtonElement;
+  const progress = document.getElementById("progress-bar")! as HTMLInputElement;
+
+  console.log("[MiniPlayer] DOM refs:", { audio, titleEl, playBtn, nextBtn, prevBtn, progress });
+
+  function loadTrack(index: number) {
+    console.log("[MiniPlayer] loadTrack called with index =", index);
+    const track = tracks[index];
+    console.log("[MiniPlayer] track =", track);
+
+    if (!track) {
+      console.error("[MiniPlayer] ERROR: No track found at index", index);
+      return;
+    }
+
+    audio.src = track.audio_url;
+    console.log("[MiniPlayer] audio.src set to", audio.src);
+
+    titleEl.textContent = track.title;
+    audio.play().then(() => {
+      console.log("[MiniPlayer] audio.play() succeeded");
+    }).catch(err => {
+      console.error("[MiniPlayer] audio.play() failed:", err);
+    });
+
+    playBtn.textContent = "⏸";
+  }
+
+  playBtn.onclick = () => {
+    console.log("[MiniPlayer] playBtn clicked");
+    if (audio.paused) {
+      audio.play();
+      playBtn.textContent = "⏸";
+    } else {
+      audio.pause();
+      playBtn.textContent = "▶";
+    }
+  };
+
+  nextBtn.onclick = () => {
+    console.log("[MiniPlayer] nextBtn clicked");
+    currentIndex = (currentIndex + 1) % tracks.length;
+    loadTrack(currentIndex);
+  };
+
+  prevBtn.onclick = () => {
+    console.log("[MiniPlayer] prevBtn clicked");
+    currentIndex = (currentIndex - 1 + tracks.length) % tracks.length;
+    loadTrack(currentIndex);
+  };
+
+  audio.ontimeupdate = () => {
+    if (audio.duration) {
+      progress.value = String((audio.currentTime / audio.duration) * 100);
+    }
+  };
+
+  progress.oninput = () => {
+    if (audio.duration) {
+      audio.currentTime = (Number(progress.value) / 100) * audio.duration;
+    }
+  };
+
+  // Make startPlayback available immediately
+  (window as any).startPlayback = () => {
+    console.log("[MiniPlayer] startPlayback called");
+
+    const el = document.querySelector(".mini-player") as HTMLDivElement | null;
+    console.log("[MiniPlayer] mini-player element =", el);
+
+    if (!el) {
+      console.error("[MiniPlayer] ERROR: mini-player element not found");
+      return;
+    }
+
+    el.style.display = "flex";
+    loadTrack(0);
+  };
+
+  console.log("[MiniPlayer] startPlayback attached to window");
+</script>
+</div>

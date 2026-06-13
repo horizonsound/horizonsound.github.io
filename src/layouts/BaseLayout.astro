@@ -1,0 +1,58 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import "../styles/style.css";
+const {
+  title = "Horizon Sound",
+  isPlaylistPage = false
+} = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <slot name="head" />
+    <meta charset="utf-8" />
+    <title>{title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JFDRHKE5CW"></script>
+
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-JFDRHKE5CW');
+    </script>
+  </head>
+
+  <body style="margin:0; background:#0a0a0a; color:white;">
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-JFDRHKE5CW"></script>
+
+    <script is:inline>
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      window.scrollTo(0, 0);
+    </script>
+
+    <!-- HERO STRIP ABOVE MENU -->
+    <!-- HERO AREA -->
+    {Astro.slots.hero ? (
+      <slot name="hero" />
+    ) : (
+      <div class="hero-strip">
+        <img src="/assets/branding/hero.jpg" alt="Horizon Sound Banner" />
+      </div>
+    )}
+
+    <Header />
+    <div id="page-root">
+      <main class="page-panel">
+        <slot />
+      </main>
+    </div>
+
+    <Footer />
+  </body>
+</html>

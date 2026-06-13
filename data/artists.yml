@@ -1,0 +1,1282 @@
+- id: art_014
+  slug: william_thomas
+  name:
+    full: William Thomas
+    first: William
+    last: Thomas
+    initials: wt
+  status: inactive
+  type: solo
+  tagline: Vintage country charm with a storyteller’s heart.
+  bio_short: |
+    William Thomas is a warm‑voiced country crooner with a classic 1950s
+    western sound, blending heartfelt storytelling with nostalgic charm.
+  bio_long: |
+    William Thomas brings the golden age of country‑western into the modern
+    Horizon Sound universe with a voice that feels lifted from a dusty jukebox.
+    His smooth baritone, gentle vibrato, and campfire‑ready storytelling evoke
+    the spirit of early legends while keeping his delivery sincere, warm, and
+    unmistakably human. Whether he’s singing about love, loss, or the quiet
+    poetry of small‑town life, William’s music feels timeless—simple in the
+    best way, honest in every line, and wrapped in the glow of vintage
+    Americana. His songs drift between humor, heartache, and hope, always
+    carried by the steady rhythm of a cowboy’s stride.
+  genres:
+    primary: Country
+    secondary: Americana
+    tertiary: Singer-Songwriter
+  images:
+    hero: /assets/artists/horizon-sound/banners/hero.jpg
+    profile: /assets/artists/horizon-sound/profile/logo.jpg
+    banner: /assets/artists/horizon-sound/banners/hero.jpg
+    gallery: []
+  vocal_identity:
+    base: Warm 1950s country‑western male baritone with smooth tone, gentle vibrato, and classic cowboy storytelling delivery. Friendly, nostalgic, and expressive with vintage early‑country phrasing.
+    styles:
+      - Vintage country-western storytelling
+      - Soft romantic ballads
+      - Playful cowboy narrative songs
+  colors:
+    primary: '#1A1F4A'
+    secondary: '#3B2E6F'
+    accent: '#F2C98F'
+  links:
+    website: https://horizonsound.org/william-thomas
+    spotify: null
+    apple_music: null
+    youtube: null
+    instagram: null
+    tiktok: null
+    twitter: null
+  platform_ids:
+    spotify_id: null
+    apple_music_id: null
+    youtube_channel_id: null
+    youtube_topic_id: null
+    amazon_music_id: null
+    pandora_id: null
+  releases: null
+  playlists: []
+  featured_on: []
+  seo:
+    title: William Thomas
+    description: |
+      William Thomas is a vintage-inspired country artist blending 1950s
+      western charm with heartfelt storytelling and warm baritone vocals.
+    keywords:
+      - william thomas
+      - country western
+      - vintage country
+      - americana storyteller
+      - horizon sound artists
+  internal:
+    notes: Classic 1950s-inspired country artist. Keep production vintage, warm, and analog-leaning.
+    priority: 4
+- id: art_013
+  slug: lexy_sayers
+  name:
+    full: Lexy Sayers
+    first: Lexy
+    last: Sayers
+    initials: ls
+  status: inactive
+  type: solo
+  tagline: Anthemic rock power with a fearless 80s–90s edge.
+  bio_short: |
+    Lexy Sayers is a powerhouse rock vocalist blending 80s synth‑rock energy
+    with 90s anthemic grit, delivering emotional fire with controlled, warm rasp.
+  bio_long: |
+    Lexy Sayers is the storm‑born voice of Horizon Sound—an artist who channels
+    the electricity of 80s arena rock and the emotional punch of 90s anthemic
+    power. Her vocal identity is unmistakable: a strong, controlled female rock
+    voice with a warm rasp, expressive phrasing, and the ability to shift from
+    intimate, vulnerable verses to soaring, triumphant choruses without ever
+    losing clarity or control. Lexy’s music lives in the space where nostalgia
+    meets adrenaline—pulsing synth bass, gated‑reverb drums, wide guitars, and
+    the kind of hooks that feel like they were built for stadium lights.
+
+    Whether she’s raising a glass in a bar‑toast anthem, revisiting the echoes
+    of a past love, or rising defiantly against the storm, Lexy delivers every
+    line with conviction, heart, and a spark that refuses to fade.
+  genres:
+    primary: Rock
+    secondary: Synth-Rock
+    tertiary: Pop-Rock
+  images:
+    hero: /assets/artists/horizon-sound/banners/hero.jpg
+    profile: /assets/artists/horizon-sound/profile/logo.jpg
+    banner: /assets/artists/horizon-sound/banners/hero.jpg
+    gallery: []
+  vocal_identity:
+    base: Strong female rock vocal with warm rasp, controlled power, and clear emotional delivery. Confident, expressive phrasing with smooth grit and no harsh belting. Soft, intimate verses that build into powerful, uplifting choruses with a bold 80s/90s rock tone.
+    styles:
+      - 80s piano-driven emotional ballads
+      - 90s anthemic rock with soaring guitars
+      - Up-tempo 80s synth-rock with driving groove
+  colors:
+    primary: '#1A1F4A'
+    secondary: '#3B2E6F'
+    accent: '#F2C98F'
+  links:
+    website: https://horizonsound.org/lexy-sayers
+    spotify: null
+    apple_music: null
+    youtube: null
+    instagram: null
+    tiktok: null
+    twitter: null
+  platform_ids:
+    spotify_id: null
+    apple_music_id: null
+    youtube_channel_id: null
+    youtube_topic_id: null
+    amazon_music_id: null
+    pandora_id: null
+  releases: null
+  playlists: []
+  featured_on: []
+  seo:
+    title: Lexy Sayers
+    description: |
+      Lexy Sayers is a powerhouse rock vocalist blending 80s synth-rock,
+      90s anthemic energy, and emotionally charged performances with her
+      signature warm rasp and controlled power.
+    keywords:
+      - lexy sayers
+      - 80s rock
+      - 90s anthemic rock
+      - synth rock
+      - horizon sound artists
+  internal:
+    notes: Keep production in 80s/90s rock lane—gated drums, wide guitars, warm rasp.
+    priority: 4
+- id: art_012
+  slug: amee_keller
+  name:
+    full: Amee Keller
+    first: Amee
+    last: Keller
+    initials: AK
+  status: active
+  type: solo
+  tagline: Bright, youthful acoustic-pop with a sunlit nostalgic heart.
+  bio_short: |
+    Amee Keller is a warm, upbeat acoustic-pop storyteller whose bright vocals
+    and nostalgic energy capture the feeling of summer road trips and heartfelt memories.
+  bio_long: |
+    Amee Keller brings a refreshing burst of sunshine to Horizon Sound with her
+    bright, youthful acoustic-pop style. Her voice is clean, warm, and expressive,
+    carrying a natural sense of optimism that makes every song feel like a memory
+    you’re happy to relive. Amee’s storytelling leans into nostalgia—road trips,
+    friendships, small-town charm, and the simple joys that shape who we are.
+
+    Her debut track, “Makin’ Our Way to California,” introduced her as a narrator
+    with heart: breezy acoustic guitars, shimmering harmonies, and a summery tone
+    that feels like rolling the windows down on a long drive. “Oh, Amber” expands
+    her emotional palette with a more reflective, heartfelt acoustic-pop sound,
+    proving she can balance warmth with depth. Amee’s music blends modern pop
+    polish with organic folk warmth, creating a sound that’s uplifting, sincere,
+    and effortlessly replayable.
+  genres:
+    primary: Pop
+    secondary: Folk-Pop
+    tertiary: Acoustic
+  images:
+    hero: ../assets/artists/amee-keller/banners/amee-keller-wide.jpg
+    profile: ../assets/artists/amee-keller/banners/amee-keller.jpg
+    banner: null
+    gallery:
+      - src: ../assets/artists/amee-keller/gallery/amee-keller3.jpg
+        span: 2
+      - src: ../assets/artists/amee-keller/gallery/amee-keller1.jpg
+        span: 1
+      - src: ../assets/artists/amee-keller/gallery/amee-keller6.jpg
+        span: 1
+      - src: ../assets/artists/amee-keller/gallery/amee-keller15.jpg
+        span: 2
+      - src: ../assets/artists/amee-keller/gallery/amee-keller8.jpg
+        span: 2
+      - src: ../assets/artists/amee-keller/gallery/amee-keller16.jpg
+        span: 1
+      - src: ../assets/artists/amee-keller/gallery/amee-keller20.jpg
+        span: 1
+      - src: ../assets/artists/amee-keller/gallery/amee-keller7.jpg
+        span: 2
+      - src: ../assets/artists/amee-keller/gallery/amee-keller11.jpg
+        span: 2
+      - src: ../assets/artists/amee-keller/gallery/amee-keller9.jpg
+        span: 1
+      - src: ../assets/artists/amee-keller/gallery/amee-keller17.jpg
+        span: 1
+      - src: ../assets/artists/amee-keller/gallery/amee-keller14.jpg
+        span: 2
+      - src: ../assets/artists/amee-keller/gallery/amee-keller2.jpg
+        span: 1
+  vocal_identity:
+    base: Bright, youthful female vocal with a clean pop‑folk tone, smooth delivery, and warm, summery energy. Light, expressive phrasing with a friendly, nostalgic feel.
+    styles:
+      - Upbeat acoustic-pop storytelling
+      - Nostalgic folk-pop with shimmering harmonies
+      - Light, expressive pop delivery with breezy phrasing
+  colors:
+    primary: '#1A1F4A'
+    secondary: '#3B2E6F'
+    accent: '#F2C98F'
+  links:
+    website: https://horizonsound.org/amee-keller
+    spotify: null
+    apple_music: null
+    youtube: null
+    instagram: null
+    tiktok: null
+    twitter: null
+  platform_ids:
+    spotify_id: null
+    apple_music_id: null
+    youtube_channel_id: null
+    youtube_topic_id: null
+    amazon_music_id: null
+    pandora_id: null
+  releases:
+    - rel_021
+    - rel_022
+  playlists: []
+  featured_on: []
+  seo:
+    title: Amee Keller
+    description: |
+      Amee Keller is a bright acoustic-pop storyteller blending youthful vocals,
+      nostalgic themes, and summery folk-pop energy.
+    keywords:
+      - amee keller
+      - acoustic pop
+      - folk pop
+      - summer pop
+      - horizon sound artists
+  internal:
+    notes: Keep production bright, acoustic, summery, and nostalgic. Breezy harmonies, clean vocals.
+    priority: 4
+- id: art_010
+  slug: southern_crossfire
+  name:
+    full: Southern Crossfire
+    first: null
+    last: null
+    initials: scf
+  status: active
+  type: group
+  tagline: High‑octane Southern‑rock with barroom swagger and highway heat.
+  bio_short: |
+    Southern Crossfire is a four‑piece Southern‑rock band built on roaring guitars, gritty vocals, and the kind of outlaw energy that turns every show into a story.
+  bio_long: |
+    Southern Crossfire is a four‑member Southern‑rock band forged in the glow of neon bar signs, dusty highways, and the chaos of life lived loud. Their sound blends blues‑rock grit, 70s swagger, and modern country‑rock firepower — anchored by a charismatic, rough‑edged lead vocal and harmonized gang‑shout choruses. Known for their rowdy live shows, highway anthems, and bar‑fight storytelling, Southern Crossfire delivers music that feels like a late‑night drive with the windows down and trouble in the rearview. Their debut single, *One Hell of a Ride*, introduced the band’s signature blend of grit, humor, and high‑octane energy.
+  genres:
+    primary: Rock
+    secondary: Country Rock
+    tertiary: Southern Rock
+  images:
+    hero: ../assets/artists/southern-crossfire/banners/southern-crossfire.jpg
+    profile: ../assets/artists/southern-crossfire/banners/southern-crossfire.jpg
+    banner: null
+    gallery: []
+  vocal_identity:
+    base: Gritty southern‑rock male vocal with warm, rough tone, swaggering delivery, and blues‑rock attitude. Storytelling verses, rowdy shout‑along choruses, and a loose live‑bar energy.
+    styles:
+      - Storytelling grit in the verses
+      - Rowdy shout‑along choruses
+      - Loose live‑bar phrasing
+      - Outlaw humor and highway‑freedom vibe
+  colors:
+    primary: '#8B3A2F'
+    secondary: '#2E1F1A'
+    accent: '#F2A65A'
+  links:
+    website: https://horizonsound.org
+    spotify: null
+    apple_music: null
+    youtube: null
+    instagram: null
+    tiktok: null
+    twitter: null
+  platform_ids:
+    spotify_id: null
+    apple_music_id: null
+    youtube_channel_id: null
+    youtube_topic_id: null
+    amazon_music_id: null
+    pandora_id: null
+  releases:
+    - rel_010
+  playlists: []
+  featured_on: []
+  seo:
+    title: Southern Crossfire — Southern‑Rock Band
+    description: |
+      Southern Crossfire is a four‑piece Southern‑rock band delivering gritty vocals, roaring guitars, and high‑octane highway anthems. Listen to their debut single *One Hell of a Ride*.
+    keywords:
+      - southern crossfire
+      - southern rock band
+      - country rock
+      - horizon sound
+      - one hell of a ride
+  internal:
+    notes: 'Visual identity: four‑member band. Vocal identity: duo‑centered but band‑presented.'
+    priority: 1
+- id: art_009
+  slug: ravyn
+  name:
+    full: Ravyn
+    first: Ravyn
+    last: null
+    initials: r
+  status: active
+  type: solo
+  tagline: A wild heart with a taste for the edge.
+  bio_short: |
+    Unpredictable pop artist blending emotional pop, rebellious energy, and beautiful chaos.
+  bio_long: |
+    Ravyn is an unpredictable pop artist with a wild heart and a taste for the edge. Her sound
+    blends emotional pop, rebellious energy, and a spark of beautiful chaos — always bold,
+    always alive. She writes about risk, desire, impulsive choices, and the moments where
+    confidence and vulnerability collide. Within Horizon Sound, Ravyn stands as the fearless
+    experimenter — equally at home in dark, cinematic eras like Midnight Saga or in bright,
+    high‑energy pop built for movement and release.
+
+    Contact Ravyn at Ravyn@HorizonSound.org
+  genres:
+    primary: Pop
+    secondary: Cinematic Pop
+    tertiary: Electro Pop
+  images:
+    hero: ../assets/artists/ravyn/banners/ravyn.jpg
+    profile: ../assets/artists/ravyn/banners/ravyn.jpg
+    banner: null
+    gallery:
+      - src: ../assets/artists/ravyn/gallery/ravyn26.jpg
+        span: 2
+      - src: ../assets/artists/ravyn/gallery/ravyn14.jpg
+        span: 1
+      - src: ../assets/artists/ravyn/gallery/ravyn24.jpg
+        span: 1
+      - src: ../assets/artists/ravyn/gallery/ravyn5.jpg
+        span: 2
+      - src: ../assets/artists/ravyn/gallery/ravyn17.jpg
+        span: 1
+      - src: ../assets/artists/ravyn/gallery/ravyn1.jpg
+        span: 1
+      - src: ../assets/artists/ravyn/gallery/ravyn7.jpg
+        span: 1
+      - src: ../assets/artists/ravyn/gallery/ravyn23.jpg
+        span: 2
+      - src: ../assets/artists/ravyn/gallery/ravyn3.jpg
+        span: 1
+      - src: ../assets/artists/ravyn/gallery/ravyn19.jpg
+        span: 1
+      - src: ../assets/artists/ravyn/gallery/ravyn4.jpg
+        span: 1
+      - src: ../assets/artists/ravyn/gallery/ravyn25.jpg
+        span: 1
+  vocal_identity:
+    base: Warm, expressive female vocal with a smooth, slightly smoky tone and confident, attitude‑forward delivery. Pop phrasing with subtle talk‑sing swagger and a modern electro‑pop edge.
+    model: '5.5'
+    styles:
+      electro_club: |
+        Tighter phrasing, sharper consonants, and high‑energy rhythmic delivery. Electric presence,
+        punchy timing, and neon‑lit attitude.
+      dark_cinematic: |
+        Lower register focus, smoldering tone, and slow‑burn intensity. Controlled articulation with
+        a seductive, dangerous presence.
+      brat_pop: |
+        Playful aggression, rhythmic sass, and exaggerated attitude. Crisp delivery with mischievous
+        flair and stylish chaos.
+      high_impact_pop: |
+        Strong, polished pop delivery with tight timing, bold phrasing, and confident melodic lift.
+  colors:
+    primary: '#FF2EC4'
+    secondary: '#0FF4F2'
+    accent: '#7A00FF'
+  links:
+    website: https://www.horizonsound.org/development/artists/ravyn.html
+    spotify: https://open.spotify.com/artist/36A7eQseX0fkXYyAuzG79r?si=eul5z_4sSH2HqHJet4ohuw
+    apple_music: https://music.apple.com/us/album/midnight-saga-ravyn-ep/1890661455
+    youtube: https://music.youtube.com/playlist?list=PLcKs1ONZE1PzhwIF1yE_gEUS1kZoW6oiH&si=DrzIeGgcZXb-7C12
+    instagram: null
+    tiktok: null
+    twitter: null
+  platform_ids:
+    spotify_id: 36A7eQseX0fkXYyAuzG79r
+    apple_music_id: '1890661455'
+    youtube_channel_id: null
+    youtube_topic_id: null
+    amazon_music_id: null
+    pandora_id: null
+  releases:
+    - rel_009
+  featured_on: []
+  seo:
+    title: Ravyn — Emotional Pop with an Edge
+    description: |
+      Ravyn is an unpredictable pop artist blending emotional pop, rebellious energy, and cinematic edge. Explore her bold, high‑voltage sound and the world of Midnight Saga.
+    keywords:
+      - ravyn
+      - pop
+      - cinematic pop
+      - midnight saga
+      - horizon sound
+      - emotional pop
+  internal:
+    notes: |
+      Ravyn is the neon‑lit chaos lane. Keep everything bold, electric, high‑contrast, and nightlife‑coded. Never soft, pastel, or acoustic‑leaning.
+    priority: 7
+- id: art_008
+  slug: maddie_rowan
+  name:
+    full: Maddie Rowan
+    first: Maddie
+    last: Rowan
+    initials: mr
+  status: active
+  type: solo
+  tagline: Fire‑bright country pop with a fearless heart.
+  bio_short: |
+    A powerful modern‑country vocalist blending emotional storytelling, cinematic energy, and a fierce, resilient spirit.
+  bio_long: |
+    Maddie Rowan is a powerhouse modern‑country artist with a bright, emotional tone and a fearless, fire‑driven presence. Her music blends Nashville polish with cinematic lift — soaring choruses, heartfelt storytelling, and a resilient edge that cuts through every track. Maddie writes about strength, heartbreak, rising up, and the moments where vulnerability turns into power. Her breakout single *Wildfire* introduced her signature sound: bold, expressive, and unafraid to burn brighter than the world around her.
+    Within Horizon Sound, Maddie stands as the emotional anchor — the artist who brings heart, grit, and a sense of triumph to every release.
+  genres:
+    primary: Country
+    secondary: Pop
+    tertiary: Country Pop
+  images:
+    hero: ../assets/artists/maddie-rowan/banners/maddie-rowan.jpg
+    profile: ../assets/artists/maddie-rowan/banners/maddie-rowan.jpg
+    banner: null
+    gallery: []
+  vocal_identity:
+    base: Powerful modern country female vocal with bright, emotional tone, strong projection, and confident attitude. Clear Nashville delivery with soaring choruses and a fierce, resilient edge. Controlled grit on emotional lines, polished but authentic.
+    styles:
+      anthemic_country_pop: |
+        Big, soaring choruses with strong melodic lift, clean articulation, and emotional intensity. Cinematic country‑pop energy.
+      storytelling_soft_grit: |
+        Warm, expressive verses with subtle rasp, heartfelt phrasing, and intimate emotional clarity.
+      country_rock_edge: |
+        Stronger grit, dynamic projection, and attitude‑driven delivery with modern Nashville rock influence.
+  colors:
+    primary: '#D86A4A'
+    secondary: '#F2D2B6'
+    accent: '#8C2F1E'
+  links:
+    website: https://horizonsound.org
+    spotify: null
+    apple_music: null
+    youtube: null
+    instagram: null
+    tiktok: null
+    twitter: null
+  platform_ids:
+    spotify_id: null
+    apple_music_id: null
+    youtube_channel_id: null
+    youtube_topic_id: null
+    amazon_music_id: null
+    pandora_id: null
+  releases:
+    - rel_018
+  playlists: []
+  featured_on: []
+  seo:
+    title: Maddie Rowan — Modern Country Pop Artist
+    description: |
+      Maddie Rowan is a powerful modern‑country vocalist blending emotional storytelling, cinematic energy, and a fierce, resilient spirit. Listen to her breakout single *Wildfire*.
+    keywords:
+      - maddie rowan
+      - wildfire
+      - country pop
+      - modern country
+      - horizon sound
+  internal:
+    notes: |
+      Vocal identity: Carrie‑Underwood‑leaning modern country with cinematic lift. Keep visuals warm, sunlit, emotional, and authentic. No glam‑rock or neon palettes.
+    priority: 1
+- id: art_011
+  slug: leather__and_lace
+  name:
+    full: Leather & Lace
+    first: null
+    last: null
+    initials: ll
+  status: active
+  type: duo
+  tagline: A soaring male/female pop‑rock duo with emotional fire and anthemic energy.
+  bio_short: |
+    A dynamic male/female pop‑rock duo blending emotional storytelling, expressive harmonies, and 80s/90s anthemic energy.
+  bio_long: |
+    Leather & Lace is a high‑energy male/female pop‑rock duo defined by expressive shared leads, tight harmonies, and dynamic call‑and‑response phrasing. Their sound blends emotional modern pop‑rock with the bold, anthemic spirit of classic 80s arena music — soaring choruses, bright electric guitars, driving drums, and cinematic lift. The female vocal brings powerful clarity with a light rock edge, while the male vocal delivers smooth, melodic contrast. Together, they create a signature chemistry that feels electric, emotional, and larger than life.
+    Within Horizon Sound, Leather & Lace stand as the duo built for big stages, big feelings, and big hooks — polished, dynamic, and unmistakably alive.
+  genres:
+    primary: Pop Rock
+    secondary: Pop
+    tertiary: Classic Rock
+  images:
+    hero: ../assets/artists/leather-and-lace/banners/leather-and-lace.jpg
+    profile: ../assets/artists/leather-and-lace/banners/leather-and-lace.jpg
+    banner: null
+    gallery: []
+  vocal_identity:
+    base: Male/female pop‑rock duet with expressive shared leads, tight harmonies, and dynamic call‑and‑response phrasing. Powerful emotional female vocal with light rock edge, paired with a clean, bright male vocal. Soaring anthemic choruses with polished 80s/90s pop‑rock energy.
+    styles:
+      emotional_pop_rock: |
+        Clean, expressive delivery with blended harmonies, bright guitars, and cinematic emotional lift.
+      arena_rock_anthem: |
+        Big, soaring choruses, strong back‑and‑forth phrasing, and bold 80s‑inspired production energy.
+      duet_storytelling: |
+        Call‑and‑response verses, shared leads, and intertwined emotional phrasing with strong melodic contrast between voices.
+  colors:
+    primary: '#C92F4B'
+    secondary: '#1B1B1E'
+    accent: '#F2C46D'
+  links:
+    website: https://horizonsound.org
+    spotify: null
+    apple_music: null
+    youtube: null
+    instagram: null
+    tiktok: null
+    twitter: null
+  platform_ids:
+    spotify_id: null
+    apple_music_id: null
+    youtube_channel_id: null
+    youtube_topic_id: null
+    amazon_music_id: null
+    pandora_id: null
+  releases: []
+  playlists: []
+  featured_on: []
+  seo:
+    title: Leather & Lace — Pop‑Rock Duo
+    description: |
+      Leather & Lace is a dynamic male/female pop‑rock duo blending expressive harmonies, emotional storytelling, and 80s/90s anthemic energy.
+    keywords:
+      - leather and lace
+      - pop rock duo
+      - male female duet
+      - horizon sound
+      - anthemic pop rock
+  internal:
+    notes: |
+      Vocal identity: expressive shared leads, call‑and‑response, 80s/90s pop‑rock energy. Visual identity: leather, metallic accents, glam‑rock edge, dramatic lighting.
+    priority: 1
+- id: art_007
+  slug: lydia_ellington
+  name:
+    full: Lydia Ellington
+    first: Lydia
+    last: Ellington
+    initials: le
+  status: active
+  type: solo
+  tagline: Cinematic pop with a glowing, emotional core.
+  bio_short: |
+    Cinematic pop vocalist blending modern pop, orchestral textures, and emotional storytelling.
+  bio_long: |
+    Lydia Ellington is a cinematic pop vocalist with a glowing emotional core and a voice that
+    feels like light breaking through clouds. Her music blends modern pop, orchestral textures,
+    and heartfelt storytelling, creating songs that feel both intimate and widescreen. Lydia
+    writes about growth, resilience, love, and the quiet strength found in vulnerability.
+    Within Horizon Sound, Lydia defines the Cinematic Pop lane — glowing, emotional, and
+    deeply expressive.
+
+    Contact Lydia at Lydia.Ellington@HorizonSound.org
+  genres:
+    primary: Cinematic Pop
+    secondary: Pop
+    tertiary: Orchestral Pop
+  images:
+    hero: ../assets/artists/lydia-ellington/banners/lydia.jpg
+    profile: ../assets/artists/lydia-ellington/profile/Lydia Ellington 3000x3000.jpg
+    banner: null
+    gallery:
+      - src: ../assets/artists/lydia-ellington/gallery/lydia2.jpg
+        span: 2
+      - src: ../assets/artists/lydia-ellington/gallery/lydia40.jpg
+        span: 1
+      - src: ../assets/artists/lydia-ellington/gallery/lydia26.jpg
+        span: 1
+      - src: ../assets/artists/lydia-ellington/gallery/lydia27.jpg
+        span: 2
+      - src: ../assets/artists/lydia-ellington/gallery/lydia15.jpg
+        span: 2
+      - src: ../assets/artists/lydia-ellington/gallery/lydia45.jpg
+        span: 1
+      - src: ../assets/artists/lydia-ellington/gallery/lydia37.jpg
+        span: 1
+      - src: ../assets/artists/lydia-ellington/gallery/lydia7.jpg
+        span: 1
+      - src: ../assets/artists/lydia-ellington/gallery/lydia39.jpg
+        span: 1
+  vocal_identity:
+    base: |
+      Warm, expressive female vocal with rich tone, soft breathiness, and intimate emotional
+      phrasing. Smooth, mature delivery with gentle vibrato, controlled dynamics, and a heartfelt
+      cinematic presence. Tender, vulnerable, and deeply sincere with a warm mid‑range glow.
+      Emotional center stays honest, romantic, and introspective — never cutesy, chaotic, or
+      overly bright.
+    model: 4.5+
+    styles:
+      emotional_ballad: |
+        Softer breathiness, slower phrasing, and deeper emotional weight. Gentle vibrato, warm
+        resonance, and a confessional tone. More space between lines, more vulnerability, and a
+        cinematic hush.
+      uplifting_pop: |
+        Brighter lift in the upper register, smoother transitions, and a hopeful emotional glow.
+        Still mature and warm, but with more melodic lift and lightly energized cadence.
+      cinematic_power: |
+        Stronger dynamic range, fuller resonance, and expressive phrasing. Dramatic emotional lift
+        without belting. Smooth, soaring presence with controlled intensity.
+      acoustic_soft: |
+        Close‑mic warmth, soft breath support, and gentle phrasing. Intimate, confessional tone
+        with minimal vibrato and warm resonance.
+  colors:
+    primary: '#F4B5D8'
+    secondary: '#5C3C8C'
+    accent: '#F7E9F2'
+  links:
+    website: https://www.horizonsound.org/development/artists/lydia-ellington.html
+    spotify: https://open.spotify.com/artist/6NmeEuax1ZPpDmSLfjSS7V
+    apple_music: https://music.apple.com/us/artist/lydia-ellington/1889073260
+    youtube: https://www.youtube.com/@LydiaEllington-hs
+    instagram: null
+    tiktok: null
+    twitter: null
+  platform_ids:
+    spotify_id: 6NmeEuax1ZPpDmSLfjSS7V
+    apple_music_id: '1889073260'
+    youtube_channel_id: null
+    youtube_topic_id: null
+    amazon_music_id: null
+    pandora_id: null
+  releases:
+    - rel_003
+  featured_on: []
+  seo:
+    title: Lydia Ellington — Cinematic Pop Artist
+    description: |
+      Lydia Ellington is a cinematic pop vocalist blending emotional storytelling, orchestral textures, and widescreen modern pop.
+    keywords:
+      - lydia ellington
+      - cinematic pop
+      - orchestral pop
+      - emotional pop
+      - horizon sound
+  internal:
+    notes: |
+      Lydia defines the Cinematic Pop lane. Keep tone warm, emotional, widescreen, and elegant. Avoid bright pop edges, youthful phrasing, or high‑energy chaos.
+    priority: 5
+- id: art_006
+  slug: lucas_allen
+  name:
+    full: Lucas Allen
+    first: Lucas
+    last: Allen
+    initials: la
+  status: active
+  type: solo
+  tagline: Modern country heart with a storyteller’s edge.
+  bio_short: |
+    Modern country storyteller blending Americana grit, heartfelt vocals, and cinematic small‑town imagery.
+  bio_long: |
+    Lucas Allen is a modern country storyteller with a warm, lived‑in voice and a grounded,
+    everyman charm. His music blends contemporary country, Americana grit, and cinematic
+    small‑town imagery — honest, melodic, and deeply human. He writes about long drives,
+    late nights, heartbreak, hope, and the moments that shape who we become. Within Horizon
+    Sound, Lucas anchors the Modern Country lane — heartfelt, relatable, and rich with
+    narrative detail.
+
+    Contact Lucas at Lucas.Allen@HorizonSound.org
+  genres:
+    primary: Modern Country
+    secondary: Americana
+    tertiary: Country Rock
+  images:
+    hero: ../assets/artists/lucas-allen/banners/lucas-allen.jpg
+    profile: ../assets/artists/lucas-allen/profile/lucas-allen.jpg
+    banner: null
+    gallery:
+      - src: ../assets/artists/lucas-allen/gallery/lucas-allen10.jpg
+        span: 2
+      - src: ../assets/artists/lucas-allen/gallery/lucas-allen5.jpg
+        span: 1
+      - src: ../assets/artists/lucas-allen/gallery/lucas-allen22.jpg
+        span: 1
+      - src: ../assets/artists/lucas-allen/gallery/lucas-allen24.jpg
+        span: 1
+      - src: ../assets/artists/lucas-allen/gallery/lucas-allen26.jpg
+        span: 1
+      - src: ../assets/artists/lucas-allen/gallery/lucas-allen21.jpg
+        span: 1
+      - src: ../assets/artists/lucas-allen/gallery/lucas-allen11.jpg
+        span: 2
+      - src: ../assets/artists/lucas-allen/gallery/lucas-allen6.jpg
+        span: 2
+      - src: ../assets/artists/lucas-allen/gallery/lucas-allen16.jpg
+        span: 1
+      - src: ../assets/artists/lucas-allen/gallery/lucas-allen15.jpg
+        span: 1
+      - src: ../assets/artists/lucas-allen/gallery/lucas-allen17.jpg
+        span: 1
+      - src: ../assets/artists/lucas-allen/gallery/lucas-allen18.jpg
+        span: 1
+  vocal_identity:
+    base: Modern country with warm acoustic guitars, steady mid‑tempo drums, light driving electric fills, and a clean polished Nashville mix. More forward motion, tighter groove, and smooth chorus harmonies.
+    model: '5.5'
+    styles:
+      pop_rock: |
+        Stronger phrasing, light grit, and confident rhythmic delivery. Clean melodic lift with
+        modern pop‑rock energy.
+      emotional_modern_pop: |
+        Softer tone, warm phrasing, and expressive emotional lift. Smooth transitions and
+        sincere presence.
+      acoustic_storyteller: |
+        Natural conversational tone with soft grit and warm resonance. Intimate, grounded,
+        and sincere.
+      cinematic_modern: |
+        Fuller dynamic range, expressive phrasing, and atmospheric emotional presence.
+  colors:
+    primary: '#C48A4A'
+    secondary: '#3A2A1A'
+    accent: '#8DA3B8'
+  links:
+    website: https://www.horizonsound.org/development/artists/lucas-allen.html
+    spotify: null
+    apple_music: null
+    youtube: null
+    instagram: null
+    tiktok: null
+    twitter: null
+  platform_ids:
+    spotify_id: null
+    apple_music_id: null
+    youtube_channel_id: null
+    youtube_topic_id: null
+    amazon_music_id: null
+    pandora_id: null
+  releases: []
+  featured_on: []
+  seo:
+    title: Lucas Allen — Modern Country Storyteller
+    description: |
+      Lucas Allen is a modern country artist blending Americana grit, heartfelt vocals, and cinematic small‑town storytelling.
+    keywords:
+      - lucas allen
+      - modern country
+      - americana
+      - country rock
+      - horizon sound
+  internal:
+    notes: |
+      Lucas anchors the Modern Country lane. Keep tone warm, grounded, narrative‑driven, and emotionally sincere. Avoid bright pop coloration or overly polished pop phrasing.
+    priority: 6
+- id: art_005
+  slug: horizon_sound
+  name:
+    full: Horizon Sound
+    first: Horizon
+    last: Sound
+    initials: hs
+  status: active
+  type: collective
+  tagline: Where stories rise with the light.
+  bio_short: |
+    A creative collective shaping original music, artist identities, and immersive storytelling across the Horizon Sound universe.
+  bio_long: |
+    Horizon Sound is a story‑driven creative collective built around original music, emotional
+    truth, and immersive world‑building. Serving as both a label and a narrative anchor, Horizon
+    Sound brings together artists with distinct voices and genres, unified by a shared commitment
+    to authenticity and craft. From intimate acoustic moments to cinematic pop anthems, the
+    collective curates a universe where every song, every release, and every experience page
+    contributes to a larger story.
+
+    Horizon Sound is where new voices rise, where creativity finds its home, and where the sky is
+    always just beginning to lighten.
+  genres:
+    primary: Pop
+    secondary: Indie
+    tertiary: Singer-Songwriter
+  images:
+    hero: /assets/artists/horizon-sound/banners/hero.jpg
+    profile: /assets/artists/horizon-sound/profile/logo.jpg
+    banner: /assets/artists/horizon-sound/banners/hero.jpg
+    gallery: []
+  vocal_identity:
+    base: null
+    styles: null
+  colors:
+    primary: '#1A1F4A'
+    secondary: '#3B2E6F'
+    accent: '#F2C98F'
+  links:
+    website: https://horizonsound.org
+    spotify: null
+    apple_music: null
+    youtube: null
+    instagram: null
+    tiktok: null
+    twitter: null
+  platform_ids:
+    spotify_id: null
+    apple_music_id: null
+    youtube_channel_id: null
+    youtube_topic_id: null
+    amazon_music_id: null
+    pandora_id: null
+  releases:
+    - rel_002
+    - rel_004
+    - rel_005
+    - rel_006
+    - rel_007
+    - rel_011
+    - rel_012
+    - rel_013
+    - rel_015
+    - rel_017
+  playlists: []
+  featured_on: []
+  seo:
+    title: Horizon Sound — Creative Collective & Label
+    description: |
+      Horizon Sound is a creative collective shaping original music, artist identities, and immersive storytelling across a unified musical universe.
+    keywords:
+      - horizon sound
+      - horizon sound music
+      - original music collective
+      - indie pop label
+      - cinematic pop
+      - horizon sound artists
+  internal:
+    notes: |
+      Primary label identity. Use for global branding, site-wide theming, cross-artist releases, and narrative cohesion across the Horizon Sound universe.
+    priority: 1
+- id: art_004
+  slug: ellie_hale
+  name:
+    full: Ellie Hale
+    first: Ellie
+    last: Hale
+    initials: eh
+  status: active
+  type: solo
+  tagline: Dream‑lit indie pop with a soft, shimmering edge.
+  bio_short: |
+    Heartfelt indie‑pop storyteller blending soft synth‑pop, intimate textures, and warm cinematic production.
+  bio_long: |
+    Ellie Hale is a heartfelt indie‑pop storyteller with a dreamy, shimmering vocal style
+    and a quietly powerful emotional core. Her music blends soft synth‑pop, intimate
+    acoustic textures, and warm, cinematic production — always honest, melodic, and deeply
+    human. She writes about longing, healing, late‑night thoughts, and the fragile moments
+    that shape who we become. Within Horizon Sound, Ellie anchors the Dream‑Pop / Indie‑Pop
+    lane — atmospheric, vulnerable, and emotionally resonant.
+
+    Contact Ellie at Ellie.Hale@HorizonSound.org
+  genres:
+    primary: Dream Pop
+    secondary: Indie Pop
+    tertiary: Soft Pop
+  images:
+    hero: ../assets/artists/ellie-hale/banners/ellie-hale9.jpg
+    profile: ../assets/artists/ellie-hale/profile/ellie-hale.jpg
+    banner: null
+    gallery:
+      - src: ../assets/artists/ellie-hale/gallery/ellie-hale13.jpg
+        span: 2
+      - src: ../assets/artists/ellie-hale/gallery/ellie-hale15.jpg
+        span: 1
+      - src: ../assets/artists/ellie-hale/gallery/ellie-hale19.jpg
+        span: 1
+      - src: ../assets/artists/ellie-hale/gallery/ellie-hale22.jpg
+        span: 1
+      - src: ../assets/artists/ellie-hale/gallery/ellie-hale20.jpg
+        span: 1
+      - src: ../assets/artists/ellie-hale/gallery/ellie-hale31.jpg
+        span: 1
+      - src: ../assets/artists/ellie-hale/gallery/ellie-hale11.jpg
+        span: 2
+      - src: ../assets/artists/ellie-hale/gallery/ellie-hale12.jpg
+        span: 1
+      - src: ../assets/artists/ellie-hale/gallery/ellie-hale34.jpg
+        span: 1
+      - src: ../assets/artists/ellie-hale/gallery/ellie-hale32.jpg
+        span: 1
+      - src: ../assets/artists/ellie-hale/gallery/ellie-hale6.jpg
+        span: 1
+      - src: ../assets/artists/ellie-hale/gallery/ellie-hale38.jpg
+        span: 2
+      - src: ../assets/artists/ellie-hale/gallery/ellie-hale21.jpg
+        span: 1
+      - src: ../assets/artists/ellie-hale/gallery/ellie-hale29.jpg
+        span: 1
+      - src: ../assets/artists/ellie-hale/gallery/ellie-hale37.jpg
+        span: 1
+  vocal_identity:
+    base: |
+      Bright youthful female pop vocal with clean tone, light breathiness, playful phrasing,
+      and confident modern delivery. Energetic, flirty, sparkly, and expressive with a smile
+      in the voice. Smooth upper register, crisp articulation, and rhythmic pop timing.
+      Emotional range stays fun, cute, chaotic, and self‑aware — never heavy, dark, or overly
+      dramatic.
+    model: '5.5'
+    styles:
+      dreamy_pop_mature: |
+        Soft dreamy phrasing with gentle breathiness and warm tone. Youthful‑adult, mid‑20s
+        character — never childlike. Tender emotional presence with delicate melodic lift.
+      upbeat_bubble_pop: |
+        Bright energetic phrasing, sparkly tone, and bouncy rhythmic delivery. Cute, fun,
+        and expressive.
+      flirty_modern_pop: |
+        Playful articulation, rhythmic confidence, and a subtle wink in the phrasing. Clean
+        tone with light breathiness.
+      emotional_soft_pop: |
+        Softer delivery, warm tone, and sincere emotional lift. Still youthful, but grounded
+        and mature.
+  colors:
+    primary: '#D8A7FF'
+    secondary: '#4A3C8C'
+    accent: '#6EE7D8'
+  links:
+    website: https://www.horizonsound.org/development/artists/ellie-hale.html
+    spotify: null
+    apple_music: null
+    youtube: null
+    instagram: null
+    tiktok: null
+    twitter: null
+  platform_ids:
+    spotify_id: null
+    apple_music_id: null
+    youtube_channel_id: null
+    youtube_topic_id: null
+    amazon_music_id: null
+    pandora_id: null
+  releases:
+    - rel_020
+  playlists: []
+  featured_on: []
+  seo:
+    title: Ellie Hale — Dream‑Pop / Indie‑Pop Artist
+    description: |
+      Ellie Hale is a dream‑lit indie‑pop storyteller blending soft synth‑pop, intimate textures, and shimmering emotional depth.
+    keywords:
+      - ellie hale
+      - dream pop
+      - indie pop
+      - soft pop
+      - horizon sound
+  internal:
+    notes: |
+      Ellie anchors the Dream‑Pop / Indie‑Pop lane. Keep production soft, shimmering, atmospheric, and emotionally warm — never heavy, dark, or high‑intensity.
+    priority: 4
+- id: art_003
+  slug: craig_mitchell
+  name:
+    full: Craig Mitchell
+    first: Craig
+    last: Mitchell
+    initials: cm
+  status: active
+  type: solo
+  tagline: Emotional 80s‑inspired pop‑rock with cinematic power.
+  bio_short: |
+    Emotional pop‑rock vocalist blending 80s cinematic energy, heartfelt storytelling, and anthemic lift.
+  bio_long: |
+    Craig Mitchell is an emotional pop‑rock vocalist with a warm, earnest tone and a cinematic 80s‑inspired delivery. His music blends synth‑driven pop, dramatic storytelling, and anthemic choruses that rise with heroic intensity. Craig writes about resilience, connection, fear, hope, and the moments where ordinary people find extraordinary courage. His breakout track *Until the Nightmare Ends* defined his signature sound — tense, atmospheric verses rising into powerful, heroic choruses with nostalgic reverb and widescreen emotion.
+    Within Horizon Sound, Craig stands as the cinematic storyteller — the artist who turns fear into courage, doubt into determination, and quiet moments into anthems built for the night sky.
+  genres:
+    primary: Pop Rock
+    secondary: Synthwave Pop
+    tertiary: Cinematic Pop
+  images:
+    hero: ../assets/artists/craig-mitchell/banners/craig-mitchell.jpg
+    profile: ../assets/artists/craig-mitchell/banners/craig-mitchell.jpg
+    banner: null
+    gallery: []
+  vocal_identity:
+    base: |
+      Emotional male vocal with clear 80s pop tone, strong projection, and cinematic storytelling delivery. Warm, earnest, and anthemic with a heroic lift in the chorus. Clean, expressive, and atmospheric — never gritty, never overly bright, never theatrical.
+    styles:
+      cinematic_anthem: |
+        Tense, atmospheric verses rising into heroic, anthemic choruses. Strong projection, long vowels, and dramatic emotional lift.
+      emotional_ballad: |
+        Warm, intimate tone with soft vibrato and heartfelt phrasing. Clean delivery with cinematic hush and spiritual undertones.
+      synthwave_pop: |
+        Nostalgic 80s coloration, wide reverb, and smooth melodic phrasing. Clear, earnest tone with steady projection.
+      storytelling_modern: |
+        Conversational emotional phrasing with clean articulation and grounded sincerity. Smooth transitions and steady warmth.
+  colors:
+    primary: '#4A6FA5'
+    secondary: '#1B1F2E'
+    accent: '#F2A65A'
+  links:
+    website: https://horizonsound.org
+    spotify: null
+    apple_music: null
+    youtube: null
+    instagram: null
+    tiktok: null
+    twitter: null
+  platform_ids:
+    spotify_id: null
+    apple_music_id: null
+    youtube_channel_id: null
+    youtube_topic_id: null
+    amazon_music_id: null
+    pandora_id: null
+  releases:
+    - rel_016
+  playlists: []
+  featured_on: []
+  seo:
+    title: Craig Mitchell — Cinematic Pop‑Rock Artist
+    description: |
+      Craig Mitchell is an emotional pop‑rock vocalist blending 80s cinematic energy, heartfelt storytelling, and anthemic lift. Known for his breakout track *Until the Nightmare Ends*.
+    keywords:
+      - craig mitchell
+      - cinematic pop rock
+      - synthwave pop
+      - until the nightmare ends
+      - horizon sound
+  internal:
+    notes: |
+      Vocal identity: emotional 80s pop tone with cinematic storytelling. Keep production atmospheric, anthemic, and nostalgic. Avoid grit, heavy rock, or overly bright pop.
+    priority: 1
+- id: art_002
+  slug: cody_sails
+  name:
+    full: Cody Sails
+    first: Cody
+    last: Sails
+    initials: cs
+  status: active
+  type: solo
+  tagline: Sun‑soaked coastal storyteller with a barefoot spirit.
+  bio_short: |
+    Warm‑hearted coastal storyteller blending beach‑folk, mellow pop, and golden‑hour acoustic grooves.
+  bio_long: |
+    Cody Sails is a warm‑hearted coastal storyteller with a sun‑soaked voice and a
+    barefoot, easygoing spirit. His music blends beach‑folk, mellow pop, and golden‑hour
+    acoustic grooves — always relaxed and inviting. He sings about tides, friends,
+    freedom, and the simple moments that make life feel lighter. Within Horizon Sound,
+    Cody anchors the Coastal Acoustic lane — warm, approachable, and emotionally grounded.
+
+    Contact Cody at Cody.Sails@HorizonSound.org
+  vocal_identity:
+    base: |
+      Warm, easygoing male vocal with smooth tone, gentle rasp, and relaxed expressive
+      phrasing. Friendly, approachable delivery with soft grit, coastal charm, and a
+      natural conversational flow. Calm, heartfelt, and quietly romantic with a breezy
+      mid‑20s warmth. Emotional range stays grounded, sincere, and lightly uplifting —
+      never aggressive, flashy, or overly dramatic.
+    model: '5.5'
+    styles:
+      acoustic_soft: |
+        Softer rasp, intimate phrasing, and warm close‑mic tone. Gentle dynamics and
+        heartfelt presence.
+      coastal_pop: |
+        Lightly energized phrasing, breezy tone, and warm sunlit presence. Smooth
+        melodic lift with relaxed feel‑good cadence.
+      emotional_lift: |
+        Slightly stronger dynamics, expressive phrasing, and warm emotional rise. Still
+        grounded and sincere.
+      storyteller_folk: |
+        Natural conversational tone with soft grit, steady cadence, and warm narrative
+        phrasing.
+  genres:
+    primary: Coastal Acoustic
+    secondary: Folk Pop
+    tertiary: Acoustic Pop
+  images:
+    hero: ../assets/artists/cody-sails/banners/cody.jpg
+    profile: ../assets/artists/cody-sails/profile/Cody Sails 3000x3000.jpg
+    banner: null
+    gallery:
+      - src: ../assets/artists/cody-sails/gallery/cody19.jpg
+        span: 2
+      - src: ../assets/artists/cody-sails/gallery/cody18.jpg
+        span: 1
+      - src: ../assets/artists/cody-sails/gallery/cody17.jpg
+        span: 1
+      - src: ../assets/artists/cody-sails/gallery/cody13.jpg
+        span: 1
+      - src: ../assets/artists/cody-sails/gallery/cody16.jpg
+        span: 1
+      - src: ../assets/artists/cody-sails/gallery/cody3.jpg
+        span: 2
+      - src: ../assets/artists/cody-sails/gallery/cody6.jpg
+        span: 1
+      - src: ../assets/artists/cody-sails/gallery/cody12.jpg
+        span: 1
+      - src: ../assets/artists/cody-sails/gallery/cody7a.jpg
+        span: 1
+      - src: ../assets/artists/cody-sails/gallery/cody1.jpg
+        span: 1
+  colors:
+    primary: '#F6B35A'
+    secondary: '#1C6E8C'
+    accent: '#F2E8D5'
+  links:
+    website: https://www.horizonsound.org/development/artists/cody-sails.html
+    spotify: https://open.spotify.com/artist/5JXSFheKggmlJJ3qUZPefn?si=nQJqpPSCQMqDe71C1rnW5A
+    apple_music: https://music.apple.com/us/artist/cody-sails/1890255704
+    youtube: https://www.youtube.com/channel/UCKrDH3xQ-iQkj6aNA1SI4qw
+    instagram: null
+    tiktok: null
+    twitter: null
+  platform_ids:
+    spotify_id: 5JXSFheKggmlJJ3qUZPefn
+    apple_music_id: '1890255704'
+    youtube_channel_id: null
+    youtube_topic_id: null
+    amazon_music_id: null
+    pandora_id: null
+  releases:
+    - rel_014
+  playlists: []
+  featured_on: []
+  seo:
+    title: Cody Sails — Coastal Acoustic Artist
+    description: |
+      Cody Sails is a coastal acoustic storyteller blending beach‑folk, mellow pop, and warm golden‑hour grooves.
+    keywords:
+      - cody sails
+      - coastal acoustic
+      - folk pop
+      - acoustic pop
+      - horizon sound
+  internal:
+    notes: |
+      Cody anchors the Coastal Acoustic lane. Keep tone warm, breezy, sunlit, and grounded. Avoid heavy production, sharp pop edges, or overly bright coloration.
+    priority: 3
+- id: art_001
+  slug: ascension_youth_choir
+  name:
+    full: Ascension Youth Choir
+    first: ''
+    last: ''
+    initials: ayc
+  status: active
+  type: group
+  tagline: Voices rising with purpose, unity, and heart.
+  bio_short: |
+    A vibrant youth ensemble blending warm harmonies, expressive performances, and uplifting energy.
+  bio_long: |
+    Ascension Youth Choir is a vibrant ensemble of young singers ages eight to fifteen,
+    united by a shared love of music and a spirit of encouragement. Because of this age
+    range, the choir is always evolving — wonderful singers grow up and move on, and new
+    voices step in to carry the sound forward. Together, they keep the spirit of Ascension
+    Youth Choir alive from season to season.
+
+    Known for their warm harmonies, expressive performances, and genuine connection with
+    one another, the choir brings an uplifting energy to every stage they step onto.
+    Whether they are rehearsing in a sunlit room, laughing between takes, or delivering a
+    heartfelt performance, the members of Ascension Youth Choir embody the joy and
+    authenticity of youth. Their sound blends innocence with emerging confidence, creating
+    a unique musical identity that feels both grounded and full of possibility.
+
+    As part of the Horizon Sound family, the choir represents growth, community, and the
+    belief that every young voice has something meaningful to offer. Their performances
+    celebrate unity, diversity, and the simple power of singing together.
+
+    Contact Ascension Youth Choir at AYC@HorizonSound.org
+  genres:
+    primary: Pop
+    secondary: Youth Ensemble
+    tertiary: Inspirational Pop
+  images:
+    hero: ../assets/artists/ascension-youth-choir/banners/AYC6.jpg
+    profile: ../assets/artists/ascension-youth-choir/profile/AYC6.jpg
+    banner: null
+    gallery:
+      - src: ../assets/artists/ascension-youth-choir/gallery/AYC19.jpg
+        span: 1
+      - src: ../assets/artists/ascension-youth-choir/gallery/AYC16.jpg
+        span: 2
+      - src: ../assets/artists/ascension-youth-choir/gallery/AYC11.jpg
+        span: 2
+      - src: ../assets/artists/ascension-youth-choir/gallery/AYC17.jpg
+        span: 1
+      - src: ../assets/artists/ascension-youth-choir/gallery/AYC12.jpg
+        span: 1
+      - src: ../assets/artists/ascension-youth-choir/gallery/AYC13.jpg
+        span: 1
+      - src: ../assets/artists/ascension-youth-choir/gallery/AYC20.jpg
+        span: 1
+      - src: ../assets/artists/ascension-youth-choir/gallery/AYC1.jpg
+        span: 1
+      - src: ../assets/artists/ascension-youth-choir/gallery/AYC14.jpg
+        span: 2
+  vocal_identity:
+    base: |
+      Warm expressive youth ensemble with blended harmonies, clear tone, and a grounded,
+      mature presence. Voices span early‑teen to mid‑teen range but maintain a unified,
+      polished choral sound with smooth phrasing and gentle emotional lift. Delivery is
+      sincere, heartfelt, and uplifting — never childish, never overly bright, never
+      pop‑cutesy. The choir’s tone is warm, balanced, and full, with clean articulation,
+      natural blend, and a supportive harmonic foundation. Emotional center stays hopeful,
+      encouraging, and authentic.
+    model: '5.5'
+    styles:
+      emotional_ballad: |
+        Soft, blended harmonies with gentle breath support, smooth legato phrasing, and a
+        warm intimate tone. Slightly slower delivery with expressive dynamics and a tender
+        emotional presence. Ideal for reflective, heartfelt, or inspirational songs. Never
+        overly dramatic, never theatrical, always sincere and grounded.
+      uplifting_pop_choral: |
+        Bright, energetic ensemble delivery with clean articulation, rhythmic unity, and a
+        lightly modern pop influence. Harmonies stay warm and blended, with a confident,
+        uplifting emotional tone. Ideal for mid‑tempo inspirational pop or feel‑good
+        anthems. Never sharp, never overly bright, never teen‑pop.
+      cinematic_choral: |
+        Fuller resonance, expanded dynamic range, and a more dramatic, atmospheric presence.
+        Smooth sustained harmonies, controlled vibrato (light and age‑appropriate), and
+        expressive phrasing. Ideal for soundtrack‑style or large emotional moments. Never
+        operatic, never adult‑dramatic — always youthful but mature.
+      acoustic_soft: |
+        Close, intimate ensemble tone with soft dynamics, gentle phrasing, and warm, blended
+        harmonies. Works well with acoustic guitar, piano, or minimal arrangements. Emotional
+        tone stays calm, sincere, and comforting. Never breathy‑whispery, never childlike.
+  colors:
+    primary: '#2A4C8F'
+    secondary: '#E8EAF3'
+    accent: '#F4B400'
+  links:
+    website: null
+    spotify: null
+    apple_music: null
+    youtube: null
+    instagram: null
+    tiktok: null
+    twitter: null
+  platform_ids:
+    spotify_id: null
+    apple_music_id: null
+    youtube_channel_id: null
+    youtube_topic_id: null
+    amazon_music_id: null
+    pandora_id: null
+  releases:
+    - rel_008
+  playlists: []
+  featured_on: []
+  seo:
+    title: Ascension Youth Choir — Youth Ensemble
+    description: |
+      Ascension Youth Choir is a vibrant youth ensemble blending warm harmonies, expressive performances, and uplifting emotional energy.
+    keywords:
+      - ascension youth choir
+      - youth choir
+      - inspirational pop
+      - horizon sound
+  internal:
+    notes: |
+      AYC represents the youth‑ensemble pillar of Horizon Sound. Tone: warm, uplifting, sincere, and age‑appropriate. Avoid childish, overly bright, or teen‑pop stylings.
+    priority: 2

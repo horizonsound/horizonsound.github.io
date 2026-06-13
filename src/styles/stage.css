@@ -1,0 +1,474 @@
+/* ================================
+   Stage Billboard / Hero Card
+================================ */
+.stage-carousel {
+  position: relative;
+  width: 100%;
+  max-width: none; 
+  margin: 40px auto; /* center with breathing room */
+  overflow: hidden;
+}
+
+.carousel-window {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  min-height: 600px;
+  overflow-x: auto;
+  overflow-y: visible;
+  perspective: 1500px;
+}
+
+.carousel-track {
+  display: flex;
+  will-change: transform;
+  transition: transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.stage-card {
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: transform;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: auto;            /* allow width to grow */
+  min-width: max-content; /* grow to fit grid */
+  max-width: none;
+  height: auto;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(6px);
+  border: none;
+  color: white;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.carousel-arrow:hover {
+  background: rgba(0,0,0,0.55);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.carousel-arrow.left {
+  left: 20px;
+}
+
+.carousel-arrow.right {
+  right: 20px;
+}
+
+/* ================================
+  Wheel card Tile
+================================ */
+  .card-tile {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1;
+    background-size: cover;
+    background-position: center;
+    display: block;
+  }
+
+  .card-tile--empty {
+  pointer-events: none;
+  box-shadow: none !important;
+  transform: none !important;
+  cursor: default;
+}
+
+.stage-card-title {
+  position: absolute;
+  bottom: 10;
+  width: 100%;
+  padding: 20px 24px;
+  font-size: 3rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(to top, rgba(0,0,0,0.65), rgba(0,0,0,0));
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* ================================
+   Stage Card Overlay (singles/albums grid)
+================================ */
+  .stage-card-overlay {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    padding: 20px;
+    gap: 16px;
+    pointer-events: none; /* card still clickable unless tile overrides */ 
+    box-sizing: border-box;
+    z-index: 5;
+  }
+
+.singles-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 180px);
+  grid-auto-rows: 180px;
+  gap: 16px;
+}
+
+.albums-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 260px);
+  grid-auto-rows: 260px;
+  gap: 16px;
+}
+
+.stage-card-wrapper {
+  position: absolute;
+  inset: 0;
+}
+
+.card-single-tile {
+  width: 180px;
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  pointer-events: auto;
+}
+
+.card-album-tile {
+  width: 260px;
+  height: 260px;
+  background-size: cover;
+  background-position: center;
+  pointer-events: auto;
+}
+
+/* ================================
+   Wheel Animation Layer
+================================ */
+.wheel-card .stage-card {
+  height: auto;
+  min-height: 680px; /* keeps your wheel spacing */
+}
+
+.wheel {
+  position: absolute;
+  inset: 0;
+  height: 680px;
+  transform-style: preserve-3d;
+  transition: transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.wheel-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform-style: preserve-3d;
+}
+
+.stage-panel {
+  width: 100%;
+  padding: 2rem 0;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(12px);
+}
+
+/* ================================
+   PREMIUM STAGE PANEL
+================================ */
+
+.stage-panel {
+  width: 100%;
+  padding: 0rem 0 3.5rem;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: inset 0 0 40px rgba(0,0,0,0.6);
+  box-sizing: border-box;
+}
+
+/* Center content inside the panel */
+.stage-panel > * {
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ================================
+Desktop browser (>900px) 
+================================ */
+@media (min-width: 900px) {
+  .stage-panel > * {
+    max-width: 1500px;
+  }
+}
+
+/* ================================
+   WHEEL SPACING
+================================ */
+
+.wheel-wrapper {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+/* ================================
+Announcements
+================================ */
+.announcement-ticker {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.announcement-ticker-wrapper {
+  position: relative;
+  width: 95%;
+  height: 32px;
+  overflow: hidden;
+  padding-top: 40px; /* ← THIS is the magic */
+  padding-right: 0px; /* ← THIS is the magic */
+  padding-left: 40px; /* ← THIS is the magic */
+}
+
+.announcement-ticker-wrapper::before {
+  content: "";
+  position: absolute;
+  left: 40px; /* ← shift inside the padding */
+  top: 0;
+  width: 80px;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(to right, rgba(0,0,0,0.6), transparent);
+  z-index: 5;
+}
+
+.announcement-ticker-wrapper::after {
+  content: "";
+  position: absolute;
+  right: 0px; /* ← shift inside the padding */
+  top: 0;
+  width: 80px;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(to left, rgba(0,0,0,0.6), transparent);
+  z-index: 5;
+}
+
+.ticker-track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: ticker-scroll 30s linear infinite;
+}
+
+.ticker-track span {
+  padding-right: 2rem;
+  font-size: 2.2rem;
+  opacity: 0.9;
+}
+
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ================================
+Portrait (440px) — heavy scaling css
+================================ */
+@media (max-width: 480px) {
+  /* ================================
+  Portrait (440px) — Announcement scaling
+  ================================ */
+  .announcement-ticker {
+    height: 0px;
+  }
+
+  .ticker-track span {
+    font-size: 1.2rem;
+  }
+
+  .announcement-ticker-wrapper {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  .announcement-ticker {
+    height: 18px;
+    padding: 0 0;
+  }
+
+  /* ================================
+  Portrait (440px) — Cardwheel scaling
+  ================================ */
+  .stage-carousel {
+    max-width: 1400px; /* billboard width */
+    margin: 0px auto; /* center with breathing room */
+  }
+
+  .stage-panel > * {
+    max-width: 100%;
+  }
+
+  .carousel-arrow {
+    width: 35px;
+    height: 35px;
+    font-size: 2.5rem;
+  }
+
+  .stage-card-overlay {
+    padding: 8px;  
+    gap: 8px;
+  }
+  .stage-panel {
+    transform: none;
+    margin-bottom: 0;
+  }
+
+  .card-single-tile {
+    width: 50px;
+    height: 50px;
+  }
+
+  .card-album-tile {
+    width: 80px;
+    height: 80px;
+  }
+
+  .singles-grid {
+    grid-template-columns: repeat(4, 50px);
+    grid-auto-rows: 50px;
+    gap: 8px;
+  }
+
+  .albums-grid {
+    grid-template-columns: repeat(2, 80px);
+    grid-auto-rows: 80px;
+    gap: 8px;
+  }
+
+  .stage-card-title {
+    padding: 12px 16px;
+    font-size: 1.2rem;
+  }
+
+  .card-tile-title {
+    font-size: 0.85rem;
+  }
+
+  .carousel-window,
+  .wheel-card .stage-card {
+    height: auto;
+    min-height: 200px; /* adjust as needed */
+  }
+}
+
+/* ================================
+Landscape (832px) — moderate scaling css
+================================ */
+@media (min-width: 481px) and (max-width: 900px) {
+  /* ================================
+  Landscape (832px) — Announcement scaling
+  ================================ */
+  .announcement-ticker {
+    height: 0px;
+  }
+
+  .ticker-track span {
+    font-size: 1.2rem;
+  }
+
+  .announcement-ticker-wrapper {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  .announcement-ticker {
+    height: 18px;
+    padding: 0 0;
+  }
+
+  /* ================================
+  Landscape (832px) — Cardwheel scaling
+  ================================ */
+  .stage-carousel {
+    max-width: 1400px; /* billboard width */
+    margin: 0px auto; /* center with breathing room */
+  }
+
+  .stage-panel > * {
+    max-width: 100%;
+  }
+
+  .carousel-arrow {
+    width: 35px;
+    height: 35px;
+    font-size: 2.5rem;
+  }
+
+  .stage-card-overlay {
+    padding: 8px;  
+    gap: 8px;
+  }
+  .stage-panel {
+    transform: none;
+    margin-bottom: 0;
+  }
+
+  .card-single-tile {
+    width: 80px;
+    height: 80px;
+  }
+
+  .card-album-tile {
+    width: 130px;
+    height: 130px;
+  }
+
+  .singles-grid {
+    grid-template-columns: repeat(4, 80px);
+    grid-auto-rows: 80px;
+    gap: 16px;
+  }
+
+  .albums-grid {
+    grid-template-columns: repeat(2, 130px);
+    grid-auto-rows: 130px;
+    gap: 16px;
+  }
+
+  .stage-card-title {
+    padding: 12px 16px;
+    font-size: 1.2rem;
+  }
+
+  .card-tile-title {
+    font-size: 0.85rem;
+  }
+
+  .carousel-window,
+  .wheel-card .stage-card {
+    min-height: 300px;
+  }
+}

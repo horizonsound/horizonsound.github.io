@@ -1,0 +1,74 @@
+---
+// @ts-nocheck
+import ReleaseTile from '../ReleaseTile.astro';
+
+const { playlists, tracks, releases } = Astro.props;
+
+// Build groups: playlist → tracks (using playlist.track IDs)
+const grouped = playlists.map((pl) => {
+  const playlistTracks = pl.tracks
+    .map((trackId) => tracks.find((t) => t.id === trackId))
+    .filter(Boolean) // remove missing tracks
+    .filter((t) =>
+      releases.some((r) =>
+        r.tracklist?.some((tl) => tl.track_id === t.id)
+      )
+    );
+
+  return {
+    playlist: pl,
+    tracks: playlistTracks
+  };
+});
+
+// Helper: find the release for a given track
+function findReleaseForTrack(track) {
+  return releases.find((r) =>
+    r.tracklist?.some((t) => t.track_id === track.id)
+  );
+}
+---
+
+
+<section class="grouped-explorer">
+  {grouped.map(({ playlist, tracks }) => (
+    tracks.length > 0 && (
+      <section class="group">
+        <h2>{playlist.title}</h2>
+
+        <div class="grid">
+          {tracks.map((track) => {
+            const release = findReleaseForTrack(track);
+
+            return (
+              <ReleaseTile
+                track={track}
+                release={release}
+              />
+            );
+          })}
+        </div>
+      </section>
+    )
+  ))}
+</section>
+
+<style>
+  .grouped-explorer {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .group h2 {
+    margin-bottom: 0.75rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+  }
+</style>

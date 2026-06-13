@@ -1,0 +1,33 @@
+---
+import { getArtists } from '../../server/engine/artists';
+
+const artists = await getArtists();
+
+//Needed to ensure admin is unreachable in production
+if (import.meta.env.PROD) {
+  return Astro.redirect('/');
+}
+---
+
+<html>
+  <body>
+    <h1>Create New Track</h1>
+
+    <form method="post" action="/api/admin/create-track">
+      <label>Title</label>
+      <input name="title" />
+
+      <label>Artist</label>
+      <select name="artist">
+        {artists.map(a => (
+          <option value={a.id}>{a.name}</option>
+        ))}
+      </select>
+
+      <label>Lyrics</label>
+      <textarea name="lyrics"></textarea>
+
+      <button type="submit">Create Track</button>
+    </form>
+  </body>
+</html>

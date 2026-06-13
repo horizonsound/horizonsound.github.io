@@ -1,0 +1,33 @@
+---
+// @ts-nocheck
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import "../styles/origins.css";
+import { getOrigins } from "../engine-api/site";
+
+const origins = await getOrigins();
+---
+
+<BaseLayout>
+  <div class="origins-container">
+    {origins.sections.map(section => (
+      <section class="origins-section">
+        <h3 class="origins-heading">{section.heading}</h3>
+
+        {section.body && (
+          <p class="origins-body">
+            {section.body}
+          </p>
+        )}
+
+        {section.list && (
+          <ul class="origins-list">
+            {section.list.map(item => (
+              <li class="origins-list-item">{item}</li>
+            ))}
+          </ul>
+        )}
+      </section>
+    ))}
+  </div>
+</BaseLayout>

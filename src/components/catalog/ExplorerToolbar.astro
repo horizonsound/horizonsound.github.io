@@ -1,0 +1,179 @@
+---
+// @ts-nocheck
+const { viewMode } = Astro.props
+---
+
+<div class="explorer-toolbar">
+
+  <!-- LEFT SIDE: VIEW + SORT + FILTER -->
+  <div class="toolbar-left">
+
+    <!-- VIEW MODE (Segmented Control) -->
+    <div class="toolbar-view">
+      <div class="view-segmented">
+        <button data-view="carousel" class="view-segment">Carousel</button>
+        <button data-view="grouped" class="view-segment">Grouped</button>
+        <button data-view="grid" class="view-segment">Grid</button>
+        <button data-view="list" class="view-segment">List</button>
+      </div>
+    </div>
+
+    <!-- SORT -->
+    <div class="toolbar-sort">
+      <button class="sort-button">
+        <span>Sort by:</span>
+        <select id="explorer-sort-field">
+          <option value="title">Title</option>
+          <option value="artist">Artist</option>
+          <option value="year">Year</option>
+        </select>
+      </button>
+
+      <button id="explorer-sort-direction" class="sort-direction">
+        ⇅
+      </button>
+    </div>
+
+    <!-- FILTER -->
+    <div class="toolbar-filter">
+      <button class="filter-button">
+        <span>Filter:</span>
+        <select id="explorer-filter">
+          <option value="">All</option>
+        </select>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- RIGHT SIDE: SEARCH -->
+  <div class="toolbar-right">
+    <div class="toolbar-search">
+      <span class="toolbar-search-icon">🔍</span>
+      <input id="explorer-search" type="text" placeholder="Search Catalog" />
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // @ts-nocheck
+  document.addEventListener("DOMContentLoaded", () => {
+
+    window.addEventListener("explorer:view", (e) => {
+      const current = e.detail;
+
+      document.querySelectorAll(".view-segment").forEach(btn => {
+        if (btn.dataset.view === current) {
+          btn.classList.add("active");
+        } else {
+          btn.classList.remove("active");
+        }
+      });
+    });
+
+    //
+    // MULTI-FILTER STATE
+    //
+    let activeFilters = { genres: [], artists: [] };
+
+    //
+    // FILTER INITIALIZATION
+    //
+    window.addEventListener("explorer:filters:init", (e) => {
+      const { genres, artists } = e.detail;
+      const select = document.getElementById("explorer-filter");
+      if (!select) return;
+
+      select.innerHTML = `<option value="">All</option>`;
+
+      genres.forEach((g) => {
+        const opt = document.createElement("option");
+        opt.value = `genre:${g}`;
+        opt.textContent = `Genre: ${g}`;
+        select.appendChild(opt);
+      });
+
+      artists.forEach((a) => {
+        const opt = document.createElement("option");
+        opt.value = `artist:${a}`;
+        opt.textContent = `Artist: ${a}`;
+        select.appendChild(opt);
+      });
+    });
+
+    //
+    // SEARCH
+    //
+    document.addEventListener("input", (e) => {
+      const target = e.target;
+      if (target.id === "explorer-search") {
+        window.dispatchEvent(new CustomEvent("explorer:search", { detail: target.value }));
+      }
+    });
+
+    //
+    // FILTER CHANGE (MULTI-SELECT)
+    //
+    document.addEventListener("change", (e) => {
+      const target = e.target;
+      if (target.id !== "explorer-filter") return;
+
+      const value = target.value;
+
+      if (value === "") {
+        activeFilters = { genres: [], artists: [] };
+      } else if (value.startsWith("genre:")) {
+        const g = value.replace("genre:", "").toLowerCase();
+        if (!activeFilters.genres.includes(g)) activeFilters.genres.push(g);
+      } else if (value.startsWith("artist:")) {
+        const a = value.replace("artist:", "").toLowerCase();
+        if (!activeFilters.artists.includes(a)) activeFilters.artists.push(a);
+      }
+
+      window.dispatchEvent(new CustomEvent("explorer:filter", { detail: activeFilters }));
+    });
+
+    //
+    // SORT FIELD
+    //
+    document.addEventListener("change", (e) => {
+      const target = e.target;
+      if (target.id === "explorer-sort-field") {
+        window.dispatchEvent(
+          new CustomEvent("explorer:sort", {
+            detail: { field: target.value, direction: "asc" },
+          })
+        );
+      }
+    });
+
+    //
+    // SORT DIRECTION
+    //
+    const sortDirBtn = document.getElementById("explorer-sort-direction");
+    if (sortDirBtn) {
+      sortDirBtn.addEventListener("click", () => {
+        window.dispatchEvent(new CustomEvent("explorer:sort:toggle"));
+      });
+    }
+
+    //
+    // VIEW SWITCHING (Segmented Control)
+    //
+    document.addEventListener("click", (e) => {
+      const btn = e.target.closest(".view-segment");
+      if (!btn) return;
+
+      document.querySelectorAll(".view-segment").forEach(b =>
+        b.classList.remove("active")
+      );
+      btn.classList.add("active");
+
+      window.dispatchEvent(
+        new CustomEvent("explorer:view", { detail: btn.dataset.view })
+      );
+    });
+
+  });
+</script>

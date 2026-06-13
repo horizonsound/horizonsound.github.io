@@ -1,0 +1,26 @@
+---
+// @ts-nocheck
+const { artist } = Astro.props;
+const gallery = artist.images?.gallery || [];
+---
+
+{gallery.length > 0 && (
+  <>
+    <section class="wall-title">
+      <h2>Behind the Scenes</h2>
+    </section>
+
+    <section class="artist-photo-wall">
+      {gallery.map(photo => {
+        const span = photo.span || 1;
+        return (
+          <img
+            src={photo.src}
+            class={`span-${span}`}
+            alt={`${artist.name.full} photo`}
+          />
+        );
+      })}
+    </section>
+  </>
+)}

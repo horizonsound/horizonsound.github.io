@@ -1,0 +1,270 @@
+
+/* ================================
+Artist Hero Image
+================================ */
+  .artist-hero {
+    width: 100%;
+    height: 70vh;
+    background-size: cover;
+    background-position: center 20%;
+    position: relative;
+    background-color: #111; /* fallback if no image */
+  }
+
+  .artist-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.75));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem 4vw;
+  }
+
+  .artist-name {
+    font-size: 8rem;
+    font-weight: 800;
+    color: white;
+    margin: 0;
+  }
+
+  .artist-tagline {
+    font-size: 1.5rem;
+    color: rgba(255,255,255,0.85);
+    margin-top: 1rem;
+  }
+
+/* ================================
+Artist photo wall
+================================ */
+  .wall-title h2 {
+    padding-left: 10vw;
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: white;
+    margin: 0 0 2rem 0;
+  }
+
+  .artist-photo-wall {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 3rem 10vw;
+    grid-auto-rows: 24px;
+  }
+
+  .artist-photo-wall img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+  }
+
+  .artist-photo-wall img.span-1 { grid-column: span 1; grid-row: span 20; }
+  .artist-photo-wall img.span-2 { grid-column: span 2; grid-row: span 20; }
+  .artist-photo-wall img.span-3 { grid-column: span 3; grid-row: span 25; }
+
+  /* ================================
+  Artist Bio Section
+  ================================ */
+
+  .artist-bio-section h2 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.5px;
+    color: white;
+  }
+
+  .artist-bio-section p {
+    font-size: 2rem;
+    line-height: 1.2;
+    max-width: "100%";
+    color: rgba(255,255,255,0.9);
+  }
+
+
+  /* ================================
+Desktop — Light scaling css
+================================ */
+@media (min-width: 901px) {
+}
+
+/* ================================
+Portrait (440px) — heavy scaling css
+================================ */
+@media (max-width: 480px) {
+
+  /* ================================
+  Portrait (440px) — Header scaling
+  ================================ */
+  .site-header {
+    padding: 0 12px;
+  }
+
+  .artist-name {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0;
+  }
+
+  .branding {
+    gap: 8px;
+    font-size: 1rem;
+  }
+
+  .logo {
+    height: 25px;
+  }
+
+  .main-nav ul {
+    gap: 12px;
+    margin-top: 6px;
+  }
+
+  .main-nav a {
+    font-size: 0.90rem;
+  }
+
+  .autoplay-toggle {
+    font-size: 1rem;
+  }
+
+  .branding h1 {
+    font-size: 1.55rem;
+  }
+
+  /* ================================
+  Portrait (440px) — hero scaling
+  ================================ */
+  .hero-strip {
+    height: 100px; /* adjustable */
+    width: 100%;
+  }
+  .hero-strip img {
+    height: 90px; /* adjustable */
+    width: 100%;
+  }
+
+  /* ================================
+  Artist photo wall
+  ================================ */
+  .wall-title h2 {
+    padding-left: 10vw;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin: 0 0 2rem 0;
+  }
+
+  .artist-photo-wall {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 120px; /* half of 240px */
+    gap: 8px;
+  }
+
+  .artist-photo-wall img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+  }
+
+  /* Adjust spans for mobile */
+  .artist-photo-wall img.span-1 { grid-row: span 2; }
+  .artist-photo-wall img.span-2 { grid-row: span 2; }
+  .artist-photo-wall img.span-3 { grid-row: span 3; }
+
+  .artist-bio-section h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.5px;
+    color: white;
+  }
+
+  .artist-bio-section p {
+    font-size: 1rem;
+    line-height: 1.2;
+    max-width: "100%";
+    color: rgba(255,255,255,0.9);
+  }
+
+}
+
+/* ================================
+Landscape (832px) — moderate scaling css
+================================ */
+@media (min-width: 481px) and (max-width: 900px) {
+
+
+  /* ================================
+  Artist Hero Image
+  ================================ */
+  .artist-hero {
+    width: 100%;
+    height: 80vh;
+    background-position: center 20%;
+  }
+
+  .artist-hero-overlay {
+    inset: 0;
+    padding: 2rem 4vw;
+  }
+
+  .artist-name {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0;
+  }
+
+  .artist-tagline {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  /* ================================
+  Artist photo wall
+  ================================ */
+  .wall-title h2 {
+    padding-left: 10vw;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin: 0 0 2rem 0;
+  }
+
+  .artist-photo-wall {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 150px; /* half of 240px */
+    gap: 8px;
+  }
+
+  .artist-photo-wall img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  /* Adjust spans for mobile */
+  .artist-photo-wall img.span-1 { grid-row: span 2; }
+  .artist-photo-wall img.span-2 { grid-row: span 2; }
+  .artist-photo-wall img.span-3 { grid-row: span 3; }
+
+  .artist-bio-section h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.5px;
+    color: white;
+  }
+
+  .artist-bio-section p {
+    font-size: 1rem;
+    line-height: 1.2;
+    max-width: "100%";
+    color: rgba(255,255,255,0.9);
+  }
+
+}

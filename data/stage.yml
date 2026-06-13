@@ -1,0 +1,204 @@
+announcements: Elie Hale’s breakout album Emergence has arrived — twelve pop anthems and four alternate cuts, streaming everywhere. —**— Lydia Ellington’s After the Silence is complete — thirteen cinematic pop‑soul tracks now live on all major platforms. —**— Step into Cody Sails’ sun‑soaked debut album, available now across all streaming services. —**— Share your ideas or feedback anytime at support@HorizonSound.org. —**—
+cards:
+  - id: amee_keller
+    hero_image: /assets/artists/amee-keller/cardwheel-image/amee-keller-wide.jpg
+    title: Amee Keller
+    albums:
+      A1: null
+      A2: null
+      A3: null
+      A4: null
+    singles:
+      S1: null
+      S2: null
+      S3: null
+      S4: null
+      S5: null
+      S6: rel_021
+      S7: null
+      S8: null
+      S9: null
+      S10: rel_022
+      S11: null
+      S12: null
+  - id: ellie_hale
+    hero_image: /assets/artists/ellie-hale/cardwheel-image/ellie.jpg
+    title: Ellie Hale
+    albums:
+      A1: null
+      A2: null
+      A3: null
+      A4: rel_020
+    singles:
+      s1: null
+      s2: null
+      s3: null
+      s4: null
+      s5: null
+      s6: null
+      s7: null
+      s8: null
+      s9: null
+      s10: null
+      s11: null
+      s12: null
+  - id: lydia_ellington
+    hero_image: /assets/artists/lydia-ellington/cardwheel-image/lydia.jpg
+    title: Lydia Ellington
+    albums:
+      A1: null
+      A2: null
+      A3: null
+      A4: rel_003
+    singles:
+      S1: null
+      S2: null
+      S3: null
+      S4: null
+      S5: null
+      S6: null
+      S7: null
+      S8: null
+      S9: null
+      S10: null
+      S11: null
+      S12: null
+  - id: cody_sails
+    hero_image: /assets/artists/cody-sails/cardwheel-image/cody.jpg
+    title: Cody Sails
+    albums:
+      A1: null
+      A2: null
+      A3: null
+      A4: rel_014
+    singles:
+      S1: null
+      S2: null
+      S3: null
+      S4: null
+      S5: null
+      S6: null
+      S7: null
+      S8: null
+      S9: null
+      S10: null
+      S11: null
+      S12: null
+  - id: ascension-youth-choir
+    hero_image: ../assets/artists/ascension-youth-choir/cardwheel-image/AYC.png
+    title: Ascension Youth Choir
+    albums:
+      A1: null
+      A2: null
+      A3: null
+      A4: rel_008
+    singles:
+      S1: null
+      S2: null
+      S3: null
+      S4: null
+      S5: null
+      S6: null
+      S7: null
+      S8: null
+      S9: null
+      S10: null
+      S11: null
+      S12: null
+  - id: ravyn
+    hero_image: ../assets/artists/ravyn/cardwheel-image/ravyn.jpg
+    title: Ravyn
+    albums:
+      A1: null
+      A2: null
+      A3: null
+      A4: rel_009
+    singles:
+      S1: null
+      S2: null
+      S3: null
+      S4: null
+      S5: null
+      S6: null
+      S7: null
+      S8: null
+      S9: null
+      S10: null
+      S11: null
+      S12: null
+  - id: maddie_rowan
+    hero_image: ../assets/artists/maddie-rowan/cardwheel-image/maddie-rowan.jpg
+    title: Wildfire - Single by Maddie Rowan
+    albums:
+      A1: null
+      A2: null
+      A3: null
+      A4: rel_018
+    singles:
+      S1: null
+      S2: null
+      S3: null
+      S4: null
+      S5: null
+      S6: null
+      S7: null
+      S8: null
+      S9: null
+      S10: null
+      S11: null
+      S12: null
+  - id: southern_crossfire
+    hero_image: ../assets/artists/southern-crossfire/cardwheel-image/southern-crossfire.jpg
+    title: One Hell of a Ride - Single by Southern Crossfire
+    albums:
+      A1: null
+      A2: null
+      A3: null
+      A4: rel_010
+    singles:
+      S1: null
+      S2: null
+      S3: null
+      S4: null
+      S5: null
+      S6: null
+      S7: null
+      S8: null
+      S9: null
+      S10: null
+      S11: null
+      S12: null
+  - id: craig-mitchell
+    hero_image: ../assets/artists/craig-mitchell/cardwheel-image/craig-mitchell.jpg
+    title: Until the Nightmare Ends - Single by Craig Mitchell
+    albums:
+      A1: null
+      A2: null
+      A3: null
+      A4: rel_016
+    singles:
+      S1: null
+      S2: null
+      S3: null
+      S4: null
+      S5: null
+      S6: null
+      S7: null
+      S8: null
+      S9: null
+      S10: null
+      S11: null
+      S12: null
+sections:
+  - id: rel_020
+  - id: rel_003
+  - id: rel_014
+  - id: rel_008
+  - id: rel_009
+  - id: rel_010
+  - id: rel_016
+  - id: rel_018
+  - id: rel_017
+changes:
+  undefined:
+    announcements: Lydia Ellington’s After the Silence is now complete — thirteen cinematic pop‑soul tracks, arriving on major streaming platforms 4/5/26.Meanwhile, the Venice Trilogy is unfolding now, with all three songs releasing in sequence.Have a story, theme, or spark you want turned into music? Send your ideas to HorizonSoundCreative@gmail.com — inspiration is always welcome.
